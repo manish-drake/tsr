@@ -19,7 +19,7 @@ angular.module('App', ['ionic'])
 
 
 
-  
+
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
