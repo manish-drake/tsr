@@ -10,7 +10,7 @@ angular.module('App', ['ionic'])
       })
       .state('uatOutStateVectorTest', {
         url: '/uatOutStateVectorTest/:temp',
-        templateUrl: 'views/uatOutDetail/uatOutStateVectorTest.html',
+        templateUrl: 'views/uatOutStateVectorTest/uatOutStateVectorTest.html',
         controller: 'UatOutStateVectorTestController'
       });
 
