@@ -1,0 +1,115 @@
+<ion-view view-title="UAT OUT">
+    <ion-nav-buttons side="left">
+        <button class="button button-clear headerbtn" menu-toggle="left">
+              <span class="icon ion-navicon "></span>
+            </button>
+        </ion-nav-buttons>
+            <ion-nav-buttons side="right ">              
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+          <img class="btnimg " src="img\sortfilter.png "> 
+      </button>
+       <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+          <span class="icon ion-android-wifi"></span> 
+      </button>
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+           <span class="icon ion-archive"></span>
+      </button>
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click="runTest() ">
+          <span class="icon ion-android-walk"></span>
+      </button>
+       <button class="button button-clear headerbtn" style="margin-right:3px"  ng-click="openMore($event)">
+              <span class="icon ion-android-more-horizontal "></span>
+            </button>
+    </ion-nav-buttons>
+    <ion-content  style="background-color:whitesmoke">
+        <div class="list card">
+            <div  style="align-content: stretch">
+              <div style="margin-bottom:24px;">
+                <button  class="button  button-clear button-stable" >
+                    <span class="icon ion-chevron-left ">  PREVIOUS</span>
+                 </button>
+                 
+                 <button  class="button button-clear button-stable nextBtn">NEXT  
+                     <span class="icon ion-chevron-right"/>
+                 </button>
+              </div>
+              <div style="margin-left:15px">
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">{{result.address}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult">{{result.addressQualifier}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult">{{result.payloadTypeCodes}}</td>
+            </tr>
+        </table>
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">Air/Ground State:</td>
+                <td class="detailResult">{{result.agState}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Latitude:</td>
+                <td class="detailResult">{{result.latitude}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Longitude:</td>
+                <td class="detailResult">{{result.longitude}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">NIC:</td>
+                <td class="detailResult">{{result.nic}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Altitude:</td>
+                <td class="detailResult">{{result.altitude}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Altitude Type:</td>
+                <td class="detailResult">{{result.altitudeType}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">North Velocity:</td>
+                <td class="detailResult">{{result.horizontalVelocity.nsK}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">East Velocity:</td>
+                <td class="detailResult">{{result.horizontalVelocity.ewK}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Feedback Code:</td>
+                <td class="detailResult">{{result.uplinkFeedback}}</td>
+            </tr>
+        </table>
+        <table>
+<tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+            </tr> 
+            <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2">{{result.freq}}</td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4">{{result.power}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2">{{result.gps}}</td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;">{{result.rfLinkTest}}</td>
+            </tr>
+        </table>
+              </div>
+            </div></div>
+    </ion-content>
+</ion-view>

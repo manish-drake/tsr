@@ -1,0 +1,111 @@
+.favBtn{font-size: 30px; }
+.navtodetail{
+    float: right ; 
+    font-size: 30px; 
+    width:30px;
+    text-align: center;
+}
+.sectionLabel{
+    min-width: 60px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  11px;
+}
+.sectionResult{
+    width: 50%;
+    min-width: 250px;
+    padding-left: 8px;
+    padding-bottom:  11px;
+     font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sectionHeading{
+    color: #000;
+     font-size: 21px;    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     }
+.detailheading{
+    color: #000;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  18px;
+}
+.btnimg{
+    vertical-align: middle;       
+}
+.Subfooter1{
+    width: 15%;     
+    margin-left: 10px; 
+}
+.Subfooter2{
+    width: 80%; 
+    min-width: 100px;
+    text-align: center;
+    margin-left: 80px;
+    }
+.Subfooter3align{
+      vertical-align: top; 
+    }
+.Subfooter3imgtitle{
+    font-size: 11px;
+    vertical-align: top; 
+    }
+.headerbtn{
+    width:38px;
+    height:38px;
+    }
+.heading{
+    width: 200px;
+}
+.detailLabel{
+    color: dimgray;
+    width: 220px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  11px;
+}
+.detailResult{
+    color: dimgray;
+    padding-left: 10px;
+    padding-bottom:  11px;
+    width:250px;    
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+.detailLabel1{
+    color: dimgray;
+    width: 50px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  11px;
+}
+.detailResult2{
+    color: dimgray;
+    width: 170px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  11px;
+}
+.detailLabel3{
+    color: dimgray;
+    width: 150px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 8px;
+}
+.detailResult4{
+    color: dimgray;
+    width: 120px;
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom:  11px;
+}
+.detailpageTbmargin{
+    margin-bottom:   10px;
+}
+.spacing{
+    margin-bottom:   20px;
+}
+.nextBtn{
+    float: right;
+}
+

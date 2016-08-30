@@ -1,7 +1,7 @@
 angular.module('App')
-    .controller('UatOutController', function ($scope, $http, $ionicLoading, $ionicPopover) {
-
-        $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
+.controller('UatOutStateVectorTestController', function($scope, $http, $ionicLoading, $ionicPopover){
+    
+    $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
            scope: $scope, 
         }).then(function(popover){
             $scope.popover = popover;
@@ -15,7 +15,7 @@ angular.module('App')
              $scope.popover.hide();
          }
 
-        $scope.runTest = function () {
+  $scope.runTest = function () {
             $ionicLoading.show();
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
