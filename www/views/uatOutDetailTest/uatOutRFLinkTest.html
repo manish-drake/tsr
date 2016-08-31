@@ -36,77 +36,64 @@
               <div style="margin-left:15px">
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
+                <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
             </tr>
             <tr>
                 <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result.address}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.address}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result.addressQualifier}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.addressQualifier}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result.payloadTypeCodes}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.payloadTypeCodes}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Equipage Class:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.equipageClass}}</td>
             </tr>
         </table>
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+                <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
             </tr>
             <tr>
-                <td class="detailLabel">Air/Ground State:</td>
-                <td class="detailResult">{{result.agState}}</td>
+                <td class="detailLabel">TX Power:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.txPower}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Latitude:</td>
-                <td class="detailResult">{{result.latitude}}</td>
+                <td class="detailLabel">Power Droop:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.powerDroop}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Longitude:</td>
-                <td class="detailResult">{{result.longitude}}</td>
+                <td class="detailLabel">Frequency:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.frequencyA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.frequencyB}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">NIC:</td>
-                <td class="detailResult">{{result.nic}}</td>
+                <td class="detailLabel">Deviation:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.deviationA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.deviationB}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Altitude:</td>
-                <td class="detailResult">{{result.altitude}}</td>
+                <td class="detailLabel">peakDeviation:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.peakDeviationA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.peakDeviationB}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Altitude Type:</td>
-                <td class="detailResult">{{result.altitudeType}}</td>
+                <td class="detailLabel">Message Timming:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.messageTimming}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">North Velocity:</td>
-                <td class="detailResult">{{result.horizontalVelocity.nsK}}</td>
+                <td class="detailLabel">Eye Openning Ver:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerB}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">East Velocity:</td>
-                <td class="detailResult">{{result.horizontalVelocity.ewK}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Feedback Code:</td>
-                <td class="detailResult">{{result.uplinkFeedback}}</td>
-            </tr>
-        </table>
-        <table>
-<tr>
-                <th class="detailheading" colspan="2" align="left">RF Link</th>
-            </tr> 
-            <tr>
-                <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result.freq}}</td>
-                <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result.power}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result.gps}}</td>
-                <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result.rfLinkTest}}</td>
+                <td class="detailLabel">Eye Openning Hor:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningHorA}}</td>
             </tr>
         </table>
               </div>
