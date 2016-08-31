@@ -22,7 +22,7 @@
             </button>
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
-        <div class="list card " ui-sref="uatOutStateVectorTest">
+        <div class="list card " ng-dblclick="goNext(uatOutStateVectorTest)">
             <div class="item " style="align-content: stretch ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
@@ -33,21 +33,21 @@
                 <table style="table-layout: fixed ">
                     <tr>
                         <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.address}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.address}}</td>
                         <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.addressQualifier}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.addressQualifier}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.payloadTypeCodes}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.payloadTypeCodes}}</td>
                         <td class="sectionLabel">A/G State: </td>
-                        <td class="sectionResult">{{result.agState}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.agState}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult" style="color:green;">{{result.rfLinkTest}}</td>
+                        <td class="sectionResult" style="color:green;">{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</td>
                         <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.gps}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.gps}}</td>
                     </tr>
                 </table>
 
