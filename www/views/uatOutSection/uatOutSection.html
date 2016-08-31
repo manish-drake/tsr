@@ -1,26 +1,29 @@
-<ion-view view-title="UAT OUT" >
-   <ion-nav-buttons side="left">
-        <button class="button button-clear headerbtn" menu-toggle="left">
-              <span class="icon ion-navicon "></span>
-            </button>
-        </ion-nav-buttons>
-            <ion-nav-buttons side="right ">              
-        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
-          <img class="btnimg " src="img\sortfilter.png "> 
-      </button>
-       <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
-          <span class="icon ion-android-wifi"></span> 
-      </button>
-        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
-           <span class="icon ion-archive"></span>
-      </button>
-        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click="runTest() ">
-          <span class="icon ion-android-walk"></span>
-      </button>
-       <button class="button button-clear headerbtn" style="margin-right:3px"  ng-click="openMore($event)">
-              <span class="icon ion-android-more-horizontal "></span>
-            </button>
+<ion-view view-title="UAT OUT">
+    <!--<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
     </ion-nav-buttons>
+    <ion-nav-buttons side="right ">
+        <button class="button button-clear" ng-click=" ">
+                <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
+          </button>
+        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
+        <button class="button button-icon icon ion-archive" ng-click=" "></button>
+        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
+        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
+    </ion-nav-buttons>-->
+    <div class="buttons">
+          <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+          <button class="button button-clear" ng-click=" ">
+                <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
+          </button>
+        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
+        <button class="button button-icon icon ion-archive" ng-click=" "></button>
+        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
+        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
+        </div>
     <ion-content style="background-color:whitesmoke">
         <div class="list card " ui-sref="uatOutStateVectorTest">
             <div class="item " style="align-content: stretch ">
@@ -28,7 +31,7 @@
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
                     <span style="float: right ">
                          <span style="color:green; font-size:21px" >{{result.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
+                    <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                 <table style="table-layout: fixed ">
                     <tr>
@@ -216,28 +219,28 @@
                     <span style="float: right ">
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>UAT AUX State Vector test</span>
-             <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult"></td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult"></td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult"></td>
-                        <td class="sectionLabel">Alt Type: </td>
-                        <td class="sectionResult"></td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult"></td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult"></td>
-                    </tr>
-                </table>
-             </div>
+                    <div style="margin-top:12px;">
+                        <table style="table-layout: fixed ">
+                            <tr>
+                                <td class="sectionLabel">Address: </td>
+                                <td class="sectionResult"></td>
+                                <td class="sectionLabel">Addr Qual: </td>
+                                <td class="sectionResult"></td>
+                            </tr>
+                            <tr>
+                                <td class="sectionLabel">Payload: </td>
+                                <td class="sectionResult"></td>
+                                <td class="sectionLabel">Alt Type: </td>
+                                <td class="sectionResult"></td>
+                            </tr>
+                            <tr>
+                                <td class="sectionLabel">RF Link: </td>
+                                <td class="sectionResult"></td>
+                                <td class="sectionLabel">GPS: </td>
+                                <td class="sectionResult"></td>
+                            </tr>
+                        </table>
+                    </div>
             </div>
         </div>
     </ion-content>
