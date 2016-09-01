@@ -1,30 +1,30 @@
 angular.module('App')
-.controller('UatOutRFLinkTestController', function($scope, $http, $ionicLoading, $ionicPopover){
-    
-    $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
-           scope: $scope, 
-        }).then(function(popover){
+    .controller('UatOutRFLinkTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
+
+        $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
+            scope: $scope,
+        }).then(function (popover) {
             $scope.popover = popover;
         })
-        
-        $scope.openMore = function($event){
+
+        $scope.openMore = function ($event) {
             $scope.popover.show($event);
         }
 
-          $scope.closePopover = function() {
-             $scope.popover.hide();
-         }
+        $scope.closePopover = function () {
+            $scope.popover.hide();
+        }
 
-  $scope.runTest = function () {
+        $scope.runTest = function () {
             $ionicLoading.show();
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
-                    $scope.result3 = res.data.uatOutDetailRFLinkTest;
-                    $scope.$parent.result3 = res.data.uatOutDetailRFLinkTest;
+                    $scope.result5 = res.data.uatOutDetailRFLinkTest;
+                    $scope.$parent.result5 = res.data.uatOutDetailRFLinkTest;
                     $ionicLoading.hide();
                 })
-                .error(function(err){
+                .error(function (err) {
                     $ionicLoading.hide();
                 });
         }

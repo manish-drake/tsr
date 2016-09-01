@@ -30,11 +30,23 @@ angular.module('App')
                 case 'uatOutStateVectorTest':
                     $state.go('uatOutStateVectorTest');
                     break;
+                case 'uatOutModeStatusTest':
+                    $state.go('uatOutModeStatusTest');
+                    break;
                 case 'uatOutTargetStateTest':
                     $state.go('uatOutTargetStateTest');
                     break;
+                case 'uatOutAUXStateVectorTest':
+                    $state.go('uatOutAUXStateVectorTest');
+                    break;
                 case 'uatOutRFLinkTest':
                     $state.go('uatOutRFLinkTest');
+                    break;
+                case 'uatOutTrajectoryChangeTest':
+                    $state.go('uatOutTrajectoryChangeTest');
+                    break;
+                case 'uatOutSummary':
+                    $state.go('uatOutSumaryTest');
                     break;
 
             }
@@ -50,14 +62,31 @@ angular.module('App')
                             $scope.result1 = res.data.uatOutStateVectorTestSubsonic;
                             $scope.$parent.result1 = res.data.uatOutStateVectorTestSubsonic;
                             break;
+                        case 'uatOutModeStatusTest':
+                            $scope.result2 = res.data.uatOutModeStatusTest;
+                            $scope.$parent.result2 = res.data.uatOutModeStatusTest;
+                            break;
                         case 'uatOutTargetStateTest':
-                            $scope.result2 = res.data.uatOutTargetStateTest;
-                            $scope.$parent.result2 = res.data.uatOutTargetStateTest;
+                            $scope.result3 = res.data.uatOutTargetStateTest;
+                            $scope.$parent.result3 = res.data.uatOutTargetStateTest;
+                            break;
+                        case 'uatOutAUXStateVectorTest':
+                            $scope.result4 = res.data.uatOutAUXStateVectorTest;
+                            $scope.$parent.result4 = res.data.uatOutAUXStateVectorTest;
                             break;
                         case 'uatOutRFLinkTest':
-                            $scope.result3 = res.data.uatOutDetailRFLinkTest;
-                            $scope.$parent.result3 = res.data.uatOutDetailRFLinkTest;
+                            $scope.result5 = res.data.uatOutDetailRFLinkTest;
+                            $scope.$parent.result5 = res.data.uatOutDetailRFLinkTest;
                             break;
+                        case 'uatOutTrajectoryChangeTest':
+                            $scope.result6 = res.data.uatOutTrajectoryChangeTest;
+                            $scope.$parent.result6 = res.data.uatOutTrajectoryChangeTest;
+                            break;
+                        case 'uatOutSummary':
+                            $scope.result7 = res.data.uatOutStateVectorTestSubsonic;
+                            $scope.$parent.result7 = res.data.uatOutStateVectorTestSubsonic;
+                            break;
+
                         default:
                     }
                     $ionicLoading.hide();
