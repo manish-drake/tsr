@@ -208,30 +208,30 @@
         <div class="list card"" ui-sref="uatOutSummary">
             <div class="item ">
                <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT AUX State Vector test</span>
+                    <span class="sectionHeading" style="float: left ">UAT Summary</span>
                     <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutAUXStateVectorTest.rfLinkTest}}</span>
+                         <span style="color:green; font-size:21px" >{{result.uatOutDetailSummary.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
              <div style="margin-top:12px;">
                 <table style="table-layout: fixed ">
                     <tr>
                         <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.address}}</td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.address}}</td>
                         <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.addressQualifier}}</td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.addressQualifier}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">A/G: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.altitudeType}}</td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.payloadTypeCodes}}</td>
+                        <td class="sectionLabel">A/G State: </td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.agState}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.rfLinkTest}}</td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.rfLinkTest}}</td>
                         <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.gps}}</td>
+                        <td class="sectionResult">{{result.uatOutDetailSummary.gps}}</td>
                     </tr>
                 </table>
              </div>
