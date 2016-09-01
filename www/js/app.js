@@ -14,6 +14,7 @@ angular.module('App', ['ionic'])
         templateUrl: 'views/uatOutDetailTest/uatOutStateVectorTest.html',
         controller: 'UatOutStateVectorTestController'
       })
+    
       .state('uatOutTargetStateTest', {
         url: '/uatOutTargetStateTest',
         templateUrl: 'views/uatOutDetailTest/uatOutTargetStateTest.html',
@@ -23,8 +24,7 @@ angular.module('App', ['ionic'])
         url: '/uatOutRFLinkTest',
         templateUrl: 'views/uatOutDetailTest/uatOutRFLinkTest.html',
         controller: 'UatOutRFLinkTestController'
-      })
-      ;
+      });
 
     $urlRouterProvider.otherwise('/uatOutSection');
   })
