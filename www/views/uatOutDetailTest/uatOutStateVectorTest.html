@@ -11,95 +11,96 @@
         <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
-    <ion-content  style="background-color:whitesmoke">
+    <ion-content style="background-color:whitesmoke">
         <div class="list card">
-            <div  style="align-content: stretch">
-              <div style="margin-bottom:24px;">
-                <button  class="button  button-clear button-stable" >
+            <div style="align-content: stretch">
+                <div style="margin-bottom:24px;">
+                    <button class="button  button-clear button-stable" ui-sref="uatOutSection">
                     <span class="icon ion-chevron-left ">  PREVIOUS</span>
                  </button>
-                 
-                 <button  class="button button-clear button-stable nextBtn">NEXT  
+
+                    <button class="button button-clear button-stable nextBtn">NEXT  
                      <span class="icon ion-chevron-right"/>
                  </button>
-              </div>
-              <div style="margin-left:15px">
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.address}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.addressQualifier}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.payloadTypeCodes}}</td>
-            </tr>
-        </table>
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">Air/Ground State:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.agState}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Latitude:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.latitude}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Longitude:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.longitude}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">NIC:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.nic}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Altitude:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.altitude}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Altitude Type:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.altitudeType}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">North Velocity:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.horizontalVelocity.nsK}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">East Velocity:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.horizontalVelocity.ewK}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Feedback Code:</td>
-                <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.uplinkFeedback}}</td>
-            </tr>
-        </table>
-        <table>
-<tr>
-                <th class="detailheading" colspan="2" align="left">RF Link</th>
-            </tr> 
-            <tr>
-                <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result.uatOutStateVectorTestSubsonic.freq}}</td>
-                <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result.uatOutStateVectorTestSubsonic.power}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result.uatOutStateVectorTestSubsonic.gps}}</td>
-                <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</td>
-            </tr>
-        </table>
-              </div>
-            </div></div>
+                </div>
+                <div style="margin-left:15px">
+                    <table class="detailpageTbmargin">
+                        <tr>
+                            <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">AA ID:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.address}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Address Qualifier:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.addressQualifier}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Payload Type Codes:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.payloadTypeCodes}}</td>
+                        </tr>
+                    </table>
+                    <table class="detailpageTbmargin">
+                        <tr>
+                            <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Air/Ground State:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.agState}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Latitude:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.latitude}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Longitude:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.longitude}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">NIC:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.nic}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Altitude:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.altitude}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Altitude Type:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.altitudeType}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">North Velocity:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.horizontalVelocity.nsK}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">East Velocity:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.horizontalVelocity.ewK}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Feedback Code:</td>
+                            <td class="detailResult">{{result.uatOutStateVectorTestSubsonic.uplinkFeedback}}</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th class="detailheading" colspan="2" align="left">RF Link</th>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel1">Freq=</td>
+                            <td class="detailResult2">{{result.uatOutStateVectorTestSubsonic.freq}}</td>
+                            <td class="detailLabel3">Power=</td>
+                            <td class="detailResult4">{{result.uatOutStateVectorTestSubsonic.power}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel1">GPS=</td>
+                            <td class="detailResult2">{{result.uatOutStateVectorTestSubsonic.gps}}</td>
+                            <td class="detailLabel3">RF Link Test=</td>
+                            <td class="detailResult4" style="color:green;">{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

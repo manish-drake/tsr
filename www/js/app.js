@@ -3,6 +3,11 @@ angular.module('App', ['ionic'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
+      .state('index', {
+        url: '/index',
+        controller: 'IndexController',
+        templateUrl: 'index.html'
+      })
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutController',
