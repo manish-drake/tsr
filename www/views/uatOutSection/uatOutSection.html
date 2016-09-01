@@ -2,240 +2,208 @@
     <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
     </ion-nav-buttons>
-    <ion-nav-buttons side="right ">
-        <button class="button button-clear" ng-click=" ">
+            <ion-nav-buttons side="right ">
+                <button class="button button-clear" ng-click=" ">
                 <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
           </button>
-        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
-        <button class="button button-icon icon ion-archive" ng-click=" "></button>
-        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
-        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
-    </ion-nav-buttons>
-     <ion-content style="background-color:whitesmoke">
-        <div class="list card " ui-sref="uatOutStateVectorTest">
-            <div class="item " style="align-content: stretch ">
-                <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">A/G State: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.agState}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.gps}}</td>
-                    </tr>
-                </table>
+                <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
+                <button class="button button-icon icon ion-archive" ng-click=" "></button>
+                <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
+                <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
+            </ion-nav-buttons>
+            <ion-content style="background-color:whitesmoke">
+                 <div class="list card " ng-click="singleClick('uatOutStateVectorTest')" ng-dblclick="doubleClick('uatOutStateVectorTest')">
+                    <div class="item " style="align-content: stretch ">
+                        <p style="align-content: stretch ">
+                            <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
+                            <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result1.rfLinkTest}}</span>
+                            <span class="icon ion-ios-star-outline favBtn" />
+                        </p>
+                        <table style="table-layout: fixed ">
+                            <tr>
+                                <td class="sectionLabel">Address: </td>
+                                <td class="sectionResult">{{result1.address}}</td>
+                                <td class="sectionLabel">Addr Qual: </td>
+                                <td class="sectionResult">{{result1.addressQualifier}}</td>
+                            </tr>
+                            <tr>
+                                <td class="sectionLabel">Payload: </td>
+                                <td class="sectionResult">{{result1.payloadTypeCodes}}</td>
+                                <td class="sectionLabel">A/G State: </td>
+                                <td class="sectionResult">{{result1.agState}}</td>
+                            </tr>
+                            <tr>
+                                <td class="sectionLabel">RF Link: </td>
+                                <td class="sectionResult">{{result1.rfLinkTest}}</td>
+                                <td class="sectionLabel">GPS: </td>
+                                <td class="sectionResult">{{result1.gps}}</td>
+                            </tr>
+                        </table>
 
-            </div>
-        </div>
-        <div class="list card " ui-sref="uatOutModeStatusTest">
-            <div class="item ">
-                <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutModeStatusTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-               <div style="margin-top:12px;">
-                <table  style="table-layout: fixed ">
-                    
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">Flight ID: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.fightID}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutModeStatusTest.gps}}</td>
-                    </tr>
-                </table>
-               </div>
-            </div>
-        </div>
-        <div class="list card " ui-sref="uatOutTargetStateTest">
-            <div class="item ">
-                
-                <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
-                    <span style="float: right ">
-                       <span style="color:green; font-size:21px" >{{result.uatOutTargetStateTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-                <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">Sel Alt: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.selectedAltitude}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutTargetStateTest.gps}}</td>
-                    </tr>
-                </table>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="list card " ui-sref="uatOutAUXStateVectorTest">
-            <div class="item ">
-                <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutAUXStateVectorTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-                <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">Alt Type: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.altitudeType}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.gps}}</td>
-                    </tr>
-                </table>
+                <div class="list card " ng-dblclick="doubleClick('uatOutModeStatusTest')">
+                    <div class="item ">
+                        <p style="align-content: stretch ">
+                            <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
+                            <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.rfLinkTest}}</span>
+                            <span class="icon ion-ios-star-outline favBtn" />
+                        </p>
+                        <div style="margin-top:12px;">
+                            <table style="table-layout: fixed ">
+
+                                <tr>
+                                    <td class="sectionLabel">Address: </td>
+                                    <td class="sectionResult">{{result.address}}</td>
+                                    <td class="sectionLabel">Addr Qual: </td>
+                                    <td class="sectionResult">{{result.addressQualifier}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="sectionLabel">Payload: </td>
+                                    <td class="sectionResult">{{result.payloadTypeCodes}}</td>
+                                    <td class="sectionLabel">Flight ID: </td>
+                                    <td class="sectionResult">{{result.fightID}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="sectionLabel">RF Link: </td>
+                                    <td class="sectionResult">{{result.rfLinkTest}}</td>
+                                    <td class="sectionLabel">GPS: </td>
+                                    <td class="sectionResult">{{result.gps}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="list card " ui-sref="uatOutRFLinkTest">
-            <div class="item ">
-               <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
-                    <span style="float: right ">
-                        <span style="color:green; font-size:21px" >{{result.uatOutDetailRFLinkTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-              <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">Power: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.txPower}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Freq: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.frequencyA}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutDetailRFLinkTest.gps}}</td>
-                    </tr>
-                </table>
-              </div>
-            </div>
-        </div>
-        <div class="list card " ui-sref="uatOutTrajectoryChangeTest">
-            <div class="item ">
-                 <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutTrajectoryChangeTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-               <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.addpayloadTypeCodesress}}</td>
-                        <td class="sectionLabel">TC: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.tcField}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutTrajectoryChangeTest.gps}}</td>
-                    </tr>
-                </table>
-               </div>
-            </div>
-        </div>
-        <div class="list card"" ui-sref="uatOutSummary">
-            <div class="item ">
-               <p style="align-content: stretch ">
-                    <span class="sectionHeading" style="float: left ">UAT AUX State Vector test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.uatOutAUXStateVectorTest.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
-                </p>
-             <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">A/G: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.altitudeType}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result.uatOutAUXStateVectorTest.gps}}</td>
-                    </tr>
-                </table>
-             </div>
-            </div>
-        </div>
+                <div class="list card " ng-click="singleClick('uatOutTargetStateTest')" ng-dblclick="doubleClick('uatOutTargetStateTest')">
+                    <div class="item ">
+
+                        <p style="align-content: stretch ">
+                            <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
+                            <span style="float: right ">
+                       <span style="color:green; font-size:21px" >{{result2.rfLinkTest}}</span>
+                            <span class="icon ion-ios-star-outline favBtn" />
+                        </p>
+                        <div style="margin-top:12px;">
+                            <table style="table-layout: fixed ">
+                                <tr>
+                                    <td class="sectionLabel">Address: </td>
+                                    <td class="sectionResult">{{result2.address}}</td>
+                                    <td class="sectionLabel">Addr Qual: </td>
+                                    <td class="sectionResult">{{result2.addressQualifier}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="sectionLabel">Payload: </td>
+                                    <td class="sectionResult">{{result2.payloadTypeCodes}}</td>
+                                    <td class="sectionLabel">Sel Alt: </td>
+                                    <td class="sectionResult">{{result2.selectedAltitude}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="sectionLabel">RF Link: </td>
+                                    <td class="sectionResult">{{result2.rfLinkTest}}</td>
+                                    <td class="sectionLabel">GPS: </td>
+                                    <td class="sectionResult">{{result2.gps}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+               <div class="list card " ng-dblclick="doubleClick('uatOutAUXStateVectorTest')">
+                        <div class="item ">
+                            <p style="align-content: stretch ">
+                                <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
+                                <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.rfLinkTest}}</span>
+                                <span class="icon ion-ios-star-outline favBtn" />
+                            </p>
+                            <div style="margin-top:12px;">
+                                <table style="table-layout: fixed ">
+                                    <tr>
+                                        <td class="sectionLabel">Address: </td>
+                                        <td class="sectionResult">{{result.address}}</td>
+                                        <td class="sectionLabel">Addr Qual: </td>
+                                        <td class="sectionResult">{{result.addressQualifier}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sectionLabel">Payload: </td>
+                                        <td class="sectionResult">{{result.payloadTypeCodes}}</td>
+                                        <td class="sectionLabel">Alt Type: </td>
+                                        <td class="sectionResult">{{result.altitudeType}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sectionLabel">RF Link: </td>
+                                        <td class="sectionResult">{{result.rfLinkTest}}</td>
+                                        <td class="sectionLabel">GPS: </td>
+                                        <td class="sectionResult">{{result.gps}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list card " ng-click="singleClick('uatOutRFLinkTest')" ng-dblclick="doubleClick('uatOutRFLinkTest')">
+                        <div class="item ">
+                            <p style="align-content: stretch ">
+                                <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
+                                <span style="float: right ">
+                        <span style="color:green; font-size:21px" >{{result3.rfLinkTest}}</span>
+                                <span class="icon ion-ios-star-outline favBtn" />
+                            </p>
+                            <div style="margin-top:12px;">
+                                <table style="table-layout: fixed ">
+                                    <tr>
+                                        <td class="sectionLabel">Address: </td>
+                                        <td class="sectionResult">{{result3.address}}</td>
+                                        <td class="sectionLabel">Addr Qual: </td>
+                                        <td class="sectionResult">{{result3.addressQualifier}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sectionLabel">Payload: </td>
+                                        <td class="sectionResult">{{result3.payloadTypeCodes}}</td>
+                                        <td class="sectionLabel">Power: </td>
+                                        <td class="sectionResult">{{result3.txPower}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sectionLabel">Freq: </td>
+                                        <td class="sectionResult">{{result3.frequencyA}}</td>
+                                        <td class="sectionLabel">GPS: </td>
+                                        <td class="sectionResult">{{result3.gps}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="list card " ng-dblclick="doubleClick('uatOutTrajectoryChangeTest')">
+                            <div class="item ">
+                                <p style="align-content: stretch ">
+                                    <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
+                                    <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.rfLinkTest}}</span>
+                                    <span class="icon ion-ios-star-outline favBtn" />
+                                </p>
+                                <div style="margin-top:12px;">
+                                    <table style="table-layout: fixed ">
+                                        <tr>
+                                            <td class="sectionLabel">Address: </td>
+                                            <td class="sectionResult">{{result.address}}</td>
+                                            <td class="sectionLabel">Addr Qual: </td>
+                                            <td class="sectionResult">{{result.addressQualifier}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sectionLabel">Payload: </td>
+                                            <td class="sectionResult">{{result.addpayloadTypeCodesress}}</td>
+                                            <td class="sectionLabel">TC: </td>
+                                            <td class="sectionResult">{{result.tcField}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sectionLabel">RF Link: </td>
+                                            <td class="sectionResult">{{result.rfLinkTest}}</td>
+                                            <td class="sectionLabel">GPS: </td>
+                                            <td class="sectionResult">{{result.gps}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
     </ion-content>
 </ion-view>

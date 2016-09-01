@@ -19,6 +19,7 @@ angular.module('App', ['ionic'])
         templateUrl: 'views/uatOutDetailTest/uatOutStateVectorTest.html',
         controller: 'UatOutStateVectorTestController'
       })
+    
       .state('uatOutTargetStateTest', {
         url: '/uatOutTargetStateTest',
         templateUrl: 'views/uatOutDetailTest/uatOutTargetStateTest.html',
