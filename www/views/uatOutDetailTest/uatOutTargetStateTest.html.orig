@@ -1,0 +1,119 @@
+<ion-view view-title="UAT OUT">
+    <ion-nav-buttons side="left">
+        <button class="button button-clear headerbtn" menu-toggle="left">
+              <span class="icon ion-navicon "></span>
+            </button>
+        </ion-nav-buttons>
+            <ion-nav-buttons side="right ">              
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+          <img class="btnimg " src="img\sortfilter.png "> 
+      </button>
+       <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+          <span class="icon ion-android-wifi"></span> 
+      </button>
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click=" ">
+           <span class="icon ion-archive"></span>
+      </button>
+        <button class="button button-clear headerbtn" style="margin-right:3px" ng-click="runTest() ">
+          <span class="icon ion-android-walk"></span>
+      </button>
+       <button class="button button-clear headerbtn" style="margin-right:3px"  ng-click="openMore($event)">
+              <span class="icon ion-android-more-horizontal "></span>
+            </button>
+    </ion-nav-buttons>
+    <ion-content  style="background-color:whitesmoke">
+        <div class="list card">
+            <div  style="align-content: stretch">
+              <div style="margin-bottom:24px;">
+                <button  class="button  button-clear button-stable" >
+                    <span class="icon ion-chevron-left ">  PREVIOUS</span>
+                 </button>
+                 
+                 <button  class="button button-clear button-stable nextBtn">NEXT  
+                     <span class="icon ion-chevron-right"/>
+                 </button>
+              </div>
+              <div style="margin-left:15px">
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">UAT Target State Test</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.address}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.addressQualifier}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.payloadTypeCodes}}</td>
+            </tr>
+        </table>
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">Target State Element</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">Selected Alt Type:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selectedAltType}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Selected Altitude:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selectedAltitude}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Baro Press Setting:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.baroPressSetting}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Seleced Heading:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selecedHeading}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">MCP/FCU M Status:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.mfStatus}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">AutoPilot:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.autoPilot}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">VNAV:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.vnav}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Altitude Hold:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.altitudeHold}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Approach Mode:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.approachMode}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel"> LNAV Mode:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.lnavMode}}</td>
+            </tr>
+        </table>
+        <table>
+<tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+            </tr> 
+            <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2">{{result.uatOutTargetStateTest.freq}}</td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4">{{result.uatOutTargetStateTest.power}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2">{{result.uatOutTargetStateTest.gps}}</td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;">{{result.uatOutTargetStateTest.rfLinkTest}}</td>
+            </tr>
+        </table>
+              </div>
+            </div></div>
+    </ion-content>
+</ion-view>

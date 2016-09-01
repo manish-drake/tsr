@@ -33,26 +33,34 @@
     vertical-align: middle;       
 }
 .Subfooter1{
-    width: 15%;     
-    margin-left: 10px; 
+    width: 90px; 
+    margin-left: 10px;
+    vertical-align: middle;
 }
-.Subfooter2{
+
+.tabs-border {
+    border: 0px !important;
+    border-top-color: transparent !important;
+    background-image: none !important;
+    border-top: none !important;
+}
+/*.Subfooter2{
     width: 80%; 
     min-width: 100px;
     text-align: center;
     margin-left: 80px;
-    }
-.Subfooter3align{
+    }*/
+/*.Subfooter3align{
       vertical-align: top; 
     }
 .Subfooter3imgtitle{
     font-size: 11px;
     vertical-align: top; 
-    }
-.headerbtn{
-    width:38px;
-    height:38px;
-    }
+    }*/
+/*.headerbtn{
+    width:48px;
+    height:48px;
+    }*/
 .heading{
     width: 200px;
 }
