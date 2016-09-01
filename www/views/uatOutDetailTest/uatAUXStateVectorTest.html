@@ -1,0 +1,77 @@
+<ion-view view-title="UAT OUT">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right ">
+        <button class="button button-clear" ng-click=" ">
+                <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
+          </button>
+        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
+        <button class="button button-icon icon ion-archive" ng-click=" "></button>
+        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
+        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
+    </ion-nav-buttons>
+     <ion-content  style="background-color:whitesmoke">
+        <div class="list card">
+            <div  style="align-content: stretch">
+              <div style="margin-bottom:24px;">
+                <button  class="button  button-clear button-stable" >
+                    <span class="icon ion-chevron-left ">  PREVIOUS</span>
+                 </button>
+                 
+                 <button  class="button button-clear button-stable nextBtn">NEXT  
+                     <span class="icon ion-chevron-right"/>
+                 </button>
+              </div>
+              <div style="margin-left:15px">
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">UAT AUX State Vector</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">{{result.uatOutAUXStateVectorTest.address}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult">{{result.uatOutAUXStateVectorTest.addressQualifier}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult">{{result.uatOutAUXStateVectorTest.payloadTypeCodes}}</td>
+            </tr>
+        </table>
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">UAT AUX State Vector Element</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">Altitude:</td>
+                <td class="detailResult">{{result.uatOutAUXStateVectorTest.altitude}}</td>
+            </tr>
+             <tr>
+                <td class="detailLabel">Altitude Type:</td>
+                <td class="detailResult">{{result.uatOutAUXStateVectorTest.altitudeType}}</td>
+            </tr>            
+        </table>
+        <table>
+<tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+            </tr> 
+            <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2">{{result.uatOutAUXStateVectorTest.freq}}</td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4">{{result.uatOutAUXStateVectorTest.power}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2">{{result.uatOutAUXStateVectorTest.gps}}</td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;">{{result.uatOutAUXStateVectorTest.rfLinkTest}}</td>
+            </tr>
+        </table>
+              </div>
+            </div></div>
+    </ion-content>
+</ion-view>

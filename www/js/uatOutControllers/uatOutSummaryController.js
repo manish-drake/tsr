@@ -1,5 +1,5 @@
 angular.module('App')
-.controller('UatOutStateVectorTestController', function($scope, $http, $ionicLoading, $ionicPopover){
+.controller('UatOutSummaryController', function($scope, $http, $ionicLoading, $ionicPopover){
     
     $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
            scope: $scope, 

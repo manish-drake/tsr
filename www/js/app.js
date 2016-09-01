@@ -3,6 +3,11 @@ angular.module('App', ['ionic'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
+      .state('index', {
+        url: '/index',
+        controller: 'IndexController',
+        templateUrl: 'index.html'
+      })
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutController',
@@ -24,7 +29,28 @@ angular.module('App', ['ionic'])
         url: '/uatOutRFLinkTest',
         templateUrl: 'views/uatOutDetailTest/uatOutRFLinkTest.html',
         controller: 'UatOutRFLinkTestController'
-      });
+      })
+      .state('uatOutModeStatusTest', {
+        url: '/uatOutModeStatusTest',
+        templateUrl: 'views/uatOutDetailTest/uatOutModeStatusTest.html',
+        controller: 'UatOutModeStatusTestController'
+      })
+      .state('uatOutAUXStateVectorTest', {
+        url: '/uatOutAUXStateVectorTest',
+        templateUrl: 'views/uatOutDetailTest/uatAUXStateVectorTest.html',
+        controller: 'UatOutAuxStateVectorTestController'
+      })
+      .state('uatOutTrajectoryChangeTest', {
+        url: '/uatOutTrajectoryChangeTest',
+        templateUrl: 'views/uatOutDetailTest/uatOutTrajectoryChangeTest.html',
+        controller: 'UatOutTrajectoryChangeTestController'
+      })
+      .state('uatOutSummary', {
+        url: '/uatOutSummary',
+        templateUrl: 'views/uatOutDetailTest/uatOutSummary.html',
+        controller: 'UatOutSummaryController'
+      })
+      ;
 
     $urlRouterProvider.otherwise('/uatOutSection');
   })

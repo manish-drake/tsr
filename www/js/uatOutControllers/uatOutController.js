@@ -40,7 +40,6 @@ angular.module('App')
             }
         }
 
-
         $scope.runTest = function () {
             $ionicLoading.show();
 
