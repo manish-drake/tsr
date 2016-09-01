@@ -71,6 +71,14 @@
     font-size: 21px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
+.detailRFLinkResult{
+    color: dimgray;
+    padding-left: 10px;
+    padding-bottom:  11px;
+    width:160px;    
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
 .detailLabel1{
     color: dimgray;
     width: 50px;
