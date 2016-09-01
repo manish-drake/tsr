@@ -205,5 +205,37 @@
                 </div>
             </div>
         </div>
+         <div class="list card" ui-sref="uatOutSummary">
+            <div class="item ">
+               <p style="align-content: stretch ">
+                    <span class="sectionHeading" style="float: left ">UAT Summary</span>
+                    <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result7.rfLinkTest}}</span>
+                        <span class="icon ion-ios-star-outline favBtn" />
+                </p>
+             <div style="margin-top:12px;">
+                <table style="table-layout: fixed ">
+                    <tr>
+                        <td class="sectionLabel">Address: </td>
+                        <td class="sectionResult">{{result7.address}}</td>
+                        <td class="sectionLabel">Addr Qual: </td>
+                        <td class="sectionResult">{{result7.addressQualifier}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sectionLabel">Payload: </td>
+                        <td class="sectionResult">{{result7.payloadTypeCodes}}</td>
+                        <td class="sectionLabel">A/G State: </td>
+                        <td class="sectionResult">{{result7.agState}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sectionLabel">RF Link: </td>
+                        <td class="sectionResult">{{result7.rfLinkTest}}</td>
+                        <td class="sectionLabel">GPS: </td>
+                        <td class="sectionResult">{{result7.gps}}</td>
+                    </tr>
+                </table>
+             </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

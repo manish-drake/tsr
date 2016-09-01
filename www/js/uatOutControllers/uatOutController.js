@@ -83,8 +83,8 @@ angular.module('App')
                             $scope.$parent.result6 = res.data.uatOutTrajectoryChangeTest;
                             break;
                         case 'uatOutSummary':
-                            $scope.result7 = res.data.uatOutStateVectorTestSubsonic;
-                            $scope.$parent.result7 = res.data.uatOutStateVectorTestSubsonic;
+                            $scope.result7 = res.data.uatOutDetailSummary;
+                            $scope.$parent.result7 = res.data.uatOutDetailSummary;
                             break;
 
                         default:

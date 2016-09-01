@@ -26,65 +26,84 @@
               <div style="margin-left:15px">
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
+                <th class="detailheading" colspan="2" align="left">UAT Summary</th>
             </tr>
             <tr>
                 <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.address}}</td>
+                <td class="detailResult">{{result7.address}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.addressQualifier}}</td>
+                <td class="detailResult">{{result7.addressQualifier}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.payloadTypeCodes}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Equipage Class:</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.equipageClass}}</td>
-            </tr>
+                <td class="detailResult">{{result7.payloadTypeCodes}}</td>
+            </tr>           
         </table>
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
+                <th class="detailheading" colspan="3" align="left">Element Summary Data</th>
             </tr>
             <tr>
-                <td class="detailLabel">TX Power:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.txPower}}</td>
+                <td class="detailLabel">Latitude:</td>
+                <td class="detailRFLinkResult">{{result7.latitude}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Power Droop:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.powerDroop}}</td>
+                <td class="detailLabel">Longitude:</td>
+                <td class="detailRFLinkResult">{{result7.longitude}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Frequency:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.frequencyA}}</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.frequencyB}}</td>
+                <td class="detailLabel">A/G State: {{result7.agState}}</td>
+                <td class="detailRFLinkResult">N Vel: {{result7.nVel}}</td>
+                <td class="detailResult">E Vel: {{result7.eVel}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Deviation:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.deviationA}}</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.deviationB}}</td>
+                <td class="detailLabel">Emit Cat: {{result7.emitCat}}</td>
+                <td class="detailRFLinkResult">ID: {{result7.id}}</td>
+                <td class="detailResult">Emer: {{result7.emer}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">peakDeviation:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.peakDeviationA}}</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.peakDeviationB}}</td>
+                <td class="detailLabel">SIL: {{result7.sil}}</td>
+                <td class="detailRFLinkResult">SIL-S: {{result7.silS}}</td>
+                <td class="detailResult">NAC-P: {{result7.nacP}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Message Timming:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.messageTimming}}</td>
+                <td class="detailLabel">NAC-V: {{result7.nacV}}</td>
+                <td class="detailRFLinkResult">NIC Baro: {{result7.nicBaro}}</td>
+                 <td class="detailRFLinkResult">UAT In: {{result7.uatIn}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Eye Openning Ver:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerA}}</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerB}}</td>
+                <td class="detailLabel">1090ES In: </td>
+                <td class="detailRFLinkResult">TCAS: {{result7.tcas}}</td>
+                <td class="detailResult">TCAS RA: {{result7.tcasRA}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Eye Openning Hor:</td>
-                <td class="detailRFLinkResult">{{result.uatOutDetailRFLinkTest.eyeOpenningHorA}}</td>
-                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningHorB}}</td>
+                <td class="detailLabel">Ident: {{result7.ident}}</td>
+                <td class="detailRFLinkResult">ATC Serv: {{result7.atcServ}}</td>
+                <td class="detailResult">CSID: {{result7.csid}}</td>
+            </tr>
+             <tr>
+                <td class="detailLabel">GVA: {{result7.gva}}</td>
+                <td class="detailRFLinkResult">ANT: {{result7.ant}}</td>
+                <td class="detailResult">FB Code: {{result7.fbCode}}</td>
+            </tr>
+        </table>
+         <table>
+            <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+            </tr> 
+            <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2">{{result7.freq}}</td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4">{{result7.power}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2">{{result7.gps}}</td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;">{{result7.rfLinkTest}}</td>
             </tr>
         </table>
               </div>

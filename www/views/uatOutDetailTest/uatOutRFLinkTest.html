@@ -11,83 +11,84 @@
         <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
-    <ion-content  style="background-color:whitesmoke">
+    <ion-content style="background-color:whitesmoke">
         <div class="list card">
-            <div  style="align-content: stretch">
-              <div style="margin-bottom:24px;">
-                <button  class="button  button-clear button-stable" >
+            <div style="align-content: stretch">
+                <div style="margin-bottom:24px;">
+                    <button class="button  button-clear button-stable">
                     <span class="icon ion-chevron-left ">  PREVIOUS</span>
                  </button>
-                 
-                 <button  class="button button-clear button-stable nextBtn">NEXT  
+
+                    <button class="button button-clear button-stable nextBtn">NEXT  
                      <span class="icon ion-chevron-right"/>
                  </button>
-              </div>
-              <div style="margin-left:15px">
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result5.address}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result5.addressQualifier}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result5.payloadTypeCodes}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Equipage Class:</td>
-                <td class="detailResult">{{result5.equipageClass}}</td>
-            </tr>
-        </table>
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">TX Power:</td>
-                <td class="detailResult">{{result5.txPower}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Power Droop:</td>
-                <td class="detailResult">{{result5.powerDroop}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Frequency:</td>
-                <td class="detailResult">{{result5.frequencyA}}</td>
-                <td class="detailResult">{{result5.frequencyB}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Deviation:</td>
-                <td class="detailResult">{{result5.deviationA}}</td>
-                <td class="detailResult">{{result5.deviationB}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">peakDeviation:</td>
-                <td class="detailResult">{{result5.peakDeviationA}}</td>
-                <td class="detailResult">{{result5.peakDeviationB}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Message Timming:</td>
-                <td class="detailResult">{{result5.messageTimming}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Eye Openning Ver:</td>
-                <td class="detailResult">{{result5.eyeOpenningVerA}}</td>
-                <td class="detailResult">{{result5.eyeOpenningVerB}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Eye Openning Hor:</td>
-                <td class="detailResult">{{result5.eyeOpenningHorA}}</td>
-                <td class="detailResult">{{result5.eyeOpenningHorB}}</td>
-            </tr>
-        </table>
-              </div>
-            </div></div>
+                </div>
+                <div style="margin-left:15px">
+                    <table class="detailpageTbmargin">
+                        <tr>
+                            <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">AA ID:</td>
+                            <td class="detailResult">{{result5.address}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Address Qualifier:</td>
+                            <td class="detailResult">{{result5.addressQualifier}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Payload Type Codes:</td>
+                            <td class="detailResult">{{result5.payloadTypeCodes}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Equipage Class:</td>
+                            <td class="detailResult">{{result5.equipageClass}}</td>
+                        </tr>
+                    </table>
+                    <table class="detailpageTbmargin">
+                        <tr>
+                            <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">TX Power:</td>
+                            <td class="detailResult">{{result5.txPower}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Power Droop:</td>
+                            <td class="detailResult">{{result5.powerDroop}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Frequency:</td>
+                            <td class="detailResult">{{result5.frequencyA}}</td>
+                            <td class="detailResult">{{result5.frequencyB}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Deviation:</td>
+                            <td class="detailResult">{{result5.deviationA}}</td>
+                            <td class="detailResult">{{result5.deviationB}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">peakDeviation:</td>
+                            <td class="detailResult">{{result5.peakDeviationA}}</td>
+                            <td class="detailResult">{{result5.peakDeviationB}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Message Timming:</td>
+                            <td class="detailResult">{{result5.messageTimming}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Eye Openning Ver:</td>
+                            <td class="detailResult">{{result5.eyeOpenningVerA}}</td>
+                            <td class="detailResult">{{result5.eyeOpenningVerB}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailLabel">Eye Openning Hor:</td>
+                            <td class="detailResult">{{result5.eyeOpenningHorA}}</td>
+                            <td class="detailResult">{{result5.eyeOpenningHorB}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
