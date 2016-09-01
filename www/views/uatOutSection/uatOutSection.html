@@ -1,5 +1,5 @@
 <ion-view view-title="UAT OUT">
-    <!--<ion-nav-buttons side="left">
+    <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right ">
@@ -10,28 +10,15 @@
         <button class="button button-icon icon ion-archive" ng-click=" "></button>
         <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
-    </ion-nav-buttons>-->
-    <div class="buttons">
-          <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        </div>
-        <h1 class="title"></h1>
-        <div class="buttons">
-          <button class="button button-clear" ng-click=" ">
-                <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
-          </button>
-        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
-        <button class="button button-icon icon ion-archive" ng-click=" "></button>
-        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
-        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
-        </div>
-    <ion-content style="background-color:whitesmoke">
-        <div class="list card " ng-dblclick="goNext(uatOutStateVectorTest)">
+    </ion-nav-buttons>
+     <ion-content style="background-color:whitesmoke">
+        <div class="list card " ui-sref="uatOutStateVectorTest">
             <div class="item " style="align-content: stretch ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
                     <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                         <span style="color:green; font-size:21px" >{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</span>
+                        <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                 <table style="table-layout: fixed ">
                     <tr>
@@ -48,7 +35,7 @@
                     </tr>
                     <tr>
                         <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult" style="color:green;">{{result.rfLinkTest}}</td>
+                        <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.rfLinkTest}}</td>
                         <td class="sectionLabel">GPS: </td>
                         <td class="sectionResult">{{result.uatOutStateVectorTestSubsonic.gps}}</td>
                     </tr>
@@ -61,6 +48,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
                     <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.uatOutModeStatusTest.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                <div style="margin-top:12px;">
@@ -90,9 +78,11 @@
         </div>
         <div class="list card " ui-sref="uatOutTargetStateTest">
             <div class="item ">
+                
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
                     <span style="float: right ">
+                       <span style="color:green; font-size:21px" >{{result.uatOutTargetStateTest.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                 <div style="margin-top:12px;">
@@ -124,6 +114,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
                     <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.uatOutAUXStateVectorTest.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                 <div style="margin-top:12px;">
@@ -155,6 +146,7 @@
                <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
                     <span style="float: right ">
+                        <span style="color:green; font-size:21px" >{{result.uatOutDetailRFLinkTest.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
               <div style="margin-top:12px;">
@@ -186,6 +178,7 @@
                  <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
                     <span style="float: right ">
+                         <span style="color:green; font-size:21px" >{{result.uatOutTrajectoryChangeTest.rfLinkTest}}</span>
                         <span class="icon ion-ios-star-outline favBtn" />
                 </p>
                <div style="margin-top:12px;">

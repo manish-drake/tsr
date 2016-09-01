@@ -21,6 +21,7 @@
 
   <!-- your app's js -->
   <script src="js/app.js"></script>
+  <script src="js/indexController.js"></script>
   <script src="js/uatOutControllers/uatOutController.js"></script>
   <script src="js/uatOutControllers/uatOutStateVectorTestController.js"></script>
   <script src="js/uatOutControllers/uatOutTargetStateTestController.js"></script>
@@ -34,9 +35,10 @@
 <body ng-app="App">
   <ion-side-menus>
     <ion-side-menu-content>
-      <!--<ion-nav-bar class="bar-positive" align-title="left">
-       </ion-nav-bar>-->
-      <ion-header-bar align-title="left" class="bar-positive">
+      <ion-nav-bar class="bar-positive" align-title="left">
+       </ion-nav-bar>
+      <ion-nav-view>
+        <!--<ion-header-bar align-title="left" class="bar-positive">
         <div class="buttons">
           <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         </div>
@@ -50,8 +52,7 @@
           <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
           <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
         </div>
-      </ion-header-bar>
-      <ion-nav-view>
+      </ion-header-bar>-->
         <ion-footer-bar class="bar-stable" style="height:50px">
           <div class="buttons Subfooter1">
             <button class="button icon-left ion-person">&nbsp;Login</button>

@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatOutController',function ($scope,$location,$http, $ionicLoading, $ionicPopover) {
+    .controller('UatOutController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
         $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
            scope: $scope, 
@@ -14,11 +14,6 @@ angular.module('App')
           $scope.closePopover = function() {
              $scope.popover.hide();
          }
-
-         $scope.goNext = function (hash) { 
-             $location.path(hash);
-         }
-
 
         $scope.runTest = function () {
             $ionicLoading.show();
