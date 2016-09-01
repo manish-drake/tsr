@@ -20,8 +20,8 @@ angular.module('App')
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
-                    $scope.result = res.data;
-                    $scope.$parent.result = res.data;
+                    $scope.result3 = res.data.uatOutDetailRFLinkTest;
+                    $scope.$parent.result3 = res.data.uatOutDetailRFLinkTest;
                     $ionicLoading.hide();
                 })
                 .error(function(err){
