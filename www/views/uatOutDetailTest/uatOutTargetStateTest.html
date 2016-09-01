@@ -26,60 +26,64 @@
               <div style="margin-left:15px">
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
+                <th class="detailheading" colspan="2" align="left">UAT Target State Test</th>
             </tr>
             <tr>
                 <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result.address}}</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.address}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result.addressQualifier}}</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.addressQualifier}}</td>
             </tr>
             <tr>
                 <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result.payloadTypeCodes}}</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.payloadTypeCodes}}</td>
             </tr>
         </table>
         <table class="detailpageTbmargin">
             <tr>
-                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+                <th class="detailheading" colspan="2" align="left">Target State Element</th>
             </tr>
             <tr>
-                <td class="detailLabel">Air/Ground State:</td>
-                <td class="detailResult">{{result.agState}}</td>
+                <td class="detailLabel">Selected Alt Type:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selectedAltType}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Latitude:</td>
-                <td class="detailResult">{{result.latitude}}</td>
+                <td class="detailLabel">Selected Altitude:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selectedAltitude}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Longitude:</td>
-                <td class="detailResult">{{result.longitude}}</td>
+                <td class="detailLabel">Baro Press Setting:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.baroPressSetting}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">NIC:</td>
-                <td class="detailResult">{{result.nic}}</td>
+                <td class="detailLabel">Seleced Heading:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.selecedHeading}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Altitude:</td>
-                <td class="detailResult">{{result.altitude}}</td>
+                <td class="detailLabel">MCP/FCU M Status:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.mfStatus}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Altitude Type:</td>
-                <td class="detailResult">{{result.altitudeType}}</td>
+                <td class="detailLabel">AutoPilot:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.autoPilot}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">North Velocity:</td>
-                <td class="detailResult">{{result.horizontalVelocity.nsK}}</td>
+                <td class="detailLabel">VNAV:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.vnav}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">East Velocity:</td>
-                <td class="detailResult">{{result.horizontalVelocity.ewK}}</td>
+                <td class="detailLabel">Altitude Hold:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.altitudeHold}}</td>
             </tr>
             <tr>
-                <td class="detailLabel">Feedback Code:</td>
-                <td class="detailResult">{{result.uplinkFeedback}}</td>
+                <td class="detailLabel">Approach Mode:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.approachMode}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel"> LNAV Mode:</td>
+                <td class="detailResult">{{result.uatOutTargetStateTest.lnavMode}}</td>
             </tr>
         </table>
         <table>
@@ -88,15 +92,15 @@
             </tr> 
             <tr>
                 <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result.freq}}</td>
+                <td class="detailResult2">{{result.uatOutTargetStateTest.freq}}</td>
                 <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result.power}}</td>
+                <td class="detailResult4">{{result.uatOutTargetStateTest.power}}</td>
             </tr>
             <tr>
                 <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result.gps}}</td>
+                <td class="detailResult2">{{result.uatOutTargetStateTest.gps}}</td>
                 <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result.rfLinkTest}}</td>
+                <td class="detailResult4" style="color:green;">{{result.uatOutTargetStateTest.rfLinkTest}}</td>
             </tr>
         </table>
               </div>

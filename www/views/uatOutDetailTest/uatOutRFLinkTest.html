@@ -1,0 +1,92 @@
+<ion-view view-title="UAT OUT">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right ">
+        <button class="button button-clear" ng-click=" ">
+                <div style="padding-top:2px"><img src="img\sortfilter.png "></div>
+          </button>
+        <button class="button button-icon icon ion-android-wifi" ng-click=" "></button>
+        <button class="button button-icon icon ion-archive" ng-click=" "></button>
+        <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
+        <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
+    </ion-nav-buttons>
+    <ion-content  style="background-color:whitesmoke">
+        <div class="list card">
+            <div  style="align-content: stretch">
+              <div style="margin-bottom:24px;">
+                <button  class="button  button-clear button-stable" >
+                    <span class="icon ion-chevron-left ">  PREVIOUS</span>
+                 </button>
+                 
+                 <button  class="button button-clear button-stable nextBtn">NEXT  
+                     <span class="icon ion-chevron-right"/>
+                 </button>
+              </div>
+              <div style="margin-left:15px">
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.address}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.addressQualifier}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.payloadTypeCodes}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Equipage Class:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.equipageClass}}</td>
+            </tr>
+        </table>
+        <table class="detailpageTbmargin">
+            <tr>
+                <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
+            </tr>
+            <tr>
+                <td class="detailLabel">TX Power:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.txPower}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Power Droop:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.powerDroop}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Frequency:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.frequencyA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.frequencyB}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Deviation:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.deviationA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.deviationB}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">peakDeviation:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.peakDeviationA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.peakDeviationB}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Message Timming:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.messageTimming}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Eye Openning Ver:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerA}}</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningVerB}}</td>
+            </tr>
+            <tr>
+                <td class="detailLabel">Eye Openning Hor:</td>
+                <td class="detailResult">{{result.uatOutDetailRFLinkTest.eyeOpenningHorA}}</td>
+            </tr>
+        </table>
+              </div>
+            </div></div>
+    </ion-content>
+</ion-view>
