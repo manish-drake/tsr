@@ -13,145 +13,139 @@
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
         <div class="list card">
-            <div  style="align-content: stretch">
-              <div style="margin-bottom:24px;">
-                <button  class="button  button-clear button-stable" >
-                    <span class="icon ion-chevron-left ">  PREVIOUS</span>
-                 </button>
-                 
-                 <button  class="button button-clear button-stable nextBtn">NEXT  
-                     <span class="icon ion-chevron-right"/>
-                 </button>
-              </div>
-              <div style="margin-left:15px">
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">UAT Mode Status</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result2.address}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result2.addressQualifier}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result2.payloadTypeCodes}}</td>
-            </tr>
-        </table>
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">Mode Status Element</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">Emitter Status:</td>
-                <td class="detailResult">{{result2.emitterCat}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Flight Id:</td>
-                <td class="detailResult">{{result2.fightID}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Emer/Prty Status:</td>
-                <td class="detailResult">{{result2.epStatus}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>SIL: </span>
-                    <span>{{result2.sil}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>SIL Sup:</span>
-                    <span>{{result2.silSup}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>NAC-P:</span>
-                    <span>{{result2.nacP}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>NAC-V:</span>
-                    <span>{{result2.nacV}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>NIC Baro Code:</span>
-                    <span>{{result2.nicBaroCode}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>UAT In:</span>
-                    <span>{{result2.uatIn}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>1090ES In:</span>
-                    <span></span>
-                </td>
-                <td class="detailResult">
-                    <span>TCAS:</span>
-                    <span>{{result2.tcas}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>TCAS RA:</span>
-                    <span>{{result2.tcasRA}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>Ident:</span>
-                    <span>{{result2.ident}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>ATC Serve:</span>
-                    <span>{{result2.atcServe}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>CSID:</span>
-                    <span>{{result2.csid}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>GVA:</span>
-                    <span>{{result2.gva}}</span>
-                </td>
-                <td class="detailResult">
-                    <span>ANT:</span>
-                    <span>{{result2.ant}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="detailLabel">
-                    <span>FB Code:</span>
-                    <span>{{result2.fbCode}}</span>
-                </td>
-            </tr>
-        </table>
-        <table>
-<tr>
-                <th class="detailheading" colspan="2" align="left">RF Link</th>
-            </tr> 
-            <tr>
-                <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result2.freq}}</td>
-                <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result2.power}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result2.gps}}</td>
-                <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result2.rfLinkTest}}</td>
-            </tr>
-        </table>
-              </div>
-            </div></div>
+            <div style="align-content: stretch;margin-bottom:20px;">
+                <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatOutStateVectorTest">PREVIOUS</button>
+                <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatOutTargetStateTest" style="float: right">NEXT</button>
+            </div>
+            <div style="margin-left:15px">
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">UAT Mode Status</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">AA ID:</td>
+                        <td class="detailResult">{{result2.address}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Address Qualifier:</td>
+                        <td class="detailResult">{{result2.addressQualifier}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Payload Type Codes:</td>
+                        <td class="detailResult">{{result2.payloadTypeCodes}}</td>
+                    </tr>
+                </table>
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">Mode Status Element</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Emitter Status:</td>
+                        <td class="detailResult">{{result2.emitterCat}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Flight Id:</td>
+                        <td class="detailResult">{{result2.fightID}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Emer/Prty Status:</td>
+                        <td class="detailResult">{{result2.epStatus}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>SIL: </span>
+                            <span>{{result2.sil}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>SIL Sup:</span>
+                            <span>{{result2.silSup}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>NAC-P:</span>
+                            <span>{{result2.nacP}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>NAC-V:</span>
+                            <span>{{result2.nacV}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>NIC Baro Code:</span>
+                            <span>{{result2.nicBaroCode}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>UAT In:</span>
+                            <span>{{result2.uatIn}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>1090ES In:</span>
+                            <span></span>
+                        </td>
+                        <td class="detailResult">
+                            <span>TCAS:</span>
+                            <span>{{result2.tcas}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>TCAS RA:</span>
+                            <span>{{result2.tcasRA}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>Ident:</span>
+                            <span>{{result2.ident}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>ATC Serve:</span>
+                            <span>{{result2.atcServe}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>CSID:</span>
+                            <span>{{result2.csid}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>GVA:</span>
+                            <span>{{result2.gva}}</span>
+                        </td>
+                        <td class="detailResult">
+                            <span>ANT:</span>
+                            <span>{{result2.ant}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">
+                            <span>FB Code:</span>
+                            <span>{{result2.fbCode}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">RF Link</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">Freq=</td>
+                        <td class="detailResult2">{{result2.freq}}</td>
+                        <td class="detailLabel3">Power=</td>
+                        <td class="detailResult4">{{result2.power}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">GPS=</td>
+                        <td class="detailResult2">{{result2.gps}}</td>
+                        <td class="detailLabel3">RF Link Test=</td>
+                        <td class="detailResult4" style="color:green;">{{result2.rfLinkTest}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
