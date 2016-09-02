@@ -121,7 +121,61 @@
 .spacing{
     margin-bottom:   20px;
 }
+
+
+/*Custom card style start*/
+.customcard, .list-inset {
+  overflow: hidden;
+  margin: 12px 12px;
+  border-radius: 2px;
+  background-color: #fff; }
+
+.customcard {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); }
+  .customcard .item {
+    border-left: 0;
+    border-right: 0; }
+  .customcard .item:first-child {
+    border-top: 0; }
+  .customcard .item:last-child {
+    border-bottom: 0; }
+
+.padding .customcard, .padding .list-inset {
+  margin-left: 0;
+  margin-right: 0; }
+
+.customcard .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px; }
+  .customcard .item:first-child .item-content, .list-inset .item:first-child .item-content, .padding > .list .item:first-child .item-content {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; }
+.customcard .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px; }
+  .customcard .item:last-child .item-content, .list-inset .item:last-child .item-content, .padding > .list .item:last-child .item-content {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px; }
+
+.customcard .item:last-child, .list-inset .item:last-child {
+  margin-bottom: -1px; }
+
+.customcard .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
+  margin-right: 0;
+  margin-left: 0; }
+  .customcard .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+    padding-right: 44px; }
+
+.padding-left > .list .item {
+  margin-left: 0; }
+
+.padding-right > .list .item {
+  margin-right: 0; }
+  /*Custom card style End*/
 /*.nextBtn{
     float: right;
 }*/
+
 
