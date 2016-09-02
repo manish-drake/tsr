@@ -1,5 +1,6 @@
 angular.module('App')
-.controller('MorePopoverController', function ($scope, $ionicPopup,$ionicModal,$rootScope) {
+<<<<<<< HEAD
+  .controller('MorePopoverController', function ($scope, $ionicPopup,$ionicModal,$rootScope) {
  //Code for Help Modal  
  $ionicModal.fromTemplateUrl('views/modal/help/help.html', {
     scope: $scope,
@@ -14,7 +15,6 @@ angular.module('App')
     $scope.modal.hide();
   };
 
-
 //Code for Setup Modal 
  $ionicModal.fromTemplateUrl('views/modal/setup/setup.html', {
     scope: $scope,
@@ -28,10 +28,9 @@ angular.module('App')
   $scope.closeSetup = function() {
     $scope.modal1.hide();
   }; 
+=======
+  .controller('MorePopoverController', function ($scope, $ionicPopup,$rootScope) {
+>>>>>>> 6ff878aa48c096d4f16a257fbabec0758530be52
 
-      $scope.runButton_Click = function ($event) 
-      {
-        params.button2.clicked = !params.button2.clicked
-      }
 
   })

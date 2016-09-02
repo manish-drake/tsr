@@ -1,4 +1,9 @@
-.favBtn{font-size: 30px; }
+.fav-checked{color:gold; margin-top:-5px;margin-right: -8px}
+
+.fav-unchecked{color:lightgray; margin-top:-5px;margin-right: -8px}
+
+.teststatus{font-size:21px; margin-right:15px; vertical-align:top;color:green;}
+
 .navtodetail{
     float: right ; 
     font-size: 30px; 
@@ -20,10 +25,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .sectionHeading{
+    margin-bottom: 15px;
     color: #000;
      font-size: 21px;    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      }
 .detailheading{
+    margin-bottom: 15px;
     color: #000;
     font-size: 21px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -120,6 +127,10 @@
 }
 .spacing{
     margin-bottom:   20px;
+}
+
+.cardselected {
+    border-color:#8BB3F9;
 }
 
 /*Custom card style start*/
