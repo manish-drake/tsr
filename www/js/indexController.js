@@ -2,18 +2,18 @@ angular.module('App')
     .controller('IndexController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
         $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
-           scope: $scope, 
-        }).then(function(popover){
+            scope: $scope,
+        }).then(function (popover) {
             $scope.popover = popover;
         })
-        
-        $scope.openMore = function($event){
+
+        $scope.openMore = function ($event) {
             $scope.popover.show($event);
         }
 
-          $scope.closePopover = function() {
-             $scope.popover.hide();
-         }
+        $scope.closePopover = function () {
+            $scope.popover.hide();
+        }
 
         $scope.runTest = function () {
             $ionicLoading.show();
@@ -24,7 +24,7 @@ angular.module('App')
                     $scope.$parent.result = res.data;
                     $ionicLoading.hide();
                 })
-                .error(function(err){
+                .error(function (err) {
                     $ionicLoading.hide();
                 });
         }

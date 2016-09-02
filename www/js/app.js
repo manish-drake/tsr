@@ -10,7 +10,7 @@ angular.module('App', ['ionic'])
       })
        .state('morePopup', {
         url: '/morePopup',
-        controller: 'morePopupController',
+        controller: 'MorePopupController',
         templateUrl: 'views/uatOutSection/morePopover.html'
       })
       .state('uatOutSection', {
@@ -19,8 +19,8 @@ angular.module('App', ['ionic'])
         templateUrl: 'views/uatOutSection/uatOutSection.html'
       })
 
-      .state('morePopover', {
-        url: '/morePopover',
+      .state('morePopoverController', {
+        url: '/morePopoverController',
         controller: 'morePopoverController',
         templateUrl: 'views/uatOutSection/morePopover.html'
       })
