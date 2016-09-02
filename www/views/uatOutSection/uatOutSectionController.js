@@ -17,9 +17,11 @@ angular.module('App')
             $scope.popover.hide();
         }
 
+        $scope.selectedRow = null;
         $scope.singleClick = function (val) {
 
             $scope.Val = val;
+            $scope.selectedRow = val;
         }
 
         $scope.doubleClick = function (val) {

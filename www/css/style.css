@@ -122,6 +122,10 @@
     margin-bottom:   20px;
 }
 
+.cardselected {
+    border-color:#8BB3F9;
+}
+
 /*Custom card style start*/
 .customcard, .list-inset {
   overflow: hidden;
