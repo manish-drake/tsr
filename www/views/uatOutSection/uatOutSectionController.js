@@ -23,10 +23,11 @@ angular.module('App')
         $scope.runButton_Click = function (val) {
             $scope.button2 = val;
         }
-
+        $scope.selectedRow = null;
         $scope.singleClick = function (val) {
 
             $scope.Val = val;
+            $scope.selectedRow = val;
         }
 
         $scope.doubleClick = function (val) {
@@ -61,7 +62,7 @@ angular.module('App')
         $scope.runTest = function () {
             $ionicLoading.show();
 
-            $http.get('http://13.90.248.158:8081/run_test_get?msgID='+$scope.Val+'&reqID=12')
+            $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.Val + '&reqID=12')
                 .success(function (res) {
                     if ($scope.button2) { $scope.RunAll(res); }
                     else { $scope.SelectedCard(res); }

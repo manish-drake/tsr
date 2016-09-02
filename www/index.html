@@ -34,12 +34,12 @@
 </head>
 
 <body ng-app="App">
-  <ion-side-menus>
+  <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
-      <ion-nav-bar class="bar-positive" align-title="left">
-       </ion-nav-bar>
+      <!--<ion-nav-bar class="bar-positive" align-title="left">
+       </ion-nav-bar>-->
       <ion-nav-view>
-        <!--<ion-header-bar align-title="left" class="bar-positive">
+        <ion-header-bar align-title="left" class="bar-positive">
         <div class="buttons">
           <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         </div>
@@ -53,7 +53,7 @@
           <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
           <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
         </div>
-      </ion-header-bar>-->
+      </ion-header-bar>
         <ion-footer-bar class="bar-stable" style="height:50px">
           <div class="buttons Subfooter1">
             <button class="button icon-left ion-person">&nbsp;Login</button>
