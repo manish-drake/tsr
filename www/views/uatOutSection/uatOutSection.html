@@ -12,8 +12,8 @@
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
-        <div class="list card " on-tap="singleClick('uatOutStateVectorTest')" on-double-tap="doubleClick('uatOutStateVectorTest')">
-            <div class="item " style="align-content: stretch ">
+        <div class="list">
+            <div class="item customcard" on-tap="singleClick('uatOutStateVectorTest')" on-double-tap="doubleClick('uatOutStateVectorTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
                     <span style="float: right ">
@@ -40,11 +40,8 @@
                         <td class="sectionResult">{{result1.gps}}</td>
                     </tr>
                 </table>
-
             </div>
-        </div>
-        <div class="list card " on-tap="singleClick('uatOutModeStatusTest')" on-double-tap="doubleClick('uatOutModeStatusTest')">
-            <div class="item ">
+            <div class="item customcard" on-tap="singleClick('uatOutModeStatusTest')" on-double-tap="doubleClick('uatOutModeStatusTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
                     <span style="float: right ">
@@ -75,10 +72,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="list card " on-tap="singleClick('uatOutTargetStateTest')" on-double-tap="doubleClick('uatOutTargetStateTest')">
-            <div class="item ">
-
+            <div class="item customcard " on-tap="singleClick('uatOutTargetStateTest')" on-double-tap="doubleClick('uatOutTargetStateTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
                     <span style="float: right ">
@@ -108,9 +102,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="list card " on-tap="singleClick('uatOutAUXStateVectorTest')" on-double-tap="doubleClick('uatOutAUXStateVectorTest')">
-            <div class="item ">
+            <div class="item customcard" on-tap="singleClick('uatOutAUXStateVectorTest')" on-double-tap="doubleClick('uatOutAUXStateVectorTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
                     <span style="float: right ">
@@ -140,9 +132,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="list card " on-tap="singleClick('uatOutRFLinkTest')" on-double-tap="doubleClick('uatOutRFLinkTest')">
-            <div class="item ">
+            <div class="item customcard" on-tap="singleClick('uatOutRFLinkTest')" on-double-tap="doubleClick('uatOutRFLinkTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
                     <span style="float: right ">
@@ -172,9 +162,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="list card " on-tap="singleClick('uatOutTrajectoryChangeTest')" on-double-tap="doubleClick('uatOutTrajectoryChangeTest')">
-            <div class="item ">
+            <div class="item customcard" on-tap="singleClick('uatOutTrajectoryChangeTest')" on-double-tap="doubleClick('uatOutTrajectoryChangeTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
                     <span style="float: right ">
@@ -204,37 +192,35 @@
                     </table>
                 </div>
             </div>
-        </div>
-         <div class="list card" on-tap="singleClick('uatOutSummary')" on-double-tap="doubleClick('uatOutSummary')">
-            <div class="item ">
-               <p style="align-content: stretch ">
+            <div class="item customcard" on-tap="singleClick('uatOutSummary')" on-double-tap="doubleClick('uatOutSummary')">
+                <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Summary</span>
                     <span style="float: right ">
                          <span style="color:green; font-size:21px" >{{result7.rfLinkTest}}</span>
-                        <span class="icon ion-ios-star-outline favBtn" />
+                    <span class="icon ion-ios-star-outline favBtn" />
                 </p>
-             <div style="margin-top:12px;">
-                <table style="table-layout: fixed ">
-                    <tr>
-                        <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result7.address}}</td>
-                        <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result7.addressQualifier}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result7.payloadTypeCodes}}</td>
-                        <td class="sectionLabel">A/G State: </td>
-                        <td class="sectionResult">{{result7.agState}}</td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result7.rfLinkTest}}</td>
-                        <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result7.gps}}</td>
-                    </tr>
-                </table>
-             </div>
+                <div style="margin-top:12px;">
+                    <table style="table-layout: fixed ">
+                        <tr>
+                            <td class="sectionLabel">Address: </td>
+                            <td class="sectionResult">{{result7.address}}</td>
+                            <td class="sectionLabel">Addr Qual: </td>
+                            <td class="sectionResult">{{result7.addressQualifier}}</td>
+                        </tr>
+                        <tr>
+                            <td class="sectionLabel">Payload: </td>
+                            <td class="sectionResult">{{result7.payloadTypeCodes}}</td>
+                            <td class="sectionLabel">A/G State: </td>
+                            <td class="sectionResult">{{result7.agState}}</td>
+                        </tr>
+                        <tr>
+                            <td class="sectionLabel">RF Link: </td>
+                            <td class="sectionResult">{{result7.rfLinkTest}}</td>
+                            <td class="sectionLabel">GPS: </td>
+                            <td class="sectionResult">{{result7.gps}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </ion-content>

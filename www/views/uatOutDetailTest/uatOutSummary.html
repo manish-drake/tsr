@@ -11,96 +11,96 @@
         <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
-    <ion-content  style="background-color:whitesmoke">
+    <ion-content style="background-color:whitesmoke">
         <div class="list card">
             <div style="align-content: stretch;margin-bottom:20px;">
                 <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatOutTrajectoryChangeTest">PREVIOUS</button>
                 <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatOutStateVectorTest" style="float: right">NEXT</button>
             </div>
-              <div style="margin-left:15px">
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">UAT Summary</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result7.address}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result7.addressQualifier}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result7.payloadTypeCodes}}</td>
-            </tr>           
-        </table>
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="3" align="left">Element Summary Data</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">Latitude:</td>
-                <td class="detailRFLinkResult">{{result7.latitude}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Longitude:</td>
-                <td class="detailRFLinkResult">{{result7.longitude}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">A/G State: {{result7.agState}}</td>
-                <td class="detailRFLinkResult">N Vel: {{result7.nVel}}</td>
-                <td class="detailResult">E Vel: {{result7.eVel}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Emit Cat: {{result7.emitCat}}</td>
-                <td class="detailRFLinkResult">ID: {{result7.id}}</td>
-                <td class="detailResult">Emer: {{result7.emer}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">SIL: {{result7.sil}}</td>
-                <td class="detailRFLinkResult">SIL-S: {{result7.silS}}</td>
-                <td class="detailResult">NAC-P: {{result7.nacP}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">NAC-V: {{result7.nacV}}</td>
-                <td class="detailRFLinkResult">NIC Baro: {{result7.nicBaro}}</td>
-                 <td class="detailRFLinkResult">UAT In: {{result7.uatIn}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">1090ES In: </td>
-                <td class="detailRFLinkResult">TCAS: {{result7.tcas}}</td>
-                <td class="detailResult">TCAS RA: {{result7.tcasRA}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Ident: {{result7.ident}}</td>
-                <td class="detailRFLinkResult">ATC Serv: {{result7.atcServ}}</td>
-                <td class="detailResult">CSID: {{result7.csid}}</td>
-            </tr>
-             <tr>
-                <td class="detailLabel">GVA: {{result7.gva}}</td>
-                <td class="detailRFLinkResult">ANT: {{result7.ant}}</td>
-                <td class="detailResult">FB Code: {{result7.fbCode}}</td>
-            </tr>
-        </table>
-         <table>
-            <tr>
-                <th class="detailheading" colspan="2" align="left">RF Link</th>
-            </tr> 
-            <tr>
-                <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result7.freq}}</td>
-                <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result7.power}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result7.gps}}</td>
-                <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result7.rfLinkTest}}</td>
-            </tr>
-        </table>
-              </div>
-            </div></div>
+            <div style="margin-left:15px">
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">UAT Summary</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">AA ID:</td>
+                        <td class="detailResult">{{result7.address}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Address Qualifier:</td>
+                        <td class="detailResult">{{result7.addressQualifier}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Payload Type Codes:</td>
+                        <td class="detailResult">{{result7.payloadTypeCodes}}</td>
+                    </tr>
+                </table>
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="3" align="left">Element Summary Data</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Latitude:</td>
+                        <td class="detailRFLinkResult">{{result7.latitude}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Longitude:</td>
+                        <td class="detailRFLinkResult">{{result7.longitude}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">A/G State: {{result7.agState}}</td>
+                        <td class="detailRFLinkResult">N Vel: {{result7.nVel}}</td>
+                        <td class="detailResult">E Vel: {{result7.eVel}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Emit Cat: {{result7.emitCat}}</td>
+                        <td class="detailRFLinkResult">ID: {{result7.id}}</td>
+                        <td class="detailResult">Emer: {{result7.emer}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">SIL: {{result7.sil}}</td>
+                        <td class="detailRFLinkResult">SIL-S: {{result7.silS}}</td>
+                        <td class="detailResult">NAC-P: {{result7.nacP}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">NAC-V: {{result7.nacV}}</td>
+                        <td class="detailRFLinkResult">NIC Baro: {{result7.nicBaro}}</td>
+                        <td class="detailRFLinkResult">UAT In: {{result7.uatIn}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">1090ES In: </td>
+                        <td class="detailRFLinkResult">TCAS: {{result7.tcas}}</td>
+                        <td class="detailResult">TCAS RA: {{result7.tcasRA}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Ident: {{result7.ident}}</td>
+                        <td class="detailRFLinkResult">ATC Serv: {{result7.atcServ}}</td>
+                        <td class="detailResult">CSID: {{result7.csid}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">GVA: {{result7.gva}}</td>
+                        <td class="detailRFLinkResult">ANT: {{result7.ant}}</td>
+                        <td class="detailResult">FB Code: {{result7.fbCode}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">RF Link</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">Freq=</td>
+                        <td class="detailResult2">{{result7.freq}}</td>
+                        <td class="detailLabel3">Power=</td>
+                        <td class="detailResult4">{{result7.power}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">GPS=</td>
+                        <td class="detailResult2">{{result7.gps}}</td>
+                        <td class="detailLabel3">RF Link Test=</td>
+                        <td class="detailResult4" style="color:green;">{{result7.rfLinkTest}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
