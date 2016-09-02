@@ -14,12 +14,14 @@
     <ion-content style="background-color:whitesmoke">
 
         <ion-list>
-            <ion-item class="customcard" on-tap="singleClick('uatStateVectorTest')" ng-class="{'cardselected':'uatStateVectorTest' == selectedRow}" on-double-tap="doubleClick('uatStateVectorTest')">
+            <ion-item class="customcard" on-tap="singleClick('uatStateVectorTest')" ng-class="{'cardselected':'uatStateVectorTest' == selectedRow}"
+                on-double-tap="doubleClick('uatStateVectorTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result1.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result1.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
                 <table style="table-layout: fixed ">
                     <tr>
@@ -42,14 +44,16 @@
                     </tr>
                 </table>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatModeStatusTest')" ng-class="{'cardselected':'uatModeStatusTest' == selectedRow}" on-double-tap="doubleClick('uatModeStatusTest')">
+            <ion-item class="customcard" on-tap="singleClick('uatModeStatusTest')" ng-class="{'cardselected':'uatModeStatusTest' == selectedRow}"
+                on-double-tap="doubleClick('uatModeStatusTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result2.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result2.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
 
                         <tr>
@@ -73,14 +77,16 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard " on-tap="singleClick('uatTargetStateTest')" ng-class="{'cardselected':'uatTargetStateTest' == selectedRow}" on-double-tap="doubleClick('uatTargetStateTest')">
+            <ion-item class="customcard " on-tap="singleClick('uatTargetStateTest')" ng-class="{'cardselected':'uatTargetStateTest' == selectedRow}"
+                on-double-tap="doubleClick('uatTargetStateTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
-                    <span style="float: right ">
-                       <span style="color:green; font-size:21px" >{{result3.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result3.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
@@ -103,14 +109,16 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatAUXStateVectorTest')" ng-class="{'cardselected':'uatAUXStateVectorTest' == selectedRow}" on-double-tap="doubleClick('uatAUXStateVectorTest')">
+            <ion-item class="customcard" on-tap="singleClick('uatAUXStateVectorTest')" ng-class="{'cardselected':'uatAUXStateVectorTest' == selectedRow}"
+                on-double-tap="doubleClick('uatAUXStateVectorTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result4.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result4.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
@@ -133,14 +141,16 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatRFLinkTest')" ng-class="{'cardselected':'uatRFLinkTest' == selectedRow}" on-double-tap="doubleClick('uatRFLinkTest')">
+            <ion-item class="customcard" on-tap="singleClick('uatRFLinkTest')" ng-class="{'cardselected':'uatRFLinkTest' == selectedRow}"
+                on-double-tap="doubleClick('uatRFLinkTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
-                    <span style="float: right ">
-                        <span style="color:green; font-size:21px" >{{result5.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result5.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
@@ -163,14 +173,16 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatTrajectoryChangeTest')" ng-class="{'cardselected':'uatTrajectoryChangeTest' == selectedRow}" on-double-tap="doubleClick('uatTrajectoryChangeTest')">
+            <ion-item class="customcard" on-tap="singleClick('uatTrajectoryChangeTest')" ng-class="{'cardselected':'uatTrajectoryChangeTest' == selectedRow}"
+                on-double-tap="doubleClick('uatTrajectoryChangeTest')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result6.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result6.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
@@ -196,11 +208,12 @@
             <ion-item class="customcard" on-tap="singleClick('uatSummary')" ng-class="{'cardselected':'uatSummary' == selectedRow}" on-double-tap="doubleClick('uatSummary')">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Summary</span>
-                    <span style="float: right ">
-                         <span style="color:green; font-size:21px" >{{result7.rfLinkTest}}</span>
-                    <span class="icon ion-ios-star-outline favBtn" />
+                    <span style="float:right;">
+                        <span class="teststatus">{{result7.rfLinkTest}}</span>
+                        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
+                    </span>
                 </p>
-                <div style="margin-top:12px;">
+                <div>
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
