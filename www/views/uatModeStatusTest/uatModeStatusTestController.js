@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatOutRFLinkTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatModeStatusTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
         $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
             scope: $scope,
@@ -20,8 +20,8 @@ angular.module('App')
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
-                    $scope.result5 = res.data.uatOutDetailRFLinkTest;
-                    $scope.$parent.result5 = res.data.uatOutDetailRFLinkTest;
+                    $scope.result2 = res.data.uatOutModeStatusTest;
+                    $scope.$parent.result2 = res.data.uatOutModeStatusTest;
                     $ionicLoading.hide();
                 })
                 .error(function (err) {

@@ -8,59 +8,52 @@ angular.module('App', ['ionic'])
         controller: 'IndexController',
         templateUrl: 'index.html'
       })
-       .state('morePopup', {
-        url: '/morePopup',
-        controller: 'MorePopupController',
-        templateUrl: 'views/uatOutSection/morePopover.html'
+       .state('morePopover', {
+        url: '/morePopover',
+        controller: 'MorePopoverController',
+        templateUrl: 'views/morePopover/morePopover.html'
+      })
+      .state('uatAUXStateVectorTest', {
+        url: '/uatAUXStateVectorTest',
+        templateUrl: 'views/uatAUXStateVectorTest/uatAUXStateVectorTest.html',
+        controller: 'UatAuxStateVectorTestController'
+      })
+      .state('uatModeStatusTest', {
+        url: '/uatModeStatusTest',
+        templateUrl: 'views/uatModeStatusTest/uatModeStatusTest.html',
+        controller: 'UatModeStatusTestController'
       })
       .state('uatOutSection', {
         url: '/uatOutSection',
-        controller: 'UatOutController',
+        controller: 'UatOutSectionController',
         templateUrl: 'views/uatOutSection/uatOutSection.html'
       })
-
-      .state('morePopoverController', {
-        url: '/morePopoverController',
-        controller: 'morePopoverController',
-        templateUrl: 'views/uatOutSection/morePopover.html'
+       .state('uatRFLinkTest', {
+        url: '/uatRFLinkTest',
+        templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
+        controller: 'UatRFLinkTestController'
+      })      
+      .state('uatStateVectorTest', {
+        url: '/uatStateVectorTest',
+        templateUrl: 'views/uatStateVectorTest/uatStateVectorTest.html',
+        controller: 'UatStateVectorTestController'
+      })
+      .state('uatSummary', {
+        url: '/uatSummary',
+        templateUrl: 'views/uatSummary/uatSummary.html',
+        controller: 'UatSummaryController'
+      })
+      .state('uatTargetStateTest', {
+        url: '/uatTargetStateTest',
+        templateUrl: 'views/uatTargetStateTest/uatTargetStateTest.html',
+        controller: 'UatTargetStateTestController'
+      })
+      .state('uatTrajectoryChangeTest', {
+        url: '/uatTrajectoryChangeTest',
+        templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
+        controller: 'UatTrajectoryChangeTestController'
       })
       
-      .state('uatOutStateVectorTest', {
-        url: '/uatOutStateVectorTest',
-        templateUrl: 'views/uatOutDetailTest/uatOutStateVectorTest.html',
-        controller: 'UatOutStateVectorTestController'
-      })
-    
-      .state('uatOutTargetStateTest', {
-        url: '/uatOutTargetStateTest',
-        templateUrl: 'views/uatOutDetailTest/uatOutTargetStateTest.html',
-        controller: 'UatOutTargetStateTestController'
-      })
-       .state('uatOutRFLinkTest', {
-        url: '/uatOutRFLinkTest',
-        templateUrl: 'views/uatOutDetailTest/uatOutRFLinkTest.html',
-        controller: 'UatOutRFLinkTestController'
-      })
-      .state('uatOutModeStatusTest', {
-        url: '/uatOutModeStatusTest',
-        templateUrl: 'views/uatOutDetailTest/uatOutModeStatusTest.html',
-        controller: 'UatOutModeStatusTestController'
-      })
-      .state('uatOutAUXStateVectorTest', {
-        url: '/uatOutAUXStateVectorTest',
-        templateUrl: 'views/uatOutDetailTest/uatAUXStateVectorTest.html',
-        controller: 'UatOutAuxStateVectorTestController'
-      })
-      .state('uatOutTrajectoryChangeTest', {
-        url: '/uatOutTrajectoryChangeTest',
-        templateUrl: 'views/uatOutDetailTest/uatOutTrajectoryChangeTest.html',
-        controller: 'UatOutTrajectoryChangeTestController'
-      })
-      .state('uatOutSummary', {
-        url: '/uatOutSummary',
-        templateUrl: 'views/uatOutDetailTest/uatOutSummary.html',
-        controller: 'UatOutSummaryController'
-      })
       ;
 
     $urlRouterProvider.otherwise('/uatOutSection');

@@ -1,8 +1,8 @@
 angular.module('App')
-    .controller('UatOutController', function ($scope, $state, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatOutSectionController', function ($scope, $state, $http, $ionicLoading, $ionicPopover) {
         $scope.Val = 'UATOut';
 
-        $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
+        $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
         }).then(function (popover) {
             $scope.popover = popover;
@@ -27,26 +27,26 @@ angular.module('App')
             $scope.Val = val;
 
             switch ($scope.Val) {
-                case 'uatOutStateVectorTest':
-                    $state.go('uatOutStateVectorTest');
+                case 'uatStateVectorTest':
+                    $state.go('uatStateVectorTest');
                     break;
-                case 'uatOutModeStatusTest':
-                    $state.go('uatOutModeStatusTest');
+                case 'uatModeStatusTest':
+                    $state.go('uatModeStatusTest');
                     break;
-                case 'uatOutTargetStateTest':
-                    $state.go('uatOutTargetStateTest');
+                case 'uatTargetStateTest':
+                    $state.go('uatTargetStateTest');
                     break;
-                case 'uatOutAUXStateVectorTest':
-                    $state.go('uatOutAUXStateVectorTest');
+                case 'uatAUXStateVectorTest':
+                    $state.go('uatAUXStateVectorTest');
                     break;
-                case 'uatOutRFLinkTest':
-                    $state.go('uatOutRFLinkTest');
+                case 'uatRFLinkTest':
+                    $state.go('uatRFLinkTest');
                     break;
-                case 'uatOutTrajectoryChangeTest':
-                    $state.go('uatOutTrajectoryChangeTest');
+                case 'uatTrajectoryChangeTest':
+                    $state.go('uatTrajectoryChangeTest');
                     break;
-                case 'uatOutSummary':
-                    $state.go('uatOutSummary');
+                case 'uatSummary':
+                    $state.go('uatSummary');
                     break;
 
             }
@@ -58,31 +58,31 @@ angular.module('App')
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
                     switch ($scope.Val) {
-                        case 'uatOutStateVectorTest':
+                        case 'uatStateVectorTest':
                             $scope.result1 = res.data.uatOutStateVectorTestSubsonic;
                             $scope.$parent.result1 = res.data.uatOutStateVectorTestSubsonic;
                             break;
-                        case 'uatOutModeStatusTest':
+                        case 'uatModeStatusTest':
                             $scope.result2 = res.data.uatOutModeStatusTest;
                             $scope.$parent.result2 = res.data.uatOutModeStatusTest;
                             break;
-                        case 'uatOutTargetStateTest':
+                        case 'uatTargetStateTest':
                             $scope.result3 = res.data.uatOutTargetStateTest;
                             $scope.$parent.result3 = res.data.uatOutTargetStateTest;
                             break;
-                        case 'uatOutAUXStateVectorTest':
+                        case 'uatAUXStateVectorTest':
                             $scope.result4 = res.data.uatOutAUXStateVectorTest;
                             $scope.$parent.result4 = res.data.uatOutAUXStateVectorTest;
                             break;
-                        case 'uatOutRFLinkTest':
+                        case 'uatRFLinkTest':
                             $scope.result5 = res.data.uatOutDetailRFLinkTest;
                             $scope.$parent.result5 = res.data.uatOutDetailRFLinkTest;
                             break;
-                        case 'uatOutTrajectoryChangeTest':
+                        case 'uatTrajectoryChangeTest':
                             $scope.result6 = res.data.uatOutTrajectoryChangeTest;
                             $scope.$parent.result6 = res.data.uatOutTrajectoryChangeTest;
                             break;
-                        case 'uatOutSummary':
+                        case 'uatSummary':
                             $scope.result7 = res.data.uatOutDetailSummary;
                             $scope.$parent.result7 = res.data.uatOutDetailSummary;
                             break;

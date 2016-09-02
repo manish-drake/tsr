@@ -14,70 +14,66 @@
     <ion-content style="background-color:whitesmoke">
         <div class="list card">
             <div style="align-content: stretch;margin-bottom:20px;">
-                <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatOutModeStatusTest">PREVIOUS</button>
-                <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatOutAUXStateVectorTest" style="float: right">NEXT</button>
+                <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatOutSection">PREVIOUS</button>
+                <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatModeStatusTest" style="float: right">NEXT</button>
             </div>
             <div style="margin-left:15px">
                 <table class="detailpageTbmargin">
                     <tr>
-                        <th class="detailheading" colspan="2" align="left">UAT Target State Test</th>
+                        <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
                     </tr>
                     <tr>
                         <td class="detailLabel">AA ID:</td>
-                        <td class="detailResult">{{result3.address}}</td>
+                        <td class="detailResult">{{result1.address}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Address Qualifier:</td>
-                        <td class="detailResult">{{result3.addressQualifier}}</td>
+                        <td class="detailResult">{{result1.addressQualifier}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Payload Type Codes:</td>
-                        <td class="detailResult">{{result3.payloadTypeCodes}}</td>
+                        <td class="detailResult">{{result1.payloadTypeCodes}}</td>
                     </tr>
                 </table>
                 <table class="detailpageTbmargin">
                     <tr>
-                        <th class="detailheading" colspan="2" align="left">Target State Element</th>
+                        <th class="detailheading" colspan="2" align="left">State Vector Element</th>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Selected Alt Type:</td>
-                        <td class="detailResult">{{result3.selectedAltType}}</td>
+                        <td class="detailLabel">Air/Ground State:</td>
+                        <td class="detailResult">{{result1.agState}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Selected Altitude:</td>
-                        <td class="detailResult">{{result3.selectedAltitude}}</td>
+                        <td class="detailLabel">Latitude:</td>
+                        <td class="detailResult">{{result1.latitude}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Baro Press Setting:</td>
-                        <td class="detailResult">{{result3.baroPressSetting}}</td>
+                        <td class="detailLabel">Longitude:</td>
+                        <td class="detailResult">{{result1.longitude}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Seleced Heading:</td>
-                        <td class="detailResult">{{result3.selecedHeading}}</td>
+                        <td class="detailLabel">NIC:</td>
+                        <td class="detailResult">{{result1.nic}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">MCP/FCU M Status:</td>
-                        <td class="detailResult">{{result3.mfStatus}}</td>
+                        <td class="detailLabel">Altitude:</td>
+                        <td class="detailResult">{{result1.altitude}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">AutoPilot:</td>
-                        <td class="detailResult">{{result3.autoPilot}}</td>
+                        <td class="detailLabel">Altitude Type:</td>
+                        <td class="detailResult">{{result1.altitudeType}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">VNAV:</td>
-                        <td class="detailResult">{{result3.vnav}}</td>
+                        <td class="detailLabel">North Velocity:</td>
+                        <td class="detailResult">{{result1.horizontalVelocity.nsK}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Altitude Hold:</td>
-                        <td class="detailResult">{{result3.altitudeHold}}</td>
+                        <td class="detailLabel">East Velocity:</td>
+                        <td class="detailResult">{{result1.horizontalVelocity.ewK}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">Approach Mode:</td>
-                        <td class="detailResult">{{result3.approachMode}}</td>
-                    </tr>
-                    <tr>
-                        <td class="detailLabel"> LNAV Mode:</td>
-                        <td class="detailResult">{{result3.lnavMode}}</td>
+                        <td class="detailLabel">Feedback Code:</td>
+                        <td class="detailResult">{{result1.uplinkFeedback}}</td>
                     </tr>
                 </table>
                 <table>
@@ -86,15 +82,15 @@
                     </tr>
                     <tr>
                         <td class="detailLabel1">Freq=</td>
-                        <td class="detailResult2">{{result3.freq}}</td>
+                        <td class="detailResult2">{{result1.freq}}</td>
                         <td class="detailLabel3">Power=</td>
-                        <td class="detailResult4">{{result3.power}}</td>
+                        <td class="detailResult4">{{result1.power}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel1">GPS=</td>
-                        <td class="detailResult2">{{result3.gps}}</td>
+                        <td class="detailResult2">{{result1.gps}}</td>
                         <td class="detailLabel3">RF Link Test=</td>
-                        <td class="detailResult4" style="color:green;">{{result3.rfLinkTest}}</td>
+                        <td class="detailResult4" style="color:green;">{{result1.rfLinkTest}}</td>
                     </tr>
                 </table>
             </div>

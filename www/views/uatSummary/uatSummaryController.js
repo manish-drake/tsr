@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatOutStateVectorTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatSummaryController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
         $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
             scope: $scope,
@@ -20,8 +20,8 @@ angular.module('App')
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
-                    $scope.result1 = res.data.uatOutStateVectorTestSubsonic;
-                    $scope.$parent.result1 = res.data.uatOutStateVectorTestSubsonic;
+                    $scope.result7 = res.data.uatOutDetailSummary;
+                    $scope.$parent.result7 = res.data.uatOutDetailSummary;
                     $ionicLoading.hide();
                 })
                 .error(function (err) {

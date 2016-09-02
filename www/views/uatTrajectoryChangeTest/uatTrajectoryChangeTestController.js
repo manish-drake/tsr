@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatOutTargetStateTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatTrajectoryChangeTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
         $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
             scope: $scope,
@@ -20,8 +20,8 @@ angular.module('App')
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
                 .success(function (res) {
-                    $scope.result3 = res.data.uatOutTargetStateTest;
-                    $scope.$parent.result3 = res.data.uatOutTargetStateTest;
+                    $scope.result6 = res.data.uatOutTrajectoryChangeTest;
+                    $scope.$parent.result6 = res.data.uatOutTrajectoryChangeTest;
                     $ionicLoading.hide();
                 })
                 .error(function (err) {
