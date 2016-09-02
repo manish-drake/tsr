@@ -1,13 +1,13 @@
 <ion-popover-view style="width:150px; height:465px" ng-controller="MorePopoverController">
   <ion-content>
-    <div class="row">
-      <button class="button button-clear button-positive button-icon-left">
+    <div class="row" ng-controller="MorePopoverController">
+      <button class="button button-clear button-positive button-icon-left" ng-click="openSetup()">
     <i class="icon ion-ios-gear"/>
     Setup
   </button>
     </div>
-    <div class="row">
-      <button class="button button-clear button-positive button-icon-left" ng-click="openHelp($event)">
+    <div class="row" ng-controller="MorePopoverController">
+      <button class="button button-clear button-positive button-icon-left" ng-click="openHelp()">
     <i class="icon ion-help" style="margin-left:3px;margin-right:5px"/>
     Help
   </button>
@@ -15,7 +15,7 @@
     <div class="row">
       <button class="button button-clear button-positive button-icon-left">
     <i class="icon ion-clipboard" style="margin-left:2px;margin-right:3px"/>
-    Show StatusB
+    Show Status
   </button>
     </div>
     <div class="row">

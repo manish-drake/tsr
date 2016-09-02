@@ -8,11 +8,11 @@ angular.module('App', ['ionic'])
         controller: 'IndexController',
         templateUrl: 'index.html'
       })
-       .state('morePopover', {
-        url: '/morePopover',
-        controller: 'MorePopoverController',
-        templateUrl: 'views/morePopover/morePopover.html'
-      })
+      //  .state('morePopover', {
+      //   url: '/morePopover',
+      //   controller: 'MorePopoverController',
+      //   templateUrl: 'views/morePopover/morePopover.html'
+      // })
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         templateUrl: 'views/uatAUXStateVectorTest/uatAUXStateVectorTest.html',

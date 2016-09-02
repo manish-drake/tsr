@@ -1,7 +1,7 @@
 angular.module('App')
     .controller('UatSummaryController', function ($scope, $http, $ionicLoading, $ionicPopover) {
 
-        $ionicPopover.fromTemplateUrl('views/uatOutSection/morePopover.html', {
+      $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
         }).then(function (popover) {
             $scope.popover = popover;
@@ -18,10 +18,10 @@ angular.module('App')
         $scope.runTest = function () {
             $ionicLoading.show();
 
-            $http.get('http://13.90.248.158:8081/run_test_get?msgID=2&reqID=12')
+            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatDetailSummary&reqID=12')
                 .success(function (res) {
-                    $scope.result7 = res.data.uatOutDetailSummary;
-                    $scope.$parent.result7 = res.data.uatOutDetailSummary;
+                    $scope.result7 = res.data;
+                    $scope.$parent.result7 = res.data;
                     $ionicLoading.hide();
                 })
                 .error(function (err) {
