@@ -12,7 +12,7 @@
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
-        <div class="list card " ng-click="singleClick('uatOutStateVectorTest')" ng-dblclick="doubleClick('uatOutStateVectorTest')">
+        <div class="list card " on-tap="singleClick('uatOutStateVectorTest')" on-double-tap="doubleClick('uatOutStateVectorTest')">
             <div class="item " style="align-content: stretch ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
@@ -43,7 +43,7 @@
 
             </div>
         </div>
-        <div class="list card " ng-click="singleClick('uatOutModeStatusTest')" ng-dblclick="doubleClick('uatOutModeStatusTest')">
+        <div class="list card " on-tap="singleClick('uatOutModeStatusTest')" on-double-tap="doubleClick('uatOutModeStatusTest')">
             <div class="item ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="list card " ng-click="singleClick('uatOutTargetStateTest')" ng-dblclick="doubleClick('uatOutTargetStateTest')">
+        <div class="list card " on-tap="singleClick('uatOutTargetStateTest')" on-double-tap="doubleClick('uatOutTargetStateTest')">
             <div class="item ">
 
                 <p style="align-content: stretch ">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="list card " ng-click="singleClick('uatOutAUXStateVectorTest')" ng-dblclick="doubleClick('uatOutAUXStateVectorTest')">
+        <div class="list card " on-tap="singleClick('uatOutAUXStateVectorTest')" on-double-tap="doubleClick('uatOutAUXStateVectorTest')">
             <div class="item ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <div class="list card " ng-click="singleClick('uatOutRFLinkTest')" ng-dblclick="doubleClick('uatOutRFLinkTest')">
+        <div class="list card " on-tap="singleClick('uatOutRFLinkTest')" on-double-tap="doubleClick('uatOutRFLinkTest')">
             <div class="item ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
@@ -173,7 +173,7 @@
                 </div>
             </div>
         </div>
-        <div class="list card " ng-click="singleClick('uatOutTrajectoryChangeTest')" ng-dblclick="doubleClick('uatOutTrajectoryChangeTest')">
+        <div class="list card " on-tap="singleClick('uatOutTrajectoryChangeTest')" on-double-tap="doubleClick('uatOutTrajectoryChangeTest')">
             <div class="item ">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
@@ -205,7 +205,7 @@
                 </div>
             </div>
         </div>
-         <div class="list card" ui-sref="uatOutSummary">
+         <div class="list card" on-tap="singleClick('uatOutSummary')" on-double-tap="doubleClick('uatOutSummary')">
             <div class="item ">
                <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Summary</span>

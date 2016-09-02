@@ -46,7 +46,7 @@ angular.module('App')
                     $state.go('uatOutTrajectoryChangeTest');
                     break;
                 case 'uatOutSummary':
-                    $state.go('uatOutSumaryTest');
+                    $state.go('uatOutSummary');
                     break;
 
             }

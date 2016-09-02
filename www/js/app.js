@@ -18,6 +18,12 @@ angular.module('App', ['ionic'])
         controller: 'UatOutController',
         templateUrl: 'views/uatOutSection/uatOutSection.html'
       })
+
+      .state('morePopover', {
+        url: '/morePopover',
+        controller: 'morePopoverController',
+        templateUrl: 'views/uatOutSection/morePopover.html'
+      })
       
       .state('uatOutStateVectorTest', {
         url: '/uatOutStateVectorTest',
