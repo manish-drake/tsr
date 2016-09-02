@@ -11,57 +11,58 @@
         <button class="button button-icon icon ion-android-walk" ng-click="runTest() "></button>
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
-    <ion-content  style="background-color:whitesmoke">
+    <ion-content style="background-color:whitesmoke">
         <div class="list card">
             <div style="align-content: stretch;margin-bottom:20px;">
                 <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatOutRFLinkTest">PREVIOUS</button>
                 <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatOutSummary" style="float: right">NEXT</button>
             </div>
-              <div style="margin-left:15px">
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">UAT Trajectory Change</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">AA ID:</td>
-                <td class="detailResult">{{result.uatOutTrajectoryChangeTest.address}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Address Qualifier:</td>
-                <td class="detailResult">{{result.uatOutTrajectoryChangeTest.addressQualifier}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel">Payload Type Codes:</td>
-                <td class="detailResult">{{result.uatOutTrajectoryChangeTest.payloadTypeCodes}}</td>
-            </tr>
-        </table>
-        <table class="detailpageTbmargin">
-            <tr>
-                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
-            </tr>
-            <tr>
-                <td class="detailLabel">TC Field:</td>
-                <td class="detailResult">{{result.uatOutTrajectoryChangeTest.tcField}}</td>
-            </tr>            
-        </table>
-        <table>
-<tr>
-                <th class="detailheading" colspan="2" align="left">RF Link</th>
-            </tr> 
-            <tr>
-                <td class="detailLabel1">Freq=</td>
-                <td class="detailResult2">{{result.uatOutTrajectoryChangeTest.freq}}</td>
-                <td class="detailLabel3">Power=</td>
-                <td class="detailResult4">{{result.uatOutTrajectoryChangeTest.power}}</td>
-            </tr>
-            <tr>
-                <td class="detailLabel1">GPS=</td>
-                <td class="detailResult2">{{result.uatOutTrajectoryChangeTest.gps}}</td>
-                <td class="detailLabel3">RF Link Test=</td>
-                <td class="detailResult4" style="color:green;">{{result.uatOutTrajectoryChangeTest.rfLinkTest}}</td>
-            </tr>
-        </table>
-              </div>
-            </div></div>
+            <div style="margin-left:15px">
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">UAT Trajectory Change</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">AA ID:</td>
+                        <td class="detailResult">{{result6.address}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Address Qualifier:</td>
+                        <td class="detailResult">{{result6.addressQualifier}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">Payload Type Codes:</td>
+                        <td class="detailResult">{{result6.payloadTypeCodes}}</td>
+                    </tr>
+                </table>
+                <table class="detailpageTbmargin">
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel">TC Field:</td>
+                        <td class="detailResult">{{result6.tcField}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="detailheading" colspan="2" align="left">RF Link</th>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">Freq=</td>
+                        <td class="detailResult2">{{result6.freq}}</td>
+                        <td class="detailLabel3">Power=</td>
+                        <td class="detailResult4">{{result6.power}}</td>
+                    </tr>
+                    <tr>
+                        <td class="detailLabel1">GPS=</td>
+                        <td class="detailResult2">{{result6.gps}}</td>
+                        <td class="detailLabel3">RF Link Test=</td>
+                        <td class="detailResult4" style="color:green;">{{result6.rfLinkTest}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </div>
     </ion-content>
 </ion-view>

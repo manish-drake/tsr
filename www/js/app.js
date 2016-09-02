@@ -8,10 +8,21 @@ angular.module('App', ['ionic'])
         controller: 'IndexController',
         templateUrl: 'index.html'
       })
+       .state('morePopup', {
+        url: '/morePopup',
+        controller: 'morePopupController',
+        templateUrl: 'views/uatOutSection/morePopover.html'
+      })
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutController',
         templateUrl: 'views/uatOutSection/uatOutSection.html'
+      })
+
+      .state('morePopover', {
+        url: '/morePopover',
+        controller: 'morePopoverController',
+        templateUrl: 'views/uatOutSection/morePopover.html'
       })
       
       .state('uatOutStateVectorTest', {
