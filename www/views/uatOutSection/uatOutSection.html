@@ -1,4 +1,4 @@
-<ion-view view-title="UAT OUT" ng-controller="UatOutSectionController">
+<ion-view view-title="UAT OUT">
     <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
     </ion-nav-buttons>
@@ -18,28 +18,28 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result1.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatStateVectorTestSubsonic.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
                 <table style="table-layout: fixed ">
                     <tr>
                         <td class="sectionLabel">Address: </td>
-                        <td class="sectionResult">{{result1.address}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.address}}</td>
                         <td class="sectionLabel">Addr Qual: </td>
-                        <td class="sectionResult">{{result1.addressQualifier}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.addressQualifier}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">Payload: </td>
-                        <td class="sectionResult">{{result1.payloadTypeCodes}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.payloadTypeCodes}}</td>
                         <td class="sectionLabel">A/G State: </td>
-                        <td class="sectionResult">{{result1.agState}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.agState}}</td>
                     </tr>
                     <tr>
                         <td class="sectionLabel">RF Link: </td>
-                        <td class="sectionResult">{{result1.rfLinkTest}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.rfLinkTest}}</td>
                         <td class="sectionLabel">GPS: </td>
-                        <td class="sectionResult">{{result1.gps}}</td>
+                        <td class="sectionResult">{{uatStateVectorTestSubsonic.gps}}</td>
                     </tr>
                 </table>
             </ion-item>
@@ -48,7 +48,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result2.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatModeStatusTest.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -57,21 +57,21 @@
 
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result2.address}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result2.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result2.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.payloadTypeCodes}}</td>
                             <td class="sectionLabel">Flight ID: </td>
-                            <td class="sectionResult">{{result2.fightID}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.fightID}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">RF Link: </td>
-                            <td class="sectionResult">{{result2.rfLinkTest}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.rfLinkTest}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result2.gps}}</td>
+                            <td class="sectionResult">{{uatModeStatusTest.gps}}</td>
                         </tr>
                     </table>
                 </div>
@@ -81,7 +81,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result3.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatTargetStateTest.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -89,21 +89,21 @@
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result3.address}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result3.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result3.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.payloadTypeCodes}}</td>
                             <td class="sectionLabel">Sel Alt: </td>
-                            <td class="sectionResult">{{result3.selectedAltitude}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.selectedAltitude}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">RF Link: </td>
-                            <td class="sectionResult">{{result3.rfLinkTest}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.rfLinkTest}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result3.gps}}</td>
+                            <td class="sectionResult">{{uatTargetStateTest.gps}}</td>
                         </tr>
                     </table>
                 </div>
@@ -113,7 +113,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result4.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatAUXStateVectorTest.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -121,21 +121,21 @@
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result4.address}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result4.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result4.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.payloadTypeCodes}}</td>
                             <td class="sectionLabel">Alt Type: </td>
-                            <td class="sectionResult">{{result4.altitudeType}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.altitudeType}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">RF Link: </td>
-                            <td class="sectionResult">{{result4.rfLinkTest}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.rfLinkTest}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result4.gps}}</td>
+                            <td class="sectionResult">{{uatAUXStateVectorTest.gps}}</td>
                         </tr>
                     </table>
                 </div>
@@ -145,7 +145,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result5.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatDetailRFLinkTest.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -153,21 +153,21 @@
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result5.address}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result5.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result5.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.payloadTypeCodes}}</td>
                             <td class="sectionLabel">Power: </td>
-                            <td class="sectionResult">{{result5.txPower}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.txPower}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Freq: </td>
-                            <td class="sectionResult">{{result5.frequencyA}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.frequencyA}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result5.gps}}</td>
+                            <td class="sectionResult">{{uatDetailRFLinkTest.gps}}</td>
                         </tr>
                     </table>
                 </div>
@@ -177,7 +177,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result6.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatTrajectoryChangeTest.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -185,21 +185,21 @@
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result6.address}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result6.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result6.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.payloadTypeCodes}}</td>
                             <td class="sectionLabel">TC: </td>
-                            <td class="sectionResult">{{result6.tcField}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.tcField}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">RF Link: </td>
-                            <td class="sectionResult">{{result6.rfLinkTest}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.rfLinkTest}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result6.gps}}</td>
+                            <td class="sectionResult">{{uatTrajectoryChangeTest.gps}}</td>
                         </tr>
                     </table>
                 </div>
@@ -209,7 +209,7 @@
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Summary</span>
                     <span style="float:right;">
-                        <span class="teststatus">{{result7.rfLinkTest}}</span>
+                        <span class="teststatus">{{uatDetailSummary.rfLinkTest}}</span>
                     <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
                     </span>
                 </p>
@@ -217,21 +217,21 @@
                     <table style="table-layout: fixed ">
                         <tr>
                             <td class="sectionLabel">Address: </td>
-                            <td class="sectionResult">{{result7.address}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.address}}</td>
                             <td class="sectionLabel">Addr Qual: </td>
-                            <td class="sectionResult">{{result7.addressQualifier}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.addressQualifier}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">Payload: </td>
-                            <td class="sectionResult">{{result7.payloadTypeCodes}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.payloadTypeCodes}}</td>
                             <td class="sectionLabel">A/G State: </td>
-                            <td class="sectionResult">{{result7.agState}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.agState}}</td>
                         </tr>
                         <tr>
                             <td class="sectionLabel">RF Link: </td>
-                            <td class="sectionResult">{{result7.rfLinkTest}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.rfLinkTest}}</td>
                             <td class="sectionLabel">GPS: </td>
-                            <td class="sectionResult">{{result7.gps}}</td>
+                            <td class="sectionResult">{{uatDetailSummary.gps}}</td>
                         </tr>
                     </table>
                 </div>

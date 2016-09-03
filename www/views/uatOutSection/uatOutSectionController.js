@@ -1,7 +1,7 @@
 angular.module('App')
     .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover, $rootScope) {
         $scope.Val = 'UATOut';
-        $scope.button2 = false;
+        $scope.isRunningAllEnabled = false;
 
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
@@ -19,7 +19,7 @@ angular.module('App')
         }
 
         $scope.onRunClick = function (isRunningAllEnabled) {
-            $scope.button2 = isRunningAllEnabled;
+            $scope.IsRunningAllEnabled = isRunningAllEnabled;
         }
 
         $scope.selectedRow = null;
@@ -59,54 +59,50 @@ angular.module('App')
         }
 
         $scope.runTest = function () {
-            if ($scope.button2) {
-                $ionicLoading.show();
-                $scope.onRunAll();
-            }
+            $ionicLoading.show();
+            if ($scope.IsRunningAllEnabled) { $scope.onRunAll(); }
             else {
-                $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.Val + '&reqID=12')
+                $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.MsgId + '&reqID=12')
                     .success(function (res) {
-                        
                         $scope.onSelectedCard(res);
                         $ionicLoading.hide();
                     })
                     .error(function (err) {
                         $ionicLoading.hide();
                     });
-
             }
 
         }
 
         $scope.onSelectedCard = function (res) {
-            switch ($scope.Val) {
+            switch ($scope.MsgId) {
                 case 'uatStateVectorTestSubsonic':
-                    $scope.result1 = res.data;
-                    $scope.$parent.result1 = res.data;
+                    $scope.uatStateVectorTestSubsonic = res.data;
+                    $scope.$parent.uatStateVectorTestSubsonic = res.data;
                     break;
                 case 'uatModeStatusTest':
-                    $scope.result2 = res.data;
-                    $scope.$parent.result2 = res.data;
+                    $scope.uatModeStatusTest = res.data;
+                    $scope.$parent.uatModeStatusTest = res.data;
                     break;
                 case 'uatTargetStateTest':
-                    $scope.result3 = res.data;
-                    $scope.$parent.result3 = res.data;
+                    $scope.uatTargetStateTest = res.data;
+                    $scope.$parent.uatTargetStateTest = res.data;
                     break;
                 case 'uatAUXStateVectorTest':
-                    $scope.result4 = res.data;
-                    $scope.$parent.result4 = res.data;
+                    $scope.uatAUXStateVectorTest = res.data;
+                    $scope.$parent.uatAUXStateVectorTest = res.data;
                     break;
                 case 'uatDetailRFLinkTest':
-                    $scope.result5 = res.data;
-                    $scope.$parent.result5 = res.data;
+                    $scope.uatDetailRFLinkTest = res.data;
+                    $scope.$parent.uatDetailRFLinkTest = res.data;
                     break;
                 case 'uatTrajectoryChangeTest':
-                    $scope.result6 = res.data;
-                    $scope.$parent.result6 = res.data;
+                    $scope.uatTrajectoryChangeTest = res.data;
+                    $scope.$parent.uatTrajectoryChangeTest = res.data;
                     break;
                 case 'uatDetailSummary':
-                    $scope.result7 = res.data;
-                    $scope.$parent.result7 = res.data;
+                    $scope.uatDetailSummary = res.data;
+                    $scope.$parent.uatDetailSummary = res.data;
                     break;
                 default:
             }
@@ -121,8 +117,8 @@ angular.module('App')
                                 .success(function (res) {
                                     $ionicLoading.hide();
                                     $scope.selectedRow = "uatStateVectorTestSubsonic";
-                                    $scope.result1 = res.data;
-                                    $scope.$parent.result1 = res.data;
+                                    $scope.uatStateVectorTestSubsonic = res.data;
+                                    $scope.$parent.uatStateVectorTestSubsonic = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -135,8 +131,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatModeStatusTest&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatModeStatusTest";
-                                    $scope.result2 = res.data;
-                                    $scope.$parent.result2 = res.data;
+                                    $scope.uatModeStatusTest = res.data;
+                                    $scope.$parent.uatModeStatusTest = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -149,8 +145,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatTargetStateTest&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatTargetStateTest";
-                                    $scope.result3 = res.data;
-                                    $scope.$parent.result3 = res.data;
+                                    $scope.uatTargetStateTest = res.data;
+                                    $scope.$parent.uatTargetStateTest = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -163,8 +159,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatAUXStateVectorTest&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatAUXStateVectorTest";
-                                    $scope.result4 = res.data;
-                                    $scope.$parent.result4 = res.data;
+                                    $scope.uatAUXStateVectorTest = res.data;
+                                    $scope.$parent.uatAUXStateVectorTest = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -177,8 +173,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatDetailRFLinkTest&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatDetailRFLinkTest";
-                                    $scope.result5 = res.data;
-                                    $scope.$parent.result5 = res.data;
+                                    $scope.uatDetailRFLinkTest = res.data;
+                                    $scope.$parent.uatDetailRFLinkTest = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -191,8 +187,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatTrajectoryChangeTest&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatTrajectoryChangeTest";
-                                    $scope.result6 = res.data;
-                                    $scope.$parent.result6 = res.data;;
+                                    $scope.uatTrajectoryChangeTest = res.data;
+                                    $scope.$parent.uatTrajectoryChangeTest = res.data;;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
@@ -205,8 +201,8 @@ angular.module('App')
                             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatDetailSummary&reqID=12')
                                 .success(function (res) {
                                     $scope.selectedRow = "uatDetailSummary";
-                                    $scope.result7 = res.data;
-                                    $scope.$parent.result7 = res.data;
+                                    $scope.uatDetailSummary = res.data;
+                                    $scope.$parent.uatDetailSummary = res.data;
                                 })
                                 .error(function (err) {
                                     $ionicLoading.hide();
