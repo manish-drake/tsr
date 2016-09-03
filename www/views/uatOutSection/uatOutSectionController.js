@@ -18,21 +18,21 @@ angular.module('App')
             $scope.popover.hide();
         }
 
-        $scope.runAll_Click = function (val) {
-            $scope.button2 = val;
+        $scope.onRunClick = function (isRunningAllEnabled) {
+            $scope.button2 = isRunningAllEnabled;
         }
 
         $scope.selectedRow = null;
-        $scope.singleClick = function (val) {
+        $scope.onSingleClick = function (msgId) {
 
-            $scope.Val = val;
-            $scope.selectedRow = val;
+            $scope.MsgId = msgId;
+            $scope.selectedRow = msgId;
         }
 
-        $scope.doubleClick = function (val) {
-            $scope.Val = val;
+        $scope.onDoubleClick = function (msgId) {
+            $scope.MsgId = msgId;
 
-            switch ($scope.Val) {
+            switch ($scope.MsgId) {
                 case 'uatStateVectorTestSubsonic':
                     $state.go('uatStateVectorTest');
                     break;
@@ -61,13 +61,13 @@ angular.module('App')
         $scope.runTest = function () {
             if ($scope.button2) {
                 $ionicLoading.show();
-                $scope.RunAll();
+                $scope.onRunAll();
             }
             else {
                 $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.Val + '&reqID=12')
                     .success(function (res) {
                         
-                        $scope.SelectedCard(res);
+                        $scope.onSelectedCard(res);
                         $ionicLoading.hide();
                     })
                     .error(function (err) {
@@ -78,7 +78,7 @@ angular.module('App')
 
         }
 
-        $scope.SelectedCard = function (res) {
+        $scope.onSelectedCard = function (res) {
             switch ($scope.Val) {
                 case 'uatStateVectorTestSubsonic':
                     $scope.result1 = res.data;
@@ -112,11 +112,7 @@ angular.module('App')
             }
         }
 
-        $scope.getMember = function (p1) {
-            $scope.Val = p1;
-        }
-
-        $scope.RunAll = function () {
+        $scope.onRunAll = function () {
             for (var i = 1; i < 8; i++) {
                 switch (i) {
                     case 1:
