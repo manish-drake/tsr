@@ -11,6 +11,10 @@
     font-weight: 700;
   }
 
+.btntobottom{
+    position: absolute;
+    bottom: 0px;
+}
 .navtodetail{
     float: right ; 
     font-size: 30px; 

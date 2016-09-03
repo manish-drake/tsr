@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatTrajectoryChangeTestController', function ($scope, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatTrajectoryChangeTestController', function ($scope, $http, $ionicLoading, $ionicPopover, $rootScope) {
 
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,

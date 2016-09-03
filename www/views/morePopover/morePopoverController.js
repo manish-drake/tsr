@@ -28,5 +28,4 @@ angular.module('App')
     $scope.closeSetup = function () {
       $scope.modal1.hide();
     };
-
   })
