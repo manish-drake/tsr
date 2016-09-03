@@ -1,47 +1,50 @@
-<ion-modal-view style="border-radius: 5px;">
-       <ion-content style="padding:20px">
-         <h3 align="center" style="color:gray"> ADS=B Velocity</h3>
-         <h4 align="center"> Setup</h4>         
-<div class="row" style="height:50px">
-  <div class="col col-75" style="font-size:18px"><span>Power V</span></div>
+<ion-modal-view style="height:580px;border-radius: 5px">
+  <ion-content style="padding:20px" ng-controller="SetupController">
+    <h3 align="center" style="color:gray"> ADS=B Velocity</h3>
+    <h4 align="center"> Setup</h4>
+    <div>
+      <button ng-click='openToggle()' class="row button button-clear button-positive" style="margin-bottom:15px;">
+  <div class="col col-75" align="left" ><span style="font-size:18px">Power V</span></div>
   <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px">
-  <div class="col col-100"><input type="range" name="volume" min="0" max="100" value="33"></div>  
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Distance</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Flight-Line</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Delay</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Cable Loss</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">PIN Time</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Lat</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div class="row" style="height:50px" >
-  <div class="col col-75" style="font-size:18px">Lon</div>
-  <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
-</div>
-<div  style="float: right; margin-top:10px">
-       <button class="button button-positive " ng-click="closeSetup()">Save</button>
-        <button class="button button-outline button-positive " ng-click="closeSetup()">Close</button>
-</div>
+</button>
+
+      <div class="row padding" style="height:50px" ng-show='show'>
+        <input type="range" name="powerV" min="0.2" max="10" step="0.2" value="0.6" ng-init="value='0.6'" style="width:80%" ng-model="value"
+        />
+        <span style="vertical-align:center;margin-left:20px;margin-top:10px;font-size:18px;color:dodgerblue">{{value}} DB</span>
       </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Distance</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
       </div>
-    </ion-content>
-  </ion-modal-view>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Flight-Line</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Delay</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Cable Loss</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">PIN Time</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Lat</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+      <div class="row" style="height:50px">
+        <div class="col col-75" style="font-size:18px">Lon</div>
+        <div class="col col-25" align="right"><i class="ion-arrow-down-b" style="color:dimgray"></i></div>
+      </div>
+    </div>
+    <div style="float: right;">
+      <button class="button button-positive" style="width:80px" ng-click="closeHelp()">Save</button>
+      <button class="button button-outline button-positive" style="width:80px" ng-click="closeSetup()">Close</button>
+    </div>
+  </ion-content>
+</ion-modal-view>
