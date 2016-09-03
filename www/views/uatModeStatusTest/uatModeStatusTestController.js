@@ -20,8 +20,8 @@ angular.module('App')
 
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatModeStatusTest&reqID=12')
                 .success(function (res) {
-                    $scope.result2 = res.data;
-                    $scope.$parent.result2 = res.data;
+                    $scope.uatModeStatusTest = res.data;
+                    $scope.$parent.uatModeStatusTest = res.data;
                     $ionicLoading.hide();
                 })
                 .error(function (err) {
