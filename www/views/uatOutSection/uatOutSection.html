@@ -1,4 +1,4 @@
-<ion-view view-title="UAT OUT">
+<ion-view view-title="UAT OUT" ng-controller="UatOutSectionController">
     <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
     </ion-nav-buttons>
@@ -13,8 +13,8 @@
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
         <ion-list>
-            <ion-item class="customcard" on-tap="singleClick('uatStateVectorTestSubsonic')" ng-class="{'cardselected':'uatStateVectorTestSubsonic' == selectedRow}"
-                on-double-tap="doubleClick('uatStateVectorTestSubsonic')">
+            <ion-item class="customcard" ng-init="l1='uatStateVectorTestSubsonic'" on-tap="singleClick(l1)" ng-class="{'cardselected':l1 == selectedRow}"
+                on-double-tap="doubleClick(l1)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT State Vector Test</span>
                     <span style="float:right;">
@@ -43,8 +43,8 @@
                     </tr>
                 </table>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatModeStatusTest')" ng-class="{'cardselected':'uatModeStatusTest' == selectedRow}"
-                on-double-tap="doubleClick('uatModeStatusTest')">
+            <ion-item class="customcard" ng-init="l2='uatModeStatusTest'" on-tap="singleClick(l2)" ng-class="{'cardselected':l2 == selectedRow}"
+                on-double-tap="doubleClick(l2)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Mode Status Test</span>
                     <span style="float:right;">
@@ -76,8 +76,8 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard " on-tap="singleClick('uatTargetStateTest')" ng-class="{'cardselected':'uatTargetStateTest' == selectedRow}"
-                on-double-tap="doubleClick('uatTargetStateTest')">
+            <ion-item class="customcard " ng-init="l3='uatTargetStateTest'" on-tap="singleClick(l3)" ng-class="{'cardselected':l3 == selectedRow}"
+                on-double-tap="doubleClick(l3)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Target State Test</span>
                     <span style="float:right;">
@@ -108,8 +108,8 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatAUXStateVectorTest')" ng-class="{'cardselected':'uatAUXStateVectorTest' == selectedRow}"
-                on-double-tap="doubleClick('uatAUXStateVectorTest')">
+            <ion-item class="customcard" ng-init="l4='uatAUXStateVectorTest'" on-tap="singleClick(l4)" ng-class="{'cardselected':l4 == selectedRow}"
+                on-double-tap="doubleClick(l4)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT AUX State Vector Test</span>
                     <span style="float:right;">
@@ -140,8 +140,8 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatDetailRFLinkTest')" ng-class="{'cardselected':'uatDetailRFLinkTest' == selectedRow}"
-                on-double-tap="doubleClick('uatDetailRFLinkTest')">
+            <ion-item class="customcard" ng-init="l5='uatDetailRFLinkTest'" on-tap="singleClick(l5)" ng-class="{'cardselected':l5 == selectedRow}"
+                on-double-tap="doubleClick(l5)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT RF Link Test</span>
                     <span style="float:right;">
@@ -172,8 +172,8 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatTrajectoryChangeTest')" ng-class="{'cardselected':'uatTrajectoryChangeTest' == selectedRow}"
-                on-double-tap="doubleClick('uatTrajectoryChangeTest')">
+            <ion-item class="customcard" ng-init="l6='uatTrajectoryChangeTest'" on-tap="singleClick(l6)" ng-class="{'cardselected':l6 == selectedRow}"
+                on-double-tap="doubleClick(l6)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Trajectory Change Test</span>
                     <span style="float:right;">
@@ -204,8 +204,8 @@
                     </table>
                 </div>
             </ion-item>
-            <ion-item class="customcard" on-tap="singleClick('uatDetailSummary')" ng-class="{'cardselected':'uatDetailSummary' == selectedRow}"
-                on-double-tap="doubleClick('uatDetailSummary')">
+            <ion-item class="customcard" ng-init="l7='uatDetailSummary'" on-tap="singleClick(l7)" ng-class="{'cardselected':l7 == selectedRow}"
+                on-double-tap="doubleClick(l7)">
                 <p style="align-content: stretch ">
                     <span class="sectionHeading" style="float: left ">UAT Summary</span>
                     <span style="float:right;">
