@@ -92,57 +92,44 @@
     </ion-side-menu-content>
     <ion-side-menu side="left">
       <ion-content>
-        <ion-list>
-          <ion-item menu-close=""><strong>Start</strong></ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>Favorites</span>
-              <span style="float: right">2</span>
-            </div>
-          </ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>Scheduled</span>
-              <span style="float: right">0</span>
-            </div>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item menu-close=""><strong>Auto Test Sequences</strong></ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>Transponder Check</span>
-              <span style="float: right">1</span>
-            </div>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item menu-close=""><strong>Individual Tests</strong></ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>ADS-B</span>
-              <span style="float: right">9</span>
-            </div>
-          </ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>Mode S</span>
-              <span style="float: right">1</span>
-            </div>
-          </ion-item>
-          <ion-item menu-close="">
-            <div ui-sref="uatOutSection" style="text-indent: 30px; align-content: stretch">
-              <span>UAT OUT</span>
-              <span style="float: right">7</span>
-            </div>
-          </ion-item>
-          <ion-item menu-close="">
-            <div style="text-indent: 30px; align-content: stretch">
-              <span>UAT IN</span>
-              <span style="float: right">3</span>
-            </div>
-          </ion-item>
-        </ion-list>
+
+
+
+        <div class="list">
+          <div>
+              <div class="item item-divider">Start</div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>Favorites</a><span style="float: right">2</span>
+              </div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>Scheduled</a><span style="float: right">0</span>
+              </div>
+          </div>
+          <div>
+              <div class="item item-divider">Auto Test Sequences</div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>Transponder Check</a><span style="float: right">1</span>
+              </div>
+          </div>
+          <div>
+              <div class="item item-divider">Individual Tests</div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>ADS-B</a><span style="float: right">9</span>
+              </div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>Mode S</a><span style="float: right">1</span>
+              </div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>UAT OUT</a><span style="float: right">7</span>
+              </div>
+              <div class="item transaction-item" style="text-indent: 10px;">
+                  <a>UAT IN</a><span style="float: right">3</span>
+              </div>
+          </div>
+      </div>
+
+
+
         <ion-list>
           <ion-item menu-close=""><strong>Simulations</strong></ion-item>
           <ion-item menu-close="">
@@ -151,8 +138,6 @@
               <span style="float: right">1</span>
             </div>
           </ion-item>
-        </ion-list>
-        <ion-list>
           <ion-item menu-close=""><strong>NAV</strong></ion-item>
           <ion-item menu-close="">
             <div style="text-indent: 30px; align-content: stretch">
@@ -160,8 +145,6 @@
               <span style="float: right">4</span>
             </div>
           </ion-item>
-        </ion-list>
-        <ion-list>
           <ion-item menu-close=""><strong>Search</strong></ion-item>
           <ion-item menu-close="">
             <div style="text-indent: 30px; align-content: stretch">
@@ -175,8 +158,6 @@
               <span style="float: right">0</span>
             </div>
           </ion-item>
-        </ion-list>
-        <ion-list>
           <ion-item menu-close=""><strong>System</strong></ion-item>
           <ion-item menu-close="">
             <div style="text-indent: 30px; align-content: stretch">
