@@ -2,7 +2,6 @@ angular.module('App')
     .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover, $rootScope) {
         $scope.Val = 'UATOut';
         $scope.button2 = false;
-        $scope.counter = 90;
 
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
@@ -16,13 +15,13 @@ angular.module('App')
         }
 
         $scope.closePopover = function () {
-
             $scope.popover.hide();
         }
 
-        $scope.runButton_Click = function (val) {
+        $scope.runAll_Click = function (val) {
             $scope.button2 = val;
         }
+
         $scope.selectedRow = null;
         $scope.singleClick = function (val) {
 
@@ -60,17 +59,22 @@ angular.module('App')
         }
 
         $scope.runTest = function () {
-            $ionicLoading.show();
+            if ($scope.button2) {
+                $ionicLoading.show();
+                $scope.RunAll();
+            }
+            else {
+                $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.Val + '&reqID=12')
+                    .success(function (res) {
+                        
+                        $scope.SelectedCard(res);
+                        $ionicLoading.hide();
+                    })
+                    .error(function (err) {
+                        $ionicLoading.hide();
+                    });
 
-            $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.Val + '&reqID=12')
-                .success(function (res) {
-                    if ($scope.button2) { $scope.RunAll(res); }
-                    else { $scope.SelectedCard(res); }
-                    $ionicLoading.hide();
-                })
-                .error(function (err) {
-                    $ionicLoading.hide();
-                });
+            }
 
         }
 
@@ -108,38 +112,112 @@ angular.module('App')
             }
         }
 
-        $scope.RunAll = function (res) {
+        $scope.getMember = function (p1) {
+            $scope.Val = p1;
+        }
+
+        $scope.RunAll = function () {
             for (var i = 1; i < 8; i++) {
                 switch (i) {
                     case 1:
-                        $scope.result1 = res.data;
-                        $scope.$parent.result1 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatStateVectorTestSubsonic&reqID=12')
+                                .success(function (res) {
+                                    $ionicLoading.hide();
+                                    $scope.selectedRow = "uatStateVectorTestSubsonic";
+                                    $scope.result1 = res.data;
+                                    $scope.$parent.result1 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+                        }, 1000);
+
                         break;
                     case 2:
-                        $scope.result2 = res.data;
-                        $scope.$parent.result2 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatModeStatusTest&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatModeStatusTest";
+                                    $scope.result2 = res.data;
+                                    $scope.$parent.result2 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+                        }, 2000);
+
                         break;
                     case 3:
-                        $scope.result3 = res.data;
-                        $scope.$parent.result3 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatTargetStateTest&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatTargetStateTest";
+                                    $scope.result3 = res.data;
+                                    $scope.$parent.result3 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+                        }, 3000);
+
                         break;
                     case 4:
-                        $scope.result4 = res.data;
-                        $scope.$parent.result4 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatAUXStateVectorTest&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatAUXStateVectorTest";
+                                    $scope.result4 = res.data;
+                                    $scope.$parent.result4 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+                        }, 4000);
+
                         break;
                     case 5:
-                        $scope.result5 = res.data;
-                        $scope.$parent.result5 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatDetailRFLinkTest&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatDetailRFLinkTest";
+                                    $scope.result5 = res.data;
+                                    $scope.$parent.result5 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+                        }, 5000);
+
                         break;
                     case 6:
-                        $scope.result6 = res.data;
-                        $scope.$parent.result6 = res.data;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatTrajectoryChangeTest&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatTrajectoryChangeTest";
+                                    $scope.result6 = res.data;
+                                    $scope.$parent.result6 = res.data;;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
+
+                        }, 6000);
                         break;
                     case 7:
-                        $scope.result7 = res.data;
-                        $scope.$parent.result7 = res.data;
-                        break;
+                        $timeout(function () {
+                            $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatDetailSummary&reqID=12')
+                                .success(function (res) {
+                                    $scope.selectedRow = "uatDetailSummary";
+                                    $scope.result7 = res.data;
+                                    $scope.$parent.result7 = res.data;
+                                })
+                                .error(function (err) {
+                                    $ionicLoading.hide();
+                                });
 
+                        }, 6000);
+                        break;
                     default:
                 }
             }
