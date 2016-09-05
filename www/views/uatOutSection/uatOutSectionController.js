@@ -58,6 +58,8 @@ angular.module('App')
             }
         }
 
+        $scope.$on('runTestEvent',$scope.runTest);
+
         $scope.runTest = function () {
             $ionicLoading.show();
             if ($scope.IsRunningAllEnabled) { $scope.onRunAll(); }
