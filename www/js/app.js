@@ -23,18 +23,18 @@ angular.module('App', ['ionic'])
         controller: 'UatOutSectionController',
         templateUrl: 'views/uatOutSection/uatOutSection.html'
       })
-       .state('uatRFLinkTest', {
-        url: '/uatRFLinkTest',
+       .state('uatDetailRFLinkTest', {
+        url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
         controller: 'UatRFLinkTestController'
       })      
-      .state('uatStateVectorTest', {
-        url: '/uatStateVectorTest',
+      .state('uatStateVectorTestSubsonic', {
+        url: '/uatStateVectorTestSubsonic',
         templateUrl: 'views/uatStateVectorTest/uatStateVectorTest.html',
         controller: 'UatStateVectorTestController'
       })
-      .state('uatSummary', {
-        url: '/uatSummary',
+      .state('uatDetailSummary', {
+        url: '/uatDetailSummary',
         templateUrl: 'views/uatSummary/uatSummary.html',
         controller: 'UatSummaryController'
       })
