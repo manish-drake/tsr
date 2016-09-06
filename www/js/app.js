@@ -12,7 +12,7 @@ angular.module('App', ['ionic'])
     .state('connection', {
     url: '/connection',
     abstract: true,
-    templateUrl: 'templates/connection.html'
+    templateUrl: 'views/modal/connection/connection.html'
   })
       // Code for Connection tabs:Each tab has its own nav history stack:
 

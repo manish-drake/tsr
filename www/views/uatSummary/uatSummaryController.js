@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('UatSummaryController', function ($scope, $http, $ionicLoading, $ionicPopover, $rootScope) {
+    .controller('UatSummaryController', function ($scope, $http, $ionicLoading, $ionicPopover, $ionicModal, $rootScope) {
 
       $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,

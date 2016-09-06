@@ -1,6 +1,6 @@
 angular.module('App')
 
-    .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatOutSectionController', function ($scope, $timeout, $state, $ionicModal, $http, $ionicLoading, $ionicPopover) {
         $scope.Val = 'UATOut';
         $scope.isRunningAllEnabled = false;
         $scope.listOfUATOut = [
@@ -126,7 +126,7 @@ angular.module('App')
                 default:
             }
         }
-        
+
         //Code to Run all the Tests of UAT OUT
         $scope.onRunAll = function () {
             var index = 1000;
