@@ -6,7 +6,7 @@ angular.module('App', ['ionic'])
       .state('index', {
         url: '/index',
         controller: 'IndexController',
-        templateUrl: 'index.html'
+        templateUrl: 'index.html',
       })
       // setup an abstract state for the tabs directive
     .state('connection', {
@@ -48,50 +48,50 @@ angular.module('App', ['ionic'])
   
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
+        controller: 'UatAuxStateVectorTestController',
         templateUrl: 'views/uatAUXStateVectorTest/uatAUXStateVectorTest.html',
-        controller: 'UatAuxStateVectorTestController'
       })
       .state('uatModeStatusTest', {
         url: '/uatModeStatusTest',
+        controller: 'UatModeStatusTestController',
         templateUrl: 'views/uatModeStatusTest/uatModeStatusTest.html',
-        controller: 'UatModeStatusTestController'
       })
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutSectionController',
-        templateUrl: 'views/uatOutSection/uatOutSection.html'
+        templateUrl: 'views/uatOutSection/uatOutSection.html',
       })
-       .state('uatRFLinkTest', {
-        url: '/uatRFLinkTest',
+      .state('uatDetailRFLinkTest', {
+        url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
-        controller: 'UatRFLinkTestController'
+        controller: 'UatRFLinkTestController',
       })      
-      .state('uatStateVectorTest', {
-        url: '/uatStateVectorTest',
+      .state('uatStateVectorTestSubsonic', {
+        url: '/uatStateVectorTestSubsonic',
+        controller: 'UatStateVectorTestController',
         templateUrl: 'views/uatStateVectorTest/uatStateVectorTest.html',
-        controller: 'UatStateVectorTestController'
       })
-      .state('uatSummary', {
-        url: '/uatSummary',
+      .state('uatDetailSummary', {
+        url: '/uatDetailSummary',
+        controller: 'UatSummaryController',
         templateUrl: 'views/uatSummary/uatSummary.html',
-        controller: 'UatSummaryController'
       })
       .state('uatTargetStateTest', {
         url: '/uatTargetStateTest',
+        controller: 'UatTargetStateTestController',
         templateUrl: 'views/uatTargetStateTest/uatTargetStateTest.html',
-        controller: 'UatTargetStateTestController'
+
       })
       .state('uatTrajectoryChangeTest', {
         url: '/uatTrajectoryChangeTest',
+        controller: 'UatTrajectoryChangeTestController',
         templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
-        controller: 'UatTrajectoryChangeTestController'
-      })
-      
-      ;
-
+      });
     $urlRouterProvider.otherwise('/uatOutSection');
   })
-  
+
+
+
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
