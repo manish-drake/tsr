@@ -4,14 +4,14 @@ angular.module('App')
     $ionicModal.fromTemplateUrl('views/modal/help/help.html', {
       scope: $scope,
       animation: 'fade-in'
-    }).then(function (modal) {
-      $scope.modal = modal;
+    }).then(function (helpModal) {
+      $scope.helpModal = helpModal;
     });
     $scope.openHelp = function () {
-      $scope.modal.show();
+      $scope.helpModal.show();
     };
     $scope.closeHelp = function () {
-      $scope.modal.hide();
+      $scope.helpModal.hide();
     };
 
 
@@ -19,13 +19,13 @@ angular.module('App')
     $ionicModal.fromTemplateUrl('views/modal/setup/setup.html', {
       scope: $scope,
       animation: 'fade-in'
-    }).then(function (modal1) {
-      $scope.modal1 = modal1;
+    }).then(function (setupModal) {
+      $scope.setupModal = setupModal;
     });
     $scope.openSetup = function () {
-      $scope.modal1.show();
+      $scope.setupModal.show();
     };
     $scope.closeSetup = function () {
-      $scope.modal1.hide();
+      $scope.setupModal.hide();
     };
   })

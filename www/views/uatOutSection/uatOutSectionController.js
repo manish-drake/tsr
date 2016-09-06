@@ -1,8 +1,8 @@
 angular.module('App')
-    .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover, $rootScope) {
+    .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover,$ionicModal, $rootScope) {
         $scope.Val = 'UATOut';
         $scope.isRunningAllEnabled = false;
-
+//Code for More Popover
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
 
@@ -18,6 +18,21 @@ angular.module('App')
             $scope.popover.hide();
         }
 
+ //Code for Connection Modal  
+    $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
+      scope: $scope,
+      animation: 'fade-in'
+    }).then(function (connectionModal) {
+      $scope.connectionModal = connectionModal;
+    });
+    $scope.openConnection = function () {
+      $scope.connectionModal.show();
+    };
+    $scope.closeConnection = function () {
+      $scope.connectionModal.hide();
+    };
+
+    //Code to Run the Test
         $scope.onRunClick = function (isRunningAllEnabled) {
             $scope.IsRunningAllEnabled = isRunningAllEnabled;
         }
@@ -28,7 +43,7 @@ angular.module('App')
             $scope.MsgId = msgId;
             $scope.selectedRow = msgId;
         }
-
+//Code for double click to navigate to detail page
         $scope.onDoubleClick = function (msgId) {
             $scope.MsgId = msgId;
 
@@ -59,7 +74,8 @@ angular.module('App')
         }
 
         $scope.runTest = function () {
-            $ionicLoading.show();
+            //$ionicLoading.show();
+            $scope.showionicLoading();
             if ($scope.IsRunningAllEnabled) { $scope.onRunAll(); }
             else {
                 $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.MsgId + '&reqID=12')
@@ -73,6 +89,12 @@ angular.module('App')
             }
 
         }
+
+          $scope.showionicLoading = function() {
+            $ionicLoading.show({
+              template: 'Running...'
+        });
+          };
 
         $scope.onSelectedCard = function (res) {
             switch ($scope.MsgId) {
@@ -107,7 +129,7 @@ angular.module('App')
                 default:
             }
         }
-
+//Code to Run all the Tests of UAT OUT
         $scope.onRunAll = function () {
             for (var i = 1; i < 8; i++) {
                 switch (i) {
