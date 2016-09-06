@@ -6,7 +6,7 @@ angular.module('App', ['ionic'])
       .state('index', {
         url: '/index',
         controller: 'IndexController',
-        templateUrl: 'index.html'
+        templateUrl: 'index.html',
       })
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
@@ -21,16 +21,16 @@ angular.module('App', ['ionic'])
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutSectionController',
-        templateUrl: 'views/uatOutSection/uatOutSection.html'
+        templateUrl: 'views/uatOutSection/uatOutSection.html',
       })
-       .state('uatDetailRFLinkTest', {
+      .state('uatDetailRFLinkTest', {
         url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
-        controller: 'UatRFLinkTestController'
+        controller: 'UatRFLinkTestController',
       })      
       .state('uatStateVectorTestSubsonic', {
         url: '/uatStateVectorTestSubsonic',
-
+        controller: 'UatStateVectorTestController',
         templateUrl: 'views/uatStateVectorTest/uatStateVectorTest.html',
       })
       .state('uatDetailSummary', {
@@ -48,8 +48,7 @@ angular.module('App', ['ionic'])
         url: '/uatTrajectoryChangeTest',
         controller: 'UatTrajectoryChangeTestController',
         templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
-      })
-      ;
+      });
     $urlRouterProvider.otherwise('/uatOutSection');
   })
 

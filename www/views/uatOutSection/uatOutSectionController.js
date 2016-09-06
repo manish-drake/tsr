@@ -27,10 +27,12 @@ angular.module('App')
             $scope.popover.hide();
         }
 
+        //Code for run all toggle button is enable or not
         $scope.onRunClick = function (isRunningAllEnabled) {
             $scope.IsRunningAllEnabled = isRunningAllEnabled;
         }
 
+        //Code to get selectedRow on single click 
         $scope.selectedRow = null;
         $scope.onSingleClick = function (msgId) {
 
@@ -38,20 +40,15 @@ angular.module('App')
             $scope.selectedRow = msgId;
         }
 
+        //Code for navigation on double click
         $scope.onDoubleClick = function (msgId) {
             $scope.MsgId = msgId;
-             angular.forEach($scope.listOfUATOut, function (section) 
-             {
-                 if($scope.MsgId==section.text)
-                 {
-                      $state.go(section.text);
-                      break;
-                 }
-             });
-           
+            $state.go($scope.MsgId);
+
         }
 
-        $scope.$on('runTestEvent',$scope.runTest);
+        //Code for Run test card
+        $scope.$on('runTestEvent', $scope.runTest);
 
         $scope.runTest = function () {
             $ionicLoading.show();
@@ -70,6 +67,7 @@ angular.module('App')
 
         }
 
+        //Code for selected card
         $scope.onSelectedCard = function (res) {
             switch ($scope.MsgId) {
                 case 'uatStateVectorTestSubsonic':
@@ -104,6 +102,7 @@ angular.module('App')
             }
         }
 
+        //Code for Run all card 
         $scope.onRunAll = function () {
             var index = 1000;
             angular.forEach($scope.listOfUATOut, function (section) {
@@ -112,7 +111,7 @@ angular.module('App')
                         .success(function (res) {
                             $ionicLoading.hide();
                             $scope.selectedRow = section.text;
-                            $scope.MsgId=section.text;
+                            $scope.MsgId = section.text;
                             $scope.onSelectedCard(res);
                         })
                         .error(function (err) {
