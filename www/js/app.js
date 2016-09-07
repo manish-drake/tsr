@@ -15,11 +15,10 @@ angular.module('App', ['ionic'])
         templateUrl: 'views/modal/connection/connection.html',
       })
 
-   
-      .state('uatAUXStateVectorTest', {
+   .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
-        templateUrl: 'views/uatAUXStateVectorTest/uatAUXStateVectorTest.html',
+        templateUrl: 'views/uatAuxStateVectorTest/uatAUXStateVectorTest.html',
       })
       .state('uatModeStatusTest', {
         url: '/uatModeStatusTest',
