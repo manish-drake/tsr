@@ -86,12 +86,6 @@ angular.module('App')
 
         }
 
-        //Code for saving test results
-        $scope.onSave = function () {
-
-            
-        }
-
 
         $scope.showionicLoading = function () {
             $ionicLoading.show({
