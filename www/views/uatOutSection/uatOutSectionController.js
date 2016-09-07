@@ -29,7 +29,7 @@ angular.module('App')
          * 
          * @param {any} $event
          * 
-         * The $event object contains the browser's event object:
+         * The $event object contains the browser's event object.
          */
         $scope.openMore = function ($event) {
             $scope.popover.show($event);

@@ -7,24 +7,48 @@ angular.module('App')
     }).then(function (helpModal) {
       $scope.helpModal = helpModal;
     });
+    
+      
+    /**
+     * @func openHelp
+     * 
+     * open helpModalPopup on help button 
+     */
     $scope.openHelp = function () {
       $scope.helpModal.show();
     };
+
+    /**
+     * @func closeHelp
+     * 
+     * close helpModalPopup on cancel button
+     */
     $scope.closeHelp = function () {
       $scope.helpModal.hide();
     };
 
-
-    //Code for Setup Modal 
     $ionicModal.fromTemplateUrl('views/modal/setup/setup.html', {
       scope: $scope,
       animation: 'fade-in'
     }).then(function (setupModal) {
       $scope.setupModal = setupModal;
     });
+
+
+    /**
+     * @func openSetup
+     * 
+     * open setupModalPopup on setup button 
+     */
     $scope.openSetup = function () {
       $scope.setupModal.show();
     };
+
+    /**
+     * @func closeHelp
+     * 
+     * close setupModalPopup on cancel button
+     */
     $scope.closeSetup = function () {
       $scope.setupModal.hide();
     };
