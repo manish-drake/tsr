@@ -15,20 +15,25 @@ angular.module('App')
             $scope.popover.hide();
         }
 
-//Code for Connection Modal  
-    $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
-      scope: $scope,
-      animation: 'fade-in'
-    }).then(function (connectionModal) {
-      $scope.connectionModal = connectionModal;
-    });
-    $scope.openConnection = function () {
-      $scope.connectionModal.show();
-    };
-    $scope.closeConnection = function () {
-      $scope.connectionModal.hide();
-    };
-    
+        //Code for Connection Modal  
+        $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
+            scope: $scope,
+            animation: 'fade-in'
+        }).then(function (connectionModal) {
+            $scope.connectionModal = connectionModal;
+        });
+        $scope.openConnection = function () {
+            $scope.connectionModal.show();
+        };
+        $scope.closeConnection = function () {
+            $scope.connectionModal.hide();
+        };
+
+        /**
+         * @func runTest
+         * 
+         * this function run test on particular detail page.
+         */
         $scope.runTest = function () {
             $ionicLoading.show();
             // $scope.showionicLoading();

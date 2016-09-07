@@ -1,35 +1,52 @@
 angular.module('App')
-    .controller('UatAuxStateVectorTestController', function ($scope, $http, $ionicLoading, $ionicPopover,$ionicModal,$rootScope) {
-//Code for More Popover  
+    .controller('UatAuxStateVectorTestController', function ($scope, $http, $ionicLoading, $ionicPopover, $ionicModal, $rootScope) {
+
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
         }).then(function (popover) {
             $scope.popover = popover;
         })
 
+        /**
+         * 
+         * 
+         * @param {any} $event
+         */
         $scope.openMore = function ($event) {
             $scope.popover.show($event);
         }
 
+        /**
+         * 
+         */
         $scope.closePopover = function () {
             $scope.popover.hide();
         }
 
-//Code for Connection Modal  
-    $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
-      scope: $scope,
-      animation: 'fade-in'
-    }).then(function (connectionModal) {
-      $scope.connectionModal = connectionModal;
-    });
-    $scope.openConnection = function () {
-      $scope.connectionModal.show();
-    };
-    $scope.closeConnection = function () {
-      $scope.connectionModal.hide();
-    };
-    
-    //Code to run test  
+        $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
+            scope: $scope,
+            animation: 'fade-in'
+        }).then(function (connectionModal) {
+            $scope.connectionModal = connectionModal;
+        });
+        /**
+         * 
+         */
+        $scope.openConnection = function () {
+            $scope.connectionModal.show();
+        };
+        /**
+         * 
+         */
+        $scope.closeConnection = function () {
+            $scope.connectionModal.hide();
+        };
+
+        /**
+         * @func runTest
+         * 
+         * this function run test on particular detail page.
+         */
         $scope.runTest = function () {
             $ionicLoading.show();
             //$scope.showionicLoading();
@@ -43,9 +60,4 @@ angular.module('App')
                     $ionicLoading.hide();
                 });
         }
-        // $scope.showionicLoading = function() {
-        //     $ionicLoading.show({
-        //       template: 'Running...'
-        // });
-        //   };
     });
