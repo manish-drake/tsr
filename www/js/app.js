@@ -6,8 +6,46 @@ angular.module('App', ['ionic'])
       .state('index', {
         url: '/index',
         controller: 'IndexController',
-        templateUrl: 'index.html'
+        templateUrl: 'index.html',
       })
+      // setup an abstract state for the tabs directive
+    .state('connection', {
+    url: '/connection',
+    abstract: true,
+    templateUrl: 'views/modal/connection/connection.html'
+  })
+      // Code for Connection tabs:Each tab has its own nav history stack:
+
+  .state('tab.data', {
+    url: '/data',
+    views: {
+      'tab-data': {
+        templateUrl: 'views/modal/connection/tabs/tab-data.html',
+        controller: 'DataController'
+      }
+    }
+  })
+
+  .state('tab.antenna', {
+      url: '/antenna',
+      views: {
+        'tab-antenna': {
+          templateUrl: 'views/modal/connection/tabs/tab-antenna.html',
+          controller: 'AntennaController'
+        }
+      }
+    })
+    
+  .state('tab.direct', {
+    url: '/direct',
+    views: {
+      'tab-direct': {
+        templateUrl: 'views/modal/connection/tabs/tab-direct.html',
+        controller: 'DirectController'
+      }
+    }
+  })
+  
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
@@ -21,20 +59,20 @@ angular.module('App', ['ionic'])
       .state('uatOutSection', {
         url: '/uatOutSection',
         controller: 'UatOutSectionController',
-        templateUrl: 'views/uatOutSection/uatOutSection.html'
+        templateUrl: 'views/uatOutSection/uatOutSection.html',
       })
-      .state('uatRFLinkTest', {
-        url: '/uatRFLinkTest',
-        controller: 'UatRFLinkTestController',
+      .state('uatDetailRFLinkTest', {
+        url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
-      })
-      .state('uatStateVectorTest', {
-        url: '/uatStateVectorTest',
+        controller: 'UatRFLinkTestController',
+      })      
+      .state('uatStateVectorTestSubsonic', {
+        url: '/uatStateVectorTestSubsonic',
         controller: 'UatStateVectorTestController',
         templateUrl: 'views/uatStateVectorTest/uatStateVectorTest.html',
       })
-      .state('uatSummary', {
-        url: '/uatSummary',
+      .state('uatDetailSummary', {
+        url: '/uatDetailSummary',
         controller: 'UatSummaryController',
         templateUrl: 'views/uatSummary/uatSummary.html',
       })
@@ -48,8 +86,7 @@ angular.module('App', ['ionic'])
         url: '/uatTrajectoryChangeTest',
         controller: 'UatTrajectoryChangeTestController',
         templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
-      })
-      ;
+      });
     $urlRouterProvider.otherwise('/uatOutSection');
   })
 
