@@ -1,5 +1,5 @@
 angular.module('App')
-  .controller('MorePopoverController', function ($scope, $ionicPopup, $ionicModal, $rootScope) {
+  .controller('MorePopoverController', function ($scope, $ionicModal, $rootScope) {
       
     $ionicModal.fromTemplateUrl('views/modal/help/help.html', {
       scope: $scope,
@@ -12,7 +12,7 @@ angular.module('App')
     /**
      * @func openHelp
      * 
-     * open helpModalPopup on help button 
+     * open helpModalPopup on help button and close More popover on Help button 
      */
     $scope.openHelp = function () {
       $scope.helpModal.show();
@@ -40,7 +40,7 @@ angular.module('App')
     /**
      * @func openSetup
      * 
-     * open setupModalPopup on setup button 
+     * open setupModalPopup on setup button and close More Popover on Setup button
      */
     $scope.openSetup = function () {
       $scope.setupModal.show();
@@ -55,10 +55,21 @@ angular.module('App')
     $scope.closeSetup = function () {
       $scope.setupModal.hide();
     };
+    
+    /**
+     * @func openShowStatus
+     * 
+     * close More popover on Show Status button 
+     */
     $scope.openShowStatus = function () {
 
             $scope.closePopover();
         }
+     /**
+      * @func save
+
+      * close More popover on Save button 
+      */
      $scope.save = function () {
 
             $scope.closePopover();

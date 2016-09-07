@@ -72,6 +72,11 @@ angular.module('App')
                     $ionicLoading.hide();
                 });
         }
+         /**
+         * @func showionicLoading
+         * 
+         * change template iconicloading.
+         */
         $scope.showionicLoading = function () {
             $ionicLoading.show({
                 template: 'Running...'
