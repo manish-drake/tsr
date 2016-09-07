@@ -1,5 +1,6 @@
 angular.module('App')
-    .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover) {
+    .controller('UatOutSectionController', function ($scope, $timeout, $state, $ionicModal, $http, $ionicLoading, $ionicPopover, $rootScope) {
+
         $scope.Val = 'UATOut';
         $scope.IsRunEnable=true;
         $scope.isRunningAllEnabled = false;
@@ -13,6 +14,7 @@ angular.module('App')
             { text: 'uatDetailSummary' }
         ];
 
+        //Code for More Popover
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
 
@@ -27,6 +29,21 @@ angular.module('App')
         $scope.closePopover = function () {
             $scope.popover.hide();
         }
+
+
+        //Code for Connection Modal  
+        $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
+            scope: $scope,
+            animation: 'fade-in'
+        }).then(function (connectionModal) {
+            $scope.connectionModal = connectionModal;
+        });
+        $scope.openConnection = function () {
+            $scope.connectionModal.show();
+        };
+        $scope.closeConnection = function () {
+            $scope.connectionModal.hide();
+        };
 
         //Code for run all toggle button is enable or not
         $scope.onRunClick = function (isRunningAllEnabled) {
@@ -43,6 +60,7 @@ angular.module('App')
             $scope.selectedRow = msgId;
         }
 
+
         //Code for navigation on double click
         $scope.onDoubleClick = function (msgId) {
             $scope.MsgId = msgId;
@@ -56,7 +74,8 @@ angular.module('App')
         $scope.$on('runTestEvent', $scope.runTest);
 
         $scope.runTest = function () {
-            $ionicLoading.show();
+            //$ionicLoading.show();
+            $scope.showionicLoading();
             if ($scope.IsRunningAllEnabled) { $scope.onRunAll(); }
             else {
                 $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.MsgId + '&reqID=12')
@@ -72,20 +91,19 @@ angular.module('App')
 
         }
 
-        //Code for save card
-        $scope.SaveCard=function(res){
-            $scope.root[
-                {
-                    section:[
-                       {
-                           card:[
 
-                           ]
-                       }
-                    ]
-                }
-            ]
+        //Code for saving test results
+        $scope.onSave = function () {
+
+            
         }
+
+
+        $scope.showionicLoading = function () {
+            $ionicLoading.show({
+                template: 'Running...'
+            });
+        };
 
         //Code for selected card
         $scope.onSelectedCard = function (res) {
@@ -122,7 +140,7 @@ angular.module('App')
             }
         }
 
-        //Code for Run all card 
+        //Code to Run all the Tests of UAT OUT
         $scope.onRunAll = function () {
             var index = 1000;
             angular.forEach($scope.listOfUATOut, function (section) {
