@@ -1,12 +1,21 @@
 angular.module('App')
-    .controller('UatModeStatusTestController', function ($scope, $http, $ionicLoading, $ionicPopover,$ionicModal, $rootScope) {
+    .controller('UatModeStatusTestController', function ($scope, $http, $ionicLoading, $ionicPopover, $ionicModal, $rootScope) {
 
-       $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
+        $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
         }).then(function (popover) {
             $scope.popover = popover;
         })
 
+        /**
+         * @func openMore
+         * 
+         * open morePopover on more button
+         * 
+         * @param {any} $event
+         * 
+         * The $event object contains the browser's event object.
+         */
         $scope.openMore = function ($event) {
             $scope.popover.show($event);
         }
@@ -14,21 +23,42 @@ angular.module('App')
         $scope.closePopover = function () {
             $scope.popover.hide();
         }
-        
-//Code for Connection Modal  
-    $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
-      scope: $scope,
-      animation: 'fade-in'
-    }).then(function (connectionModal) {
-      $scope.connectionModal = connectionModal;
-    });
-    $scope.openConnection = function () {
-      $scope.connectionModal.show();
-    };
-    $scope.closeConnection = function () {
-      $scope.connectionModal.hide();
-    };
-    
+
+        /**
+         * @func  closePopover
+         * 
+         * close morePopover on cancel button
+         */  
+        $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
+            scope: $scope,
+            animation: 'fade-in'
+        }).then(function (connectionModal) {
+            $scope.connectionModal = connectionModal;
+        });
+
+        /**
+         * @func openConnection
+         * 
+         * open connectionModal popup on setup button
+         */
+        $scope.openConnection = function () {
+            $scope.connectionModal.show();
+        };
+
+        /**
+         * @func closeConnection
+         * 
+         * close connectionModal popup on cancel button.
+         */
+        $scope.closeConnection = function () {
+            $scope.connectionModal.hide();
+        };
+
+        /**
+         * @func runTest
+         * 
+         * this function run test on particular detail page.
+         */
         $scope.runTest = function () {
             //$ionicLoading.show();
             $scope.showionicLoading();
@@ -42,9 +72,9 @@ angular.module('App')
                     $ionicLoading.hide();
                 });
         }
-        $scope.showionicLoading = function() {
+        $scope.showionicLoading = function () {
             $ionicLoading.show({
-              template: 'Running...'
-        });
-          };
+                template: 'Running...'
+            });
+        };
     });

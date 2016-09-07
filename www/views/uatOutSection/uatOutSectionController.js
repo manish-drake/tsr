@@ -1,7 +1,8 @@
 angular.module('App')
+    .controller('UatOutSectionController', function ($scope, $timeout, $state, $ionicModal, $http, $ionicLoading, $ionicPopover, $rootScope) {
 
-    .controller('UatOutSectionController', function ($scope, $timeout, $state, $ionicModal, $http, $ionicLoading, $ionicPopover) {
         $scope.Val = 'UATOut';
+        $scope.IsRunEnable=true;
         $scope.isRunningAllEnabled = false;
         $scope.listOfUATOut = [
             { text: 'uatStateVectorTestSubsonic' },
@@ -13,7 +14,7 @@ angular.module('App')
             { text: 'uatDetailSummary' }
         ];
 
-        //Code for More Popover
+       
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
 
@@ -21,53 +22,114 @@ angular.module('App')
             $scope.popover = popover;
         })
 
+        /**
+         * @func openMore
+         * 
+         *  open morePopover on more button
+         * 
+         * @param {any} $event
+         * 
+         * The $event object contains the browser's event object.
+         */
         $scope.openMore = function ($event) {
             $scope.popover.show($event);
         }
 
+        /**
+         * @func closePopover
+         * 
+         *close morePopover on cancel button
+         */
         $scope.closePopover = function () {
             $scope.popover.hide();
         }
-
-
-        //Code for Connection Modal  
+        
         $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
             scope: $scope,
             animation: 'fade-in'
         }).then(function (connectionModal) {
             $scope.connectionModal = connectionModal;
         });
+
+        /**
+         * @func openConnection
+         * 
+         *  open connection modal popup on cconnection`s click.
+         */
         $scope.openConnection = function () {
             $scope.connectionModal.show();
         };
+
+        /**
+         * @func closeConnection
+         * 
+         *close connection modal popup on cancel`s click
+         */
         $scope.closeConnection = function () {
             $scope.connectionModal.hide();
         };
 
-        //Code for run all toggle button is enable or not
-        $scope.onRunClick = function (isRunningAllEnabled) {
+        
+        /**
+         * 
+         * @func onRunClick
+         * 
+         * this function enable run toggle button in more popup and enable run button as well
+         * @param {any} isRunningAllEnabled
+         * 
+         *true or false
+         */
+        $scope.onRunClickEnable = function (isRunningAllEnabled) {
             $scope.IsRunningAllEnabled = isRunningAllEnabled;
+            $scope.IsRunEnable=false;
         }
 
-        //Code to get selectedRow on single click 
+       
         $scope.selectedRow = null;
+        /**
+         * @func onSingleClick
+         * 
+         * this function does 3 task. 
+         * (1) set MsgId to get result from the server
+         * (2) enable run button.
+         * (3) set card as selected.
+         * @param {any} msgId
+         * 
+         * indentificaion of single card.
+         */
         $scope.onSingleClick = function (msgId) {
 
             $scope.MsgId = msgId;
+            $scope.IsRunEnable=false;
             $scope.selectedRow = msgId;
         }
 
 
-        //Code for navigation on double click
-        $scope.onDoubleClick = function (msgId) {
-            $scope.MsgId = msgId;
-            $state.go($scope.MsgId);
+     
+        /**
+         * @func onDoubleClick
+         * 
+         * this function call when user double click on the card.when user double click on the card than this function
+         *  navigate in selected card detail page. 
+         * @param {any} msgId
+         * 
+         * 'navigation state' where user wants to navigate.
+         */
+        $scope.onDoubleClick = function (state) {
 
+            $state.go(state);
         }
 
-        //Code for Run test card
+       
         $scope.$on('runTestEvent', $scope.runTest);
 
+        /**
+         * @func runTest
+         * 
+         * this function call on run button`s click.it run cards on the basis of two condition.
+         * (1) when user wants to run a selected card. user select a card and tap on run button.
+         * (2) when user enable runall button from the morePopover and tap on run button.
+         */
         $scope.runTest = function () {
             //$ionicLoading.show();
             $scope.showionicLoading();
@@ -76,7 +138,6 @@ angular.module('App')
                 $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + $scope.MsgId + '&reqID=12')
                     .success(function (res) {
                         $scope.onSelectedCard(res);
-                        var theJSON = JSON.stringify(res);
                         $ionicLoading.hide();
                     })
                     .error(function (err) {
@@ -86,13 +147,28 @@ angular.module('App')
 
         }
 
+
+        /**
+         * @func showionicLoading
+         * 
+         * change template iconicloading.
+         */
         $scope.showionicLoading = function () {
             $ionicLoading.show({
                 template: 'Running...'
             });
         };
 
-        //Code for selected card
+
+        /**
+         * @func onSelectedCard
+         * 
+         * this function call from the "runTest()" when user select a particular card and click on run button.
+         * 
+         * @param {any} res
+         * 
+         * http-responce from the server for selected card only
+         */
         $scope.onSelectedCard = function (res) {
             switch ($scope.MsgId) {
                 case 'uatStateVectorTestSubsonic':
@@ -127,7 +203,12 @@ angular.module('App')
             }
         }
 
-        //Code to Run all the Tests of UAT OUT
+
+        /**
+         * @func onRunAll
+         * 
+         * this fucntion call from the "runTest()" to  run all cards simultaneously when RunAll button enable from the popup.
+         */
         $scope.onRunAll = function () {
             var index = 1000;
             angular.forEach($scope.listOfUATOut, function (section) {

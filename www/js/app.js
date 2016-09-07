@@ -8,11 +8,14 @@ angular.module('App', ['ionic'])
         controller: 'IndexController',
         templateUrl: 'index.html',
       })
+
     .state('connection', {
         url: '/connection',
         controller: 'ConnectionController',
         templateUrl: 'views/modal/connection/connection.html',
       })
+
+   
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
@@ -32,7 +35,7 @@ angular.module('App', ['ionic'])
         url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
         controller: 'UatRFLinkTestController',
-      })      
+      })
       .state('uatStateVectorTestSubsonic', {
         url: '/uatStateVectorTestSubsonic',
         controller: 'UatStateVectorTestController',
@@ -57,7 +60,6 @@ angular.module('App', ['ionic'])
       // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/uatOutSection');
   })
-
 
 
   .run(function ($ionicPlatform) {
