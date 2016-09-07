@@ -1,5 +1,6 @@
 angular.module('App')
     .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover, $rootScope) {
+
         $scope.Val = 'UATOut';
         $scope.isRunningAllEnabled = false;
 
@@ -58,7 +59,7 @@ angular.module('App')
             }
         }
 
-        $scope.$on('runTestEvent',$scope.runTest);
+        $scope.$on('runTestEvent', $scope.runTest);
 
         $scope.runTest = function () {
             $ionicLoading.show();
@@ -75,6 +76,12 @@ angular.module('App')
             }
 
         }
+
+        $scope.onSave = function () {
+
+            
+        }
+
 
         $scope.onSelectedCard = function (res) {
             switch ($scope.MsgId) {
