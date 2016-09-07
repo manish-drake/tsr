@@ -1,6 +1,7 @@
 angular.module('App')
     .controller('UatOutSectionController', function ($scope, $timeout, $state, $http, $ionicLoading, $ionicPopover) {
         $scope.Val = 'UATOut';
+        $scope.IsRunEnable=true;
         $scope.isRunningAllEnabled = false;
         $scope.listOfUATOut = [
             { text: 'uatStateVectorTestSubsonic' },
@@ -30,6 +31,7 @@ angular.module('App')
         //Code for run all toggle button is enable or not
         $scope.onRunClick = function (isRunningAllEnabled) {
             $scope.IsRunningAllEnabled = isRunningAllEnabled;
+            $scope.IsRunEnable=false;
         }
 
         //Code to get selectedRow on single click 
@@ -37,6 +39,7 @@ angular.module('App')
         $scope.onSingleClick = function (msgId) {
 
             $scope.MsgId = msgId;
+            $scope.IsRunEnable=false;
             $scope.selectedRow = msgId;
         }
 
@@ -46,6 +49,8 @@ angular.module('App')
             $state.go($scope.MsgId);
 
         }
+
+        
 
         //Code for Run test card
         $scope.$on('runTestEvent', $scope.runTest);
@@ -65,6 +70,21 @@ angular.module('App')
                     });
             }
 
+        }
+
+        //Code for save card
+        $scope.SaveCard=function(res){
+            $scope.root[
+                {
+                    section:[
+                       {
+                           card:[
+
+                           ]
+                       }
+                    ]
+                }
+            ]
         }
 
         //Code for selected card
