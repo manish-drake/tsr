@@ -1,24 +1,24 @@
 <ion-popover-view style="width:150px; height:465px" ng-controller="MorePopoverController">
   <ion-content>
-    <div class="row" ng-controller="MorePopoverController">
-      <button class="button button-clear button-positive button-icon-left" ng-click="openSetup()">
+    <div class="row" ng-click="openSetup()">
+      <button class="button button-clear button-positive button-icon-left" >
     <i class="icon ion-ios-gear"/>
     Setup
   </button>
     </div>
-    <div class="row" ng-controller="MorePopoverController">
-      <button class="button button-clear button-positive button-icon-left" ng-click="openHelp()">
+    <div class="row" ng-click="openHelp()">
+      <button class="button button-clear button-positive button-icon-left" >
     <i class="icon ion-help" style="margin-left:3px;margin-right:5px"/>
     Help
   </button>
     </div>
-    <div class="row">
-      <button class="button button-clear button-positive button-icon-left">
+    <div class="row" ng-click="openShowStatus()">
+      <button class="button button-clear button-positive button-icon-left" >
     <i class="icon ion-clipboard" style="margin-left:2px;margin-right:3px"/>
     Show Status
   </button>
     </div>
-    <div class="row">
+    <div class="row" ng-click="save()">
       <button class="button button-clear button-positive button-icon-left">
     <i class="icon ion-archive"/>
     Save
@@ -33,7 +33,7 @@
   </button>
     </div>
     <div class="row">
-      <button class="button button-clear button-stable button-icon-left" ng-model="button2" ng-click="onRunClick(button2.clicked=!button2.clicked)" ng-class="button2.clicked?'button-clear button-positive':'button-clear button-stable'">
+      <button class="button button-clear button-stable button-icon-left" ng-model="button2" ng-click="onRunClickEnable(button2.clicked=!button2.clicked)" ng-class="button2.clicked?'button-clear button-positive':'button-clear button-stable'">
     <i class="icon ion-android-walk" style="margin-left:3px;margin-right:5px"/>
     Run All
   </button>

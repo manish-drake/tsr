@@ -11,6 +11,47 @@
     font-weight: 700;
   }
 
+.antenna {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/antenna.png');
+  background-size:contain;
+}
+
+  .antennafilled {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/antennaFilled.png');
+  background-size:contain;
+}
+ .data {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/data.png');
+  background-size:contain;
+}
+
+ .datafilled {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/dataFilled.png');
+  background-size:contain;
+}
+
+ .direct {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/direct.png');
+  background-size:contain;
+}
+
+ .directfilled {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/directFilled.png');
+  background-size:contain;
+}
+
 .btntobottom{
     position: absolute;
     bottom: 0px;

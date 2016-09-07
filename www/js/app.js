@@ -8,44 +8,14 @@ angular.module('App', ['ionic'])
         controller: 'IndexController',
         templateUrl: 'index.html',
       })
-      // setup an abstract state for the tabs directive
+
     .state('connection', {
-    url: '/connection',
-    abstract: true,
-    templateUrl: 'views/modal/connection/connection.html'
-  })
-      // Code for Connection tabs:Each tab has its own nav history stack:
+        url: '/connection',
+        controller: 'ConnectionController',
+        templateUrl: 'views/modal/connection/connection.html',
+      })
 
-  .state('tab.data', {
-    url: '/data',
-    views: {
-      'tab-data': {
-        templateUrl: 'views/modal/connection/tabs/tab-data.html',
-        controller: 'DataController'
-      }
-    }
-  })
-
-  .state('tab.antenna', {
-      url: '/antenna',
-      views: {
-        'tab-antenna': {
-          templateUrl: 'views/modal/connection/tabs/tab-antenna.html',
-          controller: 'AntennaController'
-        }
-      }
-    })
-    
-  .state('tab.direct', {
-    url: '/direct',
-    views: {
-      'tab-direct': {
-        templateUrl: 'views/modal/connection/tabs/tab-direct.html',
-        controller: 'DirectController'
-      }
-    }
-  })
-  
+   
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
@@ -65,7 +35,7 @@ angular.module('App', ['ionic'])
         url: '/uatDetailRFLinkTest',
         templateUrl: 'views/uatRFLinkTest/uatRFLinkTest.html',
         controller: 'UatRFLinkTestController',
-      })      
+      })
       .state('uatStateVectorTestSubsonic', {
         url: '/uatStateVectorTestSubsonic',
         controller: 'UatStateVectorTestController',
@@ -87,6 +57,7 @@ angular.module('App', ['ionic'])
         controller: 'UatTrajectoryChangeTestController',
         templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
       });
+      // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/uatOutSection');
   })
 
