@@ -1,6 +1,6 @@
 angular.module('App')
   .controller('MorePopoverController', function ($scope, $ionicPopup, $ionicModal, $rootScope) {
-    //Code for Help Modal  
+      
     $ionicModal.fromTemplateUrl('views/modal/help/help.html', {
       scope: $scope,
       animation: 'fade-in'
@@ -9,13 +9,14 @@ angular.module('App')
     });
     $scope.openHelp = function () {
       $scope.helpModal.show();
+      $scope.closePopover();
     };
     $scope.closeHelp = function () {
       $scope.helpModal.hide();
     };
 
 
-    //Code for Setup Modal 
+    
     $ionicModal.fromTemplateUrl('views/modal/setup/setup.html', {
       scope: $scope,
       animation: 'fade-in'
@@ -24,8 +25,20 @@ angular.module('App')
     });
     $scope.openSetup = function () {
       $scope.setupModal.show();
+      $scope.closePopover();
     };
     $scope.closeSetup = function () {
       $scope.setupModal.hide();
     };
+    $scope.openShowStatus = function () {
+
+            $scope.closePopover();
+        }
+     $scope.save = function () {
+
+            $scope.closePopover();
+        }
+     
   })
+
+ 
