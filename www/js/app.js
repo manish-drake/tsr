@@ -14,8 +14,6 @@ angular.module('App', ['ionic'])
         controller: 'ConnectionController',
         templateUrl: 'views/modal/connection/connection.html',
       })
-
-   
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
