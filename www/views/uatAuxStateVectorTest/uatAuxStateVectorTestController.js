@@ -39,7 +39,7 @@ angular.module('App')
         /**
          * @func openConnection
          * 
-         * open connectionModal popup on setup button
+         * open connectionModal popup on connection button 
          */
         $scope.openConnection = function () {
             $scope.connectionModal.show();
@@ -60,8 +60,8 @@ angular.module('App')
          * this function run test on particular detail page.
          */
         $scope.runTest = function () {
-            $ionicLoading.show();
-            //$scope.showionicLoading();
+            //$ionicLoading.show();
+            $scope.showionicLoading();
             $http.get('http://13.90.248.158:8081/run_test_get?msgID=uatAUXStateVectorTest&reqID=12')
                 .success(function (res) {
                     $scope.uatAUXStateVectorTest = res.data;
@@ -72,4 +72,14 @@ angular.module('App')
                     $ionicLoading.hide();
                 });
         }
+         /**
+         * @func showionicLoading
+         * 
+         * change template iconicloading.
+         */
+        $scope.showionicLoading = function () {
+            $ionicLoading.show({
+                template: 'Running...'
+            });
+        };
     });

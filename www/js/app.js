@@ -9,7 +9,7 @@ angular.module('App', ['ionic'])
         templateUrl: 'index.html',
       })
 
-    .state('connection', {
+      .state('connection', {
         url: '/connection',
         controller: 'ConnectionController',
         templateUrl: 'views/modal/connection/connection.html',
@@ -17,7 +17,7 @@ angular.module('App', ['ionic'])
       .state('uatAUXStateVectorTest', {
         url: '/uatAUXStateVectorTest',
         controller: 'UatAuxStateVectorTestController',
-        templateUrl: 'views/uatAUXStateVectorTest/uatAUXStateVectorTest.html',
+        templateUrl: 'views/uatAuxStateVectorTest/uatAUXStateVectorTest.html',
       })
       .state('uatModeStatusTest', {
         url: '/uatModeStatusTest',
@@ -55,7 +55,7 @@ angular.module('App', ['ionic'])
         controller: 'UatTrajectoryChangeTestController',
         templateUrl: 'views/uatTrajectoryChangeTest/uatTrajectoryChangeTest.html',
       });
-      // if none of the above states are matched, use this as the fallback
+    // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/uatOutSection');
   })
 
