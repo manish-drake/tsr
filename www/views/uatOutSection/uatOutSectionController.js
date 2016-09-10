@@ -2,7 +2,7 @@ angular.module('App')
     .controller('UatOutSectionController', function ($scope, $timeout, $state, $ionicModal, $http, $ionicLoading, $ionicPopover, $rootScope) {
 
         $scope.Val = 'UATOut';
-        $scope.IsRunEnable=true;
+        $scope.IsRunEnable = true;
         $scope.isRunningAllEnabled = false;
         $scope.listOfUATOut = [
             { text: 'uatStateVectorTestSubsonic' },
@@ -14,7 +14,6 @@ angular.module('App')
             { text: 'uatDetailSummary' }
         ];
 
-       
         $ionicPopover.fromTemplateUrl('views/morePopover/morePopover.html', {
             scope: $scope,
 
@@ -43,7 +42,7 @@ angular.module('App')
         $scope.closePopover = function () {
             $scope.popover.hide();
         }
-        
+
         $ionicModal.fromTemplateUrl('views/modal/connection/connection.html', {
             scope: $scope,
             animation: 'fade-in'
@@ -69,7 +68,7 @@ angular.module('App')
             $scope.connectionModal.hide();
         };
 
-        
+
         /**
          * 
          * @func onRunClick
@@ -81,10 +80,10 @@ angular.module('App')
          */
         $scope.onRunClickEnable = function (isRunningAllEnabled) {
             $scope.IsRunningAllEnabled = isRunningAllEnabled;
-            $scope.IsRunEnable=false;
+            $scope.IsRunEnable = false;
         }
 
-       
+
         $scope.selectedRow = null;
         /**
          * @func onSingleClick
@@ -100,12 +99,12 @@ angular.module('App')
         $scope.onSingleClick = function (msgId) {
 
             $scope.MsgId = msgId;
-            $scope.IsRunEnable=false;
+            $scope.IsRunEnable = false;
             $scope.selectedRow = msgId;
         }
 
 
-     
+
         /**
          * @func onDoubleClick
          * 
@@ -120,7 +119,7 @@ angular.module('App')
             $state.go(state);
         }
 
-       
+
         $scope.$on('runTestEvent', $scope.runTest);
 
         /**
@@ -203,7 +202,6 @@ angular.module('App')
             }
         }
 
-
         /**
          * @func onRunAll
          * 
@@ -211,6 +209,8 @@ angular.module('App')
          */
         $scope.onRunAll = function () {
             var index = 1000;
+
+            var theJSON = JSON.stringify($scope.root);
             angular.forEach($scope.listOfUATOut, function (section) {
                 $timeout(function () {
                     $http.get('http://13.90.248.158:8081/run_test_get?msgID=' + section.text + '&reqID=12')
