@@ -144,15 +144,23 @@
     color: dimgray;
     padding-left: 10px;
     padding-bottom:  11px;
-    width:250px;    
+    width:280px;    
     font-size: 21px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
 }
 .detailRFLinkResult{
     color: dimgray;
     padding-left: 10px;
     padding-bottom:  11px;
     width:160px;    
+    font-size: 21px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+.detailSummaryResult{
+    color: dimgray;
+    padding-left: 10px;
+    padding-bottom:  11px;
+    width:180px;    
     font-size: 21px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }

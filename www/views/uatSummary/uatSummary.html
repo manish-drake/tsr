@@ -13,7 +13,7 @@
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
-        <div class="customcard">
+        <div class="customcard" style="min-height:886px; max-height:100%">
             <div style="align-content: stretch;margin-bottom:10px;">
                 <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatTrajectoryChangeTest">PREVIOUS</button>
                 <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatStateVectorTestSubsonic" style="float: right">NEXT</button>
@@ -42,45 +42,45 @@
                     </tr>
                     <tr>
                         <td class="detailLabel">Latitude:</td>
-                        <td class="detailRFLinkResult">{{uatDetailSummary.latitude}}</td>
+                        <td class="detailSummaryResult">{{uatDetailSummary.latitude}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Longitude:</td>
-                        <td class="detailRFLinkResult">{{uatDetailSummary.longitude}}</td>
+                        <td class="detailSummaryResult">{{uatDetailSummary.longitude}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">A/G State: {{uatDetailSummary.agState}}</td>
-                        <td class="detailRFLinkResult">N Vel: {{uatDetailSummary.nVel}}</td>
+                        <td class="detailSummaryResult">N Vel: {{uatDetailSummary.nVel}}</td>
                         <td class="detailResult">E Vel: {{uatDetailSummary.eVel}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Emit Cat: {{uatDetailSummary.emitCat}}</td>
-                        <td class="detailRFLinkResult">ID: {{uatDetailSummary.id}}</td>
+                        <td class="detailSummaryResult">ID: {{uatDetailSummary.id}}</td>
                         <td class="detailResult">Emer: {{uatDetailSummary.emer}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">SIL: {{uatDetailSummary.sil}}</td>
-                        <td class="detailRFLinkResult">SIL-S: {{uatDetailSummary.silS}}</td>
+                        <td class="detailSummaryResult">SIL-S: {{uatDetailSummary.silS}}</td>
                         <td class="detailResult">NAC-P: {{uatDetailSummary.nacP}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">NAC-V: {{uatDetailSummary.nacV}}</td>
-                        <td class="detailRFLinkResult">NIC Baro: {{uatDetailSummary.nicBaro}}</td>
+                        <td class="detailSummaryResult">NIC Baro: {{uatDetailSummary.nicBaro}}</td>
                         <td class="detailRFLinkResult">UAT In: {{uatDetailSummary.uatIn}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">1090ES In: {{uatDetailSummary._1090esIn}}</td>
-                        <td class="detailRFLinkResult">TCAS: {{uatDetailSummary.tcas}}</td>
+                        <td class="detailSummaryResult">TCAS: {{uatDetailSummary.tcas}}</td>
                         <td class="detailResult">TCAS RA: {{uatDetailSummary.tcasRA}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Ident: {{uatDetailSummary.ident}}</td>
-                        <td class="detailRFLinkResult">ATC Serv: {{uatDetailSummary.atcServ}}</td>
+                        <td class="detailSummaryResult">ATC Serv: {{uatDetailSummary.atcServ}}</td>
                         <td class="detailResult">CSID: {{uatDetailSummary.csid}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">GVA: {{uatDetailSummary.gva}}</td>
-                        <td class="detailRFLinkResult">ANT: {{uatDetailSummary.ant}}</td>
+                        <td class="detailSummaryResult">ANT: {{uatDetailSummary.ant}}</td>
                         <td class="detailResult">FB Code: {{uatDetailSummary.fbCode}}</td>
                     </tr>
                 </table>

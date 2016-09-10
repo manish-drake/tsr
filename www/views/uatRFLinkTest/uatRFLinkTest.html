@@ -13,7 +13,7 @@
         <button class="button button-icon icon ion-android-more-horizontal" ng-click="openMore($event)"></button>
     </ion-nav-buttons>
     <ion-content style="background-color:whitesmoke">
-        <div class="customcard">
+        <div class="customcard" style="min-height:886px; max-height:100%">
             <div style="align-content: stretch;margin-bottom:10px;">
                 <button class="button icon-left ion-chevron-left button-clear button-dark" ui-sref="uatAUXStateVectorTest">PREVIOUS</button>
                 <button class="button icon-right ion-chevron-right button-clear button-dark" ui-sref="uatTrajectoryChangeTest" style="float: right">NEXT</button>
@@ -46,39 +46,39 @@
                     </tr>
                     <tr>
                         <td class="detailLabel">TX Power:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.txPower}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.txPower}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Power Droop:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.powerDroop}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.powerDroop}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Frequency:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.frequencyA}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.frequencyA}}</td>
                         <td class="detailResult">{{uatDetailRFLinkTest.frequencyB}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Deviation:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.deviationA}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.deviationA}}</td>
                         <td class="detailResult">{{uatDetailRFLinkTest.deviationB}}</td>
                     </tr>
                     <tr>
-                        <td class="detailLabel">peakDeviation:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.peakDeviationA}}</td>
+                        <td class="detailLabel">Peak Deviation:</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.peakDeviationA}}</td>
                         <td class="detailResult">{{uatDetailRFLinkTest.peakDeviationB}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Message Timming:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.messageTimming}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.messageTimming}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Eye Openning Ver:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.eyeOpenningVerA}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.eyeOpenningVerA}}</td>
                         <td class="detailResult">{{uatDetailRFLinkTest.eyeOpenningVerB}}</td>
                     </tr>
                     <tr>
                         <td class="detailLabel">Eye Openning Hor:</td>
-                        <td class="detailResult">{{uatDetailRFLinkTest.eyeOpenningHorA}}</td>
+                        <td class="detailRFLinkResult">{{uatDetailRFLinkTest.eyeOpenningHorA}}</td>
                         <td class="detailResult">{{uatDetailRFLinkTest.eyeOpenningHorB}}</td>
                     </tr>
                 </table>
