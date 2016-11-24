@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { NavController, ViewController, PopoverController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
+
+import { MoreActionsPopover } from '../moreactions/moreactions';
 
 /*
   Generated class for the HeaderComponent page.
@@ -16,7 +18,7 @@ export class HeaderComponent {
   @Input() title: string;
 
   constructor(public navCtrl: NavController,
-  private popoverCtrl: PopoverController) { }
+    private popoverCtrl: PopoverController) { }
 
   ionViewDidLoad() {
     console.log('Hello HeaderComponentPage');
@@ -27,20 +29,4 @@ export class HeaderComponent {
     popover.present({ ev: event });
   }
 
-}
-
-@Component({
-  template: `
-    <ion-list no-lines>
-    <ion-item>
-      <ion-icon item-left name="add"></ion-icon>Action
-      </ion-item>
-    </ion-list>
-  `
-})
-export class MoreActionsPopover {
-
-  constructor(public viewCtrl: ViewController) {
-
-  }
 }

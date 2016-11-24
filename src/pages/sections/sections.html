@@ -8,13 +8,21 @@
 <ion-content style="background: #eee;">
 
   <ion-list>
-    <ion-card (click)="navigateToDetail()">
+    <ion-card (click)="openDetail()">
       <ion-item>
-      <ion-title>
-        Test Title
-      </ion-title>
+        <ion-title>
+          Section Title
+        </ion-title>
       </ion-item>
     </ion-card>
+    <ion-card (click)="openDetail()">
+      <ion-item>
+        <ion-title>
+          Section Title
+        </ion-title>
+      </ion-item>
+    </ion-card>
+
   </ion-list>
 
 </ion-content>

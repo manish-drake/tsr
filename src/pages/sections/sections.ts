@@ -15,14 +15,16 @@ import { DetailPage } from '../detail/detail';
 })
 export class SectionsPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) { }
 
   ionViewDidLoad() {
     console.log('Hello SectionsPage Page');
   }
 
-  navigateToDetail() {
-    this.navCtrl.push(DetailPage);
+  openDetail() {
+    // Reset the NavController to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.navCtrl.setRoot(DetailPage);
   }
 
 }
