@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { SectionsPage } from '../pages/sections/sections';
+import { DetailPage } from '../pages/detail/detail';
 import { File } from '../services/io/file.service'
 import { Factory } from '../services/objects/factory.service'
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    SectionsPage,
+    DetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -22,11 +21,10 @@ import { Factory } from '../services/objects/factory.service'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    SectionsPage,
+    DetailPage
   ],
-  providers: [File, Factory]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, File, Factory]
 })
-export class AppModule {}
+export class AppModule { }
