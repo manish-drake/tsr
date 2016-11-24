@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core'
 @Injectable()
 export class File{
 
-    getContents(name: string): string{
+    getTextContents(fileName: string): string{
         var testContent = `{
             "Fields":
                 [{
