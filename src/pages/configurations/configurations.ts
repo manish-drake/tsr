@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 
 /*
   Generated class for the Configurations page.
@@ -11,12 +11,12 @@ import { NavController } from 'ionic-angular';
   selector: 'page-configurations',
   templateUrl: 'configurations.html'
 })
-export class ConfigurationsPage {
+export class ConfigurationsPopover {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
-    console.log('Hello ConfigurationsPage Page');
+    console.log('Hello ConfigurationsPopover');
   }
 
 }

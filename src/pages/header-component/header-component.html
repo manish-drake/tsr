@@ -4,7 +4,7 @@
     </button>
   <ion-title>{{title}}</ion-title>
   <ion-buttons end>
-    <button ion-button icon-only><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+    <button ion-button icon-only (click)="openConfigurations()"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
     <i ion-button icon-only><img src="assets/direct.png"/></i>
     <i ion-button icon-only><ion-icon name="wifi"></ion-icon></i>
     <i ion-button icon-only><ion-icon name="battery-full"></ion-icon></i>

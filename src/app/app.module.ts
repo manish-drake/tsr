@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
+import { ConfigurationsPopover } from '../pages/configurations/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
 import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
@@ -13,6 +14,7 @@ import { Factory } from '../services/objects/factory.service'
     declarations: [
         MyApp,
         MoreActionsPopover,
+        ConfigurationsPopover,
         HeaderComponent,
         SectionsPage,
         DetailPage
@@ -24,6 +26,7 @@ import { Factory } from '../services/objects/factory.service'
     entryComponents: [
         MyApp,
         MoreActionsPopover,
+        ConfigurationsPopover,
         SectionsPage,
         DetailPage
     ],
