@@ -9,6 +9,7 @@ import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
 import { File } from '../services/io/file.service'
 import { Factory } from '../services/objects/factory.service'
+import { Master } from '../services/test-set/master.service'
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { Factory } from '../services/objects/factory.service'
         DetailPage
     ],
     imports: [
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -30,6 +32,6 @@ import { Factory } from '../services/objects/factory.service'
         SectionsPage,
         DetailPage
     ],
-    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, File, Factory]
+    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, File, Factory, Master]
 })
 export class AppModule { }
