@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" color="primary">
     <ion-header>
         <ion-toolbar color="primary">
             <ion-title>Menu</ion-title>
@@ -6,11 +6,17 @@
     </ion-header>
 
     <ion-content>
-        <ion-list>
-            <button menuClose ion-item (click)="openSections()">
-                Item
-            </button>
-        </ion-list>
+
+        <ion-item-group>
+            <ion-item-divider no-lines>
+                Header
+            </ion-item-divider>
+            <ion-item menuClose (click)="openSections()" >
+                <h2 item-left color="primary"> Item</h2>
+                <h3 item-right>0</h3>
+            </ion-item>
+        </ion-item-group>
+
     </ion-content>
 
 </ion-menu>

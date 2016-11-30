@@ -3,6 +3,8 @@ import { NavController, PopoverController } from 'ionic-angular';
 
 import { MoreActionsPopover } from '../moreactions/moreactions';
 
+import { ConfigurationsPopover } from '../configurations/configurations'
+
 /*
   Generated class for the HeaderComponent page.
 
@@ -26,6 +28,11 @@ export class HeaderComponent {
 
   moreActionPopover() {
     let popover = this.popoverCtrl.create(MoreActionsPopover);
+    popover.present({ ev: event });
+  }
+
+  openConfigurations(){
+    let popover = this.popoverCtrl.create(ConfigurationsPopover);
     popover.present({ ev: event });
   }
 

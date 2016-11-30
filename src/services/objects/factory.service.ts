@@ -10,7 +10,7 @@ export class Factory{
 
     }
 
-    createTest(name: string): Test{
+    createTest(name: string): Test {
         var fileContent = this.file.getTextContents(name);
         var test = JSON.parse(fileContent);
         return test;
