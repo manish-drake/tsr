@@ -6,55 +6,1200 @@
 
 
 <ion-content style="background: #eee;">
+  <ion-slides>
+    
+    <!--UAT Summary-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%;">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT Summary</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="3" align="left">Element Summary Data</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Latitude:</td>
+                <td class="detailSummaryResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Longitude:</td>
+                <td class="detailSummaryResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">A/G State: </td>
+                <td class="detailSummaryResult">N Vel: </td>
+                <td class="detailResult">E Vel: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Emit Cat: </td>
+                <td class="detailSummaryResult">ID: </td>
+                <td class="detailResult">Emer: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">SIL: </td>
+                <td class="detailSummaryResult">SIL-S: </td>
+                <td class="detailResult">NAC-P: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">NAC-V: </td>
+                <td class="detailSummaryResult">NIC Baro: </td>
+                <td class="detailRFLinkResult">UAT In: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">1090ES In: </td>
+                <td class="detailSummaryResult">TCAS: </td>
+                <td class="detailResult">TCAS RA: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Ident: </td>
+                <td class="detailSummaryResult">ATC Serv: </td>
+                <td class="detailResult">CSID: </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">GVA: </td>
+                <td class="detailSummaryResult">ANT: </td>
+                <td class="detailResult">FB Code: </td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:110px;">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-  <!--<ion-row style="height:100%;">
-    <ion-card>
-      <ion-item>
-        <ion-title>
-          Detail Title
-        </ion-title>
-      </ion-item>
-    </ion-card>
-  </ion-row>-->
+    <!--UAT AUX State Vector-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%;">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT AUX State Vector</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT AUX State Vector Element</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude Type:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:350px;padding-top:35%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-  <ion-slides pager>
+    <!--UAT Mode Status-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT Mode Status</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">Mode Status Element</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Emitter Status:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Flight Id:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Emer/Prty Status:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>SIL: </span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>SIL Sup:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>NAC-P:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>NAC-V:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>NIC Baro Code:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>UAT In:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>1090ES In:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>TCAS:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>TCAS RA:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>Ident:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>ATC Serve:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>CSID:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>GVA:</span>
+                  <span></span>
+                </td>
+                <td class="detailResult">
+                  <span>ANT:</span>
+                  <span></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="detailLabel">
+                  <span>FB Code:</span>
+                  <span></span>
+                </td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-  <ion-slide>
-    <ion-row style="height:100%;">
-    <ion-card style="height:100%;">
-      <ion-item>
-        <ion-title>
-          Detail Card 1
-        </ion-title>
-      </ion-item>
-    </ion-card>
-    </ion-row>
-  </ion-slide>
+    <!--UAT RF Link Test-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%;">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT RF Link Test</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Equipage Class:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="3" align="left">RF Link Properties</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">TX Power:</td>
+                <td class="detailRFLinkResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Power Droop:</td>
+                <td class="detailRFLinkResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Frequency:</td>
+                <td class="detailRFLinkResult"></td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Deviation:</td>
+                <td class="detailRFLinkResult"></td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Peak Deviation:</td>
+                <td class="detailRFLinkResult"></td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Message Timming:</td>
+                <td class="detailRFLinkResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Eye Openning Ver:</td>
+                <td class="detailRFLinkResult"></td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Eye Openning Hor:</td>
+                <td class="detailRFLinkResult"></td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:240px;padding-top:17%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-  <ion-slide>
-    <ion-row style="height:100%;">
-    <ion-card>
-      <ion-item>
-        <ion-title>
-          Detail Card 2
-        </ion-title>
-      </ion-item>
-    </ion-card>
-    </ion-row>
-  </ion-slide>
+    <!--UAT State Vector Test-Air-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT State Vector Test</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Air/Ground State:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Latitude:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Longitude:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">NIC:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude Type:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">North Velocity:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">East Velocity:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Feedback Code:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-  <ion-slide>
-    <ion-row style="height:100%;">
-    <ion-card>
-      <ion-item>
-        <ion-title>
-          Detail Card 3
-        </ion-title>
-      </ion-item>
-    </ion-card>
-    </ion-row>
-  </ion-slide>
+    <!--UAT Target State Test-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%;">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT Target State Test</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">Target State Element</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Selected Alt Type:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Selected Altitude:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Baro Press Setting:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Seleced Heading:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">MCP/FCU M Status:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">AutoPilot:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">VNAV:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude Hold:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Approach Mode:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel"> LNAV Mode:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <div align="middle">
+                    <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <div align="left">
+                    <button ion-button clear style="font-size:18px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div align="right">
+                    <button ion-button clear style="font-size:18px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-</ion-slides>
+    <!--UAT Trajectory Change-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%;">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">UAT Trajectory Change</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Address Qualifier:</td>
+                <td class="detailResult"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Payload Type Codes:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">State Vector Element</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">TC Field:</td>
+                <td class="detailResult"></td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">RF Link</th>
+              </tr>
+              <tr>
+                <td class="detailLabel1">Freq=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">Power=</td>
+                <td class="detailResult4"></td>
+              </tr>
+              <tr>
+                <td class="detailLabel1">GPS=</td>
+                <td class="detailResult2"></td>
+                <td class="detailLabel3">RF Link Test=</td>
+                <td class="detailResult4" style="color:green;"></td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:380px;padding-top:41%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:21px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:21px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
 
-</ion-content>
+    <!--ADS-B Airborne Position-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Airborne Position</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">2345AA (23456789)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Format:</td>
+                <td class="detailResult">DF 17, BDS Register 0,5</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Interval:</td>
+                <td class="detailResult">1 sec</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Count:</td>
+                <td class="detailResult">50</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Message Field</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Type:</td>
+                <td class="detailResult">14</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Latitude:</td>
+                <td class="detailResult">17 19 21.00 N</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Longitude:</td>
+                <td class="detailResult">90 15 30.00 W</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">NIC:</td>
+                <td class="detailResult">Rc
+                  <0.5 NM (13)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Altitude:</td>
+                <td class="detailResult">10000 Ft</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Alt Source:</td>
+                <td class="detailResult">Baro Pressure</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Surv Status:</td>
+                <td class="detailResult">No Info</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Time Sync:</td>
+                <td class="detailResult">UTC Sync(1)</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <td class="detailLabel">ME:</td>
+                <td class="detailResult">00 00 00 00 00 00 00 00</td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:180px;padding-top:10%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:21px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:21px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
+
+    <!--ADS-B Airborne Velocity-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Airborne Velocity</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">2345AA (23456789)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Format:</td>
+                <td class="detailResult">DF 17, BDS Register 0,9</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Interval:</td>
+                <td class="detailResult">1 sec</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Count:</td>
+                <td class="detailResult">50</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Message Field</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Type:</td>
+                <td class="detailResult">19</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Intent Change:</td>
+                <td class="detailResult">No</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">NACv:</td>
+                <td class="detailResult">4</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Vert Rate:</td>
+                <td class="detailResult">32ft/min</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Alt Difference:</td>
+                <td class="detailResult">1000 Ft</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Subtype:</td>
+                <td class="detailResult">GroundSpeed Normal (1)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">E/W Vel:</td>
+                <td class="detailResult">600 kts E</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">N/S Vel:</td>
+                <td class="detailResult">600 kts N</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Heading:</td>
+                <td class="detailResult">N/A</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Airspeed:</td>
+                <td class="detailResult">N/A</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <td class="detailLabel">ME:</td>
+                <td class="detailResult">00 00 00 00 00 00 00 00</td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:21px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:21px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
+
+    <!--ADS-B Aircraft ID and Category-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-list>
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Aircraft ID and Category</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">2345AA (23456789)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Format:</td>
+                <td class="detailResult">DF 17, BDS Register 0,8</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Interval:</td>
+                <td class="detailResult">2 sec</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Count:</td>
+                <td class="detailResult">50</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Message Field</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Type:</td>
+                <td class="detailResult">14</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Emitter:</td>
+                <td class="detailResult">Large, 75K to 300K lbs(3)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Fight ID:</td>
+                <td class="detailResult">ABC12345</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <td class="detailLabel">ME:</td>
+                <td class="detailResult">00 00 00 00 00 00 00 00</td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:330px;padding-top:30%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"  ></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:21px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:21px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          </ion-list>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
+
+    <!--ADS-B Ex Sqtr Aircraft Status-->
+    <ion-slide>
+      <ion-row style="height:100%;">
+        <ion-card style="height:100%">
+          <ion-item>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Ex Sqtr Aircraft Status</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">AA ID:</td>
+                <td class="detailResult">2345AA (23456789)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Format:</td>
+                <td class="detailResult">DF 17, BDS Register 6,1</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Interval:</td>
+                <td class="detailResult">2 sec</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Count:</td>
+                <td class="detailResult">50</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <th class="detailheading" colspan="2" align="left">ADS-B Message Field</th>
+              </tr>
+              <tr>
+                <td class="detailLabel">Type:</td>
+                <td class="detailResult">28 Emer/Prior</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Sub Type:</td>
+                <td class="detailResult">1 Emer</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Emer/Prior :</td>
+                <td class="detailResult">No Emer (0)</td>
+              </tr>
+              <tr>
+                <td class="detailLabel">Mode A Code :</td>
+                <td class="detailResult">1111</td>
+              </tr>
+            </table>
+            <table class="detailpageTbmargin">
+              <tr>
+                <td class="detailLabel">ME:</td>
+                <td class="detailResult">00 00 00 00 00 00 00 00</td>
+              </tr>
+            </table>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="middle" style="height:320px;padding-top:30%">
+                  <button ion-button outline style="font-size:50px;height:100px;width:100px;border-radius: 100%;border: 3px solid;"> 
+                     <ion-icon name="play"></ion-icon>
+                   </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left">
+                  <button ion-button clear style="font-size:21px;">
+                <ion-icon name='arrow-back'></ion-icon>
+                  <label style="margin-left:5px">PREVIOUS</label>
+              </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div align="right">
+                  <button ion-button clear style="font-size:21px;">
+                <label style="margin-right:5px">NEXT</label> 
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+    </ion-slide>

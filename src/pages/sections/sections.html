@@ -7,22 +7,281 @@
 
 <ion-content style="background: #eee;">
 
-  <ion-list>
-    <ion-card (click)="openDetail()">
-      <ion-item>
-        <ion-title>
-          Section Title
-        </ion-title>
-      </ion-item>
-    </ion-card>
-    <ion-card (click)="openDetail()">
-      <ion-item>
-        <ion-title>
-          Section Title
-        </ion-title>
-      </ion-item>
-    </ion-card>
-
+  <ion-list style="background: #eee;">
+    <ion-row>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:97%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT SUMMARY</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">A/G State: Subsonic;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:94%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT STATE VECTOR TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="overflow:hidden;text-overflow:ellipsis;">
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>
+               </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">A/G State: Subsonic;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:97%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT TARGET STATE TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">Sel Alt : 10000Ft;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:94%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT TRAJECTORY CHANGE TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="overflow:hidden;text-overflow:ellipsis;">
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>
+               </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">Alt Type: Baro Press;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:97%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT AUX STATE VECTOR TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">Alt Type: Baro Press;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)=" openDetail() " style="width:94%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT MODE STATUS TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="overflow:hidden;text-overflow:ellipsis;">
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>
+               </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">Flight ID: DL1234;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+        <ion-card (click)=" openDetail() " style="width:97%;height:100%;">
+          <ion-grid style="width:100%;height:100%;">
+            <ion-row>
+              <ion-col>
+                <div align="right">
+                  <label style="font-size:18;font-weight: bold;">6</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div align="center " style="height:70px;padding-top:10px;">
+                  <label style="font-size:18;font-weight: bold;">UAT RF LINK TEST</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">Address: 2345AA;</span>
+                <span style="font-size:18">Addr Qual: ADS-B ICAO (0);</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>                
+                <span style="font-size:18">Payload: 0,1;</span>
+                <span style="font-size:18">Power: -55 dB;</span>
+                <span style="font-size:18">RF Link: Pass;</span>                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span style="font-size:18">GPS: Sync</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>      
+    </ion-row>
   </ion-list>
 
 </ion-content>
