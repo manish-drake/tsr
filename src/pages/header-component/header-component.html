@@ -1,13 +1,14 @@
-<ion-navbar color="primary">
+<ion-navbar color="primary" align-title="left">
   <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-  <ion-title>{{title}}</ion-title>
-  <ion-buttons end>
+  <h3 style="color:white; padding-left:10px;">{{title}} </h3>  
+  <!--<ion-title>{{title}}</ion-title>-->
+  <ion-buttons end>    
     <button ion-button icon-only (click)="openConfigurations()"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
     <i ion-button icon-only><img src="assets/direct.png"/></i>
     <i ion-button icon-only><ion-icon name="wifi"></ion-icon></i>
     <i ion-button icon-only><ion-icon name="battery-full"></ion-icon></i>
     <button ion-button icon-only (click)="moreActionPopover()"><ion-icon name="more"></ion-icon></button>
   </ion-buttons>
-</ion-navbar>
+</ion-navbar> 
