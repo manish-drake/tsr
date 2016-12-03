@@ -1,26 +1,42 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
 import { Platform, PopoverController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SectionsPage } from '../pages/sections/sections';
 
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
+import { RouterOutlet, Router } from '@angular/router'
+import { HeaderService } from '../services/ui/header.service'
+import { Hamburger } from '../core/hamburgerMenu/hamburger';
 
 @Component({
   templateUrl: `app.html`
 })
-export class MyApp {
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
+  
+  Title:string = "Title";
 
   rootPage = SectionsPage;
 
-  constructor(platform: Platform, private popoverCtrl: PopoverController) {
+  private hb = new Hamburger();
+
+  constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router:Router) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+
+  ngOnInit(){
+      this._svcHeader.TitleUpdated.subscribe(e =>{
+          console.log("Output: title");
+          this.Title = e.title;
+      })
+
   }
 
   openSections() {
@@ -32,5 +48,10 @@ export class MyApp {
   moreActionPopover() {
     let popover = this.popoverCtrl.create(MoreActionsPopover);
     popover.present({ ev: event });
+  }
+
+  onItemSelectionChanged(e){
+    console.log("Item selection changed in app.comp", e.newItem, e.parent);
+    this._router.navigate(['detail']);
   }
 }

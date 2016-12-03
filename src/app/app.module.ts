@@ -1,4 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -10,6 +12,11 @@ import { DetailPage } from '../pages/detail/detail';
 import { File } from '../services/io/file.service'
 import { Factory } from '../services/objects/factory.service'
 import { Master } from '../services/test-set/master.service'
+import { router } from './app.router'
+import { HeaderService } from '../services/ui/header.service'
+import { SectionComp } from '../comps/hamburger/section/section.comp';
+import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
+
 
 @NgModule({
     declarations: [
@@ -18,11 +25,13 @@ import { Master } from '../services/test-set/master.service'
         ConfigurationsPopover,
         HeaderComponent,
         SectionsPage,
-        DetailPage
+        DetailPage,
+        SectionComp,
+        SubSectionComp
     ],
     imports: [
-        IonicModule.forRoot(MyApp),
-
+        router,
+        IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -30,8 +39,14 @@ import { Master } from '../services/test-set/master.service'
         MoreActionsPopover,
         ConfigurationsPopover,
         SectionsPage,
-        DetailPage
+        DetailPage,
     ],
-    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, File, Factory, Master]
+    providers: [
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
+        File, 
+        Factory, 
+        Master,
+        HeaderService
+    ]
 })
 export class AppModule { }

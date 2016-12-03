@@ -1,0 +1,12 @@
+<div menuClose (click)="onClick()">
+    <ion-item>
+        <h2 color="primary">{{ Name }}</h2>
+    </ion-item>
+    <ion-list>        
+        <sub-section-comp 
+            *ngFor="let subSection of SubSections" 
+            [Name]="subSection.name" 
+            [Count]="subSection.count"
+            (Selected)="onItemSelected($event)"></sub-section-comp>
+    </ion-list>
+</div>

@@ -1,10 +1,3 @@
-<ion-header>
-
-  <header-component [title]=" 'Sections' "></header-component>
-
-</ion-header>
-
-
 <ion-content style="background: #eee;">
 
   <ion-list>
@@ -15,12 +8,14 @@
         </ion-title>
       </ion-item>
     </ion-card>
-    <ion-card (click)="openDetail()">
+    <ion-card routerLink="detail">
       <ion-item>
         <ion-title>
-          Section Title
-        </ion-title>
-      </ion-item>
+          Section Title!   
+          <div [innerHtml]="testData">
+          </div>       
+        </ion-title>        
+      </ion-item>      
     </ion-card>
 
   </ion-list>

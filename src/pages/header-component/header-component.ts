@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController, PopoverController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
 
 import { MoreActionsPopover } from '../moreactions/moreactions';
 
@@ -19,8 +19,7 @@ export class HeaderComponent {
 
   @Input() title: string;
 
-  constructor(public navCtrl: NavController,
-    private popoverCtrl: PopoverController) { }
+  constructor(private popoverCtrl: PopoverController) { }
 
   ionViewDidLoad() {
     console.log('Hello HeaderComponentPage');

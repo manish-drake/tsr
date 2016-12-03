@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { Component, OnInit } from '@angular/core';
 import { DetailPage } from '../detail/detail';
 import { Master } from '../../services/test-set/master.service'
 import { Dictionary } from '../../common/dictionary'
+import { HeaderService } from '../../services/ui/header.service'
 
 /*
   Generated class for the Sections page.
@@ -15,9 +14,16 @@ import { Dictionary } from '../../common/dictionary'
   selector: 'page-sections',
   templateUrl: 'sections.html'
 })
-export class SectionsPage {
+export class SectionsPage implements OnInit {
+  testData: string;
+  constructor(private master: Master, private _svcHeader: HeaderService) { }
 
-  constructor(public navCtrl: NavController, private master: Master) { }
+  ngOnInit(){
+      this._svcHeader.title = "Sections";
+      console.log("Section init called");
+      this.testData = JSON.parse(this._svcHeader.getTextContents("")).Script;
+      console.log(this.testData);
+  }
 
   ionViewDidLoad() {
     console.log('Hello SectionsPage Page');
@@ -32,7 +38,6 @@ export class SectionsPage {
   openDetail() {
     // Reset the NavController to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.navCtrl.setRoot(DetailPage);
 
   }
 

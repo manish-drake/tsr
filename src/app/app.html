@@ -1,25 +1,34 @@
-<ion-menu [content]="content" color="primary">
-    <ion-header>
-        <ion-toolbar color="primary">
-            <ion-title>Menu</ion-title>
-        </ion-toolbar>
-    </ion-header>
+<ion-header>
+    <header-component [title]="Title"></header-component>
+</ion-header>
 
-    <ion-content>
 
-        <ion-item-group>
-            <ion-item-divider no-lines>
-                Header
-            </ion-item-divider>
-            <ion-item menuClose (click)="openSections()" >
-                <h2 item-left color="primary"> Item</h2>
-                <h3 item-right>0</h3>
-            </ion-item>
-        </ion-item-group>
+<ion-content>
+    <ion-menu [content]="content" color="primary">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
 
-    </ion-content>
+        <ion-content>
 
-</ion-menu>
+            <ion-item-group>
+                <ion-item-divider no-lines>
+                    Header
+                </ion-item-divider>
+                <ion-list>
+                    <section-comp
+                        *ngFor="let section of hb.sections"
+                        [Name]=section.name
+                        [SubSections]=section.subSections
+                        (ItemSelectionChanged)="onItemSelectionChanged($event)"></section-comp>
+                </ion-list>
+            </ion-item-group>
+        </ion-content>
 
+    </ion-menu>
+    <router-outlet></router-outlet>
+</ion-content>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

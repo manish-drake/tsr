@@ -1,0 +1,5 @@
+<ion-content style="background-color:whitesmoke">
+    <ion-list>
+        <test-card *ngFor="let testSummary of summaries" [test]="convert(testSummary)"></test-card>
+    </ion-list>
+</ion-content>

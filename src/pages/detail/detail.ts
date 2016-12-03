@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { HeaderService } from '../../services/ui/header.service'
 
 /*
   Generated class for the Detail page.
@@ -13,8 +13,12 @@ import { NavController } from 'ionic-angular';
 })
 export class DetailPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(private _svcHeader: HeaderService) {}
 
+  ngOnInit(){
+      this._svcHeader.title = "Detail";
+      console.log("Detail init called");
+  }
   ionViewDidLoad() {
     console.log('Hello DetailPage Page');
   }
