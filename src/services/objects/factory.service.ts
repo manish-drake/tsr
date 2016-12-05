@@ -324,7 +324,7 @@ export class Factory {
 
                 testSection.Summaries.push(tst);       
 
-                //------------------------UAT Target State Test-----------------------------
+                //------------------------UAT Trajectory Change Test-----------------------------
                 var tct = new TestSummary();
                 tct.Name = "UAT Trajectory Change Test";
 
