@@ -337,8 +337,8 @@ export class Factory {
                 var addQ6 = new TestParam();
                 addQ6.Key = "Addr Qual:";
                 var cAddQ6 = new TestParamCell(addQ6);
-                cAddQ5.Row = 0;
-                cAddQ5.Column = 1;
+                cAddQ6.Row = 0;
+                cAddQ6.Column = 1;
 
                 var pld6 = new TestParam();
                 pld6.Key = "Payload:";

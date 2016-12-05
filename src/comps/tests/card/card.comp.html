@@ -1,17 +1,17 @@
 <ion-card style="height:100%;">
-    <ion-row>
+    <ion-row padding>
         <ion-col width-80>
-            <div align="left"><span class="sectionHeading">{{ test.Name }}</span></div>
+            <div align="left"><span class="sectionHeading"> {{test.Name}} </span></div>
         </ion-col>
-        <ion-col width-20> <span class="teststatus">Status?</span></ion-col>
+        <ion-col width-20>
+            <div align="right"><span class="teststatus">Status?</span></div>
+        </ion-col>
     </ion-row>
-    <table style="table-layout: fixed " *ngFor="let row of test.rows">
-        <tr>
-            <td class="sectionLabel"> {{ row[0].Key }}</td>
-            <td class="sectionResult"> {{ row[0].Value }}</td>
-        </tr>
-        <tr>
-            <td class="sectionLabel"> {{ row[1].Key }}</td>
+    <table style="table-layout: fixed ">
+        <tr *ngFor="let row of test.rows">
+            <td class="sectionLabel">{{ row[0].Key }}</td>
+            <td class="sectionResult">{{ row[0].Value }}</td>
+            <td class="sectionLabel1">{{ row[1].Key }}</td>
             <td class="sectionResult">{{ row[1].Value }}</td>
         </tr>
     </table>
