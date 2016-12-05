@@ -4,6 +4,6 @@ import { DetailPage } from '../pages/detail/detail';
 
 export const router = RouterModule.forRoot([
     {path: '', component: SectionsPage},
-    {path: ':parent', component: SectionsPage},
+    {path: 'section/:name', component: SectionsPage},
     {path: 'detail', component: DetailPage},
 ]);

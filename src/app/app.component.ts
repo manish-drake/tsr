@@ -14,7 +14,7 @@ import { Hamburger } from '../core/hamburgerMenu/hamburger';
   templateUrl: `app.html`
 })
 export class MyApp implements OnInit {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) content: Nav;
   
   Title:string = "Title";
 
@@ -41,7 +41,7 @@ export class MyApp implements OnInit {
   openSections() {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(SectionsPage);
+    //this.nav.setRoot(SectionsPage);
   }
 
   moreActionPopover() {
@@ -51,6 +51,6 @@ export class MyApp implements OnInit {
 
   onItemSelectionChanged(e){
     console.log("Item selection changed in app.comp", e.newItem, e.parent);
-    this._router.navigate(['', {'parent': e.newItem}]);
+    this._router.navigate(['section', e.newItem]);
   }
 }

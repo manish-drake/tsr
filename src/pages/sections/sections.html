@@ -1,3 +1,3 @@
 <ion-content style="background: #eee;" on-tap="onTap($event)"  >
-    <test-section [section]="dataSource" ></test-section>
+    <test-section *ngIf="dataSource" [section]="dataSource" ></test-section>
 </ion-content>

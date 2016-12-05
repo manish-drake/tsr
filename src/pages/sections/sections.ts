@@ -31,10 +31,12 @@ export class SectionsPage implements OnInit {
 
   ngOnInit(){
       this._svcHeader.title = "Sections";
-      this.activeRoute.params.subscribe(data=>{
+      this.activeRoute.params.subscribe(data => {
         console.log(data);
+        var sectionName = (data as any).name;
+        var section = this.objectService.createSection(sectionName, "");
+      this.dataSource = this.broker.createSectionDataSource(section);
       })
-      this.dataSource = this.broker.createSectionDataSource(new TestSection());
   }
 
   ionViewDidLoad() {
