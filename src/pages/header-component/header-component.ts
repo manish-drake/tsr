@@ -22,7 +22,6 @@ export class HeaderComponent {
   constructor(private popoverCtrl: PopoverController) { }
 
   ionViewDidLoad() {
-    console.log('Hello HeaderComponentPage');
   }
 
   moreActionPopover() {

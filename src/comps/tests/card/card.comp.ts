@@ -6,4 +6,10 @@ import { Component, Input } from '@angular/core';
 })
 export class TestCardComp{
     @Input()test:any;
+    callConsole(row){
+        console.log("From card:", row);
+    }
+    ngAfterViewInit(){
+        
+    }
 }

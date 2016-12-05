@@ -32,5 +32,15 @@ export class TestParam{
         this._Alignment = v;
     }
     
+    private _IsEmpty : boolean;
+    public get IsEmpty() : boolean {
+        return this._IsEmpty;
+    }
     
+    /**
+     *
+     */
+    constructor(isEmpty:boolean = false) {
+        this._IsEmpty = false;
+    }
 }

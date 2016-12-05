@@ -33,7 +33,6 @@ export class MyApp implements OnInit {
 
   ngOnInit(){
       this._svcHeader.TitleUpdated.subscribe(e =>{
-          console.log("Output: title");
           this.Title = e.title;
       })
 
@@ -52,6 +51,6 @@ export class MyApp implements OnInit {
 
   onItemSelectionChanged(e){
     console.log("Item selection changed in app.comp", e.newItem, e.parent);
-    this._router.navigate(['detail']);
+    this._router.navigate(['', {'parent': e.newItem}]);
   }
 }

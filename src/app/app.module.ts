@@ -11,11 +11,16 @@ import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
 import { File } from '../services/io/file.service'
 import { Factory } from '../services/objects/factory.service'
+import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
 import { Master } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { SectionComp } from '../comps/hamburger/section/section.comp';
+import { TestSectionComp } from '../comps/tests/section/section.comp';
+import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
+import { SpyDirective } from '../common/mySpy.directive';
+
 
 
 @NgModule({
@@ -27,7 +32,10 @@ import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
         SectionsPage,
         DetailPage,
         SectionComp,
-        SubSectionComp
+        SubSectionComp,
+        TestSectionComp,
+        TestCardComp,
+        SpyDirective
     ],
     imports: [
         router,
@@ -46,7 +54,8 @@ import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
         File, 
         Factory, 
         Master,
-        HeaderService
+        HeaderService,
+        BrokerFactoryService
     ]
 })
 export class AppModule { }

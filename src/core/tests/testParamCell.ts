@@ -1,4 +1,4 @@
-import { TestParam } from './TestParam';
+import { TestParam } from './testParam';
 
 export class TestParamCell{
     

@@ -15,7 +15,6 @@ export class HeaderService{
         this.TitleUpdated.emit(
             {title: v}
         );
-        console.log("Emit: title");
     }
     getTextContents(fileName: string): string {
 

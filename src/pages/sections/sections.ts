@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DetailPage } from '../detail/detail';
+import { ActivatedRoute } from '@angular/router'
 import { Master } from '../../services/test-set/master.service'
-import { Dictionary } from '../../common/dictionary'
 import { HeaderService } from '../../services/ui/header.service'
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
+import { Factory } from '../../services/objects/factory.service'
+import { Dictionary } from '../../common/dictionary'
+import { DetailPage } from '../detail/detail';
+import { TestSectionComp } from '../../comps/tests/section/section.comp'
+import { TestSection } from '../../core/tests/testSection'
 
 /*
   Generated class for the Sections page.
@@ -16,18 +21,23 @@ import { HeaderService } from '../../services/ui/header.service'
 })
 export class SectionsPage implements OnInit {
   testData: string;
-  constructor(private master: Master, private _svcHeader: HeaderService) { }
+  private dataSource: any;
+  constructor(
+    private master: Master, 
+    private _svcHeader: HeaderService, 
+    private activeRoute: ActivatedRoute,
+    private broker: BrokerFactoryService,
+    private objectService: Factory) { }
 
   ngOnInit(){
       this._svcHeader.title = "Sections";
-      console.log("Section init called");
-      this.testData = JSON.parse(this._svcHeader.getTextContents("")).Script;
-      console.log(this.testData);
+      this.activeRoute.params.subscribe(data=>{
+        console.log(data);
+      })
+      this.dataSource = this.broker.createSectionDataSource(new TestSection());
   }
 
   ionViewDidLoad() {
-    console.log('Hello SectionsPage Page');
-
     var dic = new Dictionary<string, string>();
     dic.add("a","1");
     dic.add("b","2");
@@ -40,5 +50,7 @@ export class SectionsPage implements OnInit {
     // we wouldn't want the back button to show in this scenario
 
   }
-
+  onTap(e){
+    
+  }
 }
