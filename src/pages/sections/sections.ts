@@ -35,7 +35,7 @@ export class SectionsPage implements OnInit {
         console.log(data);
         var sectionName = (data as any).name;
         var section = this.objectService.createSection(sectionName, "");
-      this.dataSource = this.broker.createSectionDataSource(section);
+        this.dataSource = this.broker.createSectionDataSource(section);
       })
   }
 

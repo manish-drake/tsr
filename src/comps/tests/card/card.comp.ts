@@ -12,4 +12,7 @@ export class TestCardComp{
     ngAfterViewInit(){
         
     }
+    onDoubleClick(){
+        console.log(this.test);
+    }
 }

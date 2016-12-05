@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../../services/ui/header.service'
 
 /*
@@ -13,11 +14,14 @@ import { HeaderService } from '../../services/ui/header.service'
 })
 export class DetailPage {
 
-  constructor(private _svcHeader: HeaderService) {}
+  constructor(private _svcHeader: HeaderService, private route: ActivatedRoute) {}
 
   ngOnInit(){
       this._svcHeader.title = "Detail";
       console.log("Detail init called");
+      this.route.params.subscribe(data => {
+        console.log(data);
+      })
   }
   ionViewDidLoad() {
     console.log('Hello DetailPage Page');
