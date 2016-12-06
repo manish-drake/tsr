@@ -13,6 +13,6 @@ export class TestCardComp{
         
     }
     onDoubleClick(){
-        console.log(this.test);
+        console.log("Card clicked: ", this.test);
     }
 }
