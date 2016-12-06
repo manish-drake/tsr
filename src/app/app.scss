@@ -1,6 +1,11 @@
 // http://ionicframework.com/docs/v2/theming/
-
-
+  ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+    display: none;
+}
+.textTrim{
+    overflow: hidden;text-overflow: ellipsis;
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
