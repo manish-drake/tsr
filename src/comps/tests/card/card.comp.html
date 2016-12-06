@@ -1,6 +1,34 @@
+<<<<<<< HEAD
 <ion-item 
     class="customcard" 
     on-double-tap="onDoubleClick()">
+=======
+<ion-card style="height:100%;">
+    <ion-row padding>
+        <ion-col width-80>
+            <div align="left"><span class="sectionHeading"> {{test.Name}} </span></div>
+        </ion-col>
+        <ion-col width-20>
+            <div align="right"><span class="teststatus">Status?</span></div>
+        </ion-col>
+    </ion-row>
+    <table style="table-layout: fixed ">
+        <tr *ngFor="let row of test.rows">
+            <td class="sectionLabel">{{ row[0].Key }}</td>
+            <td class="sectionResult">{{ row[0].Value }}</td>
+            <td class="sectionLabel1">{{ row[1].Key }}</td>
+            <td class="sectionResult">{{ row[1].Value }}</td>
+        </tr>
+    </table>
+
+</ion-card>
+
+
+
+
+<!--<ion-item class="customcard" ng-init="l1='uatStateVectorTestSubsonic'" ng-click="onSingleClick(l1)" ng-class="{'cardselected':l1 == selectedRow}"
+    on-double-tap="onDoubleClick(l1)">
+>>>>>>> 1fe6dbbf33f664b3b0e49195426dbf2834aaddbb
     <p style="align-content: stretch ">
         <span class="sectionHeading" style="float: left ">{{ test.Name }}</span>
         <span style="float:right;">
@@ -24,4 +52,4 @@
             </td>
         </tr>
     </table>
-</ion-item>
+</ion-item>-->
