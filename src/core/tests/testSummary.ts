@@ -35,35 +35,36 @@ export class TestSummary{
     }
 
 
-    getRow(row:number): TestParam[]{
-        var rowCells: TestParam[]=[];
-        this.TestParamCells.forEach(cell => {
-            if(cell.Row == row)
-                rowCells.push(cell.TestParam);
-        });
-        return rowCells;
-    }
+    // getRow(row:number): TestParam[]{
+    //     var rowCells: TestParam[]=[];
+    //     this.TestParamCells.forEach(cell => {
+    //         if(cell.Row == row)
+    //             rowCells.push(cell.TestParam);
+    //     });
+    //     return rowCells;
+    // }
 
-    getRows(): Array<TestParam[]>{
-        var rows: Array<TestParam[]> = new Array<TestParam[]>();
-        var maxRowIndex = 0, maxColIndex = 0;
-        this.TestParamCells.forEach(cell => {
-            maxRowIndex = maxRowIndex > cell.Row? maxRowIndex: cell.Row;  
-            maxColIndex = maxColIndex > cell.Column? maxColIndex: cell.Column;          
-        })
+    // getRows(): Array<TestParam[]>{
+    //     var rows: Array<TestParam[]> = new Array<TestParam[]>();
+    //     var maxRowIndex = 0, maxColIndex = 0;
+    //     this.TestParamCells.forEach(cell => {
+    //         maxRowIndex = maxRowIndex > cell.Row? maxRowIndex: cell.Row;  
+    //         maxColIndex = maxColIndex > cell.Column? maxColIndex: cell.Column;          
+    //     })
         
-        for(let i = 0; i <= maxRowIndex; i++){
-            var cols:TestParam[]=[];
-            for(let j = 0; j <= maxColIndex; j++){
-                cols.push(new TestParam(true))                
-            }
-            rows.push(cols);
-        }
+    //     for(let i = 0; i <= maxRowIndex; i++){
+    //         var cols:TestParam[]=[];
+    //         for(let j = 0; j <= maxColIndex; j++){
+    //             cols.push(new TestParam(true))                
+    //         }
+    //         rows.push(cols);
+    //     }
         
-        this.TestParamCells.forEach(cell => {
-            rows[cell.Row][cell.Column] = cell.TestParam;
-        })
+    //     this.TestParamCells.forEach(cell => {
+    //         rows[cell.Row][cell.Column] = cell.TestParam;
+    //     })
         
-        return rows;
-    }
+    //     return rows;
+    // }
+    
 }

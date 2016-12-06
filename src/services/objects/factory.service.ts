@@ -32,6 +32,7 @@ export class Factory {
 
                 var add = new TestParam();
                 add.Key = "Address:";
+                add.Style = "spl"
                 var cAdd = new TestParamCell(add);
                 cAdd.Row = 0;
                 cAdd.Column = 0;

@@ -20,9 +20,10 @@ export class DetailPage {
       this._svcHeader.title = "Detail";
       console.log("Detail init called");
       this.route.params.subscribe(data => {
-        console.log(data);
+        console.log("Summary: ", (data as any).summary);
       })
   }
+  
   ionViewDidLoad() {
     console.log('Hello DetailPage Page');
   }

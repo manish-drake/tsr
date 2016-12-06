@@ -1,23 +1,26 @@
 <ion-item class="customcard">
+    <div #mydiv>
+        <ion-card style="height:100%;">
+            <ion-row padding>
+                <ion-col width-80>
+                    <div align="left"><span class="sectionHeading"> {{test.name}} </span></div>
+                </ion-col>
+                <ion-col width-20>
+                    <div align="right"><span class="teststatus">Status?</span></div>
+                </ion-col>
+            </ion-row>
+            <table style="table-layout: fixed; background: red">
+                <tr *ngFor="let row of test.rows">
+                    <td 
+                        *ngFor="let cell of row" 
+                        [class]="cell.Style"
+                        colspan="cell.colspan"
+                        rowspan="cell.rowspan">
+                            <span>{{ cell.Key }}</span>
+                    </td>
+                </tr>
+            </table>
 
-    <ion-card style="height:100%; background: red" (click)="onDoubleClick()">
-        <ion-row padding>
-            <ion-col width-80>
-                <div align="left"><span class="sectionHeading"> TITLE </span></div>
-            </ion-col>
-            <ion-col width-20>
-                <div align="right"><span class="teststatus">Status?</span></div>
-            </ion-col>
-        </ion-row>
-        <table style="table-layout: fixed ">
-            <tr *ngFor="let row of test.rows">
-                <td class="sectionLabel">{{ row[0].Key }}</td>
-                <td class="sectionResult">{{ row[0].Value }}</td>
-                <td class="sectionLabel1">{{ row[1].Key }}</td>
-                <td class="sectionResult">{{ row[1].Value }}</td>
-            </tr>
-        </table>
-
-    </ion-card>
-
+        </ion-card>
+    </div>
 </ion-item>
