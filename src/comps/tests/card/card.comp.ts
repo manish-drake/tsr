@@ -16,9 +16,6 @@ export class TestCardComp{
         
     }
 
-    callConsole(row){
-        console.log("From card:", row);
-    }
     ngAfterViewInit(){
         this._renderer.listen(this.md.nativeElement, 'dblclick', ()=>{
             this._router.navigate(['detail', this.test.name])

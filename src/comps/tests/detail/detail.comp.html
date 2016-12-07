@@ -1,0 +1,23 @@
+<ion-content style="background-color:whitesmoke" >
+    <ion-card style="height:100%;">
+        <ion-row padding>
+            <ion-col width-80>
+                <div align="left"><span class="sectionHeading"> {{test.name}} </span></div>
+            </ion-col>
+            <ion-col width-20>
+                <div align="right"><span class="teststatus">Status?</span></div>
+            </ion-col>
+        </ion-row>
+        <table style="table-layout: fixed; ">
+            <tr *ngFor="let row of test.rows">
+                <td 
+                    *ngFor="let cell of row" 
+                    [attr.colspan]="cell.colspan"
+                    [attr.rowspan]="cell.rowspan">
+                        <span [class]="cell.keyStyle">{{ cell.key }}</span>
+                        <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                </td>
+            </tr>
+        </table>
+    </ion-card>
+</ion-content>
