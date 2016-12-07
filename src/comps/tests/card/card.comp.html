@@ -9,14 +9,14 @@
                     <div align="right"><span class="teststatus">Status?</span></div>
                 </ion-col>
             </ion-row>
-            <table style="table-layout: fixed; background: red">
+            <table style="table-layout: fixed; ">
                 <tr *ngFor="let row of test.rows">
                     <td 
                         *ngFor="let cell of row" 
-                        [class]="cell.Style"
-                        colspan="cell.colspan"
-                        rowspan="cell.rowspan">
-                            <span>{{ cell.Key }}</span>
+                        [attr.colspan]="cell.colspan"
+                        [attr.rowspan]="cell.rowspan">
+                            <span [class]="cell.keyStyle">{{ cell.key }}</span>
+                            <span [class]="cell.valueStyle">{{ cell.value }}</span>
                     </td>
                 </tr>
             </table>

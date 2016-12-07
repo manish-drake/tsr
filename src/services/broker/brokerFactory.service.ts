@@ -2,6 +2,7 @@ import { TestSection } from '../../core/tests/testSection'
 import { TestParamCell } from '../../core/tests/testParamCell'
 import { TestParam } from '../../core/tests/testParam'
 import { TestSummary } from '../../core/tests/testSummary'
+import { Dictionary } from '../../common/dictionary';
 
 export class BrokerFactoryService {
     /**
@@ -13,7 +14,7 @@ export class BrokerFactoryService {
     createSectionDataSource(testSection: TestSection) {
         var tests: any[] = [];
         testSection.Summaries.forEach(summary => {
-            var test = { name: summary.Name, rows: this.createParamsGrid(summary) }
+            var test = { name: summary.Name, rows: this.createParamsGrid(summary, testSection.Styles) }
             tests.push(test);
         })
         return { name: testSection.Name, tests: tests };
@@ -23,17 +24,16 @@ export class BrokerFactoryService {
     <table style="table-layout: fixed ">
         <tr *ngFor="let row of test.rows">
             <td 
-                *ngFor="let cell in row.cells" 
-                [class]="cell.style"
+                *ngFor="let cell in row" 
                 colspan="cell.colspan"
                 rowspan="cell.rowspan">
-                    <span>{{ cell.key }}</span>
-                    <span>{{ cell.value }}</span>
+                    <span [class]="cell.keyStyle">{{ cell.key }}</span>
+                    <span [class]="cell.valueStyle">{{ cell.value }}</span>
             </td>
         </tr>
     </table>
     */
-    private createParamsGrid(summary: TestSummary) {
+    private createParamsGrid(summary: TestSummary, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;
         summary.TestParamCells.forEach(cell => {
             maxRowIndex = maxRowIndex > cell.Row ? maxRowIndex : cell.Row;
@@ -41,14 +41,16 @@ export class BrokerFactoryService {
         })
 
         var createCell = function (
-            key: string = "", 
-            value: string = "", 
-            style: string = "", 
-            colspan: number = 1, 
+            key: string = "",
+            value: string = "",
+            keyStyle: string = "",
+            valueStyle: string = "",
+            colspan: number = 1,
             rowspan: number = 1,
-            empty:boolean = true) {
+            empty: boolean = true) {
             return {
-                "style": style,
+                "keyStyle": keyStyle,
+                "valueStyle": valueStyle,
                 "colspan": colspan,
                 "rowspan": rowspan,
                 "key": key,
@@ -66,16 +68,25 @@ export class BrokerFactoryService {
             rows.push(cells);
         }
 
-        summary.TestParamCells.forEach(cell => {            
+        summary.TestParamCells.forEach(cell => {
             rows[cell.Row][cell.Column] = createCell(
-                cell.TestParam.Key, 
-                cell.TestParam.Value, 
-                cell.TestParam.Style, 
-                cell.ColSpan, 
+                cell.TestParam.Key,
+                cell.TestParam.Value,
+                this.getFallbackValue("key", [cell.Styles, summary.Styles, parentStyles]),
+                this.getFallbackValue("value", [cell.Styles, summary.Styles, parentStyles]),
+                cell.ColSpan,
                 cell.RowSpan,
                 false)
         });
 
         return rows;
+    }
+    getFallbackValue(key:string, dict: Dictionary<string, string>[]){
+        var value = "";
+        dict.forEach(d =>{
+            if(d.containsKey(key))
+                value = d.getValue(key);
+        })
+        return value;
     }
 } 

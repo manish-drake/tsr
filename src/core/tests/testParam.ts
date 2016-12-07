@@ -31,15 +31,6 @@ export class TestParam{
     public set Alignment(v : number) {
         this._Alignment = v;
     }
-
-    
-    private _Style : string;
-    public get Style() : string {
-        return this._Style;
-    }
-    public set Style(v : string) {
-        this._Style = v;
-    }
     
     
     private _IsEmpty : boolean;

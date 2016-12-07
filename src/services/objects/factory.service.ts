@@ -23,7 +23,9 @@ export class Factory {
         var testSection: TestSection = new TestSection();
         switch (section) {
             case 'UAT OUT': {
-                testSection
+
+                testSection.Styles.add("key", "sectionLabel");
+                testSection.Styles.add("value", "sectionResult");
 
                 testSection.Name = section;
  //------------------------UAT State Vector Test------------------------
@@ -32,7 +34,6 @@ export class Factory {
 
                 var add = new TestParam();
                 add.Key = "Address:";
-                add.Style = "spl"
                 var cAdd = new TestParamCell(add);
                 cAdd.Row = 0;
                 cAdd.Column = 0;
@@ -377,6 +378,7 @@ export class Factory {
             }
             break;
         }
+        
         return testSection;
     }
 }

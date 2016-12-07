@@ -3,7 +3,7 @@
         private _keys: T[] = [];
         private _values: U[] = [];
 
-        private undefinedKeyErrorMessage: string = "Key is either undefined, null or an empty string.";
+        // private undefinedKeyErrorMessage: string = "Key is either undefined, null or an empty string.";
 
         private isEitherUndefinedNullOrStringEmpty(object: any): boolean {
             return (typeof object) === "undefined" || object === null || object.toString() === "";
@@ -12,7 +12,7 @@
         private checkKeyAndPerformAction(action: { (key: T, value?: U): void | U | boolean }, key: T, value?: U): void | U | boolean {
 
             if (this.isEitherUndefinedNullOrStringEmpty(key)) {
-                throw new Error(this.undefinedKeyErrorMessage);
+                throw new Error("Key is either undefined, null or an empty string.");
             }
 
             return action(key, value);
