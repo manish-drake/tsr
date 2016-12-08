@@ -31,6 +31,14 @@ $colors: (
 );
 
 
+
+// take the blue pill
+$light-background: #f6f6ff;
+$light-foreground: #387ef5;
+// take the red pill
+$dark-background: #1C2836;
+$dark-foreground: #ffffff;
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -69,3 +77,5 @@ $colors: (
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
+@import "./app.light";
+@import "./app.dark";

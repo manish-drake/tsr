@@ -1,0 +1,20 @@
+.light-theme {
+  h1, h2, h3, h4, h5, h6,
+  .toolbar-title {
+    color: $light-foreground;
+  }
+  .toolbar-background {
+    background-color: $light-background;
+  }
+  ion-content {
+    background-color: $light-background;
+  }
+  ion-list {
+    .item {
+      background-color: darken($light-background, 1.5%);
+    }
+  }
+  ion-item{
+    color: $light-foreground;
+  }
+}

@@ -9,20 +9,24 @@ import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { RouterOutlet, Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
 import { Hamburger } from '../core/hamburgerMenu/hamburger';
-
+import { ThemesService } from '../services/themes/themes.service'
 @Component({
   templateUrl: `app.html`
 })
 export class MyApp implements OnInit {
   @ViewChild(Nav) content: Nav;
-  
-  Title:string = "Title";
+
+  chosenTheme: String;
+
+  Title: string = "Title";
 
   rootPage = SectionsPage;
 
   private hb = new Hamburger();
 
-  constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router:Router) {
+  constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
+    // subscribe to theme changes and set a default chosen theme
+    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -32,9 +36,9 @@ export class MyApp implements OnInit {
   }
 
   ngOnInit(){
-      this._svcHeader.TitleUpdated.subscribe(e =>{
-          this.Title = e.title;
-      })
+    this._svcHeader.TitleUpdated.subscribe(e =>{
+      this.Title = e.title;
+    })
 
   }
 
@@ -49,7 +53,7 @@ export class MyApp implements OnInit {
     popover.present({ ev: event });
   }
 
-  onItemSelectionChanged(e){
+  onItemSelectionChanged(e) {
     console.log("Item selection changed in app.comp", e.newItem, e.parent);
     this._router.navigate(['section', e.newItem]);
   }

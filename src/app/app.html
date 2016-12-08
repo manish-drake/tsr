@@ -1,10 +1,10 @@
-<ion-header>
+<ion-header [class]="chosenTheme">
     <header-component [title]="Title"></header-component>
 </ion-header>
 
 
-<ion-content style="margin-top:60px;">
-    <ion-menu [content]="content" color="primary">
+<ion-content style="margin-top:60px;" [class]="chosenTheme">
+    <ion-menu [content]="content" >
         <!--<ion-header>
             <ion-toolbar color="primary">
                 <ion-title>Menu</ion-title>

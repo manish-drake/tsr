@@ -21,7 +21,7 @@ import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
 import { SpyDirective } from '../common/mySpy.directive';
 
-
+import { ThemesService } from '../services/themes/themes.service'
 
 @NgModule({
     declarations: [
@@ -55,7 +55,8 @@ import { SpyDirective } from '../common/mySpy.directive';
         Factory, 
         Master,
         HeaderService,
-        BrokerFactoryService
+        BrokerFactoryService,
+        ThemesService
     ]
 })
 export class AppModule { }

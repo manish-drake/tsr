@@ -1,0 +1,17 @@
+.dark-theme {
+  h1, h2, h3, h4, h5, h6,
+  .toolbar-title {
+    color: $dark-foreground;
+  }
+  .toolbar-background {
+    background-color: $dark-background;
+  }
+  ion-content {
+    background-color: $dark-background;
+  }
+  ion-list {
+    .item {
+      background-color: darken($dark-background, 1.5%);
+    }
+  }
+}
