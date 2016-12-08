@@ -1,4 +1,4 @@
-import { TestSummary } from './testSummary';
+import { Test } from './test';
 import { TestParam } from './testParam';
 import { TestParamCell } from './testParamCell';
 import { Dictionary } from '../../common/dictionary'
@@ -20,13 +20,13 @@ export class TestSection{
         this._Name = v;
     }
     
-    private _Summaries : TestSummary[];
-    public get Summaries() : TestSummary[] {
+    private _Summaries : Test[];
+    public get Summaries() : Test[] {
         if(!this._Summaries)
             this._Summaries = [];
         return this._Summaries;
     }
-    public set Summaries(v : TestSummary[]) {
+    public set Summaries(v : Test[]) {
         this._Summaries = v;
     }
     

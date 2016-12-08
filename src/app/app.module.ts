@@ -17,6 +17,7 @@ import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { SectionComp } from '../comps/hamburger/section/section.comp';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
+import { TestDetailComp } from '../comps/tests/detail/detail.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
 import { SpyDirective } from '../common/mySpy.directive';
@@ -34,6 +35,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         SectionComp,
         SubSectionComp,
         TestSectionComp,
+        TestDetailComp,
         TestCardComp,
         SpyDirective
     ],

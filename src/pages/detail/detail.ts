@@ -27,7 +27,6 @@ export class DetailPage {
       this._svcHeader.title = "Detail";
       console.log("Detail init called");
       this.route.params.subscribe(data => {
-        console.log(data);
         var testName = (data as any).name;
         var test = this.objectService.createTest(testName, "");
         this.dataSource = this.broker.createTestDataSource(test);

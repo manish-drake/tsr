@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core'
-import { Test } from '../../core/tests/test'
 import { Datum } from '../../core/tests/datum'
 import { TestSection } from '../../core/tests/testSection'
-import { TestSummary } from '../../core/tests/testSummary'
+import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
 import { File } from '../io/file.service'
@@ -14,11 +13,6 @@ export class Factory {
 
     }
 
-    createTest(name: string): Test {
-        var fileContent = this.file.getTextContents(name);
-        var test = JSON.parse(fileContent);
-        return test;
-    }
     createSection(section: string, parent: string): TestSection {
         var testSection: TestSection = new TestSection();
         switch (section) {
@@ -29,7 +23,7 @@ export class Factory {
 
                 testSection.Name = section;
  //------------------------UAT State Vector Test------------------------
-                var svt = new TestSummary();
+                var svt = new Test();
                 svt.Name = "UAT State Vector Test";
 
                 var add = new TestParam();
@@ -78,7 +72,7 @@ export class Factory {
 
                 testSection.Summaries.push(svt);
  //------------------------UAT AUX State Vector Test------------------------
-                var asvt = new TestSummary();
+                var asvt = new Test();
                 asvt.Name = "UAT AUX State Vector Test";
 
                 var add1 = new TestParam();
@@ -128,7 +122,7 @@ export class Factory {
                 testSection.Summaries.push(asvt);
 
 //------------------------UAT Mode Status Test-----------------------------
-                var mst = new TestSummary();
+                var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
 
                 var add2 = new TestParam();
@@ -178,7 +172,7 @@ export class Factory {
                 testSection.Summaries.push(mst);
 
   //------------------------UAT RF Link Test-----------------------------
-                var rft = new TestSummary();
+                var rft = new Test();
                 rft.Name = "UAT RF Test";
 
                 var add3 = new TestParam();
@@ -228,7 +222,7 @@ export class Factory {
                 testSection.Summaries.push(rft);      
 
 //------------------------UAT Summary-----------------------------
-                var summary = new TestSummary();
+                var summary = new Test();
                 summary.Name = "UAT Summary";
 
                 var add4 = new TestParam();
@@ -277,7 +271,7 @@ export class Factory {
 
                 testSection.Summaries.push(summary);        
 //------------------------UAT Target State Test-----------------------------
-                var tst = new TestSummary();
+                var tst = new Test();
                 tst.Name = "UAT Target State Test";
 
                 var add5 = new TestParam();
@@ -327,7 +321,7 @@ export class Factory {
                 testSection.Summaries.push(tst);       
 
                 //------------------------UAT Trajectory Change Test-----------------------------
-                var tct = new TestSummary();
+                var tct = new Test();
                 tct.Name = "UAT Trajectory Change Test";
 
                 var add6 = new TestParam();
@@ -380,5 +374,72 @@ export class Factory {
         }
         
         return testSection;
+    }
+
+    
+    createTest(test: string, section: string): Test {
+        var newTest: Test;
+        var id = section + "/" + test
+        switch (section) {
+            case 'UAT OUT/UAT State Vector Test': {
+
+                newTest.Styles.add("key", "sectionLabel");
+                newTest.Styles.add("value", "sectionResult");
+
+                newTest.Name = test;
+ //------------------------UAT State Vector Test------------------------
+                var svt = new Test();
+                svt.Name = "UAT State Vector Test";
+
+                var add = new TestParam();
+                add.Key = "Address:";
+                var cAdd = new TestParamCell(add);
+                cAdd.Row = 0;
+                cAdd.Column = 0;
+
+                var addQ = new TestParam();
+                addQ.Key = "Addr Qual:";
+                var cAddQ = new TestParamCell(addQ);
+                cAddQ.Row = 0;
+                cAddQ.Column = 1;
+
+                var pld = new TestParam();
+                pld.Key = "Payload:";
+                var cPld = new TestParamCell(pld);
+                cPld.Row = 1;
+                cPld.Column = 0;
+
+                var agst = new TestParam();
+                agst.Key = "A/G State:";
+                var cAgst = new TestParamCell(agst);
+                cAgst.Row = 1;
+                cAgst.Column = 1;
+
+                var rfl = new TestParam();
+                rfl.Key = "RF Link:";
+                var cRfl = new TestParamCell(rfl);
+                cRfl.Row = 2;
+                cRfl.Column = 0;
+
+                var gps = new TestParam();
+                gps.Key = "GPS:";
+                var cGps = new TestParamCell(gps);
+                cGps.Row = 2;
+                cGps.Column = 1;
+
+
+                svt.TestParamCells.push(cAdd);
+                svt.TestParamCells.push(cAddQ);
+                svt.TestParamCells.push(cPld);
+                svt.TestParamCells.push(cAgst);
+                svt.TestParamCells.push(cRfl);
+                svt.TestParamCells.push(cGps);
+
+                newTest = svt;
+            }
+            break;
+        }
+        
+        return newTest;
     }
 }

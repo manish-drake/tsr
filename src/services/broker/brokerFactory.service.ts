@@ -1,7 +1,7 @@
 import { TestSection } from '../../core/tests/testSection'
 import { TestParamCell } from '../../core/tests/testParamCell'
 import { TestParam } from '../../core/tests/testParam'
-import { TestSummary } from '../../core/tests/testSummary'
+import { Test } from '../../core/tests/test'
 import { Dictionary } from '../../common/dictionary';
 
 export class BrokerFactoryService {
@@ -20,6 +20,14 @@ export class BrokerFactoryService {
         return { name: testSection.Name, tests: tests };
     }
 
+    createTestDataSource(testSection: TestSection) {
+        var tests: any[] = [];
+        testSection.Summaries.forEach(summary => {
+            var test = { name: summary.Name, rows: this.createParamsGrid(summary, testSection.Styles) }
+            tests.push(test);
+        })
+        return { name: testSection.Name, tests: tests };
+    }
     /*
     <table style="table-layout: fixed ">
         <tr *ngFor="let row of test.rows">
@@ -33,7 +41,7 @@ export class BrokerFactoryService {
         </tr>
     </table>
     */
-    private createParamsGrid(summary: TestSummary, parentStyles: Dictionary<string, string>) {
+    private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;
         summary.TestParamCells.forEach(cell => {
             maxRowIndex = maxRowIndex > cell.Row ? maxRowIndex : cell.Row;
