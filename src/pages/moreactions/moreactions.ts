@@ -29,9 +29,11 @@ export class MoreActionsPopover {
   onSwitchTheme(){
     if(this.selected == 'light-theme'){
       this._themes.setTheme('dark-theme');
+      localStorage.setItem("tsrtheme","dark-theme");
     }
     else{
       this._themes.setTheme('light-theme');
+      localStorage.setItem("tsrtheme","light-theme");
     }
   }
 

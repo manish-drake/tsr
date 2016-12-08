@@ -10,7 +10,6 @@ export class SubSectionComp{
     @Output()Selected = new EventEmitter();
 
     onClick(){
-        console.log("on sub section cliecked");
         this.Selected.emit({
             name: this.Name
         });

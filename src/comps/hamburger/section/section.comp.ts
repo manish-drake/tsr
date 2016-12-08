@@ -19,12 +19,11 @@ export class SectionComp{
     }
 
     onClick(){
-        console.log("Section click called");
+        
     }
 
     onItemSelected(e){
         this.SelectedItem = e.name;
-        console.log(this.SelectedItem);
         
         
         this.ItemSelectionChanged.emit({

@@ -1,49 +1,20 @@
-<ion-card style="height:100%;">
-    <ion-row padding>
-        <ion-col width-80>
-            <div align="left"><span class="sectionHeading"> {{test.Name}} </span></div>
-        </ion-col>
-        <ion-col width-20>
-            <div align="right"><span class="teststatus">Status?</span></div>
-        </ion-col>
-    </ion-row>
-    <table style="table-layout: fixed ">
-        <tr *ngFor="let row of test.rows">
-            <td class="sectionLabel">{{ row[0].Key }}</td>
-            <td class="sectionResult">{{ row[0].Value }}</td>
-            <td class="sectionLabel1">{{ row[1].Key }}</td>
-            <td class="sectionResult">{{ row[1].Value }}</td>
-        </tr>
-    </table>
-
+<ion-card #mydiv>
+    <ion-item>
+        <ion-row>
+            <ion-col style="width:100%">
+                <span class="sectionHeading"> {{test.name}} </span>
+            </ion-col>
+            <ion-col style="width:auto;flex:0 0 auto">
+                <span class="teststatus">Status?</span>
+            </ion-col>
+        </ion-row>
+        <table style="table-layout: fixed; ">
+            <tr *ngFor="let row of test.rows">
+                <td *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
+                    <span [class]="cell.keyStyle">{{ cell.key }}</span>
+                    <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                </td>
+            </tr>
+        </table>
+    </ion-item>
 </ion-card>
-
-
-
-
-<!--<ion-item class="customcard" ng-init="l1='uatStateVectorTestSubsonic'" ng-click="onSingleClick(l1)" ng-class="{'cardselected':l1 == selectedRow}"
-    on-double-tap="onDoubleClick(l1)">
-    <p style="align-content: stretch ">
-        <span class="sectionHeading" style="float: left ">{{ test.Name }}</span>
-        <span style="float:right;">
-                        <span class="teststatus">Status?</span>
-        <button class="button-icon icon" ng-click="button.clicked=!button.clicked" ng-class="button.clicked?'ion-ios-star fav-checked':'ion-ios-star-outline fav-unchecked'"></button>
-        </span>
-    </p>
-    <table style="table-layout: fixed ">
-        <tr *ngFor="let row of test.rows">
-            <td class="sectionLabel">
-                {{ row[0].Key }}
-            </td>
-            <td class="sectionResult">
-                {{ row[0].Value }}
-            </td>
-            <td class="sectionLabel">
-                {{ row[1].Key }}
-            </td>
-            <td class="sectionResult">
-                {{ row[1].Value }}
-            </td>
-        </tr>
-    </table>
-</ion-item>-->

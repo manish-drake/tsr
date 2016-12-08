@@ -1,22 +1,26 @@
 test-card{
     .sectionHeading{
-        margin-right:15px;
-     color: #000;
      font-weight: 500;
-     font-size: 21px;    
+     font-size: 20px;    
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      }
-    .teststatus{font-size:21px; color:green;}
+    .teststatus{
+        font-size:20px; color:green;
+        }
+        
     .sectionLabel{
     min-width: 60px;
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-bottom:  11px;
-    padding-left:20px;
+    padding-left:5px;
+    }
+    .spl{
+    font-size: 25px;
     }
      .sectionLabel1{
     min-width: 150px;
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-bottom:  11px;
     padding-left:5px;
@@ -26,7 +30,7 @@ test-card{
     min-width: 250px;
     padding-left: 8px;
     padding-bottom:  11px;
-     font-size: 21px;
+     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 }

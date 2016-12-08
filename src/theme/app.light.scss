@@ -4,10 +4,13 @@
     color: $light-foreground;
   }
   .toolbar-background {
-    background-color: $light-background;
+    background-color: $light-primary;
+  }
+   ion-item-group{
+       background-color: darken($light-background, 1.5%);
   }
   ion-content {
-    background-color: $light-background;
+    background-color: #f4f4f4
   }
   ion-list {
     .item {
@@ -15,6 +18,16 @@
     }
   }
   ion-item{
+    color: $light-foreground;
+  }
+  button{
+    color: $light-background;
+  }
+  i{
+    color: $light-background;
+  }
+  ion-card {
+    background-color: $light-background;
     color: $light-foreground;
   }
 }

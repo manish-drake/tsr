@@ -53,8 +53,8 @@ export class MyApp implements OnInit {
     popover.present({ ev: event });
   }
 
-  onItemSelectionChanged(e) {
-    console.log("Item selection changed in app.comp", e.newItem, e.parent);
+
+  onItemSelectionChanged(e){
     this._router.navigate(['section', e.newItem]);
   }
 }

@@ -1,7 +1,13 @@
 import { TestParam } from './testParam';
+import { Dictionary } from '../../common/dictionary'
 
 export class TestParamCell{
-    
+    private _Styles : Dictionary<string, string>;
+    public get Styles() : Dictionary<string, string> {
+        if(!this._Styles)
+            this._Styles = new Dictionary<string, string>();
+        return this._Styles;
+    }
     private _TestParam : TestParam;
     public get TestParam() : TestParam {
         return this._TestParam;

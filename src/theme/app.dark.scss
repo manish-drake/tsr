@@ -4,14 +4,37 @@
     color: $dark-foreground;
   }
   .toolbar-background {
-    background-color: $dark-background;
+    background-color: $dark-primary;
+  }
+  ion-item-group{
+      background-color: $dark-primary;
   }
   ion-content {
     background-color: $dark-background;
   }
   ion-list {
     .item {
-      background-color: darken($dark-background, 1.5%);
+      background-color: $dark-primary;
     }
+  }
+  ion-item{
+    color: $dark-foreground;
+    background-color: $dark-primary;
+  }
+  button{
+    color: $dark-foreground;
+  }
+  i{
+    color: $dark-foreground;
+  }
+  ion-card {
+    .item {
+      background-color: darken($dark-primary, 1.5%);
+      color: $dark-foreground;
+    }
+  }
+  ion-card {
+     background-color: darken($dark-primary, 1.5%);
+      color: $dark-foreground;
   }
 }
