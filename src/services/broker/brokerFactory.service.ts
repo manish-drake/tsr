@@ -14,19 +14,22 @@ export class BrokerFactoryService {
     createSectionDataSource(testSection: TestSection) {
         var tests: any[] = [];
         testSection.Summaries.forEach(summary => {
-            var test = { name: summary.Name, rows: this.createParamsGrid(summary, testSection.Styles) }
+            var test = {
+                name: summary.Name,
+                parent: testSection.Name,
+                rows: this.createParamsGrid(summary, testSection.Styles)
+            }
             tests.push(test);
         })
         return { name: testSection.Name, tests: tests };
     }
 
-    createTestDataSource(testSection: TestSection) {
-        var tests: any[] = [];
-        testSection.Summaries.forEach(summary => {
-            var test = { name: summary.Name, rows: this.createParamsGrid(summary, testSection.Styles) }
-            tests.push(test);
-        })
-        return { name: testSection.Name, tests: tests };
+    createTestDataSource(test: Test) {
+        var testDS = {
+            name: test.Name,
+            rows: this.createParamsGrid(test, new Dictionary<string, string>())
+        };
+        return testDS;
     }
     /*
     <table style="table-layout: fixed ">
@@ -89,10 +92,10 @@ export class BrokerFactoryService {
 
         return rows;
     }
-    getFallbackValue(key:string, dict: Dictionary<string, string>[]){
+    getFallbackValue(key: string, dict: Dictionary<string, string>[]) {
         var value = "";
-        dict.forEach(d =>{
-            if(d.containsKey(key))
+        dict.forEach(d => {
+            if (d.containsKey(key))
                 value = d.getValue(key);
         })
         return value;

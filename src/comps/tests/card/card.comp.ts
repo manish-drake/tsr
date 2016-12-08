@@ -18,7 +18,7 @@ export class TestCardComp{
 
     ngAfterViewInit(){
         this._renderer.listen(this.md.nativeElement, 'dblclick', ()=>{
-            this._router.navigate(['detail', this.test.name])
+            this._router.navigate(['detail', this.test.name, this.test.parent])
         })
     }
 }

@@ -50,7 +50,6 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e){
-    console.log("Item selection changed in app.comp", e.newItem, e.parent);
     this._router.navigate(['section', e.newItem]);
   }
 }

@@ -25,10 +25,13 @@ export class DetailPage {
 
   ngOnInit(){
       this._svcHeader.title = "Detail";
-      console.log("Detail init called");
+      
       this.route.params.subscribe(data => {
-        var testName = (data as any).name;
-        var test = this.objectService.createTest(testName, "");
+        
+        var testName = (data as any).test;
+        var testSectionName = (data as any).parent;
+        var test = this.objectService.createTest(testName, testSectionName);
+        
         this.dataSource = this.broker.createTestDataSource(test);
       })
   }
