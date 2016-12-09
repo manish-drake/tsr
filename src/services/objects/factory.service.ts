@@ -404,10 +404,12 @@ export class Factory {
                 cPld.Column = 0;
 
                 var sve = new TestParam();
-                sve.Key = "State Vector Element:";
+                sve.Key = "State Vector Element";
                 var cSve = new TestParamCell(sve);
+                cSve.Styles.add("key", "detailheading");
                 cSve.Row = 3;
                 cSve.Column = 0;
+                cSve.ColSpan = 3;
 
                 var ags = new TestParam();
                 ags.Key = "Air/Ground State:";
@@ -477,9 +479,11 @@ export class Factory {
 
                 var rfl = new TestParam();
                 rfl.Key = "RF Link";
-                var cRfl = new TestParamCell(rfl);
+                var cRfl = new TestParamCell(rfl);                
                 cRfl.Row = 15;
                 cRfl.Column = 0;
+                cRfl.ColSpan = 3;
+                cRfl.Styles.add("key", "detailheading");
 
                 var frq = new TestParam();
                 frq.Key = "Freq=";
@@ -555,6 +559,8 @@ export class Factory {
                 var cAsve = new TestParamCell(asve);
                 cAsve.Row = 3;
                 cAsve.Column = 0;
+                cAsve.ColSpan = 3;
+                cAsve.Styles.add("key", "detailheading");
 
                 var alt = new TestParam();
                 alt.Key = "Altitude";
@@ -569,10 +575,12 @@ export class Factory {
                 cAltt.Column = 0;
 
                 var rfl = new TestParam();
-                rfl.Key = "RF Link:";
+                rfl.Key = "RF Link";
                 var cRfl = new TestParamCell(rfl);
                 cRfl.Row = 6;
                 cRfl.Column = 0;
+                cRfl.ColSpan = 3;
+                cRfl.Styles.add("key", "detailheading");
 
                 var frq = new TestParam();
                 frq.Key = "Freq=";
@@ -791,6 +799,8 @@ export class Factory {
                 var cTse = new TestParamCell(tse);
                 cTse.Row = 3;
                 cTse.Column = 0;
+                cTse.ColSpan = 3;
+                cTse.Styles.add("key", "detailheading");
 
                 var sal = new TestParam();
                 sal.Key = "Selected Alt Type:";
@@ -857,6 +867,8 @@ export class Factory {
                 var cRfl = new TestParamCell(rfl);
                 cRfl.Row = 14;
                 cRfl.Column = 0;
+                cRfl.ColSpan = 3;
+                cRfl.Styles.add("key", "detailheading");
 
                 var frq = new TestParam();
                 frq.Key = "Freq=";
@@ -877,7 +889,7 @@ export class Factory {
                 cGps.Column = 0;
 
                 var rflt = new TestParam();
-                rflt.Key = "LNAV Mode=";
+                rflt.Key = "RF Link Test=";
                 var cRflt = new TestParamCell(rflt);
                 cRflt.Row = 16;
                 cRflt.Column = 1;
@@ -936,10 +948,12 @@ export class Factory {
                 tct.TestParamCells.push(cPld);
 
                 var tce = new TestParam();
-                tce.Key = "Trajectory Change Element:";
+                tce.Key = "Trajectory Change Element";
                 var cTce = new TestParamCell(tce);
                 cTce.Row = 3;
                 cTce.Column = 0;
+                cTce.ColSpan = 3;
+                cTce.Styles.add("key", "detailheading");
 
                 tct.TestParamCells.push(cTce);
 
@@ -956,6 +970,8 @@ export class Factory {
                 var cRfl = new TestParamCell(rfl);
                 cRfl.Row = 5;
                 cRfl.Column = 0;
+                cRfl.ColSpan = 3;
+                cRfl.Styles.add("key", "detailheading");
 
                 tct.TestParamCells.push(cRfl);
 
