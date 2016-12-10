@@ -9,7 +9,6 @@ export class Master{
     }
 
     runTest(testName: string, args:Dictionary<string, string>): string{
-        
         return "";
     }
 }

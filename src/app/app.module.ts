@@ -15,6 +15,8 @@ import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
 import { Master } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
+import { PopoverService } from '../services/ui/popover.service'
+import { PopoverHub } from '../services/ui/popover.hub'
 import { SectionComp } from '../comps/hamburger/section/section.comp';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
 import { TestDetailComp } from '../comps/tests/detail/detail.comp';
@@ -57,6 +59,8 @@ import { ThemesService } from '../services/themes/themes.service'
         Factory, 
         Master,
         HeaderService,
+        PopoverService,
+        PopoverHub,
         BrokerFactoryService,
         ThemesService
     ]

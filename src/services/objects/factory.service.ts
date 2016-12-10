@@ -553,6 +553,7 @@ export class Factory {
                 var asve = new TestParam();
                 asve.Key = "AUX State Vector Element";
                 var cAsve = new TestParamCell(asve);
+                cAsve.ColSpan = 4;
                 cAsve.Row = 3;
                 cAsve.Column = 0;
 
