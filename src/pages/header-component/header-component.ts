@@ -15,9 +15,19 @@ import { PopoverService } from '../../services/ui/popover.service'
 })
 export class HeaderComponent {
   @Input() title: string;
-
-  constructor(private _popoverService: PopoverService) { }
-
+  private more:any;
+  constructor(private _popoverService: PopoverService) { 
+    this.more = this.createPopSource("more", "MORE", "more");
+  }
+createPopSource = function (name, label, target) {
+    return {
+      "name": name,
+      "lable": label,
+      "target": [
+        target
+      ]
+    };
+  };
   ionViewDidLoad() {
   }
 
@@ -25,7 +35,7 @@ export class HeaderComponent {
     this._popoverService.showMoreMenu(e);
   }
   openConfigurations(e) {
-    this._popoverService.showConfiguration(e);
+    // this._popoverService.showConfiguration(e);
   }
 
 }

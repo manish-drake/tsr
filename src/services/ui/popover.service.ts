@@ -1,22 +1,53 @@
 import { Injectable, ReflectiveInjector } from '@angular/core';
-import { PopoverHub } from './popover.hub'
+import { Platform, PopoverController } from 'ionic-angular';
+import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
+import { HelpPage } from '../../pages/help/help';
+import { SetupPage } from '../../pages/setup/setup';
+import { ConfigurationsPopover } from '../../pages/configurations/configurations'
 
 @Injectable()
 export class PopoverService {
+
+    constructor(private _popoverCtrl: PopoverController) {
+    }
+    show(e, args: any[]) {
+        switch (args[0]) {
+            case 'more': {
+                this.showMoreMenu(e);
+                break;
+            }
+            case 'help': {
+                this.showHelp(e);
+                break;
+            }
+            case 'setup': {
+                this.showSetup(e);
+                break;
+            }
+            case 'config': {
+                this.showConfigurations(e);
+                break;
+            }
+            default:{break;}
+        }
+    }
     
-    constructor(private _popoverHub: PopoverHub) {
+    showSetup(e) {
+        let popover = this._popoverCtrl.create(SetupPage);
+        popover.present();
     }
 
     showMoreMenu(e) {
-        this._popoverHub.showMoreMenu(e);
+        let popover = this._popoverCtrl.create(MoreActionsPopover);
+        popover.present({ ev: e });
     }
     showHelp(e) {
-        this._popoverHub.showHelp(e);
+        let popover = this._popoverCtrl.create(HelpPage);
+        popover.present();
     }
-    showSetup(e) {
-        this._popoverHub.showSetup(e);
-    }
-    showConfiguration(e) {
-        this._popoverHub.showConfigurations(e);
+
+    showConfigurations(e) {
+        let popover = this._popoverCtrl.create(ConfigurationsPopover);
+        popover.present({ ev: e });
     }
 }

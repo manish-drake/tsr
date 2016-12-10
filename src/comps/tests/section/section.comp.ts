@@ -1,5 +1,4 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
-import { TestCardComp } from '../card/card.comp'
 
 
 @Component({

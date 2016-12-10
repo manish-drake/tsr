@@ -9,6 +9,6 @@
     <i ion-button icon-only><img src="assets/direct.png"/></i>
     <i ion-button icon-only><ion-icon name="wifi"></ion-icon></i>
     <i ion-button icon-only><ion-icon name="battery-full"></ion-icon></i>
-    <button ion-button icon-only (click)="moreActionPopover($event)"><ion-icon name="more"></ion-icon></button>
+    <pop-button [popSource]="more"></pop-button>
   </ion-buttons>
 </ion-navbar> 
