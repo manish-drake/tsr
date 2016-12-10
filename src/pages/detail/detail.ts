@@ -16,7 +16,7 @@ import { Factory } from '../../services/objects/factory.service'
 })
 export class DetailPage {
 
-  private dataSource: any;
+  public dataSource: any;
   constructor(
     private _svcHeader: HeaderService, 
     private route: ActivatedRoute,
