@@ -5,14 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-list style="margin:0px" [class]="chosenTheme">
-   <ion-item>
-    <ion-icon name="settings" item-left></ion-icon>
-    <ion-label>SETUP TEST</ion-label>
-   </ion-item>
-  <ion-item>
-    <ion-icon name="help-circle" item-left></ion-icon>
-    <ion-label>HELP</ion-label>
-  </ion-item>
+  <pop-menu-item [popSource]="setup"></pop-menu-item>
+  <pop-menu-item [popSource]="help"></pop-menu-item>
   <ion-item>
     <ion-icon name="remove-circle" item-left></ion-icon>
     <ion-label>CLEAR RESULTS</ion-label>

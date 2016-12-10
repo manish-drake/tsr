@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ReflectiveInjector  } from '@angular/core';
 import { ViewController } from 'ionic-angular';
-import { ThemesService } from '../../services/themes/themes.service'
+import { ThemesService } from '../../services/themes/themes.service';
 
 /*
   Generated class for the Moreactions page.
@@ -14,14 +14,38 @@ import { ThemesService } from '../../services/themes/themes.service'
 })
 export class MoreActionsPopover {
 
-  chosenTheme: String;
+ chosenTheme: String;
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
-
-  constructor(public viewCtrl: ViewController, private _themes: ThemesService) {
+  
+  private setup:any;
+  private help: any;
+  
+  constructor(
+    public viewCtrl: ViewController, 
+    private _themes: ThemesService) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);
     this.availableThemes = this._themes.availableThemes;
+    
+    this.setup = this.createPopSource("settings", "SETUP TEST", "setup");
+    this.help = this.createPopSource("help-circle", "HELP", "help");
+  }
+  
+  createPopSource = function (name, label, target) {
+    return {
+      "name": name,
+      "lable": label,
+      "target": [
+        target
+      ]
+    };
+  };
+  
+  onSetupClick(e){
+  }
+  
+  onHelpClick(e){
   }
 
   ionViewDidLoad() {

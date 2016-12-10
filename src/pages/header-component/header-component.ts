@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { PopoverController } from 'ionic-angular';
+import { PopoverService } from '../../services/ui/popover.service'
 
-import { MoreActionsPopover } from '../moreactions/moreactions';
 
-import { ConfigurationsPopover } from '../configurations/configurations'
 
 /*
   Generated class for the HeaderComponent page.
@@ -16,22 +14,28 @@ import { ConfigurationsPopover } from '../configurations/configurations'
   templateUrl: 'header-component.html'
 })
 export class HeaderComponent {
-
   @Input() title: string;
-
-  constructor(private popoverCtrl: PopoverController) { }
-
+  private more:any;
+  constructor(private _popoverService: PopoverService) { 
+    this.more = this.createPopSource("more", "MORE", "more");
+  }
+createPopSource = function (name, label, target) {
+    return {
+      "name": name,
+      "lable": label,
+      "target": [
+        target
+      ]
+    };
+  };
   ionViewDidLoad() {
   }
 
-  moreActionPopover() {
-    let popover = this.popoverCtrl.create(MoreActionsPopover);
-    popover.present({ ev: event });
+  moreActionPopover(e) {
+    this._popoverService.showMoreMenu(e);
   }
-
-  openConfigurations(){
-    let popover = this.popoverCtrl.create(ConfigurationsPopover);
-    popover.present({ ev: event });
+  openConfigurations(e) {
+    // this._popoverService.showConfiguration(e);
   }
 
 }

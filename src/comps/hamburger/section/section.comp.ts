@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { SubSectionComp } from '../sub-section/subSection.comp';
 
 
 @Component({

@@ -23,6 +23,12 @@
     background-color: $dark-primary;
   }
 
+  pop-menu-item{
+    .item{
+    color: $dark-foreground;
+    background-color: $dark-primary;
+  }}
+
   ion-item-divider {
     color: $dark-foreground;
     background-color: $dark-primary;

@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { Platform, PopoverController, Nav } from 'ionic-angular';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SectionsPage } from '../pages/sections/sections';
@@ -8,6 +8,7 @@ import { SectionsPage } from '../pages/sections/sections';
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { RouterOutlet, Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
+import { PopoverService } from '../services/ui/popover.service'
 import { Hamburger } from '../core/hamburgerMenu/hamburger';
 import { ThemesService } from '../services/themes/themes.service'
 @Component({
@@ -22,7 +23,7 @@ export class MyApp implements OnInit {
   
   public hb = new Hamburger();
 
-  constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
+  constructor(platform: Platform, private popoverService:PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
     // subscribe to theme changes and set a default chosen theme
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     platform.ready().then(() => {
@@ -39,11 +40,11 @@ export class MyApp implements OnInit {
     })
 
   }
-
-  moreActionPopover() {
-    let popover = this.popoverCtrl.create(MoreActionsPopover);
-    popover.present({ ev: event });
-  }
+  
+  // moreActionPopover() {
+  //   let popover = this.popoverCtrl.create(MoreActionsPopover);
+  //   popover.present({ ev: event });
+  // }
 
   onItemSelectionChanged(e){
     // this._router.navigate(['section', e.newItem]);
