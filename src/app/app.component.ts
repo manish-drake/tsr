@@ -19,6 +19,7 @@ export class MyApp implements OnInit {
   chosenTheme: String;
   Title: string = "Title";
   rootPage = SectionsPage;
+  
   private hb = new Hamburger();
 
   constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {

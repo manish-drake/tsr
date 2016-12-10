@@ -15,7 +15,7 @@ import { Factory } from '../../services/objects/factory.service'
   templateUrl: 'sections.html'
 })
 export class SectionsPage implements OnInit {
-  private dataSource: any;
+  public dataSource: any;
   constructor(
     private _svcHeader: HeaderService, 
     private activeRoute: ActivatedRoute,

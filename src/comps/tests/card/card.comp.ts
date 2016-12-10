@@ -5,20 +5,29 @@ import { Router } from '@angular/router';
     selector: 'test-card',
     templateUrl: 'card.comp.html'
 })
-export class TestCardComp{
+export class TestCardComp {
     @ViewChild('mydiv') md: ElementRef
-    @Input()test:any;
+    @Input() test: any;
 
     /**
      *
      */
     constructor(private _renderer: Renderer, private _router: Router) {
-        
+
     }
 
-    ngAfterViewInit(){
-        this._renderer.listen(this.md.nativeElement, 'dblclick', ()=>{
-            this._router.navigate(['detail', this.test.name, this.test.parent])
-        })
+    private clicks = 0;
+    doubleTapNavigation() {
+        this.clicks++;
+        if (this.clicks == 1) {
+            setTimeout(() => {
+                console.log(this.clicks);
+                if (this.clicks == 2) {
+                    this._router.navigate(['detail', this.test.name, this.test.parent])
+                }
+                this.clicks = 0;
+            }, 500);
+
+        }
     }
 }
