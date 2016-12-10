@@ -13,14 +13,14 @@
     <ion-icon name="help-circle" item-left></ion-icon>
     <ion-label>HELP</ion-label>
   </button>
-  <ion-item>
+  <button ion-item>
     <ion-icon name="remove-circle" item-left></ion-icon>
     <ion-label>CLEAR RESULTS</ion-label>
-  </ion-item>
-  <ion-item>
+  </button>
+  <button ion-item>
     <ion-icon name="browsers" item-left></ion-icon>
     <ion-label>DUAL PANEL</ion-label>
-  </ion-item>
+  </button>
   <ion-item>
     <ion-icon name='walk' item-left></ion-icon>
     <ion-label style="margin:0px;padding:0;">RUN ALL</ion-label>
@@ -36,14 +36,14 @@
     <ion-label style="margin:0px;padding:0;">AUTO SAVE</ion-label>
     <ion-toggle style="margin-left:0px;padding:0;" checked="false"></ion-toggle>
   </ion-item>
-  <ion-item>
+  <button ion-item>
     <ion-icon name="star-outline" item-left></ion-icon>
     <ion-label>FAVORITE</ion-label>
-  </ion-item>
-  <ion-item>
+  </button>
+  <button ion-item>
     <ion-icon name="funnel" item-left></ion-icon>
     <ion-label>FILTER</ion-label>
-  </ion-item>
+  </button>
   <ion-item>
     <ion-label>LIGHT THEME</ion-label>
     <ion-toggle [checked]="selected == 'red-theme'" (ionChange)="onSwitchTheme()"></ion-toggle>

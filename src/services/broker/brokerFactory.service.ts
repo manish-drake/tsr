@@ -94,9 +94,15 @@ export class BrokerFactoryService {
     }
     getFallbackValue(key: string, dict: Dictionary<string, string>[]) {
         var value = "";
+        var flag = 0;
+
+
         dict.forEach(d => {
-            if (d.containsKey(key))
-                value = d.getValue(key);
+            if (d.containsKey(key)) {
+                if (flag <= 0)
+                    value = d.getValue(key);
+                flag = 1;
+            }
         })
         return value;
     }

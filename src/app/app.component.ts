@@ -23,7 +23,7 @@ export class MyApp implements OnInit {
 
   rootPage = SectionsPage;
 
-  private hb = new Hamburger();
+  public hb = new Hamburger();
 
   constructor(platform: Platform, private popoverService:PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
     // subscribe to theme changes and set a default chosen theme

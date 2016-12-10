@@ -3,6 +3,11 @@
   .toolbar-title {
     color: $dark-foreground;
   }
+  ion-col{
+      label{
+        color:lawngreen;
+      }
+  }
   .toolbar-background {
     background-color: $dark-primary;
   }
