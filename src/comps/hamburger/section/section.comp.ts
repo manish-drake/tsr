@@ -14,9 +14,7 @@ export class SectionComp{
     SelectedItem:any;
 
     public
-    constructor() {
-        
-    }
+    constructor() { }
 
     onClick(){
         
@@ -24,8 +22,6 @@ export class SectionComp{
 
     onItemSelected(e){
         this.SelectedItem = e.name;
-        
-        
         this.ItemSelectionChanged.emit({
             newItem: this.SelectedItem,
             parent: this.Name

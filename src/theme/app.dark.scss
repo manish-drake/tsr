@@ -1,5 +1,4 @@
 .dark-theme {
-  h1, h2, h3, h4, h5, h6,
   .toolbar-title {
     color: $dark-foreground;
   }
@@ -11,9 +10,6 @@
   .toolbar-background {
     background-color: $dark-primary;
   }
-  ion-item-group{
-      background-color: $dark-primary;
-  }
   ion-content {
     background-color: $dark-background;
   }
@@ -22,11 +18,22 @@
       background-color: $dark-primary;
     }
   }
-  ion-item{
+  ion-item {
     color: $dark-foreground;
     background-color: $dark-primary;
   }
-  button{
+
+  ion-item-divider {
+    color: $dark-foreground;
+    background-color: $dark-primary;
+  }
+
+  ion-navbar{
+    button{
+      color: $dark-foreground;
+    }
+  }
+   button{
     color: $dark-foreground;
   }
   i{

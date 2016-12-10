@@ -4,19 +4,17 @@
 
 
 <ion-content style="margin-top:60px;" [class]="chosenTheme">
-    <ion-menu [content]="content" >
-        <!--<ion-header>
-            <ion-toolbar color="primary">
-                <ion-title>Menu</ion-title>
-            </ion-toolbar>
-        </ion-header>-->
 
+    <ion-menu [content]="content">
         <ion-content>
-
-            <ion-item-group>
-                <!--<ion-item-divider >
-                    Header
-                </ion-item-divider>-->
+            <ion-item-group *ngFor="let section of hb.sections">
+                <ion-item-divider>{{section.name}}</ion-item-divider>
+                <ion-item no-lines menuToggle *ngFor="let subSection of section.subSections" (click)="onItemSelectionChanged(subSection.name)">
+                        <span item-left>{{ subSection.name }}</span>
+                        <span item-right>{{ subSection.count }}</span>
+                </ion-item>
+            </ion-item-group>
+            <!--<ion-item-group>
                 <ion-list no-lines>
                     <section-comp
                         *ngFor="let section of hb.sections"
@@ -24,12 +22,12 @@
                         [SubSections]=section.subSections
                         (ItemSelectionChanged)="onItemSelectionChanged($event)"></section-comp>
                 </ion-list>
-            </ion-item-group>
+            </ion-item-group>-->
         </ion-content>
-
     </ion-menu>
-    <!--<br/><br/><br/>-->
+
     <router-outlet></router-outlet>
+    
 </ion-content>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

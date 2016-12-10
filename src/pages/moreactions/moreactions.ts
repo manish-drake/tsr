@@ -14,10 +14,12 @@ import { ThemesService } from '../../services/themes/themes.service'
 })
 export class MoreActionsPopover {
 
+  chosenTheme: String;
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
 
   constructor(public viewCtrl: ViewController, private _themes: ThemesService) {
+    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);
     this.availableThemes = this._themes.availableThemes;
   }
@@ -26,14 +28,20 @@ export class MoreActionsPopover {
     console.log('Hello MoreactionsPopover');
   }
 
-  onSwitchTheme(){
-    if(this.selected == 'light-theme'){
+  isRunAllenabled:boolean = false;
+
+  runall() {
+    this.isRunAllenabled = !this.isRunAllenabled;
+  }
+
+  onSwitchTheme() {
+    if (this.selected == 'light-theme') {
       this._themes.setTheme('dark-theme');
-      localStorage.setItem("tsrtheme","dark-theme");
+      localStorage.setItem("tsrtheme", "dark-theme");
     }
-    else{
+    else {
       this._themes.setTheme('light-theme');
-      localStorage.setItem("tsrtheme","light-theme");
+      localStorage.setItem("tsrtheme", "light-theme");
     }
   }
 

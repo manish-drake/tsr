@@ -15,13 +15,10 @@ import { ThemesService } from '../services/themes/themes.service'
 })
 export class MyApp implements OnInit {
   @ViewChild(Nav) content: Nav;
-
+  
   chosenTheme: String;
-
   Title: string = "Title";
-
   rootPage = SectionsPage;
-
   private hb = new Hamburger();
 
   constructor(platform: Platform, private popoverCtrl: PopoverController, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
@@ -42,19 +39,13 @@ export class MyApp implements OnInit {
 
   }
 
-  openSections() {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    //this.nav.setRoot(SectionsPage);
-  }
-
   moreActionPopover() {
     let popover = this.popoverCtrl.create(MoreActionsPopover);
     popover.present({ ev: event });
   }
 
-
   onItemSelectionChanged(e){
-    this._router.navigate(['section', e.newItem]);
+    // this._router.navigate(['section', e.newItem]);
+    this._router.navigate(['section', e]);
   }
 }
