@@ -5,7 +5,7 @@
  i{
     color: $light-background;
   }
-  ion-navbar{
+  ion-toolbar{
     button{
       color: $light-background;
     }
@@ -17,5 +17,10 @@
       label{
         color:green;
       }
+  }
+   ion-menu{
+    ion-content{ background-color: $light-background; }
+    ion-item { background-color: transparent; }
+    ion-item-divider { background-color: transparent; }
   }
 }

@@ -29,9 +29,19 @@ export class MoreActionsPopover {
   }
 
   isRunAllenabled:boolean = false;
+  isReapeatEnabled:boolean = false;
+  isSaveEnabled:boolean = false;
 
   runall() {
     this.isRunAllenabled = !this.isRunAllenabled;
+  }
+
+  repeatTest(){
+     this.isReapeatEnabled = !this.isReapeatEnabled;
+  }
+
+  autoSave(){
+     this.isSaveEnabled = !this.isSaveEnabled;
   }
 
   onSwitchTheme() {

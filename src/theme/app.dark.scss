@@ -27,8 +27,13 @@
     color: $dark-foreground;
     background-color: $dark-primary;
   }
+  ion-menu{
+    ion-content{ background-color: $dark-primary; }
+    ion-item { background-color: transparent; }
+    ion-item-divider { background-color: transparent; }
+  }
 
-  ion-navbar{
+  ion-toolbar{
     button{
       color: $dark-foreground;
     }
@@ -49,4 +54,7 @@
      background-color: darken($dark-primary, 1.5%);
       color: $dark-foreground;
   }
+  ion-grid{
+    .item{background-color: $dark-background; }
+    }
 }

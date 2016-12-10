@@ -1,7 +1,4 @@
-<ion-header [class]="chosenTheme">
-    <header-component [title]="Title"></header-component>
-</ion-header>
-
+<header-component [title]="Title" [class]="chosenTheme"></header-component>
 
 <ion-content style="margin-top:60px;" [class]="chosenTheme">
 
@@ -9,9 +6,9 @@
         <ion-content>
             <ion-item-group *ngFor="let section of hb.sections">
                 <ion-item-divider>{{section.name}}</ion-item-divider>
-                <ion-item no-lines menuToggle *ngFor="let subSection of section.subSections" (click)="onItemSelectionChanged(subSection.name)">
-                        <span item-left>{{ subSection.name }}</span>
-                        <span item-right>{{ subSection.count }}</span>
+                <ion-item menuToggle *ngFor="let subSection of section.subSections" (click)="onItemSelectionChanged(subSection.name)">
+                        <h2>{{ subSection.name }}</h2>
+                        <h5 item-right>{{ subSection.count }}</h5>
                 </ion-item>
             </ion-item-group>
             <!--<ion-item-group>
@@ -27,7 +24,7 @@
     </ion-menu>
 
     <router-outlet></router-outlet>
-    
+
 </ion-content>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
