@@ -1,12 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SectionsPage } from '../pages/sections/sections';
 
-import { MoreActionsPopover } from '../pages/moreactions/moreactions';
-import { RouterOutlet, Router } from '@angular/router'
+import { Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
 import { Hamburger } from '../core/hamburgerMenu/hamburger';

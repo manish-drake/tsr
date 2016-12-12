@@ -1,4 +1,4 @@
-import { Component, ReflectiveInjector  } from '@angular/core';
+import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { ThemesService } from '../../services/themes/themes.service';
 

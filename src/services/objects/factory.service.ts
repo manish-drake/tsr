@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { Datum } from '../../core/tests/datum'
 import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
