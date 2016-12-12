@@ -1,4 +1,4 @@
-<ion-card #mydiv on-tap="doubleTapNavigation()">
+<ion-card #mydiv on-tap="doubleTapNavigation()" [ngClass]="{cardselected: step===test.name}">
     <ion-item>
         <ion-row>
             <ion-col style="width:100%">

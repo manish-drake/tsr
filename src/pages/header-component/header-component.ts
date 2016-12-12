@@ -15,7 +15,7 @@ import { PopoverService } from '../../services/ui/popover.service'
 })
 export class HeaderComponent {
   @Input() title: string;
-  private more:any;
+  public more:any;
   constructor(private _popoverService: PopoverService) { 
     this.more = this.createPopSource("more", "MORE", "more");
   }
@@ -34,7 +34,7 @@ createPopSource = function (name, label, target) {
   moreActionPopover(e) {
     this._popoverService.showMoreMenu(e);
   }
-  openConfigurations(e) {
+  openConfigurations() {
     // this._popoverService.showConfiguration(e);
   }
 

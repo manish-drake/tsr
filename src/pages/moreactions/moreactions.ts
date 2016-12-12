@@ -18,8 +18,8 @@ export class MoreActionsPopover {
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
   
-  private setup:any;
-  private help: any;
+  public setup:any;
+  public help: any;
   
   constructor(
     public viewCtrl: ViewController, 
