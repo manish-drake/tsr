@@ -1,6 +1,4 @@
 import { Test } from './test';
-import { TestParam } from './testParam';
-import { TestParamCell } from './testParamCell';
 import { Dictionary } from '../../common/dictionary'
 
 export class TestSection{

@@ -1,5 +1,5 @@
-import { Injectable, ReflectiveInjector } from '@angular/core';
-import { Platform, PopoverController } from 'ionic-angular';
+import { Injectable } from '@angular/core';
+import { PopoverController } from 'ionic-angular';
 import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
 import { HelpPage } from '../../pages/help/help';
 import { SetupPage } from '../../pages/setup/setup';

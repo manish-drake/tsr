@@ -1,6 +1,4 @@
 import { TestSection } from '../../core/tests/testSection'
-import { TestParamCell } from '../../core/tests/testParamCell'
-import { TestParam } from '../../core/tests/testParam'
 import { Test } from '../../core/tests/test'
 import { Dictionary } from '../../common/dictionary';
 
