@@ -1,74 +1,44 @@
-import { Section } from './section';
-import { subSection } from './subSection';
+import { Header } from './header';
 
 export class Hamburger {
-    public sections: Section[] = [];
+    public headers: Header[] = [];
     constructor() {
 
-        var start = new Section();
-        start.name = "Start";
-        var favorites = new subSection();
-        favorites.name = "Favorites";
-        var scheduled = new subSection();
-        scheduled.name = "Scheduled";
-        start.subSections.push(favorites);
-        start.subSections.push(scheduled);
+        var start = new Header();
+        start.Name = "Start";
+        start.Groups = ["Favorites", "Scheduled"];
 
-        var ats = new Section();
-        ats.name = "Auto Test Sequence";
-        var trsCheck = new subSection();
-        trsCheck.name = "Transponder Check";
-        ats.subSections.push(trsCheck);
+        var ats = new Header();
+        ats.Name = "Auto Test Sequence";
+        ats.Groups.push("Transponder Check")
 
-        var it = new Section();
-        it.name = "Individual Tests";
-        var modes = new subSection();
-        modes.name = "Mode S";        
-        var uatout = new subSection();
-        uatout.name = "UAT OUT";
-        it.subSections.push(modes);
-        it.subSections.push(uatout);
+        var it = new Header();
+        it.Name = "Individual Tests";
+        it.Groups = ["Mode S", "UAT OUT"];
 
-        var simul = new Section();
-        simul.name = "Simulations";
-        var fp = new subSection();
-        fp.name = "Flightplans";
-        simul.subSections.push(fp);
+        var simul = new Header();
+        simul.Name = "Simulations";
+        simul.Groups = ["Flightplans"];
 
-        var nav = new Section();
-        nav.name = "NAV";
-        var ils = new subSection();
-        ils.name = "ILS";
-        nav.subSections.push(ils);
+        var nav = new Header();
+        nav.Name = "NAV";
+        nav.Groups =  ["ILS"];
 
-        var search = new Section();
-        search.name = "Search";
-        var ks = new subSection();
-        ks.name = "Keyword Search";
-        var ss = new subSection();
-        ss.name = "Saved Searches";
-        search.subSections.push(ks);
-        search.subSections.push(ss);
+        var search = new Header();
+        search.Name = "Search";
+        search.Groups = ["Keyword Search", "Saved Searches"];
 
-        var sys = new Section();
-        sys.name = "System";
-        var setup = new subSection();
-        setup.name = "Setup";
-        var abt = new subSection();
-        abt.name = "About";
-        var notif = new subSection();
-        notif.name = "Notifications";
-        sys.subSections.push(setup);
-        sys.subSections.push(abt);
-        sys.subSections.push(notif);
+        var sys = new Header();
+        sys.Name = "System";
+        sys.Groups = ["Setup", "About", "Notifications"];
 
-        this.sections.push(start);
-        this.sections.push(ats);
-        this.sections.push(it);
-        this.sections.push(simul);
-        this.sections.push(nav);
-        this.sections.push(search);
-        this.sections.push(sys);
+        this.headers.push(start);
+        this.headers.push(ats);
+        this.headers.push(it);
+        this.headers.push(simul);
+        this.headers.push(nav);
+        this.headers.push(search);
+        this.headers.push(sys);
 
     }
 }

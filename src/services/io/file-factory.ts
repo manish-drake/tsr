@@ -1,26 +1,25 @@
 import { Observable } from 'Rxjs';
 
 export class FileFactory {
-    // static fileIndex: 
-    getFile(fullName: string):any  {
+    // getFile(fullName: string):any  {
         
-    }
-    saveFile(fullName: string, content: any) {
+    // }
+    // saveFile(fullName: string, content: any) {
         
-    }
-    getSubFolders(fullName: string): string[] {
+    // }
+    // getSubFolders(fullName: string): string[] {
 
-    }
-    createFolder(name:string, parentFullName:string): string{
+    // }
+    // createFolder(name:string, parentFullName:string): string{
 
-    }
-    deleteFile(fullName:string): boolean{
+    // }
+    // deleteFile(fullName:string): boolean{
 
-    }
-    deleteFolder(fullName: string): boolean{
+    // }
+    // deleteFolder(fullName: string): boolean{
 
-    }
-    getFiles(folderFullName:string): string[]{
+    // }
+    // getFiles(folderFullName:string): string[]{
 
-    }
+    // }
 }

@@ -3,12 +3,11 @@ import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
-import { File } from '../io/file.service'
 
 @Injectable()
 export class Factory {
 
-    constructor(private file: File) {
+    constructor() {
 
     }
 
