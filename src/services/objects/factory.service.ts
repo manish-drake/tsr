@@ -624,49 +624,49 @@ export class Factory {
                 var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
 
-                var add5 = new TestParam();
-                add5.Key = "ADDRESS:";
-                var cAdd5 = new TestParamCell(add5);
-                cAdd5.Row = 0;
-                cAdd5.Column = 0;
+                var add3 = new TestParam();
+                add3.Key = "ADDRESS:";
+                var cAdd3 = new TestParamCell(add3);
+                cAdd3.Row = 0;
+                cAdd3.Column = 0;
 
 
-                mst.TestParamCells.push(cAdd5);
+                mst.TestParamCells.push(cAdd3);
 
-                var addQ5 = new TestParam();
-                addQ5.Key = "Qualifier:";
-                var cAddQ5 = new TestParamCell(addQ5);
-                cAddQ5.Row = 1;
-                cAddQ5.Column = 0;
+                var addQ3 = new TestParam();
+                addQ3.Key = "Qualifier:";
+                var cAddQ3 = new TestParamCell(addQ3);
+                cAddQ3.Row = 1;
+                cAddQ3.Column = 0;
 
-                mst.TestParamCells.push(cAddQ5);
+                mst.TestParamCells.push(cAddQ3);
 
-                var pld5 = new TestParam();
-                pld5.Key = "Payload Rcvd:";
-                var cPld5 = new TestParamCell(pld5);
-                cPld5.Row = 2;
-                cPld5.Column = 0;
-                cPld5.ColSpan = 2;
+                var pld3 = new TestParam();
+                pld3.Key = "Payload Rcvd:";
+                var cPld3 = new TestParamCell(pld3);
+                cPld3.Row = 2;
+                cPld3.Column = 0;
+                cPld3.ColSpan = 3;
 
-                mst.TestParamCells.push(cPld5);
+                mst.TestParamCells.push(cPld3);
 
-                var eqc5 = new TestParam();
-                eqc5.Key = "RF Level:";
-                var cEqc5 = new TestParamCell(eqc5);
-                cEqc5.Row = 2;
-                cEqc5.Column = 1;
+                var eqc3 = new TestParam();
+                eqc3.Key = "RF Level:";
+                var cEqc3 = new TestParamCell(eqc3);
+                cEqc3.Row = 2;
+                cEqc3.Column = 1;
 
-                mst.TestParamCells.push(cEqc5);
+                mst.TestParamCells.push(cEqc3);
 
-                var esd5 = new TestParam();
-                esd5.Key = "Mode Status Element (MS)";
-                var cEsd5 = new TestParamCell(esd5);
-                cEsd5.Row = 4;
-                cEsd5.Column = 0;
-                cEsd5.ColSpan = 2;
-                cEsd5.Styles.add("key", "detailheading1");
+                var esd3 = new TestParam();
+                esd3.Key = "Mode Status Element (MS)";
+                var cEsd3 = new TestParamCell(esd3);
+                cEsd3.Row = 4;
+                cEsd3.Column = 0;
+                cEsd3.ColSpan = 2;
+                cEsd3.Styles.add("key", "detailheading1");
 
-                mst.TestParamCells.push(cEsd5);
+                mst.TestParamCells.push(cEsd3);
 
                 var avi3 = new TestParam();
                 avi3.Key = "Aircraft/Vehicle Info:";
@@ -1060,13 +1060,13 @@ export class Factory {
 
                 summary.TestParamCells.push(cLgd5);
 
-                var frq5 = new TestParam();
-                frq5.Key = "A/G State:";
-                var cFrq5 = new TestParamCell(frq5);
-                cFrq5.Row = 7;
-                cFrq5.Column = 0;
+                var ags5 = new TestParam();
+                ags5.Key = "A/G State:";
+                var cAgs5 = new TestParamCell(ags5);
+                cAgs5.Row = 7;
+                cAgs5.Column = 0;
 
-                summary.TestParamCells.push(cFrq5);
+                summary.TestParamCells.push(cAgs5);
 
                 var dvt5 = new TestParam();
                 dvt5.Key = "N Vel:";
