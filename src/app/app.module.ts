@@ -23,7 +23,7 @@ import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-
+import {SubSectionPage} from '../pages/subCategory/subSection'
 import { ThemesService } from '../services/themes/themes.service'
 
 @NgModule({
@@ -34,6 +34,7 @@ import { ThemesService } from '../services/themes/themes.service'
         HeaderComponent,
         SectionsPage,
         DetailPage,
+        SubSectionPage,
         SetupPage,
         HelpPage,
         SectionComp,
@@ -57,6 +58,7 @@ import { ThemesService } from '../services/themes/themes.service'
         SetupPage,
         HelpPage,
         SectionsPage,
+        SubSectionPage,
         DetailPage,
     ],
     providers: [

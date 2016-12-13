@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SubSectionComp{
     @Input()Name:string;
-    @Input()Count:number;
+    // @Input()Count:number;
     @Output()Selected = new EventEmitter();
 
     onClick(){

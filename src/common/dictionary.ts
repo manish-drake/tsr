@@ -98,7 +98,7 @@
             return this._values;
         }
 
-        public count(): number {
-            return this._values.length;
-        }
+        // public count(): number {
+        //     return this._values.length;
+        // }
     }
