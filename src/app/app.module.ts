@@ -8,7 +8,7 @@ import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
 import { SetupPage } from '../pages/setup/setup';
 import { HelpPage } from '../pages/help/help';
-import { File } from '../services/io/file.service'
+import { FileIOService } from '../services/io/file-io.service'
 import { Factory } from '../services/objects/factory.service'
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
 import { Master } from '../services/test-set/master.service'
@@ -61,7 +61,7 @@ import { ThemesService } from '../services/themes/themes.service'
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        File, 
+        FileIOService, 
         Factory, 
         Master,
         HeaderService,
