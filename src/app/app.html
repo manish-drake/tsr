@@ -8,7 +8,7 @@
                 <ion-item-divider>{{section.name}}</ion-item-divider>
                 <ion-item menuToggle *ngFor="let subSection of section.subSections" (click)="onItemSelectionChanged(subSection.name)">
                         <h2>{{ subSection.name }}</h2>
-                        <h5 item-right>{{ subSection.count }}</h5>
+                        <!--<h5 item-right>{{ subSection.count }}</h5>-->
                 </ion-item>
             </ion-item-group>
             <!--<ion-item-group>

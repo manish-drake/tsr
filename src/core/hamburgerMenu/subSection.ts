@@ -1,6 +1,6 @@
 export class subSection{
     public name:string;
-    public count:number;
+    // public count:number;
     constructor(){
         
     }
