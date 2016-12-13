@@ -26,7 +26,7 @@ export class SectionsPage implements OnInit {
       this._svcHeader.title = "Sections";
       this.activeRoute.params.subscribe(data => {
         var sectionName = (data as any).name;
-        var section = this.objectService.createSection(sectionName, "");
+        var section = this.objectService.createSection(sectionName);
         this.dataSource = this.broker.createSectionDataSource(section);
       })
   }

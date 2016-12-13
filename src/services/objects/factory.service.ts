@@ -12,7 +12,7 @@ export class Factory {
 
     }
 
-    createSection(section: string, parent: string): TestSection {
+    createSection(section: string): TestSection {
         var testSection: TestSection = new TestSection();
         switch (section) {
             case 'UAT OUT': {
@@ -380,7 +380,10 @@ export class Factory {
 
         switch(groupName) {
             case 'UAT':{
-                
+                group.Sections = [
+                    this.createSection("UAT Out"),
+                    this.createSection("UAT In")
+                ];
                 break;
             }
             default:{
