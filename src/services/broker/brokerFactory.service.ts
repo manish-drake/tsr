@@ -1,5 +1,6 @@
 import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
+import { Group } from '../../core/tests/group'
 import { Dictionary } from '../../common/dictionary';
 
 export class BrokerFactoryService {
@@ -29,6 +30,20 @@ export class BrokerFactoryService {
         };
         return testDS;
     }
+
+    createGroupDatasource(group: Group){
+        var groupDS = {
+            "name": group.Name,
+            "sections": group.Sections.map(section => {
+                return {
+                    "name": section.Name,
+                    "count": section.Summaries.length
+                };
+            })
+        };
+        return groupDS;
+    }
+
     /*
     <table style="table-layout: fixed ">
         <tr *ngFor="let row of test.rows">

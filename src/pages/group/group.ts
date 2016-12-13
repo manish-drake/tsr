@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
+import { Factory } from '../../services/objects/factory.service'
 
 /*
   Generated class for the Group page.
@@ -11,12 +13,25 @@ import { NavController } from 'ionic-angular';
   selector: 'page-group',
   templateUrl: 'group.html'
 })
-export class GroupPage {
+export class GroupPage implements OnInit {
+  private datasource: any;
+  constructor(
+      private route: ActivatedRoute, 
+      private broker: BrokerFactoryService,
+      private objectService: Factory) {
 
-  constructor(public navCtrl: NavController) {}
+  }
 
   ionViewDidLoad() {
     console.log('Hello GroupPage Page');
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe(param => {
+      var name = (param as any).groupName;
+        var group = this.objectService.createGroup(name);
+      this.datasource = this.broker.createGroupDatasource(group);
+    })
   }
 
 }
