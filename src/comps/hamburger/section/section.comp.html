@@ -6,7 +6,8 @@
         <sub-section-comp 
             *ngFor="let subSection of SubSections" 
             [Name]="subSection.name" 
-            [Count]="subSection.count"
             (Selected)="onItemSelected($event)"></sub-section-comp>
     </ion-list>
 </div>
+
+            <!--[Count]="subSection.count"-->
