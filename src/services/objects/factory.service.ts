@@ -375,10 +375,10 @@ export class Factory {
         return testSection;
     }
 
-
     createTest(test: string, section: string): Test {
         var newTest: Test;
         var id = section + "/" + test
+
         switch (id) {
             case 'UAT OUT/UAT State Vector Test': {
                 var svt = new Test();
@@ -770,7 +770,7 @@ export class Factory {
 
                 mst.TestParamCells.push(cAtcs3);
 
-                var csid3= new TestParam();
+                var csid3 = new TestParam();
                 csid3.Key = "CSID:";
                 var cCsid3 = new TestParamCell(csid3);
                 cCsid3.Row = 12;

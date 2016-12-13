@@ -30,8 +30,7 @@ export class DetailPage {
         
         var testName = (data as any).test;
         var testSectionName = (data as any).parent;
-        var test = this.objectService.createTest(testName, testSectionName);
-        
+        var test = this.objectService.createTest(testName, testSectionName);    
         this.dataSource = this.broker.createTestDataSource(test);
       })
   }
