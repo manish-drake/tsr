@@ -11,8 +11,6 @@ export class Header{
     
     private _Groups : string[];
     public get Groups() : string[] {
-        if(!this._Groups)
-            this._Groups = [];
         return this._Groups;
     }
     public set Groups(v : string[]) {

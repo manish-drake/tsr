@@ -10,7 +10,7 @@ export class Hamburger {
 
         var ats = new Header();
         ats.Name = "Auto Test Sequence";
-        ats.Groups.push("Transponder Check")
+        ats.Groups = ["Transponder Check"];
 
         var it = new Header();
         it.Name = "Individual Tests";
