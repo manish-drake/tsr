@@ -1,4 +1,29 @@
 <ion-card #mydiv on-tap="doubleTapNavigation()" [style.border]="step===test.name ? '2px solid gray':''">
+
+    <ion-row style="padding:0px;margin:0px">
+        <ion-col style="width:auto;flex:0 0 auto">
+            <button ion-button clear icon-only (click)="favorite()">
+                        <ion-icon [name]="isFavorite ? 'star' : 'star-outline'" [style.color]="isFavorite ? '#FFD400' : ''"></ion-icon>
+                    </button>
+        </ion-col>
+        <ion-col style="width:85%">
+            <button ion-button clear icon-only>
+                        <ion-icon name="download"></ion-icon>
+                    </button>
+        </ion-col>
+        <ion-col style="width:15%;flex:0 0 auto;padding-top:4%">
+            <h1> 3</h1>
+        </ion-col>
+    </ion-row>
+    <ion-row style="height:100px; padding-top:5%">
+        <ion-col align="center">
+            <h1>{{test.name}}</h1>
+        </ion-col>
+    </ion-row>
+</ion-card>
+
+
+<!--<ion-card #mydiv on-tap="doubleTapNavigation()" [style.border]="step===test.name ? '2px solid gray':''">
     <ion-item>
         <ion-row>
             <ion-col style="width:100%">
@@ -17,4 +42,4 @@
             </tr>
         </table>
     </ion-item>
-</ion-card>
+</ion-card>-->

@@ -55,6 +55,13 @@
       background-color: darken($dark-primary, 1.5%);
       color: $dark-foreground;
     }
+    ion-row{
+      ion-col{
+        h1{
+        color: $dark-foreground;
+        }
+      }
+    }
   }
   ion-card {
      background-color: darken($dark-primary, 1.5%);

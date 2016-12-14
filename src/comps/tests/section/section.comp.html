@@ -1,7 +1,7 @@
 <ion-content>
-    <ion-list>
-        <test-card 
-            *ngFor="let test of section.tests" 
-            [test]="test"></test-card>
-    </ion-list>
+    <div class="items">
+        <div class="itemm" *ngFor="let test of section.tests">
+            <test-card [test]="test"></test-card>
+        </div>
+    </div>
 </ion-content>
