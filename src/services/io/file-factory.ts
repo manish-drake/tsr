@@ -10,6 +10,7 @@ export class FileFactory {
     getFile(fullName: string): any {
         return true;
     }
+
     saveFile(fullPath: string, name: string, content: any) {
         File.createDir(cordova.file.dataDirectory, "rootFolder", true).then((success) => {
             // var fileLocation = cordova.file.dataDirectory + matrixName;
@@ -23,9 +24,11 @@ export class FileFactory {
         })
     }
     getSubFolders(fullPath: string, name: string): Observable<string[]> {
-        
+
         return Observable.fromPromise(File.listDir(fullPath, name))
-            .map(entries => entries.map(e => e.name));
+            .map(entries => {
+                return entries.map(e => e.name)
+            });
     }
 
     createFolder(name: string, parentFullPath: string): string {
@@ -51,4 +54,5 @@ export class FileFactory {
         return Observable.fromPromise(File.listDir(folderFullPath, name))
             .map(entries => entries.map(e => e.name));
     }
+
 }

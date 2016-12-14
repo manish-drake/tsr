@@ -4,15 +4,17 @@ import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
 import { FileIOService } from '../io/file-io.service'
+import { Group } from '../../core/tests/group'
 
 @Injectable()
 export class Factory {
 
-    constructor(private file: FileIOService) {
+
+    constructor() {
 
     }
 
-    createSection(section: string, parent: string): TestSection {
+    createSection(section: string): TestSection {
         var testSection: TestSection = new TestSection();
         switch (section) {
             case 'UAT OUT': {
@@ -375,34 +377,22 @@ export class Factory {
         return testSection;
     }
 
-    createSubCategorieTest(test: string, section: string): TestSection {
-        var testSubSection: TestSection = new TestSection();
-        switch (section) {
+    createGroup(groupName: string): Group {
+        var group = new Group();
+
+        switch (groupName) {
             case 'UAT': {
-                testSubSection.Styles.add("key", "sectionLabel");
-                testSubSection.Styles.add("value", "sectionResult");
-
-                testSubSection.Name = section;
-
-                var svt = new Test();
-                svt.Name = "UAT ADS-B OUT";
-                testSubSection.Summaries.push(svt);
-
-                var svt = new Test();
-                svt.Name = "UAT ADS-B IN";
-                testSubSection.Summaries.push(svt);
-
-                var svt = new Test();
-                svt.Name = "UAT RF Link";
-                testSubSection.Summaries.push(svt);
-
-                var svt = new Test();
-                svt.Name = "VSWR";
-                testSubSection.Summaries.push(svt);
+                group.Sections = [
+                    this.createSection("UAT Out"),
+                    this.createSection("UAT In")
+                ];
+                break;
             }
-
+            default: {
+                break;
+            }
         }
-        return testSubSection;
+        return group
     }
 
     createTest(test: string, section: string): Test {

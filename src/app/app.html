@@ -4,22 +4,15 @@
 
     <ion-menu [content]="content">
         <ion-content>
-            <ion-item-group *ngFor="let section of hb.sections">
-                <ion-item-divider>{{section.name}}</ion-item-divider>
-                <ion-item menuToggle *ngFor="let subSection of section.subSections" (click)="onItemSelectionChanged(subSection.name)">
-                        <h2>{{ subSection.name }}</h2>
-                        <!--<h5 item-right>{{ subSection.count }}</h5>-->
+            <ion-item-group *ngFor="let header of hb.headers">
+                <ion-item-divider>{{header.Name}}</ion-item-divider>
+                <ion-item 
+                    menuToggle 
+                    *ngFor="let group of header.Groups" 
+                    (click)="onItemSelectionChanged(group)">
+                        <h2>{{ group }}</h2>
                 </ion-item>
             </ion-item-group>
-            <!--<ion-item-group>
-                <ion-list no-lines>
-                    <section-comp
-                        *ngFor="let section of hb.sections"
-                        [Name]=section.name
-                        [SubSections]=section.subSections
-                        (ItemSelectionChanged)="onItemSelectionChanged($event)"></section-comp>
-                </ion-list>
-            </ion-item-group>-->
         </ion-content>
     </ion-menu>
 
