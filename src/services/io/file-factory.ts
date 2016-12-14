@@ -1,26 +1,54 @@
 import { Observable } from 'Rxjs';
+import { File } from 'ionic-native';
+
+declare var cordova: any;
 
 export class FileFactory {
+    constructor() {
+    }
     // static fileIndex: 
-    getFile(fullName: string):any  {
+    getFile(fullName: string): any {
+        return true;
+    }
+    saveFile(fullPath: string, name: string, content: any) {
+        File.createDir(cordova.file.dataDirectory, "rootFolder", true).then((success) => {
+            // var fileLocation = cordova.file.dataDirectory + matrixName;
+            // File.createFile(fileLocation, name + ".json", true).then(() => {
+            //     File.writeFile(fileLocation, name + ".json", content, true)
+            //         .then(function (success) {
+
+            //         })
+
+            // })
+        })
+    }
+    getSubFolders(fullPath: string, name: string): Observable<string[]> {
         
+        return Observable.fromPromise(File.listDir(fullPath, name))
+            .map(entries => entries.map(e => e.name));
     }
-    saveFile(fullName: string, content: any) {
-        
-    }
-    getSubFolders(fullName: string): string[] {
 
-    }
-    createFolder(name:string, parentFullName:string): string{
+    createFolder(name: string, parentFullPath: string): string {
+        var folderPath: string;
+        File.createDir(parentFullPath, name, true).then((success) => {
+            alert(success);
+        }).catch(reason => {
 
+        })
+        return folderPath;
     }
-    deleteFile(fullName:string): boolean{
 
+    deleteFile(fullPath: string, name: string): boolean {
+
+        return true;
     }
-    deleteFolder(fullName: string): boolean{
 
+    deleteFolder(fullPath: string, name: string): boolean {
+        return true;
     }
-    getFiles(folderFullName:string): string[]{
 
+    getFiles(folderFullPath: string, name: string): Observable<string[]> {
+        return Observable.fromPromise(File.listDir(folderFullPath, name))
+            .map(entries => entries.map(e => e.name));
     }
 }
