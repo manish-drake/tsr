@@ -3,6 +3,7 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SectionsPage } from '../pages/sections/sections';
+import { HomePage } from '../pages/home/home';
 
 import { Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'

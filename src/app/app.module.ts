@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home'
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { ConfigurationsPopover } from '../pages/configurations/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
@@ -29,6 +30,7 @@ import { ThemesService } from '../services/themes/themes.service'
 @NgModule({
     declarations: [
         MyApp,
+        HomePage,
         MoreActionsPopover,
         ConfigurationsPopover,
         HeaderComponent,
@@ -52,6 +54,7 @@ import { ThemesService } from '../services/themes/themes.service'
     bootstrap: [IonicApp],  
     entryComponents: [
         MyApp,
+        HomePage,
         MoreActionsPopover,
         ConfigurationsPopover,
         SetupPage,
