@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home'
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { ConfigurationsPopover } from '../pages/configurations/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
+import { GroupPage } from '../pages/group/group';
 import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
 import { SetupPage } from '../pages/setup/setup';
@@ -33,6 +34,7 @@ import { ThemesService } from '../services/themes/themes.service'
         MoreActionsPopover,
         ConfigurationsPopover,
         HeaderComponent,
+        GroupPage,
         SectionsPage,
         DetailPage,
         SetupPage,

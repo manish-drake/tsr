@@ -1,5 +1,1 @@
-<div class="items">
-    <div class="itemm" *ngFor="let test of section.tests">
-        <test-card [test]="test"></test-card>
-    </div>
-</div>
+<test-card [test]="test" *ngFor="let test of section.tests"></test-card>

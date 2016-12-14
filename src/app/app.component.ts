@@ -36,8 +36,7 @@ export class MyApp implements OnInit {
   ngOnInit(){
     this._svcHeader.TitleUpdated.subscribe(e =>{
       this.Title = e.title;
-    })
-
+    });
   }
   
   // moreActionPopover() {
@@ -46,6 +45,6 @@ export class MyApp implements OnInit {
   // }
 
   onItemSelectionChanged(e){
-    this._router.navigate(['section', e]);
+    this._router.navigate(['group', e]);
   }
 }
