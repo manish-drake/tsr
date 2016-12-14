@@ -1,9 +1,11 @@
 .light-theme {
-  .toolbar-background { background-color: $light-primary; }
+  ion-header{
+    .toolbar-background { background-color: $light-primary; }
+    i{ color: $light-background; }
+  }
   ion-footer{
     .toolbar-background { background-color: #eeeeee; }
   }
-  i{ color: $light-background; }
   ion-toolbar{
     button{ color: $light-background; }
   }
