@@ -33,4 +33,10 @@ export class TestCardComp {
 
         }
     }
+
+     isFavorite:boolean = false;
+    favorite(){
+         this.isFavorite = !this.isFavorite;
+    }
+
 }
