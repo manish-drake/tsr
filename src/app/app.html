@@ -1,9 +1,9 @@
-<header-component [title]="Title" [class]="chosenTheme"></header-component>
+<!--<header-component [title]="Title" [class]="chosenTheme"></header-component>-->
 
-<!--<ion-content style="" [class]="chosenTheme">-->
+<!--<ion-content style="margin-top:65px;" [class]="chosenTheme">-->
 
     
-    <ion-menu [content]="content" [class]="chosenTheme">
+    <ion-menu [content]="content" [class]="chosenTheme" style="margin:62px 0 57px 0;">
         <ion-content>
             <ion-item-group *ngFor="let header of hb.headers">
                 <ion-item-divider>{{header.Name}}</ion-item-divider>
@@ -16,10 +16,11 @@
             </ion-item-group>
         </ion-content>
     </ion-menu>
-    <router-outlet></router-outlet>
+
+    <!--<router-outlet></router-outlet>-->
 
 <!--</ion-content>-->
 
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="chosenTheme"></ion-nav>
