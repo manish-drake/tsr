@@ -3,10 +3,12 @@ import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
+import { FileIOService } from '../io/file-io.service'
 import { Group } from '../../core/tests/group'
 
 @Injectable()
 export class Factory {
+
 
     constructor() {
 
@@ -375,27 +377,28 @@ export class Factory {
         return testSection;
     }
 
-    createGroup(groupName: string): Group{
+    createGroup(groupName: string): Group {
         var group = new Group();
 
-        switch(groupName) {
-            case 'UAT':{
+        switch (groupName) {
+            case 'UAT': {
                 group.Sections = [
                     this.createSection("UAT Out"),
                     this.createSection("UAT In")
                 ];
                 break;
             }
-            default:{
+            default: {
                 break;
             }
         }
-        return group;
+        return group
     }
 
     createTest(test: string, section: string): Test {
         var newTest: Test;
         var id = section + "/" + test
+
         switch (id) {
             case 'UAT OUT/UAT State Vector Test': {
                 var svt = new Test();
@@ -773,7 +776,7 @@ export class Factory {
                 var cOm3 = new TestParamCell(om3);
                 cOm3.Row = 12;
                 cOm3.Column = 0;
-                cOm3.ColSpan =3;
+                cOm3.ColSpan = 3;
 
                 mst.TestParamCells.push(cOm3);
 
@@ -817,7 +820,6 @@ export class Factory {
                 cNacp3.Column = 0;
 
                 mst.TestParamCells.push(cNacp3);
-
                 var trnmso3 = new TestParam();
                 trnmso3.Key = "Transmit MSO:";
                 var cTrnmso3 = new TestParamCell(trnmso3);

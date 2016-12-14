@@ -1,6 +1,8 @@
 import { TestSection } from './testSection'
 
 export class Group{
+
+    constructor(){}
     
     private _Sections : TestSection[];
     public get Sections() : TestSection[] {

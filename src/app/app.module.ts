@@ -24,7 +24,6 @@ import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-
 import { ThemesService } from '../services/themes/themes.service'
 
 @NgModule({

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router'
 import { HeaderService } from '../../services/ui/header.service'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
+import { FileIOService } from '../../services/io/file-io.service'
+import { Platform } from 'ionic-angular';
 
 /*
   Generated class for the Sections page.
@@ -17,10 +19,19 @@ import { Factory } from '../../services/objects/factory.service'
 export class SectionsPage implements OnInit {
   public dataSource: any;
   constructor(
-    private _svcHeader: HeaderService, 
+    private _svcHeader: HeaderService,
     private activeRoute: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory) { }
+    public filesys: FileIOService,
+    private platform: Platform,
+    private objectService: Factory) {
+
+    this.platform.ready().then(() => {
+      this.filesys.getFolder("filesystem")
+    })
+
+
+  }
 
   ngOnInit(){
       this._svcHeader.title = "Sections";
@@ -29,6 +40,7 @@ export class SectionsPage implements OnInit {
         var section = this.objectService.createSection(sectionName);
         this.dataSource = this.broker.createSectionDataSource(section);
       })
+
   }
 
 }
