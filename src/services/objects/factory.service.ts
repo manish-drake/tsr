@@ -3,16 +3,16 @@ import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
-import { File } from '../io/file.service'
+import { Group } from '../../core/tests/group'
 
 @Injectable()
 export class Factory {
 
-    constructor(private file: File) {
+    constructor() {
 
     }
 
-    createSection(section: string, parent: string): TestSection {
+    createSection(section: string): TestSection {
         var testSection: TestSection = new TestSection();
         switch (section) {
             case 'UAT OUT': {
@@ -375,6 +375,23 @@ export class Factory {
         return testSection;
     }
 
+    createGroup(groupName: string): Group{
+        var group = new Group();
+
+        switch(groupName) {
+            case 'UAT':{
+                group.Sections = [
+                    this.createSection("UAT Out"),
+                    this.createSection("UAT In")
+                ];
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+        return group;
+    }
 
     createTest(test: string, section: string): Test {
         var newTest: Test;

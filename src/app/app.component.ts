@@ -45,7 +45,6 @@ export class MyApp implements OnInit {
   // }
 
   onItemSelectionChanged(e){
-    // this._router.navigate(['section', e.newItem]);
     this._router.navigate(['section', e]);
   }
 }
