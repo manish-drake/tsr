@@ -6,6 +6,7 @@ import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { ConfigurationsPopover } from '../pages/configurations/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
 import { GroupPage } from '../pages/group/group';
+import { FooterComponent } from '../pages/footer-component/footer-component'
 import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
 import { SetupPage } from '../pages/setup/setup';
@@ -17,13 +18,11 @@ import { Master } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
-import { SectionComp } from '../comps/hamburger/section/section.comp';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
 import { TestDetailComp } from '../comps/tests/detail/detail.comp';
 import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
-import { SubSectionComp } from '../comps/hamburger/sub-section/subSection.comp';
 import { SpyDirective } from '../common/mySpy.directive';
 import { ThemesService } from '../services/themes/themes.service'
 
@@ -35,12 +34,11 @@ import { ThemesService } from '../services/themes/themes.service'
         ConfigurationsPopover,
         HeaderComponent,
         GroupPage,
+        FooterComponent,
         SectionsPage,
         DetailPage,
         SetupPage,
         HelpPage,
-        SectionComp,
-        SubSectionComp,
         TestSectionComp,
         TestDetailComp,
         TestCardComp,
@@ -59,9 +57,7 @@ import { ThemesService } from '../services/themes/themes.service'
         MoreActionsPopover,
         ConfigurationsPopover,
         SetupPage,
-        HelpPage,
-        SectionsPage,
-        DetailPage,
+        HelpPage
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
