@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'test-detail',
@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TestDetailComp{
     @Input() test: any;
+    @Output() onNavigate = new EventEmitter<string>();
     
 }

@@ -1,5 +1,5 @@
-<ion-slides>
+<ion-slides [options]="options">
     <ion-slide style="align-items: stretch !important;">
-        <test-detail *ngIf="dataSource" [test]="dataSource"></test-detail>
+            <test-detail *ngIf="dataSource" [test]="dataSource" (onNavigate)="onNavigate($event)"></test-detail>
     </ion-slide>
 </ion-slides>
