@@ -2,7 +2,8 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { SectionsPage } from '../pages/sections/sections';
+// import { SectionsPage } from '../pages/sections/sections';
+import { HomePage } from '../pages/home/home';
 
 import { Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
@@ -17,7 +18,7 @@ export class MyApp implements OnInit {
   
   chosenTheme: String;
   Title: string = "Title";
-  rootPage = SectionsPage;
+  rootPage = HomePage;
   
   public hb = new Hamburger();
 
@@ -35,8 +36,7 @@ export class MyApp implements OnInit {
   ngOnInit(){
     this._svcHeader.TitleUpdated.subscribe(e =>{
       this.Title = e.title;
-    })
-
+    });
   }
   
   // moreActionPopover() {
@@ -45,6 +45,6 @@ export class MyApp implements OnInit {
   // }
 
   onItemSelectionChanged(e){
-    this._router.navigate(['section', e]);
+    this._router.navigate(['group', e]);
   }
 }

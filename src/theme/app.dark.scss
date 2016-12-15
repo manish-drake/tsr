@@ -1,73 +1,42 @@
 .dark-theme {
-  .toolbar-title {
-    color: $dark-foreground;
-  }
+  .toolbar-title{ color: $dark-foreground; }
   ion-col{
-      label{
-        color:lawngreen;
-      }
+      label{ color:lawngreen; }
   }
-  .toolbar-background {
-    background-color: $dark-primary;
+  .toolbar-background{ background-color: $dark-primary; }
+  ion-content{ background-color: $dark-background; }
+  ion-list{
+    .item{ background-color: $dark-primary; }
   }
-  ion-content {
-    background-color: $dark-background;
-  }
-  ion-list {
-    .item {
-      background-color: $dark-primary;
-    }
-  }
-  ion-item {
-    color: $dark-foreground;
-    background-color: $dark-primary;
-  }
+  ion-item{ color: $dark-foreground;background-color: $dark-primary; }
 
   pop-menu-item{
-    .item{
-    color: $dark-foreground;
-    background-color: $dark-primary;
-  }}
+    .item{ color: $dark-foreground; background-color: $dark-primary;}
+    }
 
-  ion-item-divider {
-    color: $dark-foreground;
-    background-color: $dark-primary;
-  }
+  ion-item-divider{ color: $dark-foreground;background-color: $dark-primary; }
   ion-menu{
     ion-content{ background-color: $dark-primary; }
-    ion-item { background-color: transparent; }
-    ion-item-divider { background-color: transparent; }
+    ion-item{ background-color: transparent; }
+    ion-item-divider{ background-color: transparent; }
   }
 
   ion-toolbar{
-    button{
-      color: $dark-foreground;
-    }
+    button{ color: $dark-foreground;}
   }
-   button{
-    color: $dark-foreground;
-  }
-  i{
-    color: $dark-foreground;
-  }
-  ion-card {
-    .item {
-      background-color: darken($dark-primary, 1.5%);
-      color: $dark-foreground;
-    }
-    ion-row{
+   button{ color: $dark-foreground; }
+  i{ color: $dark-foreground; }
+  ion-card{
+    .item{ background-color: darken($dark-primary, 1.5%); color: $dark-foreground; }
+    ion-row{ 
       ion-col{
-        h1{
-        color: $dark-foreground;
-        }
+        h1{ color: $dark-foreground;}
       }
     }
   }
-  ion-card {
-     background-color: darken($dark-primary, 1.5%);
-      color: $dark-foreground;
-  }
+  ion-card{ background-color: darken($dark-primary, 1.5%);color: $dark-foreground; }
   ion-grid{
-    .item{background-color: $dark-background; }
+    .item{ background-color: $dark-background; }
     }
+   
 }

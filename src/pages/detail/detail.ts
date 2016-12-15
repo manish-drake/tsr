@@ -17,11 +17,23 @@ import { Factory } from '../../services/objects/factory.service'
 export class DetailPage {
 
   public dataSource: any;
+
+  // slides = [{name: 'Test 1'},{name: 'Test 2'},{name: 'Test 3'}];
+  slider: any;
+  options: any;
+
   constructor(
     private _svcHeader: HeaderService, 
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory) {}
+    private objectService: Factory) {
+
+      this.options = {
+      loop: true,
+      onInit: (slides: any) =>
+        this.slider = slides
+    }
+    }
 
   ngOnInit(){
       this._svcHeader.title = "Detail";
@@ -32,7 +44,11 @@ export class DetailPage {
         var testSectionName = (data as any).parent;
         var test = this.objectService.createTest(testName, testSectionName);    
         this.dataSource = this.broker.createTestDataSource(test);
-      })
+      });
+  }
+
+  onNavigate(ev:string){
+    this.slider.sliderNext(true, 250);
   }
   
 }

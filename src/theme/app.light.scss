@@ -1,22 +1,17 @@
 .light-theme {
-  .toolbar-background {
-    background-color: $light-primary;
+  ion-header{
+    .toolbar-background { background-color: $light-primary; }
+    i{ color: $light-background; }
   }
- i{
-    color: $light-background;
+  ion-footer{
+    .toolbar-background { background-color: #eeeeee; }
   }
   ion-toolbar{
-    button{
-      color: $light-background;
-    }
+    button{ color: $light-background; }
   }
-  ion-content {
-    background-color: #f4f4f4
-  }
+  ion-content { background-color: #f4f4f4 }
   ion-col{
-      label{
-        color:green;
-      }
+      label{ color:green; }
   }
    ion-menu{
     ion-content{ background-color: $light-background; }
