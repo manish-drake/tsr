@@ -33,10 +33,10 @@ export class GroupPage implements OnInit {
   group: any;
 
   ngOnInit() {
-    this._svcHeader.title = "Sections";
-
+    // this._svcHeader.title = "Groups";
     this.route.params.subscribe(param => {
       var groupName = (param as any).name;
+      this._svcHeader.title = groupName;
       var section = this.objectService.createGroup(groupName);
       this.group = this.broker.createGroupDatasource(section);
       console.log(this.group);

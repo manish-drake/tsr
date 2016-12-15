@@ -10,7 +10,8 @@ export class FileIOService {
     getFolder(fullName: string) {
         var folder = new Folder();
         var fileFactory = new FileFactory();
-        // alert(JSON.stringify(fileFactory.getSubFolders("file:/storage/emulated/0", "DCIM")));
+        fileFactory.saveFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");
+        
     }
 
     // getFile(fullName: string): Observable<File> {
