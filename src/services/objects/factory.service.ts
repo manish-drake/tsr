@@ -371,7 +371,7 @@ export class Factory {
                 testSection.Summaries.push(fisb);
             }
                 break;
-            case 'UAT RF Link': {
+            case 'UAT RF': {
 
                 testSection.Styles.add("key", "sectionLabel");
                 testSection.Styles.add("value", "sectionResult");
@@ -511,7 +511,7 @@ export class Factory {
                 group.Sections = [
                     this.createSection("UAT ADS-B OUT"),
                     this.createSection("UAT ADS-B IN"),
-                    this.createSection("UAT RF Link"),
+                    this.createSection("UAT RF"),
                     this.createSection("VSWR")
                 ];
                 break;
@@ -528,6 +528,14 @@ export class Factory {
         var id = section + "/" + test
 
         switch (id) {
+            case 'UAT ADS-B OUT/UAT Filter Target': {
+                var uatft = new Test();
+                uatft.Name = "UAT Filter Target";                
+
+                newTest = uatft;
+
+            }
+                break;
             case 'UAT ADS-B OUT/UAT State Vector Test': {
                 var usvt = new Test();
                 usvt.Name = "UAT State Vector Test";
@@ -1161,7 +1169,7 @@ export class Factory {
                 cEc4.Styles.add("value", "detailResult");
 
                 rft.TestParamCells.push(cEc4);
-                
+
                 newTest = rft;
             }
                 break;
@@ -1334,6 +1342,277 @@ export class Factory {
 
 
                 newTest = tst;
+
+            }
+                break;
+            case 'UAT ADS-B IN/UAT In': {
+                var uatn = new Test();
+                uatn.Name = "UAT In";
+
+                var add7 = new TestParam();
+                add7.Key = "ADDRESS:";
+                var cAdd7 = new TestParamCell(add7);
+                cAdd7.Row = 0;
+                cAdd7.Column = 0;
+                cAdd7.ColSpan = 2;
+                cAdd7.Styles.add("value", "detailResult");
+
+                uatn.TestParamCells.push(cAdd7);
+
+                var addQ7 = new TestParam();
+                addQ7.Key = "Qualifier:";
+                var cAddQ7 = new TestParamCell(addQ7);
+                cAddQ7.Row = 1;
+                cAddQ7.Column = 0;
+                cAddQ7.ColSpan = 2;
+                cAddQ7.Styles.add("value", "detailResult");
+
+                uatn.TestParamCells.push(cAddQ7);
+
+                var pld7 = new TestParam();
+                pld7.Key = "Payload Rcvd:";
+                var cPld7 = new TestParamCell(pld7);
+                cPld7.Row = 2;
+                cPld7.Column = 0;
+
+                uatn.TestParamCells.push(cPld7);
+
+                var rfle7 = new TestParam();
+                rfle7.Key = "RF Level:";
+                var cRfle7 = new TestParamCell(rfle7);
+                cRfle7.Row = 2;
+                cRfle7.Column = 1;
+                cRfle7.Styles.add("key", "detailLabel2");
+
+                uatn.TestParamCells.push(cRfle7);
+
+                newTest = uatn;
+
+            }
+                break;
+            case 'UAT ADS-B IN/TIS-B': {
+                var tisb = new Test();
+                tisb.Name = "TIS-B";
+
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 2;
+                cAdd8.Styles.add("value", "detailResult");
+
+                tisb.TestParamCells.push(cAdd8);
+
+                var addQ8 = new TestParam();
+                addQ8.Key = "Qualifier:";
+                var cAddQ8 = new TestParamCell(addQ8);
+                cAddQ8.Row = 1;
+                cAddQ8.Column = 0;
+                cAddQ8.ColSpan = 2;
+                cAddQ8.Styles.add("value", "detailResult");
+
+                tisb.TestParamCells.push(cAddQ8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "Payload Rcvd:";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+
+                tisb.TestParamCells.push(cPld8);
+
+                var rfle8 = new TestParam();
+                rfle8.Key = "RF Level:";
+                var cRfle8 = new TestParamCell(rfle8);
+                cRfle8.Row = 2;
+                cRfle8.Column = 1;
+                cRfle8.Styles.add("key", "detailLabel2");
+
+                tisb.TestParamCells.push(cRfle8);
+
+                newTest = tisb;
+
+            }
+                break;
+            case 'UAT ADS-B IN/FIS-B': {
+                var fisb = new Test();
+                fisb.Name = "FIS-B";
+
+                var add9 = new TestParam();
+                add9.Key = "ADDRESS:";
+                var cAdd9 = new TestParamCell(add9);
+                cAdd9.Row = 0;
+                cAdd9.Column = 0;
+                cAdd9.ColSpan = 2;
+                cAdd9.Styles.add("value", "detailResult");
+
+                fisb.TestParamCells.push(cAdd9);
+
+                var addQ9 = new TestParam();
+                addQ9.Key = "Qualifier:";
+                var cAddQ9 = new TestParamCell(addQ9);
+                cAddQ9.Row = 1;
+                cAddQ9.Column = 0;
+                cAddQ9.ColSpan = 2;
+                cAddQ9.Styles.add("value", "detailResult");
+
+                fisb.TestParamCells.push(cAddQ9);
+
+                var pld9 = new TestParam();
+                pld9.Key = "Payload Rcvd:";
+                var cPld9 = new TestParamCell(pld9);
+                cPld9.Row = 2;
+                cPld9.Column = 0;
+
+                fisb.TestParamCells.push(cPld9);
+
+                var rfle9 = new TestParam();
+                rfle9.Key = "RF Level:";
+                var cRfle9 = new TestParamCell(rfle9);
+                cRfle9.Row = 2;
+                cRfle9.Column = 1;
+                cRfle9.Styles.add("key", "detailLabel2");
+
+                fisb.TestParamCells.push(cRfle9);
+
+                newTest = fisb;
+
+            }
+                break;
+
+            case 'UAT RF/UAT RF Link': {
+                var urfli = new Test();
+                urfli.Name = "UAT RF Link";
+
+                var add10 = new TestParam();
+                add10.Key = "ADDRESS:";
+                var cAdd10 = new TestParamCell(add10);
+                cAdd10.Row = 0;
+                cAdd10.Column = 0;
+                cAdd10.ColSpan = 2;
+                cAdd10.Styles.add("value", "detailResult");
+
+                urfli.TestParamCells.push(cAdd10);
+
+                var addQ10 = new TestParam();
+                addQ10.Key = "Qualifier:";
+                var cAddQ10 = new TestParamCell(addQ10);
+                cAddQ10.Row = 1;
+                cAddQ10.Column = 0;
+                cAddQ10.ColSpan = 2;
+                cAddQ10.Styles.add("value", "detailResult");
+
+                urfli.TestParamCells.push(cAddQ10);
+
+                var pld10 = new TestParam();
+                pld10.Key = "Payload Rcvd:";
+                var cPld10 = new TestParamCell(pld10);
+                cPld10.Row = 2;
+                cPld10.Column = 0;
+
+                urfli.TestParamCells.push(cPld10);
+
+                var rfle10 = new TestParam();
+                rfle10.Key = "RF Level:";
+                var cRfle10 = new TestParamCell(rfle10);
+                cRfle10.Row = 2;
+                cRfle10.Column = 1;
+                cRfle10.Styles.add("key", "detailLabel2");
+
+                urfli.TestParamCells.push(cRfle10);
+
+                newTest = urfli;
+
+            }
+                break;
+            case 'UAT RF/GPS Status': {
+                var gpsst = new Test();
+                gpsst.Name = "GPS Status";
+
+                var add11 = new TestParam();
+                add11.Key = "ADDRESS:";
+                var cAdd11 = new TestParamCell(add11);
+                cAdd11.Row = 0;
+                cAdd11.Column = 0;
+                cAdd11.ColSpan = 2;
+                cAdd11.Styles.add("value", "detailResult");
+
+                gpsst.TestParamCells.push(cAdd11);
+
+                var addQ11 = new TestParam();
+                addQ11.Key = "Qualifier:";
+                var cAddQ11 = new TestParamCell(addQ11);
+                cAddQ11.Row = 1;
+                cAddQ11.Column = 0;
+                cAddQ11.ColSpan = 2;
+                cAddQ11.Styles.add("value", "detailResult");
+
+                gpsst.TestParamCells.push(cAddQ11);
+
+                var pld11 = new TestParam();
+                pld11.Key = "Payload Rcvd:";
+                var cPld11 = new TestParamCell(pld11);
+                cPld11.Row = 2;
+                cPld11.Column = 0;
+
+                gpsst.TestParamCells.push(cPld11);
+
+                var rfle11 = new TestParam();
+                rfle11.Key = "RF Level:";
+                var cRfle11 = new TestParamCell(rfle11);
+                cRfle11.Row = 2;
+                cRfle11.Column = 1;
+                cRfle11.Styles.add("key", "detailLabel2");
+
+                gpsst.TestParamCells.push(cRfle11);
+
+                newTest = gpsst;
+
+            }
+                break;
+            case 'VSWR/VSWR': {
+                var vsw = new Test();
+                vsw.Name = "VSWR";
+
+                var add12 = new TestParam();
+                add12.Key = "ADDRESS:";
+                var cAdd12 = new TestParamCell(add12);
+                cAdd12.Row = 0;
+                cAdd12.Column = 0;
+                cAdd12.ColSpan = 2;
+                cAdd12.Styles.add("value", "detailResult");
+
+                vsw.TestParamCells.push(cAdd12);
+
+                var addQ12 = new TestParam();
+                addQ12.Key = "Qualifier:";
+                var cAddQ12 = new TestParamCell(addQ12);
+                cAddQ12.Row = 1;
+                cAddQ12.Column = 0;
+                cAddQ12.ColSpan = 2;
+                cAddQ12.Styles.add("value", "detailResult");
+
+                vsw.TestParamCells.push(cAddQ12);
+
+                var pld12 = new TestParam();
+                pld12.Key = "Payload Rcvd:";
+                var cPld12 = new TestParamCell(pld12);
+                cPld12.Row = 2;
+                cPld12.Column = 0;
+
+                vsw.TestParamCells.push(cPld12);
+
+                var rfle12 = new TestParam();
+                rfle12.Key = "RF Level:";
+                var cRfle12 = new TestParamCell(rfle12);
+                cRfle12.Row = 2;
+                cRfle12.Column = 1;
+                cRfle12.Styles.add("key", "detailLabel2");
+
+                vsw.TestParamCells.push(cRfle12);
+
+                newTest = vsw;
 
             }
                 break;
