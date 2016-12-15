@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
+import { HeaderService } from '../../services/ui/header.service'
 
 /*
   Generated class for the Group page.
@@ -20,7 +21,8 @@ export class GroupPage implements OnInit {
     private broker: BrokerFactoryService,
     private objectService: Factory,
     private _renderer: Renderer,
-    private _router: Router) {
+    private _router: Router,
+    private _svcHeader: HeaderService) {
 
   }
 
@@ -31,11 +33,15 @@ export class GroupPage implements OnInit {
   group: any;
 
   ngOnInit() {
+    this._svcHeader.title = "Sections";
+
     this.route.params.subscribe(param => {
       var groupName = (param as any).name;
       var section = this.objectService.createGroup(groupName);
       this.group = this.broker.createGroupDatasource(section);
       console.log(this.group);
+
+      this._svcHeader.title = groupName;
     })
   }
 

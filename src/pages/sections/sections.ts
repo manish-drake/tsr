@@ -39,7 +39,9 @@ export class SectionsPage implements OnInit {
         var sectionName = (data as any).name;
         var section = this.objectService.createSection(sectionName);
         this.dataSource = this.broker.createSectionDataSource(section);
-      })
+
+        this._svcHeader.title = sectionName;
+      });
 
   }
 

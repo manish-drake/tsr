@@ -1,24 +1,25 @@
 <div class="items">
   <div class="itemm" *ngFor="let section of group.sections">
-    <ion-card #mydiv on-tap="doubleTapNavigation(section)" [style.border]="step===section.name ? '2px solid gray':''">
-      <ion-row style="padding:0px;margin:0px">
-        <ion-col style="width:auto;flex:0 0 auto">
-          <button ion-button clear icon-only (click)="favorite()">
-                        <ion-icon [name]="isFavorite ? 'star' : 'star-outline'" [style.color]="isFavorite ? '#FFD400' : ''"></ion-icon>
-                    </button>
-        </ion-col>
-        <ion-col style="width:90%">
-          <button ion-button clear icon-only><ion-icon name="download"></ion-icon></button>
-        </ion-col>
-        <ion-col style="width:10%;flex:0 0 auto;padding-top:4%">
-          <h1> 3</h1>
-        </ion-col>
-      </ion-row>
-      <ion-row style="height:100px; display : flex; align-items : center;">
-        <ion-col align="center">
-          <h1>{{section.name}}</h1>
-        </ion-col>
-      </ion-row>
+    <ion-card #mydiv on-tap="doubleTapNavigation(section)" style="min-height:250px;position: relative;">
+     <!--[style.border]="step===section.name ? '2px solid gray':''"-->
+     <ion-row style="position: absolute;">
+       <ion-col no-padding center style="width:100%;">
+       <button ion-button clear icon-only (click)="favorite()">
+            <ion-icon [name]="isFavorite ? 'star' : 'star-outline'" [style.color]="isFavorite ? '#FFD400' : ''"></ion-icon>
+        </button>
+        <button ion-button clear icon-only><ion-icon name="download"></ion-icon></button>
+       </ion-col>
+       <ion-col padding-right center style="width:auto;flex:0 0 auto;">
+         <h1> 3</h1>
+       </ion-col>
+     </ion-row>
+
+     <ion-row center style="position: absolute;height:100%;">
+			<ion-col text-center center>
+				<h1>{{section.name}}</h1>
+			</ion-col>
+		</ion-row>
+
     </ion-card>
   </div>
 </div>

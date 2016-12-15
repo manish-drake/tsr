@@ -1,6 +1,7 @@
 .dark-theme {
   .toolbar-title{ color: $dark-foreground; }
   ion-col{
+    color: $dark-foreground;
       label{ color:lawngreen; }
   }
   .toolbar-background{ background-color: $dark-primary; }
@@ -13,13 +14,8 @@
   pop-menu-item{
     .item{ color: $dark-foreground; background-color: $dark-primary;}
     }
-
-  ion-item-divider{ color: $dark-foreground;background-color: $dark-primary; }
-  ion-menu{
-    ion-content{ background-color: $dark-primary; }
-    ion-item{ background-color: transparent; }
-    ion-item-divider{ background-color: transparent; }
-  }
+    
+  ion-item-group{color: $dark-foreground}
 
   ion-toolbar{
     button{ color: $dark-foreground;}
