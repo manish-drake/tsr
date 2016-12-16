@@ -13,5 +13,11 @@ export class TestDetailComp{
     navigate(ev){
         this.onNavigate.emit(ev);
     }
+
+    isRunnig:boolean = false;
+
+    onRun(){
+        this.isRunnig = !this.isRunnig;
+    }
     
 }

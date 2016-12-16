@@ -1,22 +1,22 @@
 <ion-card style="height:97%;" text-left>
 <ion-grid style="height: 100%;">
 
-<ion-row>
-    <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
-</ion-col>
-<ion-col no-padding text-center>
-    <span class="detailheading1"> {{test.name}} </span><br>
-    <span>(Screen {{testindex}} of {{testscount}})</span>
-</ion-col>
-<ion-col no-padding center style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
-</ion-col>
-</ion-row>
-<ion-row style="height: 100%;">
-<ion-col>
-    <ion-scroll scrollY="true" style="height:100%;width:100%;">
-<table style="table-layout: fixed;margin-left:8px; ">
+            <ion-row style="height: auto;">
+                <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                    <button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
+                </ion-col>
+            <ion-col no-padding text-center>
+                <span class="detailheading1"> {{test.name}} </span><br>
+                <span>(Screen {{testindex}} of {{testscount}})</span>
+            </ion-col>
+            <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                <button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+            <ion-row style="height: 100%;">
+                <ion-col>
+                    <ion-scroll scrollY="true" style="height:100%;width:100%;padding-bottom:100px;">
+                        <table style="table-layout: fixed;margin-left:8px; ">
 <tr *ngFor="let row of test.rows">
     <td *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
         <span [class]="cell.keyStyle">{{ cell.key }}</span>
@@ -33,22 +33,31 @@
 </td>
 </tr>
 </table>
-</ion-scroll>
-</ion-col>
-</ion-row>
+                    </ion-scroll>
+                </ion-col>
+            </ion-row>
 
-<ion-row>
-    <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-<!--<button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>-->
+            <ion-fab margin bottom right>
+                <button ion-fab (click)="onRun()">
+                    <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:3px;"></ion-icon>
+                    <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
+                    </button>
+                    </ion-fab>
 
-</ion-col>
-<ion-col center text-center style="width: 100%;">
-<button ion-button icon-only clear large><ion-icon name="play"></ion-icon></button>
-</ion-col>
-<ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-<!--<button ion-button clear (click)="navigate('next')"><b> Next ></b></button>-->
-</ion-col>
-</ion-row>
+            <!--<ion-row>
+            <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
+                <button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>
+            </ion-col>
+            <ion-col center text-center style="width: 100%;">
+                <button ion-button icon-only clear large (click)="onRun()">
+                    <ion-icon name="play" *ngIf="!isRunnig"></ion-icon>
+                    <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
+                    </button>
+            </ion-col>
+            <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
+                <button ion-button clear (click)="navigate('next')"><b> Next ></b></button>
+            </ion-col>
+            </ion-row>-->
 
 </ion-grid>
 </ion-card>

@@ -10,38 +10,31 @@ export class BrokerFactoryService {
     constructor() {
 
     }
-    createSectionDataSource(testSection: TestSection) {
+    createSectionsSummary(summaryData: TestSection) {
         var tests: any[] = [];
-        testSection.Summaries.forEach(summary => {
+        summaryData.Summaries.forEach(summary => {
             var test = {
                 name: summary.Name,
-                parent: testSection.Name,
-                rows: this.createParamsGrid(summary, testSection.Styles)
+                parent: summaryData.Name,
+                rows: this.createParamsGrid(summary, summaryData.Styles)
             }
             tests.push(test);
         })
-        return { name: testSection.Name, tests: tests };
+        return { name: summaryData.Name, tests: tests };
     }
 
-    createTestDataSource(test: Test) {
+    createSectionsDetail(detailData: Test) {
         var testDS: any[] = [];
-        test.Summaries.forEach(summary => {
+        detailData.Summaries.forEach(summary => {
             var testD = {
                 name: summary.Name,
-                parent:test.Name,
-                rows: this.createParamsGrid(summary, test.Styles)
+                parent:detailData.Name,
+                rows: this.createParamsGrid(summary, detailData.Styles)
             }
             testDS.push(testD);
         })
-         return { name: test.Name, tests: testDS };
+         return { name: detailData.Name, tests: testDS };
     }
-    // createTestDataSource(test: Test) {
-    //     var testDS = {
-    //         name: test.Name,
-    //         rows: this.createParamsGrid(test, new Dictionary<string, string>())
-    //     };
-    //     return testDS;
-    // }
 
     createGroupDatasource(group: Group) {
         var groupDS = {

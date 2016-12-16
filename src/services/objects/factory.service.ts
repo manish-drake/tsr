@@ -14,7 +14,26 @@ export class Factory {
 
     }
 
-    createSection(section: string): TestSection {
+    createGroup(groupName: string): Group {
+        var group = new Group();
+        switch (groupName) {
+            case 'UAT': {
+                group.Sections = [
+                    this.createSectionsSummaryData("UAT ADS-B OUT"),
+                    this.createSectionsSummaryData("UAT ADS-B IN"),
+                    this.createSectionsSummaryData("UAT RF"),
+                    this.createSectionsSummaryData("VSWR")
+                ];
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+        return group
+    }
+
+    createSectionsSummaryData(section: string): TestSection {
         var testSection: TestSection = new TestSection();
         switch (section) {
             case 'UAT ADS-B OUT': {
@@ -504,26 +523,7 @@ export class Factory {
         return testSection;
     }
 
-    createGroup(groupName: string): Group {
-        var group = new Group();
-        switch (groupName) {
-            case 'UAT': {
-                group.Sections = [
-                    this.createSection("UAT ADS-B OUT"),
-                    this.createSection("UAT ADS-B IN"),
-                    this.createSection("UAT RF"),
-                    this.createSection("VSWR")
-                ];
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-        return group
-    }
-
-    createTest(test: string): Test {
+    createSectionsDetailData(test: string): Test {
         console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {

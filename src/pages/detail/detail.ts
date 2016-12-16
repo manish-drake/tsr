@@ -36,12 +36,9 @@ export class DetailPage {
     this._svcHeader.title = "Detail";
 
     this.route.params.subscribe(data => {
-      console.log('data',JSON.stringify(data));
-      var testName = (data as any).parent;
-      var test = this.objectService.createTest(testName);
-      console.log('test',test);
-      this.testset = this.broker.createTestDataSource(test);
-      console.log('testset',JSON.stringify(this.testset));
+      var groupName = (data as any).parent;
+      var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
+      this.testset = this.broker.createSectionsDetail(sectionsDetailData);
 
       var initialSlide = 0;
       this.testset.tests.forEach((element, index) => {
