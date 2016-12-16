@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/ui/header.service'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
@@ -16,39 +16,69 @@ import { Factory } from '../../services/objects/factory.service'
 })
 export class DetailPage {
 
-  public dataSource: any;
-
   // slides = [{name: 'Test 1'},{name: 'Test 2'},{name: 'Test 3'}];
   slider: any;
   options: any;
 
   constructor(
-    private _svcHeader: HeaderService, 
+    private _router: Router,
+    private _svcHeader: HeaderService,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
     private objectService: Factory) {
 
-      this.options = {
-      loop: true,
-      onInit: (slides: any) =>
-        this.slider = slides
-    }
-    }
 
-  ngOnInit(){
-      this._svcHeader.title = "Detail";
-      
-      this.route.params.subscribe(data => {
-        
-        var testName = (data as any).test;
-        var testSectionName = (data as any).parent;
-        var test = this.objectService.createTest(testName, testSectionName);    
-        this.dataSource = this.broker.createTestDataSource(test);
-      });
   }
 
-  onNavigate(ev:string){
-    this.slider.sliderNext(true, 250);
+  public testset: any;
+
+  ngOnInit() {
+    this._svcHeader.title = "Detail";
+
+    this.route.params.subscribe(data => {
+      var testName = (data as any).test;
+      var testSectionName = (data as any).parent;
+      var test = this.objectService.createTest(testName, testSectionName);    
+      this.testset = this.broker.createTestDataSource(test);
+
+      // var sectionName = (data as any).parent;
+      // this._svcHeader.title = sectionName;
+      // var section = this.objectService.createSection(sectionName);
+      // this.testset = this.broker.createSectionDataSource(section);
+
+      // var initialSlide = 0;
+      // this.testset.tests.forEach((element, index) => {
+      //   if (element.name == (data as any).test) {
+      //     initialSlide = index;
+      //   }
+      // });
+
+      // this.options = {
+      //   initialSlide: initialSlide,
+      //   loop: true,
+      //   onInit: (slides: any) => {
+      //     this.slider = slides;
+      //   }
+      // }
+    });
   }
-  
+
+  onNavigate(ev: string) {
+    switch (ev) {
+      case 'close': {
+        this._router.navigate(['section', this.testset.name]);
+        break;
+      }
+      case 'next': {
+        this.slider.slideNext();
+        break;
+      }
+      case 'prev': {
+        this.slider.slidePrev();
+        break;
+      }
+      default: { break; }
+    }
+  }
+
 }
