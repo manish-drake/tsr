@@ -27,7 +27,9 @@ export class SectionsPage implements OnInit {
     private objectService: Factory) {
 
     this.platform.ready().then(() => {
-      this.filesys.getFolder("filesystem")
+      if (this.platform.is('cordova')) {
+        this.filesys.getFolder("filesystem");
+      }
     })
 
 
