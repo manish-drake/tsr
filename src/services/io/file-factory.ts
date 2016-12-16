@@ -14,6 +14,7 @@ export class FileFactory {
     saveFile(fullPath: string, name: string, content: any) {
         var parentFullPath: string = "file:/storage/emulated/0";
         var filePath = fullPath.slice(25);
+        
         this.createFolderRx(filePath, parentFullPath).then((success) => {
             File.createFile(fullPath, name, true).then((success) => {
                 alert("file: " + JSON.stringify(success));
@@ -22,6 +23,7 @@ export class FileFactory {
                 })
             })
         });
+
     }
 
     getSubFolders(fullName: string): Observable<string[]> {

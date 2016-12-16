@@ -1,31 +1,44 @@
-<ion-card>
-    <ion-item>
-        <ion-row>
-            <ion-col style="width:100%">
-                <span class="detailheading1"> {{test.name}} </span>
+<ion-card style="height:97%;" text-left>
+        <ion-grid style="height: 100%;">
+
+            <ion-row>
+                <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                    <button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
+                </ion-col>
+            <ion-col no-padding text-center>
+                <span class="detailheading1"> {{test.name}} </span><br>
+                <span>(Screen {{testindex}} of {{testscount}})</span>
             </ion-col>
-            <ion-col style="width:auto;flex:0 0 auto">
-                <label class="teststatus">Status?</label>
-            </ion-col>
-        </ion-row>
-        <table style="table-layout: fixed;margin-left:8px ">
-            <tr *ngFor="let row of test.rows">
-                <td *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
-                    <span [class]="cell.keyStyle">{{ cell.key }}</span>
-                    <span [class]="cell.valueStyle">{{ cell.value }}</span>
-                </td>
-            </tr>
-        </table>
-        <ion-row>
-            <ion-col no-padding bottom style="width: 100%;">
-                <button ion-button clear> < Previous </button>
-            </ion-col>
-            <ion-col center style="width: auto;flex: 0 0 auto;">
-                <button ion-fab><ion-icon name="play"></ion-icon></button>
-            </ion-col>
-            <ion-col no-padding bottom text-right style="width: 100%;">
-                <button ion-button clear> Next > </button>
+            <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                <button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
             </ion-col>
         </ion-row>
-    </ion-item>
+            <ion-row style="height: 100%;">
+                <ion-col>
+                    <ion-scroll scrollY="true" style="height:100%;width:100%;">
+                        <table style="table-layout: fixed;margin-left:8px; ">
+                            <tr *ngFor="let row of test.rows">
+                                <td *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
+                                    <span [class]="cell.keyStyle">{{ cell.key }}</span>
+                                    <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                                    </td>
+                                    </tr>
+                                    </table>
+                    </ion-scroll>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+            <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
+                <!--<button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>-->
+            </ion-col>
+            <ion-col center text-center style="width: 100%;">
+                <button ion-button icon-only clear large><ion-icon name="play"></ion-icon></button>
+            </ion-col>
+            <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
+                <!--<button ion-button clear (click)="navigate('next')"><b> Next ></b></button>-->
+            </ion-col>
+            </ion-row>
+
+        </ion-grid>
 </ion-card>

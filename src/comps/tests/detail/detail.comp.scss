@@ -1,69 +1,58 @@
 test-detail{    
-    .detailheading{
-     font-size: 21px;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     display: inline-block;
-     margin-bottom:10px;
-     margin-top:10px;
-    }
+    
 .detailheading1{
-    font-size: 21px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     display: inline-block;
-     margin-bottom:10px;
-     margin-top:10px;
+        font-size: 21px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: inline-block;
+        font-weight: 600;
 }
 .detailLabel{
-    width: 220px;
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    padding-bottom:  60px;
-    // margin-bottom:60px;
-}
-.detailResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:280px;    
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-}
-.detailRFLinkResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:160px;    
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
-}
-.detailSummaryResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:180px;    
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+        width: 128px !important;
+        display: inline-flex;        
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
 }
 .detailLabel1{
-    width: 50px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+        width: 200px !important;
+        display: inline-flex;        
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.detailResult2{
-    width: 170px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+.detailLabel2{
+        width: 90px !important;
+        display: inline-flex;        
+        font-size: 21px !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .detailLabel3{
-    width: 150px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom: 8px;
+        width: 190px !important;
+        display: inline-flex;        
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.detailResult4{
-    width: 150px;
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+.detailLabel4{
+        width: 236px !important;
+        display: inline-flex;        
+        font-size: 21px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.detailResult{
+        display: inline-flex;
+        width: 70%;
+        min-width: 400px;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.detailResult2{
+        display: inline-flex;
+        width: 50%;
+        min-width: 220px !important;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.detailResult1{
+        display: inline-block;
+        width: 0px;
 }
 
 }

@@ -33,13 +33,14 @@ export class SectionsPage implements OnInit {
 
   }
 
-  ngOnInit(){
-      this._svcHeader.title = "Sections";
+  ngOnInit() {
       this.activeRoute.params.subscribe(data => {
-        var sectionName = (data as any).name;
-        var section = this.objectService.createSection(sectionName);
-        this.dataSource = this.broker.createSectionDataSource(section);
-      })
+
+      var sectionName = (data as any).name;
+      this._svcHeader.title = sectionName;
+      var section = this.objectService.createSection(sectionName);
+      this.dataSource = this.broker.createSectionDataSource(section);
+    })
 
   }
 

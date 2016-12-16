@@ -9,13 +9,14 @@ import { HeaderService } from '../../services/ui/header.service'
 })
 export class HomePage implements OnInit {
 
-  Title: string = "Title";
+  Title: string;
 
-  constructor(public navCtrl: NavController,private _svcHeader: HeaderService) { }
+  constructor(public navCtrl: NavController, private _svcHeader: HeaderService) { }
 
-  ngOnInit(){
-    this._svcHeader.TitleUpdated.subscribe(e =>{
+  ngOnInit() {
+    this._svcHeader.TitleUpdated.subscribe(e => {
       this.Title = e.title;
+      if (!this.Title) this.Title = "Test Set Remote";
     })
   }
 
