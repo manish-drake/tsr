@@ -36,30 +36,27 @@ export class DetailPage {
     this._svcHeader.title = "Detail";
 
     this.route.params.subscribe(data => {
-      var testName = (data as any).test;
-      var testSectionName = (data as any).parent;
-      var test = this.objectService.createTest(testName, testSectionName);    
+      console.log('data',JSON.stringify(data));
+      var testName = (data as any).parent;
+      var test = this.objectService.createTest(testName);
+      console.log('test',test);
       this.testset = this.broker.createTestDataSource(test);
+      console.log('testset',JSON.stringify(this.testset));
 
-      // var sectionName = (data as any).parent;
-      // this._svcHeader.title = sectionName;
-      // var section = this.objectService.createSection(sectionName);
-      // this.testset = this.broker.createSectionDataSource(section);
+      var initialSlide = 0;
+      this.testset.tests.forEach((element, index) => {
+        if (element.name == (data as any).test) {
+          initialSlide = index;
+        }
+      });
 
-      // var initialSlide = 0;
-      // this.testset.tests.forEach((element, index) => {
-      //   if (element.name == (data as any).test) {
-      //     initialSlide = index;
-      //   }
-      // });
-
-      // this.options = {
-      //   initialSlide: initialSlide,
-      //   loop: true,
-      //   onInit: (slides: any) => {
-      //     this.slider = slides;
-      //   }
-      // }
+      this.options = {
+        initialSlide: initialSlide,
+        loop: true,
+        onInit: (slides: any) => {
+          this.slider = slides;
+        }
+      }
     });
   }
 

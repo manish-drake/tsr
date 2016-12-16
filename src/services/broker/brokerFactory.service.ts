@@ -24,12 +24,24 @@ export class BrokerFactoryService {
     }
 
     createTestDataSource(test: Test) {
-        var testDS = {
-            name: test.Name,
-            rows: this.createParamsGrid(test, new Dictionary<string, string>())
-        };
-        return testDS;
+        var testDS: any[] = [];
+        test.Summaries.forEach(summary => {
+            var testD = {
+                name: summary.Name,
+                parent:test.Name,
+                rows: this.createParamsGrid(summary, test.Styles)
+            }
+            testDS.push(testD);
+        })
+         return { name: test.Name, tests: testDS };
     }
+    // createTestDataSource(test: Test) {
+    //     var testDS = {
+    //         name: test.Name,
+    //         rows: this.createParamsGrid(test, new Dictionary<string, string>())
+    //     };
+    //     return testDS;
+    // }
 
     createGroupDatasource(group: Group) {
         var groupDS = {
