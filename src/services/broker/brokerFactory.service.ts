@@ -31,7 +31,7 @@ export class BrokerFactoryService {
         return testDS;
     }
 
-    createGroupDatasource(group: Group){
+    createGroupDatasource(group: Group) {
         var groupDS = {
             "name": group.Name,
             "sections": group.Sections.map(section => {
@@ -53,6 +53,7 @@ export class BrokerFactoryService {
                 rowspan="cell.rowspan">
                     <span [class]="cell.keyStyle">{{ cell.key }}</span>
                     <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                    <span [class]="cell.unitStyle">{{ cell.unit }}</span>
             </td>
         </tr>
     </table>
@@ -67,18 +68,22 @@ export class BrokerFactoryService {
         var createCell = function (
             key: string = "",
             value: string = "",
+            unit: string = "",
             keyStyle: string = "",
             valueStyle: string = "",
+            unitStyle: string = "",
             colspan: number = 1,
             rowspan: number = 1,
             empty: boolean = true) {
             return {
                 "keyStyle": keyStyle,
                 "valueStyle": valueStyle,
+                "unitStyle": unitStyle,
                 "colspan": colspan,
                 "rowspan": rowspan,
                 "key": key,
                 "value": value,
+                "unit": unit,
                 "empty": empty
             };
         }
@@ -96,8 +101,10 @@ export class BrokerFactoryService {
             rows[cell.Row][cell.Column] = createCell(
                 cell.TestParam.Key,
                 cell.TestParam.Value,
+                cell.TestParam.Unit,
                 this.getFallbackValue("key", [cell.Styles, summary.Styles, parentStyles]),
                 this.getFallbackValue("value", [cell.Styles, summary.Styles, parentStyles]),
+                this.getFallbackValue("unit", [cell.Styles, summary.Styles, parentStyles]),
                 cell.ColSpan,
                 cell.RowSpan,
                 false)

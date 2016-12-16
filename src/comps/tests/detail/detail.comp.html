@@ -11,6 +11,7 @@
                 <td *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
                     <span [class]="cell.keyStyle">{{ cell.key }}</span>
                     <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                    <span [class]="cell.unitStyle">{{ cell.unit }}</span>
                 </td>
             </tr>
         </table>

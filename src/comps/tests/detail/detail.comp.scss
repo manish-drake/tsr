@@ -12,7 +12,7 @@ test-detail{
         width: 128px !important;
         display: inline-flex;        
         font-size: 18px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 .detailLabel1{
         width: 200px !important;
@@ -39,11 +39,12 @@ test-detail{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .detailResult{
-        display: inline-flex;
-        width: 70%;
-        min-width: 400px;
+        display: inline-flex ;
+        max-width: 400px !important;
+        min-width: 130px !important;
         font-size: 18px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
 }
 .detailResult2{
         display: inline-flex;
@@ -51,10 +52,14 @@ test-detail{
         min-width: 220px !important;
         font-size: 18px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 10px;
 }
 .detailResult1{
-        display: inline-block;
+        display: inline-flex;
         width: 0px;
 }
-
+.detailUnit{
+        display: inline-flex;
+        min-width: 50px;
+}
 }
