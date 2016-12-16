@@ -1,15 +1,16 @@
 <ion-card style="height:97%;" text-left>
         <ion-grid style="height: 100%;">
 
-            <ion-row style="height:auto;">
-                <ion-col center style="width: auto;flex: 0 0 auto;">
-                    <button ion-button icon-only outline><ion-icon name="list"></ion-icon></button>
+            <ion-row>
+                <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                    <button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
                 </ion-col>
-            <ion-col text-center>
-                <span class="detailheading1"> {{test.name}} </span>
+            <ion-col no-padding text-center>
+                <span class="detailheading1"> {{test.name}} </span><br>
+                <span>(Screen {{testindex}} of {{testscount}})</span>
             </ion-col>
-            <ion-col center style="width: auto;flex: 0 0 auto;">
-                <button ion-button icon-only outline><ion-icon name="close"></ion-icon></button>
+            <ion-col no-padding center style="width: auto;flex: 0 0 auto;">
+                <button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
             </ion-col>
         </ion-row>
 
@@ -28,18 +29,16 @@
                 </ion-col>
             </ion-row>
 
-            <ion-row style="height: auto;">
-                <ion-row style="height:auto;flex: 0 0 auto;">
-            <ion-col no-padding bottom style="width: 100%;">
-                <button ion-button clear (click)="navigate('previous')"><b>< Previous</b> </button>
+            <ion-row>
+            <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
+                <!--<button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>-->
             </ion-col>
-            <ion-col center style="width: auto;flex: 0 0 auto;">
-                <button ion-button outline large style="height:50px;width:50px; border-radius: 25px;border-width: 2px;"><ion-icon style="margin-left: 2px;" name="play"></ion-icon></button>
+            <ion-col center text-center style="width: 100%;">
+                <button ion-button icon-only clear large><ion-icon name="play"></ion-icon></button>
             </ion-col>
-            <ion-col no-padding bottom text-right style="width: 100%;">
-                <button ion-button clear (click)="navigate('next')"><b> Next ></b></button>
+            <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
+                <!--<button ion-button clear (click)="navigate('next')"><b> Next ></b></button>-->
             </ion-col>
-        </ion-row>
             </ion-row>
 
         </ion-grid>

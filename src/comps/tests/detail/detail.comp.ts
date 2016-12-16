@@ -6,11 +6,12 @@ import { Component, Input, Output,EventEmitter } from '@angular/core';
 })
 export class TestDetailComp{
     @Input() test: any;
+    @Input() testindex: any;
+    @Input() testscount: any;
     @Output() onNavigate = new EventEmitter<string>();
 
     navigate(ev){
         this.onNavigate.emit(ev);
-
     }
     
 }
