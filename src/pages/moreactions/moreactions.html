@@ -39,4 +39,7 @@
     <ion-label>Night Mode</ion-label>
     <ion-toggle [checked]="selected == 'dark-theme'" (ionChange)="onSwitchTheme()"></ion-toggle>
   </ion-item>
+  <ion-item no-lines *ngIf="versionNumber">
+    <p item-right>Version {{versionNumber}}</p>
+  </ion-item>
 </ion-list>
