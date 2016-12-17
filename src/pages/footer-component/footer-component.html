@@ -1,10 +1,10 @@
  <ion-toolbar>
 
      <ion-row style="display : flex; align-items : center;">
-       <ion-col text-center  text-nowrap style="width:auto;flex:0 0 auto;overflow: hidden;text-overflow: ellipsis;">
+       <ion-col no-padding padding-horizontal text-center  text-nowrap style="width:auto;flex:0 0 auto;">
           <ion-label>User Name</ion-label>
         </ion-col>
-        <ion-col text-center text-nowrap style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
+        <ion-col no-padding padding-horizontal text-center text-nowrap style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
           <ion-label>Test Set Name</ion-label>
         </ion-col>
 
@@ -19,7 +19,6 @@
 
       <ion-col no-padding style="width:65px;flex:0 0 65px;align-items: stretch !important;">
         <ion-row>
-          <!--<progress max="100" value="80"></progress>-->
           <ion-col no-padding text-center center style="font-size: 18px;"><ion-icon name="battery-full"></ion-icon></ion-col>
         </ion-row>
         <ion-row>
@@ -36,10 +35,10 @@
         </ion-row>
       </ion-col>
 
-       <ion-col center text-center style="width:auto;flex:0 0 auto">
+       <!--<ion-col center text-center style="width:auto;flex:0 0 auto">
          <span  style="font-weight:500">{{ displaydate | date:'h:mm a' }}</span><br>
          <span  style="font-weight:500">{{ displaydate | date:'MMM d' }}</span>
-        </ion-col>
+        </ion-col>-->
       </ion-row>
       
   </ion-toolbar>

@@ -33,10 +33,12 @@ export class DetailPage {
   public testset: any;
 
   ngOnInit() {
-    this._svcHeader.title = "Detail";
+    
 
     this.route.params.subscribe(data => {
+      var sectionDetailName = (data as any).test;
       var groupName = (data as any).parent;
+      this._svcHeader.title = sectionDetailName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
 
