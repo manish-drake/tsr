@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController,Platform } from 'ionic-angular';
+import { ViewController, Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 
@@ -28,11 +28,13 @@ export class MoreActionsPopover {
     private platform: Platform,
     private _themes: ThemesService) {
 
-    if (this.platform.is('cordova')) {
-      AppVersion.getVersionNumber().then((s) => {
-        this.versionNumber = s;
-      })
-    }
+    this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        AppVersion.getVersionNumber().then((s) => {
+          this.versionNumber = s;
+        });
+      }
+    });
 
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);
@@ -56,10 +58,6 @@ export class MoreActionsPopover {
   }
 
   onHelpClick(e) {
-  }
-
-  ionViewDidLoad() {
-    console.log('Hello MoreactionsPopover');
   }
 
   isRunAllenabled: boolean = false;
