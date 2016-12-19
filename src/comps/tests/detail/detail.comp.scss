@@ -5,6 +5,7 @@ test-detail{
         display: inline-block;
         font-weight: 600;
         margin-top: 20px !important;
+        width: 100%;
 }
 .detailLabel{
         width: 105px !important;
@@ -13,7 +14,7 @@ test-detail{
         padding: 0px !important;
 }
 .detailLabel1{
-        width: 265px !important;
+        width: 100% !important; //265px
         display: inline-flex;        
         font-size: 16px !important;
         font-weight: 700;
@@ -26,7 +27,7 @@ test-detail{
         font-size: 16px !important;
 }
 .detailLabel3{
-        width: 170px !important;
+        width: 195px !important;
         display: inline-flex;        
         font-size: 16px !important;
         padding: 0px !important;
@@ -44,8 +45,7 @@ test-detail{
         padding: 0px !important;
 }
 .detailResult2{
-        display: inline-flex;
-        
+        display: inline-flex;        
         width: 110px !important;
         font-size: 16px !important;
         padding: 0px !important;

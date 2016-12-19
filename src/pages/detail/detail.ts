@@ -36,9 +36,9 @@ export class DetailPage {
     
 
     this.route.params.subscribe(data => {
-      var sectionDetailName = (data as any).test;
+      // var sectionDetailName = (data as any).test;
       var groupName = (data as any).parent;
-      this._svcHeader.title = sectionDetailName;
+      this._svcHeader.title = groupName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
 
