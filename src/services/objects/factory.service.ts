@@ -1155,7 +1155,7 @@ export class Factory {
                 cTse6.Row = 3;
                 cTse6.Column = 0;
                 cTse6.ColSpan = 3;
-                cTse6.Styles.add("key", "detailLabel1");
+                cTse6.Styles.add("key", "detailheading1");
                 cTse6.Styles.add("value", "detailResult1");
 
                 tst.TestParamCells.push(cTse6);
@@ -1223,7 +1223,7 @@ export class Factory {
                 tst.TestParamCells.push(cAp6);
 
                 var vnav6 = new TestParam();
-                vnav6.Key = "AutoPilot(AP):";
+                vnav6.Key = "AutoPilot (AP):";
                 var cVnav6 = new TestParamCell(vnav6);
                 cVnav6.Row = 11;
                 cVnav6.Column = 0;
@@ -1245,7 +1245,7 @@ export class Factory {
                 tst.TestParamCells.push(cAlth6);
 
                 var appm6 = new TestParam();
-                appm6.Key = "Alt. Hold(ALT):";
+                appm6.Key = "Alt. Hold (ALT):";
                 var cAppm6 = new TestParamCell(appm6);
                 cAppm6.Row = 13;
                 cAppm6.Column = 0;
