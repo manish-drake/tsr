@@ -10,7 +10,7 @@ export class FileIOService {
     getFolder(fullName: string) {
         var folder = new Folder();
         var fileFactory = new FileFactory();
-        fileFactory.saveFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");
+        fileFactory.saveFile("file:/storage/emulated/0/DCIM1/rootFolder/File", "abc.xml", "ajaja");
         
     }
 

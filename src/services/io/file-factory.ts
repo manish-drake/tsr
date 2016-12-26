@@ -9,7 +9,6 @@ export class FileFactory {
     getFile(fullName: string) {
         return Observable.fromPromise(File.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(value => value.toString())
-
     }
 
     saveFile(fullPath: string, name: string, content: any) {
@@ -17,10 +16,10 @@ export class FileFactory {
         var filePath = fullPath.slice(25);
         this.createFolderRx(filePath, parentFullPath)
             .then(success => {
-                alert(success);
+                alert("Ok: " + JSON.stringify(success));
             })
             .catch(e => {
-                alert(JSON.stringify(e));
+                alert("Not ok: " + JSON.stringify(e));
             });
         // fullPath.slice(25).split("/").forEach(foldername => {
 
@@ -60,20 +59,22 @@ export class FileFactory {
             .map(value => value["nativeURL"]);
     }
 
-    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/) {
+    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/):Promise<DirectoryEntry> {
         var urlParts = fullPath.split("/");
+        alert("fullPath: " + fullPath + ", parentFullPath: " + parentFullPath);
         if (urlParts.length > 0) {
             var name = urlParts[0];
             if (!parentFullPath)
                 parentFullPath = "file:/storage/emulated/0";
             return File.createDir(parentFullPath, name, true).then(success => {
+                alert("Created " + name + " in " + parentFullPath);
                 parentFullPath += "/" + name;
                 if (urlParts.length >= 2) {
                     fullPath = urlParts.slice(1).join("/");
                 } else {
                     fullPath = urlParts[0];
                 }
-                this.createFolderRx(fullPath, parentFullPath);
+                return this.createFolderRx(fullPath, parentFullPath);
             });
         }
     }
