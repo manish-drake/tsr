@@ -2,16 +2,16 @@
   <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-  <h3 ion-text text-nowrap style="color:white; padding-left:10px;">{{title}} </h3>
+  <h5 ion-text text-nowrap style="color:white; padding-left:10px;overflow: hidden;text-overflow: ellipsis;">{{title}} </h5>
 <ion-buttons end>
   <ion-row>
-    <ion-col>
+    <ion-col no-padding>
       <button ion-button clear icon-only (click)="openConfigurations()"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
     </ion-col>
-    <ion-col>
+    <ion-col no-padding>
       <button ion-button clear icon-only><ion-icon name="list-box"></ion-icon></button>
     </ion-col>
-    <ion-col>
+    <ion-col no-padding>
       <pop-button [popSource]="more"></pop-button>
     </ion-col>
   </ion-row>

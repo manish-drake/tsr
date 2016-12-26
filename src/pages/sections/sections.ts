@@ -27,19 +27,22 @@ export class SectionsPage implements OnInit {
     private objectService: Factory) {
 
     this.platform.ready().then(() => {
-      this.filesys.getFolder("filesystem")
+      if (this.platform.is('cordova')) {
+        this.filesys.getFolder("filesystem");
+      }
     })
 
 
   }
 
-  ngOnInit(){
-      this._svcHeader.title = "Sections";
-      this.activeRoute.params.subscribe(data => {
-        var sectionName = (data as any).name;
-        var section = this.objectService.createSection(sectionName);
-        this.dataSource = this.broker.createSectionDataSource(section);
-      })
+  ngOnInit() {
+    this.activeRoute.params.subscribe(data => {
+      var groupName = (data as any).name;
+      this._svcHeader.title = groupName;
+      var sectionsSummaryData = this.objectService.createSectionsSummaryData(groupName);
+      this.dataSource = this.broker.createSectionsSummary(sectionsSummaryData);
+       
+    })
 
   }
 

@@ -1,69 +1,62 @@
 test-detail{    
-    .detailheading{
-     font-size: 21px;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     display: inline-block;
-     margin-bottom:10px;
-     margin-top:10px;
-    }
+    
 .detailheading1{
-    font-size: 21px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     display: inline-block;
-     margin-bottom:10px;
-     margin-top:10px;
+        font-size: 18px;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 20px !important;
+        width: 100%;
 }
 .detailLabel{
-    width: 220px;
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    padding-bottom:  60px;
-    // margin-bottom:60px;
-}
-.detailResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:280px;    
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-}
-.detailRFLinkResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:160px;    
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
-}
-.detailSummaryResult{
-    padding-left: 10px;
-    padding-bottom:  11px;
-    width:180px;    
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+        width: 105px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        padding: 0px !important;
 }
 .detailLabel1{
-    width: 50px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+        width: 100% !important; //265px
+        display: inline-flex;        
+        font-size: 16px !important;
+        font-weight: 700;
+        padding: 0px !important;
+        margin-top: 10px !important;
 }
-.detailResult2{
-    width: 170px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+.detailLabel2{
+        width: 100px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
 }
 .detailLabel3{
-    width: 150px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom: 8px;
+        width: 195px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        padding: 0px !important;
 }
-.detailResult4{
-    width: 150px;
-   font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom:  11px;
+.detailLabel4{
+        width: 170px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        padding: 0px !important;
 }
-
+.detailResult{
+        display: inline-flex ;        
+        min-width: 130px !important;
+        font-size: 16px !important;    
+        padding: 0px !important;
+}
+.detailResult2{
+        display: inline-flex;        
+        width: 110px !important;
+        font-size: 16px !important;
+        padding: 0px !important;
+}
+.detailResult1{
+        display: inline-flex;
+        width: 0px ;
+}
+.detailUnit{
+        display: inline-flex;
+        min-width: 50px;
+        padding: 0px !important;
+}
 }

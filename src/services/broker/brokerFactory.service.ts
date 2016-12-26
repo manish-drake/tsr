@@ -10,28 +10,33 @@ export class BrokerFactoryService {
     constructor() {
 
     }
-    createSectionDataSource(testSection: TestSection) {
+    createSectionsSummary(summaryData: TestSection) {
         var tests: any[] = [];
-        testSection.Summaries.forEach(summary => {
+        summaryData.Summaries.forEach(summary => {
             var test = {
                 name: summary.Name,
-                parent: testSection.Name,
-                rows: this.createParamsGrid(summary, testSection.Styles)
+                parent: summaryData.Name,
+                rows: this.createParamsGrid(summary, summaryData.Styles)
             }
             tests.push(test);
         })
-        return { name: testSection.Name, tests: tests };
+        return { name: summaryData.Name, tests: tests };
     }
 
-    createTestDataSource(test: Test) {
-        var testDS = {
-            name: test.Name,
-            rows: this.createParamsGrid(test, new Dictionary<string, string>())
-        };
-        return testDS;
+    createSectionsDetail(detailData: Test) {
+        var testDS: any[] = [];
+        detailData.Summaries.forEach(summary => {
+            var testD = {
+                name: summary.Name,
+                parent:detailData.Name,
+                rows: this.createParamsGrid(summary, detailData.Styles)
+            }
+            testDS.push(testD);
+        })
+         return { name: detailData.Name, tests: testDS };
     }
 
-    createGroupDatasource(group: Group){
+    createGroupDatasource(group: Group) {
         var groupDS = {
             "name": group.Name,
             "sections": group.Sections.map(section => {
@@ -53,6 +58,7 @@ export class BrokerFactoryService {
                 rowspan="cell.rowspan">
                     <span [class]="cell.keyStyle">{{ cell.key }}</span>
                     <span [class]="cell.valueStyle">{{ cell.value }}</span>
+                    <span [class]="cell.unitStyle">{{ cell.unit }}</span>
             </td>
         </tr>
     </table>
@@ -67,18 +73,22 @@ export class BrokerFactoryService {
         var createCell = function (
             key: string = "",
             value: string = "",
+            unit: string = "",
             keyStyle: string = "",
             valueStyle: string = "",
+            unitStyle: string = "",
             colspan: number = 1,
             rowspan: number = 1,
             empty: boolean = true) {
             return {
                 "keyStyle": keyStyle,
                 "valueStyle": valueStyle,
+                "unitStyle": unitStyle,
                 "colspan": colspan,
                 "rowspan": rowspan,
                 "key": key,
                 "value": value,
+                "unit": unit,
                 "empty": empty
             };
         }
@@ -96,8 +106,10 @@ export class BrokerFactoryService {
             rows[cell.Row][cell.Column] = createCell(
                 cell.TestParam.Key,
                 cell.TestParam.Value,
+                cell.TestParam.Unit,
                 this.getFallbackValue("key", [cell.Styles, summary.Styles, parentStyles]),
                 this.getFallbackValue("value", [cell.Styles, summary.Styles, parentStyles]),
+                this.getFallbackValue("unit", [cell.Styles, summary.Styles, parentStyles]),
                 cell.ColSpan,
                 cell.RowSpan,
                 false)

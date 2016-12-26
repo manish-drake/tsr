@@ -6,7 +6,7 @@ export class FileFactory {
     constructor() {
     }
     // static fileIndex: 
-    getFile(fullName: string) {
+    getFile(fullName: string): Observable<any> {
         return Observable.fromPromise(File.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(value => value.toString())
     }
@@ -14,38 +14,16 @@ export class FileFactory {
     saveFile(fullPath: string, name: string, content: any) {
         var parentFullPath: string = "file:/storage/emulated/0";
         var filePath = fullPath.slice(25);
-        this.createFolderRx(filePath, parentFullPath)
-            .then(success => {
-                alert("Ok: " + JSON.stringify(success));
+        
+        this.createFolderRx(filePath, parentFullPath).then((success) => {
+            File.createFile(fullPath, name, true).then((success) => {
+                alert("file: " + JSON.stringify(success));
+                File.writeFile(fullPath, name, content, true).then((success) => {
+                    alert("save: " + JSON.stringify(success));
+                })
             })
-            .catch(e => {
-                alert("Not ok: " + JSON.stringify(e));
-            });
-        // fullPath.slice(25).split("/").forEach(foldername => {
+        });
 
-        //     this.createFolder(filepath, foldername).toPromise();
-        // })
-
-
-        // if (folername == name) {
-        //     alert("PAth: "+filepath)
-        //     File.createFile(filepath, name, true).then((success) => {
-        //         alert("file: " + JSON.stringify(success));
-        //         File.writeFile(filepath, name, content, true).then((success) => {
-        //             alert("save: " + JSON.stringify(success));
-        //         })
-        //     })
-        // }
-        // else {
-
-        //     this.createFolder(folername, filepath).forEach(e => {
-        //         alert(e);
-        //         filepath = e
-        //         // alert(filepath);
-        //     });
-
-        // }
-        // });
     }
 
     getSubFolders(fullName: string): Observable<string[]> {
@@ -59,7 +37,7 @@ export class FileFactory {
             .map(value => value["nativeURL"]);
     }
 
-    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/):Promise<DirectoryEntry> {
+    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/): Promise<DirectoryEntry> {
         var urlParts = fullPath.split("/");
         alert("fullPath: " + fullPath + ", parentFullPath: " + parentFullPath);
         if (urlParts.length > 0) {
@@ -72,7 +50,7 @@ export class FileFactory {
                 if (urlParts.length >= 2) {
                     fullPath = urlParts.slice(1).join("/");
                 } else {
-                    fullPath = urlParts[0];
+                    return success["nativeURL"];
                 }
                 return this.createFolderRx(fullPath, parentFullPath);
             });

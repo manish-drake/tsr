@@ -17,6 +17,16 @@ export class Test{
     public set Name(v : string) {
         this._Name = v;
     }
+
+    private _Summaries : Test[];
+    public get Summaries() : Test[] {
+        if(!this._Summaries)
+            this._Summaries = [];
+        return this._Summaries;
+    }
+    public set Summaries(v : Test[]) {
+        this._Summaries = v;
+    }
     
     private _TestParamCells : TestParamCell[];
     public get TestParamCells() : TestParamCell[] {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { ViewController, Platform } from 'ionic-angular';
+import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 
 /*
@@ -14,24 +15,35 @@ import { ThemesService } from '../../services/themes/themes.service';
 })
 export class MoreActionsPopover {
 
- chosenTheme: String;
+  chosenTheme: String;
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
-  
-  public setup:any;
+
+  public setup: any;
   public help: any;
-  
+  versionNumber: any;
+
   constructor(
-    public viewCtrl: ViewController, 
+    public viewCtrl: ViewController,
+    private platform: Platform,
     private _themes: ThemesService) {
+
+    this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        AppVersion.getVersionNumber().then((s) => {
+          this.versionNumber = s;
+        });
+      }
+    });
+
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);
     this.availableThemes = this._themes.availableThemes;
-    
+
     this.setup = this.createPopSource("settings", "SETUP TEST", "setup");
     this.help = this.createPopSource("help-circle", "HELP", "help");
   }
-  
+
   createPopSource = function (name, label, target) {
     return {
       "name": name,
@@ -41,31 +53,27 @@ export class MoreActionsPopover {
       ]
     };
   };
-  
-  onSetupClick(e){
-  }
-  
-  onHelpClick(e){
+
+  onSetupClick(e) {
   }
 
-  ionViewDidLoad() {
-    console.log('Hello MoreactionsPopover');
+  onHelpClick(e) {
   }
 
-  isRunAllenabled:boolean = false;
-  isReapeatEnabled:boolean = false;
-  isSaveEnabled:boolean = false;
+  isRunAllenabled: boolean = false;
+  isReapeatEnabled: boolean = false;
+  isSaveEnabled: boolean = false;
 
   runall() {
     this.isRunAllenabled = !this.isRunAllenabled;
   }
 
-  repeatTest(){
-     this.isReapeatEnabled = !this.isReapeatEnabled;
+  repeatTest() {
+    this.isReapeatEnabled = !this.isReapeatEnabled;
   }
 
-  autoSave(){
-     this.isSaveEnabled = !this.isSaveEnabled;
+  autoSave() {
+    this.isSaveEnabled = !this.isSaveEnabled;
   }
 
   onSwitchTheme() {
