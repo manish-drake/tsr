@@ -1,4 +1,5 @@
-<ion-card style="position: absolute;top: 0;bottom:0;left: 0;right: 0;" text-left>
+<!--top: 0;bottom:0;left: 0;right: 0;-->
+<ion-card text-nowrap style="position: absolute;" text-left>
     <ion-grid style="height: 100%;">
             <ion-row style="height: auto;">
                 <ion-col no-padding style="width: auto;flex: 0 0 auto;">
@@ -31,21 +32,6 @@
 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
 </button>
 </ion-fab>
-
-<!--<ion-row>
-            <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-                <button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>
-            </ion-col>
-            <ion-col center text-center style="width: 100%;">
-                <button ion-button icon-only clear large (click)="onRun()">
-                    <ion-icon name="play" *ngIf="!isRunnig"></ion-icon>
-                    <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
-                    </button>
-            </ion-col>
-            <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-                <button ion-button clear (click)="navigate('next')"><b> Next ></b></button>
-            </ion-col>
-            </ion-row>-->
 
 </ion-grid>
 </ion-card>
