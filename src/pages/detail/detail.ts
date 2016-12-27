@@ -20,6 +20,8 @@ export class DetailPage {
   slider: any;
   options: any;
 
+  currentSegment: any = 0;
+
   constructor(
     private _router: Router,
     private _svcHeader: HeaderService,
@@ -27,13 +29,11 @@ export class DetailPage {
     private broker: BrokerFactoryService,
     private objectService: Factory) {
 
-
   }
 
   public testset: any;
 
   ngOnInit() {
-    
 
     this.route.params.subscribe(data => {
       // var sectionDetailName = (data as any).test;
@@ -41,22 +41,31 @@ export class DetailPage {
       this._svcHeader.title = groupName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
+      console.log( this.testset );
 
-      var initialSlide = 0;
-      this.testset.tests.forEach((element, index) => {
-        if (element.name == (data as any).test) {
-          initialSlide = index;
-        }
-      });
+      // var initialSlide = 0;
+      // this.testset.tests.forEach((element, index) => {
+      //   if (element.name == (data as any).test) {
+      //     currentSegment = index;
+      //   }
+      // });
 
-      this.options = {
-        initialSlide: initialSlide,
-        loop: true,
-        onInit: (slides: any) => {
-          this.slider = slides;
-        }
-      }
+      // this.options = {
+      //   initialSlide: initialSlide,
+      //   loop: true,
+      //   onInit: (slides: any) => {
+      //     this.slider = slides;
+      //   }
+      // }
     });
+  }
+  showSegment(selectedindex: number) {
+    if (selectedindex != this.currentSegment) {
+      this.currentSegment = selectedindex;
+      console.log(this.currentSegment, '-----', selectedindex);
+    }
+
+   
   }
 
   onNavigate(ev: string) {
@@ -65,14 +74,14 @@ export class DetailPage {
         this._router.navigate(['section', this.testset.name]);
         break;
       }
-      case 'next': {
-        this.slider.slideNext();
-        break;
-      }
-      case 'prev': {
-        this.slider.slidePrev();
-        break;
-      }
+      // case 'next': {
+      //   this.slider.slideNext();
+      //   break;
+      // }
+      // case 'prev': {
+      //   this.slider.slidePrev();
+      //   break;
+      // }
       default: { break; }
     }
   }

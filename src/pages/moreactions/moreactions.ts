@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ViewController, Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
+import { Router } from '@angular/router';
+import { LatlonglocatorPage } from '../../pages/latlonglocator/latlonglocator';
 
 /*
   Generated class for the Moreactions page.
@@ -26,7 +28,8 @@ export class MoreActionsPopover {
   constructor(
     public viewCtrl: ViewController,
     private platform: Platform,
-    private _themes: ThemesService) {
+    private _themes: ThemesService,
+    private _router: Router) {
 
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
@@ -74,6 +77,9 @@ export class MoreActionsPopover {
 
   autoSave() {
     this.isSaveEnabled = !this.isSaveEnabled;
+  }
+  latlonginfo() {
+    this._router.navigate(['latlonglocator', LatlonglocatorPage]);
   }
 
   onSwitchTheme() {
