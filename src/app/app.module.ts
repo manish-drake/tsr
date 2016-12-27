@@ -18,13 +18,14 @@ import { Master } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
+import { ThemesService } from '../services/themes/themes.service'
 import { TestSectionComp } from '../comps/tests/section/section.comp';
 import { TestDetailComp } from '../comps/tests/detail/detail.comp';
 import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-import { ThemesService } from '../services/themes/themes.service'
+import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
 
 @NgModule({
     declarations: [
@@ -44,13 +45,14 @@ import { ThemesService } from '../services/themes/themes.service'
         TestCardComp,
         SpyDirective,
         PopMenuItemComp,
-        PopButtonComp
+        PopButtonComp,
+        LatlonglocatorPage
     ],
     imports: [
         router,
         IonicModule.forRoot(MyApp)
     ],
-    bootstrap: [IonicApp],  
+    bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
         HomePage,
@@ -61,8 +63,8 @@ import { ThemesService } from '../services/themes/themes.service'
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        FileIOService, 
-        Factory, 
+        FileIOService,
+        Factory,
         Master,
         HeaderService,
         PopoverService,

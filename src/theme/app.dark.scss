@@ -45,5 +45,6 @@
   ion-grid{
     .item{ background-color: $dark-background; }
     }
-   
+  div { background-color: darken($dark-primary, 1.5%);color: $dark-foreground; }
+  .segement{ background-color: $dark-background; }
 }

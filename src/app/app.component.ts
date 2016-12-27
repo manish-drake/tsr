@@ -38,11 +38,6 @@ export class MyApp implements OnInit {
       this.Title = e.title;
     });
   }
-  
-  // moreActionPopover() {
-  //   let popover = this.popoverCtrl.create(MoreActionsPopover);
-  //   popover.present({ ev: event });
-  // }
 
   onItemSelectionChanged(e){
     this._router.navigate(['group', e]);
