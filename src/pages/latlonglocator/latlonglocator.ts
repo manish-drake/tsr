@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ThemesService } from '../../services/themes/themes.service';
 
 /*
   Generated class for the Latlonglocator page.
@@ -13,8 +12,7 @@ import { ThemesService } from '../../services/themes/themes.service';
   templateUrl: 'latlonglocator.html'
 })
 export class LatlonglocatorPage {
-  
-  chosenTheme: String;
+
   circleobjs = [
     { cx: 510, cy: 510, r: 500 },
     { cx: 510, cy: 510, r: 400 },
@@ -23,14 +21,14 @@ export class LatlonglocatorPage {
     { cx: 510, cy: 510, r: 100 }
   ];
   objects = [
-    { name: "AA323", latitude: 0, longitude: 0, color: "pink" },
-    { name: "AA123", latitude: 30, longitude: 0, color: "red" },
-    { name: "111BA", latitude: 60, longitude: 0, color: "blue" },
-    { name: "131BA", latitude: -30, longitude: 0, color: "green" },
-    { name: "121BA", latitude: 0, longitude: 90, color: "black" }
+    { name: "AA323", latitude: 0, longitude: 0 },
+    { name: "AA123", latitude: 30, longitude: 0 },
+    { name: "111BA", latitude: 60, longitude: 0 },
+    { name: "131BA", latitude: -30, longitude: 0 },
+    { name: "121BA", latitude: 0, longitude: 90 }
   ];
 
-  constructor(private _themes: ThemesService) { this._themes.getTheme().subscribe(val => this.chosenTheme = val); }
+  constructor() { }
 
   getX(long) {
     var p = Math.PI / 180;
