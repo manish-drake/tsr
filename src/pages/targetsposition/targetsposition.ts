@@ -8,19 +8,19 @@ import { NavController } from 'ionic-angular';
 export class TargetsPositionPage {
 
   circleobjs = [
-    { cx: 510, cy: 510, r: 500 },
-    { cx: 510, cy: 510, r: 400 },
-    { cx: 510, cy: 510, r: 300 },
-    { cx: 510, cy: 510, r: 200 },
-    { cx: 510, cy: 510, r: 100 },
-    { cx: 510, cy: 510, r: 30 }
+    { cx: 510, cy: 510, r: 495 },
+    { cx: 510, cy: 510, r: 395 },
+    { cx: 510, cy: 510, r: 295 },
+    { cx: 510, cy: 510, r: 195 },
+    { cx: 510, cy: 510, r: 95 },
+    { cx: 510, cy: 510, r: 8 }
   ];
   objects = [
     { name: "AA323", latitude: 0, longitude: 0, color: "pink" },
-    { name: "AA123", latitude: 30, longitude: 0, color: "red" },
-    { name: "111BA", latitude: 60, longitude: 0, color: "blue" },
+    { name: "AA123", latitude: 30, longitude: 30, color: "red" },
+    { name: "111BA", latitude: 60, longitude: 60, color: "blue" },
     { name: "131BA", latitude: 90, longitude: 90, color: "green" },
-    { name: "121BA", latitude: 90, longitude: -90, color: "black" }
+    { name: "121BA", latitude: -90, longitude: -90, color: "black" }
   ];
 
   constructor() { }
@@ -40,15 +40,16 @@ export class TargetsPositionPage {
   }
 
   getY(lat, lon) {
+    var rad2deg = Math.PI / 180;
     var containerRadius = 510 - 15;
     var lony = (lat * (2 * containerRadius) / 180)
-    return containerRadius - lony;
+    return containerRadius - lony * (Math.cos(lon * rad2deg));
   }
 
   getX(lat, lon) {
-    var p = Math.PI / 180;
+    var rad2deg = Math.PI / 180;
     var containerRadius = 510 - 15;
-    var latx = containerRadius * Math.log(1 + Math.sin(lon * p) / (1 - Math.sin(lon * p))) / 2;
-    return containerRadius - (latx);
+    var latx = containerRadius *  Math.sin(lon * rad2deg);
+    return containerRadius + latx;
   }
 }
