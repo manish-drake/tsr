@@ -25,7 +25,8 @@ import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
+
+import { TargetsPositionPage } from '../pages/targetsposition/targetsposition';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
         SpyDirective,
         PopMenuItemComp,
         PopButtonComp,
-        LatlonglocatorPage
+
+        TargetsPositionPage
     ],
     imports: [
         router,

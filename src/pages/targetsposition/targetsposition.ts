@@ -1,20 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ThemesService } from '../../services/themes/themes.service';
 
-/*
-  Generated class for the Latlonglocator page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
-  selector: 'page-latlonglocator',
-  templateUrl: 'latlonglocator.html'
+  selector: 'page-targetsposition',
+  templateUrl: 'targetsposition.html'
 })
-export class LatlonglocatorPage {
-  
-  chosenTheme: String;
+export class TargetsPositionPage {
+
   circleobjs = [
     { cx: 510, cy: 510, r: 500 },
     { cx: 510, cy: 510, r: 400 },
@@ -30,7 +22,7 @@ export class LatlonglocatorPage {
     { name: "121BA", latitude: 0, longitude: 90, color: "black" }
   ];
 
-  constructor(private _themes: ThemesService) { this._themes.getTheme().subscribe(val => this.chosenTheme = val); }
+  constructor() { }
 
   getX(long) {
     var p = Math.PI / 180;

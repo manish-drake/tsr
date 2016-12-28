@@ -1,9 +1,9 @@
 import { RouterModule } from '@angular/router';
 import { SectionsPage } from '../pages/sections/sections';
 import { DetailPage } from '../pages/detail/detail';
-
 import { GroupPage } from '../pages/group/group';
-import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
+
+import { TargetsPositionPage } from '../pages/targetsposition/targetsposition';
 
 
 export const router = RouterModule.forRoot([
@@ -11,5 +11,6 @@ export const router = RouterModule.forRoot([
     { path: '', component: SectionsPage },
     { path: 'section/:name', component: SectionsPage },
     { path: 'detail/:test/:parent', component: DetailPage },
-    { path: 'latlonglocator/:name',component: LatlonglocatorPage},
+
+    { path: 'targetsposition/:name',component: TargetsPositionPage},
 ]);

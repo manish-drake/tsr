@@ -3,7 +3,8 @@ import { ViewController, Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 import { Router } from '@angular/router';
-import { LatlonglocatorPage } from '../../pages/latlonglocator/latlonglocator';
+
+import { TargetsPositionPage } from '../../pages/targetsposition/targetsposition';
 
 /*
   Generated class for the Moreactions page.
@@ -78,8 +79,10 @@ export class MoreActionsPopover {
   autoSave() {
     this.isSaveEnabled = !this.isSaveEnabled;
   }
-  latlonginfo() {
-    this._router.navigate(['latlonglocator', LatlonglocatorPage]);
+
+  openTargetsPositionPage() {
+    this._router.navigate(['targetsposition', TargetsPositionPage]);
+    this.viewCtrl.dismiss();
   }
 
   onSwitchTheme() {

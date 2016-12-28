@@ -1,27 +1,26 @@
-<div>
+<!--<div>
     <ion-grid>
         <ion-row style="height: auto;flex:0 0 auto;">
-<ion-col text-center center *ngFor="let section of testset.tests; let i = index" (click)="showSegment(i)" [class.currentsegment]="i == currentSegment"
-    [class.segement]="i != currentSegment">
-    <span text-nowrap>{{section.name}}</span>
-</ion-col>
-</ion-row>
-
-<ion-row style="height: 90%;">
-
-<div [ngSwitch]="currentSegment">
-    <div *ngFor="let section of testset.tests; let i = index">
-        <test-detail *ngSwitchCase="i" [test]="section" [testindex]="i+1" [testscount]="testset.tests.length" (onNavigate)="onNavigate($event)"></test-detail>
-    </div>
-</div>
-</ion-row>
-</ion-grid>
-</div>
-
+            <ion-col text-center center *ngFor="let section of testset.tests; let i = index" (click)="showSegment(i)" [class.currentsegment]="i == currentSegment"
+                     [class.segement]="i != currentSegment">
+                     <span text-nowrap>{{section.name}}</span>
+            </ion-col>
+         </ion-row>
+         
+         <ion-row style="height: 90%;">
+             <div [ngSwitch]="currentSegment">
+                 <div *ngFor="let section of testset.tests; let i = index">
+                     <test-detail *ngSwitchCase="i" [test]="section" [testindex]="i+1" [testscount]="testset.tests.length" (onNavigate)="onNavigate($event)"></test-detail>
+                </div>
+              </div>
+         </ion-row>
+    </ion-grid>
+</div>-->
 
 
-<!--<ion-slides [options]="options">
+
+<ion-slides [options]="options">
     <ion-slide style="align-items: stretch !important;" *ngFor="let section of testset.tests; let i = index">
             <test-detail [test]="section" [testindex]="i+1" [testscount]="testset.tests.length" (onNavigate)="onNavigate($event)"></test-detail>
     </ion-slide>
-</ion-slides>-->
+</ion-slides>
