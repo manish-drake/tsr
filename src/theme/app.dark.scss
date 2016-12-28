@@ -1,16 +1,12 @@
 .dark-theme {
   .toolbar-title{ color: $dark-foreground; }
-  ion-col{
-    color: $dark-foreground;
-      label{ color:lawngreen; }
-  }
   ion-header{
     .toolbar-background{ background-color: $dark-primary; }
   }
   ion-footer{
     .toolbar-background{ background-color: lighten($dark-primary,10%); }
   }
-  ion-content{ background-color: $dark-background; }
+  ion-content{ background-color: $dark-background; }  
   ion-list{
     .item{ background-color: $dark-primary; }
   }
@@ -45,6 +41,20 @@
   ion-grid{
     .item{ background-color: $dark-background; }
     }
-  div { background-color: darken($dark-primary, 1.5%);color: $dark-foreground; }
-  .segement{ background-color: $dark-background; }
+  div { color: $dark-foreground; }
+  .segement{ background-color: $dark-primary; }
+  .currentsegment{ background-color: $dark-background;}
+  div{
+    svg{
+      circle{
+        stroke: $dark-foreground;
+      }
+      rect{
+        fill: $dark-foreground;        
+      }
+      text{
+        fill: $dark-foreground;
+      }
+    }    
+  }
 }
