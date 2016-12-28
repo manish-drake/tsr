@@ -12,32 +12,18 @@ export class TargetsPositionPage {
     { cx: 510, cy: 510, r: 400 },
     { cx: 510, cy: 510, r: 300 },
     { cx: 510, cy: 510, r: 200 },
-    { cx: 510, cy: 510, r: 100 }
+    { cx: 510, cy: 510, r: 100 },
+    { cx: 510, cy: 510, r: 30 }
   ];
   objects = [
     { name: "AA323", latitude: 0, longitude: 0, color: "pink" },
     { name: "AA123", latitude: 30, longitude: 0, color: "red" },
     { name: "111BA", latitude: 60, longitude: 0, color: "blue" },
-    { name: "131BA", latitude: -30, longitude: 0, color: "green" },
-    { name: "121BA", latitude: 0, longitude: 90, color: "black" }
+    { name: "131BA", latitude: 90, longitude: 90, color: "green" },
+    { name: "121BA", latitude: 90, longitude: -90, color: "black" }
   ];
 
   constructor() { }
-
-  getX(long) {
-    var p = Math.PI / 180;
-    var r = 525 - 15;
-    var lgt = r - ((1000 / 2) * Math.log(1 + Math.sin(long * p) / (1 - Math.sin(long * p))) / 2);
-    return lgt;
-  }
-
-  getY(lat) {
-    var p = Math.PI / 180;
-    var r = 525 - 15;
-    var l = lat / 1.6;
-    var lt = Math.round(r - (1000 / 2) * l * p);
-    return lt;
-  }
 
   ngAfterViewInit() {
     this.onResize(event);
@@ -51,5 +37,18 @@ export class TargetsPositionPage {
     else if (window.innerHeight < window.innerWidth) {
       this.isPortrait = false;
     }
+  }
+
+  getY(lat, lon) {
+    var containerRadius = 510 - 15;
+    var lony = (lat * (2 * containerRadius) / 180)
+    return containerRadius - lony;
+  }
+
+  getX(lat, lon) {
+    var p = Math.PI / 180;
+    var containerRadius = 510 - 15;
+    var latx = containerRadius * Math.log(1 + Math.sin(lon * p) / (1 - Math.sin(lon * p))) / 2;
+    return containerRadius - (latx);
   }
 }

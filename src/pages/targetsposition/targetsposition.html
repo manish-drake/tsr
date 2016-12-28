@@ -1,11 +1,11 @@
 <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
 <ion-scroll scrollY="true" style="height:100%;width:100%;">
-<div id="svgBox" style="position: relative" align="center"  >
+<div id="svgBox" style="position: relative;" align="center"  >
 
-  <svg style="position: absolute;padding-top:5%;padding-left:11%" viewBox="0 0 1050 1050" (window:resize)="onResize($event)" [style.width]="isPortrait ? '90%' : '45%' ">
+  <svg style="position: absolute;padding-top:5%;padding-left:11%;" viewBox="0 0 1050 1050" (window:resize)="onResize($event)" [style.width]="isPortrait ? '90%' : '45%' ">
     <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke="#000000" stroke-width="3" stroke-dasharray="10 5" fill="#044B94" fill-opacity="0" />
-    <rect *ngFor="let object of objects" [attr.x]="getX(object.longitude)" [attr.y]="getY(object.latitude)" [attr.fill]="object.color" width="30" height="30"></rect>
-  <!--<text *ngFor="let object of objects" [attr.x]="getX(object.longitude)" [attr.y]="getY(object.latitude)" [attr.fill]="object.color" font-size="48px" width="30" height="30">{{object.name}}</text>-->
+    <rect *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" [attr.fill]="object.color" width="30" height="30"></rect>
+  <!--<text *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" [attr.fill]="object.color" font-size="48px" width="30" height="30">{{object.name}}</text>-->
   </svg>
 
 <svg style="position: relative" viewBox="0 0 1600 1350" (window:resize)="onResize($event)" [style.width]="isPortrait ? '100%' : '50%' ">
