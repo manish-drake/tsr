@@ -8,12 +8,12 @@ import { NavController } from 'ionic-angular';
 export class TargetsPositionPage {
 
   circleobjs = [
-    { cx: 510, cy: 510, r: 495 },
-    { cx: 510, cy: 510, r: 395 },
-    { cx: 510, cy: 510, r: 295 },
-    { cx: 510, cy: 510, r: 195 },
-    { cx: 510, cy: 510, r: 95 },
-    { cx: 510, cy: 510, r: 8 }
+    { cx: 525, cy: 525, r: 470 },
+    { cx: 525, cy: 525, r: 370 },
+    { cx: 525, cy: 525, r: 270 },
+    { cx: 525, cy: 525, r: 170 },
+    { cx: 525, cy: 525, r: 70 },
+    { cx: 525, cy: 525, r: 0 }
   ];
   objects = [
     { name: "AA323", latitude: 0, longitude: 0, color: "pink" },
@@ -40,16 +40,20 @@ export class TargetsPositionPage {
   }
 
   getY(lat, lon) {
+    var containerMid = 525;
+    var radius = 470;
+    var objectsize = 30;
     var rad2deg = Math.PI / 180;
-    var containerRadius = 510 - 15;
-    var lony = (lat * (2 * containerRadius) / 180)
-    return containerRadius - lony * (Math.cos(lon * rad2deg));
+    var lony = (lat * (2 * radius) / 180)
+    return containerMid - lony * (Math.cos(lon * rad2deg)) - (objectsize / 2);
   }
 
   getX(lat, lon) {
+    var containerMid = 525;
+    var radius = 470;
+    var objectsize = 30;
     var rad2deg = Math.PI / 180;
-    var containerRadius = 510 - 15;
-    var latx = containerRadius *  Math.sin(lon * rad2deg);
-    return containerRadius + latx;
+    var latx = radius * Math.sin(lon * rad2deg);
+    return containerMid + latx - (objectsize / 2);
   }
 }
