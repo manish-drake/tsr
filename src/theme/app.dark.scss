@@ -49,8 +49,9 @@
       circle{
         stroke: $dark-foreground;
       }
-      rect{
-        fill: $dark-foreground;        
+      polygon{
+        fill: $dark-foreground;   
+        color: $dark-foreground;
       }
       text{
         fill: $dark-foreground;
