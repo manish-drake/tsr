@@ -16,11 +16,11 @@ export class TargetsPositionPage {
     { cx: 525, cy: 525, r: 0 }
   ];
   objects = [
-    { name: "AA323", latitude: 0, longitude: 0, color: "pink" },
-    { name: "AA123", latitude: 30, longitude: 30, color: "red" },
-    { name: "111BA", latitude: 60, longitude: 60, color: "blue" },
-    { name: "131BA", latitude: 90, longitude: 90, color: "green" },
-    { name: "121BA", latitude: -90, longitude: -90, color: "black" }
+    { name: "AA323", latitude: 0, longitude: 0  },
+    { name: "AA123", latitude: 30, longitude: 30 },
+    { name: "111BA", latitude: 60, longitude: 60 },
+    { name: "131BA", latitude: 90, longitude: 90 },
+    { name: "121BA", latitude: -90, longitude: -90 }
   ];
 
   constructor() { }

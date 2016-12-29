@@ -9,8 +9,8 @@
     <text x="40" y="635" font-size="36" >270 deg</text>
 
     <svg viewBox="0 0 1050 1050" x="200"  y="100" width="1050" height="1050">
-      <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke="#000000" stroke-width="3" stroke-dasharray="10 5" fill-opacity="0" />
-      <!--<rect *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" width="30" height="30" ></rect>-->
+      <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5" fill-opacity="0" />
+
       <svg *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" height="30" width="30">
         <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
         </svg>

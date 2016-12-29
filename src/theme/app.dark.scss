@@ -1,5 +1,5 @@
 .dark-theme {
-  .toolbar-title{ color: $dark-foreground; }
+  .toolbar-title{ color: $dark-foreground;background-color: $dark-primary; }
   ion-header{
     .toolbar-background{ background-color: $dark-primary; }
   }
@@ -10,9 +10,8 @@
   ion-list{
     .item{ background-color: $dark-primary; }
   }
-  ion-item{ 
-    color: $dark-foreground;background-color: $dark-primary; 
-    p { color: $dark-foreground; }
+  ion-item{ color: $dark-foreground;background-color: $dark-primary; 
+            p { color: $dark-foreground; }
   }
 
   ion-icon{ color: $dark-foreground; }
@@ -23,13 +22,15 @@
     .item{ color: $dark-foreground; background-color: $dark-primary;}
     }
     
-  ion-item-group{color: $dark-foreground}
+  ion-item-group{ color: $dark-foreground; }
 
   ion-toolbar{
+    ion-grid{ background-color: $dark-primary; }
     button{ color: $dark-foreground;}
   }
 
   ion-card{
+    background-color: darken($dark-primary, 1.5%);color: $dark-foreground;
     .item{ background-color: darken($dark-primary, 1.5%); color: $dark-foreground; }
     ion-row{ 
       ion-col{
@@ -37,14 +38,10 @@
       }
     }
   }
-  ion-card{ background-color: darken($dark-primary, 1.5%);color: $dark-foreground; }
-  ion-grid{
-    .item{ background-color: $dark-background; }
-    }
-  div { color: $dark-foreground; }
   .segement{ background-color: $dark-primary; }
   .currentsegment{ background-color: $dark-background;}
   div{
+    color: $dark-foreground;
     svg{
       circle{
         stroke: $dark-foreground;
@@ -57,5 +54,11 @@
         fill: $dark-foreground;
       }
     }    
+  }
+  ion-fab{
+    button{
+      background-color: darken($dark-primary, 1.5%);
+      ion-icon{ color:  #fff;}
+    }
   }
 }
