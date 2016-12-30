@@ -21,12 +21,11 @@ import { PopoverService } from '../services/ui/popover.service'
 import { ThemesService } from '../services/themes/themes.service'
 import { TestSectionComp } from '../comps/tests/section/section.comp';
 import { TestDetailComp } from '../comps/tests/detail/detail.comp';
+import { DetailVehiclesComp} from'../comps/tests/detail-vehicles/detail-vehicles';
 import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-
-import { TargetsPositionPage } from '../pages/targetsposition/targetsposition';
 
 @NgModule({
     declarations: [
@@ -42,13 +41,12 @@ import { TargetsPositionPage } from '../pages/targetsposition/targetsposition';
         SetupPage,
         HelpPage,
         TestSectionComp,
-        TestDetailComp,
+        TestDetailComp,DetailVehiclesComp,
         TestCardComp,
         SpyDirective,
         PopMenuItemComp,
-        PopButtonComp,
-
-        TargetsPositionPage
+        PopButtonComp
+        
     ],
     imports: [
         router,

@@ -2,16 +2,7 @@ import { Component } from '@angular/core';
 import { ViewController, Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
-import { Router } from '@angular/router';
 
-import { TargetsPositionPage } from '../../pages/targetsposition/targetsposition';
-
-/*
-  Generated class for the Moreactions page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-moreactions',
   templateUrl: 'moreactions.html'
@@ -29,8 +20,7 @@ export class MoreActionsPopover {
   constructor(
     public viewCtrl: ViewController,
     private platform: Platform,
-    private _themes: ThemesService,
-    private _router: Router) {
+    private _themes: ThemesService) {
 
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
@@ -78,11 +68,6 @@ export class MoreActionsPopover {
 
   autoSave() {
     this.isSaveEnabled = !this.isSaveEnabled;
-  }
-
-  openTargetsPositionPage() {
-    this._router.navigate(['targetsposition', TargetsPositionPage]);
-    this.viewCtrl.dismiss();
   }
 
   onSwitchTheme() {

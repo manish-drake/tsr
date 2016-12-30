@@ -20,7 +20,7 @@ export class DetailPage {
   slider: any;
   options: any;
 
-  currentSegment: any = 0;
+  currentSegment: any = -1;
 
   constructor(
     private _router: Router,
@@ -33,15 +33,15 @@ export class DetailPage {
 
   public testset: any;
 
-  ngOnInit() {
+  parent: any;
 
+  ngOnInit() {
     this.route.params.subscribe(data => {
-      // var sectionDetailName = (data as any).test;
-      var groupName = (data as any).parent;
+      this.parent = (data as any).parent;
+      var groupName = (data as any).test;
       this._svcHeader.title = groupName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
-      console.log( this.testset );
 
       // var initialSlide = 0;
       // this.testset.tests.forEach((element, index) => {
@@ -62,16 +62,13 @@ export class DetailPage {
   showSegment(selectedindex: number) {
     if (selectedindex != this.currentSegment) {
       this.currentSegment = selectedindex;
-      console.log(this.currentSegment, '-----', selectedindex);
-    }
-
-   
+    }   
   }
 
   onNavigate(ev: string) {
     switch (ev) {
       case 'close': {
-        this._router.navigate(['section', this.testset.name]);
+        this._router.navigate(['group', "UAT"]);
         break;
       }
       // case 'next': {

@@ -1,11 +1,11 @@
 <div class="items">
-  <div class="itemm" *ngFor="let section of group.sections" >
+  <div class="itemm" *ngFor="let section of group.sections">
     <ion-card #mydiv on-tap="doubleTapNavigation(section)" style="min-height:200px;">
      <!--[style.border]="step===section.name ? '2px solid gray':''"-->
      <ion-row >
        <ion-col no-padding center style="width:100%;">
-       <button ion-button clear icon-only no-margin (click)="favorite()" [style.color]="isFavorite ? '#FFD400' : ''">
-            <ion-icon [name]="isFavorite ? 'star' : 'star-outline'"></ion-icon>
+       <button ion-button clear icon-only no-margin (click)="favorite(section)" [style.color]="section.isFavorite ? '#FFD400' : ''">
+            <ion-icon [name]="section.isFavorite ? 'star' : 'star-outline'"></ion-icon>
         </button>
         <button ion-button clear icon-only no-margin ><ion-icon name="download"></ion-icon></button>
        </ion-col>
