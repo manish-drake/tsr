@@ -576,11 +576,11 @@ export class Factory {
 
                 newTest.Name = test;
 
-                //------------------------UAT Filter Target------------------------
-                var uft = new Test();
-                uft.Name = "UAT Filter Target";
+                // //------------------------UAT Filter Target------------------------
+                // var uft = new Test();
+                // uft.Name = "UAT Filter Target";
 
-                newTest.Summaries.push(uft);
+                // newTest.Summaries.push(uft);
                 //------------------------UAT Mode Status Test-----------------------------
                 var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
