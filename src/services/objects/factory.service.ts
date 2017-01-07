@@ -566,7 +566,7 @@ export class Factory {
     // }
 
     createSectionsDetailData(test: string): Test {
-        console.log('test Name:::  ' + test);
+        // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
             case 'UAT ADS-B OUT': {

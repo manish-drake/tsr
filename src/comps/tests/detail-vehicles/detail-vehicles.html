@@ -5,7 +5,7 @@
                  <button ion-button icon-only clear (click)="selectAv()">
                      <ion-icon *ngIf="!isTargetposAvailable" name="locate"></ion-icon>
                      <ion-icon *ngIf="isTargetposAvailable" name="list-box"></ion-icon>
-                     </button>
+                 </button>
              </ion-col>
              <ion-col text-center text-nowrap style="overflow: hidden;text-overflow: ellipsis;"></ion-col>
              <ion-col no-padding style="width: auto;flex: 0 0 auto;">
@@ -16,92 +16,17 @@
          <ion-scroll scrollY="true" style="height:100%;width:100%;">
          
          <div *ngIf="!isTargetposAvailable">
-         <ion-card (click)="onVehicleClick('1')" [class.selectedvehicle]="selectedVehicleIndex == 1">   
+         <ion-card (click)="onVehicleClick(i)" [class.selectedvehicle]="selectedVehicleIndex == i" *ngFor="let object of resultsobjects; let i = index">
             <ion-item style="background-color: rgba(0,0,0,0.05);" >
                 <ion-row>
                     <ion-col style="width:100%">
-                        <span class="sectionHeading"> Aircraft / Vehicle #1: </span>
+                        <span class="sectionHeading"> Aircraft / Vehicle #{{i+1}}: </span>
                     </ion-col>
                 </ion-row>
-                <table style="width:100%;">
+                <table style="width:100%;" >
                     <tr>
                         <td class="sectionLabel">ADDRESS: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                     <tr>
-                        <td class="sectionLabel">Qualifier: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Pay load: </td>
-                        <td class="sectionResult">  </td>
-                        <td class="sectionLabel">RF Level: </td>
-                        <td class="sectionResult"> </td>
-                    </tr>
-                </table>
-            </ion-item>
-        </ion-card>
-         <ion-card (click)="onVehicleClick('2')" [class.selectedvehicle]="selectedVehicleIndex == 2">   
-            <ion-item style="background-color: rgba(0,0,0,0.05);">
-                <ion-row>
-                    <ion-col style="width:100%">
-                        <span class="sectionHeading"> Aircraft / Vehicle #2: </span>
-                    </ion-col>
-                </ion-row>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="sectionLabel">ADDRESS: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                     <tr>
-                        <td class="sectionLabel">Qualifier: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Pay load: </td>
-                        <td class="sectionResult">  </td>
-                        <td class="sectionLabel">RF Level: </td>
-                        <td class="sectionResult"> </td>
-                    </tr>
-                </table>
-            </ion-item>
-        </ion-card>
-         <ion-card (click)="onVehicleClick('3')" [class.selectedvehicle]="selectedVehicleIndex == 3">   
-            <ion-item style="background-color: rgba(0,0,0,0.05);">
-                <ion-row>
-                    <ion-col style="width:100%">
-                        <span class="sectionHeading"> Aircraft / Vehicle #3: </span>
-                    </ion-col>
-                </ion-row>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="sectionLabel">ADDRESS: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                     <tr>
-                        <td class="sectionLabel">Qualifier: </td>
-                        <td class="sectionResult" colspan="3"> </td>
-                    </tr>
-                    <tr>
-                        <td class="sectionLabel">Pay load: </td>
-                        <td class="sectionResult">  </td>
-                        <td class="sectionLabel">RF Level: </td>
-                        <td class="sectionResult"> </td>
-                    </tr>
-                </table>
-            </ion-item>
-        </ion-card>
-         <ion-card (click)="onVehicleClick('4')" [class.selectedvehicle]="selectedVehicleIndex == 4">   
-            <ion-item style="background-color: rgba(0,0,0,0.05);">
-                <ion-row>
-                    <ion-col style="width:100%">
-                        <span class="sectionHeading"> Aircraft / Vehicle #4: </span>
-                    </ion-col>
-                </ion-row>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="sectionLabel">ADDRESS: </td>
-                        <td class="sectionResult" colspan="3"> </td>
+                        <td class="sectionResult" colspan="3" [hidden]="noresult">{{object.address}} </td>
                     </tr>
                      <tr>
                         <td class="sectionLabel">Qualifier: </td>
@@ -129,10 +54,10 @@
                         <svg viewBox="0 0 1050 1050" x="200"  y="100" width="1050" height="1050">
                             <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5" fill-opacity="0" />
                             
-                            <svg *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" height="30" width="30">
+                            <svg *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)" height="30" width="30">
                                 <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
                             </svg>
-                            <text *ngFor="let object of objects" [attr.x]="getX(object.latitude, object.longitude)-30" [attr.y]="getY(object.latitude, object.longitude)-5" font-size="32" width="30" height="30">{{object.name}}</text>
+                            <text *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)-30" [attr.y]="getY(object.latitude, object.longitude)-5" font-size="32" width="30" height="30">{{object.address}}</text>
                         </svg>
                     </svg>
          </div>
@@ -140,8 +65,8 @@
 
          <ion-fab margin bottom right>
               <button ion-fab (click)="onRun()">
-                 <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:3px;"></ion-icon>
-                 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
+                 <ion-icon name="play" *ngIf="!isRunning" style="margin-left:3px;"></ion-icon>
+                 <ion-icon name="square" *ngIf="isRunning"></ion-icon>
               </button>
          </ion-fab>
      </ion-grid>

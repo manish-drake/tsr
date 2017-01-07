@@ -1,4 +1,6 @@
-import { Component,Output,EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Http } from '@angular/http';
+import { FileFactory } from '../../../services/io/file-factory';
 
 /*
   Generated class for the DetailVehicles page.
@@ -11,7 +13,7 @@ import { Component,Output,EventEmitter } from '@angular/core';
   templateUrl: 'detail-vehicles.html'
 })
 export class DetailVehiclesComp {
- @Output() onNavigate = new EventEmitter<string>();
+  @Output() onNavigate = new EventEmitter<string>();
 
   circleobjs = [
     { cx: 525, cy: 525, r: 470 },
@@ -21,32 +23,40 @@ export class DetailVehiclesComp {
     { cx: 525, cy: 525, r: 70 },
     { cx: 525, cy: 525, r: 0 }
   ];
-  objects = [
-   
-    { name: "LON", latitude: 51.507351, longitude: -0.127758 },
-    { name: "NYC", latitude: 40.712784, longitude: -74.005941 },
-    { name: "RIO", latitude: -22.906847, longitude: -43.172896 },
-    { name: "MSK", latitude: 55.755826, longitude: 37.6173 },
-     { name: "SYD", latitude: -33.868820, longitude: 151.209296}
-  ];
+  // objects = [
 
-  constructor() { }  
+  //   { name: "LON", latitude: 51.507351, longitude: -0.127758 },
+  //   { name: "NYC", latitude: 40.712784, longitude: -74.005941 },
+  //   { name: "RIO", latitude: -22.906847, longitude: -43.172896 },
+  //   { name: "MSK", latitude: 55.755826, longitude: 37.6173 },
+  //    { name: "SYD", latitude: -33.868820, longitude: 151.209296}
+  // ];
+  resultsobjs = [];
+  constructor(private http: Http, private fileFactory: FileFactory ) { }
 
-    navigate(ev){
-        this.onNavigate.emit(ev);
-    }
-  isRunnig: boolean = false;
+  navigate(ev) {
+    this.onNavigate.emit(ev);
+  }
+  isRunning: boolean = false;
+  resultsobjects = [];
 
   onRun() {
-    this.isRunnig = !this.isRunnig;
+    this.isRunning = !this.isRunning;
+    if (this.isRunning) {
+      this.http.get('assets/jsonfiles/data.json')
+        .map((res) => res.json())
+        .subscribe(data => {
+          this.resultsobjects = data.response.data.results;
+        }, (rej) => { console.error("Could not load local data", rej) });
+    }
   }
-   isTargetposAvailable: boolean = false;
+  isTargetposAvailable: boolean = false;
 
   selectAv() {
     this.isTargetposAvailable = !this.isTargetposAvailable;
   }
 
-   ngAfterViewInit() {
+  ngAfterViewInit() {
     this.onResize(event);
   }
 
@@ -78,9 +88,9 @@ export class DetailVehiclesComp {
     return containerMid + latx - (objectsize / 2);
   }
 
-  selectedVehicleIndex = 1;
+  selectedVehicleIndex = 0;
 
-  onVehicleClick(index){
+  onVehicleClick(index) {
     this.selectedVehicleIndex = index;
   }
 }

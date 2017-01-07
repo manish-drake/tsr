@@ -56,7 +56,7 @@ export class GroupPage implements OnInit {
     this.clicks++;
     if (this.clicks == 1) {
       setTimeout(() => {
-        console.log(this.clicks);
+        // console.log(this.clicks);
         if (this.clicks == 1) {
           this.step = test.name;
         }
