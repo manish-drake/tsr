@@ -71,7 +71,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         PopoverService,
         BrokerFactoryService,
         ThemesService,
-        FileFactory
+        FileFactory,MoreActionsPopover
     ]
 })
 export class AppModule { }

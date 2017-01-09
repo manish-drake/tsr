@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { FileFactory } from '../../../services/io/file-factory';
+import { MoreActionsPopover } from '../../../pages/moreactions/moreactions';
 
 /*
   Generated class for the DetailVehicles page.
@@ -23,32 +24,29 @@ export class DetailVehiclesComp {
     { cx: 525, cy: 525, r: 70 },
     { cx: 525, cy: 525, r: 0 }
   ];
-  // objects = [
 
-  //   { name: "LON", latitude: 51.507351, longitude: -0.127758 },
-  //   { name: "NYC", latitude: 40.712784, longitude: -74.005941 },
-  //   { name: "RIO", latitude: -22.906847, longitude: -43.172896 },
-  //   { name: "MSK", latitude: 55.755826, longitude: 37.6173 },
-  //    { name: "SYD", latitude: -33.868820, longitude: 151.209296}
-  // ];
-  resultsobjs = [];
-  constructor(private http: Http, private fileFactory: FileFactory ) { }
+  constructor(private http: Http, private fileFactory: FileFactory,private moreaction:MoreActionsPopover) { }
 
   navigate(ev) {
     this.onNavigate.emit(ev);
   }
-  isRunning: boolean = false;
+  isPlay: boolean = false;
   resultsobjects = [];
-
   onRun() {
-    this.isRunning = !this.isRunning;
-    if (this.isRunning) {
-      this.http.get('assets/jsonfiles/data.json')
-        .map((res) => res.json())
-        .subscribe(data => {
+    this.isPlay = !this.isPlay;
+    this.http.get('assets/jsonfiles/data.json')
+      .map((res) => res.json())
+      .subscribe(data => {
+        if (!MoreActionsPopover.isRunAllenabled) {
+          this.resultsobjects = [];
+          var item = data.response.data.results[this.selectedVehicleIndex];
+          this.resultsobjects.push(item);
+        }
+        else {
+          this.resultsobjects = [];
           this.resultsobjects = data.response.data.results;
-        }, (rej) => { console.error("Could not load local data", rej) });
-    }
+        }
+      }, (rej) => { console.error("Could not load local data", rej) });
   }
   isTargetposAvailable: boolean = false;
 
@@ -58,6 +56,17 @@ export class DetailVehiclesComp {
 
   ngAfterViewInit() {
     this.onResize(event);
+
+    this.http.get('assets/jsonfiles/data.json')
+      .map((res) => res.json())
+      .subscribe(data => {
+        var results = data.response.data.results;
+
+        results.forEach(element => {
+          var item = { "item": "1" }
+          this.resultsobjects.push(item);
+        });
+      }, (rej) => { console.error("Could not load local data", rej) });
   }
 
   isPortrait: boolean = true;

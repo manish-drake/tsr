@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { ViewController, Platform } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 
 @Component({
   selector: 'page-moreactions',
-  templateUrl: 'moreactions.html'
+  templateUrl: 'moreactions.html',
+  providers: [MoreActionsPopover]
 })
 export class MoreActionsPopover {
 
+  @Input() main: MoreActionsPopover;
   chosenTheme: String;
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
@@ -18,7 +20,6 @@ export class MoreActionsPopover {
   versionNumber: any;
 
   constructor(
-    public viewCtrl: ViewController,
     private platform: Platform,
     private _themes: ThemesService) {
 
@@ -54,20 +55,25 @@ export class MoreActionsPopover {
   onHelpClick(e) {
   }
 
-  isRunAllenabled: boolean = false;
-  isReapeatEnabled: boolean = false;
-  isSaveEnabled: boolean = false;
+  static isRunAllenabled: boolean = false;
+  static isReapeatEnabled: boolean = false;
+  static isSaveEnabled: boolean = false;
 
   runall() {
-    this.isRunAllenabled = !this.isRunAllenabled;
+    MoreActionsPopover.isRunAllenabled = !MoreActionsPopover.isRunAllenabled;
+    return MoreActionsPopover.isRunAllenabled;
+  }
+
+  isrun() {
+    return MoreActionsPopover.isRunAllenabled
   }
 
   repeatTest() {
-    this.isReapeatEnabled = !this.isReapeatEnabled;
+    MoreActionsPopover.isReapeatEnabled = !MoreActionsPopover.isReapeatEnabled;
   }
 
   autoSave() {
-    this.isSaveEnabled = !this.isSaveEnabled;
+    MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
   }
 
   onSwitchTheme() {

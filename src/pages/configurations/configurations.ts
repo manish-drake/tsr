@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
 import { ThemesService } from '../../services/themes/themes.service'
 
 /*
@@ -16,7 +15,7 @@ export class ConfigurationsPopover {
 
   chosenTheme: String;
 
-  constructor(public viewCtrl: ViewController, private _themes: ThemesService) {
+  constructor(private _themes: ThemesService) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
   }
 
