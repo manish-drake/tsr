@@ -25,7 +25,7 @@ export class DetailVehiclesComp {
     { cx: 525, cy: 525, r: 0 }
   ];
 
-  constructor(private http: Http, private fileFactory: FileFactory,private moreaction:MoreActionsPopover) { }
+  constructor(private http: Http, private fileFactory: FileFactory, private moreaction: MoreActionsPopover) { }
 
   navigate(ev) {
     this.onNavigate.emit(ev);
@@ -34,19 +34,24 @@ export class DetailVehiclesComp {
   resultsobjects = [];
   onRun() {
     this.isPlay = !this.isPlay;
-    this.http.get('assets/jsonfiles/data.json')
-      .map((res) => res.json())
-      .subscribe(data => {
-        if (!MoreActionsPopover.isRunAllenabled) {
-          this.resultsobjects = [];
-          var item = data.response.data.results[this.selectedVehicleIndex];
-          this.resultsobjects.push(item);
-        }
-        else {
-          this.resultsobjects = [];
-          this.resultsobjects = data.response.data.results;
-        }
-      }, (rej) => { console.error("Could not load local data", rej) });
+    if (this.isPlay) {
+      setTimeout(() => {
+      this.http.get('assets/jsonfiles/data.json')
+        .map((res) => res.json())
+        .subscribe(data => {
+          if (!MoreActionsPopover.isRunAllenabled) {
+            this.resultsobjects = [];
+            var item = data.response.data.results[this.selectedVehicleIndex];
+            this.resultsobjects.push(item);
+          }
+          else {
+            this.resultsobjects = [];
+            this.resultsobjects = data.response.data.results;
+          }
+        }, (rej) => { console.error("Could not load local data", rej) });
+        this.isPlay = false;
+      }, 2000);      
+    }    
   }
   isTargetposAvailable: boolean = false;
 
@@ -61,7 +66,6 @@ export class DetailVehiclesComp {
       .map((res) => res.json())
       .subscribe(data => {
         var results = data.response.data.results;
-
         results.forEach(element => {
           var item = { "item": "1" }
           this.resultsobjects.push(item);

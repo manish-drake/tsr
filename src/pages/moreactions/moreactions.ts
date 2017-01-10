@@ -70,10 +70,12 @@ export class MoreActionsPopover {
 
   repeatTest() {
     MoreActionsPopover.isReapeatEnabled = !MoreActionsPopover.isReapeatEnabled;
+    return MoreActionsPopover.isReapeatEnabled;
   }
 
   autoSave() {
     MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
+    return MoreActionsPopover.isSaveEnabled;
   }
 
   onSwitchTheme() {
