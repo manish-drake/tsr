@@ -39,8 +39,8 @@ export class SectionsPage implements OnInit {
     this.activeRoute.params.subscribe(data => {
       var groupName = (data as any).name;
       this._svcHeader.title = groupName;
-      var sectionsSummaryData = this.objectService.createSectionsSummaryData(groupName);
-      this.dataSource = this.broker.createSectionsSummary(sectionsSummaryData);
+      // var sectionsSummaryData = this.objectService.createSectionsSummaryData(groupName);
+      // this.dataSource = this.broker.createSectionsSummary(sectionsSummaryData);
        
     })
 

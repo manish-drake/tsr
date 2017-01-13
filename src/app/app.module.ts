@@ -19,13 +19,14 @@ import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
 import { ThemesService } from '../services/themes/themes.service'
+import { FileFactory } from '../services/io/file-factory';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
 import { TestDetailComp } from '../comps/tests/detail/detail.comp';
+import { DetailVehiclesComp} from'../comps/tests/detail-vehicles/detail-vehicles';
 import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
 
 @NgModule({
     declarations: [
@@ -41,12 +42,12 @@ import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
         SetupPage,
         HelpPage,
         TestSectionComp,
-        TestDetailComp,
+        TestDetailComp,DetailVehiclesComp,
         TestCardComp,
         SpyDirective,
         PopMenuItemComp,
-        PopButtonComp,
-        LatlonglocatorPage
+        PopButtonComp
+        
     ],
     imports: [
         router,
@@ -69,7 +70,8 @@ import { LatlonglocatorPage } from '../pages/latlonglocator/latlonglocator';
         HeaderService,
         PopoverService,
         BrokerFactoryService,
-        ThemesService
+        ThemesService,
+        FileFactory,MoreActionsPopover
     ]
 })
 export class AppModule { }

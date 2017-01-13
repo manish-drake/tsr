@@ -15,14 +15,14 @@ import { ThemesService } from '../services/themes/themes.service'
 })
 export class MyApp implements OnInit {
   @ViewChild(Nav) content: Nav;
-  
+
   chosenTheme: String;
   Title: string = "Title";
   rootPage = HomePage;
-  
+
   public hb = new Hamburger();
 
-  constructor(platform: Platform, private popoverService:PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
+  constructor(private platform: Platform, private popoverService: PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
     // subscribe to theme changes and set a default chosen theme
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     platform.ready().then(() => {
@@ -33,13 +33,21 @@ export class MyApp implements OnInit {
     });
   }
 
-  ngOnInit(){
-    this._svcHeader.TitleUpdated.subscribe(e =>{
+  isAndroid: boolean = true;
+
+  ngOnInit() {
+    this._svcHeader.TitleUpdated.subscribe(e => {
       this.Title = e.title;
     });
+
+    if (this.platform.is('cordova')) {
+      if (!this.platform.is('android')) {
+        this.isAndroid = false;
+      }
+    }
   }
 
-  onItemSelectionChanged(e){
+  onItemSelectionChanged(e) {
     this._router.navigate(['group', e]);
   }
 }

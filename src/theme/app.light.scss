@@ -18,6 +18,10 @@
              color: $light-primary; }
    .currentsegment{ background-color: $light-background;
                     color: $light-primary; }
-   div { ion-grid{background-color: $light-background;} }
-   
+   div { ion-grid{background-color: $light-background;} 
+         svg{ circle{ stroke: #000000; } }
+   }
+    
+    
+    
 }

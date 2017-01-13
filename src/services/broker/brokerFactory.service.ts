@@ -39,10 +39,12 @@ export class BrokerFactoryService {
     createGroupDatasource(group: Group) {
         var groupDS = {
             "name": group.Name,
-            "sections": group.Sections.map(section => {
+            // "sections": group.Sections.map(section => {
+                  "sections": group.Test.map(section => {
                 return {
                     "name": section.Name,
-                    "count": section.Summaries.length
+                    "count": section.Summaries.length,
+                    "isFavorite": false
                 };
             })
         };

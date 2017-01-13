@@ -16,22 +16,22 @@
     <ion-label>DUAL PANEL</ion-label>
   </ion-item>
   <ion-item (click)="runall()">
-    <ion-icon name='walk' item-left [style.opacity]="isRunAllenabled ? '1.0' : '0.5' "></ion-icon>
-    <ion-label [style.opacity]="isRunAllenabled ? '1.0' : '0.5' ">RUN ALL</ion-label>
+    <ion-icon name='walk' item-left [style.opacity]="isrun() ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="isrun() ? '1.0' : '0.5' ">RUN ALL</ion-label>
   </ion-item>
   <ion-item (click)="repeatTest()">
-    <ion-icon name='repeat' item-left [style.opacity]="isReapeatEnabled ? '1.0' : '0.5' "></ion-icon>
-    <ion-label [style.opacity]="isReapeatEnabled ? '1.0' : '0.5' ">REPEAT</ion-label>
+    <ion-icon name='repeat' item-left [style.opacity]="!repeatTest() ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="repeatTest() ? '1.0' : '0.5' ">REPEAT</ion-label>
   </ion-item>
   <ion-item (click)="autoSave()">
-    <ion-icon [style.opacity]="isSaveEnabled ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
-    <ion-label [style.opacity]="isSaveEnabled ? '1.0' : '0.5' ">AUTO SAVE</ion-label>
+    <ion-icon [style.opacity]="!autoSave() ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
+    <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">AUTO SAVE</ion-label>
   </ion-item>
   <ion-item>
     <ion-icon name="star-outline" item-left></ion-icon>
     <ion-label>FAVORITE</ion-label>
   </ion-item>
-  <ion-item (click)="latlonginfo()">
+  <ion-item>
     <ion-icon name="funnel" item-left></ion-icon>
     <ion-label>FILTER</ion-label>
   </ion-item>

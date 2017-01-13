@@ -1,24 +1,28 @@
 <div class="items">
-  <div class="itemm" *ngFor="let section of group.sections" >
-    <ion-card #mydiv on-tap="doubleTapNavigation(section)" style="min-height:200px;position: relative;">
+  <div class="itemm" *ngFor="let section of group.sections">
+    <ion-card #mydiv on-tap="doubleTapNavigation(section)" style="min-height:200px;">
      <!--[style.border]="step===section.name ? '2px solid gray':''"-->
-     <ion-row style="position: absolute;">
+     <ion-row >
        <ion-col no-padding center style="width:100%;">
-       <button ion-button clear icon-only no-margin (click)="favorite()" [style.color]="isFavorite ? '#FFD400' : ''">
-            <ion-icon [name]="isFavorite ? 'star' : 'star-outline'"></ion-icon>
+       <button ion-button clear icon-only no-margin (click)="favorite(section)" [style.color]="section.isFavorite ? '#FFD400' : ''">
+            <ion-icon [name]="section.isFavorite ? 'star' : 'star-outline'"></ion-icon>
         </button>
         <button ion-button clear icon-only no-margin ><ion-icon name="download"></ion-icon></button>
        </ion-col>
        <ion-col padding-right center style="width:auto;flex:0 0 auto;color:#555555;">
-        <ion-icon name="albums">  {{section.count}}</ion-icon>
+        <ion-icon name="albums">  {{section.count+1}}</ion-icon>
        </ion-col>
      </ion-row>
-
-     <ion-row center style="position: absolute;height:100%;">
+     <ion-row center style="min-height:80px;">
 			<ion-col text-center center>
 				<ion-label style="font-size: 18px;">{{section.name}}</ion-label>
 			</ion-col>
 		</ion-row>
+    <ion-row>
+       <ion-col style="width:100%;">
+      <ion-label>RECENT TEST RESULTS</ion-label>
+       </ion-col>
+    </ion-row>
     </ion-card>
   </div>
 </div>

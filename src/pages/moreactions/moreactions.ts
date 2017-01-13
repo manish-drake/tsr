@@ -1,22 +1,16 @@
-import { Component } from '@angular/core';
-import { ViewController, Platform } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
-import { Router } from '@angular/router';
-import { LatlonglocatorPage } from '../../pages/latlonglocator/latlonglocator';
 
-/*
-  Generated class for the Moreactions page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-moreactions',
-  templateUrl: 'moreactions.html'
+  templateUrl: 'moreactions.html',
+  providers: [MoreActionsPopover]
 })
 export class MoreActionsPopover {
 
+  @Input() main: MoreActionsPopover;
   chosenTheme: String;
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
@@ -26,10 +20,8 @@ export class MoreActionsPopover {
   versionNumber: any;
 
   constructor(
-    public viewCtrl: ViewController,
     private platform: Platform,
-    private _themes: ThemesService,
-    private _router: Router) {
+    private _themes: ThemesService) {
 
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
@@ -63,23 +55,27 @@ export class MoreActionsPopover {
   onHelpClick(e) {
   }
 
-  isRunAllenabled: boolean = false;
-  isReapeatEnabled: boolean = false;
-  isSaveEnabled: boolean = false;
+  static isRunAllenabled: boolean = false;
+  static isReapeatEnabled: boolean = false;
+  static isSaveEnabled: boolean = false;
 
   runall() {
-    this.isRunAllenabled = !this.isRunAllenabled;
+    MoreActionsPopover.isRunAllenabled = !MoreActionsPopover.isRunAllenabled;
+    return MoreActionsPopover.isRunAllenabled;
+  }
+
+  isrun() {
+    return MoreActionsPopover.isRunAllenabled
   }
 
   repeatTest() {
-    this.isReapeatEnabled = !this.isReapeatEnabled;
+    MoreActionsPopover.isReapeatEnabled = !MoreActionsPopover.isReapeatEnabled;
+    return MoreActionsPopover.isReapeatEnabled;
   }
 
   autoSave() {
-    this.isSaveEnabled = !this.isSaveEnabled;
-  }
-  latlonginfo() {
-    this._router.navigate(['latlonglocator', LatlonglocatorPage]);
+    MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
+    return MoreActionsPopover.isSaveEnabled;
   }
 
   onSwitchTheme() {

@@ -1,28 +1,28 @@
-<div style="position: absolute;top: 40px;bottom:0;left: 0;right: 0;" text-left>
-    <ion-grid style="height: 100%;">
-            <ion-row style="height: auto;">
-                <ion-col no-padding style="width: auto;flex: 0 0 auto;">
-                    <button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
-                </ion-col>
-            <ion-col text-center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
-                <b style="font-size: 16px;"> {{test.name}} </b><br>
-                <span>(Screen {{testindex}} of {{testscount}})</span>
-            </ion-col>
-            <ion-col no-padding style="width: auto;flex: 0 0 auto;">
-                <button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
-            </ion-col>
-        </ion-row>
-    <ion-scroll scrollY="true" style="height:100%;width:100%;">
-        <table style="width:100%;margin: 15px;">
-            <tr *ngFor="let row of test.rows">
-                <td text-nowrap  *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
-                    <ion-label [class]="cell.keyStyle">{{ cell.key }}</ion-label>
-                    <ion-label [class]="cell.valueStyle">{{ cell.value }}</ion-label>
-                    <ion-label [class]="cell.unitStyle">{{ cell.unit }}</ion-label>
-                </td>
-            </tr>
-         </table>
-      </ion-scroll>
+<div style="position: absolute;top: 40px;bottom: 0;left: 0;right: 0;" text-left>
+<ion-grid style="height: 100%;">
+<ion-row style="height: auto;">
+<ion-col no-padding style="width: auto;flex: 0 0 auto;">
+<button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
+</ion-col>
+<ion-col text-center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+<b style="font-size: 16px;"> {{test.name}} </b><br>
+<span>(Screen {{testindex}} of {{testscount}})</span>
+</ion-col>
+<ion-col no-padding style="width: auto;flex: 0 0 auto;">
+<button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
+</ion-col>
+</ion-row>
+<ion-scroll scrollY="true" style="height:100%;width:100%;">
+<table style="width:100%;margin: 15px;">
+<tr *ngFor="let row of test.rows">
+    <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
+        <ion-label [class]="cell.keyStyle">{{ cell.key }}</ion-label>
+        <ion-label [class]="cell.valueStyle">{{ cell.value }}</ion-label>
+        <ion-label [class]="cell.unitStyle">{{ cell.unit }}</ion-label>
+    </td>
+</tr>
+</table>
+</ion-scroll>
 
 
 <ion-fab margin bottom right>
@@ -31,6 +31,5 @@
 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
 </button>
 </ion-fab>
-
 </ion-grid>
 </div>
