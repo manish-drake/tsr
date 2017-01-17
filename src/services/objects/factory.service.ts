@@ -15,7 +15,7 @@ export class Factory {
     }
 
     createGroup(groupName: string): Group {
-        var group:Group = new Group();
+        var group: Group = new Group();
         switch (groupName) {
             case 'UAT': {
                 // group.Sections = [
@@ -25,10 +25,15 @@ export class Factory {
                 //     this.createSectionsSummaryData("VSWR")
                 // ];
                 group.Test = [
-                    this.createSectionsDetailData("UAT ADS-B OUT"),
-                    this.createSectionsDetailData("UAT ADS-B IN"),
-                    this.createSectionsDetailData("UAT RF"),
-                    this.createSectionsDetailData("VSWR")
+                    // this.createSectionsDetailData("UAT ADS-B OUT"),
+                    // this.createSectionsDetailData("UAT ADS-B IN"),
+                    // this.createSectionsDetailData("UAT RF"),
+                    // this.createSectionsDetailData("VSWR")
+                    this.createSectionsDetailData("ADS-B SUMMARY"),
+                    this.createSectionsDetailData("ADS-B OUT"),
+                    this.createSectionsDetailData("ADS-B IN"),
+                    this.createSectionsDetailData("ADS-B DATA"),
+                    this.createSectionsDetailData("ADS-B TBD")
                 ];
                 break;
             }
@@ -569,18 +574,51 @@ export class Factory {
         // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
-            case 'UAT ADS-B OUT': {
+            case 'ADS-B SUMMARY': {
+                newTest.Styles.add("key", "detailLabel");
+                newTest.Styles.add("value", "detailResult2");
+                newTest.Styles.add("unit", "detailUnit");
+
+                newTest.Name = test;
+                //-----------------------1------------------------
+                var adssum1 = new Test();
+                adssum1.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum1);
+                //------------------------2------------------------
+                var adssum2 = new Test();
+                adssum2.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum2);
+                //------------------------3------------------------
+                var adssum3 = new Test();
+                adssum3.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum3);
+                //-----------------------4------------------------
+                var adssum4 = new Test();
+                adssum4.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum4);
+                //------------------------5------------------------
+                var adssum5 = new Test();
+                adssum5.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum5);
+                //------------------------3------------------------
+                var adssum6 = new Test();
+                adssum6.Name = "ADS-B SUMMARY";
+
+                newTest.Summaries.push(adssum6);
+            }
+                break;
+            case 'ADS-B OUT': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
 
-                // //------------------------UAT Filter Target------------------------
-                // var uft = new Test();
-                // uft.Name = "UAT Filter Target";
-
-                // newTest.Summaries.push(uft);
                 //------------------------UAT Mode Status Test-----------------------------
                 var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
@@ -1478,7 +1516,7 @@ export class Factory {
                 newTest.Summaries.push(rft);
             }
                 break;
-            case 'UAT ADS-B IN': {
+            case 'ADS-B IN': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
                 newTest.Styles.add("unit", "detailUnit");
@@ -1486,50 +1524,50 @@ export class Factory {
                 newTest.Name = test;
                 //-----------------------UAT In------------------------
                 var uati = new Test();
-                uati.Name = "UAT In";
+                uati.Name = "ADS-B IN";
 
                 newTest.Summaries.push(uati);
                 //------------------------TIS-B------------------------
                 var tisb = new Test();
-                tisb.Name = "TIS-B";
+                tisb.Name = "ADS-B IN";
 
                 newTest.Summaries.push(tisb);
-                //------------------------FIS-B------------------------
-                var fisb = new Test();
-                fisb.Name = "FIS-B";
-
-                newTest.Summaries.push(fisb);
             }
                 break;
-            case 'UAT RF': {
+            case 'ADS-B DATA': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
-                //------------------------UAT RF Link Test-----------------------------
-                var urfl = new Test();
-                urfl.Name = "UAT RF Link";
+                //------------------------ADS-B DATA=1-----------------------------
+                var adsdata1 = new Test();
+                adsdata1.Name = "ADS-B DATA";
 
-                newTest.Summaries.push(urfl);
-                //------------------------GPS Status-----------------------------
-                var gpss = new Test();
-                gpss.Name = "GPS Status";
+                newTest.Summaries.push(adsdata1);
+                //------------------------ADS-B DATA=2-----------------------------
+                var adsdata2 = new Test();
+                adsdata2.Name = "ADS-B DATA";
 
-                newTest.Summaries.push(gpss);
+                newTest.Summaries.push(adsdata2);
+                //------------------------ADS-B DATA=3-----------------------------
+                var adsdata3 = new Test();
+                adsdata3.Name = "ADS-B Data";
+
+                newTest.Summaries.push(adsdata3);
             }
                 break;
-            case 'VSWR': {
+            case 'ADS-B TBD': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
                 //------------------------VSWR------------------------
-                var vswr = new Test();
-                vswr.Name = "VSWR";
+                var adstbd = new Test();
+                adstbd.Name = "ADS-B TBD";
 
-                newTest.Summaries.push(vswr);
+                newTest.Summaries.push(adstbd);
             }
 
         }
