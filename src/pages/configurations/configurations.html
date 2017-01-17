@@ -1,4 +1,38 @@
-<div [class]="chosenTheme">
+<ion-list style="margin:0px" [class]="chosenTheme">
+    <ion-item>
+        <ion-label>DEVICE CLASS</ion-label>
+        <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label>ANTENNA</ion-label>
+        <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label>CONNECTION</ion-label>
+        <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label>FLIGHTLINE MODE</ion-label>
+        <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label>DISTANCE</ion-label>
+         <ion-range [(ngModel)]="distance">
+             <label range-left>10 FT</label>
+             <label range-right>300 FT</label>
+         </ion-range>
+    </ion-item>
+    <ion-item>
+        <ion-label>WIFI</ion-label>
+        <ion-toggle></ion-toggle>
+    </ion-item>
+     <ion-item no-lines>
+    <ion-label>THEME</ion-label>
+    <ion-toggle [checked]="selected == 'dark-theme'" (ionChange)="onSwitchTheme()"></ion-toggle>
+  </ion-item>
+</ion-list>
+
+<!--<div [class]="chosenTheme">
     <ion-item no-lines>
     <ion-row>
         <ion-col>
@@ -25,4 +59,4 @@
         </ion-col>
     </ion-row>
     </ion-item>
-</div>
+</div>-->
