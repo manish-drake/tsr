@@ -6,7 +6,7 @@
 <ion-buttons end>
   <ion-row>
     <ion-col no-padding>
-      <button ion-button clear icon-only (click)="openConfigurations()"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+      <pop-button [popSource]="config"></pop-button>
     </ion-col>
     <ion-col no-padding>
       <button ion-button clear icon-only><ion-icon name="list-box"></ion-icon></button>
