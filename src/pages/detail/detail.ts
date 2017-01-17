@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Slides} from 'ionic-angular'
+import { Slides } from 'ionic-angular'
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { HeaderService } from '../../services/ui/header.service'
@@ -33,7 +33,7 @@ export class DetailPage {
 
   public testset: any;
   parent: any;
-  
+
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.parent = (data as any).parent;
@@ -47,11 +47,30 @@ export class DetailPage {
     });
   }
 
-  // showSegment(selectedindex: number) {
-  //   if (selectedindex != this.currentSegment) {
-  //     this.currentSegment = selectedindex;
-  //   }   
-  // }
+  currentView: any = "default";
+
+  nextViewIcon = "locate"
+
+  changeView() {
+    if (this.currentView == "default") {
+      this.currentView = "radar";
+      this.nextViewIcon = "pulse";
+    }
+    else if (this.currentView == "radar") {
+      this.currentView = "waveform";
+      this.nextViewIcon = "list-box";
+    }
+    else if (this.currentView == "waveform") {
+      this.currentView = "default";
+      this.nextViewIcon = "locate";
+    }
+  }
+
+  isRunnig: boolean = false;
+
+  onRun() {
+    this.isRunnig = !this.isRunnig;
+  }
 
   onNavigate(ev: string) {
     switch (ev) {

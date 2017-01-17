@@ -5,7 +5,7 @@
 <ion-grid style="height: 100%;">
 <ion-row style="height: auto;">
 <ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear large><ion-icon name="list-box"></ion-icon></button>
+<button ion-button icon-only clear large (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
 </ion-col>
 <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
 <b style="font-size: 16px;"> {{test.name}} </b><br>
@@ -19,8 +19,10 @@
 </ion-row>
 
 <ion-row style="height: 100%;">
-    <ion-scroll scrollY="true" style="height:100%;width:100%; ">
-        <detail-main [test]="test"></detail-main>
+    <ion-scroll scrollY="true" style="height:100%;width:100%; " [ngSwitch]="currentView">
+        <detail-main [test]="test" *ngSwitchCase="'default'"></detail-main>
+        <detail-radar [test]="test" *ngSwitchCase="'radar'"></detail-radar>
+        <detail-waveform [test]="test" *ngSwitchCase="'waveform'"></detail-waveform>
     </ion-scroll>
 </ion-row>
 

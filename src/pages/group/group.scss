@@ -7,4 +7,8 @@ page-group {
 	flex: 0 0 50%;
   box-sizing: border-box;
 }
+
+.selectedcard{
+	border: 1.5px solid color($colors, primary);
+}
 }

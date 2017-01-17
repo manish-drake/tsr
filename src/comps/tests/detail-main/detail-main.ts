@@ -7,10 +7,6 @@ import { Component, Input } from '@angular/core';
 export class DetailMainComp{
     @Input() test: any;
 
-    isRunnig:boolean = false;
-
-    onRun(){
-        this.isRunnig = !this.isRunnig;
-    }
+    constructor() {}
     
 }
