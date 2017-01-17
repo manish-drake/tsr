@@ -927,6 +927,16 @@ export class Factory {
 
                 mst.TestParamCells.push(cNicsup3);
 
+                var result3 = new TestParam();
+                result3.Key = "Result:";
+                var cResult3 = new TestParamCell(result3);
+                cResult3.Row = 22;
+                cResult3.Column = 0;
+                cResult3.ColSpan = 4;
+                cResult3.Styles.add("key", "result");
+
+                mst.TestParamCells.push(cResult3);
+
                 newTest.Summaries.push(mst);
 
                 //------------------------UAT State Vector Test-----------------------------
@@ -1148,6 +1158,16 @@ export class Factory {
 
                 usvt.TestParamCells.push(cSeca1);
 
+                var result1 = new TestParam();
+                result1.Key = "Result:";
+                var cResult1 = new TestParamCell(result1);
+                cResult1.Row = 16;
+                cResult1.Column = 0;
+                cResult1.ColSpan = 4;
+                cResult1.Styles.add("key", "result");
+
+                usvt.TestParamCells.push(cResult1);
+
                 newTest.Summaries.push(usvt);
 
                 //------------------------UAT Target State Test-----------------------------
@@ -1320,6 +1340,16 @@ export class Factory {
                 cLnav6.Styles.add("value", "detailResult");
 
                 tst.TestParamCells.push(cLnav6);
+
+                var result6 = new TestParam();
+                result6.Key = "Result:";
+                var cResult6 = new TestParamCell(result6);
+                cResult6.Row = 16;
+                cResult6.Column = 0;
+                cResult6.ColSpan = 4;
+                cResult6.Styles.add("key", "result");
+
+                tst.TestParamCells.push(cResult6);
 
                 newTest.Summaries.push(tst);
 
@@ -1512,6 +1542,16 @@ export class Factory {
                 cEc4.Styles.add("value", "detailResult");
 
                 rft.TestParamCells.push(cEc4);
+
+                var result4 = new TestParam();
+                result4.Key = "Result:";
+                var cResult4 = new TestParamCell(result4);
+                cResult4.Row = 16;
+                cResult4.Column = 0;
+                cResult4.ColSpan = 4;
+                cResult4.Styles.add("key", "result");
+
+                rft.TestParamCells.push(cResult4);
 
                 newTest.Summaries.push(rft);
             }
