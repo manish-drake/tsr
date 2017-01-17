@@ -79,11 +79,21 @@ export class DetailPage {
         break;
       }
       case 'next': {
-        this.slides.slideNext();
+        if(this.slides.isEnd()){
+          this.slides.slideTo(0);
+        }
+        else{
+          this.slides.slideNext(this.slides.getActiveIndex() + 1);
+        }
         break;
       }
       case 'prev': {
-        this.slides.slidePrev();
+        if(this.slides.isBeginning()){
+          this.slides.slideTo(this.slides.length());
+        }
+        else{
+          this.slides.slidePrev(this.slides.getActiveIndex() - 1);
+        }
         break;
       }
       default: { break; }
