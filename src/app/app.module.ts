@@ -21,8 +21,10 @@ import { PopoverService } from '../services/ui/popover.service'
 import { ThemesService } from '../services/themes/themes.service'
 import { FileFactory } from '../services/io/file-factory';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
-import { TestDetailComp } from '../comps/tests/detail/detail.comp';
-import { DetailVehiclesComp} from'../comps/tests/detail-vehicles/detail-vehicles';
+import { DetailMainComp } from '../comps/tests/detail-main/detail-main';
+import { DetailRadarComp } from '../comps/tests/detail-radar/detail-radar';
+import { DetailWaveformComp } from '../comps/tests/detail-waveform/detail-waveform';
+import { DetailVehiclesComp } from '../comps/tests/detail-vehicles/detail-vehicles';
 import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
 import { PopButtonComp } from '../comps/popover/pop-button.comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
@@ -42,12 +44,12 @@ import { SpyDirective } from '../common/mySpy.directive';
         SetupPage,
         HelpPage,
         TestSectionComp,
-        TestDetailComp,DetailVehiclesComp,
+        DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         TestCardComp,
         SpyDirective,
         PopMenuItemComp,
         PopButtonComp
-        
+
     ],
     imports: [
         router,
@@ -71,7 +73,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         PopoverService,
         BrokerFactoryService,
         ThemesService,
-        FileFactory,MoreActionsPopover
+        FileFactory, MoreActionsPopover
     ]
 })
 export class AppModule { }

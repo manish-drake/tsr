@@ -2,12 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FileFactory } from '../../../services/io/file-factory';
 import { Master } from '../../../services/test-set/master.service'
 import { MoreActionsPopover } from '../../../pages/moreactions/moreactions';
-/*
-  Generated class for the DetailVehicles page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'detail-vehicles',
   templateUrl: 'detail-vehicles.html'
