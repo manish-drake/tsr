@@ -16,8 +16,10 @@ import { PopoverService } from '../../services/ui/popover.service'
 export class HeaderComponent {
   @Input() title: string;
   public more:any;
+  public config:any;
   constructor(private _popoverService: PopoverService) { 
     this.more = this.createPopSource("more", "MORE", "more");
+    this.config = this.createPopSource("arrow-dropdown-circle", "CONFIG", "config");
   }
 createPopSource = function (name, label, target) {
     return {
@@ -34,8 +36,8 @@ createPopSource = function (name, label, target) {
   moreActionPopover(e) {
     this._popoverService.showMoreMenu(e);
   }
-  openConfigurations() {
-    // this._popoverService.showConfiguration(e);
+  openConfigurations(e) {
+    this._popoverService.showConfigurations(e);
   }
 
 }

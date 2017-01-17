@@ -12,8 +12,6 @@ export class MoreActionsPopover {
 
   @Input() main: MoreActionsPopover;
   chosenTheme: String;
-  selected: String;
-  availableThemes: { className: string, prettyName: string }[];
 
   public setup: any;
   public help: any;
@@ -32,8 +30,6 @@ export class MoreActionsPopover {
     });
 
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
-    this._themes.getTheme().subscribe(val => this.selected = val);
-    this.availableThemes = this._themes.availableThemes;
 
     this.setup = this.createPopSource("settings", "SETUP TEST", "setup");
     this.help = this.createPopSource("help-circle", "HELP", "help");
@@ -77,16 +73,4 @@ export class MoreActionsPopover {
     MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
     return MoreActionsPopover.isSaveEnabled;
   }
-
-  onSwitchTheme() {
-    if (this.selected == 'light-theme') {
-      this._themes.setTheme('dark-theme');
-      localStorage.setItem("tsrtheme", "dark-theme");
-    }
-    else {
-      this._themes.setTheme('light-theme');
-      localStorage.setItem("tsrtheme", "light-theme");
-    }
-  }
-
 }
