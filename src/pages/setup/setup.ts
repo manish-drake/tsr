@@ -13,10 +13,17 @@ import { NavController } from 'ionic-angular';
 })
 export class SetupPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) { }
 
+  pwrValue: any;
   ionViewDidLoad() {
+    this.pwrValue =-39.0
     console.log('Hello SetupPage Page');
+  }
+  isPowerClicked: boolean = false;
+
+  power() {
+    this.isPowerClicked = !this.isPowerClicked;
   }
 
 }
