@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Slides} from 'ionic-angular'
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { HeaderService } from '../../services/ui/header.service'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
@@ -16,9 +18,7 @@ import { Factory } from '../../services/objects/factory.service'
 })
 export class DetailPage {
 
-  // slides = [{name: 'Test 1'},{name: 'Test 2'},{name: 'Test 3'}];
-  slider: any;
-  options: any;
+  @ViewChild('Slides') slides: Slides;
 
   currentSegment: any = -1;
 
@@ -32,9 +32,8 @@ export class DetailPage {
   }
 
   public testset: any;
-
   parent: any;
-
+  
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.parent = (data as any).parent;
@@ -43,27 +42,16 @@ export class DetailPage {
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
 
-      // var initialSlide = 0;
-      // this.testset.tests.forEach((element, index) => {
-      //   if (element.name == (data as any).test) {
-      //     currentSegment = index;
-      //   }
-      // });
-
-      // this.options = {
-      //   initialSlide: initialSlide,
-      //   loop: true,
-      //   onInit: (slides: any) => {
-      //     this.slider = slides;
-      //   }
-      // }
+      this.slides.loop = true;
+      this.slides.initialSlide = 0;
     });
   }
-  showSegment(selectedindex: number) {
-    if (selectedindex != this.currentSegment) {
-      this.currentSegment = selectedindex;
-    }   
-  }
+
+  // showSegment(selectedindex: number) {
+  //   if (selectedindex != this.currentSegment) {
+  //     this.currentSegment = selectedindex;
+  //   }   
+  // }
 
   onNavigate(ev: string) {
     switch (ev) {
@@ -71,14 +59,14 @@ export class DetailPage {
         this._router.navigate(['group', "UAT"]);
         break;
       }
-      // case 'next': {
-      //   this.slider.slideNext();
-      //   break;
-      // }
-      // case 'prev': {
-      //   this.slider.slidePrev();
-      //   break;
-      // }
+      case 'next': {
+        this.slides.slideNext();
+        break;
+      }
+      case 'prev': {
+        this.slides.slidePrev();
+        break;
+      }
       default: { break; }
     }
   }
