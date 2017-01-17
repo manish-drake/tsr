@@ -1,54 +1,9 @@
-<ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
-<ion-grid style="height: 100%;">
-<ion-row style="height: auto;">
-<ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear><ion-icon name="list-box"></ion-icon></button>
-</ion-col>
-<ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
-<b style="font-size: 16px;"> {{test.name}} </b><br>
-<div *ngFor="let test of tests; let i = index;"
-      [style.background]="i == index ? 'gray' : 'transparent' "
-      style="display: inline-block;height: 8px;width: 8px;margin: 5px;border: 2px solid gray;"></div>
-</ion-col>
-<ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear (click)="navigate('close')"><ion-icon name="close"></ion-icon></button>
-</ion-col>
-</ion-row>
-
-<ion-scroll scrollY="true" style="height:100%;width:100%;">
 <table style="width:100%;margin: 15px;">
-<tr *ngFor="let row of test.rows">
+  <tr *ngFor="let row of test.rows">
     <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
         <ion-label [class]="cell.keyStyle">{{ cell.key }}</ion-label>
         <ion-label [class]="cell.valueStyle">{{ cell.value }}</ion-label>
         <ion-label [class]="cell.unitStyle">{{ cell.unit }}</ion-label>
     </td>
-</tr>
+  </tr>
 </table>
-</ion-scroll>
-
-<ion-row>
-    <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-<button ion-button clear (click)="navigate('prev')"><b>< Previous</b> </button>
-</ion-col>
-<ion-col center text-center style="width: 100%;">
-<button ion-button icon-only outline class="playbutton" (click)="onRun()">
-     <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:5px;"></ion-icon>
-<ion-icon name="square" *ngIf="isRunnig"></ion-icon>
-</button>
-</ion-col>
-<ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-<button ion-button clear (click)="navigate('next')"><b> Next ></b></button>
-</ion-col>
-</ion-row>
-
-
-<!--<ion-fab margin bottom center>
-    <button ion-fab (click)="onRun()">
-                    <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:3px;"></ion-icon>
-<ion-icon name="square" *ngIf="isRunnig"></ion-icon>
-</button>
-</ion-fab>-->
-
-</ion-grid>
-</ion-card>

@@ -17,6 +17,8 @@ export class ConfigurationsPopover {
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
 
+  distanceValue: any = 230;
+
   constructor(private _themes: ThemesService) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);

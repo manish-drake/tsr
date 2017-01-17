@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PopoverController } from 'ionic-angular';
+import { PopoverController, PopoverOptions } from 'ionic-angular';
+
 import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
 import { HelpPage } from '../../pages/help/help';
 import { SetupPage } from '../../pages/setup/setup';
@@ -47,7 +48,8 @@ export class PopoverService {
     }
 
     showConfigurations(e) {
-        let popover = this._popoverCtrl.create(ConfigurationsPopover);
+        var popoverOptions: PopoverOptions = {cssClass:"config-popover"}
+        let popover = this._popoverCtrl.create(ConfigurationsPopover,{}, popoverOptions);
         popover.present({ ev: e });
     }
 }

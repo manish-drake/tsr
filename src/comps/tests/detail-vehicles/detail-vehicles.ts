@@ -65,16 +65,18 @@ selectAv() {
 
 ngAfterViewInit() {
   this.onResize(event);
-
+    this.master.scanTest()
+      .subscribe(data => {
+        console.log(data);
   // this.http.get('assets/jsonfiles/data.json')
   //   .map((res) => res.json())
   //   .subscribe(data => {
-  //     var results = data.response.data.results;
-  //     results.forEach(element => {
-  //       var item = { "item": "1" }
-  //       this.resultsobjects.push(item);
-  //     });
-  //   }, (rej) => { console.error("Could not load local data", rej) });
+      var results = data.response.data.results;
+      results.forEach(element => {
+        var item = { "item": "1" }
+        this.resultsobjects.push(item);
+      });
+    }, (rej) => { console.error("Could not load local data", rej) });
 }
 
 isPortrait: boolean = true;
