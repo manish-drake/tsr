@@ -4,8 +4,15 @@ page-group {
 	flex-wrap: wrap;
 }
 .items .itemm {
-	flex: 0 0 50%;
+	flex: 0 0 100%;
   box-sizing: border-box;
+  min-width: 220px;
+}
+
+@media (min-width: 450px) {
+  .items .itemm {
+    max-width: calc(50%);
+  }
 }
 
 .selectedcard{

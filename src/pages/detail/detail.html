@@ -10,8 +10,8 @@
 <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
 <b style="font-size: 16px;"> {{test.name}} </b><br>
 <div *ngFor="let test of testset.tests; let ei = index;"
-      [style.background]="ei == i ? 'gray' : 'transparent' "
-      style="display: inline-block;height: 8px;width: 8px;margin: 5px;border: 2px solid gray;"></div>
+      [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
+      style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
 </ion-col>
 <ion-col no-padding style="width: auto;flex: 0 0 auto;">
 <button ion-button icon-only clear large (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>

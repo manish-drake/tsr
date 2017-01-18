@@ -43,7 +43,6 @@ export class DetailPage {
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
 
       this.slides.loop = true;
-      this.slides.initialSlide = 0;
     });
   }
 
@@ -79,21 +78,11 @@ export class DetailPage {
         break;
       }
       case 'next': {
-        if(this.slides.isEnd()){
-          this.slides.slideTo(0);
-        }
-        else{
-          this.slides.slideNext(this.slides.getActiveIndex() + 1);
-        }
+        this.slides.slideNext();
         break;
       }
       case 'prev': {
-        if(this.slides.isBeginning()){
-          this.slides.slideTo(this.slides.length());
-        }
-        else{
-          this.slides.slidePrev(this.slides.getActiveIndex() - 1);
-        }
+        this.slides.slidePrev();
         break;
       }
       default: { break; }
