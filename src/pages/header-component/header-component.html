@@ -12,7 +12,7 @@
       </ion-row>
     </ion-col>
     <ion-col no-padding style="width: auto; flex: 0 0 auto;">
-      <button ion-button clear icon-only (click)="openConfigurations($event)"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+      <popover-button-comp [popoverSource]="config"></popover-button-comp>
     </ion-col>
     <ion-col no-padding>
       <ion-row>

@@ -13,9 +13,11 @@
 }
 
 .config-popover{
-    .item { }
-
+    .popover-content{
+        width: 350px;
+    }
 }
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

@@ -21,6 +21,7 @@ export class HeaderComponent {
     this.more = this.createPopOverSource("more", "MORE", "more");
     this.config = this.createPopOverSource("arrow-dropdown-circle", "CONFIG", "config");
   }
+
 createPopOverSource = function (name, label, target) {
     return {
       "name": name,
@@ -33,9 +34,6 @@ createPopOverSource = function (name, label, target) {
   ionViewDidLoad() {
   }
 
-  moreActionPopover(e) {
-    this._popoverService.showMoreMenu(e);
-  }
   openConfigurations(e) {
     this._popoverService.showConfigurations(e);
   }
