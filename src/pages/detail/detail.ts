@@ -41,8 +41,6 @@ export class DetailPage {
       this._svcHeader.title = groupName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
-
-      this.slides.loop = true;
     });
   }
 
