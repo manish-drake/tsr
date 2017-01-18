@@ -9,11 +9,15 @@
   <pop-menu-item [popSource]="help"></pop-menu-item>
   <ion-item>
     <ion-icon name="remove-circle" item-left></ion-icon>
-    <ion-label>CLEAR RESULTS</ion-label>
+    <ion-label>CLEAR</ion-label>
   </ion-item>
   <ion-item>
     <ion-icon name="browsers" item-left></ion-icon>
     <ion-label>DUAL PANEL</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="funnel" item-left></ion-icon>
+    <ion-label>FILTER</ion-label>
   </ion-item>
   <ion-item (click)="runall()">
     <ion-icon name='walk' item-left [style.opacity]="isrun() ? '1.0' : '0.5' "></ion-icon>
@@ -25,15 +29,15 @@
   </ion-item>
   <ion-item (click)="autoSave()">
     <ion-icon [style.opacity]="!autoSave() ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
-    <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">AUTO SAVE</ion-label>
+    <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">LOG DATA</ion-label>
   </ion-item>
   <ion-item>
     <ion-icon name="star-outline" item-left></ion-icon>
     <ion-label>FAVORITE</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-icon name="funnel" item-left></ion-icon>
-    <ion-label>FILTER</ion-label>
+   <ion-item>
+    <ion-icon name="star-outline" item-left></ion-icon>
+    <ion-label>GUIDE</ion-label>
   </ion-item>
   <ion-item no-lines>
     <p item-right>Version {{versionNumber}}</p>
