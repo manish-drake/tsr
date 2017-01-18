@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
+import { ThemesService } from '../../services/themes/themes.service';
 /*
   Generated class for the Help page.
 
@@ -11,16 +12,16 @@ import { ViewController } from 'ionic-angular';
   templateUrl: 'help.html'
 })
 export class HelpPage {
-
-  constructor(public viewCtrl: ViewController) {}
+  chosenTheme: String;
+  constructor(public viewCtrl: ViewController, private _themes: ThemesService) {
+    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+  }
 
   ionViewDidLoad() {
     console.log('Hello HelpPage Page');
   }
 
   dismiss() {
-        this.viewCtrl.dismiss();
-    }
-
-
+    this.viewCtrl.dismiss();
+  }
 }

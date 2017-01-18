@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ThemesService } from '../../services/themes/themes.service';
 
 /*
   Generated class for the Setup page.
@@ -12,12 +12,14 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'setup.html'
 })
 export class SetupPage {
-
-  constructor(public navCtrl: NavController) { }
+  chosenTheme: String;
+  constructor(private _themes: ThemesService) {
+    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+  }
 
   pwrValue: any;
   ionViewDidLoad() {
-    this.pwrValue =-39.0
+    this.pwrValue = -39.0
     console.log('Hello SetupPage Page');
   }
   isPowerClicked: boolean = false;
