@@ -1,1 +1,26 @@
-<ion-title>Radar</ion-title>
+<div align="center">
+    <svg viewBox="0 0 1450 1250" [style.width]="isPortrait ? '100%' : '45%' " (window:resize)="onResize()">
+        <text x="1200" y="200" font-size="36" font-weight="600">Scale: 1 NM</text>
+        <text x="700" y="90" font-size="36">0 deg</text>
+        <text x="670" y="1190" font-size="36">180 deg</text>
+        <text x="1300" y="635" font-size="36">90 deg</text>
+        <text x="40" y="635" font-size="36">270 deg</text>
+
+        <svg viewBox="0 0 1050 1050" x="200" y="100" width="1050" height="1050">
+            <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5"
+                fill-opacity="0" />
+
+            <svg *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)"
+                height="30" width="30">
+                <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
+            </svg>
+            <text *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)-30" [attr.y]="getY(object.latitude, object.longitude)-5"
+                font-size="32" width="30" height="30">{{object.address}}</text>
+        </svg>
+    </svg>
+</div>
+<ion-row>
+    <ion-col>
+        <ion-label style="font-size: 21px;font-weight: 600;">Result:</ion-label>
+    </ion-col>
+</ion-row>

@@ -10,14 +10,14 @@ import { MoreActionsPopover } from '../../../pages/moreactions/moreactions';
 export class DetailVehiclesComp {
   @Output() onNavigate = new EventEmitter<string>();
 
-  circleobjs = [
-    { cx: 525, cy: 525, r: 470 },
-    { cx: 525, cy: 525, r: 370 },
-    { cx: 525, cy: 525, r: 270 },
-    { cx: 525, cy: 525, r: 170 },
-    { cx: 525, cy: 525, r: 70 },
-    { cx: 525, cy: 525, r: 0 }
-  ];
+  // circleobjs = [
+  //   { cx: 525, cy: 525, r: 470 },
+  //   { cx: 525, cy: 525, r: 370 },
+  //   { cx: 525, cy: 525, r: 270 },
+  //   { cx: 525, cy: 525, r: 170 },
+  //   { cx: 525, cy: 525, r: 70 },
+  //   { cx: 525, cy: 525, r: 0 }
+  // ];
 
   constructor(private fileFactory: FileFactory, private master: Master, private moreaction: MoreActionsPopover) { }
 
@@ -59,7 +59,8 @@ selectAv() {
 }
 
 ngAfterViewInit() {
-  this.onResize(event);
+  // this.onResize(event);
+
     this.master.scanTest()
       .subscribe(data => {
         console.log(data);
@@ -74,37 +75,38 @@ ngAfterViewInit() {
     }, (rej) => { console.error("Could not load local data", rej) });
 }
 
-isPortrait: boolean = true;
-onResize(event) {
-  if (window.innerHeight > window.innerWidth) {
-    this.isPortrait = true;
-  }
-  else if (window.innerHeight < window.innerWidth) {
-    this.isPortrait = false;
-  }
-}
-
-getY(lat, lon) {
-  var containerMid = 525;
-  var radius = 470;
-  var objectsize = 30;
-  var rad2deg = Math.PI / 180;
-  var lony = (lat * (2 * radius) / 180)
-  return containerMid - lony * (Math.cos(lon * rad2deg)) - (objectsize / 2);
-}
-
-getX(lat, lon) {
-  var containerMid = 525;
-  var radius = 470;
-  var objectsize = 30;
-  var rad2deg = Math.PI / 180;
-  var latx = radius * Math.sin(lon * rad2deg);
-  return containerMid + latx - (objectsize / 2);
-}
-
 selectedVehicleIndex = 0;
 
 onVehicleClick(index) {
   this.selectedVehicleIndex = index;
 }
+
+// isPortrait: boolean = true;
+// onResize(event) {
+//   if (window.innerHeight > window.innerWidth) {
+//     this.isPortrait = true;
+//   }
+//   else if (window.innerHeight < window.innerWidth) {
+//     this.isPortrait = false;
+//   }
+// }
+
+// getY(lat, lon) {
+//   var containerMid = 525;
+//   var radius = 470;
+//   var objectsize = 30;
+//   var rad2deg = Math.PI / 180;
+//   var lony = (lat * (2 * radius) / 180)
+//   return containerMid - lony * (Math.cos(lon * rad2deg)) - (objectsize / 2);
+// }
+
+// getX(lat, lon) {
+//   var containerMid = 525;
+//   var radius = 470;
+//   var objectsize = 30;
+//   var rad2deg = Math.PI / 180;
+//   var latx = radius * Math.sin(lon * rad2deg);
+//   return containerMid + latx - (objectsize / 2);
+// }
+
 }

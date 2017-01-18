@@ -26,10 +26,6 @@ export class GroupPage implements OnInit {
 
   }
 
-  ionViewDidLoad() {
-    console.log('Hello GroupPage Page');
-  }
-
   group: any;
 
   parent: any;
@@ -50,16 +46,18 @@ export class GroupPage implements OnInit {
     })
   }
 
-  public step: string;
+  selectedCardIndex = 0
+
+  onCardClick(i){
+    this.selectedCardIndex = i;
+  }
+
+
   private clicks = 0;
   doubleTapNavigation(test) {
     this.clicks++;
     if (this.clicks == 1) {
       setTimeout(() => {
-        // console.log(this.clicks);
-        if (this.clicks == 1) {
-          this.step = test.name;
-        }
         if (this.clicks == 2) {
           this._router.navigate(['detail', test.name, this.parent])
         }
