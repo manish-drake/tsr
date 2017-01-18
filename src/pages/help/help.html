@@ -1,5 +1,6 @@
 <ion-content>
-<ion-row text-center>
+  <ion-grid style="height: 100%;">
+<ion-row text-center style="height: 100%;">
   <ion-col>
   <h5 text-center text-nowrap>ADS-B Velocity Test</h5>
   <h6 text-center text-nowrap style="font-weight: 600;">HELP</h6>
@@ -8,13 +9,14 @@
       <i><ion-icon text-nowrap style="font-size: 100px" name="md-plane"></ion-icon>
 </i>
 
-<p text-center style="text-align:center;"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+<p padding text-center style="text-align:center;"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
 </p>
   </ion-col>
 </ion-row>
 <ion-row>
-  <ion-col align="right">
+  <ion-col text-right>
   <button ion-button clear (click)="dismiss()">CLOSE</button>
   </ion-col>
 </ion-row>
+  </ion-grid>
 </ion-content>

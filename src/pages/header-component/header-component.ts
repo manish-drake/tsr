@@ -18,10 +18,10 @@ export class HeaderComponent {
   public more:any;
   public config:any;
   constructor(private _popoverService: PopoverService) { 
-    this.more = this.createPopSource("more", "MORE", "more");
-    this.config = this.createPopSource("arrow-dropdown-circle", "CONFIG", "config");
+    this.more = this.createPopOverSource("more", "MORE", "more");
+    this.config = this.createPopOverSource("arrow-dropdown-circle", "CONFIG", "config");
   }
-createPopSource = function (name, label, target) {
+createPopOverSource = function (name, label, target) {
     return {
       "name": name,
       "lable": label,

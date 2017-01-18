@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, ViewController} from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 
@@ -18,6 +18,7 @@ export class MoreActionsPopover {
   versionNumber: any;
 
   constructor(
+    private viewCtrl: ViewController,
     private platform: Platform,
     private _themes: ThemesService) {
 
@@ -31,17 +32,18 @@ export class MoreActionsPopover {
 
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
 
-    this.setup = this.createPopSource("settings", "SETUP TEST", "setup");
-    this.help = this.createPopSource("help-circle", "HELP", "help");
+    this.setup = this.createModalSource("settings", "SETUP TEST", "setup", this.viewCtrl);
+    this.help = this.createModalSource("help-circle", "HELP", "help", this.viewCtrl);
   }
 
-  createPopSource = function (name, label, target) {
+  createModalSource = function (name, label, target, viewctrl) {
     return {
       "name": name,
       "lable": label,
       "target": [
         target
-      ]
+      ],
+      "viewctrl": viewctrl
     };
   };
 
@@ -49,6 +51,7 @@ export class MoreActionsPopover {
   }
 
   onHelpClick(e) {
+    alert("..");
   }
 
   static isRunAllenabled: boolean = false;
