@@ -1270,15 +1270,15 @@ export class Factory {
 
                 tst.TestParamCells.push(cSeh6);
 
-                var typ6 = new TestParam();
-                typ6.Key = "Status:";
-                // typ6.Value = "1(Valid)";
-                var cTyp6 = new TestParamCell(typ6);
-                cTyp6.Row = 4;
-                cTyp6.Column = 1;
-                cTyp6.Styles.add("key", "detailLabel2");
+                var sts6 = new TestParam();
+                sts6.Key = "Status:";
+                // sts6.Value = "1(Valid)";
+                var cSts6 = new TestParamCell(sts6);
+                cSts6.Row = 4;
+                cSts6.Column = 1;
+                cSts6.Styles.add("key", "detailLabel2");
 
-                tst.TestParamCells.push(cTyp6);
+                tst.TestParamCells.push(cSts6);
 
                 var mfms6 = new TestParam();
                 mfms6.Key = "AutoPilot Modes";
