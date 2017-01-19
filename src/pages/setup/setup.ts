@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 
 /*
   Generated class for the Setup page.
@@ -13,7 +13,7 @@ import { NavController } from 'ionic-angular';
 })
 export class SetupPage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public viewCtrl: ViewController) { }
 
   pwrValue: any;
   ionViewDidLoad() {
@@ -25,5 +25,9 @@ export class SetupPage {
   power() {
     this.isPowerClicked = !this.isPowerClicked;
   }
+
+  dismiss() {
+        this.viewCtrl.dismiss();
+    }
 
 }

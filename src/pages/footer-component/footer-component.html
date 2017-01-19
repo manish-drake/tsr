@@ -1,10 +1,10 @@
  <ion-toolbar>
         <ion-row style="display : flex; align-items : center;">
-          <ion-col no-padding margin-left text-center  text-nowrap style="width:auto;flex:0 0 auto;">
-              <ion-label>User Name</ion-label>
+          <ion-col no-padding margin-left text-center  style="width:auto;flex:0 0 auto;">
+              <ion-label text-nowrap>User Name</ion-label>
             </ion-col>
-            <ion-col no-padding margin-left text-center text-nowrap style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
-              <ion-label>Test Set Name</ion-label>
+            <ion-col no-padding text-center style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
+              <ion-label  text-nowrap>Test Set Name</ion-label>
             </ion-col>
 
             <ion-col no-padding style="width:40px;flex:0 0 40px;">
@@ -19,7 +19,7 @@
           <ion-col no-padding style="width:40px;flex:0 0 40px;align-items: stretch !important;">
             <ion-row>
               <ion-col no-padding text-center center style="font-size: 22px;" align="center">
-                <!--<ion-icon [name]="batteryIcon"></ion-icon>-->
+                <!--<ion-icon name="battery-full"></ion-icon>-->
                 <svg height="25" width="12">
                   <defs>
                     <linearGradient id="grad1" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -29,8 +29,8 @@
                       <stop offset="100%" style="stop-color:rgba(0,0,0,0.2);stop-opacity:1" />
                       </linearGradient>
                       </defs>
-                      <path d="M 0 3 L 3 3 L 4 0 L 9 0 L 9 3 L 12 3 L 12 25 L 0 25 L 0,3 Z" fill="url(#grad1)" />
-                      <path *ngIf="isbatteryPlugged" d="M 5 8 L 3 15 L 5 15 L 3 23 L 10 13 L 6 13 L 10 8 L 4 8 Z" fill="white" />
+                      <path d="M 0 2 L 3 2 L 3 0 L 9 0 L 9 2 L 12 2 L 12 25 L 0 25 L 0 2 Z" fill="url(#grad1)" />
+                      <path *ngIf="isbatteryPlugged" d="M 5 7 L 3 14 L 5 14 L 3 22 L 10 12 L 6 12 L 10 7 L 4 7 Z" fill="white" />
                       </svg>
                 </ion-col>
             </ion-row>
