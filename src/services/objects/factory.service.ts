@@ -1353,43 +1353,63 @@ export class Factory {
 
                 newTest.Summaries.push(tst);
 
-                //------------------------UAT Trajectory Change Test-----------------------------
-                // var tct = new Test();
-                // tct.Name = "UAT Trajectory Change Test";
+                // ------------------------UAT Trajectory Change Test-----------------------------
+                var tct = new Test();
+                tct.Name = "UAT Trajectory Change Test";
 
-                // var add5 = new TestParam();
-                // add5.Key = "ADDRESS:";
-                // var cAdd5 = new TestParamCell(add5);
-                // cAdd5.Row = 0;
-                // cAdd5.Column = 0;
+                var add5 = new TestParam();
+                add5.Key = "ADDRESS:";
+                var cAdd5 = new TestParamCell(add5);
+                cAdd5.Row = 0;
+                cAdd5.Column = 0;
 
-                // tct.TestParamCells.push(cAdd5);
+                tct.TestParamCells.push(cAdd5);
 
-                // var q5 = new TestParam();
-                // q5.Key = "Qualifier:";
-                // var cQ5 = new TestParamCell(q5);
-                // cQ5.Row = 1;
-                // cQ5.Column = 0;
+                var q5 = new TestParam();
+                q5.Key = "Qualifier:";
+                var cQ5 = new TestParamCell(q5);
+                cQ5.Row = 1;
+                cQ5.Column = 0;
 
-                // tct.TestParamCells.push(cQ5);
+                tct.TestParamCells.push(cQ5);
 
-                // var pld5 = new TestParam();
-                // pld5.Key = "Payload Rcvd:";
-                // var cPld5 = new TestParamCell(pld5);
-                // cPld5.Row = 2;
-                // cPld5.Column = 0;
+                var pld5 = new TestParam();
+                pld5.Key = "Payload Rcvd:";
+                var cPld5 = new TestParamCell(pld5);
+                cPld5.Row = 2;
+                cPld5.Column = 0;
 
-                // tst.TestParamCells.push(cPld5);
+                tct.TestParamCells.push(cPld5);
 
-                // var agst5 = new TestParam();
-                // agst5.Key = "RF Level:";
-                // var cAgst5 = new TestParamCell(agst5);
-                // cAgst5.Row = 2;
-                // cAgst5.Column = 1;
+                var agst5 = new TestParam();
+                agst5.Key = "RF Level:";
+                var cAgst5 = new TestParamCell(agst5);
+                cAgst5.Row = 2;
+                cAgst5.Column = 1;
 
-                // tst.TestParamCells.push(cAgst5);
+                tct.TestParamCells.push(cAgst5);
 
-                // newTest.Summaries.push(tst);
+                var tce5 = new TestParam();
+                tce5.Key = "Trajectory Change Element";
+                var cTce5 = new TestParamCell(tce5);
+                cTce5.Row = 3;
+                cTce5.Column = 0;
+                cTce5.ColSpan = 2;
+                cTce5.Styles.add("key", "detailheading1");
+                cTce5.Styles.add("value", "detailResult1");
+
+                tct.TestParamCells.push(cTce5);
+
+                var tcfld5 = new TestParam();
+                tcfld5.Key = "TC Field:";
+                var cTcfld5 = new TestParamCell(tcfld5);
+                cTcfld5.Row = 4;
+                cTcfld5.Column = 0;
+                cTcfld5.ColSpan = 2;
+
+                tct.TestParamCells.push(cTcfld5);
+
+                newTest.Summaries.push(tct);
                 //------------------------UAT Payload Timing-----------------------------
                 var rft = new Test();
                 rft.Name = "UAT RF Test";
@@ -1433,76 +1453,10 @@ export class Factory {
 
                 rft.TestParamCells.push(cRfle4);
 
-                var rflp4 = new TestParam();
-                rflp4.Key = "RF /Payload Timming";
-                var cRflp4 = new TestParamCell(rflp4);
-                cRflp4.Row = 3;
-                cRflp4.Column = 0;
-                cRflp4.ColSpan = 2;
-                cRflp4.Styles.add("key", "detailheading1");
-                cRflp4.Styles.add("value", "detailResult1");
-
-                rft.TestParamCells.push(cRflp4);
-
-                var txp4 = new TestParam();
-                txp4.Key = "Payload Reception Rate:";
-                var cTxp4 = new TestParamCell(txp4);
-                cTxp4.Row = 4;
-                cTxp4.Column = 0;
-                cTxp4.ColSpan = 2;
-                cTxp4.Styles.add("key", "detailLabel1");
-                cTxp4.Styles.add("value", "detailResult1");
-
-                rft.TestParamCells.push(cTxp4);
-
-                var pwrd4 = new TestParam();
-                pwrd4.Key = "State Vector (SV):";
-                var cPwrd4 = new TestParamCell(pwrd4);
-                cPwrd4.Row = 5;
-                cPwrd4.Column = 0;
-                cPwrd4.ColSpan = 2;
-                cPwrd4.Styles.add("key", "detailLabel3");
-                cPwrd4.Styles.add("value", "detailResult");
-
-                rft.TestParamCells.push(cPwrd4);
-
-                var frq4 = new TestParam();
-                frq4.Key = "Mode Status (MS):";
-                var cFrq4 = new TestParamCell(frq4);
-                cFrq4.Row = 6;
-                cFrq4.Column = 0;
-                cFrq4.ColSpan = 2;
-                cFrq4.Styles.add("key", "detailLabel3");
-                cFrq4.Styles.add("value", "detailResult");
-
-                rft.TestParamCells.push(cFrq4);
-
-                var dvt4 = new TestParam();
-                dvt4.Key = "Aux State Vector (AUX SV):";
-                var cDvt4 = new TestParamCell(dvt4);
-                cDvt4.Row = 7;
-                cDvt4.Column = 0;
-                cDvt4.ColSpan = 2;
-                cDvt4.Styles.add("key", "detailLabel3");
-                cDvt4.Styles.add("value", "detailResult");
-
-                rft.TestParamCells.push(cDvt4);
-
-                var pdvt4 = new TestParam();
-                pdvt4.Key = "Target State (TS):";
-                var cPdvt4 = new TestParamCell(pdvt4);
-                cPdvt4.Row = 8;
-                cPdvt4.Column = 0;
-                cPdvt4.ColSpan = 2;
-                cPdvt4.Styles.add("key", "detailLabel3");
-                cPdvt4.Styles.add("value", "detailResult");
-
-                rft.TestParamCells.push(cPdvt4);
-
                 var msgt4 = new TestParam();
                 msgt4.Key = "978 MHz RF Data";
                 var cMsgt4 = new TestParamCell(msgt4);
-                cMsgt4.Row = 9;
+                cMsgt4.Row = 3;
                 cMsgt4.Column = 0;
                 cMsgt4.ColSpan = 2;
                 cMsgt4.Styles.add("key", "detailLabel1");
@@ -1513,7 +1467,7 @@ export class Factory {
                 var eov4 = new TestParam();
                 eov4.Key = "Measured frequency:";
                 var cEov4 = new TestParamCell(eov4);
-                cEov4.Row = 10;
+                cEov4.Row = 4;
                 cEov4.Column = 0;
                 cEov4.ColSpan = 2;
                 cEov4.Styles.add("key", "detailLabel3");
@@ -1524,7 +1478,7 @@ export class Factory {
                 var mp4 = new TestParam();
                 mp4.Key = "Measured power:";
                 var cMp4 = new TestParamCell(mp4);
-                cMp4.Row = 11;
+                cMp4.Row = 5;
                 cMp4.Column = 0;
                 cMp4.ColSpan = 2;
                 cMp4.Styles.add("key", "detailLabel3");
@@ -1535,7 +1489,7 @@ export class Factory {
                 var ec4 = new TestParam();
                 ec4.Key = "Error conditions:";
                 var cEc4 = new TestParamCell(ec4);
-                cEc4.Row = 12;
+                cEc4.Row = 6;
                 cEc4.Column = 0;
                 cEc4.ColSpan = 2;
                 cEc4.Styles.add("key", "detailLabel3");
@@ -1543,10 +1497,153 @@ export class Factory {
 
                 rft.TestParamCells.push(cEc4);
 
+                var rflp4 = new TestParam();
+                rflp4.Key = "UAT Payload Reception Rate";
+                var cRflp4 = new TestParamCell(rflp4);
+                cRflp4.Row = 7;
+                cRflp4.Column = 0;
+                cRflp4.ColSpan = 2;
+                cRflp4.Styles.add("key", "detailheading1");
+                cRflp4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cRflp4);
+
+                // var txp4 = new TestParam();
+                // txp4.Key = "Payload Reception Rate:";
+                // var cTxp4 = new TestParamCell(txp4);
+                // cTxp4.Row = 4;
+                // cTxp4.Column = 0;
+                // cTxp4.ColSpan = 2;
+                // cTxp4.Styles.add("key", "detailLabel1");
+                // cTxp4.Styles.add("value", "detailResult1");
+
+                // rft.TestParamCells.push(cTxp4);
+
+                var pwrd4 = new TestParam();
+                pwrd4.Key = "State Vector (SV):";
+                var cPwrd4 = new TestParamCell(pwrd4);
+                cPwrd4.Row = 8;
+                cPwrd4.Column = 0;
+                cPwrd4.ColSpan = 2;
+                cPwrd4.Styles.add("key", "detailLabel3");
+                cPwrd4.Styles.add("value", "detailResult");
+
+                rft.TestParamCells.push(cPwrd4);
+
+                var frq4 = new TestParam();
+                frq4.Key = "Mode Status (MS):";
+                var cFrq4 = new TestParamCell(frq4);
+                cFrq4.Row = 9;
+                cFrq4.Column = 0;
+                cFrq4.ColSpan = 2;
+                cFrq4.Styles.add("key", "detailLabel3");
+                cFrq4.Styles.add("value", "detailResult");
+
+                rft.TestParamCells.push(cFrq4);
+
+                var dvt4 = new TestParam();
+                dvt4.Key = "Aux State Vector (AUX SV):";
+                var cDvt4 = new TestParamCell(dvt4);
+                cDvt4.Row = 10;
+                cDvt4.Column = 0;
+                cDvt4.ColSpan = 2;
+                cDvt4.Styles.add("key", "detailLabel3");
+                cDvt4.Styles.add("value", "detailResult");
+
+                rft.TestParamCells.push(cDvt4);
+
+                var pdvt4 = new TestParam();
+                pdvt4.Key = "Target State (TS):";
+                var cPdvt4 = new TestParamCell(pdvt4);
+                cPdvt4.Row = 11;
+                cPdvt4.Column = 0;
+                cPdvt4.ColSpan = 2;
+                cPdvt4.Styles.add("key", "detailLabel3");
+                cPdvt4.Styles.add("value", "detailResult");
+
+                rft.TestParamCells.push(cPdvt4);
+
+                var uatms4 = new TestParam();
+                uatms4.Key = "UAT Message Summary";
+                var cUatms4 = new TestParamCell(uatms4);
+                cUatms4.Row = 12;
+                cUatms4.Column = 0;
+                cUatms4.ColSpan = 2;
+                cUatms4.Styles.add("key", "detailheading1");
+                cUatms4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cUatms4);
+
+                var msrcd4 = new TestParam();
+                msrcd4.Key = "Message Received:";
+                var cMsrcd4 = new TestParamCell(msrcd4);
+                cMsrcd4.Row = 13;
+                cMsrcd4.Column = 0;
+                cMsrcd4.ColSpan = 2;
+                cMsrcd4.Styles.add("key", "detailLabel3");
+                cMsrcd4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cMsrcd4);
+
+                var msict4 = new TestParam();
+                msict4.Key = "Message Incorrect:";
+                var cMsict4 = new TestParamCell(msict4);
+                cMsict4.Row = 14;
+                cMsict4.Column = 0;
+                cMsict4.ColSpan = 2;
+                cMsict4.Styles.add("key", "detailLabel3");
+                cMsict4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cMsict4);
+
+                var msslrt4 = new TestParam();
+                msslrt4.Key = "Message Successful Rate:";
+                var cMsslrt4 = new TestParamCell(msslrt4);
+                cMsslrt4.Row = 15;
+                cMsslrt4.Column = 0;
+                cMsslrt4.ColSpan = 2;
+                cMsslrt4.Styles.add("key", "detailLabel3");
+                cMsslrt4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cMsslrt4);
+
+                var ctmst4 = new TestParam();
+                ctmst4.Key = "Current Message Type:";
+                var cCtmst4 = new TestParamCell(ctmst4);
+                cCtmst4.Row = 16;
+                cCtmst4.Column = 0;
+                cCtmst4.ColSpan = 2;
+                cCtmst4.Styles.add("key", "detailLabel3");
+                cCtmst4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cCtmst4);
+
+                var ctmser4 = new TestParam();
+                ctmser4.Key = "Current Message Errors:";
+                var cCtmser4 = new TestParamCell(ctmser4);
+                cCtmser4.Row = 17;
+                cCtmser4.Column = 0;
+                cCtmser4.ColSpan = 2;
+                cCtmser4.Styles.add("key", "detailLabel3");
+                cCtmser4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cCtmser4);
+
+                var ctmssq4 = new TestParam();
+                ctmssq4.Key = "Current Message Sequence:";
+                var cCtmssq4 = new TestParamCell(ctmssq4);
+                cCtmssq4.Row = 18;
+                cCtmssq4.Column = 0;
+                cCtmssq4.ColSpan = 2;
+                cCtmssq4.Styles.add("key", "detailLabel3");
+                cCtmssq4.Styles.add("value", "detailResult1");
+
+                rft.TestParamCells.push(cCtmssq4);
+
                 var result4 = new TestParam();
                 result4.Key = "Result:";
                 var cResult4 = new TestParamCell(result4);
-                cResult4.Row = 16;
+                cResult4.Row = 19;
                 cResult4.Column = 0;
                 cResult4.ColSpan = 4;
                 cResult4.Styles.add("key", "result");
