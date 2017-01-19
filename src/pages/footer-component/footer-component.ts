@@ -26,10 +26,15 @@ export class FooterComponent {
   }
 
   batteryLevel: any = "100%";
+  isbatteryPlugged:boolean = false;
 
   onBatteryStatus(status: StatusObject) {
     this.batteryLevel = status.level + "%";
     if (status.isPlugged) {
+      this.isbatteryPlugged = true;
+    }
+    else{
+      this.isbatteryPlugged = false;
     }
   }
 
