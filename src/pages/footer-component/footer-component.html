@@ -1,42 +1,55 @@
  <ion-toolbar>
         <ion-row style="display : flex; align-items : center;">
-          <ion-col no-padding padding-horizontal text-center  text-nowrap style="width:auto;flex:0 0 auto;">
+          <ion-col no-padding padding-left text-center  text-nowrap style="width:auto;flex:0 0 auto;">
               <ion-label>User Name</ion-label>
             </ion-col>
-            <ion-col no-padding padding-horizontal text-center text-nowrap style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
+            <ion-col no-padding padding-left text-center text-nowrap style="width:100%;overflow: hidden;text-overflow: ellipsis;" >
               <ion-label>Test Set Name</ion-label>
             </ion-col>
 
-            <ion-col no-padding style="width:65px;flex:0 0 65px;">
+            <ion-col no-padding style="width:50px;flex:0 0 50px;">
             <ion-row>
               <ion-col no-padding text-center center><img style="height:22px;width:22px;" src="assets/direct.png"/></ion-col>
             </ion-row>
             <ion-row>
-              <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">Direct</ion-col>
+              <!--<ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">Direct</ion-col>-->
             </ion-row>
           </ion-col>
 
-          <ion-col no-padding style="width:65px;flex:0 0 65px;align-items: stretch !important;">
+          <ion-col no-padding style="width:50px;flex:0 0 50px;align-items: stretch !important;">
             <ion-row>
-              <ion-col no-padding text-center center style="font-size: 18px;"><ion-icon name="battery-full"></ion-icon></ion-col>
+              <ion-col no-padding text-center center style="font-size: 22px;" align="center">
+                <!--<ion-icon [name]="batteryIcon"></ion-icon>-->
+                <svg height="25" width="12">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="100%" x2="0%" y2="0%">
+                      <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1"/>
+                      <stop [attr.offset]="batteryLevel" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+                      <stop [attr.offset]="batteryLevel" style="stop-color:rgba(0,0,0,0.2);stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:rgba(0,0,0,0.2);stop-opacity:1" />
+                      </linearGradient>
+                      </defs>
+                      <path d="M 0 3 L 3 3 L 4 0 L 9 0 L 9 3 L 12 3 L 12 25 L 0 25 L 0,3 Z" fill="url(#grad1)" />
+                      </svg>
+                </ion-col>
             </ion-row>
             <ion-row>
-              <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">Battery</ion-col>
+              <!--<ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">Battery</ion-col>-->
             </ion-row>
           </ion-col>
 
-          <ion-col no-padding style="width:65px;flex:0 0 65px;">
+          <ion-col no-padding style="width:50px;flex:0 0 50px;">
             <ion-row>
-              <ion-col no-padding text-center center style="font-size: 18px;"><ion-icon name="wifi"></ion-icon></ion-col>
+              <ion-col no-padding text-center center style="font-size: 22px;"><ion-icon name="wifi"></ion-icon></ion-col>
             </ion-row>
             <ion-row>
-              <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">WiFi</ion-col>
+              <!--<ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">WiFi</ion-col>-->
             </ion-row>
           </ion-col>
 
-          <!--<ion-col center text-center style="width:auto;flex:0 0 auto">
+          <ion-col center text-center style="width:auto;flex:0 0 auto">
             <span  style="font-weight:500">{{ displaydate | date:'h:mm a' }}</span><br>
             <span  style="font-weight:500">{{ displaydate | date:'MMM d' }}</span>
-            </ion-col>-->
+            </ion-col>
           </ion-row>
   </ion-toolbar>
