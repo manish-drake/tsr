@@ -14,5 +14,14 @@
       label{ color:green; }
       img{ filter: brightness(10%); }
   }
-  
+  .segement{ background-color: #f4f4f4;
+             color: $light-primary; }
+   .currentsegment{ background-color: $light-background;
+                    color: $light-primary; }
+   div { ion-grid{background-color: $light-background;} 
+         svg{ circle{ stroke: #000000; } }
+   }
+    
+    
+    
 }

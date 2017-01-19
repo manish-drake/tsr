@@ -15,7 +15,7 @@ import { HeaderService } from '../../services/ui/header.service'
   templateUrl: 'group.html'
 })
 export class GroupPage implements OnInit {
-  private : any;
+  private: any;
   constructor(
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
@@ -26,37 +26,40 @@ export class GroupPage implements OnInit {
 
   }
 
-  ionViewDidLoad() {
-    console.log('Hello GroupPage Page');
-  }
-
   group: any;
+
+  parent: any;
 
   ngOnInit() {
     // this._svcHeader.title = "Groups";
     this.route.params.subscribe(param => {
-      var groupName = (param as any).name;
-      this._svcHeader.title = groupName;
-      var section = this.objectService.createGroup(groupName);
-      this.group = this.broker.createGroupDatasource(section);
+      var parentName = (param as any).name;
+      this.parent = parentName;
+      this._svcHeader.title = parentName;
+      // var section = this.objectService.createGroup(groupName);
+      // this.group = this.broker.createGroupDatasource(section);
+      var test = this.objectService.createGroup(parentName);
+      this.group = this.broker.createGroupDatasource(test);
       console.log(this.group);
 
-      this._svcHeader.title = groupName;
+      this._svcHeader.title = parentName;
     })
   }
 
-  public step: string;
+  selectedCardIndex = 0
+
+  onCardClick(i){
+    this.selectedCardIndex = i;
+  }
+
+
   private clicks = 0;
-  doubleTapNavigation(section) {
+  doubleTapNavigation(test) {
     this.clicks++;
     if (this.clicks == 1) {
       setTimeout(() => {
-        console.log(this.clicks);
-        if (this.clicks == 1) {
-          this.step = section.name;
-        }
         if (this.clicks == 2) {
-          this._router.navigate(['section', section.name])
+          this._router.navigate(['detail', test.name, this.parent])
         }
         this.clicks = 0;
       }, 500);
@@ -64,8 +67,12 @@ export class GroupPage implements OnInit {
     }
   }
 
-  isFavorite: boolean = false;
-  favorite() {
-    this.isFavorite = !this.isFavorite;
+  favorite(section) {
+    if (!section.isFavorite) {
+      section.isFavorite = true;
+    }
+    else {
+      section.isFavorite = false;
+    }
   }
 }

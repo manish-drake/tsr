@@ -1,19 +1,29 @@
 <ion-toolbar align-title="left">
-  <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  <h5 ion-text text-nowrap style="color:white; padding-left:10px;overflow: hidden;text-overflow: ellipsis;">{{title}} </h5>
-<ion-buttons end>
+
   <ion-row>
     <ion-col no-padding>
-      <button ion-button clear icon-only (click)="openConfigurations()"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+      <ion-row>
+        <ion-col no-padding style="width: auto; flex: 0 0 auto;">
+          <button ion-button menuToggle style="height:100%;"><ion-icon name="menu"></ion-icon></button>
+        </ion-col>
+        <ion-col no-padding>
+          <ion-label text-nowrap style="font-size: 18px; font-weight: 500; color:white; padding-left:10px;overflow: hidden;text-overflow: ellipsis;">{{title}} </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
+      <popover-button-comp [popoverSource]="config"></popover-button-comp>
     </ion-col>
     <ion-col no-padding>
-      <button ion-button clear icon-only><ion-icon name="list-box"></ion-icon></button>
-    </ion-col>
-    <ion-col no-padding>
-      <pop-button [popSource]="more"></pop-button>
+      <ion-row>
+        <ion-col no-padding text-center>
+          <button ion-button clear icon-only><ion-icon name="download"></ion-icon></button>
+        </ion-col>
+        <ion-col no-padding style="width: auto; flex: 0 0 auto;">
+          <popover-button-comp [popoverSource]="more"></popover-button-comp>
+        </ion-col>
+      </ion-row>
     </ion-col>
   </ion-row>
-</ion-buttons>
+
 </ion-toolbar>

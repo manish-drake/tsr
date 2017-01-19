@@ -3,9 +3,21 @@
     *::-webkit-scrollbar {
     display: none;
 }
+
 .textTrim{
     overflow: hidden;text-overflow: ellipsis;
 }
+
+.playbutton{
+    height: 50px; width: 50px; border-radius: 25px; border-width: 3px;
+}
+
+.config-popover{
+    .popover-content{
+        width: 350px;
+    }
+}
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

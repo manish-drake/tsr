@@ -1,5 +1,20 @@
 page-detail {
 
+    .bullet-current{
+    background-color: color($colors, primary);
+}
+
+.bullet-normal{
+    background-color: #cccccc;
+}
+
+ .segement{
+   margin:4px;padding:10px; display: inline-block; box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.40);
+  }
+ .currentsegment{
+    margin:4px; padding:10px; display: inline-block; box-shadow: 0px -1px 1px 0px rgba(0,0,0,0.30);
+  }
+
 .detailheading{
     margin-bottom: 15px;   
     font-size: 21px;
@@ -58,4 +73,12 @@ page-detail {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-bottom:  11px;
 }
+.result{
+    margin-top:15px;     
+    font-size: 21px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ 
 }

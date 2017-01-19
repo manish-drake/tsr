@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { ViewController } from 'ionic-angular';
 /*
   Generated class for the Help page.
 
@@ -13,10 +12,15 @@ import { NavController } from 'ionic-angular';
 })
 export class HelpPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
     console.log('Hello HelpPage Page');
   }
+
+  dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
 
 }

@@ -18,13 +18,18 @@ import { Master } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
+import { ModalService } from '../services/ui/modal.service'
+import { ThemesService } from '../services/themes/themes.service'
+import { FileFactory } from '../services/io/file-factory';
 import { TestSectionComp } from '../comps/tests/section/section.comp';
-import { TestDetailComp } from '../comps/tests/detail/detail.comp';
-import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
-import { PopButtonComp } from '../comps/popover/pop-button.comp';
+import { DetailMainComp } from '../comps/tests/detail-main/detail-main';
+import { DetailRadarComp } from '../comps/tests/detail-radar/detail-radar';
+import { DetailWaveformComp } from '../comps/tests/detail-waveform/detail-waveform';
+import { DetailVehiclesComp } from '../comps/tests/detail-vehicles/detail-vehicles';
+import { PopOverButtonComp } from '../comps/popoverctrl/popover-button-comp';
+import { ModalIonItemComp } from '../comps/modalctrl/modal-ionitem-comp';
 import { TestCardComp } from '../comps/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
-import { ThemesService } from '../services/themes/themes.service'
 
 @NgModule({
     declarations: [
@@ -40,17 +45,17 @@ import { ThemesService } from '../services/themes/themes.service'
         SetupPage,
         HelpPage,
         TestSectionComp,
-        TestDetailComp,
+        DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         TestCardComp,
         SpyDirective,
-        PopMenuItemComp,
-        PopButtonComp
+        PopOverButtonComp,
+        ModalIonItemComp
     ],
     imports: [
         router,
         IonicModule.forRoot(MyApp)
     ],
-    bootstrap: [IonicApp],  
+    bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
         HomePage,
@@ -61,13 +66,15 @@ import { ThemesService } from '../services/themes/themes.service'
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        FileIOService, 
-        Factory, 
+        FileIOService,
+        Factory,
         Master,
         HeaderService,
         PopoverService,
+        ModalService,
         BrokerFactoryService,
-        ThemesService
+        ThemesService,
+        FileFactory, MoreActionsPopover
     ]
 })
 export class AppModule { }

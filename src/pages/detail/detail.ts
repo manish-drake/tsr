@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular'
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { HeaderService } from '../../services/ui/header.service'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
@@ -16,9 +18,9 @@ import { Factory } from '../../services/objects/factory.service'
 })
 export class DetailPage {
 
-  // slides = [{name: 'Test 1'},{name: 'Test 2'},{name: 'Test 3'}];
-  slider: any;
-  options: any;
+  @ViewChild('Slides') slides: Slides;
+
+  currentSegment: any = -1;
 
   constructor(
     private _router: Router,
@@ -27,50 +29,58 @@ export class DetailPage {
     private broker: BrokerFactoryService,
     private objectService: Factory) {
 
-
   }
 
   public testset: any;
+  parent: any;
 
   ngOnInit() {
-    
-
     this.route.params.subscribe(data => {
-      var sectionDetailName = (data as any).test;
-      var groupName = (data as any).parent;
-      this._svcHeader.title = sectionDetailName;
+      this.parent = (data as any).parent;
+      var groupName = (data as any).test;
+      this._svcHeader.title = groupName;
       var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
       this.testset = this.broker.createSectionsDetail(sectionsDetailData);
-
-      var initialSlide = 0;
-      this.testset.tests.forEach((element, index) => {
-        if (element.name == (data as any).test) {
-          initialSlide = index;
-        }
-      });
-
-      this.options = {
-        initialSlide: initialSlide,
-        loop: true,
-        onInit: (slides: any) => {
-          this.slider = slides;
-        }
-      }
     });
+  }
+
+  currentView: any = "default";
+
+  nextViewIcon = "locate"
+
+  changeView() {
+    if (this.currentView == "default") {
+      this.currentView = "radar";
+      this.nextViewIcon = "pulse";
+    }
+    else if (this.currentView == "radar") {
+      this.currentView = "waveform";
+      this.nextViewIcon = "list-box";
+    }
+    else if (this.currentView == "waveform") {
+      this.currentView = "default";
+      this.nextViewIcon = "locate";
+    }
+  }
+
+  isRunnig: boolean = false;
+
+  onRun() {
+    this.isRunnig = !this.isRunnig;
   }
 
   onNavigate(ev: string) {
     switch (ev) {
       case 'close': {
-        this._router.navigate(['section', this.testset.name]);
+        this._router.navigate(['group', "UAT"]);
         break;
       }
       case 'next': {
-        this.slider.slideNext();
+        this.slides.slideNext();
         break;
       }
       case 'prev': {
-        this.slider.slidePrev();
+        this.slides.slidePrev();
         break;
       }
       default: { break; }
