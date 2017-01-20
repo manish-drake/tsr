@@ -6,9 +6,7 @@
        <ion-col no-padding center style="width:100%;">
          <button ion-button clear icon-only no-margin ><ion-icon name="information-circle"></ion-icon></button>
          <button ion-button clear icon-only no-margin ><ion-icon name="sync"></ion-icon></button>
-       <!--<button ion-button clear icon-only no-margin  [style.color]="section.isFavorite ? '#FFD400' : '#999999'">-->
-            <ion-icon name="star"></ion-icon>
-        <!--</button>-->
+         <ion-icon *ngIf="section.isFavorite" style="font-size: 26px;" name="star-outline"></ion-icon>
        </ion-col>
        <ion-col padding-right center style="width:auto;flex:0 0 auto;color:#555555;">
         <ion-icon name="albums">  {{section.count}}</ion-icon>
