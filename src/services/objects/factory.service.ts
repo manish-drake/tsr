@@ -620,6 +620,13 @@ export class Factory {
                 newTest.Name = test;
 
                 //------------------------UAT Mode Status Test-----------------------------
+                var favt = new Test();
+                favt.Name = "Filter A/V Target";
+
+
+                newTest.Summaries.push(favt);
+
+                //------------------------UAT Mode Status Test-----------------------------
                 var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
 
@@ -939,7 +946,7 @@ export class Factory {
 
                 newTest.Summaries.push(mst);
 
-                //------------------------UAT State Vector Test-----------------------------
+                //------------------------UAT State Vector Test------Air-----------------------
                 var usvt = new Test();
                 usvt.Name = "UAT State Vector Test";
 
@@ -1008,7 +1015,7 @@ export class Factory {
                 usvt.TestParamCells.push(cPosv1);
 
                 var agst1 = new TestParam();
-                agst1.Key = "A/G State:";
+                agst1.Key = "Air/Gnd State:";
                 // agst1.Value = "AIR - Subsonic"
                 var cAgst1 = new TestParamCell(agst1);
                 cAgst1.Row = 5;
@@ -1043,7 +1050,7 @@ export class Factory {
                 var alti1 = new TestParam();
                 alti1.Key = "Altitude:";
                 // alti1.Value = "10,000";
-                alti1.Unit ="ft";
+                alti1.Unit = "ft";
                 var cAlti1 = new TestParamCell(alti1);
                 cAlti1.Row = 8;
                 cAlti1.Column = 0;
@@ -1170,6 +1177,257 @@ export class Factory {
                 usvt.TestParamCells.push(cResult1);
 
                 newTest.Summaries.push(usvt);
+
+                //------------------------UAT State Vector Test------Ground-----------------------
+                var usvtg = new Test();
+                usvtg.Name = "UAT State Vector Test";
+
+                var addr1 = new TestParam();
+                addr1.Key = "ADDRESS:";
+                // addr1.Value = "2345AA (H)/ 237345109O) [N1246W]"
+                var cAddr1 = new TestParamCell(addr1);
+                cAddr1.Row = 0;
+                cAddr1.Column = 0;
+                cAddr1.ColSpan = 2;
+                cAddr1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cAddr1);
+
+                var aQ1 = new TestParam();
+                aQ1.Key = "Qualifier:";
+                // aQ1.Value = "0 (ADS-B ICAO)";
+                var cAq1 = new TestParamCell(aQ1);
+                cAq1.Row = 1;
+                cAq1.Column = 0;
+                cAq1.ColSpan = 2;
+                cAq1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cAq1);
+
+                var pldr1 = new TestParam();
+                pldr1.Key = "Payload Rcvd:";
+                // pldr1.Value = "1,0,2,0";
+                var cPldr1 = new TestParamCell(pldr1);
+                cPldr1.Row = 2;
+                cPldr1.Column = 0;
+                cPldr1.Styles.add("key", "detailLabel");
+
+                usvtg.TestParamCells.push(cPldr1);
+
+                var rflev1 = new TestParam();
+                rflev1.Key = "RF Level:";
+                // rflev1.Value = "Strong";
+                var cRflev1 = new TestParamCell(rflev1);
+                cRflev1.Row = 2;
+                cRflev1.Column = 1;
+                cRflev1.Styles.add("key", "detailLabel2");
+
+                usvtg.TestParamCells.push(cRflev1);
+
+                var sv1 = new TestParam();
+                sv1.Key = "State Vector Element (SV)";
+                var cSv1 = new TestParamCell(sv1);
+                cSv1.Styles.add("key", "detailheading1");
+                cSv1.Styles.add("value", "detailResult1");
+                cSv1.Row = 3;
+                cSv1.Column = 0;
+                cSv1.ColSpan = 2;
+
+                usvtg.TestParamCells.push(cSv1);
+
+                var posv1 = new TestParam();
+                posv1.Key = "Position & Velocity:";
+                var cPosv1 = new TestParamCell(posv1);
+                cPosv1.Row = 4;
+                cPosv1.Column = 0;
+                cPosv1.ColSpan = 2;
+                cPosv1.Styles.add("key", "detailLabel1");
+                cPosv1.Styles.add("value", "detailResult1");
+
+                usvtg.TestParamCells.push(cPosv1);
+
+                var agst1 = new TestParam();
+                agst1.Key = "Air/Gnd State:";
+                // agst1.Value = "GROUND"
+                var cAgst1 = new TestParamCell(agst1);
+                cAgst1.Row = 5;
+                cAgst1.Column = 0;
+                cAgst1.ColSpan = 2;
+                cAgst1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cAgst1);
+
+                var latd1 = new TestParam();
+                latd1.Key = "Latitude:";
+                // latd1.Value = "17⁰ 19 21.00 N";
+                var cLatd1 = new TestParamCell(latd1);
+                cLatd1.Row = 6;
+                cLatd1.Column = 0;
+                cLatd1.ColSpan = 2;
+                cLatd1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cLatd1);
+
+                var lagd1 = new TestParam();
+                lagd1.Key = "Longitude:";
+                // lagd1.Value = "90⁰ 15 30.00 W";
+                var cLagd1 = new TestParamCell(lagd1);
+                cLagd1.Row = 7;
+                cLagd1.Column = 0;
+                cLagd1.ColSpan = 2;
+                cLagd1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cLagd1);
+
+                var alti1 = new TestParam();
+                alti1.Key = "Altitude:";
+                // alti1.Value = "10,000";
+                alti1.Unit = "ft";
+                var cAlti1 = new TestParamCell(alti1);
+                cAlti1.Row = 8;
+                cAlti1.Column = 0;
+                cAlti1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cAlti1);
+
+                var typ1 = new TestParam();
+                typ1.Key = "Type:";
+                // typ1.Value = "0 (Pressure)"
+                var cTyp1 = new TestParamCell(typ1);
+                cTyp1.Row = 8;
+                cTyp1.Column = 1;
+                cTyp1.Styles.add("key", "detailLabel2");
+
+                usvtg.TestParamCells.push(cTyp1);
+
+                var gsd1 = new TestParam();
+                gsd1.Key = "Groundspeed:";
+                gsd1.Unit = "kts";
+                var cGsd1 = new TestParamCell(gsd1);
+                cGsd1.Row = 9;
+                cGsd1.Column = 0;
+                cGsd1.ColSpan = 2;
+                cGsd1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cGsd1);
+
+                var verv1 = new TestParam();
+                verv1.Key = "Track/Heading:";
+                verv1.Unit = "deg";
+                var cVerv1 = new TestParamCell(verv1);
+                cVerv1.Row = 10;
+                cVerv1.Column = 0;
+                cVerv1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cVerv1);
+
+                var th1 = new TestParam();
+                th1.Key = "T/H:";
+                var cTh1 = new TestParamCell(th1);
+                cTh1.Row = 10;
+                cTh1.Column = 1;
+                cTh1.Styles.add("key", "detailLabel2");
+
+                usvtg.TestParamCells.push(cTh1);
+
+                var avlw1 = new TestParam();
+                avlw1.Key = "A/V L/W:";
+                var cAvlw1 = new TestParamCell(avlw1);
+                cAvlw1.Row = 11;
+                cAvlw1.Column = 0;
+                cAvlw1.ColSpan = 2;
+                cAvlw1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cAvlw1);
+
+                var horv1 = new TestParam();
+                horv1.Key = "GPS Ant Offset:";
+                // horv1.Value = "   kts N    kts W"
+                var cHorv1 = new TestParamCell(horv1);
+                cHorv1.Row = 12;
+                cHorv1.Column = 0;
+                cHorv1.ColSpan = 2;
+                cHorv1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cHorv1);
+
+                var ofld1 = new TestParam();
+                ofld1.Key = "Other Fields:";
+                var cOfld1 = new TestParamCell(ofld1);
+                cOfld1.Row = 13;
+                cOfld1.Column = 0;
+                cOfld1.ColSpan = 2;
+                cOfld1.Styles.add("key", "detailLabel1");
+                cOfld1.Styles.add("value", "detailResult1");
+
+                usvtg.TestParamCells.push(cOfld1);
+
+                var ni1 = new TestParam();
+                ni1.Key = "NIC:";
+                // ni1.Value = "9 (< 75m)";
+                var cNi1 = new TestParamCell(ni1);
+                cNi1.Row = 14;
+                cNi1.Column = 0;
+                cNi1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cNi1);
+
+                var ut1 = new TestParam();
+                ut1.Key = "UTC:";
+                // ut1.Value = "1 (Coupled)"
+                var cUt1 = new TestParamCell(ut1);
+                cUt1.Row = 15;
+                cUt1.Column = 1;
+                cUt1.Styles.add("key", "detailLabel2");
+
+                usvtg.TestParamCells.push(cUt1);
+
+                var upfb1 = new TestParam();
+                upfb1.Key = "Uplink Feedback:";
+                // upfb1.Value = "6 (Score=31)"
+                var cUpfb1 = new TestParamCell(upfb1);
+                cUpfb1.Row = 16;
+                cUpfb1.Column = 0;
+                cUpfb1.ColSpan = 2;
+                cUpfb1.Styles.add("key", "detailLabel3");
+                cUpfb1.Styles.add("value", "detailResult");
+
+                usvtg.TestParamCells.push(cUpfb1);
+
+                var auxsve1 = new TestParam();
+                auxsve1.Key = "Aux.State Vector Element (AUX SV)";
+                var cAuxsve1 = new TestParamCell(auxsve1);
+                cAuxsve1.Row = 17;
+                cAuxsve1.Column = 0;
+                cAuxsve1.ColSpan = 2;
+                cAuxsve1.Styles.add("key", "detailLabel1");
+                cAuxsve1.Styles.add("value", "detailResult1");
+
+                usvtg.TestParamCells.push(cAuxsve1);
+
+                var seca1 = new TestParam();
+                seca1.Key = "Secondary Altitude:";
+                // seca1.Value = "10,000";
+                seca1.Unit = "ft";
+                var cSeca1 = new TestParamCell(seca1);
+                cSeca1.Row = 18;
+                cSeca1.Column = 0;
+                cSeca1.ColSpan = 2;
+                cSeca1.Styles.add("key", "detailLabel3");
+
+                usvtg.TestParamCells.push(cSeca1);
+
+                var result1 = new TestParam();
+                result1.Key = "Result:";
+                var cResult1 = new TestParamCell(result1);
+                cResult1.Row = 19;
+                cResult1.Column = 0;
+                cResult1.ColSpan = 4;
+                cResult1.Styles.add("key", "result");
+
+                usvtg.TestParamCells.push(cResult1);
+
+                newTest.Summaries.push(usvtg);
 
                 //------------------------UAT Target State Test-----------------------------
                 var tst = new Test();
