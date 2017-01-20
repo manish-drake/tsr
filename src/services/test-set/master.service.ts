@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core'
+import { Injectable, EventEmitter } from '@angular/core'
 import { Dictionary } from '../../common/dictionary'
 import { Observable } from 'Rxjs'
 import { Http } from '@angular/http';
 
 @Injectable()
-export class Master {
+export class MasterService {
 
     constructor(private http: Http) {
 
@@ -34,4 +34,15 @@ export class Master {
     runTest(testName: string, args: Dictionary<string, string>): string {
         return "";
     }
+
+    contextualTest: EventEmitter<Object> = new EventEmitter();
+
+    emitContextualTest(test){
+        alert(test);
+        this.contextualTest.emit(test);
+    }
+
+    getContextualTestChangeEmitter() {
+    return this.contextualTest;
+  }
 }

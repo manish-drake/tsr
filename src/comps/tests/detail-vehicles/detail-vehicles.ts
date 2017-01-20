@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FileFactory } from '../../../services/io/file-factory';
-import { Master } from '../../../services/test-set/master.service'
+import { MasterService } from '../../../services/test-set/master.service'
 import { MoreActionsPopover } from '../../../pages/moreactions/moreactions';
 
 @Component({
@@ -19,7 +19,7 @@ export class DetailVehiclesComp {
   //   { cx: 525, cy: 525, r: 0 }
   // ];
 
-  constructor(private fileFactory: FileFactory, private master: Master, private moreaction: MoreActionsPopover) { }
+  constructor(private fileFactory: FileFactory, private master: MasterService, private moreaction: MoreActionsPopover) { }
 
   navigate(ev) {
     this.onNavigate.emit(ev);

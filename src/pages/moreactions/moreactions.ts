@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Platform, ViewController} from 'ionic-angular';
+import { Platform, ViewController } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
 
@@ -36,6 +36,8 @@ export class MoreActionsPopover {
     this.help = this.createModalSource("help-circle", "HELP", "help", this.viewCtrl);
   }
 
+
+
   createModalSource = function (name, label, target, viewctrl) {
     return {
       "name": name,
@@ -45,7 +47,7 @@ export class MoreActionsPopover {
       ],
       "viewctrl": viewctrl
     };
-  };
+  }
 
   onSetupClick(e) {
   }

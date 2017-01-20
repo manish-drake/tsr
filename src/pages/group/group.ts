@@ -48,7 +48,7 @@ export class GroupPage implements OnInit {
 
   selectedCardIndex = 0
 
-  onCardClick(i){
+  onCardClick(i, group) {
     this.selectedCardIndex = i;
   }
 

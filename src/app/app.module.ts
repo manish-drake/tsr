@@ -14,7 +14,7 @@ import { HelpPage } from '../pages/help/help';
 import { FileIOService } from '../services/io/file-io.service'
 import { Factory } from '../services/objects/factory.service'
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
-import { Master } from '../services/test-set/master.service'
+import { MasterService } from '../services/test-set/master.service'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
@@ -68,7 +68,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
         Factory,
-        Master,
+        MasterService,
         HeaderService,
         PopoverService,
         ModalService,
