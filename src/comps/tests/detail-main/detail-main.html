@@ -1,4 +1,4 @@
-<table style="width:100%;margin: 15px;">
+<table style="width:100%;margin: 5px;">
   <tr *ngFor="let row of test.rows">
     <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
         <ion-label [class]="cell.keyStyle">{{ cell.key }}</ion-label>

@@ -67,12 +67,4 @@ export class GroupPage implements OnInit {
     }
   }
 
-  favorite(section) {
-    if (!section.isFavorite) {
-      section.isFavorite = true;
-    }
-    else {
-      section.isFavorite = false;
-    }
-  }
 }

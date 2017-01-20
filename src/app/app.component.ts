@@ -36,6 +36,8 @@ export class MyApp implements OnInit {
   isAndroid: boolean = true;
 
   ngOnInit() {
+    this._router.navigate(['group', "Favorites"]);
+
     this._svcHeader.TitleUpdated.subscribe(e => {
       this.Title = e.title;
     });

@@ -3,9 +3,9 @@
 
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
 <ion-grid style="height: 100%;">
-<ion-row style="height: auto;">
+<ion-row style="height: auto;flex: 0 0 auto">
 <ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear large (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
+<button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
 </ion-col>
 <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
 <b style="font-size: 16px;"> {{test.name}} </b><br>
@@ -14,30 +14,30 @@
       style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
 </ion-col>
 <ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear large (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
+<button ion-button icon-only clear (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
 </ion-col>
 </ion-row>
 
 <ion-row style="height: 100%;">
-    <ion-scroll scrollY="true" style="height:100%;width:100%; " [ngSwitch]="currentView">
+    <ion-scroll scrollY="true" style="width:100%; " [ngSwitch]="currentView">
         <detail-main [test]="test" *ngSwitchCase="'default'"></detail-main>
         <detail-radar [test]="test" *ngSwitchCase="'radar'"></detail-radar>
         <detail-waveform [test]="test" *ngSwitchCase="'waveform'"></detail-waveform>
     </ion-scroll>
 </ion-row>
 
-<ion-row style="height: auto;">
+<ion-row style="height: auto; flex: 0 0 auto;">
     <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-<button ion-button clear (click)="onNavigate('prev')"><b>< Previous</b> </button>
+<button ion-button clear no-margin (click)="onNavigate('prev')"><b>< Previous</b> </button>
 </ion-col>
 <ion-col center text-center style="width: 100%;">
-<button ion-button icon-only outline class="playbutton" (click)="onRun()">
+<button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()">
      <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:5px;"></ion-icon>
 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
 </button>
 </ion-col>
 <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-<button ion-button clear (click)="onNavigate('next')"><b> Next ></b></button>
+<button ion-button clear no-margin (click)="onNavigate('next')"><b> Next ></b></button>
 </ion-col>
 </ion-row>
 
