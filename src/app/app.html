@@ -5,8 +5,9 @@
     <ion-item-group margin-vertical *ngFor="let header of hb.headers" style="margin-bottom: 8px;">
         <b no-lines padding-horizontal >{{header.Name}}</b>
         <ion-item menuToggle no-lines *ngFor="let group of header.Groups" (click)="onItemSelectionChanged(group)"
-         style="min-height:0px; height:35px; background: transparent;">
-            <span margin-left>{{ group }}</span>
+         style="min-height:0px; height:35px; background: transparent;"
+         [style.background]=" group.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' ">
+            <span margin-left>{{ group.name }}</span>
         </ion-item>
     </ion-item-group>
 </div>

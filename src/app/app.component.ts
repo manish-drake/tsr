@@ -22,22 +22,23 @@ export class MyApp implements OnInit {
 
   public hb = new Hamburger();
 
-  constructor(private platform: Platform, private popoverService: PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
-    // subscribe to theme changes and set a default chosen theme
-    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+  constructor(private platform: Platform,
+    private popoverService: PopoverService,
+    private _svcHeader: HeaderService,
+    private _router: Router,
+    private _themes: ThemesService) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+
+    // subscribe to theme changes and set a default chosen theme
+    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
   }
 
   isAndroid: boolean = true;
 
   ngOnInit() {
-    this._router.navigate(['group', "Favorites"]);
-
     this._svcHeader.TitleUpdated.subscribe(e => {
       this.Title = e.title;
     });
@@ -47,9 +48,22 @@ export class MyApp implements OnInit {
         this.isAndroid = false;
       }
     }
+
+    this._router.navigate(['group', "UAT"]);
   }
 
   onItemSelectionChanged(e) {
-    this._router.navigate(['group', e]);
+    this._router.navigate(['group', e.name]);
+
+    this.hb.headers.forEach(header => {
+      header.Groups.forEach(element => {
+        if (element == e) {
+          (<any>element).isSelected = true;
+        }
+        else {
+          (<any>element).isSelected = false;
+        }
+      })
+    });
   }
 }

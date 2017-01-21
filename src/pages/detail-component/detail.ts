@@ -6,12 +6,7 @@ import { HeaderService } from '../../services/ui/header.service'
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
 
-/*
-  Generated class for the Detail page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-detail',
   templateUrl: 'detail.html'

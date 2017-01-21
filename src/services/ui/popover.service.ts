@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { PopoverController, PopoverOptions } from 'ionic-angular';
 
-import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
-import { HelpPage } from '../../pages/help/help';
-import { SetupPage } from '../../pages/setup/setup';
-import { ConfigurationsPopover } from '../../pages/configurations/configurations'
+import { MoreActionsPopover } from '../../pages/moreactions-component/moreactions';
+import { HelpPage } from '../../pages/help-component/help';
+import { SetupPage } from '../../pages/setup-component/setup';
+import { ConfigurationsPopover } from '../../pages/configurations-component/configurations'
 
 @Injectable()
 export class PopoverService {

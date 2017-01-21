@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+import { MasterService } from '../../../services/test-set/master.service'
+
+
 @Component({
   selector: 'detail-radar',
   templateUrl: 'detail-radar.html'
@@ -8,10 +11,18 @@ export class DetailRadarComp {
 
   @Input() test: any;
 
-  constructor() { }
+  resultsobjects = [];
+
+  constructor(private masterService: MasterService) { }
 
   ngAfterViewInit() {
-  this.onResize();
+    this.onResize();
+
+    this.masterService.scanTest()
+      .subscribe(data => {
+        this.resultsobjects = [];
+        this.resultsobjects = data.response.data.results;
+      }, (rej) => { console.error("Could not load local data", rej) });
   }
 
   circleobjs = [
