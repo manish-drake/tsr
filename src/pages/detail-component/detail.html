@@ -19,10 +19,11 @@
 </ion-row>
 
 <ion-row style="height: 100%;">
-    <ion-scroll scrollY="true" style="width:100%; " [ngSwitch]="currentView">
-        <detail-main [test]="test" *ngSwitchCase="'default'"></detail-main>
-        <detail-radar [test]="test" *ngSwitchCase="'radar'"></detail-radar>
-        <detail-waveform [test]="test" *ngSwitchCase="'waveform'"></detail-waveform>
+    <ion-scroll scrollY="true" style="width:100%; ">
+        <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
+        <detail-main [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-main>
+        <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
+        <detail-waveform [test]="test" *ngIf="currentView == 'waveform'"></detail-waveform>
     </ion-scroll>
 </ion-row>
 
@@ -31,7 +32,7 @@
 <button ion-button clear no-margin (click)="onNavigate('prev')"><b>< Previous</b> </button>
 </ion-col>
 <ion-col center text-center style="width: 100%;">
-<button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()">
+<button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
      <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:5px;"></ion-icon>
 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
 </button>

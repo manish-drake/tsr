@@ -48,64 +48,64 @@ export class Factory {
         var favt = new Test();
         favt.Name = "Filter A/V Target";
 
-        var n: number = 0;
+        // var n: number = 0;
 
-        var vehicles = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-        vehicles.forEach(vehicle => {
+        // var vehicles = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+        // vehicles.forEach(vehicle => {
 
-            var sav1 = new TestParam();
-            sav1.Key = "Aircraft/Vehicle #" + vehicle.id + ":";
-            // add1.Value = "2345AA (H) / 23734510 (O) [N1246W]";
-            var cSav1 = new TestParamCell(sav1);
-            n = n + 1;
-            cSav1.Row = n;
-            cSav1.Column = 0;
-            cSav1.ColSpan = 2;
-            cSav1.Styles.add("key", "detailheading1");
-            favt.TestParamCells.push(cSav1);
+        //     var sav1 = new TestParam();
+        //     sav1.Key = "Aircraft/Vehicle #" + vehicle.id + ":";
+        //     // add1.Value = "2345AA (H) / 23734510 (O) [N1246W]";
+        //     var cSav1 = new TestParamCell(sav1);
+        //     n = n + 1;
+        //     cSav1.Row = n;
+        //     cSav1.Column = 0;
+        //     cSav1.ColSpan = 2;
+        //     cSav1.Styles.add("key", "detailheading1");
+        //     favt.TestParamCells.push(cSav1);
 
 
-            var add1 = new TestParam();
-            add1.Key = "ADDRESS:";
-            // add1.Value = "2345AA (H) / 23734510 (O) [N1246W]";
-            var cAdd1 = new TestParamCell(add1);
-            n = n + 1;
-            cAdd1.Row = n;
-            cAdd1.Column = 0;
-            cAdd1.ColSpan = 2;
+        //     var add1 = new TestParam();
+        //     add1.Key = "ADDRESS:";
+        //     // add1.Value = "2345AA (H) / 23734510 (O) [N1246W]";
+        //     var cAdd1 = new TestParamCell(add1);
+        //     n = n + 1;
+        //     cAdd1.Row = n;
+        //     cAdd1.Column = 0;
+        //     cAdd1.ColSpan = 2;
 
-            favt.TestParamCells.push(cAdd1);
+        //     favt.TestParamCells.push(cAdd1);
 
-            var q1 = new TestParam();
-            q1.Key = "Qualifier:";
-            // q1.Value = "0 (ADS-B ICAO)";
-            var cQ1 = new TestParamCell(q1);
-            n = n + 1;
-            cQ1.Row = n;
-            cQ1.Column = 0;
-            cQ1.ColSpan = 2;
+        //     var q1 = new TestParam();
+        //     q1.Key = "Qualifier:";
+        //     // q1.Value = "0 (ADS-B ICAO)";
+        //     var cQ1 = new TestParamCell(q1);
+        //     n = n + 1;
+        //     cQ1.Row = n;
+        //     cQ1.Column = 0;
+        //     cQ1.ColSpan = 2;
 
-            favt.TestParamCells.push(cQ1);
+        //     favt.TestParamCells.push(cQ1);
 
-            var pld1 = new TestParam();
-            pld1.Key = "Payload Rcvd:";
-            // pld1.Value = "1,0,2,0";
-            var cPld1 = new TestParamCell(pld1);
-            n = n + 1;
-            cPld1.Row = n;
-            cPld1.Column = 0;
+        //     var pld1 = new TestParam();
+        //     pld1.Key = "Payload Rcvd:";
+        //     // pld1.Value = "1,0,2,0";
+        //     var cPld1 = new TestParamCell(pld1);
+        //     n = n + 1;
+        //     cPld1.Row = n;
+        //     cPld1.Column = 0;
 
-            favt.TestParamCells.push(cPld1);
+        //     favt.TestParamCells.push(cPld1);
 
-            var agst1 = new TestParam();
-            agst1.Key = "RF Level:";
-            // agst1.Value = "Strong";
-            var cAgst1 = new TestParamCell(agst1);
-            cAgst1.Row = n;
-            cAgst1.Column = 1;
+        //     var agst1 = new TestParam();
+        //     agst1.Key = "RF Level:";
+        //     // agst1.Value = "Strong";
+        //     var cAgst1 = new TestParamCell(agst1);
+        //     cAgst1.Row = n;
+        //     cAgst1.Column = 1;
 
-            favt.TestParamCells.push(cAgst1);
-        });
+        //     favt.TestParamCells.push(cAgst1);
+        // });
 
         return favt;
     }

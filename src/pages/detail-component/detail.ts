@@ -39,6 +39,14 @@ export class DetailPage {
     });
   }
 
+  selectedVehicle: any;
+  
+  onVehicleSelect(e){
+    if (this.selectedVehicle != e) {
+      this.selectedVehicle = e;
+    }
+  }
+
   currentView: any = "default";
 
   nextViewIcon = "locate"

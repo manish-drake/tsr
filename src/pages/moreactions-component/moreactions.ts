@@ -49,13 +49,6 @@ export class MoreActionsPopover {
     };
   }
 
-  onSetupClick(e) {
-  }
-
-  onHelpClick(e) {
-    alert("..");
-  }
-
   static isRunAllenabled: boolean = false;
   static isReapeatEnabled: boolean = false;
   static isSaveEnabled: boolean = false;
