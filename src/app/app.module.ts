@@ -2,15 +2,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home'
-import { MoreActionsPopover } from '../pages/moreactions/moreactions';
-import { ConfigurationsPopover } from '../pages/configurations/configurations'
+import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
+import { ConfigurationsPopover } from '../pages/configurations-component/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
-import { GroupPage } from '../pages/group/group';
+import { GroupPage } from '../pages/group-component/group';
 import { FooterComponent } from '../pages/footer-component/footer-component'
-import { SectionsPage } from '../pages/sections/sections';
-import { DetailPage } from '../pages/detail/detail';
-import { SetupPage } from '../pages/setup/setup';
-import { HelpPage } from '../pages/help/help';
+import { DetailPage } from '../pages/detail-component/detail';
+import { SetupPage } from '../pages/setup-component/setup';
+import { HelpPage } from '../pages/help-component/help';
 import { FileIOService } from '../services/io/file-io.service'
 import { Factory } from '../services/objects/factory.service'
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
@@ -21,14 +20,13 @@ import { PopoverService } from '../services/ui/popover.service'
 import { ModalService } from '../services/ui/modal.service'
 import { ThemesService } from '../services/themes/themes.service'
 import { FileFactory } from '../services/io/file-factory';
-import { TestSectionComp } from '../comps/tests/section/section.comp';
-import { DetailMainComp } from '../comps/tests/detail-main/detail-main';
-import { DetailRadarComp } from '../comps/tests/detail-radar/detail-radar';
-import { DetailWaveformComp } from '../comps/tests/detail-waveform/detail-waveform';
-import { DetailVehiclesComp } from '../comps/tests/detail-vehicles/detail-vehicles';
-import { PopOverButtonComp } from '../comps/popoverctrl/popover-button-comp';
-import { ModalIonItemComp } from '../comps/modalctrl/modal-ionitem-comp';
-import { TestCardComp } from '../comps/tests/card/card.comp';
+import { DetailMainComp } from '../sub-components/tests/detail-main/detail-main';
+import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
+import { DetailWaveformComp } from '../sub-components/tests/detail-waveform/detail-waveform';
+import { DetailVehiclesComp } from '../sub-components/tests/detail-vehicles/detail-vehicles';
+import { PopOverButtonComp } from '../sub-components/popoverctrl/popover-button-comp';
+import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp';
+import { TestCardComp } from '../sub-components/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
 
 @NgModule({
@@ -40,11 +38,9 @@ import { SpyDirective } from '../common/mySpy.directive';
         HeaderComponent,
         GroupPage,
         FooterComponent,
-        SectionsPage,
         DetailPage,
         SetupPage,
         HelpPage,
-        TestSectionComp,
         DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         TestCardComp,
         SpyDirective,

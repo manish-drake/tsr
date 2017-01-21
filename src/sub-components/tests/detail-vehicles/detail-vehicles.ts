@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FileFactory } from '../../../services/io/file-factory';
 import { MasterService } from '../../../services/test-set/master.service'
-import { MoreActionsPopover } from '../../../pages/moreactions/moreactions';
+import { MoreActionsPopover } from '../../../pages/moreactions-component/moreactions';
 
 @Component({
   selector: 'detail-vehicles',
