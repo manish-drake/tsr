@@ -1,5 +1,5 @@
 import { RouterModule } from '@angular/router';
-import { SectionsPage } from '../pages/sections/sections';
+
 import { DetailPage } from '../pages/detail-component/detail';
 import { GroupPage } from '../pages/group-component/group';
 
