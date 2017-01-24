@@ -18,6 +18,14 @@ export class Test{
         this._Name = v;
     }
 
+    private _isFavorite : boolean;
+    public get isFavorite() : boolean {
+        return this._isFavorite;
+    }
+    public set isFavorite(v : boolean) {
+        this._isFavorite = v;
+    }
+
     private _Summaries : Test[];
     public get Summaries() : Test[] {
         if(!this._Summaries)

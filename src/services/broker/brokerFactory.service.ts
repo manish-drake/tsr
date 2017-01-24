@@ -1,6 +1,6 @@
 import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
-import { Group } from '../../core/tests/group'
+import { TestGroup } from '../../core/tests/testgroup'
 import { Dictionary } from '../../common/dictionary';
 
 export class BrokerFactoryService {
@@ -23,48 +23,30 @@ export class BrokerFactoryService {
         return { name: summaryData.Name, tests: tests };
     }
 
-    createSectionsDetail(detailData: Test) {
+    createTests(testData: Test) {
         var testDS: any[] = [];
-        detailData.Summaries.forEach(summary => {
+        testData.Summaries.forEach(summary => {
             var testD = {
                 name: summary.Name,
-                parent:detailData.Name,
-                rows: this.createParamsGrid(summary, detailData.Styles)
+                parent: testData.Name,
+                rows: this.createParamsGrid(summary, testData.Styles)
             }
             testDS.push(testD);
         })
-         return { name: detailData.Name, tests: testDS };
+        return testDS;
     }
 
-    createGroupDatasource(group: Group) {
-        var groupDS = {
-            "name": group.Name,
-            // "sections": group.Sections.map(section => {
-                  "sections": group.Test.map(section => {
-                return {
-                    "name": section.Name,
-                    "count": section.Summaries.length,
-                    "isFavorite": false
-                };
-            })
-        };
-        return groupDS;
+    createTestGroups(testGroups: TestGroup) {
+        var testGroupData = testGroups.Test.map(testgroup => {
+            return {
+                "name": testgroup.Name,
+                "count": testgroup.Summaries.length,
+                "isFavorite": testgroup.isFavorite
+            };
+        })
+        return testGroupData;
     }
 
-    /*
-    <table style="table-layout: fixed ">
-        <tr *ngFor="let row of test.rows">
-            <td 
-                *ngFor="let cell in row" 
-                colspan="cell.colspan"
-                rowspan="cell.rowspan">
-                    <span [class]="cell.keyStyle">{{ cell.key }}</span>
-                    <span [class]="cell.valueStyle">{{ cell.value }}</span>
-                    <span [class]="cell.unitStyle">{{ cell.unit }}</span>
-            </td>
-        </tr>
-    </table>
-    */
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;
         summary.TestParamCells.forEach(cell => {

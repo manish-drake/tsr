@@ -11,7 +11,7 @@ import { Factory } from '../../services/objects/factory.service'
   selector: 'page-detail',
   templateUrl: 'detail.html'
 })
-export class DetailPage {
+export class TestDetailComp {
 
   @ViewChild('Slides') slides: Slides;
 
@@ -26,16 +26,16 @@ export class DetailPage {
 
   }
 
-  public testset: any;
-  parent: any;
+  public tests: any;
 
   ngOnInit() {
     this.route.params.subscribe(data => {
-      this.parent = (data as any).parent;
-      var groupName = (data as any).test;
-      this._svcHeader.title = groupName;
-      var sectionsDetailData = this.objectService.createSectionsDetailData(groupName);
-      this.testset = this.broker.createSectionsDetail(sectionsDetailData);
+      var testGroupName = (data as any).test;
+      var testsData = this.objectService.createTestsData(testGroupName);
+      this.tests = this.broker.createTests(testsData);
+      console.log(this.tests);
+
+      this._svcHeader.title = testGroupName;
     });
   }
 

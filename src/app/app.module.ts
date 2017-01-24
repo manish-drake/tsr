@@ -5,9 +5,9 @@ import { HomePage } from '../pages/home/home'
 import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
 import { ConfigurationsPopover } from '../pages/configurations-component/configurations'
 import { HeaderComponent } from '../pages/header-component/header-component'
-import { GroupPage } from '../pages/group-component/group';
 import { FooterComponent } from '../pages/footer-component/footer-component'
-import { DetailPage } from '../pages/detail-component/detail';
+import { TestGroupComp } from '../pages/testgroup-component/testgroup';
+import { TestDetailComp } from '../pages/detail-component/detail';
 import { SetupPage } from '../pages/setup-component/setup';
 import { HelpPage } from '../pages/help-component/help';
 import { FileIOService } from '../services/io/file-io.service'
@@ -36,9 +36,9 @@ import { SpyDirective } from '../common/mySpy.directive';
         MoreActionsPopover,
         ConfigurationsPopover,
         HeaderComponent,
-        GroupPage,
+        TestGroupComp,
         FooterComponent,
-        DetailPage,
+        TestDetailComp,
         SetupPage,
         HelpPage,
         DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,

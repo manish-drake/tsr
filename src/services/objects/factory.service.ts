@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core'
-// import { TestSection } from '../../core/tests/testSection'
+
 import { Test } from '../../core/tests/test'
 import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
-// import { FileIOService } from '../io/file-io.service'
-import { Group } from '../../core/tests/group'
+import { TestGroup } from '../../core/tests/testgroup'
 
 @Injectable()
 export class Factory {
@@ -14,28 +13,27 @@ export class Factory {
 
     }
 
-    createGroup(groupName: string): Group {
-        var group: Group = new Group();
+    createTestGroupsData(groupName: string): TestGroup {
+        var group: TestGroup = new TestGroup();
         switch (groupName) {
             case 'UAT': {
-                // group.Sections = [
-                //     this.createSectionsSummaryData("UAT ADS-B OUT"),
-                //     this.createSectionsSummaryData("UAT ADS-B IN"),
-                //     this.createSectionsSummaryData("UAT RF"),
-                //     this.createSectionsSummaryData("VSWR")
-                // ];
                 group.Test = [
-                    // this.createSectionsDetailData("UAT ADS-B OUT"),
-                    // this.createSectionsDetailData("UAT ADS-B IN"),
-                    // this.createSectionsDetailData("UAT RF"),
-                    // this.createSectionsDetailData("VSWR")
-                    this.createSectionsDetailData("ADS-B SUMMARY"),
-                    this.createSectionsDetailData("ADS-B OUT"),
-                    this.createSectionsDetailData("ADS-B IN"),
-                    this.createSectionsDetailData("ADS-B DATA"),
-                    this.createSectionsDetailData("ADS-B TBD")
+                    // this.createTestData("UAT ADS-B OUT"),
+                    // this.createTestData("UAT ADS-B IN"),
+                    // this.createTestData("UAT RF"),
+                    // this.createTestData("VSWR")
+                    this.createTestsData("ADS-B SUMMARY"),
+                    this.createTestsData("ADS-B OUT"),
+                    this.createTestsData("ADS-B IN"),
+                    this.createTestsData("ADS-B DATA"),
+                    this.createTestsData("ADS-B TBD")
                 ];
                 break;
+            }
+            case 'Favorites': {
+                group.Test = [
+                    this.createTestsData("ADS-B OUT")
+                ]
             }
             default: {
                 break;
@@ -112,7 +110,7 @@ export class Factory {
 
 
 
-    createSectionsDetailData(test: string): Test {
+    createTestsData(test: string): Test {
         // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
@@ -122,7 +120,6 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
-
                 // -----------------------Filter A/v target----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 
@@ -322,7 +319,7 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
-
+                newTest.isFavorite = true;
                 // -----------------------Filter A/v target----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 

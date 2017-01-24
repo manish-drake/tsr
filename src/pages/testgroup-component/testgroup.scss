@@ -1,7 +1,8 @@
-page-group {
+testgroup {
     .items {
 	display: flex;
 	flex-wrap: wrap;
+  margin: 5px;
 }
 .items .itemm {
 	flex: 0 0 100%;
