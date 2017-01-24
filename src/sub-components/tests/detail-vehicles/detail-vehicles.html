@@ -3,7 +3,7 @@
     <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)" 
     [class.selectedvehicle]="vehicle == selectedVehicle"
     style="background-color: rgba(0,0,0,0.05); padding: 5px;">
-<table style="width:100%;margin:7px" >
+<!--<table style="width:100%;margin:7px" >
 <tr>
     <td text-nowrap class="sectionHeading" colspan="4">Aircraft/Vehicle #{{i+1}}: </td>
 </tr>
@@ -21,6 +21,27 @@
     <td text-nowrap class="sectionLabel">RF Level: </td>
     <td text-nowrap class="sectionResult"> </td>
 </tr>
+</table>-->
+<ion-row>
+    <table style="width:100%;margin:10px" >
+        <tr>
+    <td text-nowrap class="sectionHeading" colspan="5">Aircraft/Vehicle #{{i+1}}: </td>
+</tr>
+<tr>
+    <td class="sectionLabel1">ADDRESS:</td>
+    <td text-nowrap colspan="3" class="sectionResult1">{{vehicle.address}}</td>
+</tr>
+<tr>
+    <td class="sectionLabel1">Qualifier:</td>
+    <td text-nowrap colspan="3" class="sectionResult1"></td>
+</tr>
+<tr>
+    <td class="sectionLabel1">Pay load:</td>
+    <td text-nowrap class="sectionResult2"></td>
+    <td class="sectionLabel2">RF Level:</td>
+    <td text-nowrap class="sectionResult2"></td>
+</tr>
 </table>
+</ion-row>
 </ion-card>
 </div>

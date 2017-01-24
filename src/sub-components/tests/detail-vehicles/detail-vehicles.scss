@@ -3,18 +3,31 @@ detail-vehicles {
         display: inline-flex;
         font-weight: 600;
         font-size: 15px;
-        margin-bottom: 5px;    
+        margin-bottom: 5px;
+        width: auto;    
      }        
-    .sectionLabel{
+    .sectionLabel1{
         display: inline-flex;
-        min-width: 90px;
+        min-width: 80px;
         margin-left:7px;
         font-size: 15px;
     }
-    .sectionResult{
+    .sectionLabel2{
+        display: inline-flex;
+        min-width: 65px;
+        font-size: 15px;
+    }
+
+    .sectionResult1{
         display: inline-flex;
         width: 25%;
         min-width: 120px; 
+        font-size: 15px;  
+    }
+    .sectionResult2{
+        display: inline-flex;
+        width: 24.5%;
+        min-width: 70px; 
         font-size: 15px;  
     }
 
