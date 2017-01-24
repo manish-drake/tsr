@@ -1,31 +1,26 @@
 <div>
     <b margin-left [hidden]="selectedVehicle">Select Aircraft/Vehicle:</b>
-    <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)"
-    [class.selectedvehicle]="vehicle == selectedVehicle">
-        <ion-item style="background-color: rgba(0,0,0,0.05);" >
-<ion-row>
-    <ion-col style="width:100%">
-<span class="sectionHeading"> Aircraft / Vehicle #{{i+1}}: </span>
-</ion-col>
-</ion-row>
-<ion-row>
-    <table style="width:100%;" >
+    <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)" 
+    [class.selectedvehicle]="vehicle == selectedVehicle"
+    style="background-color: rgba(0,0,0,0.05); padding: 5px;">
+<table style="width:100%;margin:7px" >
 <tr>
-    <td class="sectionLabel">ADDRESS: </td>
-    <td class="sectionResult" colspan="3" [hidden]="noresult">{{vehicle.address}} </td>
+    <td text-nowrap class="sectionHeading" colspan="4">Aircraft/Vehicle #{{i+1}}: </td>
 </tr>
 <tr>
-    <td class="sectionLabel">Qualifier: </td>
-    <td class="sectionResult" colspan="3"> </td>
+    <td text-nowrap class="sectionLabel">ADDRESS: </td>
+    <td text-nowrap class="sectionResult" colspan="2">{{vehicle.address}}</td>
 </tr>
 <tr>
-    <td class="sectionLabel">Pay load: </td>
-    <td class="sectionResult"> </td>
-    <td class="sectionLabel">RF Level: </td>
-    <td class="sectionResult"> </td>
+    <td text-nowrap class="sectionLabel">Qualifier: </td>
+    <td text-nowrap class="sectionResult" colspan="2"></td>
+</tr>
+<tr>
+    <td text-nowrap class="sectionLabel">Pay load: </td>
+    <td text-nowrap class="sectionResult"> </td>
+    <td text-nowrap class="sectionLabel">RF Level: </td>
+    <td text-nowrap class="sectionResult"> </td>
 </tr>
 </table>
-</ion-row>
-</ion-item>
 </ion-card>
 </div>
