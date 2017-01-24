@@ -827,7 +827,7 @@ export class Factory {
                 var cUt1 = new TestParamCell(ut1);
                 cUt1.Row = 12;
                 cUt1.Column = 1;
-                cUt1.Styles.add("key", "detailLabel2");
+                cUt1.Styles.add("key", "detailLabel3");
 
                 usvt.TestParamCells.push(cUt1);
 
@@ -1072,7 +1072,7 @@ export class Factory {
                 ut2.Key = "UTC:";
                 // ut1.Value = "1 (Coupled)"
                 var cUt2 = new TestParamCell(ut2);
-                cUt2.Row = 15;
+                cUt2.Row = 14;
                 cUt2.Column = 1;
                 cUt2.Styles.add("key", "detailLabel2");
 
@@ -1082,7 +1082,7 @@ export class Factory {
                 upfb2.Key = "Uplink Feedback:";
                 // upfb1.Value = "6 (Score=31)"
                 var cUpfb2 = new TestParamCell(upfb2);
-                cUpfb2.Row = 16;
+                cUpfb2.Row = 15;
                 cUpfb2.Column = 0;
                 cUpfb2.ColSpan = 2;
                 cUpfb2.Styles.add("key", "detailLabel3");
@@ -1093,7 +1093,7 @@ export class Factory {
                 var auxsve2 = new TestParam();
                 auxsve2.Key = "Aux.State Vector Element (AUX SV)";
                 var cAuxsve2 = new TestParamCell(auxsve2);
-                cAuxsve2.Row = 17;
+                cAuxsve2.Row = 16;
                 cAuxsve2.Column = 0;
                 cAuxsve2.ColSpan = 2;
                 cAuxsve2.Styles.add("key", "detailLabel1");
@@ -1105,7 +1105,7 @@ export class Factory {
                 seca2.Key = "Secondary Altitude:";
                 seca2.Unit = "ft";
                 var cSeca2 = new TestParamCell(seca2);
-                cSeca2.Row = 18;
+                cSeca2.Row = 17;
                 cSeca2.Column = 0;
                 cSeca2.ColSpan = 2;
                 cSeca2.Styles.add("key", "detailLabel3");
@@ -1115,7 +1115,7 @@ export class Factory {
                 var result2 = new TestParam();
                 result2.Key = "Result:";
                 var cResult2 = new TestParamCell(result2);
-                cResult2.Row = 19;
+                cResult2.Row = 18;
                 cResult2.Column = 0;
                 cResult2.ColSpan = 4;
                 cResult2.Styles.add("key", "result");

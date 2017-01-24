@@ -8,7 +8,8 @@
 <span class="sectionHeading"> Aircraft / Vehicle #{{i+1}}: </span>
 </ion-col>
 </ion-row>
-<table style="width:100%;" >
+<ion-row>
+    <table style="width:100%;" >
 <tr>
     <td class="sectionLabel">ADDRESS: </td>
     <td class="sectionResult" colspan="3" [hidden]="noresult">{{vehicle.address}} </td>
@@ -24,6 +25,7 @@
     <td class="sectionResult"> </td>
 </tr>
 </table>
+</ion-row>
 </ion-item>
 </ion-card>
 </div>
