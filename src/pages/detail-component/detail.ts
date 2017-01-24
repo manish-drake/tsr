@@ -40,8 +40,8 @@ export class DetailPage {
   }
 
   selectedVehicle: any;
-  
-  onVehicleSelect(e){
+
+  onVehicleSelect(e) {
     if (this.selectedVehicle != e) {
       this.selectedVehicle = e;
     }
@@ -75,15 +75,17 @@ export class DetailPage {
   onNavigate(ev: string) {
     switch (ev) {
       case 'close': {
-        this._router.navigate(['group', "UAT"]);
+        this._router.navigate(['group', "UAT"])
+          .then(succ => console.log("Detail Closed: " + succ))
+          .catch(err => console.log("Error Closing Detail: " + err))
         break;
       }
       case 'next': {
-        this.slides.slideNext();
+        this.slides.slideNext(1000);
         break;
       }
       case 'prev': {
-        this.slides.slidePrev();
+        this.slides.slidePrev(1500);
         break;
       }
       default: { break; }

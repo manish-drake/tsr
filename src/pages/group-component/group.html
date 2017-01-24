@@ -1,6 +1,6 @@
 <div class="items">
   <div class="itemm" *ngFor="let group of group.sections; let i = index;">
-    <ion-card #mydiv (click)="onCardClick(i, group)" on-tap="doubleTapNavigation(group)" style="min-height:200px;"
+    <ion-card (click)="onCardClick(i, group)" on-tap="doubleTapNavigation(group)" style="min-height:200px;"
     [class.selectedcard]="selectedCardIndex == i">
      <ion-row >
        <ion-col no-padding center style="width:100%;">
