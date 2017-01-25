@@ -6,5 +6,5 @@ import { TestGroupComp } from '../pages/testgroup-component/testgroup';
 export const router = RouterModule.forRoot([
     { path: '', redirectTo: 'testgroup/Favorites', pathMatch: 'full' },
     { path: 'testgroup/:name', component: TestGroupComp },
-    { path: 'detail/:test/:parent', component: TestDetailComp }
+    { path: 'detail/:test/:headername', component: TestDetailComp }
 ]);

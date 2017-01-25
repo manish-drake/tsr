@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'detail-main',
-    templateUrl: 'detail-main.html'
+    selector: 'detail-default',
+    templateUrl: 'detail-default.html'
 })
-export class DetailMainComp{
+export class DetailDefaultComp{
     @Input() test: any;
 
     constructor() {}

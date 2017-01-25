@@ -24,7 +24,7 @@
         <p style="color: gray">No aircraft/vehicle selected</p>
         </div>
         <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
-        <detail-main [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-main>
+        <detail-default [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-default>
         <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
         <detail-waveform [test]="test" *ngIf="currentView == 'waveform'"></detail-waveform>
     </ion-scroll>

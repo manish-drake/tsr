@@ -20,13 +20,12 @@ import { PopoverService } from '../services/ui/popover.service'
 import { ModalService } from '../services/ui/modal.service'
 import { ThemesService } from '../services/themes/themes.service'
 import { FileFactory } from '../services/io/file-factory';
-import { DetailMainComp } from '../sub-components/tests/detail-main/detail-main';
+import { DetailDefaultComp } from '../sub-components/tests/detail-default/detail-default';
 import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
 import { DetailWaveformComp } from '../sub-components/tests/detail-waveform/detail-waveform';
 import { DetailVehiclesComp } from '../sub-components/tests/detail-vehicles/detail-vehicles';
 import { PopOverButtonComp } from '../sub-components/popoverctrl/popover-button-comp';
 import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp';
-import { TestCardComp } from '../sub-components/tests/card/card.comp';
 import { SpyDirective } from '../common/mySpy.directive';
 
 @NgModule({
@@ -41,8 +40,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         TestDetailComp,
         SetupPage,
         HelpPage,
-        DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
-        TestCardComp,
+        DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
         PopOverButtonComp,
         ModalIonItemComp
