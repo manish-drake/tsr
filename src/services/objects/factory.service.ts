@@ -132,161 +132,187 @@ export class Factory {
 
                 var aid3 = new TestParam();
                 aid3.Key = "AC Id:";
-                // aid3.Value = "2345AA (H) / 23734510 (O) [N1246W]";
+                // aid3.Value = "00000";
                 var cAid3 = new TestParamCell(aid3);
                 cAid3.Row = 0;
                 cAid3.Column = 0;
                 cAid3.ColSpan = 4;
                 cAid3.Styles.add("key", "detailLabel");
-                cAid3.Styles.add("value", "detailResult");
+                cAid3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cAid3);
 
                 var acc3 = new TestParam();
                 acc3.Key = "AC Class:";
-                // addQ3.Value = "0 (ADS-B ICAO)";
+                // acc3.Value = "0";
                 var cAcc3 = new TestParamCell(acc3);
                 cAcc3.Row = 1;
                 cAcc3.Column = 0;
                 cAcc3.ColSpan = 4;
                 cAcc3.Styles.add("key", "detailLabel");
-                cAcc3.Styles.add("value", "detailResult");
+                cAcc3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cAcc3);
 
                 var rply3 = new TestParam();
                 rply3.Key = "Reply:";
+                // rply3.Value = "0.0";
                 rply3.Unit = "%";
                 var cRply3 = new TestParamCell(rply3);
                 cRply3.Row = 2;
                 cRply3.Column = 0;
                 cRply3.ColSpan = 4;
                 cRply3.Styles.add("key", "detailLabel");
-                cRply3.Styles.add("value", "detailResult");
+                cRply3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cRply3);
 
                 var pr3 = new TestParam();
                 pr3.Key = "Power:";
+                // pr3.Value = "00.0";
                 pr3.Unit = "dB";
                 var cPr3 = new TestParamCell(pr3);
                 cPr3.Row = 3;
                 cPr3.Column = 0;
                 cPr3.ColSpan = 4;
                 cPr3.Styles.add("key", "detailLabel");
-                cPr3.Styles.add("value", "detailResult");
+                cPr3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cPr3);
 
                 var fq3 = new TestParam();
                 fq3.Key = "Freq:";
+                // fq3.Value = "0000.0";
                 fq3.Unit = "MHz";
                 var cFq3 = new TestParamCell(fq3);
                 cFq3.Row = 4;
                 cFq3.Column = 0;
                 cFq3.ColSpan = 4;
                 cFq3.Styles.add("key", "detailLabel");
-                cFq3.Styles.add("value", "detailResult");
+                cFq3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cFq3);
 
                 var vc3 = new TestParam();
                 vc3.Key = "Velocity:";
-                vc3.Unit = "kts";
+                // vc3.Value = "000";
+                vc3.Unit = "Kts";
                 var cVc3 = new TestParamCell(vc3);
                 cVc3.Row = 5;
                 cVc3.Column = 0;
-                cVc3.Styles.add("key", "detailLabel5");
+                cVc3.Styles.add("key", "detailLabel");
+                cVc3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cVc3);
 
                 var br3 = new TestParam();
                 br3.Key = "Bearing:";
+                // br3.Value = "000.0";
                 br3.Unit = "Deg";
                 var cBr3 = new TestParamCell(br3);
                 cBr3.Row = 5;
                 cBr3.Column = 1;
-                cBr3.Styles.add("key", "detailLabel5");
+                cBr3.Styles.add("key", "detailLabel2");
+                cBr3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cBr3);
 
                 var atd3 = new TestParam();
                 atd3.Key = "Altitude:";
+                // atd3.Value = "0000";
                 atd3.Unit = "Ft";
                 var cAtd3 = new TestParamCell(atd3);
                 cAtd3.Row = 6;
                 cAtd3.Column = 0;
+                cAtd3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cAtd3);
 
                 var rg3 = new TestParam();
                 rg3.Key = "Range:";
+                // rg3.Value = "0000";
                 rg3.Unit = "Ft";
                 var cRg3 = new TestParamCell(rg3);
                 cRg3.Row = 6;
                 cRg3.Column = 1;
+                cRg3.Styles.add("key", "detailLabel2");
+                cRg3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cRg3);
 
                 var pwr3 = new TestParam();
                 pwr3.Key = "Power:";
+                // pwr3.Value = "00.0";
                 pwr3.Unit = "dBm";
                 var cPwr3 = new TestParamCell(pwr3);
                 cPwr3.Row = 7;
                 cPwr3.Column = 0;
+                cPwr3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cPwr3);
 
                 var bro3 = new TestParam();
                 bro3.Key = "Baro:";
+                // bro3.Value = "0000";
                 bro3.Unit = "Mb";
                 var cBro3 = new TestParamCell(bro3);
                 cBro3.Row = 7;
                 cBro3.Column = 1;
+                cBro3.Styles.add("key", "detailLabel2");
+                cBro3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cBro3);
 
                 var frqc3 = new TestParam();
                 frqc3.Key = "Frequency:";
+                // frqc3.Value = "0000.0";
                 frqc3.Unit = "MHz";
                 var cFrqc3 = new TestParamCell(frqc3);
                 cFrqc3.Row = 8;
                 cFrqc3.Column = 0;
+                cFrqc3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cFrqc3);
 
                 var lt3 = new TestParam();
                 lt3.Key = "Lat:";
-                lt3.Unit = "N";
-                // lt3.Value = "1536";
+                // lt3.Value = "00.00000";
+                lt3.Unit = "N";                
                 var cLt3 = new TestParamCell(lt3);
                 cLt3.Row = 8;
                 cLt3.Column = 1;
+                cLt3.Styles.add("key", "detailLabel2");
+                cLt3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cLt3);
 
                 var spg3 = new TestParam();
                 spg3.Key = "Spacing:";
+                // spg3.Value = "0.0";
                 spg3.Unit = "ns";
                 var cSpg3 = new TestParamCell(spg3);
-                cSpg3.Row = 8;
+                cSpg3.Row = 9;
                 cSpg3.Column = 0;
+                cSpg3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cSpg3);
 
                 var ln3 = new TestParam();
                 ln3.Key = "Lon:";
+                // ln3.Value = "000.00000";
                 ln3.Unit = "W";
                 var cLn3 = new TestParamCell(ln3);
-                cLn3.Row = 8;
+                cLn3.Row = 9;
                 cLn3.Column = 1;
+                cLn3.Styles.add("key", "detailLabel2");
+                cLn3.Styles.add("value", "detailResult3");
 
                 adssum1.TestParamCells.push(cLn3);
 
                 var result = new TestParam();
                 result.Key = "Result:";
                 var cResult = new TestParamCell(result);
-                cResult.Row = 22;
+                cResult.Row = 10;
                 cResult.Column = 0;
                 cResult.ColSpan = 4;
                 cResult.Styles.add("key", "result");
@@ -440,7 +466,6 @@ export class Factory {
                 cEp3.Row = 8;
                 cEp3.Column = 0;
                 cEp3.ColSpan = 4;
-                cEp3.Styles.add("value", "detailResult");
 
 
                 mst.TestParamCells.push(cEp3);
@@ -480,7 +505,6 @@ export class Factory {
                 cEs3.Row = 11;
                 cEs3.Column = 0;
                 cEs3.ColSpan = 4;
-                cEs3.Styles.add("value", "detailResult");
 
                 mst.TestParamCells.push(cEs3);
 
@@ -520,7 +544,6 @@ export class Factory {
                 cTcasra3.Row = 14;
                 cTcasra3.Column = 0;
                 cTcasra3.ColSpan = 4;
-                cTcasra3.Styles.add("value", "detailResult");
 
                 mst.TestParamCells.push(cTcasra3);
 
@@ -630,7 +653,6 @@ export class Factory {
                 cNicsup3.Row = 21;
                 cNicsup3.Column = 0;
                 cNicsup3.ColSpan = 4;
-                cNicsup3.Styles.add("value", "detailResult");
 
                 mst.TestParamCells.push(cNicsup3);
 
@@ -755,6 +777,7 @@ export class Factory {
                 cAlti1.Row = 8;
                 cAlti1.Column = 0;
                 cAlti1.Styles.add("key", "detailLabel3");
+                cAlti1.Styles.add("value", "detailResult3");
 
                 usvt.TestParamCells.push(cAlti1);
 
@@ -774,7 +797,6 @@ export class Factory {
                 var cHorv1 = new TestParamCell(horv1);
                 cHorv1.Row = 9;
                 cHorv1.Column = 0;
-                cHorv1.ColSpan = 2;
                 cHorv1.Styles.add("key", "detailLabel3");
 
                 usvt.TestParamCells.push(cHorv1);
@@ -787,6 +809,7 @@ export class Factory {
                 cVerv1.Row = 10;
                 cVerv1.Column = 0;
                 cVerv1.Styles.add("key", "detailLabel3");
+                cVerv1.Styles.add("value", "detailResult3");
 
                 usvt.TestParamCells.push(cVerv1);
 
@@ -827,7 +850,7 @@ export class Factory {
                 var cUt1 = new TestParamCell(ut1);
                 cUt1.Row = 12;
                 cUt1.Column = 1;
-                cUt1.Styles.add("key", "detailLabel3");
+                cUt1.Styles.add("key", "detailLabel2");
 
                 usvt.TestParamCells.push(cUt1);
 
@@ -837,9 +860,7 @@ export class Factory {
                 var cUpfb1 = new TestParamCell(upfb1);
                 cUpfb1.Row = 13;
                 cUpfb1.Column = 0;
-                cUpfb1.ColSpan = 2;
                 cUpfb1.Styles.add("key", "detailLabel3");
-                cUpfb1.Styles.add("value", "detailResult");
 
                 usvt.TestParamCells.push(cUpfb1);
 
@@ -861,8 +882,8 @@ export class Factory {
                 var cSeca1 = new TestParamCell(seca1);
                 cSeca1.Row = 15;
                 cSeca1.Column = 0;
-                cSeca1.ColSpan = 2;
                 cSeca1.Styles.add("key", "detailLabel3");
+                cSeca1.Styles.add("value", "detailResult3");
 
                 usvt.TestParamCells.push(cSeca1);
 
@@ -884,7 +905,7 @@ export class Factory {
 
                 var addr2 = new TestParam();
                 addr2.Key = "ADDRESS:";
-                // addr1.Value = "2345AA (H)/ 237345109O) [N1246W]";
+                // addr2.Value = "2345AA (H)/ 237345109O) [N1246W]";
                 var cAddr2 = new TestParamCell(addr2);
                 cAddr2.Row = 0;
                 cAddr2.Column = 0;
@@ -895,7 +916,7 @@ export class Factory {
 
                 var aQ2 = new TestParam();
                 aQ2.Key = "Qualifier:";
-                // aQ1.Value = "0 (ADS-B ICAO)";
+                // aQ2.Value = "0 (ADS-B ICAO)";
                 var cAq2 = new TestParamCell(aQ2);
                 cAq2.Row = 1;
                 cAq2.Column = 0;
@@ -906,7 +927,7 @@ export class Factory {
 
                 var pldr2 = new TestParam();
                 pldr2.Key = "Payload Rcvd:";
-                // pldr1.Value = "1,0,2,0";
+                // pldr2.Value = "1,0,2,0";
                 var cPldr2 = new TestParamCell(pldr2);
                 cPldr2.Row = 2;
                 cPldr2.Column = 0;
@@ -916,7 +937,7 @@ export class Factory {
 
                 var rflev2 = new TestParam();
                 rflev2.Key = "RF Level:";
-                // rflev1.Value = "Strong";
+                // rflev2.Value = "Strong";
                 var cRflev2 = new TestParamCell(rflev2);
                 cRflev2.Row = 2;
                 cRflev2.Column = 1;
@@ -948,7 +969,7 @@ export class Factory {
 
                 var agst2 = new TestParam();
                 agst2.Key = "Air/Gnd State:";
-                // agst1.Value = "GROUND"
+                // agst2.Value = "GROUND"
                 var cAgst2 = new TestParamCell(agst2);
                 cAgst2.Row = 5;
                 cAgst2.Column = 0;
@@ -959,7 +980,7 @@ export class Factory {
 
                 var latd2 = new TestParam();
                 latd2.Key = "Latitude:";
-                // latd1.Value = "17⁰ 19 21.00 N";
+                // latd2.Value = "17⁰ 19 21.00 N";
                 var cLatd2 = new TestParamCell(latd2);
                 cLatd2.Row = 6;
                 cLatd2.Column = 0;
@@ -970,6 +991,7 @@ export class Factory {
 
                 var lagd2 = new TestParam();
                 lagd2.Key = "Longitude:";
+                // lagd2.Value = "90⁰ 15 30.00 W";
                 var cLagd2 = new TestParamCell(lagd2);
                 cLagd2.Row = 7;
                 cLagd2.Column = 0;
@@ -980,16 +1002,19 @@ export class Factory {
 
                 var alti2 = new TestParam();
                 alti2.Key = "Altitude:";
+                // alti2.Value = "1,820";
                 alti2.Unit = "ft";
                 var cAlti2 = new TestParamCell(alti2);
                 cAlti2.Row = 8;
                 cAlti2.Column = 0;
                 cAlti2.Styles.add("key", "detailLabel3");
+                cAlti2.Styles.add("value", "detailResult3");
 
                 usvtg.TestParamCells.push(cAlti2);
 
                 var typ2 = new TestParam();
                 typ2.Key = "Type:";
+                // typ2.Value = "1 (Geometric)";
                 var cTyp2 = new TestParamCell(typ2);
                 cTyp2.Row = 8;
                 cTyp2.Column = 1;
@@ -999,27 +1024,31 @@ export class Factory {
 
                 var gsd2 = new TestParam();
                 gsd2.Key = "Groundspeed:";
+                // gsd2.Value = "23";
                 gsd2.Unit = "kts";
                 var cGsd2 = new TestParamCell(gsd2);
                 cGsd2.Row = 9;
                 cGsd2.Column = 0;
-                cGsd2.ColSpan = 2;
                 cGsd2.Styles.add("key", "detailLabel3");
+                cGsd2.Styles.add("value", "detailResult3");
 
                 usvtg.TestParamCells.push(cGsd2);
 
                 var verv2 = new TestParam();
                 verv2.Key = "Track/Heading:";
+                // verv2.Value = "002.7";
                 verv2.Unit = "deg";
                 var cVerv2 = new TestParamCell(verv2);
                 cVerv2.Row = 10;
                 cVerv2.Column = 0;
                 cVerv2.Styles.add("key", "detailLabel3");
+                cVerv2.Styles.add("value", "detailResult3");
 
                 usvtg.TestParamCells.push(cVerv2);
 
                 var th2 = new TestParam();
                 th2.Key = "T/H:";
+                // th2.Value = "2 (MagHdg)";
                 var cTh2 = new TestParamCell(th2);
                 cTh2.Row = 10;
                 cTh2.Column = 1;
@@ -1029,6 +1058,7 @@ export class Factory {
 
                 var avlw2 = new TestParam();
                 avlw2.Key = "A/V L/W:";
+                // avlw2.Value = "2 (25m/28.5m)";
                 var cAvlw2 = new TestParamCell(avlw2);
                 cAvlw2.Row = 11;
                 cAvlw2.Column = 0;
@@ -1039,6 +1069,7 @@ export class Factory {
 
                 var horv2 = new TestParam();
                 horv2.Key = "GPS Ant Offset:";
+                // horv2.Value = "5m (2m RT)";
                 var cHorv2 = new TestParamCell(horv2);
                 cHorv2.Row = 12;
                 cHorv2.Column = 0;
@@ -1060,7 +1091,7 @@ export class Factory {
 
                 var ni2 = new TestParam();
                 ni2.Key = "NIC:";
-                // ni1.Value = "9 (< 75m)";
+                // ni2.Value = "9 (< 75m)";
                 var cNi2 = new TestParamCell(ni2);
                 cNi2.Row = 14;
                 cNi2.Column = 0;
@@ -1070,7 +1101,7 @@ export class Factory {
 
                 var ut2 = new TestParam();
                 ut2.Key = "UTC:";
-                // ut1.Value = "1 (Coupled)"
+                // ut2.Value = "1 (Coupled)"
                 var cUt2 = new TestParamCell(ut2);
                 cUt2.Row = 14;
                 cUt2.Column = 1;
@@ -1080,13 +1111,11 @@ export class Factory {
 
                 var upfb2 = new TestParam();
                 upfb2.Key = "Uplink Feedback:";
-                // upfb1.Value = "6 (Score=31)"
+                // upfb2.Value = "6 (Score=31)"
                 var cUpfb2 = new TestParamCell(upfb2);
                 cUpfb2.Row = 15;
                 cUpfb2.Column = 0;
-                cUpfb2.ColSpan = 2;
                 cUpfb2.Styles.add("key", "detailLabel3");
-                cUpfb2.Styles.add("value", "detailResult");
 
                 usvtg.TestParamCells.push(cUpfb2);
 
@@ -1103,12 +1132,13 @@ export class Factory {
 
                 var seca2 = new TestParam();
                 seca2.Key = "Secondary Altitude:";
+                // seca2.Value = "1,830";
                 seca2.Unit = "ft";
                 var cSeca2 = new TestParamCell(seca2);
                 cSeca2.Row = 17;
                 cSeca2.Column = 0;
-                cSeca2.ColSpan = 2;
                 cSeca2.Styles.add("key", "detailLabel3");
+                cSeca2.Styles.add("value", "detailResult3");
 
                 usvtg.TestParamCells.push(cSeca2);
 
@@ -1130,6 +1160,7 @@ export class Factory {
 
                 var add6 = new TestParam();
                 add6.Key = "ADDRESS:";
+                // add6.Value = "2345AA (H) / 23734510 (O) [N1246W]";
                 var cAdd6 = new TestParamCell(add6);
                 cAdd6.Row = 0;
                 cAdd6.Column = 0;
@@ -1140,6 +1171,7 @@ export class Factory {
 
                 var addQ6 = new TestParam();
                 addQ6.Key = "Qualifier:";
+                // addQ6.Value = "0 (ADS-B ICAO)";
                 var cAddQ6 = new TestParamCell(addQ6);
                 cAddQ6.Row = 1;
                 cAddQ6.Column = 0;
@@ -1151,20 +1183,21 @@ export class Factory {
 
                 var pld6 = new TestParam();
                 pld6.Key = "Payload Rcvd:";
+                // pld6.Value = "1,0,2,0";
                 var cPld6 = new TestParamCell(pld6);
                 cPld6.Row = 2;
                 cPld6.Column = 0;
-                cPld6.Styles.add("key", "detailLabel");
+                cPld6.Styles.add("key", "detailResult3");
 
                 tst.TestParamCells.push(cPld6);
 
                 var rfle6 = new TestParam();
                 rfle6.Key = "RF Level:";
+                // rfle6.Value = "Strong";
                 var cRfle6 = new TestParamCell(rfle6);
                 cRfle6.Row = 2;
                 cRfle6.Column = 1;
                 cRfle6.Styles.add("key", "detailLabel2");
-
                 tst.TestParamCells.push(cRfle6);
 
                 var tse6 = new TestParam();
@@ -1185,7 +1218,7 @@ export class Factory {
                 var cSat6 = new TestParamCell(sat6);
                 cSat6.Row = 4;
                 cSat6.Column = 0;
-                cSat6.Styles.add("key", "detailLabel2");
+                cSat6.Styles.add("value", "detailResult3")
 
                 tst.TestParamCells.push(cSat6);
 
@@ -1206,8 +1239,7 @@ export class Factory {
                 var cBps6 = new TestParamCell(bps6);
                 cBps6.Row = 5;
                 cBps6.Column = 0;
-                cBps6.ColSpan = 2;
-                cBps6.Styles.add("key", "detailLabel2");
+                cBps6.Styles.add("value", "detailResult3")
 
                 tst.TestParamCells.push(cBps6);
 
@@ -1218,8 +1250,7 @@ export class Factory {
                 var cSeh6 = new TestParamCell(seh6);
                 cSeh6.Row = 6;
                 cSeh6.Column = 0;
-                cSeh6.Styles.add("key", "detailLabel2");
-                // cSeh6.Styles.add("value", "detailResult");
+                cSeh6.Styles.add("value", "detailResult3")
 
                 tst.TestParamCells.push(cSeh6);
 
@@ -1227,7 +1258,7 @@ export class Factory {
                 sts6.Key = "Status:";
                 // sts6.Value = "1(Valid)";
                 var cSts6 = new TestParamCell(sts6);
-                cSts6.Row = 4;
+                cSts6.Row = 6;
                 cSts6.Column = 1;
                 cSts6.Styles.add("key", "detailLabel2");
 
@@ -1246,6 +1277,7 @@ export class Factory {
 
                 var ap6 = new TestParam();
                 ap6.Key = "Mode bits status:";
+                // ap6.Value = "1 (Valid)";
                 var cAp6 = new TestParamCell(ap6);
                 cAp6.Row = 10;
                 cAp6.Column = 0;
@@ -1257,6 +1289,7 @@ export class Factory {
 
                 var vnav6 = new TestParam();
                 vnav6.Key = "AutoPilot (AP):";
+                // vnav6.Value = "1 (Engaged)";
                 var cVnav6 = new TestParamCell(vnav6);
                 cVnav6.Row = 11;
                 cVnav6.Column = 0;
@@ -1268,6 +1301,7 @@ export class Factory {
 
                 var alth6 = new TestParam();
                 alth6.Key = "VNAV:";
+                // alth6.Value = "0 (Not Engaged)";
                 var cAlth6 = new TestParamCell(alth6);
                 cAlth6.Row = 12;
                 cAlth6.Column = 0;
@@ -1279,6 +1313,7 @@ export class Factory {
 
                 var appm6 = new TestParam();
                 appm6.Key = "Alt. Hold (ALT):";
+                // appm6.Value = "1 (Engaged)";
                 var cAppm6 = new TestParamCell(appm6);
                 cAppm6.Row = 13;
                 cAppm6.Column = 0;
@@ -1290,6 +1325,7 @@ export class Factory {
 
                 var lnavm6 = new TestParam();
                 lnavm6.Key = "Approach (APP):";
+                // lnavm6.Value = "0 (Not Engaged)";
                 var cLnavm6 = new TestParamCell(lnavm6);
                 cLnavm6.Row = 14;
                 cLnavm6.Column = 0;
@@ -1301,6 +1337,7 @@ export class Factory {
 
                 var lnav6 = new TestParam();
                 lnav6.Key = "LNAV:";
+                // lnav6.Value = "0 (Not Engaged)";
                 var cLnav6 = new TestParamCell(lnav6);
                 cLnav6.Row = 15;
                 cLnav6.Column = 0;
@@ -1328,22 +1365,27 @@ export class Factory {
 
                 var add5 = new TestParam();
                 add5.Key = "ADDRESS:";
+                // add5.Value = "2345AA (H) / 23734510 (O) [N1246W]";
                 var cAdd5 = new TestParamCell(add5);
                 cAdd5.Row = 0;
                 cAdd5.Column = 0;
-
+                cAdd5.ColSpan = 2;
+                cAdd5.Styles.add("value", "detailResult");
                 tct.TestParamCells.push(cAdd5);
 
                 var q5 = new TestParam();
                 q5.Key = "Qualifier:";
+                // q5.Value = "0 (ADS-B ICAO)";
                 var cQ5 = new TestParamCell(q5);
                 cQ5.Row = 1;
                 cQ5.Column = 0;
-
+                cQ5.ColSpan = 2;
+                cQ5.Styles.add("value", "detailResult");
                 tct.TestParamCells.push(cQ5);
 
                 var pld5 = new TestParam();
                 pld5.Key = "Payload Rcvd:";
+                // pld5.Value = "1,0,2,0";
                 var cPld5 = new TestParamCell(pld5);
                 cPld5.Row = 2;
                 cPld5.Column = 0;
@@ -1352,10 +1394,11 @@ export class Factory {
 
                 var agst5 = new TestParam();
                 agst5.Key = "RF Level:";
+                // agst5.Value = "Strong";
                 var cAgst5 = new TestParamCell(agst5);
                 cAgst5.Row = 2;
                 cAgst5.Column = 1;
-
+                cAgst5.Styles.add("key", "detailLabel2");
                 tct.TestParamCells.push(cAgst5);
 
                 var tce5 = new TestParam();
@@ -1371,11 +1414,12 @@ export class Factory {
 
                 var tcfld5 = new TestParam();
                 tcfld5.Key = "TC Field:";
+                // tcfld5.Value = "00000000000000000";
                 var cTcfld5 = new TestParamCell(tcfld5);
                 cTcfld5.Row = 4;
                 cTcfld5.Column = 0;
                 cTcfld5.ColSpan = 2;
-
+                cTcfld5.Styles.add("value", "detailResult");
                 tct.TestParamCells.push(cTcfld5);
 
                 newTest.Summaries.push(tct);
@@ -1673,6 +1717,7 @@ export class Factory {
 
                 var add4 = new TestParam();
                 add4.Key = "ADDRESS:";
+                // add4.Value = "2345AA (H) / 23734510 (O) [N1246W]";
                 var cAdd4 = new TestParamCell(add4);
                 cAdd4.Row = 0;
                 cAdd4.Column = 0;
@@ -1684,6 +1729,7 @@ export class Factory {
 
                 var addQ4 = new TestParam();
                 addQ4.Key = "Qualifier:";
+                // addQ4.Value = "0 (ADS-B ICAO)";
                 var cAddQ4 = new TestParamCell(addQ4);
                 cAddQ4.Row = 1;
                 cAddQ4.Column = 0;
@@ -1713,7 +1759,7 @@ export class Factory {
                 cFrq4.Column = 0;
                 cFrq4.ColSpan = 2;
                 cFrq4.Styles.add("key", "detailLabel3");
-                cFrq4.Styles.add("value", "detailResult");
+                cFrq4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cFrq4);
 
@@ -1726,7 +1772,7 @@ export class Factory {
                 cPwr4.Column = 0;
                 cPwr4.ColSpan = 2;
                 cPwr4.Styles.add("key", "detailLabel3");
-                cPwr4.Styles.add("value", "detailResult");
+                cPwr4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cPwr4);
 
@@ -1739,7 +1785,7 @@ export class Factory {
                 cPwrdp4.Column = 0;
                 cPwrdp4.ColSpan = 2;
                 cPwrdp4.Styles.add("key", "detailLabel3");
-                cPwrdp4.Styles.add("value", "detailResult");
+                cPwrdp4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cPwrdp4);
 
@@ -1752,7 +1798,7 @@ export class Factory {
                 cDvn4.Column = 0;
                 cDvn4.ColSpan = 2;
                 cDvn4.Styles.add("key", "detailLabel3");
-                cDvn4.Styles.add("value", "detailResult");
+                cDvn4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cDvn4);
 
@@ -1765,7 +1811,7 @@ export class Factory {
                 cPkdn4.Column = 0;
                 cPkdn4.ColSpan = 2;
                 cPkdn4.Styles.add("key", "detailLabel3");
-                cPkdn4.Styles.add("value", "detailResult");
+                cPkdn4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cPkdn4);
 
@@ -1778,7 +1824,7 @@ export class Factory {
                 cVeo4.Column = 0;
                 cVeo4.ColSpan = 2;
                 cVeo4.Styles.add("key", "detailLabel3");
-                cVeo4.Styles.add("value", "detailResult");
+                cVeo4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cVeo4);
 
@@ -1791,7 +1837,7 @@ export class Factory {
                 cHeo4.Column = 0;
                 cHeo4.ColSpan = 2;
                 cHeo4.Styles.add("key", "detailLabel3");
-                cHeo4.Styles.add("value", "detailResult");
+                cHeo4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cHeo4);
 
@@ -1804,7 +1850,7 @@ export class Factory {
                 cMte4.Column = 0;
                 cMte4.ColSpan = 2;
                 cMte4.Styles.add("key", "detailLabel3");
-                cMte4.Styles.add("value", "detailResult");
+                cMte4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cMte4);
 
@@ -1826,7 +1872,7 @@ export class Factory {
                 cMsrcd4.Column = 0;
                 cMsrcd4.ColSpan = 2;
                 cMsrcd4.Styles.add("key", "detailLabel4");
-                cMsrcd4.Styles.add("value", "detailResult");
+                cMsrcd4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cMsrcd4);
 
@@ -1838,7 +1884,7 @@ export class Factory {
                 cMsict4.Column = 0;
                 cMsict4.ColSpan = 2;
                 cMsict4.Styles.add("key", "detailLabel4");
-                cMsict4.Styles.add("value", "detailResult");
+                cMsict4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cMsict4);
 
@@ -1851,7 +1897,7 @@ export class Factory {
                 cMsslrt4.Column = 0;
                 cMsslrt4.ColSpan = 2;
                 cMsslrt4.Styles.add("key", "detailLabel4");
-                cMsslrt4.Styles.add("value", "detailResult");
+                cMsslrt4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cMsslrt4);
 
@@ -1863,7 +1909,7 @@ export class Factory {
                 cCtmst4.Column = 0;
                 cCtmst4.ColSpan = 2;
                 cCtmst4.Styles.add("key", "detailLabel4");
-                cCtmst4.Styles.add("value", "detailResult");
+                cCtmst4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cCtmst4);
 
@@ -1875,16 +1921,18 @@ export class Factory {
                 cCtmser4.Column = 0;
                 cCtmser4.ColSpan = 2;
                 cCtmser4.Styles.add("key", "detailLabel4");
-                cCtmser4.Styles.add("value", "detailResult");
+                cCtmser4.Styles.add("value", "detailResult3");
 
                 rft.TestParamCells.push(cCtmser4);
 
                 var ctmssq4 = new TestParam();
                 ctmssq4.Key = "Message:";
+                // ctmssq4.Value = "0  1  0  2  0  1  0  2  0  1  0  2  0  1  0  2";
                 var cCtmssq4 = new TestParamCell(ctmssq4);
                 cCtmssq4.Row = 17;
                 cCtmssq4.Column = 0;
                 cCtmssq4.ColSpan = 2;
+                cCtmssq4.Styles.add("value", "detailResult");
 
                 rft.TestParamCells.push(cCtmssq4);
 
