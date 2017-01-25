@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { StatusObject } from 'ionic-native';
 
 @Component({
   selector: 'footer-component',

@@ -48,12 +48,10 @@ export class MyApp implements OnInit {
         this.isAndroid = false;
       }
     }
-
-    this._router.navigate(['group', "UAT"]);
   }
 
   onItemSelectionChanged(e) {
-    this._router.navigate(['group', e.name]);
+    this._router.navigate(['testgroup', e.name]);
 
     this.hb.headers.forEach(header => {
       header.Groups.forEach(element => {

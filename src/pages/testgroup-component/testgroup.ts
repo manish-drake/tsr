@@ -11,10 +11,10 @@ import { HeaderService } from '../../services/ui/header.service'
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-group',
-  templateUrl: 'group.html'
+  selector: 'testgroup',
+  templateUrl: 'testgroup.html'
 })
-export class GroupPage implements OnInit {
+export class TestGroupComp implements OnInit {
   private: any;
   constructor(
     private route: ActivatedRoute,
@@ -26,23 +26,18 @@ export class GroupPage implements OnInit {
 
   }
 
-  group: any;
+  testgroups: any;
 
-  parent: any;
+  testHeaderName: any;
 
   ngOnInit() {
-    // this._svcHeader.title = "Groups";
     this.route.params.subscribe(param => {
-      var parentName = (param as any).name;
-      this.parent = parentName;
-      this._svcHeader.title = parentName;
-      // var section = this.objectService.createGroup(groupName);
-      // this.group = this.broker.createGroupDatasource(section);
-      var test = this.objectService.createGroup(parentName);
-      this.group = this.broker.createGroupDatasource(test);
-      console.log(this.group);
+      this.testHeaderName = (param as any).name;
+      var testGroupsData = this.objectService.createTestGroupsData(this.testHeaderName);
+      this.testgroups = this.broker.createTestGroups(testGroupsData);
+      console.log(this.testgroups);
 
-      this._svcHeader.title = parentName;
+      this._svcHeader.title = this.testHeaderName;
     })
   }
 
@@ -59,12 +54,15 @@ export class GroupPage implements OnInit {
     if (this.clicks == 1) {
       setTimeout(() => {
         if (this.clicks == 2) {
-          this._router.navigate(['detail', test.name, this.parent])
+          this._router.navigate(['detail', test.name, this.testHeaderName])
         }
         this.clicks = 0;
       }, 500);
-
     }
+  }
+
+  onFavorite(g) {
+    g.isFavorite = !g.isFavorite;
   }
 
 }

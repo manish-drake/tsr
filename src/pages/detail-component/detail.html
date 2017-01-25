@@ -1,5 +1,5 @@
 <ion-slides #Slides loop="true">
-    <ion-slide style="align-items: stretch !important;" *ngFor="let test of testset.tests; let i = index">
+    <ion-slide style="align-items: stretch !important;" *ngFor="let test of tests; let i = index">
 
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
 <ion-grid style="height: 100%;">
@@ -9,7 +9,7 @@
 </ion-col>
 <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
 <b style="font-size: 16px;"> {{test.name}} </b><br>
-<div *ngFor="let test of testset.tests; let ei = index;"
+<div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1"
       [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
       style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
 </ion-col>
@@ -20,6 +20,9 @@
 
 <ion-row style="height: 100%;">
     <ion-scroll scrollY="true" style="width:100%; ">
+        <div center text-center *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
+        <p style="color: gray">No aircraft/vehicle selected</p>
+        </div>
         <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
         <detail-main [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-main>
         <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
@@ -29,7 +32,7 @@
 
 <ion-row style="height: auto; flex: 0 0 auto;">
     <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-<button ion-button clear no-margin [hidden]="testset.tests.length == 1" (click)="onNavigate('prev')"><b>< Previous</b> </button>
+<button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< Previous</b> </button>
 </ion-col>
 <ion-col center text-center style="width: 100%;">
 <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
@@ -38,7 +41,7 @@
 </button>
 </ion-col>
 <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-<button ion-button clear no-margin [hidden]="testset.tests.length == 1" (click)="onNavigate('next')"><b> Next ></b></button>
+<button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> Next ></b></button>
 </ion-col>
 </ion-row>
 

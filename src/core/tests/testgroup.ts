@@ -2,19 +2,9 @@
 
 import { Test } from './test';
 
-export class Group{
+export class TestGroup{
 
     constructor(){}
-    
-    // private _Sections : TestSection[];
-    // public get Sections() : TestSection[] {
-    //     if(!this._Sections)
-    //         this._Sections = [];
-    //     return this._Sections;
-    // }
-    // public set Sections(v : TestSection[]) {
-    //     this._Sections = v;
-    // }
 
     private _Test : Test[];
     public get Test() : Test[] {
