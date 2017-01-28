@@ -1,18 +1,18 @@
 <ion-list style="margin:0px" [class]="chosenTheme">
   <modal-ionitem-comp [modalSource]="setup"></modal-ionitem-comp>
   <modal-ionitem-comp [modalSource]="help"></modal-ionitem-comp>
-  <ion-item>
+  <button ion-item>
     <ion-icon name="remove-circle" item-left></ion-icon>
     <ion-label>CLEAR</ion-label>
-  </ion-item>
-  <ion-item>
+  </button>
+  <button ion-item>
     <ion-icon name="browsers" item-left></ion-icon>
     <ion-label>DUAL PANEL</ion-label>
-  </ion-item>
-  <ion-item>
+  </button>
+  <button ion-item>
     <ion-icon name="funnel" item-left></ion-icon>
     <ion-label>FILTER</ion-label>
-  </ion-item>
+  </button>
   <ion-item (click)="runall()">
     <ion-icon name='walk' item-left [style.opacity]="isrun() ? '1.0' : '0.5' "></ion-icon>
     <ion-label [style.opacity]="isrun() ? '1.0' : '0.5' ">RUN ALL</ion-label>
@@ -25,14 +25,14 @@
     <ion-icon [style.opacity]="!autoSave() ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
     <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">LOG DATA</ion-label>
   </ion-item>
-  <ion-item>
+  <button ion-item>
     <ion-icon name="star-outline" item-left></ion-icon>
     <ion-label>FAVORITE</ion-label>
-  </ion-item>
-   <ion-item>
+  </button>
+   <button ion-item>
     <ion-icon name="information-circle" item-left></ion-icon>
     <ion-label>GUIDE</ion-label>
-  </ion-item>
+   </button>
   <ion-item no-lines>
     <p item-right>Version {{versionNumber}}</p>
   </ion-item>

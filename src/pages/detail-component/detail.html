@@ -1,4 +1,4 @@
-<ion-slides #Slides>
+<ion-slides #Slides (ionSlideWillChange)="slideChanged()">
     <ion-slide style="align-items: stretch !important;" *ngFor="let test of tests; let i = index">
 
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>

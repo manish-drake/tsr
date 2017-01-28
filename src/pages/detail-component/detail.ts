@@ -23,9 +23,7 @@ export class TestDetailComp {
     private _svcHeader: HeaderService,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory) {
-
-  }
+    private objectService: Factory) { }
 
   public tests: any;
 
@@ -101,6 +99,11 @@ export class TestDetailComp {
         break;
       }
       default: { break; }
+    }
+  }
+  slideChanged() {
+    if (this.slides.isEnd() || this.slides.isBeginning()) {
+      this.slides.loop = true;
     }
   }
 }
