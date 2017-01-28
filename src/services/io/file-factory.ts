@@ -1,7 +1,9 @@
+import { Injectable } from "@angular/core"
 import { Observable } from 'Rxjs';
 import { File, DirectoryEntry } from 'ionic-native';
 declare var cordova: any;
 
+@Injectable()
 export class FileFactory {
     constructor() {
     }
