@@ -6,9 +6,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class MasterService {
 
-    constructor(private http: Http) {
-
-    }
+    constructor(private http: Http) { }
 
     scanTest(): Observable<any> {
         console.log('posting');

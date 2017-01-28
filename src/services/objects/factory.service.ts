@@ -8,10 +8,7 @@ import { TestGroup } from '../../core/tests/testgroup'
 @Injectable()
 export class Factory {
 
-
-    constructor() {
-
-    }
+    constructor() { }
 
     createTestGroupsData(groupName: string): TestGroup {
         var group: TestGroup = new TestGroup();

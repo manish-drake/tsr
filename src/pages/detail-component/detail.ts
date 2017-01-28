@@ -6,8 +6,6 @@ import { HeaderService } from '../../services/ui/header.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { Factory } from '../../services/objects/factory.service';
 
-import { TextInput } from 'ionic-angular';
-
 @Component({
   selector: 'page-detail',
   templateUrl: 'detail.html'

@@ -14,10 +14,10 @@ export class FooterComponent {
   batteryLevel: any = "80%";
 
   ngAfterViewInit() {
-    this.displaydate = Date();
-    setInterval(() => {
-      this.displaydate = Date();
-    }, 1000);
+    // this.displaydate = Date();
+    // setInterval(() => {
+    //   this.displaydate = Date();
+    // }, 1000);
   }
 
 }

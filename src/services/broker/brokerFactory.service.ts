@@ -1,15 +1,17 @@
+import { Injectable } from '@angular/core';
+
 import { TestSection } from '../../core/tests/testSection'
 import { Test } from '../../core/tests/test'
 import { TestGroup } from '../../core/tests/testgroup'
 import { Dictionary } from '../../common/dictionary';
 
+@Injectable()
 export class BrokerFactoryService {
     /**
      *
      */
-    constructor() {
+    constructor() { }
 
-    }
     createSectionsSummary(summaryData: TestSection) {
         var tests: any[] = [];
         summaryData.Summaries.forEach(summary => {
