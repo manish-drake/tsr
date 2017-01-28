@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { Slides } from 'ionic-angular'
+import { Slides } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { HeaderService } from '../../services/ui/header.service'
-import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
-import { Factory } from '../../services/objects/factory.service'
+import { HeaderService } from '../../services/ui/header.service';
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { Factory } from '../../services/objects/factory.service';
 
+import { TextInput } from 'ionic-angular';
 
 @Component({
   selector: 'page-detail',
@@ -37,6 +38,7 @@ export class TestDetailComp {
 
       this._svcHeader.title = testGroupName;
     });
+  
   }
 
   selectedVehicle: any;
@@ -81,15 +83,25 @@ export class TestDetailComp {
         break;
       }
       case 'next': {
-        this.slides.slideNext(1000);
+        if (this.slides.isEnd()) {
+          this.slides.slideTo(0, 1000);
+        }
+        else
+          this.slides.slideNext(700);
         break;
       }
       case 'prev': {
-        this.slides.slidePrev(1500);
+        if (this.slides.isBeginning()) {
+          let sectionlength = this.slides.length();
+          var lastCardIndex = sectionlength - 1;
+          this.slides.slideTo(lastCardIndex, 1200);
+        }
+        else
+          this.slides.slidePrev(1500);
         break;
       }
       default: { break; }
     }
   }
-
 }
+
