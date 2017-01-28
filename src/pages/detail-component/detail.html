@@ -20,9 +20,12 @@
 
 <ion-row style="height: 100%;">
     <ion-scroll scrollY="true" style="width:100%; ">
-        <div center text-center style="position: absolute;height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
-        <ion-label >No aircraft/vehicle selected</ion-label>
-        </div>
+        
+        <ion-row center  style="position: absolute;height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
+        <ion-col text-center center>
+        <label>No aircraft/vehicle selected</label>
+        </ion-col>
+        </ion-row>
         <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
         <detail-default [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-default>
         <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
