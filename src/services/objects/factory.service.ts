@@ -31,9 +31,12 @@ export class Factory {
                 break;
             }
             case 'Favorites': {
-                group.Test = [
-                    this.createTestsData("ADS-B OUT")
-                ]
+                group.Test = []
+                var favorites = localStorage.getItem("tsrfavorites");
+                var favColl = JSON.parse(favorites);
+                favColl.forEach(favItem => {
+                    group.Test.push(this.createTestsData(favItem));
+                });
             }
             default: {
                 break;
@@ -274,7 +277,7 @@ export class Factory {
                 var lt3 = new TestParam();
                 lt3.Key = "Lat:";
                 // lt3.Value = "00.00000";
-                lt3.Unit = "N";                
+                lt3.Unit = "N";
                 var cLt3 = new TestParamCell(lt3);
                 cLt3.Row = 8;
                 cLt3.Column = 1;
@@ -345,7 +348,6 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
-                newTest.isFavorite = true;
                 // -----------------------Filter A/v target----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 
