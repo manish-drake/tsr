@@ -73,7 +73,7 @@ export class TestDetailComp {
   onNavigate(ev: string) {
     switch (ev) {
       case 'close': {
-        this._router.navigate(['group', "UAT"])
+        this._router.navigate(['testgroup', "UAT"])
           .then(succ => console.log("Detail Closed: " + succ))
           .catch(err => console.log("Error Closing Detail: " + err))
         break;

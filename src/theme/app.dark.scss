@@ -28,7 +28,7 @@
     button{ color: $dark-foreground;}
   }
 
-  ion-card{
+ ion-card{
     background-color: darken($dark-primary, 1.5%);color: $dark-foreground;
     .item{ background-color: darken($dark-primary, 1.5%); color: $dark-foreground; }
     ion-row{ 
@@ -37,8 +37,17 @@
       }
     }
   }
+ ion-row{ 
+      ion-col{
+        ion-label{ color:$dark-foreground; }
+      }
+    }
   .segement{ background-color: $dark-primary; }
   .currentsegment{ background-color: $dark-background;}
+  .selectedcard{ border: 1.5px solid $dark-foreground;}
+  .bullet-current{ background-color:$dark-foreground; }
+  .bullet-normal{ background-color:lighten($dark-background, 1.5%)}
+
   div{
     color: $dark-foreground;
     svg{

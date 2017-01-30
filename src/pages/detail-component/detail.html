@@ -22,9 +22,9 @@
     <ion-scroll scrollY="true" style="width:100%; ">
         
         <ion-row center  style="position: absolute;height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
-        <ion-col text-center center>
-        <label>No aircraft/vehicle selected</label>
-        </ion-col>
+            <ion-col text-center center>
+                <ion-label>No aircraft/vehicle selected</ion-label>
+            </ion-col>
         </ion-row>
         <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
         <detail-default [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-default>
