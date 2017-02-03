@@ -99,10 +99,10 @@ export class TestDetailComp {
       default: { break; }
     }
   }
-  slideChanged() {
-    if (this.slides.isEnd() || this.slides.isBeginning()) {
-      this.slides.loop = true;
-    }
-  }
+  // slideChanged() {
+  //   if (this.slides.isEnd() || this.slides.isBeginning()) {
+  //     this.slides.loop = true;
+  //   }
+  // }
 }
 

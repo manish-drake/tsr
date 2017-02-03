@@ -14,7 +14,7 @@ export class Hamburger {
 
         var it = new Header();
         it.Name = "Individual Tests";
-        it.Groups = [{ name: "Mode S" }, { name: "UAT" }];
+        it.Groups = [{ name: "Mode S" }, { name: "ADS-B" }];
 
         var simul = new Header();
         simul.Name = "Simulations";
