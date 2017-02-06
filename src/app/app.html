@@ -1,16 +1,10 @@
 <ion-menu [content]="content" [class]="chosenTheme" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
 
-<ion-content>
-<div>
-    <ion-item-group margin-vertical *ngFor="let header of hb.headers" style="margin-bottom: 8px;">
-        <b no-lines padding-horizontal >{{header.Name}}</b>
-        <ion-item menuToggle no-lines *ngFor="let group of header.Groups" (click)="onItemSelectionChanged(group)"
-         style="min-height:0px; height:35px; background: transparent;"
-         [style.background]=" group.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' ">
-            <span margin-left>{{ group.name }}</span>
+<ion-content padding-vertical>
+        <ion-item menuToggle no-lines *ngFor="let header of menu.headers" (click)="onItemSelectionChanged(header)"
+         style="background: transparent;" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' ">
+            <b>{{ header.name }}</b>
         </ion-item>
-    </ion-item-group>
-</div>
 </ion-content>
 
 </ion-menu>

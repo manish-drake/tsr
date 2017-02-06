@@ -1,44 +1,38 @@
-import { Header } from './header';
 
 export class Hamburger {
-    public headers: Header[] = [];
+    public headers:any = [];
     constructor() {
 
-        var start = new Header();
-        start.Name = "Start";
-        start.Groups = [{ name: "Favorites", isSelected: true }, { name: "Scheduled" }];
+        var start = { name: "Start", isSelected: true };
 
-        var ats = new Header();
-        ats.Name = "Auto Test Sequence";
-        ats.Groups = [{ name: "Transponder Check" }];
+        var transponder = { name: "Transponder" };
 
-        var it = new Header();
-        it.Name = "Individual Tests";
-        it.Groups = [{ name: "Mode S" }, { name: "ADS-B" }];
+        var mode_s = { name: "Mode S" };
 
-        var simul = new Header();
-        simul.Name = "Simulations";
-        simul.Groups = [{ name: "Flightplans" }];
+        var ads_b = { name: "ADS-B" };
 
-        var nav = new Header();
-        nav.Name = "NAV";
-        nav.Groups = [{ name: "ILS" }];
+        var nav = { name: "NAV" };
 
-        var search = new Header();
-        search.Name = "Search";
-        search.Groups = [{ name: "Keyword Search" }, { name: "Saved Searches" }];
+        var comm = { name: "Comm" };
 
-        var sys = new Header();
-        sys.Name = "System";
-        sys.Groups = [{ name: "Setup" }, { name: "About" }, { name: "Notifications" }];
+        var antenna = { name: "Antenna" };
+
+        var reports = { name: "Reports" };
+
+        var setup = { name: "Setup" };
+
+        var search = { name: "Search" };
 
         this.headers.push(start);
-        this.headers.push(ats);
-        this.headers.push(it);
-        this.headers.push(simul);
+        this.headers.push(transponder);
+        this.headers.push(mode_s);
+        this.headers.push(ads_b);
         this.headers.push(nav);
+        this.headers.push(comm);
+        this.headers.push(antenna);
+        this.headers.push(reports);
+        this.headers.push(setup);
         this.headers.push(search);
-        this.headers.push(sys);
 
     }
 }

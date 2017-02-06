@@ -27,7 +27,7 @@ export class Factory {
                 ];
                 break;
             }
-            case 'Favorites': {
+            case 'Start': {
                 group.Test = []
                 var favorites = localStorage.getItem("tsrfavorites");
                 if (favorites != null) {
