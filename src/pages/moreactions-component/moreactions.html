@@ -25,14 +25,14 @@
     <ion-icon [style.opacity]="!autoSave() ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
     <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">LOG DATA</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-icon name="star-outline" item-left></ion-icon>
-    <ion-label>FAVORITE</ion-label>
+  <ion-item (click)="startFav()">
+    <ion-icon name='star-outline' item-left [style.opacity]="!startFav() ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="startFav() ? '1.0' : '0.5' ">START</ion-label>
   </ion-item>
-   <ion-item>
-    <ion-icon name="information-circle" item-left></ion-icon>
-    <ion-label>GUIDE</ion-label>
-   </ion-item>
+  <ion-item (click)="guide()">
+    <ion-icon name='information-circle' item-left [style.opacity]="!guide() ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="guide() ? '1.0' : '0.5' ">GUIDE</ion-label>
+  </ion-item>
   <ion-item no-lines>
     <p item-right>Version {{versionNumber}}</p>
   </ion-item>

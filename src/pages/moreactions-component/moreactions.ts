@@ -52,6 +52,8 @@ export class MoreActionsPopover {
   static isRunAllenabled: boolean = false;
   static isReapeatEnabled: boolean = false;
   static isSaveEnabled: boolean = false;
+  static isStart: boolean = false;
+  static isGuide: boolean = false;
 
   runall() {
     MoreActionsPopover.isRunAllenabled = !MoreActionsPopover.isRunAllenabled;
@@ -70,5 +72,13 @@ export class MoreActionsPopover {
   autoSave() {
     MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
     return MoreActionsPopover.isSaveEnabled;
+  }
+  startFav(){ 
+    MoreActionsPopover.isStart = !MoreActionsPopover.isStart;
+    return MoreActionsPopover.isStart;
+  }
+  guide(){
+    MoreActionsPopover.isGuide = !MoreActionsPopover.isGuide;
+    return MoreActionsPopover.isGuide;
   }
 }

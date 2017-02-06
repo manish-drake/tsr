@@ -19,11 +19,11 @@ export class Factory {
                     // this.createTestData("UAT ADS-B IN"),
                     this.createTestsData("1090 ADS-B OUT"),
                     this.createTestsData("1090 ADS-B IN"),
-                    this.createTestsData("ADS-B SUMMARY"),
+                    // this.createTestsData("ADS-B SUMMARY"),
                     this.createTestsData("UAT ADS-B OUT"),
                     this.createTestsData("UAT ADS-B IN"),
-                    this.createTestsData("ADS-B DATA"),
-                    this.createTestsData("ADS-B TBD")
+                    // this.createTestsData("ADS-B DATA"),
+                    // this.createTestsData("ADS-B TBD")
                 ];
                 break;
             }
