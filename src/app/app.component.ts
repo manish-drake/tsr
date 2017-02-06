@@ -51,8 +51,16 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e) {
-    this._router.navigate(['testgroup', e.name]);
+    if(e.name == "Setup"){
+      this._router.navigate(['setup', e.name]);
+    }
+    else{
+      this._router.navigate(['testgroup', e.name]);
+    }
+    this.evaluateShowSelection(e);
+  }
 
+  evaluateShowSelection(e){
     this.menu.headers.forEach(header => {
         if (header == e) {
           (<any>header).isSelected = true;

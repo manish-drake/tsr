@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
 import { HelpPage } from '../../pages/help-component/help';
-import { SetupPage } from '../../pages/setup-component/setup';
+import { SetupTestPage } from '../../pages/setuptest/setuptest';
 
 @Injectable()
 export class ModalService {
@@ -24,7 +24,7 @@ export class ModalService {
     }
     
     showSetup(e) {
-        let modal = this._modalCtrl.create(SetupPage);
+        let modal = this._modalCtrl.create(SetupTestPage);
         modal.present();
     }
 

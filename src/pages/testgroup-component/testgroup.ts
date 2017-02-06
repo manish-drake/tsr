@@ -26,24 +26,24 @@ export class TestGroupComp implements OnInit {
 
   testgroups: any = [];
 
-  testHeaderName: any;
+  headerName: any;
 
   ngOnInit() {
     this.route.params.subscribe(param => {
-      this.testHeaderName = (param as any).name;
-      this._svcHeader.title = this.testHeaderName;
+      this.headerName = (param as any).name;
+      this._svcHeader.title = this.headerName;
       this.getData();
     })
   }
 
   getData() {
-    var testGroupsData = this.objectService.createTestGroupsData(this.testHeaderName);
+    var testGroupsData = this.objectService.createTestGroupsData(this.headerName);
     this.testgroups = this.broker.createTestGroups(testGroupsData);
     console.log(this.testgroups);
-    this.evaluateStartItem()
+    this.evaluateStartItems()
   }
 
-  evaluateStartItem() {
+  evaluateStartItems() {
     var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     if (startItems != null) {
       var favColl = JSON.parse(startItems);
@@ -92,7 +92,7 @@ export class TestGroupComp implements OnInit {
         }
       });
       this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
-      if (this.testHeaderName == "Start") {
+      if (this.headerName == "Start") {
         this.getData();
       }
     }
@@ -110,7 +110,7 @@ export class TestGroupComp implements OnInit {
     if (this.clicks == 1) {
       setTimeout(() => {
         if (this.clicks == 2) {
-          this._router.navigate(['detail', test.name, this.testHeaderName])
+          this._router.navigate(['detail', test.name, this.headerName])
         }
         this.clicks = 0;
       }, 500);

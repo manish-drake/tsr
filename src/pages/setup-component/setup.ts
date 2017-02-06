@@ -1,27 +1,40 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+
+import { ActivatedRoute } from '@angular/router';
+import { HeaderService } from '../../services/ui/header.service'
+import { SetupFactory } from '../../services/objects/setup-factory'
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 
 @Component({
   selector: 'page-setup',
-  templateUrl: 'setup.html'
+  templateUrl: 'setup.html',
+  providers:[SetupFactory]
 })
-export class SetupPage {
+export class SetupComp {
 
-  constructor(public viewCtrl: ViewController) { }
+  constructor(private route: ActivatedRoute,
+  private _svcHeader: HeaderService,
+  private setupFactory: SetupFactory,
+  private broker: BrokerFactoryService) {}
 
-  pwrValue: any;
   ionViewDidLoad() {
-    this.pwrValue =-39.0
-    console.log('Hello SetupPage Page');
-  }
-  isPowerClicked: boolean = false;
-
-  power() {
-    this.isPowerClicked = !this.isPowerClicked;
+    console.log('ionViewDidLoad SetupComp');
   }
 
-  dismiss() {
-        this.viewCtrl.dismiss();
-    }
+  headerName: any;
+
+  ngOnInit() {
+    this.route.params.subscribe(param => {
+      this._svcHeader.title = (param as any).name;
+      this.getData();
+    })
+  }
+
+  allsetup: any = [];
+
+  getData() {
+    this.allsetup = this.setupFactory.createAllSetupData();
+    console.log(this.allsetup);
+  }
 
 }
