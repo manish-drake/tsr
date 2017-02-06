@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemesService } from '../../services/themes/themes.service'
+import { LocalStorage } from '../../services/storage/local-storage'
 
 /*
   Generated class for the Configurations page.
@@ -19,7 +20,8 @@ export class ConfigurationsPopover {
 
   distanceValue: any = 230;
 
-  constructor(private _themes: ThemesService) {
+  constructor(private _themes: ThemesService,
+  private _localStorage: LocalStorage) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
     this._themes.getTheme().subscribe(val => this.selected = val);
     this.availableThemes = this._themes.availableThemes;
@@ -30,13 +32,13 @@ export class ConfigurationsPopover {
   }
 
   onSwitchTheme() {
-    if (this.selected == 'light-theme') {
-      this._themes.setTheme('dark-theme');
-      localStorage.setItem("tsrtheme", "dark-theme");
+    if (this.selected == 'indoor-theme') {
+      this._themes.setTheme('outdoor-theme');
+      this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), "outdoor-theme");
     }
     else {
-      this._themes.setTheme('light-theme');
-      localStorage.setItem("tsrtheme", "light-theme");
+      this._themes.setTheme('indoor-theme');
+      this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), "indoor-theme");
     }
   }
 }

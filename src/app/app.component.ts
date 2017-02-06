@@ -20,7 +20,7 @@ export class MyApp implements OnInit {
   Title: string = "Title";
   rootPage = HomePage;
 
-  public hb = new Hamburger();
+  public menu = new Hamburger();
 
   constructor(private platform: Platform,
     private popoverService: PopoverService,
@@ -53,15 +53,13 @@ export class MyApp implements OnInit {
   onItemSelectionChanged(e) {
     this._router.navigate(['testgroup', e.name]);
 
-    this.hb.headers.forEach(header => {
-      header.Groups.forEach(element => {
-        if (element == e) {
-          (<any>element).isSelected = true;
+    this.menu.headers.forEach(header => {
+        if (header == e) {
+          (<any>header).isSelected = true;
         }
         else {
-          (<any>element).isSelected = false;
+          (<any>header).isSelected = false;
         }
-      })
     });
   }
 }

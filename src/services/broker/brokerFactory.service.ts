@@ -12,19 +12,6 @@ export class BrokerFactoryService {
      */
     constructor() { }
 
-    createSectionsSummary(summaryData: TestSection) {
-        var tests: any[] = [];
-        summaryData.Summaries.forEach(summary => {
-            var test = {
-                name: summary.Name,
-                parent: summaryData.Name,
-                rows: this.createParamsGrid(summary, summaryData.Styles)
-            }
-            tests.push(test);
-        })
-        return { name: summaryData.Name, tests: tests };
-    }
-
     createTests(testData: Test) {
         var testDS: any[] = [];
         testData.Summaries.forEach(summary => {
@@ -43,7 +30,7 @@ export class BrokerFactoryService {
             return {
                 "name": testgroup.Name,
                 "count": testgroup.Summaries.length,
-                "isFavorite": testgroup.isFavorite
+                "isStartItem": testgroup.isStartItem
             };
         })
         return testGroupData;
