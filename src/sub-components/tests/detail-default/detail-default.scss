@@ -6,12 +6,31 @@ detail-default{
         font-weight: 600;
         margin-top: 20px !important;
         width: auto;
+        // background-color: aqua;
 }
 .detailLabel{
         width: 90px !important;
         display: inline-flex;        
         font-size: 14px !important;
         padding: 0px !important;
+        // background-color: salmon;
+}
+.detailLabelb{
+        min-width: 60px !important;
+        display: inline-flex;        
+        font-size: 14px !important;
+        padding: 0px !important;
+        margin-top: 10px !important;
+        // background-color:khaki;
+}
+.detailLabela{
+        min-width: 70px !important;
+        display: inline-flex;        
+        font-size: 14px !important;
+        font-weight: 600;
+        // padding: 0px !important;
+        margin-top: 10px !important;
+        // background-color: lawngreen;
 }
 .detailLabel1{
         width: auto !important; //265px
@@ -21,23 +40,36 @@ detail-default{
         // padding: 0px !important;
         margin-top: 10px !important;
         margin-bottom:7px !important;
+        // background-color: lemonchiffon;
+}
+.detailLabel3a{
+        min-width: 133px !important; //265px
+        display: inline-flex;        
+        font-size: 14px !important;
+        font-weight: 600;
+        margin-top: 10px !important;
+        margin-bottom:7px !important;
+        // background-color:deepskyblue;
 }
 .detailLabel2{
         width: 70px !important;
         display: inline-flex;        
         font-size: 14px !important;
+        // background-color: darkcyan;
 }
 .detailLabel3{
         width: 133px !important;
         display: inline-flex;        
         font-size: 14px !important;
         padding: 0px !important;
+        // background-color: forestgreen;
 }
 .detailLabel4{
         width: 240px !important;
         display: inline-flex;        
         font-size: 14px !important;
         padding: 0px !important;
+        // background-color:greenyellow;
 }
 .detailLabel5{
         width: 105px !important;
@@ -45,6 +77,7 @@ detail-default{
         font-size: 14px !important;
         padding: 0px !important;
         margin-top: 15px !important;
+        // background-color: hotpink;
 }
 .detailResult{
         display: inline-flex ;       
@@ -52,6 +85,7 @@ detail-default{
         font-size: 14px !important;    
         // padding: 0px !important;
         margin-right: 5px;
+        // background-color:rosybrown;
 }
 .detailResult1{
         display: inline-flex;
@@ -62,26 +96,25 @@ detail-default{
         width:25%;        
         min-width: 85px !important;
         font-size: 14px !important;
-        // padding: 0px !important;
-        // margin-right: 5px;
+        // background-color:cadetblue;
 }
 .detailResult3{
         display: inline-flex;           
         min-width: 70px !important;
         font-size: 14px !important;
-        // padding: 0px !important;
-        // margin-right: 5px;
+        // background-color:red;
 }
 .detailUnit{
         display: inline-flex;
         min-width: 35px;
-        // padding: 0px !important;
         font-size: 14px !important;
+        // background-color:lightskyblue;
 }
 .result{
     display: inline-flex;
     margin-top:15px !important;     
     font-size: 16px;
     font-weight: 600;
+//     background-color:lightgreen;
 }
 }

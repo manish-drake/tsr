@@ -116,7 +116,7 @@ export class Factory {
         // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
-             case '1090 ADS-B OUT': {
+            case '1090 ADS-B OUT': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
                 newTest.Styles.add("unit", "detailUnit");
@@ -129,34 +129,996 @@ export class Factory {
                 var smry = new Test();
                 smry.Name = "SUMMARY";
 
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                // add8.Value = "2345AA (H) / 23734510 (O)";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 4;
+                cAdd8.Styles.add("key", "detailLabel");
+                cAdd8.Styles.add("value", "detailResult");
+
+                smry.TestParamCells.push(cAdd8);
+
+                var ftid8 = new TestParam();
+                ftid8.Key = "Fight ID:";
+                // ftid8.Value = "N1246W";
+                var cFtid8 = new TestParamCell(ftid8);
+                cFtid8.Row = 1;
+                cFtid8.Column = 0;
+                cFtid8.Styles.add("key", "detailLabel");
+                cFtid8.Styles.add("value", "detailResult2");
+
+                smry.TestParamCells.push(cFtid8);
+
+                var eqc8 = new TestParam();
+                eqc8.Key = "RF Level:";
+                // eqc8.Value = "Strong";
+                var cEqc8 = new TestParamCell(eqc8);
+                cEqc8.Row = 1;
+                cEqc8.Column = 1;
+                cEqc8.Styles.add("key", "detailLabel");
+                cEqc8.Styles.add("value", "detailResult2");
+
+                smry.TestParamCells.push(cEqc8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "BDSS Rcvd (DF17):";
+                // pld8.Value = "0,5 0,8 6,0 6,1 6,5";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+                cPld8.ColSpan = 4;
+                cPld8.Styles.add("key", "detailLabel3");
+                cPld8.Styles.add("value", "detailResult");
+
+                smry.TestParamCells.push(cPld8);
+
+                var esd3 = new TestParam();
+                esd3.Key = "FAR 91.227 REQUIRED ELEMENTS";
+                var cEsd3 = new TestParamCell(esd3);
+                cEsd3.Row = 4;
+                cEsd3.Column = 0;
+                cEsd3.ColSpan = 4;
+                cEsd3.Styles.add("key", "detailheading1");
+                cEsd3.Styles.add("value", "detailResult1");
+
+                smry.TestParamCells.push(cEsd3);
+
+                var avi3 = new TestParam();
+                avi3.Key = "Aircraft/Vehicle Info:";
+                var cAvi3 = new TestParamCell(avi3);
+                cAvi3.Row = 5;
+                cAvi3.Column = 0;
+                cAvi3.Styles.add("key", "detailLabel1");
+                cAvi3.Styles.add("value", "detailResult1");
+
+                smry.TestParamCells.push(cAvi3);
+
+                var fid3 = new TestParam();
+                fid3.Key = "Flight ID:";
+                // fid3.Value = "N1246W";
+                var cFid3 = new TestParamCell(fid3);
+                cFid3.Row = 6;
+                cFid3.Column = 0;
+
+                smry.TestParamCells.push(cFid3);
+
+                var csid3 = new TestParam();
+                csid3.Key = "Mode S Addr :";
+                // csid3.Value = "2345AA";
+                var cCsid3 = new TestParamCell(csid3);
+                cCsid3.Row = 6;
+                cCsid3.Column = 1;
+
+                smry.TestParamCells.push(cCsid3);
+
+                var ec3 = new TestParam();
+                ec3.Key = "Emitter Cat:";
+                // ec3.Value = "3 (Large) ";
+                var cEc3 = new TestParamCell(ec3);
+                cEc3.Row = 7;
+                cEc3.Column = 0;
+
+                smry.TestParamCells.push(cEc3);
+
+                var acd3 = new TestParam();
+                acd3.Key = "3/A Code:";
+                // acd3.Value = "1536";
+                var cAcd3 = new TestParamCell(acd3);
+                cAcd3.Row = 7;
+                cAcd3.Column = 1;
+
+                smry.TestParamCells.push(cAcd3);
+
+                var ep3 = new TestParam();
+                ep3.Key = "Emg/Prty:";
+                // ep3.Value = "0 (No Emerg)";
+                var cEp3 = new TestParamCell(ep3);
+                cEp3.Row = 8;
+                cEp3.Column = 0;
+
+                smry.TestParamCells.push(cEp3);
+
+                var acd3 = new TestParam();
+                acd3.Key = "L/W:";
+                // acd3.Value = "10 ( 65 m / 59.5m)";
+                var cAcd3 = new TestParamCell(acd3);
+                cAcd3.Row = 8;
+                cAcd3.Column = 1;
+
+                smry.TestParamCells.push(cAcd3);
+
+                var uatin3 = new TestParam();
+                uatin3.Key = "Latitude:";
+                // uatin3.Value = "17.23873°";
+                uatin3.Unit = "N";
+                var cUatin3 = new TestParamCell(uatin3);
+                cUatin3.Row = 9;
+                cUatin3.Column = 0;
+
+                smry.TestParamCells.push(cUatin3);
+
+                var tcasp3 = new TestParam();
+                tcasp3.Key = "Altitude(baro):";
+                // tcasp3.Value = "10,000";
+                tcasp3.Unit = "ft";
+                var cTcasp3 = new TestParamCell(tcasp3);
+                cTcasp3.Row = 9;
+                cTcasp3.Column = 1;
+
+                smry.TestParamCells.push(cTcasp3);
+
+                var es3 = new TestParam();
+                es3.Key = "Longitude:";
+                // es3.Value = "90.03972°";
+                es3.Unit = "W";
+                var cEs3 = new TestParamCell(es3);
+                cEs3.Row = 10;
+                cEs3.Column = 0;
+
+                smry.TestParamCells.push(cEs3);
+
+                var tcasp3 = new TestParam();
+                tcasp3.Key = "Altitude(geom):";
+                // tcasp3.Value = "10,341";
+                tcasp3.Unit = "ft";
+                var cTcasp3 = new TestParamCell(tcasp3);
+                cTcasp3.Row = 10;
+                cTcasp3.Column = 1;
+
+                smry.TestParamCells.push(cTcasp3);
+
+                var es3 = new TestParam();
+                es3.Key = "Velocity:";
+                // es3.Value = "390";
+                es3.Unit = "kts";
+                var cEs3 = new TestParamCell(es3);
+                cEs3.Row = 11;
+                cEs3.Column = 0;
+
+                smry.TestParamCells.push(cEs3);
+
+                var om3 = new TestParam();
+                om3.Key = "YES/NO Discretes:";
+                var cOm3 = new TestParamCell(om3);
+                cOm3.Row = 12;
+                cOm3.Column = 0;
+                cOm3.ColSpan = 4;
+                cOm3.Styles.add("key", "detailLabel1");
+                cOm3.Styles.add("value", "detailResult1");
+
+                smry.TestParamCells.push(cOm3);
+
+                var atcs3 = new TestParam();
+                atcs3.Key = "UAT IN:";
+                // atcs3.Value = "1 (Y)";
+                var cAtcs3 = new TestParamCell(atcs3);
+                cAtcs3.Row = 13;
+                cAtcs3.Column = 0;
+
+                smry.TestParamCells.push(cAtcs3);
+
+                var idt3 = new TestParam();
+                idt3.Key = "TCAS Op:";
+                // idt3.Value = "1 (Y)";
+                var cIdt3 = new TestParamCell(idt3);
+                cIdt3.Row = 13;
+                cIdt3.Column = 1;
+
+                smry.TestParamCells.push(cIdt3);
+
+                var tcasra3 = new TestParam();
+                tcasra3.Key = "1090ES:";
+                // tcasra3.Value = "0 (N)";
+                var cTcasra3 = new TestParamCell(tcasra3);
+                cTcasra3.Row = 14;
+                cTcasra3.Column = 0;
+
+                smry.TestParamCells.push(cTcasra3);
+
+                var idt3 = new TestParam();
+                idt3.Key = "IDENT:";
+                // idt3.Value = "1 (Y)";
+                var cIdt3 = new TestParamCell(idt3);
+                cIdt3.Row = 14;
+                cIdt3.Column = 1;
+
+                smry.TestParamCells.push(cIdt3);
+
+                var tcasra3 = new TestParam();
+                tcasra3.Key = "TCAS RA:";
+                // tcasra3.Value = "0 (N)";
+                var cTcasra3 = new TestParamCell(tcasra3);
+                cTcasra3.Row = 15;
+                cTcasra3.Column = 0;
+
+                smry.TestParamCells.push(cTcasra3);
+
+                var ofd3 = new TestParam();
+                ofd3.Key = "Integrity Fields:";
+                var cOfd3 = new TestParamCell(ofd3);
+                cOfd3.Row = 16;
+                cOfd3.Column = 0;
+                cOfd3.Styles.add("key", "detailLabel1");
+                cOfd3.Styles.add("value", "detailResult1");
+
+                smry.TestParamCells.push(cOfd3);
+
+                var nacp3 = new TestParam();
+                nacp3.Key = "NACp:";
+                // nacp3.Value = "3 (< 2nm) ";
+                var cNacp3 = new TestParamCell(nacp3);
+                cNacp3.Row = 17;
+                cNacp3.Column = 0;
+
+                smry.TestParamCells.push(cNacp3);
+
+                var trnmso3 = new TestParam();
+                trnmso3.Key = "NACv:";
+                // trnmso3.Value = "2 (< 3m/s)";
+                var cTrnmso3 = new TestParamCell(trnmso3);
+                cTrnmso3.Row = 17;
+                cTrnmso3.Column = 1;
+
+                smry.TestParamCells.push(cTrnmso3);
+
+                var nacv3 = new TestParam();
+                nacv3.Key = "SIL:";
+                // nacv3.Value = "1 (< 10 -3 )";
+                var cNacv3 = new TestParamCell(nacv3);
+                cNacv3.Row = 18;
+                cNacv3.Column = 0;
+
+                smry.TestParamCells.push(cNacv3);
+
+                var sil3 = new TestParam();
+                sil3.Key = "SDA:";
+                // sil3.Value = "2";
+                var cSil3 = new TestParamCell(sil3);
+                cSil3.Row = 18;
+                cSil3.Column = 1;
+
+                smry.TestParamCells.push(cSil3);
+
+                var sda3 = new TestParam();
+                sda3.Key = "GVA:";
+                // sda3.Value = "2 (< 45m)";
+                var cSda3 = new TestParamCell(sda3);
+                cSda3.Row = 19;
+                cSda3.Column = 0;
+
+                smry.TestParamCells.push(cSda3);
+
+                var gva3 = new TestParam();
+                gva3.Key = "NIC:";
+                // gva3.Value = "7 (RC< 2nmi)";
+                var cGva3 = new TestParamCell(gva3);
+                cGva3.Row = 19;
+                cGva3.Column = 1;
+
+                smry.TestParamCells.push(cGva3);
+
+                var result3 = new TestParam();
+                result3.Key = "Result:";
+                var cResult3 = new TestParamCell(result3);
+                cResult3.Row = 20;
+                cResult3.Column = 0;
+                cResult3.ColSpan = 4;
+                cResult3.Styles.add("key", "result");
+
+                smry.TestParamCells.push(cResult3);
+
                 newTest.Summaries.push(smry);
-                //-----------------------3------------------------
+                //-----------------------AIRBORN POSITION------------------------
                 var apos = new Test();
                 apos.Name = "AIRBORN POSITION";
 
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                // add8.Value = "2345AA (H) / 23734510 (O)";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 4;
+                cAdd8.Styles.add("key", "detailLabel");
+                cAdd8.Styles.add("value", "detailResult");
+
+                apos.TestParamCells.push(cAdd8);
+
+                var ftid8 = new TestParam();
+                ftid8.Key = "Fight ID:";
+                // ftid8.Value = "N1246W";
+                var cFtid8 = new TestParamCell(ftid8);
+                cFtid8.Row = 1;
+                cFtid8.Column = 0;
+                cFtid8.Styles.add("key", "detailLabel");
+                cFtid8.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cFtid8);
+
+                var eqc8 = new TestParam();
+                eqc8.Key = "RF Level:";
+                // eqc8.Value = "Strong";
+                var cEqc8 = new TestParamCell(eqc8);
+                cEqc8.Row = 1;
+                cEqc8.Column = 1;
+                cEqc8.Styles.add("key", "detailLabel");
+                cEqc8.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cEqc8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "BDSS Rcvd (DF17):";
+                // pld8.Value = "0,5 0,8 6,0 6,1 6,5";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+                cPld8.ColSpan = 4;
+                cPld8.Styles.add("key", "detailLabel3");
+                cPld8.Styles.add("value", "detailResult");
+
+                apos.TestParamCells.push(cPld8);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "BDS 0,5:";
+                // rflm4.Value = "Airborne Position";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 0;
+                cRflm4.Styles.add("key", "detailLabela");
+                cRflm4.Styles.add("value", "detailLabela");
+
+                apos.TestParamCells.push(cRflm4);
+                var rflm4 = new TestParam();
+                rflm4.Key = "Period:";
+                // rflm4.Value = "500";
+                rflm4.Unit = "ms";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 1;
+                cRflm4.Styles.add("key", "detailLabelb");
+                cRflm4.Styles.add("value", "detailLabelb");
+                apos.TestParamCells.push(cRflm4);
+
+                var frq4 = new TestParam();
+                frq4.Key = "Message Element:";
+                // frq4.Value = "03 04 5D FA 19 AC ED";
+                var cFrq4 = new TestParamCell(frq4);
+                cFrq4.Row = 4;
+                cFrq4.Column = 0;
+                cFrq4.ColSpan = 2;
+                cFrq4.Styles.add("key", "detailLabel3a");
+                cFrq4.Styles.add("value", "detailLabel3a");
+
+                apos.TestParamCells.push(cFrq4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "Postion";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 5;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                apos.TestParamCells.push(cPwr4);
+
+                var pwrdp4 = new TestParam();
+                pwrdp4.Key = "Latitude:";
+                // pwrdp4.Value = "17⁰ 19 21.00";
+                pwrdp4.Unit = "N";
+                var cPwrdp4 = new TestParamCell(pwrdp4);
+                cPwrdp4.Row = 6;
+                cPwrdp4.Column = 0;
+                cPwrdp4.Styles.add("key", "detailLabel3");
+                cPwrdp4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cPwrdp4);
+
+                var dvn4 = new TestParam();
+                dvn4.Key = "Longitude:";
+                // dvn4.Value = "90⁰ 15 30.00";
+                dvn4.Unit = "W";
+                var cDvn4 = new TestParamCell(dvn4);
+                cDvn4.Row = 7;
+                cDvn4.Column = 0;
+                cDvn4.Styles.add("key", "detailLabel3");
+                cDvn4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cDvn4);
+
+                var pkdn4 = new TestParam();
+                pkdn4.Key = "Altitude (baro):";
+                // pkdn4.Value = "10,000";
+                pkdn4.Unit = "ft";
+                var cPkdn4 = new TestParamCell(pkdn4);
+                cPkdn4.Row = 8;
+                cPkdn4.Column = 0;
+                cPkdn4.Styles.add("key", "detailLabel3");
+                cPkdn4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cPkdn4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "Other Fields";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 9;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                apos.TestParamCells.push(cPwr4);
+
+                var veo4 = new TestParam();
+                veo4.Key = "Surveillance Status:";
+                // veo4.Value = "3 (SPI)";
+                var cVeo4 = new TestParamCell(veo4);
+                cVeo4.Row = 10;
+                cVeo4.Column = 0;
+                cVeo4.ColSpan = 2;
+                cVeo4.Styles.add("key", "detailLabel3");
+                cVeo4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cVeo4);
+
+                var heo4 = new TestParam();
+                heo4.Key = "NIC-SB:";
+                // heo4.Value = "0";
+                var cHeo4 = new TestParamCell(heo4);
+                cHeo4.Row = 11;
+                cHeo4.Column = 0;
+                cHeo4.ColSpan = 2;
+                cHeo4.Styles.add("key", "detailLabel3");
+                cHeo4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cHeo4);
+
+                var mte4 = new TestParam();
+                mte4.Key = "CPR Format:";
+                // mte4.Value = "0 (Even)";
+                var cMte4 = new TestParamCell(mte4);
+                cMte4.Row = 12;
+                cMte4.Column = 0;
+                cMte4.ColSpan = 2;
+                cMte4.Styles.add("key", "detailLabel3");
+                cMte4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cMte4);
+
+                var uatms4 = new TestParam();
+                uatms4.Key = "UTC Sync";
+                // uatms4.Value = "1 (Coupled)";
+                var cUatms4 = new TestParamCell(uatms4);
+                cUatms4.Row = 13;
+                cUatms4.Column = 0;
+                cUatms4.ColSpan = 2;
+                cUatms4.Styles.add("key", "detailLabel3");
+                cUatms4.Styles.add("value", "detailResult2");
+
+                apos.TestParamCells.push(cUatms4);
+
+                var result4 = new TestParam();
+                result4.Key = "Result:";
+                var cResult4 = new TestParamCell(result4);
+                cResult4.Row = 14;
+                cResult4.Column = 0;
+                cResult4.ColSpan = 4;
+                cResult4.Styles.add("key", "result");
+
+                apos.TestParamCells.push(cResult4);
+
                 newTest.Summaries.push(apos);
-                //-----------------------4------------------------
+                //-----------------------AC ID------------------------
                 var acid = new Test();
                 acid.Name = "AC ID";
 
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                // add8.Value = "2345AA (H) / 23734510 (O)";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 4;
+                cAdd8.Styles.add("key", "detailLabel");
+                cAdd8.Styles.add("value", "detailResult");
+
+                acid.TestParamCells.push(cAdd8);
+
+                var ftid8 = new TestParam();
+                ftid8.Key = "Fight ID:";
+                // ftid8.Value = "N1246W";
+                var cFtid8 = new TestParamCell(ftid8);
+                cFtid8.Row = 1;
+                cFtid8.Column = 0;
+                cFtid8.Styles.add("key", "detailLabel");
+                cFtid8.Styles.add("value", "detailResult2");
+
+                acid.TestParamCells.push(cFtid8);
+
+                var eqc8 = new TestParam();
+                eqc8.Key = "RF Level:";
+                // eqc8.Value = "Strong";
+                var cEqc8 = new TestParamCell(eqc8);
+                cEqc8.Row = 1;
+                cEqc8.Column = 1;
+                cEqc8.Styles.add("key", "detailLabel");
+                cEqc8.Styles.add("value", "detailResult2");
+
+                acid.TestParamCells.push(cEqc8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "BDSS Rcvd (DF17):";
+                // pld8.Value = "0,5 0,8 6,0 6,1 6,5";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+                cPld8.ColSpan = 4;
+                cPld8.Styles.add("key", "detailLabel3");
+                cPld8.Styles.add("value", "detailResult");
+
+                acid.TestParamCells.push(cPld8);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "BDS 0,8:";
+                // rflm4.Value = "A/C ID & Category";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 0;
+                cRflm4.Styles.add("key", "detailLabela");
+                cRflm4.Styles.add("value", "detailLabela");
+
+                acid.TestParamCells.push(cRflm4);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "Period:";
+                // rflm4.Value = "5.0";
+                rflm4.Unit = "sec";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 1;
+                cRflm4.Styles.add("key", "detailLabelb");
+                cRflm4.Styles.add("value", "detailLabelb");
+
+                acid.TestParamCells.push(cRflm4);
+
+                var frq4 = new TestParam();
+                frq4.Key = "Message Element:";
+                // frq4.Value = "03 04 5D FA 19 AC ED";
+                var cFrq4 = new TestParamCell(frq4);
+                cFrq4.Row = 4;
+                cFrq4.Column = 0;
+                cFrq4.ColSpan = 2;
+                cFrq4.Styles.add("key", "detailLabel3a");
+                cFrq4.Styles.add("value", "detailLabel3a");
+
+                acid.TestParamCells.push(cFrq4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "Aircraft/Vehicle Info";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 5;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                acid.TestParamCells.push(cPwr4);
+
+                var pwrdp4 = new TestParam();
+                pwrdp4.Key = "Aircraft ID:";
+                // pwrdp4.Value = "N1246W";
+                var cPwrdp4 = new TestParamCell(pwrdp4);
+                cPwrdp4.Row = 6;
+                cPwrdp4.Column = 0;
+                cPwrdp4.Styles.add("key", "detailLabel3");
+                cPwrdp4.Styles.add("value", "detailResult2");
+
+                acid.TestParamCells.push(cPwrdp4);
+
+                var dvn4 = new TestParam();
+                dvn4.Key = "Emitter Cat:";
+                // dvn4.Value = "3 (Large)";
+                var cDvn4 = new TestParamCell(dvn4);
+                cDvn4.Row = 7;
+                cDvn4.Column = 0;
+                cDvn4.Styles.add("key", "detailLabel3");
+                cDvn4.Styles.add("value", "detailResult2");
+
+                acid.TestParamCells.push(cDvn4);
+
+                var result4 = new TestParam();
+                result4.Key = "Result:";
+                var cResult4 = new TestParamCell(result4);
+                cResult4.Row = 18;
+                cResult4.Column = 0;
+                cResult4.ColSpan = 4;
+                cResult4.Styles.add("key", "result");
+
+                acid.TestParamCells.push(cResult4);
+
                 newTest.Summaries.push(acid);
-                //-----------------------5------------------------
+                //-----------------------VELOCITY------------------------
                 var vcty = new Test();
                 vcty.Name = "VELOCITY";
 
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                // add8.Value = "2345AA (H) / 23734510 (O)";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 4;
+                cAdd8.Styles.add("key", "detailLabel");
+                cAdd8.Styles.add("value", "detailResult");
+
+                vcty.TestParamCells.push(cAdd8);
+
+                var ftid8 = new TestParam();
+                ftid8.Key = "Fight ID:";
+                // ftid8.Value = "N1246W";
+                var cFtid8 = new TestParamCell(ftid8);
+                cFtid8.Row = 1;
+                cFtid8.Column = 0;
+                cFtid8.Styles.add("key", "detailLabel");
+                cFtid8.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cFtid8);
+
+                var eqc8 = new TestParam();
+                eqc8.Key = "RF Level:";
+                // eqc8.Value = "Strong";
+                var cEqc8 = new TestParamCell(eqc8);
+                cEqc8.Row = 1;
+                cEqc8.Column = 1;
+                cEqc8.Styles.add("key", "detailLabel");
+                cEqc8.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cEqc8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "BDSS Rcvd (DF17):";
+                // pld8.Value = "0,5 0,8 6,0 6,1 6,5";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+                cPld8.ColSpan = 4;
+                cPld8.Styles.add("key", "detailLabel3");
+                cPld8.Styles.add("value", "detailResult");
+
+                vcty.TestParamCells.push(cPld8);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "BDS 0,9:";
+                // rflm4.Value = "Airborne Position";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 0;
+                cRflm4.Styles.add("key", "detailLabela");
+                cRflm4.Styles.add("value", "detailLabela");
+
+                vcty.TestParamCells.push(cRflm4);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "Period:";
+                // rflm4.Value = "500";
+                rflm4.Unit = "ms";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 1;
+                cRflm4.Styles.add("key", "detailLabelb");
+                cRflm4.Styles.add("value", "detailLabelb");
+
+                vcty.TestParamCells.push(cRflm4);
+
+                var frq4 = new TestParam();
+                frq4.Key = "Message Element:";
+                // frq4.Value = "03 04 5D FA 19 AC ED";
+                var cFrq4 = new TestParamCell(frq4);
+                cFrq4.Row = 4;
+                cFrq4.Column = 0;
+                cFrq4.ColSpan = 2;
+                cFrq4.Styles.add("key", "detailLabel3a");
+                cFrq4.Styles.add("value", "detailLabel3a");
+
+                vcty.TestParamCells.push(cFrq4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "Flight Data";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 5;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                vcty.TestParamCells.push(cPwr4);
+
+                var pwrdp4 = new TestParam();
+                pwrdp4.Key = "Heading:";
+                // pwrdp4.Value = "N1246W";
+                var cPwrdp4 = new TestParamCell(pwrdp4);
+                cPwrdp4.Row = 6;
+                cPwrdp4.Column = 0;
+                cPwrdp4.Styles.add("key", "detailLabel3");
+                cPwrdp4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cPwrdp4);
+
+                var dvn4 = new TestParam();
+                dvn4.Key = "Airspeed:";
+                // dvn4.Value = "3 (Large)";
+                var cDvn4 = new TestParamCell(dvn4);
+                cDvn4.Row = 7;
+                cDvn4.Column = 0;
+                cDvn4.Styles.add("key", "detailLabel3");
+                cDvn4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cDvn4);
+
+                var pkdn4 = new TestParam();
+                pkdn4.Key = "Vertical Rate:";
+                // pkdn4.Value = "+ 1500";
+                pkdn4.Unit = "fpm";
+                var cPkdn4 = new TestParamCell(pkdn4);
+                cPkdn4.Row = 8;
+                cPkdn4.Column = 0;
+                cPkdn4.Styles.add("key", "detailLabel3");
+                cPkdn4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cPkdn4);
+
+                var pkdn4 = new TestParam();
+                pkdn4.Key = "Geom/Baro Alt:";
+                // pkdn4.Value = "- 123";
+                pkdn4.Unit = "ft";
+                var cPkdn4 = new TestParamCell(pkdn4);
+                cPkdn4.Row = 9;
+                cPkdn4.Column = 0;
+                cPkdn4.Styles.add("key", "detailLabel3");
+                cPkdn4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cPkdn4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "Other Fields";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 10;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                vcty.TestParamCells.push(cPwr4);
+
+                var veo4 = new TestParam();
+                veo4.Key = "ICF:";
+                // veo4.Value = "0 (No chg)";
+                var cVeo4 = new TestParamCell(veo4);
+                cVeo4.Row = 11;
+                cVeo4.Column = 0;
+                cVeo4.Styles.add("key", "detailLabel3");
+                cVeo4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cVeo4);
+
+                var heo4 = new TestParam();
+                heo4.Key = "Airspd Type:";
+                // heo4.Value = "1 (TAS)";
+                var cHeo4 = new TestParamCell(heo4);
+                cHeo4.Row = 11;
+                cHeo4.Column = 1;
+                cHeo4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cHeo4);
+
+                var mte4 = new TestParam();
+                mte4.Key = "NACv:";
+                // mte4.Value = "2 (< 3 m/s) ";
+                var cMte4 = new TestParamCell(mte4);
+                cMte4.Row = 12;
+                cMte4.Column = 0;
+                cMte4.Styles.add("key", "detailLabel3");
+                cMte4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cMte4);
+
+                var uatms4 = new TestParam();
+                uatms4.Key = "Vert Rate Src:";
+                // uatms4.Value = "1 (Baro)";
+                var cUatms4 = new TestParamCell(uatms4);
+                cUatms4.Row = 12;
+                cUatms4.Column = 1;
+                cUatms4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cUatms4);
+
+                var uatms4 = new TestParam();
+                uatms4.Key = "Hdg Sts: ";
+                // uatms4.Value = "1 (avail)";
+                var cUatms4 = new TestParamCell(uatms4);
+                cUatms4.Row = 13;
+                cUatms4.Column = 0;
+                cUatms4.Styles.add("key", "detailLabel3");
+                cUatms4.Styles.add("value", "detailResult2");
+
+                vcty.TestParamCells.push(cUatms4);
+
+                var result4 = new TestParam();
+                result4.Key = "Result:";
+                var cResult4 = new TestParamCell(result4);
+                cResult4.Row = 14;
+                cResult4.Column = 0;
+                cResult4.ColSpan = 4;
+                cResult4.Styles.add("key", "result");
+
+                vcty.TestParamCells.push(cResult4);
+
                 newTest.Summaries.push(vcty);
-                //-----------------------6------------------------
+                //-----------------------OP STATUS------------------------
                 var opsts = new Test();
                 opsts.Name = "OP STATUS";
 
                 newTest.Summaries.push(opsts);
+                //-----------------------6------------------------
+                var ts = new Test();
+                ts.Name = "TARGET STATE";
+
+                newTest.Summaries.push(ts);
                 //-----------------------7------------------------
                 var sqtr = new Test();
                 sqtr.Name = "SQUITTER";
 
+                var add8 = new TestParam();
+                add8.Key = "ADDRESS:";
+                // add8.Value = "2345AA (H) / 23734510 (O)";
+                var cAdd8 = new TestParamCell(add8);
+                cAdd8.Row = 0;
+                cAdd8.Column = 0;
+                cAdd8.ColSpan = 4;
+                cAdd8.Styles.add("key", "detailLabel");
+                cAdd8.Styles.add("value", "detailResult");
+
+                sqtr.TestParamCells.push(cAdd8);
+
+                var ftid8 = new TestParam();
+                ftid8.Key = "Fight ID:";
+                // ftid8.Value = "N1246W";
+                var cFtid8 = new TestParamCell(ftid8);
+                cFtid8.Row = 1;
+                cFtid8.Column = 0;
+                cFtid8.Styles.add("key", "detailLabel");
+                cFtid8.Styles.add("value", "detailResult2");
+
+                sqtr.TestParamCells.push(cFtid8);
+
+                var eqc8 = new TestParam();
+                eqc8.Key = "RF Level:";
+                // eqc8.Value = "Strong";
+                var cEqc8 = new TestParamCell(eqc8);
+                cEqc8.Row = 1;
+                cEqc8.Column = 1;
+                cEqc8.Styles.add("key", "detailLabel");
+                cEqc8.Styles.add("value", "detailResult2");
+
+                sqtr.TestParamCells.push(cEqc8);
+
+                var pld8 = new TestParam();
+                pld8.Key = "BDSS Rcvd (DF17):";
+                // pld8.Value = "0,5 0,8 6,0 6,1 6,5";
+                var cPld8 = new TestParamCell(pld8);
+                cPld8.Row = 2;
+                cPld8.Column = 0;
+                cPld8.ColSpan = 4;
+                cPld8.Styles.add("key", "detailLabel3");
+                cPld8.Styles.add("value", "detailResult");
+
+                sqtr.TestParamCells.push(cPld8);
+
+                var rflm4 = new TestParam();
+                rflm4.Key = "RF/ Squitter Timming:";
+                var cRflm4 = new TestParamCell(rflm4);
+                cRflm4.Row = 3;
+                cRflm4.Column = 0;
+                cRflm4.ColSpan = 2;
+                cRflm4.Styles.add("key", "detailLabela");
+
+                sqtr.TestParamCells.push(cRflm4);
+
+                var frq4 = new TestParam();
+                frq4.Key = "Extended Squitter Rate:";
+                // frq4.Value = "0.98";
+                frq4.Unit = "sec";
+                var cFrq4 = new TestParamCell(frq4);
+                cFrq4.Row = 4;
+                cFrq4.Column = 0;
+                cFrq4.ColSpan = 2;
+                cFrq4.Styles.add("key", "detailLabel3a");
+                cFrq4.Styles.add("value", "detailLabel3a");
+
+                sqtr.TestParamCells.push(cFrq4);
+
+                var pwr4 = new TestParam();
+                pwr4.Key = "1090 MHz RF Data";
+                var cPwr4 = new TestParamCell(pwr4);
+                cPwr4.Row = 5;
+                cPwr4.Column = 0;
+                cPwr4.ColSpan = 2;
+                cPwr4.Styles.add("key", "detailLabel1");
+                cPwr4.Styles.add("value", "detailResult1");
+
+                sqtr.TestParamCells.push(cPwr4);
+
+                var pwrdp4 = new TestParam();
+                pwrdp4.Key = "Measured frequency:";
+                // pwrdp4.Value = "978.021";
+                pwrdp4.Unit = "MHz";
+                var cPwrdp4 = new TestParamCell(pwrdp4);
+                cPwrdp4.Row = 6;
+                cPwrdp4.Column = 0;
+                cPwrdp4.Styles.add("key", "detailLabel3");
+                cPwrdp4.Styles.add("value", "detailResult2");
+
+                sqtr.TestParamCells.push(cPwrdp4);
+
+                var dvn4 = new TestParam();
+                dvn4.Key = "Measure power";
+                // dvn4.Value = "-55.0";
+                dvn4.Unit="dBm";
+                var cDvn4 = new TestParamCell(dvn4);
+                cDvn4.Row = 7;
+                cDvn4.Column = 0;
+                cDvn4.Styles.add("key", "detailLabel3");
+                cDvn4.Styles.add("value", "detailResult2");
+
+                sqtr.TestParamCells.push(cDvn4);
+
+                var dvn4 = new TestParam();
+                dvn4.Key = "Error conditions";
+                // dvn4.Value = "None detected";
+                var cDvn4 = new TestParamCell(dvn4);
+                cDvn4.Row = 8;
+                cDvn4.Column = 0;
+                cDvn4.Styles.add("key", "detailLabel3");
+                cDvn4.Styles.add("value", "detailResult2");
+
+                sqtr.TestParamCells.push(cDvn4);
+
+                var result4 = new TestParam();
+                result4.Key = "Result:";
+                var cResult4 = new TestParamCell(result4);
+                cResult4.Row = 9;
+                cResult4.Column = 0;
+                cResult4.ColSpan = 4;
+                cResult4.Styles.add("key", "result");
+
+                sqtr.TestParamCells.push(cResult4);
+
                 newTest.Summaries.push(sqtr);
             }
-             break;
+                break;
             case '1090 ADS-B IN': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
@@ -172,7 +1134,7 @@ export class Factory {
 
                 newTest.Summaries.push(adbin);
             }
-             break;
+                break;
             case 'ADS-B SUMMARY': {
                 newTest.Styles.add("key", "detailLabel");
                 newTest.Styles.add("value", "detailResult2");
