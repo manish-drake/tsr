@@ -25,8 +25,11 @@ export class TestDetailComp {
 
   public tests: any;
 
+  headerName:any;
+
   ngOnInit() {
     this.route.params.subscribe(data => {
+      this.headerName = (data as any).headername;
       var testGroupName = (data as any).test;
       var testsData = this.objectService.createTestsData(testGroupName);
       this.tests = this.broker.createTests(testsData);
@@ -73,7 +76,7 @@ export class TestDetailComp {
   onNavigate(ev: string) {
     switch (ev) {
       case 'close': {
-        this._router.navigate(['testgroup', "UAT"])
+        this._router.navigate(['testgroup', this.headerName])
           .then(succ => console.log("Detail Closed: " + succ))
           .catch(err => console.log("Error Closing Detail: " + err))
         break;
