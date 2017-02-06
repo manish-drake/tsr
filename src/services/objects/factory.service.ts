@@ -5,23 +5,23 @@ import { TestParam } from '../../core/tests/testParam'
 import { TestParamCell } from '../../core/tests/testParamCell'
 import { TestGroup } from '../../core/tests/testgroup'
 
+import { LocalStorage } from '../../services/storage/local-storage'
+
 @Injectable()
 export class Factory {
 
-    constructor() { }
+    constructor(private _localStorage: LocalStorage ) { }
 
     createTestGroupsData(groupName: string): TestGroup {
         var group: TestGroup = new TestGroup();
         switch (groupName) {
             case 'ADS-B': {
                 group.Test = [
-                    // this.createTestData("UAT ADS-B OUT"),
-                    // this.createTestData("UAT ADS-B IN"),
                     this.createTestsData("1090 ADS-B OUT"),
                     this.createTestsData("1090 ADS-B IN"),
-                    // this.createTestsData("ADS-B SUMMARY"),
                     this.createTestsData("UAT ADS-B OUT"),
-                    this.createTestsData("UAT ADS-B IN"),
+                    this.createTestsData("UAT ADS-B IN")
+                    // this.createTestsData("ADS-B SUMMARY"),
                     // this.createTestsData("ADS-B DATA"),
                     // this.createTestsData("ADS-B TBD")
                 ];
@@ -29,9 +29,9 @@ export class Factory {
             }
             case 'Start': {
                 group.Test = []
-                var favorites = localStorage.getItem("tsrfavorites");
-                if (favorites != null) {
-                    var favColl = JSON.parse(favorites);
+                var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
+                if (startItems != null) {
+                    var favColl = JSON.parse(startItems);
                     favColl.forEach(favItem => {
                         group.Test.push(this.createTestsData(favItem));
                     });

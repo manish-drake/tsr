@@ -18,12 +18,12 @@ export class Test{
         this._Name = v;
     }
 
-    private _isFavorite : boolean;
-    public get isFavorite() : boolean {
-        return this._isFavorite;
+    private _isStartItem : boolean;
+    public get isStartItem() : boolean {
+        return this._isStartItem;
     }
-    public set isFavorite(v : boolean) {
-        this._isFavorite = v;
+    public set isStartItem(v : boolean) {
+        this._isStartItem = v;
     }
 
     private _Summaries : Test[];

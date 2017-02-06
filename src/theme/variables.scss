@@ -79,5 +79,5 @@ $dark-foreground: #ffffff;
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
-@import "./app.light";
-@import "./app.dark";
+@import "./app.indoor";
+@import "./app.outdoor";

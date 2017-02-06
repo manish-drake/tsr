@@ -5,6 +5,8 @@ import { BrokerFactoryService } from '../../services/broker/brokerFactory.servic
 import { Factory } from '../../services/objects/factory.service'
 import { HeaderService } from '../../services/ui/header.service'
 
+import { LocalStorage } from '../../services/storage/local-storage'
+
 @Component({
   selector: 'testgroup',
   templateUrl: 'testgroup.html'
@@ -17,7 +19,8 @@ export class TestGroupComp implements OnInit {
     private objectService: Factory,
     private _renderer: Renderer,
     private _router: Router,
-    private _svcHeader: HeaderService) {
+    private _svcHeader: HeaderService,
+    private _localStorage: LocalStorage) {
 
   }
 
@@ -37,59 +40,59 @@ export class TestGroupComp implements OnInit {
     var testGroupsData = this.objectService.createTestGroupsData(this.testHeaderName);
     this.testgroups = this.broker.createTestGroups(testGroupsData);
     console.log(this.testgroups);
-    this.evaluateFavorites()
+    this.evaluateStartItem()
   }
 
-  evaluateFavorites() {
-    var favorites = localStorage.getItem("tsrfavorites");
-    if (favorites != null) {
-      var favColl = JSON.parse(favorites);
+  evaluateStartItem() {
+    var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
+    if (startItems != null) {
+      var favColl = JSON.parse(startItems);
       this.testgroups.forEach(testgroup => {
         favColl.forEach(element => {
           if (element == testgroup.name) {
-            testgroup.isFavorite = true;
+            testgroup.isStartItem = true;
           }
         });
       });
     }
   }
 
-  onFavorite(g) {
-    if (!g.isFavorite) {
-      g.isFavorite = true;
-      this.addToFavorites(g.name);
+  onStartItem(g) {
+    if (!g.isStartItem) {
+      g.isStartItem = true;
+      this.addToStart(g.name);
     }
     else {
-      g.isFavorite = false;
-      this.removeFromFavorites(g.name);
+      g.isStartItem = false;
+      this.removeFromStart(g.name);
     }
   }
 
-  addToFavorites(testgroupname) {
-    var favorites = localStorage.getItem("tsrfavorites");
+  addToStart(testgroupname) {
+    var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     var favColl = [];
-    if (favorites == null) {
+    if (startItems == null) {
       favColl.push(testgroupname);
-      localStorage.setItem("tsrfavorites", JSON.stringify(favColl))
+      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl))
     }
     else {
-      favColl = JSON.parse(favorites)
+      favColl = JSON.parse(startItems)
       favColl.push(testgroupname);
-      localStorage.setItem("tsrfavorites", JSON.stringify(favColl));
+      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
     }
   }
 
-  removeFromFavorites(testgroupname) {
-    var favorites = localStorage.getItem("tsrfavorites");
-    if (favorites != null) {
-      var favColl = JSON.parse(favorites);
+  removeFromStart(testgroupname) {
+    var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
+    if (startItems != null) {
+      var favColl = JSON.parse(startItems);
       favColl.forEach((element, index) => {
         if (testgroupname == element) {
           favColl.splice(index, 1);
         }
       });
-      localStorage.setItem("tsrfavorites", JSON.stringify(favColl));
-      if (this.testHeaderName == "Favorites") {
+      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
+      if (this.testHeaderName == "Start") {
         this.getData();
       }
     }

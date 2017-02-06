@@ -14,6 +14,7 @@ import { FileIOService } from '../services/io/file-io.service'
 import { Factory } from '../services/objects/factory.service'
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
 import { MasterService } from '../services/test-set/master.service'
+import { LocalStorage } from '../services/storage/local-storage'
 import { router } from './app.router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
@@ -68,7 +69,8 @@ import { SpyDirective } from '../common/mySpy.directive';
         ModalService,
         BrokerFactoryService,
         ThemesService,
-        FileFactory
+        FileFactory,
+        LocalStorage
     ]
 })
 export class AppModule { }
