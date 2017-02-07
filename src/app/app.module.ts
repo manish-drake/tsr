@@ -1,26 +1,28 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home'
+import { HomePage } from '../pages/home/home';
 import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
-import { ConfigurationsPopover } from '../pages/configurations-component/configurations'
-import { HeaderComponent } from '../pages/header-component/header-component'
-import { FooterComponent } from '../pages/footer-component/footer-component'
+import { ConfigurationsPopover } from '../pages/configurations-component/configurations';
+import { HeaderComponent } from '../pages/header-component/header-component';
+import { FooterComponent } from '../pages/footer-component/footer-component';
 import { TestGroupComp } from '../pages/testgroup-component/testgroup';
 import { SetupComp } from '../pages/setup-component/setup';
 import { TestDetailComp } from '../pages/detail-component/detail';
 import { SetupTestPage } from '../pages/setuptest/setuptest';
 import { HelpPage } from '../pages/help-component/help';
-import { FileIOService } from '../services/io/file-io.service'
-import { Factory } from '../services/objects/factory.service'
-import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
-import { MasterService } from '../services/test-set/master.service'
-import { LocalStorage } from '../services/storage/local-storage'
-import { router } from './app.router'
-import { HeaderService } from '../services/ui/header.service'
-import { PopoverService } from '../services/ui/popover.service'
-import { ModalService } from '../services/ui/modal.service'
-import { ThemesService } from '../services/themes/themes.service'
+import { GuidePage } from '../pages/guide/guide';
+import { FileIOService } from '../services/io/file-io.service';
+import { Factory } from '../services/objects/factory.service';
+import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
+import { SetupBrokerFactory } from '../services/broker/setupbrokerfactory';
+import { MasterService } from '../services/test-set/master.service';
+import { LocalStorage } from '../services/storage/local-storage';
+import { router } from './app.router';
+import { HeaderService } from '../services/ui/header.service';
+import { PopoverService } from '../services/ui/popover.service';
+import { ModalService } from '../services/ui/modal.service';
+import { ThemesService } from '../services/themes/themes.service';
 import { FileFactory } from '../services/io/file-factory';
 import { DetailDefaultComp } from '../sub-components/tests/detail-default/detail-default';
 import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
@@ -43,6 +45,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         TestDetailComp,
         SetupTestPage,
         HelpPage,
+        GuidePage,
         DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
         PopOverButtonComp,
@@ -59,7 +62,8 @@ import { SpyDirective } from '../common/mySpy.directive';
         MoreActionsPopover,
         ConfigurationsPopover,
         SetupTestPage,
-        HelpPage
+        HelpPage,
+        GuidePage
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -70,6 +74,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         PopoverService,
         ModalService,
         BrokerFactoryService,
+        SetupBrokerFactory,
         ThemesService,
         FileFactory,
         LocalStorage

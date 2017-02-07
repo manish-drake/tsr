@@ -1,11 +1,24 @@
 <div class="items">
   <div class="itemm" *ngFor="let setup of allsetup; let i = index;">
-    <ion-card style="min-height:200px; width: auto; margin: 5px;">
-     <ion-row>
-			<ion-col text-center center>
-				<ion-label style="font-size: 16px; font-weight: 600;">{{setup.name}}</ion-label>
-			</ion-col>
-		</ion-row>
+    <ion-card style="height:200px; margin: 5px;">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 100%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">{{setup.Name}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <table margin style="width:99%;">
+            <tr *ngFor="let row of setup.rows">
+              <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
+                <label [class]="cell.keyStyle">{{ cell.key }}</label>
+                <label [class]="cell.valueStyle">{{ cell.value }}</label>
+                <label [class]="cell.unitStyle">{{ cell.unit }}</label>
+              </td>
+            </tr>
+          </table>
+        </ion-row>
+      </ion-grid>
     </ion-card>
   </div>
 </div>

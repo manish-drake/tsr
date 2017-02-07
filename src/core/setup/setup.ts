@@ -1,7 +1,7 @@
-import { TestParamCell } from './testParamCell';
+import { TestParamCell } from '../tests/testParamCell';
 import { Dictionary } from '../../common/dictionary'
 
-export class Test{
+export class Setup{
     
     private _Styles : Dictionary<string, string>;
     public get Styles() : Dictionary<string, string> {
@@ -18,29 +18,13 @@ export class Test{
         this._Name = v;
     }
 
-    private _isStartItem : boolean;
-    public get isStartItem() : boolean {
-        return this._isStartItem;
-    }
-    public set isStartItem(v : boolean) {
-        this._isStartItem = v;
-    }
-
-    private _isGuideAvailable : boolean;
-    public get isGuideAvailable() : boolean {
-        return this._isGuideAvailable;
-    }
-    public set isGuideAvailable(v : boolean) {
-        this._isGuideAvailable = v;
-    }
-
-    private _Summaries : Test[];
-    public get Summaries() : Test[] {
+    private _Summaries : Setup[];
+    public get Summaries() : Setup[] {
         if(!this._Summaries)
             this._Summaries = [];
         return this._Summaries;
     }
-    public set Summaries(v : Test[]) {
+    public set Summaries(v : Setup[]) {
         this._Summaries = v;
     }
     

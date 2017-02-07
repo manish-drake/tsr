@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../../services/ui/header.service'
 import { SetupFactory } from '../../services/objects/setup-factory'
-import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
+import { SetupBrokerFactory } from '../../services/broker/setupbrokerfactory';
 
 @Component({
   selector: 'page-setup',
@@ -15,7 +15,7 @@ export class SetupComp {
   constructor(private route: ActivatedRoute,
   private _svcHeader: HeaderService,
   private setupFactory: SetupFactory,
-  private broker: BrokerFactoryService) {}
+  private setupBroker: SetupBrokerFactory) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SetupComp');
@@ -33,7 +33,10 @@ export class SetupComp {
   allsetup: any = [];
 
   getData() {
-    this.allsetup = this.setupFactory.createAllSetupData();
+    var setupData=  this.setupFactory.createAllSetupData();
+    this.allsetup = setupData;
+    // this.allsetup = this.setupBroker.createSetupCard(setupData);
+
     console.log(this.allsetup);
   }
 

@@ -1,43 +1,29 @@
 import { Injectable } from '@angular/core';
 
-import { TestSection } from '../../core/tests/testSection'
-import { Test } from '../../core/tests/test'
-import { TestGroup } from '../../core/tests/testgroup'
+import { Setup } from '../../core/setup/setup'
 import { Dictionary } from '../../common/dictionary';
 
 @Injectable()
-export class BrokerFactoryService {
-    /**
-     *
-     */
+export class SetupBrokerFactory {
+
     constructor() { }
 
-    createTests(testData: Test) {
-        var testDS: any[] = [];
-        testData.Summaries.forEach(summary => {
+    createSetupCard(data: Setup) {
+        alert(data.Summaries)
+        var ds: any[] = [];
+        data.Summaries.forEach(summary => {
             var testD = {
                 name: summary.Name,
-                parent: testData.Name,
-                rows: this.createParamsGrid(summary, testData.Styles)
+                parent: data.Name,
+                rows: this.createParamsGrid(summary, data.Styles)
             }
-            testDS.push(testD);
+            ds.push(testD);
         })
-        return testDS;
+        alert(JSON.stringify(ds))
+        return ds;
     }
 
-    createTestGroups(testGroups: TestGroup) {
-        var testGroupData = testGroups.Test.map(testgroup => {
-            return {
-                "name": testgroup.Name,
-                "count": testgroup.Summaries.length,
-                "isStartItem": testgroup.isStartItem,
-                "isGuideAvailable": testgroup.isGuideAvailable
-            };
-        })
-        return testGroupData;
-    }
-
-    private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
+    private createParamsGrid(summary: Setup, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;
         summary.TestParamCells.forEach(cell => {
             maxRowIndex = maxRowIndex > cell.Row ? maxRowIndex : cell.Row;

@@ -113,7 +113,6 @@ export class Factory {
 
 
     createTestsData(test: string): Test {
-        // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
             case '1090 ADS-B OUT': {
@@ -122,6 +121,7 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
+                newTest.isGuideAvailable = true;
                 // -----------------------1----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 
@@ -1896,6 +1896,7 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
+                newTest.isGuideAvailable = true;
                 // -----------------------Filter A/v target----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 

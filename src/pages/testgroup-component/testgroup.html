@@ -8,7 +8,9 @@
     [class.selectedcard]="selectedCardIndex == i">
      <ion-row >
        <ion-col no-padding center style="width:100%;">
-         <button ion-button clear icon-only no-margin ><ion-icon name="information-circle"></ion-icon></button>
+         <button ion-button clear icon-only no-margin *ngIf="testgroup.isGuideAvailable" (click)="openGuide(testgroup.name)">
+           <ion-icon name="information-circle"></ion-icon>
+           </button>
          <button ion-button clear icon-only no-margin ><ion-icon name="sync"></ion-icon></button>
          <button ion-button clear icon-only no-margin (click)="onStartItem(testgroup)">
             <ion-icon *ngIf="!testgroup.isStartItem" style="font-size: 26px;" name="star-outline"></ion-icon>
