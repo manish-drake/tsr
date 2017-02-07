@@ -113,7 +113,6 @@ export class Factory {
 
 
     createTestsData(test: string): Test {
-        // console.log('test Name:::  ' + test);
         var newTest: Test = new Test();
         switch (test) {
             case '1090 ADS-B OUT': {

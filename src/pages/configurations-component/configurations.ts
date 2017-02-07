@@ -18,7 +18,7 @@ export class ConfigurationsPopover {
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
 
-  distanceValue: any = 230;
+  distanceValue: any = 200;
 
   constructor(private _themes: ThemesService,
   private _localStorage: LocalStorage) {
