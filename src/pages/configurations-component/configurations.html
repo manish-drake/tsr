@@ -39,7 +39,19 @@
   </ion-item>
 </ion-list>-->
 <ion-grid>
-    <ion-row style="height: 150px;" style="border-bottom: 1px solid lightgray;">
+    <ion-row style="height: 120px;border-bottom: 1px solid lightgray;">
+        <ion-col text-center style="border-right: 1px solid lightgray;">
+            <ion-label>USER</ion-label>
+            <ion-select [(ngModel)]="selectedUser">
+                <ion-option *ngFor="let user of users" [value]="user.name">{{user.name}}</ion-option>
+            </ion-select>
+        </ion-col>
+        <ion-col text-center>
+            <ion-label>THEME</ion-label>
+            <ion-toggle [checked]="selected == 'dark-theme'" (ionChange)="onSwitchTheme()"></ion-toggle>
+        </ion-col>
+    </ion-row>
+    <ion-row style="height: 120px;border-bottom: 1px solid lightgray;">
         <ion-col text-center style="border-right: 1px solid lightgray;">
             <ion-label>DEVICE CLASS</ion-label>
             <ion-toggle checked></ion-toggle>
@@ -49,7 +61,7 @@
             <ion-toggle></ion-toggle>
         </ion-col>
     </ion-row>
-    <ion-row style="height: 150px;" style="border-bottom: 1px solid lightgray;">
+    <ion-row style="height: 120px;border-bottom: 1px solid lightgray;">
         <ion-col text-center style="border-right: 1px solid lightgray;">
             <ion-label>CONNECTION</ion-label>
             <ion-toggle checked></ion-toggle>
@@ -59,7 +71,7 @@
             <ion-toggle></ion-toggle>
         </ion-col>
     </ion-row>
-    <ion-row style="height: 150px;" style="border-bottom: 1px solid lightgray;">
+    <ion-row style="height: 120px;">
         <ion-col text-center style="border-right: 1px solid lightgray;">
             <ion-label>WIFI</ion-label>
             <ion-toggle checked></ion-toggle>
@@ -72,14 +84,6 @@
                 <ion-col no-padding text-left>10 Ft</ion-col>
                 <ion-col no-padding style="width: auto;flex: 0 0 auto;">250 Ft</ion-col>
             </ion-row>
-        </ion-col>
-    </ion-row>
-    <ion-row style="height: 150px;">
-        <ion-col text-center style="border-right: 1px solid lightgray;">
-            <ion-label>THEME</ion-label>
-            <ion-toggle [checked]="selected == 'dark-theme'" (ionChange)="onSwitchTheme()"></ion-toggle>
-        </ion-col>
-        <ion-col>
         </ion-col>
     </ion-row>
 </ion-grid>

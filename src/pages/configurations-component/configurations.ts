@@ -18,6 +18,10 @@ export class ConfigurationsPopover {
   selected: String;
   availableThemes: { className: string, prettyName: string }[];
 
+  users = [{name: "Operator"},{name: "Operator 2"}]
+
+  selectedUser:string = "Operator" 
+
   distanceValue: any = 200;
 
   constructor(private _themes: ThemesService,
