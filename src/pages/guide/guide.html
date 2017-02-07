@@ -1,0 +1,60 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col padding-horizontal style="width: auto; flex: 0 0 auto;">
+        <ion-icon style="font-size: 28px;" name="information-circle"></ion-icon>
+      </ion-col>
+      <ion-col no-padding text-center center style="overflow: hidden;text-overflow: ellipsis;">
+        <ion-title>{{paramName}} Guide</ion-title>
+      </ion-col>
+      <ion-col padding-horizontal style="width: 50px; flex: 0 0 50px;">
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding style="background: #f8f8f8;">
+
+  <ion-grid style="border: 1px solid black;">
+    <ion-row>
+      <ion-col text-center>
+        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Direct
+      </ion-col>
+      <ion-col text-center>
+        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port A
+      </ion-col>
+      <ion-col text-center>
+        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port B
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center></ion-col>
+      <ion-col text-center>
+        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>GPS
+      </ion-col>
+      <ion-col text-center></ion-col>
+      <ion-col text-center>
+        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Wi-Fi
+      </ion-col>
+      <ion-col text-center></ion-col>
+    </ion-row>
+  </ion-grid>
+  <p>
+    When running a UAT Out test, use the directional antenna with Port A for over
+    the air testing.
+  </p>
+  <p>
+    Attach the GPS antenna to acquire LAT, LON and time.
+  </p>
+
+</ion-content>
+
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button clear (click)="onClose()">CLOSE</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
