@@ -5,17 +5,20 @@ detail-vehicles {
         font-size: 15px;
         margin-bottom: 5px;
         width: auto;    
+        // background-color: gold
      }        
     .sectionLabel1{
         display: inline-flex;
         min-width: 80px;
         margin-left:7px;
         font-size: 15px;
+        // background-color: khaki
     }
     .sectionLabel2{
         display: inline-flex;
         min-width: 65px;
         font-size: 15px;
+        // background-color: cornflowerblue
     }
 
     .sectionResult1{
@@ -23,12 +26,16 @@ detail-vehicles {
         width: 25%;
         min-width: 120px; 
         font-size: 15px;  
+        margin-left:5px;
+        // background-color: pink
     }
     .sectionResult2{
         display: inline-flex;
         width: 24.5%;
         min-width: 70px; 
-        font-size: 15px;  
+        font-size: 15px;
+        margin-left:5px;
+        // background-color: red
     }
 
 .selectedvehicle{
