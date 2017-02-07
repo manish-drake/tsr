@@ -26,6 +26,14 @@ export class Test{
         this._isStartItem = v;
     }
 
+    private _isGuideAvailable : boolean;
+    public get isGuideAvailable() : boolean {
+        return this._isGuideAvailable;
+    }
+    public set isGuideAvailable(v : boolean) {
+        this._isGuideAvailable = v;
+    }
+
     private _Summaries : Test[];
     public get Summaries() : Test[] {
         if(!this._Summaries)

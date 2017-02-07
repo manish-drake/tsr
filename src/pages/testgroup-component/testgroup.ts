@@ -1,10 +1,11 @@
 import { Component, OnInit, Renderer } from '@angular/core';
+import { ModalController } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { GuidePage } from '../../pages/guide/guide';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
 import { Factory } from '../../services/objects/factory.service'
 import { HeaderService } from '../../services/ui/header.service'
-
 import { LocalStorage } from '../../services/storage/local-storage'
 
 @Component({
@@ -14,6 +15,7 @@ import { LocalStorage } from '../../services/storage/local-storage'
 export class TestGroupComp implements OnInit {
   private: any;
   constructor(
+    private modalCtrl: ModalController,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
     private objectService: Factory,
@@ -54,6 +56,25 @@ export class TestGroupComp implements OnInit {
           }
         });
       });
+    }
+  }
+
+  selectedCardIndex = 0
+
+  onCardClick(i, group) {
+    this.selectedCardIndex = i;
+  }
+
+  private clicks = 0;
+  doubleTapNavigation(test) {
+    this.clicks++;
+    if (this.clicks == 1) {
+      setTimeout(() => {
+        if (this.clicks == 2) {
+          this._router.navigate(['detail', test.name, this.headerName])
+        }
+        this.clicks = 0;
+      }, 500);
     }
   }
 
@@ -98,23 +119,9 @@ export class TestGroupComp implements OnInit {
     }
   }
 
-  selectedCardIndex = 0
-
-  onCardClick(i, group) {
-    this.selectedCardIndex = i;
-  }
-
-  private clicks = 0;
-  doubleTapNavigation(test) {
-    this.clicks++;
-    if (this.clicks == 1) {
-      setTimeout(() => {
-        if (this.clicks == 2) {
-          this._router.navigate(['detail', test.name, this.headerName])
-        }
-        this.clicks = 0;
-      }, 500);
-    }
+  openGuide(e){
+    var modal = this.modalCtrl.create(GuidePage,{param: e});
+    modal.present();
   }
 
 }

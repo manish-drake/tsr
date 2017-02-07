@@ -30,7 +30,8 @@ export class BrokerFactoryService {
             return {
                 "name": testgroup.Name,
                 "count": testgroup.Summaries.length,
-                "isStartItem": testgroup.isStartItem
+                "isStartItem": testgroup.isStartItem,
+                "isGuideAvailable": testgroup.isGuideAvailable
             };
         })
         return testGroupData;

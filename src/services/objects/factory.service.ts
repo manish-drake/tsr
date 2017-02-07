@@ -122,6 +122,7 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
+                newTest.isGuideAvailable = true;
                 // -----------------------1----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 
@@ -1366,6 +1367,7 @@ export class Factory {
                 newTest.Styles.add("unit", "detailUnit");
 
                 newTest.Name = test;
+                newTest.isGuideAvailable = true;
                 // -----------------------Filter A/v target----------------------------
                 newTest.Summaries.push(this.createSelectAvTarget());
 

@@ -1,13 +1,19 @@
 <ion-content>
   <ion-grid style="height: 100%;">
+    <ion-row>
+      <ion-col padding-horizontal style="width: auto; flex: 0 0 auto;">
+        <ion-icon style="font-size: 28px;" name="settings"></ion-icon>
+      </ion-col>
+      <ion-col no-padding text-center center>
+        <h5>ADS-B Velocity Test</h5>
+        <h6 text-center style="font-weight: 600;">SETUP</h6>
+      </ion-col>
+      <ion-col padding-horizontal style="width: 50px; flex: 0 0 50px;">
+      </ion-col>
+    </ion-row>
+
     <ion-row style="height: 100%;">
       <ion-col>
-<ion-row>
-  <ion-col>
-    <h5 text-center>ADS-B Velocity Test</h5>
-    <h6 text-center style="font-weight: 600;">SETUP</h6>
-  </ion-col>
-</ion-row>
 <ion-row ion-button clear (click)="power()">
   <ion-col text-left>
     <ion-label>Power</ion-label>
@@ -83,6 +89,7 @@
 </ion-row>
       </ion-col>
     </ion-row>
+
     <ion-row>
   <ion-col text-right>
   <button ion-button clear (click)="dismiss()">CLOSE</button>
