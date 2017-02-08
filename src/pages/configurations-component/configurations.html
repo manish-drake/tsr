@@ -57,7 +57,7 @@
         </ion-col>
     </ion-row>
     <ion-row style="height: 120px;border-bottom: 1px solid lightgray;">
-        <ion-col text-center style="border-right: 1px solid lightgray;">
+        <ion-col text-center>
             <ion-label>REMOTE CONNECT</ion-label>
             <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
             <ion-item no-lines no-margin no-padding>
@@ -65,15 +65,6 @@
                     <ion-option *ngFor="let device of devices" [value]="device.name">{{device.name}}</ion-option>
                 </ion-select>
             </ion-item>
-        </ion-col>
-        <ion-col text-center class="textTrim">
-            <ion-label>DISPLAY BRIGHTNESS</ion-label>
-            <ion-label>{{brightnessValue}}</ion-label>
-            <ion-range color="dark" style="padding:0;height: 20px;" min="1" max="10" [(ngModel)]="brightnessValue"></ion-range>
-            <ion-row>
-                <ion-col no-padding text-left>1</ion-col>
-                <ion-col no-padding style="width: auto;flex: 0 0 auto;">10</ion-col>
-            </ion-row>
         </ion-col>
     </ion-row>
     <ion-row style="height: 120px;border-bottom: 1px solid lightgray;">
