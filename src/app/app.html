@@ -1,4 +1,4 @@
-<ion-menu [content]="content" [class]="chosenTheme" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
+<ion-menu [content]="content" [class]="chosenTheme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
 
 <ion-content padding-vertical>
         <ion-item menuToggle no-lines *ngFor="let header of menu.headers" (click)="onItemSelectionChanged(header)"
@@ -10,4 +10,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="chosenTheme"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="chosenTheme.className"></ion-nav>

@@ -16,7 +16,7 @@ import { ThemesService } from '../services/themes/themes.service'
 export class MyApp implements OnInit {
   @ViewChild(Nav) content: Nav;
 
-  chosenTheme: String;
+  chosenTheme: any;
   Title: string = "Title";
   rootPage = HomePage;
 

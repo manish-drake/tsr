@@ -5,24 +5,39 @@ import { LocalStorage } from '../../services/storage/local-storage'
 
 @Injectable()
 export class ThemesService {
-    private theme: BehaviorSubject<String>;
-    availableThemes: { className: string, prettyName: string }[];
+    private theme: BehaviorSubject<any>;
+
+    indoorTheme: any;
+    outdoorTheme: any;
 
     constructor(private _localStorage: LocalStorage) {
-        var savedTheme = _localStorage.GetItem(this._localStorage.keyForCurrentTheme());
-        if (savedTheme != null) this.theme = new BehaviorSubject(savedTheme);
-        else this.theme = new BehaviorSubject('indoor-theme');
-        this.availableThemes = [
-            { className: 'indoor-theme', prettyName: 'Indoor' },
-            { className: 'outdoor-theme', prettyName: 'Outdoor' }
-        ];
-    }
+        this.indoorTheme = { className: 'indoor-theme', themeName: 'Indoor' };
+        this.outdoorTheme = { className: 'outdoor-theme', themeName: 'Outdoor' };
 
-    setTheme(val) {
-        this.theme.next(val);
+        var savedTheme = _localStorage.GetItem(this._localStorage.keyForCurrentTheme());
+        if (savedTheme != null) this.theme = new BehaviorSubject(JSON.parse(savedTheme));
+        else this.theme = new BehaviorSubject(this.indoorTheme);
     }
 
     getTheme() {
         return this.theme.asObservable();
+    }
+
+    setTheme(val) {
+        this.theme.next(val);
+        this.saveTheme(val);
+    }
+
+    switchTheme(oldVal) {
+        if (oldVal.className == this.indoorTheme.className){
+            this.setTheme(this.outdoorTheme);
+        }
+        else{
+            this.setTheme(this.indoorTheme);
+        }
+    }
+
+    saveTheme(val) {
+        this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), JSON.stringify(val));
     }
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ThemesService } from '../../services/themes/themes.service'
-import { LocalStorage } from '../../services/storage/local-storage'
 
 /*
   Generated class for the Configurations page.
@@ -14,35 +13,27 @@ import { LocalStorage } from '../../services/storage/local-storage'
 })
 export class ConfigurationsPopover {
 
-  chosenTheme: String;
-  selected: String;
-  availableThemes: { className: string, prettyName: string }[];
+  chosenTheme: any;
 
-  users = [{name: "Operator"},{name: "Operator 2"}]
+  users = [{name: "Operator"},{name: "Operator 2"}];
+  selectedUser:string = "Operator";
 
-  selectedUser:string = "Operator" 
+  devices = [{name: "TestSet#1"},{name: "TestSet#2"},{name: "TestSet#3"},{name: "TestSet#4"},{name: "TestSet#5"}];
+  selectedDevice:string = "TestSet#5";
 
-  distanceValue: any = 200;
+  brightnessValue: number = 7;
+  distanceValue: number = 200;
+  
 
-  constructor(private _themes: ThemesService,
-  private _localStorage: LocalStorage) {
+  constructor(private _themes: ThemesService) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
-    this._themes.getTheme().subscribe(val => this.selected = val);
-    this.availableThemes = this._themes.availableThemes;
   }
 
   ionViewDidLoad() {
     console.log('Hello ConfigurationsPopover');
   }
 
-  onSwitchTheme() {
-    if (this.selected == 'indoor-theme') {
-      this._themes.setTheme('outdoor-theme');
-      this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), "outdoor-theme");
-    }
-    else {
-      this._themes.setTheme('indoor-theme');
-      this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), "indoor-theme");
-    }
+  onSwitchTheme(oldVal) {
+    this._themes.switchTheme(oldVal);
   }
 }

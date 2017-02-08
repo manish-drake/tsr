@@ -11,7 +11,7 @@ import { ThemesService } from '../../services/themes/themes.service';
 export class MoreActionsPopover {
 
   @Input() main: MoreActionsPopover;
-  chosenTheme: String;
+  chosenTheme: any;
 
   public setup: any;
   public help: any;
