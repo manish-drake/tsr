@@ -29,7 +29,7 @@ export class ThemesService {
     }
 
     switchTheme(oldVal) {
-        if (oldVal.className == this.indoorTheme.className){
+        if (JSON.stringify(oldVal) == JSON.stringify(this.indoorTheme.className)){
             this.setTheme(this.outdoorTheme);
         }
         else{

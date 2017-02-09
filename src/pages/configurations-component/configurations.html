@@ -43,8 +43,9 @@
         <ion-col text-center style="border-right: 1px solid lightgray;">
             <ion-label>OPERATOR</ion-label>
             <ion-item no-lines no-margin no-padding>
-                <ion-select [(ngModel)]="selectedUser" style="max-width: 100%">
-                    <ion-option *ngFor="let user of users" [value]="user.name">{{user.name}}</ion-option>
+                <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="userSelectOptions"
+                 [(ngModel)]="selectedUser" (ionChange)="onUserChanged($event)">
+                    <ion-option *ngFor="let user of availableUsers" [value]="user">{{user.name}}</ion-option>
                 </ion-select>
             </ion-item>
         </ion-col>
@@ -61,7 +62,7 @@
             <ion-label>REMOTE CONNECT</ion-label>
             <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
             <ion-item no-lines no-margin no-padding>
-                <ion-select no-padding padding-horizontal [(ngModel)]="selectedDevice" style="max-width:100%;">
+                <ion-select no-padding padding-horizontal  style="max-width:100%;" placeholder="None selected" [(ngModel)]="selectedDevice" [selectOptions]="deviceSelectOptions">
                     <ion-option *ngFor="let device of devices" [value]="device.name">{{device.name}}</ion-option>
                 </ion-select>
             </ion-item>

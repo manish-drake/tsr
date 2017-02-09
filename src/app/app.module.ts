@@ -19,6 +19,7 @@ import { Factory } from '../services/objects/factory.service';
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
 import { SetupBrokerFactory } from '../services/broker/setupbrokerfactory';
 import { MasterService } from '../services/test-set/master.service';
+import { UserService } from '../services/test-set/user.service';
 import { LocalStorage } from '../services/storage/local-storage';
 import { router } from './app.router';
 import { HeaderService } from '../services/ui/header.service';
@@ -74,6 +75,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         FileIOService,
         Factory,
         MasterService,
+        UserService,
         HeaderService,
         PopoverService,
         ModalService,
