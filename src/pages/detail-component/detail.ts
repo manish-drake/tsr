@@ -73,6 +73,9 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunnig = !this.isRunnig;
+    setTimeout(() => {
+      this.isRunnig = false;
+    }, 2000);
     this._master.setIfTestContext(true);
   }
 
