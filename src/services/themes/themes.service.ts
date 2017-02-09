@@ -28,8 +28,10 @@ export class ThemesService {
         this.saveTheme(val);
     }
 
-    switchTheme(oldVal) {
-        if (JSON.stringify(oldVal) == JSON.stringify(this.indoorTheme.className)){
+    switchTheme() {
+        var currentTheme;
+        this.getTheme().subscribe(val => currentTheme = val);
+        if (JSON.stringify(currentTheme) == JSON.stringify(this.indoorTheme)){
             this.setTheme(this.outdoorTheme);
         }
         else{

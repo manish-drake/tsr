@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/ui/header.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { Factory } from '../../services/objects/factory.service';
+import { MasterService } from '../../services/test-set/master.service'
 
 @Component({
   selector: 'page-detail',
@@ -21,7 +22,8 @@ export class TestDetailComp {
     private _svcHeader: HeaderService,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory) { }
+    private objectService: Factory,
+    private _master: MasterService) { }
 
   public tests: any;
 
@@ -71,6 +73,11 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunnig = !this.isRunnig;
+    this._master.setIfTestContext(true);
+  }
+
+  ngOnDestroy(){
+    this._master.setIfTestContext(false);
   }
 
   onNavigate(ev: string) {

@@ -49,11 +49,9 @@
                 </ion-select>
             </ion-item>
         </ion-col>
-        <ion-col text-center (click)="onSwitchTheme(chosenTheme)">
+        <ion-col text-center (click)="onSwitchTheme()">
             <ion-label>THEME</ion-label>
-            <button ion-button clear icon-only no-margin color="dark" (click)="onSwitchTheme(chosenTheme)">
-                <ion-icon name='sunny'></ion-icon>
-            </button>
+            <ion-icon style="font-size: 24px;" name='sunny'></ion-icon>
             <ion-label>{{chosenTheme.themeName}}</ion-label>
         </ion-col>
     </ion-row>

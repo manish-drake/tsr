@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MasterService } from '../../services/test-set/master.service'
 
 @Component({
   selector: 'footer-component',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
-  isTestContext:boolean = false;
+  isTestContext: boolean = false;
 
-  constructor() { }
+  constructor(private _master: MasterService) {
+    this._master.getIfTestContext().subscribe(val => this.isTestContext = val);
+  }
 
-  
 }

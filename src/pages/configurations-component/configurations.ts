@@ -42,7 +42,7 @@ export class ConfigurationsPopover {
     this._users.setCurrentUser(e);
   }
 
-  onSwitchTheme(oldVal) {
-    this._themes.switchTheme(oldVal);
+  onSwitchTheme() {
+    this._themes.switchTheme();
   }
 }
