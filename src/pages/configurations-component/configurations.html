@@ -48,7 +48,7 @@
                 </ion-select>
             </ion-item>
         </ion-col>
-        <ion-col text-center>
+        <ion-col text-center (click)="onSwitchTheme(chosenTheme)">
             <ion-label>THEME</ion-label>
             <button ion-button clear icon-only no-margin color="dark" (click)="onSwitchTheme(chosenTheme)">
                 <ion-icon name='sunny'></ion-icon>
@@ -110,10 +110,10 @@
         <ion-col text-center>
             <ion-label>DISTANCE To UUT</ion-label>
             <ion-label>{{distanceValue}} Ft</ion-label>
-            <ion-range color="dark" style="padding:0;height: 20px;" min="10" max="250" [(ngModel)]="distanceValue"></ion-range>
+            <ion-range color="dark" style="padding:0;height: 20px" min="10" max="250" [(ngModel)]="distanceValue"></ion-range>
             <ion-row>
-                <ion-col no-padding text-left>10 Ft</ion-col>
-                <ion-col no-padding style="width: auto;flex: 0 0 auto;">250 Ft</ion-col>
+                <ion-col no-padding text-left><ion-label no-margin>10 Ft</ion-label></ion-col>
+                <ion-col no-padding style="width: auto;flex: 0 0 auto;"><ion-label no-margin>250 Ft</ion-label></ion-col>
             </ion-row>
         </ion-col>
     </ion-row>
