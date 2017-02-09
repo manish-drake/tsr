@@ -38,9 +38,10 @@
     }
   }
  ion-row{ 
+   background-color: $dark-primary;
       ion-col{
-        ion-label{ color:$dark-foreground; }
-      }
+        ion-label{ color:$dark-foreground; }  
+        }    
     }
   .segement{ background-color: $dark-primary; }
   .currentsegment{ background-color: $dark-background;}
