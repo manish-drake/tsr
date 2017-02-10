@@ -1,6 +1,6 @@
 detail-default{    
     
-.detailheading1{
+.heading{
         font-size: 16px;
         display: inline-block;
         font-weight: 600;
@@ -8,22 +8,41 @@ detail-default{
         width: auto;
         // background-color: aqua;
 }
-.detailLabel{
-        width: 90px !important;
+.label95{
+        width: 95px !important;
         display: inline-flex;        
         font-size: 14px !important;
-        padding: 0px !important;
+        // padding: 0px !important;
         // background-color: salmon;
 }
-.detailLabelb{
+.label60{
         min-width: 60px !important;
         display: inline-flex;        
         font-size: 14px !important;
-        padding: 0px !important;
+        // padding: 0px !important;
         margin-top: 10px !important;
         // background-color:khaki;
 }
-.detailLabela{
+.result60Right{
+        min-width: 60px !important;
+        display: inline-block;        
+        font-size: 14px !important;
+        // padding: 0px !important;
+        margin-top: 10px !important;
+        // background-color:khaki;
+        text-align: right !important;
+}
+.result60BoldRight{
+        min-width: 60px !important;
+        display: inline-block;        
+        font-size: 14px !important;
+        // padding: 0px !important;
+        margin-top: 10px !important;
+        // background-color:khaki;
+        text-align: right !important;
+        font-weight: 600;
+}
+.label70Bold{
         min-width: 70px !important;
         display: inline-flex;        
         font-size: 14px !important;
@@ -32,7 +51,7 @@ detail-default{
         margin-top: 10px !important;
         // background-color: lawngreen;
 }
-.detailLabel1{
+.labelAutoBold{
         width: auto !important; //265px
         display: inline-flex;        
         font-size: 14px !important;
@@ -42,7 +61,7 @@ detail-default{
         margin-bottom:7px !important;
         // background-color: lemonchiffon;
 }
-.detailLabel3a{
+.label133Bold{
         min-width: 133px !important; //265px
         display: inline-flex;        
         font-size: 14px !important;
@@ -51,64 +70,91 @@ detail-default{
         margin-bottom:7px !important;
         // background-color:deepskyblue;
 }
-.detailLabel2{
+
+.label70{
         width: 70px !important;
         display: inline-flex;        
         font-size: 14px !important;
         // background-color: darkcyan;
 }
-.detailLabel3{
+.label133{
         width: 133px !important;
         display: inline-flex;        
         font-size: 14px !important;
-        padding: 0px !important;
+        // padding: 0px !important;
         // background-color: forestgreen;
 }
-.detailLabel4{
+.label240{
         width: 240px !important;
         display: inline-flex;        
         font-size: 14px !important;
-        padding: 0px !important;
+        // padding: 0px !important;
         // background-color:greenyellow;
 }
-.detailLabel5{
-        width: 105px !important;
-        display: inline-flex;        
-        font-size: 14px !important;
-        padding: 0px !important;
-        margin-top: 15px !important;
-        // background-color: hotpink;
-}
-.detailResult{
+// .label105{
+//         width: 105px !important;
+//         display: inline-flex;        
+//         font-size: 14px !important;
+//         // padding: 0px !important;
+//         margin-top: 15px !important;
+//         background-color: hotpink;
+// }
+.result128{
         display: inline-flex ;       
         min-width: 128px !important;
         font-size: 14px !important;    
         // padding: 0px !important;
         margin-right: 5px;
+        // background-color:pink;
+}
+.result113Right{
+        display: inline-block ;       
+        min-width: 118px !important;
+        font-size: 14px !important;    
+        // padding: 0px !important;
+        text-align: right !important;
         // background-color:rosybrown;
 }
-.detailResult1{
+.result0{
         display: inline-flex;
         width: 0px ;       
 }
-.detailResult2{
+.result85{
         display: inline-flex;
         width:25%;        
         min-width: 85px !important;
         font-size: 14px !important;
         // background-color:cadetblue;
 }
-.detailResult3{
-        display: inline-flex;           
-        min-width: 70px !important;
+// .result85Right{
+//         display: inline-block;
+//         width:25%;        
+//         min-width: 85px !important;
+//         font-size: 14px !important;
+//         background-color:cadetblue;
+//         text-align: right !important;
+// }
+.result80Right{
+        display: inline-block;           
+        min-width: 80px !important;
         font-size: 14px !important;
         // background-color:red;
+        text-align: right !important;
 }
-.detailUnit{
-        display: inline-flex;
+.unit35Left{
+        display: inline-block;
         min-width: 35px;
         font-size: 14px !important;
         // background-color:lightskyblue;
+        text-align: left !important;
+}
+.unit35BoldLeft{
+        display: inline-block;
+        min-width: 35px;
+        font-size: 14px !important;
+        // background-color:lightskyblue;
+        text-align: left !important;
+        font-weight: 600;
 }
 .result{
     display: inline-flex;
