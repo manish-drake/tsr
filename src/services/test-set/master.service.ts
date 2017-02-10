@@ -1,12 +1,23 @@
 import { Injectable, EventEmitter } from '@angular/core'
 import { Dictionary } from '../../common/dictionary'
-import { Observable } from 'Rxjs'
+import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
 
 @Injectable()
 export class MasterService {
 
+    ifTestContext = new BehaviorSubject<boolean>(false);
+
     constructor(private http: Http) { }
+
+    getIfTestContext(){
+        return this.ifTestContext.asObservable();
+    }
+
+    setIfTestContext(e: boolean){
+        this.ifTestContext.next(e);
+    }
+
 
     scanTest(): Observable<any> {
         console.log('posting');
@@ -30,17 +41,9 @@ export class MasterService {
     }
 
     runTest(testName: string, args: Dictionary<string, string>): string {
+        this.setIfTestContext(true);
         return "";
     }
 
-    contextualTest: EventEmitter<Object> = new EventEmitter();
 
-    emitContextualTest(test) {
-        alert(test);
-        this.contextualTest.emit(test);
-    }
-
-    getContextualTestChangeEmitter() {
-        return this.contextualTest;
-    }
 }

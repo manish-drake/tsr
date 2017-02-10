@@ -19,4 +19,8 @@ export class LocalStorage {
         return "tsrstartitems";
     }
 
+    keyForCurrentUser(){
+        return "tsrcurrentuser";
+    }
+
 }

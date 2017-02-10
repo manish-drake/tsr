@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemesService } from '../../services/themes/themes.service'
+import { UserService } from '../../services/test-set/user.service'
 
 /*
   Generated class for the Configurations page.
@@ -14,26 +15,34 @@ import { ThemesService } from '../../services/themes/themes.service'
 export class ConfigurationsPopover {
 
   chosenTheme: any;
+  selectedUser: any;
+  availableUsers: any;
 
-  users = [{name: "Operator"},{name: "Operator 2"}];
-  selectedUser:string = "Operator";
-
-  devices = [{name: "TestSet#1"},{name: "TestSet#2"},{name: "TestSet#3"},{name: "TestSet#4"},{name: "TestSet#5"}];
-  selectedDevice:string = "TestSet#5";
+  devices = [{ name: "TestSet#1" }, { name: "TestSet#2" }, { name: "TestSet#3" }, { name: "TestSet#4" }, { name: "TestSet#5" }];
+  selectedDevice: string = "TestSet#5";
 
   brightnessValue: number = 7;
   distanceValue: number = 200;
-  
+  userSelectOptions = {title: 'Operator'};
+  deviceSelectOptions = {title: 'TestSet Device'};
 
-  constructor(private _themes: ThemesService) {
+
+  constructor(private _themes: ThemesService,
+    private _users: UserService) {
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+    this._users.getCurrentUser().subscribe(val => this.selectedUser = val);
+    this.availableUsers = this._users.getAvailableUsers();
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('Hello ConfigurationsPopover');
   }
 
-  onSwitchTheme(oldVal) {
-    this._themes.switchTheme(oldVal);
+  onUserChanged(e){
+    this._users.setCurrentUser(e);
+  }
+
+  onSwitchTheme() {
+    this._themes.switchTheme();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { GuidePage } from '../../pages/guide/guide';
@@ -15,6 +15,7 @@ import { LocalStorage } from '../../services/storage/local-storage'
 export class TestGroupComp implements OnInit {
   private: any;
   constructor(
+    private content: Content,
     private modalCtrl: ModalController,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
@@ -35,14 +36,14 @@ export class TestGroupComp implements OnInit {
       this.headerName = (param as any).name;
       this._svcHeader.title = this.headerName;
       this.getData();
-    })
+    });
   }
 
   getData() {
     var testGroupsData = this.objectService.createTestGroupsData(this.headerName);
     this.testgroups = this.broker.createTestGroups(testGroupsData);
     console.log(this.testgroups);
-    this.evaluateStartItems()
+    this.evaluateStartItems();
   }
 
   evaluateStartItems() {
@@ -119,8 +120,8 @@ export class TestGroupComp implements OnInit {
     }
   }
 
-  openGuide(e){
-    var modal = this.modalCtrl.create(GuidePage,{param: e});
+  openGuide(e) {
+    var modal = this.modalCtrl.create(GuidePage, { param: e });
     modal.present();
   }
 

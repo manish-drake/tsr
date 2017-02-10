@@ -2,10 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
-import { ConfigurationsPopover } from '../pages/configurations-component/configurations';
 import { HeaderComponent } from '../pages/header-component/header-component';
 import { FooterComponent } from '../pages/footer-component/footer-component';
+import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/testsetinfo-comp';
+import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
+import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
+import { ConfigurationsPopover } from '../pages/configurations-component/configurations';
 import { TestGroupComp } from '../pages/testgroup-component/testgroup';
 import { SetupComp } from '../pages/setup-component/setup';
 import { TestDetailComp } from '../pages/detail-component/detail';
@@ -17,6 +19,7 @@ import { Factory } from '../services/objects/factory.service';
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
 import { SetupBrokerFactory } from '../services/broker/setupbrokerfactory';
 import { MasterService } from '../services/test-set/master.service';
+import { UserService } from '../services/test-set/user.service';
 import { LocalStorage } from '../services/storage/local-storage';
 import { router } from './app.router';
 import { HeaderService } from '../services/ui/header.service';
@@ -42,6 +45,8 @@ import { SpyDirective } from '../common/mySpy.directive';
         TestGroupComp,
         SetupComp,
         FooterComponent,
+        TestsetinfoComp,
+        TeststatusComp,
         TestDetailComp,
         SetupTestPage,
         HelpPage,
@@ -70,6 +75,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         FileIOService,
         Factory,
         MasterService,
+        UserService,
         HeaderService,
         PopoverService,
         ModalService,
