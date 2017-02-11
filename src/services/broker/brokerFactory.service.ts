@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-// import { TestSection } from '../../core/tests/testSection'
+import { VehicleSection } from '../../core/tests/vehicleSection';
 import { Test } from '../../core/tests/test'
 import { TestGroup } from '../../core/tests/testgroup'
 import { Dictionary } from '../../common/dictionary';
@@ -38,6 +38,19 @@ export class BrokerFactoryService {
     generateTestGroups(headername) {
         var testGroupsData = this.objectService.createTestGroupsData(headername);
         this.setTestgroups(this.createTestGroups(testGroupsData));
+    }
+
+    createVehicleSection(summaryData: VehicleSection) {
+        var tests: any[] = [];
+        summaryData.Summaries.forEach(summary => {
+            var test = {
+                name: summary.Name,
+                parent: summaryData.Name,
+                rows:this.createParamsGrid(summary, summaryData.Styles)
+            }
+            tests.push(test)
+        })
+        return { name: summaryData.Name, tests: tests };
     }
 
     private testDetail = new BehaviorSubject<any[]>([]);

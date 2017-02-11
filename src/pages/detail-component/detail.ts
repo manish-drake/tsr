@@ -27,14 +27,15 @@ export class TestDetailComp {
   public tests: any;
 
   headerName:any;
+  testName:any;
 
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.headerName = (data as any).headername;
-      var testName = (data as any).test;
-      this._svcHeader.title = testName;
+      this.testName = (data as any).test;
+      this._svcHeader.title = this.headerName;
 
-      this.broker.generateTestsDetail(testName);
+      this.broker.generateTestsDetail(this.testName);
       this.broker.getTestsDetail().subscribe(val => {
         this.tests = val;
         console.log(this.tests);

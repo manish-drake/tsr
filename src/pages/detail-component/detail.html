@@ -8,7 +8,9 @@
 <button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
 </ion-col>
 <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
-<b style="font-size: 16px;"> {{test.name}} </b><br>
+<b style="font-size: 16px;"> {{testName}} </b><br>
+<!--<b style="font-size: 16px;"> {{test.name}} </b><br>-->
+
 <div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1"
       [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
       style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>

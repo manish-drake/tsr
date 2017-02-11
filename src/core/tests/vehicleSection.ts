@@ -1,7 +1,7 @@
 import { Test } from './test';
 import { Dictionary } from '../../common/dictionary'
 
-export class TestSection{
+export class VehicleSection{
     
     private _Styles : Dictionary<string, string>;
     public get Styles() : Dictionary<string, string> {
