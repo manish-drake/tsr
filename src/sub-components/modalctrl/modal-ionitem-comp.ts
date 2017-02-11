@@ -4,7 +4,7 @@ import { ModalService } from '../../services/ui/modal.service';
 @Component({
     selector: 'modal-ionitem-comp',
     template: `
-        <button ion-item (click)="onClick($event)">
+        <button no-lines ion-item (click)="onClick($event)">
             <ion-icon [name]="modalSource.name" item-left></ion-icon>
             <ion-label>{{ modalSource.lable }}</ion-label>
         </button>

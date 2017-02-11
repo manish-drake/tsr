@@ -1,4 +1,4 @@
 <ion-toolbar>
-  <testsetinfo-comp *ngIf="!isTestContext"></testsetinfo-comp>
-  <teststatus-comp *ngIf="isTestContext"></teststatus-comp>
+  <testsetinfo-comp *ngIf="!ifTestInContextHaveResult"></testsetinfo-comp>
+  <teststatus-comp *ngIf="ifTestInContextHaveResult"></teststatus-comp>
 </ion-toolbar>

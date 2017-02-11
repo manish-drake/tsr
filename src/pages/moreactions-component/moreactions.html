@@ -1,35 +1,35 @@
 <ion-list style="margin:0px" [class]="chosenTheme.className">
   <modal-ionitem-comp [modalSource]="setup"></modal-ionitem-comp>
   <modal-ionitem-comp [modalSource]="help"></modal-ionitem-comp>
-  <ion-item>
+  <ion-item no-lines>
     <ion-icon name="remove-circle" item-left></ion-icon>
     <ion-label>CLEAR</ion-label>
   </ion-item>
-  <ion-item>
+  <ion-item no-lines>
     <ion-icon name="browsers" item-left></ion-icon>
     <ion-label>DUAL PANEL</ion-label>
   </ion-item>
-  <ion-item>
+  <ion-item no-lines>
     <ion-icon name="funnel" item-left></ion-icon>
     <ion-label>FILTER</ion-label>
   </ion-item>
-  <ion-item (click)="runall()">
+  <ion-item no-lines (click)="runall()">
     <ion-icon name='walk' item-left [style.opacity]="isrun() ? '1.0' : '0.5' "></ion-icon>
     <ion-label [style.opacity]="isrun() ? '1.0' : '0.5' ">RUN ALL</ion-label>
   </ion-item>
-  <ion-item (click)="repeatTest()">
+  <ion-item no-lines (click)="repeatTest()">
     <ion-icon name='repeat' item-left [style.opacity]="!repeatTest() ? '1.0' : '0.5' "></ion-icon>
     <ion-label [style.opacity]="repeatTest() ? '1.0' : '0.5' ">REPEAT</ion-label>
   </ion-item>
-  <ion-item (click)="autoSave()">
+  <ion-item no-lines (click)="autoSave()">
     <ion-icon [style.opacity]="!autoSave() ? '1.0' : '0.5' " name='cloud-upload' item-left></ion-icon>
     <ion-label [style.opacity]="autoSave() ? '1.0' : '0.5' ">LOG DATA</ion-label>
   </ion-item>
-  <ion-item (click)="startFav()">
-    <ion-icon name='star-outline' item-left [style.opacity]="!startFav() ? '1.0' : '0.5' "></ion-icon>
-    <ion-label [style.opacity]="startFav() ? '1.0' : '0.5' ">START</ion-label>
+  <ion-item no-lines *ngIf="testInContext" (click)="onStartSwitch(testInContext)">
+    <ion-icon name='star-outline' item-left [style.opacity]="testInContext.isStartItem ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="testInContext.isStartItem ? '1.0' : '0.5' ">START</ion-label>
   </ion-item>
-  <ion-item (click)="guide()">
+  <ion-item no-lines *ngIf="testInContext" (click)="guide()">
     <ion-icon name='information-circle' item-left [style.opacity]="!guide() ? '1.0' : '0.5' "></ion-icon>
     <ion-label [style.opacity]="guide() ? '1.0' : '0.5' ">GUIDE</ion-label>
   </ion-item>

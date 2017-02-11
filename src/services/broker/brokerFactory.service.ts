@@ -4,25 +4,23 @@ import { Injectable } from '@angular/core';
 import { Test } from '../../core/tests/test'
 import { TestGroup } from '../../core/tests/testgroup'
 import { Dictionary } from '../../common/dictionary';
+import { BehaviorSubject } from 'Rxjs';
+import { Factory } from '../../services/objects/factory.service';
 
 @Injectable()
 export class BrokerFactoryService {
     /**
      *
      */
-    constructor() { }
+    constructor(private objectService: Factory) { }
 
-    createTests(testData: Test) {
-        var testDS: any[] = [];
-        testData.Summaries.forEach(summary => {
-            var testD = {
-                name: summary.Name,
-                parent: testData.Name,
-                rows: this.createParamsGrid(summary, testData.Styles)
-            }
-            testDS.push(testD);
-        })
-        return testDS;
+    private testgroups = new BehaviorSubject<any[]>([]);
+
+    getTestgroups() {
+        return this.testgroups.asObservable();
+    }
+    setTestgroups(e) {
+        this.testgroups.next(e);
     }
 
     createTestGroups(testGroups: TestGroup) {
@@ -36,6 +34,40 @@ export class BrokerFactoryService {
         })
         return testGroupData;
     }
+
+    generateTestGroups(headername) {
+        var testGroupsData = this.objectService.createTestGroupsData(headername);
+        this.setTestgroups(this.createTestGroups(testGroupsData));
+    }
+
+    private testDetail = new BehaviorSubject<any[]>([]);
+
+    getTestsDetail() {
+        return this.testDetail.asObservable();
+    }
+    setTestsDetail(e) {
+        this.testDetail.next(e);
+    }
+
+    createTestsDetail(testData: Test) {
+        var testDS: any[] = [];
+        testData.Summaries.forEach(summary => {
+            var testD = {
+                name: summary.Name,
+                parent: testData.Name,
+                rows: this.createParamsGrid(summary, testData.Styles)
+            }
+            testDS.push(testD);
+        })
+        return testDS;
+    }
+
+    generateTestsDetail(testName){
+        var testsData = this.objectService.createTestsData(testName);
+        this.setTestsDetail(this.createTestsDetail(testsData));
+    }
+
+
 
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;

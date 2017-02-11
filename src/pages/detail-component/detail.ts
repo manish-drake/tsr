@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { HeaderService } from '../../services/ui/header.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
-import { Factory } from '../../services/objects/factory.service';
-import { MasterService } from '../../services/test-set/master.service'
+import { MasterService } from '../../services/test-set/master.service';
+import { Dictionary } from '../../common/dictionary';
 
 @Component({
   selector: 'page-detail',
@@ -22,7 +22,6 @@ export class TestDetailComp {
     private _svcHeader: HeaderService,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory,
     private _master: MasterService) { }
 
   public tests: any;
@@ -32,14 +31,15 @@ export class TestDetailComp {
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.headerName = (data as any).headername;
-      var testGroupName = (data as any).test;
-      var testsData = this.objectService.createTestsData(testGroupName);
-      this.tests = this.broker.createTests(testsData);
-      console.log(this.tests);
+      var testName = (data as any).test;
+      this._svcHeader.title = testName;
 
-      this._svcHeader.title = testGroupName;
+      this.broker.generateTestsDetail(testName);
+      this.broker.getTestsDetail().subscribe(val => {
+        this.tests = val;
+        console.log(this.tests);
+      });
     });
-  
   }
 
   selectedVehicle: any;
@@ -73,14 +73,13 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunnig = !this.isRunnig;
+    var args = new Dictionary<string,string>();
+    args.add("a","b");
+    this._master.runTest("",args);
     setTimeout(() => {
       this.isRunnig = false;
     }, 2000);
-    this._master.setIfTestContext(true);
-  }
-
-  ngOnDestroy(){
-    this._master.setIfTestContext(false);
+    
   }
 
   onNavigate(ev: string) {

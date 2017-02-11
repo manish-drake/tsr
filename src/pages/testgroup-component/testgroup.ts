@@ -3,15 +3,16 @@ import { ModalController, Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { GuidePage } from '../../pages/guide/guide';
-import { BrokerFactoryService } from '../../services/broker/brokerFactory.service'
-import { Factory } from '../../services/objects/factory.service'
-import { HeaderService } from '../../services/ui/header.service'
-import { LocalStorage } from '../../services/storage/local-storage'
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { HeaderService } from '../../services/ui/header.service';
+import { LocalStorage } from '../../services/storage/local-storage';
+import { MasterService } from '../../services/test-set/master.service';
 
 @Component({
   selector: 'testgroup',
   templateUrl: 'testgroup.html'
 })
+
 export class TestGroupComp implements OnInit {
   private: any;
   constructor(
@@ -19,15 +20,15 @@ export class TestGroupComp implements OnInit {
     private modalCtrl: ModalController,
     private route: ActivatedRoute,
     private broker: BrokerFactoryService,
-    private objectService: Factory,
     private _renderer: Renderer,
     private _router: Router,
     private _svcHeader: HeaderService,
-    private _localStorage: LocalStorage) {
+    private _localStorage: LocalStorage,
+    private _master: MasterService) {
 
   }
 
-  testgroups: any = [];
+  testgroups: any[] = [];
 
   headerName: any;
 
@@ -35,15 +36,17 @@ export class TestGroupComp implements OnInit {
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
       this._svcHeader.title = this.headerName;
-      this.getData();
-    });
-  }
+      this.broker.generateTestGroups(this.headerName);
+      this.broker.getTestgroups().subscribe(val => {
+        this.testgroups = val;
 
-  getData() {
-    var testGroupsData = this.objectService.createTestGroupsData(this.headerName);
-    this.testgroups = this.broker.createTestGroups(testGroupsData);
-    console.log(this.testgroups);
-    this.evaluateStartItems();
+        console.log(this.testgroups);
+        this.evaluateStartItems();
+        if (this.testgroups.length != 0) {
+          this.onCardClick(0);
+        }
+      });
+    });
   }
 
   evaluateStartItems() {
@@ -60,10 +63,11 @@ export class TestGroupComp implements OnInit {
     }
   }
 
-  selectedCardIndex = 0
+  selectedCardIndex: any = 0
 
-  onCardClick(i, group) {
+  onCardClick(i) {
     this.selectedCardIndex = i;
+    this._master.setTestInContext(this.testgroups[i]);
   }
 
   private clicks = 0;
@@ -76,47 +80,6 @@ export class TestGroupComp implements OnInit {
         }
         this.clicks = 0;
       }, 500);
-    }
-  }
-
-  onStartItem(g) {
-    if (!g.isStartItem) {
-      g.isStartItem = true;
-      this.addToStart(g.name);
-    }
-    else {
-      g.isStartItem = false;
-      this.removeFromStart(g.name);
-    }
-  }
-
-  addToStart(testgroupname) {
-    var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
-    var favColl = [];
-    if (startItems == null) {
-      favColl.push(testgroupname);
-      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl))
-    }
-    else {
-      favColl = JSON.parse(startItems)
-      favColl.push(testgroupname);
-      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
-    }
-  }
-
-  removeFromStart(testgroupname) {
-    var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
-    if (startItems != null) {
-      var favColl = JSON.parse(startItems);
-      favColl.forEach((element, index) => {
-        if (testgroupname == element) {
-          favColl.splice(index, 1);
-        }
-      });
-      this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
-      if (this.headerName == "Start") {
-        this.getData();
-      }
     }
   }
 
