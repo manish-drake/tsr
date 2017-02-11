@@ -37,7 +37,6 @@ export class SetupFactory {
                 var cAdd1 = new TestParamCell(add1);
                 cAdd1.Row = 0;
                 cAdd1.Column = 0;
-                cAdd1.ColSpan = 4;
                 cAdd1.Styles.add("key", "detailLabel");
                 cAdd1.Styles.add("value", "detailResult");
 
@@ -46,10 +45,9 @@ export class SetupFactory {
                 var add2 = new TestParam();
                 add2.Key = "Language:";
                 add2.Value = "English";
-                var cAdd2 = new TestParamCell(add1);
-                cAdd2.Row = 0;
+                var cAdd2 = new TestParamCell(add2);
+                cAdd2.Row = 1;
                 cAdd2.Column = 0;
-                cAdd2.ColSpan = 4;
                 cAdd2.Styles.add("key", "detailLabel");
                 cAdd2.Styles.add("value", "detailResult");
 
