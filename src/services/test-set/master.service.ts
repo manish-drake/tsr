@@ -4,16 +4,19 @@ import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
-import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable()
 export class MasterService {
+
+    routeName: string;
 
     constructor(
         private http: Http,
         private _localStorage: LocalStorage,
         private broker: BrokerFactoryService,
-        private route: ActivatedRoute) { }
+    ) { }
 
     private testInContext = new BehaviorSubject<any>(undefined);
     getTestInContext() {
@@ -66,7 +69,10 @@ export class MasterService {
                 }
             });
             this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
-            // this.broker.generateTestGroups("Start");
+
+            if (this.routeName == 'Start') {
+                this.broker.generateTestGroups(this.routeName);
+            }
         }
     }
 

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Platform, ViewController } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
-import { MasterService } from '../../services/test-set/master.service'
+import { MasterService } from '../../services/test-set/master.service';
 
 @Component({
   selector: 'page-moreactions',
@@ -25,7 +25,8 @@ export class MoreActionsPopover {
     private viewCtrl: ViewController,
     private platform: Platform,
     private _themes: ThemesService,
-    private _master: MasterService) {
+    private _master: MasterService,
+    ) {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
         AppVersion.getVersionNumber().then((s) => {
@@ -40,8 +41,6 @@ export class MoreActionsPopover {
     this.setup = this.createModalSource("settings", "SETUP TEST", "setup", this.viewCtrl);
     this.help = this.createModalSource("help-circle", "HELP", "help", this.viewCtrl);
   }
-
-
 
   createModalSource = function (name, label, target, viewctrl) {
     return {
