@@ -24,14 +24,15 @@ export class MasterService {
     }
     setTestInContext(e) {
         this.testInContext.next(e);
+        if (e == undefined) this.setFooterResultStatus(undefined);
     }
 
-    private ifTestInContextHaveResult = new BehaviorSubject<boolean>(false);
-    getIfTestInContextHaveResult() {
-        return this.ifTestInContextHaveResult.asObservable();
+    private footerResultStatus = new BehaviorSubject<any>(undefined);
+    getFooterResultStatus() {
+        return this.footerResultStatus.asObservable();
     }
-    setIfTestInContextHaveResult(e) {
-        this.ifTestInContextHaveResult.next(e);
+    setFooterResultStatus(e) {
+        this.footerResultStatus.next(e);
     }
 
     onStartSwitch(e) {
@@ -97,10 +98,9 @@ export class MasterService {
             .map((res) => res.json())
     }
 
-    runTest(testName: string, args: Dictionary<string, string>): string {
-        this.setIfTestInContextHaveResult(true);
-        return "";
-    }
+runTest(testName: string, args: Dictionary<string, string>): string {
+    return "";
+}
 
 
 }

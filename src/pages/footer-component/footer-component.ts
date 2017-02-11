@@ -7,10 +7,10 @@ import { MasterService } from '../../services/test-set/master.service'
 })
 export class FooterComponent {
 
-  ifTestInContextHaveResult: boolean = false;
+  contextualResultStatus: any;
 
   constructor(private _master: MasterService) {
-    this._master.getIfTestInContextHaveResult().subscribe(val => this.ifTestInContextHaveResult = val);
+    this._master.getFooterResultStatus().subscribe(val => this.contextualResultStatus = val);
   }
 
 }
