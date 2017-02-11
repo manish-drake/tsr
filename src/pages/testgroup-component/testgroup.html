@@ -1,36 +1,37 @@
 <ion-row center style="height: 100%; color: gray;" *ngIf="testgroups.length == 0">
-  <ion-col text-center> <ion-label>No test exists</ion-label> </ion-col>
+  <ion-col text-center>
+    <ion-label>No test exists</ion-label>
+  </ion-col>
 </ion-row>
 
 <div id="item_id" class="items">
   <div class="itemm" *ngFor="let testgroup of testgroups; let i = index;">
-    <ion-card (click)="onCardClick(i, testgroup)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
-    [class.selectedcard]="selectedCardIndex == i">
-     <ion-row >
-       <ion-col no-padding center style="width:100%;">
-         <button ion-button clear icon-only no-margin *ngIf="testgroup.isGuideAvailable" (click)="openGuide(testgroup.name)">
+    <ion-card (click)="onCardClick(i)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
+      [class.selectedcard]="selectedCardIndex == i">
+      <ion-row>
+        <ion-col no-padding center style="width:100%;">
+          <button ion-button clear icon-only no-margin *ngIf="testgroup.isGuideAvailable" (click)="openGuide(testgroup.name)">
            <ion-icon name="information-circle"></ion-icon>
            </button>
-         <button ion-button clear icon-only no-margin ><ion-icon name="sync"></ion-icon></button>
-         <button ion-button clear icon-only no-margin (click)="onStartItem(testgroup)">
-            <ion-icon *ngIf="!testgroup.isStartItem" style="font-size: 26px;" name="star-outline"></ion-icon>
-            <ion-icon *ngIf="testgroup.isStartItem" style="font-size: 26px;" name="star"></ion-icon>
-         </button>
-       </ion-col>
-       <ion-col padding-right center style="width:auto;flex:0 0 auto;color:#555555;">
-        <ion-icon name="albums"> {{testgroup.count}}</ion-icon>
-       </ion-col>
-     </ion-row>
-     <ion-row center style="min-height:80px;">
-			<ion-col text-center center>
-				<ion-label style="font-size: 16px; font-weight: 600;">{{testgroup.name}}</ion-label>
-			</ion-col>
-		</ion-row>
-    <ion-row>
-       <ion-col style="width:100%;">
-      <ion-label>RECENT TEST RESULTS</ion-label>
-       </ion-col>
-    </ion-row>
-    </ion-card>
+          <button ion-button clear icon-only no-margin><ion-icon name="sync"></ion-icon></button>
+          <button ion-button clear icon-only no-margin disabled color="dark">
+            <ion-icon no-margin *ngIf="testgroup.isStartItem" style="font-size: 26px;" name="star-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col padding-right center style="width:auto;flex:0 0 auto;color:#555555;">
+          <ion-icon name="albums"> {{testgroup.count}}</ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row center style="min-height:80px;">
+        <ion-col text-center center>
+          <ion-label style="font-size: 16px; font-weight: 600;">{{testgroup.name}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="width:100%;">
+          <ion-label>RECENT TEST RESULTS</ion-label>
+        </ion-col>
+      </ion-row>
+      </ion-card>
   </div>
 </div>

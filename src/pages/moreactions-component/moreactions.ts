@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Platform, ViewController } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
 import { ThemesService } from '../../services/themes/themes.service';
+import { MasterService } from '../../services/test-set/master.service'
 
 @Component({
   selector: 'page-moreactions',
@@ -11,17 +12,20 @@ import { ThemesService } from '../../services/themes/themes.service';
 export class MoreActionsPopover {
 
   @Input() main: MoreActionsPopover;
-  chosenTheme: any;
 
   public setup: any;
   public help: any;
   versionNumber: any;
 
+  chosenTheme: any;
+
+  testInContext: any;
+
   constructor(
     private viewCtrl: ViewController,
     private platform: Platform,
-    private _themes: ThemesService) {
-
+    private _themes: ThemesService,
+    private _master: MasterService) {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
         AppVersion.getVersionNumber().then((s) => {
@@ -31,6 +35,7 @@ export class MoreActionsPopover {
     });
 
     this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+    this._master.getTestInContext().subscribe(val => this.testInContext = val);
 
     this.setup = this.createModalSource("settings", "SETUP TEST", "setup", this.viewCtrl);
     this.help = this.createModalSource("help-circle", "HELP", "help", this.viewCtrl);
@@ -52,7 +57,7 @@ export class MoreActionsPopover {
   static isRunAllenabled: boolean = false;
   static isReapeatEnabled: boolean = false;
   static isSaveEnabled: boolean = false;
-  static isStart: boolean = false;
+  
   static isGuide: boolean = false;
 
   runall() {
@@ -73,10 +78,11 @@ export class MoreActionsPopover {
     MoreActionsPopover.isSaveEnabled = !MoreActionsPopover.isSaveEnabled;
     return MoreActionsPopover.isSaveEnabled;
   }
-  startFav(){ 
-    MoreActionsPopover.isStart = !MoreActionsPopover.isStart;
-    return MoreActionsPopover.isStart;
+
+  onStartSwitch(e){
+    this._master.onStartSwitch(e);
   }
+  
   guide(){
     MoreActionsPopover.isGuide = !MoreActionsPopover.isGuide;
     return MoreActionsPopover.isGuide;

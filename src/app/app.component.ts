@@ -8,8 +8,10 @@ import { HomePage } from '../pages/home/home';
 import { Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
-import { Hamburger } from '../core/hamburgerMenu/hamburger';
-import { ThemesService } from '../services/themes/themes.service'
+import { Menu } from '../core/hamburgerMenu/menu';
+import { ThemesService } from '../services/themes/themes.service';
+import { MasterService } from '../services/test-set/master.service';
+
 @Component({
   templateUrl: `app.html`
 })
@@ -20,13 +22,14 @@ export class MyApp implements OnInit {
   Title: string = "Title";
   rootPage = HomePage;
 
-  public menu = new Hamburger();
+  public menu = new Menu();
 
   constructor(private platform: Platform,
     private popoverService: PopoverService,
     private _svcHeader: HeaderService,
     private _router: Router,
-    private _themes: ThemesService) {
+    private _themes: ThemesService,
+    private _master: MasterService) {
     platform.ready().then(() => {
       StatusBar.styleDefault();
       Splashscreen.hide();
@@ -51,23 +54,19 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e) {
-    if(e.name == "Setup"){
-      this._router.navigate(['setup', e.name]);
-    }
-    else{
-      this._router.navigate(['testgroup', e.name]);
-    }
+    this._master.setTestInContext(undefined);
+    this._router.navigate([e.route, e.name]);
     this.evaluateShowSelection(e);
   }
 
-  evaluateShowSelection(e){
+  evaluateShowSelection(e) {
     this.menu.headers.forEach(header => {
-        if (header == e) {
-          (<any>header).isSelected = true;
-        }
-        else {
-          (<any>header).isSelected = false;
-        }
+      if (header == e) {
+        (<any>header).isSelected = true;
+      }
+      else {
+        (<any>header).isSelected = false;
+      }
     });
   }
 }

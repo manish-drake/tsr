@@ -2,26 +2,77 @@ import { Injectable, EventEmitter } from '@angular/core'
 import { Dictionary } from '../../common/dictionary'
 import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
+import { LocalStorage } from '../../services/storage/local-storage';
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class MasterService {
 
-    ifTestContext = new BehaviorSubject<boolean>(false);
+    constructor(
+        private http: Http,
+        private _localStorage: LocalStorage,
+        private broker: BrokerFactoryService,
+        private route: ActivatedRoute) { }
 
-    constructor(private http: Http) { }
-
-    getIfTestContext(){
-        return this.ifTestContext.asObservable();
+    private testInContext = new BehaviorSubject<any>(undefined);
+    getTestInContext() {
+        return this.testInContext.asObservable();
+    }
+    setTestInContext(e) {
+        this.testInContext.next(e);
     }
 
-    setIfTestContext(e: boolean){
-        this.ifTestContext.next(e);
+    private ifTestInContextHaveResult = new BehaviorSubject<boolean>(false);
+    getIfTestInContextHaveResult() {
+        return this.ifTestInContextHaveResult.asObservable();
+    }
+    setIfTestInContextHaveResult(e) {
+        this.ifTestInContextHaveResult.next(e);
     }
 
+    onStartSwitch(e) {
+        if (e.isStartItem == false || e.isStartItem == undefined) {
+            e.isStartItem = true;
+            this.addToStart(e.name);
+        }
+        else {
+            e.isStartItem = false;
+            this.removeFromStart(e.name);
+        }
+    }
+
+    addToStart(name) {
+        var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
+        var favColl = [];
+        if (startItems == null) {
+            favColl.push(name);
+            this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl))
+        }
+        else {
+            favColl = JSON.parse(startItems)
+            favColl.push(name);
+            this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
+        }
+    }
+
+    removeFromStart(testgroupname) {
+        var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
+        if (startItems != null) {
+            var favColl = JSON.parse(startItems);
+            favColl.forEach((element, index) => {
+                if (testgroupname == element) {
+                    favColl.splice(index, 1);
+                }
+            });
+            this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
+            // this.broker.generateTestGroups("Start");
+        }
+    }
 
     scanTest(): Observable<any> {
         console.log('posting');
-        
+
         // return this.http.post('http://claganga.homeip.net/cgi-bin/UATCGIServer',
         // {
         //     "request":
@@ -41,7 +92,7 @@ export class MasterService {
     }
 
     runTest(testName: string, args: Dictionary<string, string>): string {
-        this.setIfTestContext(true);
+        this.setIfTestInContextHaveResult(true);
         return "";
     }
 
