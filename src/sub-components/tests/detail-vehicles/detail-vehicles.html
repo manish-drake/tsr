@@ -3,25 +3,6 @@
     <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)" 
     [class.selectedvehicle]="vehicle == selectedVehicle"
     style="background-color: rgba(0,0,0,0.05); padding: 5px;">
-<!--<table style="width:100%;margin:7px" >
-<tr>
-    <td text-nowrap class="sectionHeading" colspan="4">Aircraft/Vehicle #{{i+1}}: </td>
-</tr>
-<tr>
-    <td text-nowrap class="sectionLabel">ADDRESS: </td>
-    <td text-nowrap class="sectionResult" colspan="2">{{vehicle.address}}</td>
-</tr>
-<tr>
-    <td text-nowrap class="sectionLabel">Qualifier: </td>
-    <td text-nowrap class="sectionResult" colspan="2"></td>
-</tr>
-<tr>
-    <td text-nowrap class="sectionLabel">Pay load: </td>
-    <td text-nowrap class="sectionResult"> </td>
-    <td text-nowrap class="sectionLabel">RF Level: </td>
-    <td text-nowrap class="sectionResult"> </td>
-</tr>
-</table>-->
 <ion-row>
     <table text-nowrap style="width:100%;margin:10px" >
         <tr>
@@ -43,6 +24,15 @@
 </tr>
 
 </table>
+<!--<table margin style="width:99%;">
+  <tr *ngFor="let row of vehicle.rows">
+    <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
+        <label [class]="cell.keyStyle">{{ cell.key }}</label>
+        <label [class]="cell.valueStyle">{{ cell.value }}</label>
+        <label [class]="cell.unitStyle">{{ cell.unit }}</label>
+    </td>
+  </tr>
+</table>-->
 </ion-row>
 </ion-card>
 </div>
