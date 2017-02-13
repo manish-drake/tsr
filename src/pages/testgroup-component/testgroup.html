@@ -4,13 +4,13 @@
   </ion-col>
 </ion-row>
 
-<div id="item_id" class="items">
+<div class="items">
   <div class="itemm" *ngFor="let testgroup of testgroups; let i = index;">
     <ion-card (click)="onCardClick(i)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
       [class.selectedcard]="selectedCardIndex == i">
       <ion-row>
         <ion-col no-padding center style="width:100%;">
-          <button *ngIf="testgroup.isGuideAvailable" ion-button clear icon-only no-margin disabled color="dark" (click)="openGuide(testgroup.name)">
+          <button *ngIf="testgroup.isGuideAvailable" ion-button clear icon-only no-margin (click)="openGuide(testgroup.name)">
            <ion-icon name="information-circle"></ion-icon>
            </button>
           <button *ngIf="testgroup.isStartItem" ion-button clear icon-only no-margin disabled color="dark">
