@@ -1,11 +1,9 @@
-import { Injectable, EventEmitter } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Dictionary } from '../../common/dictionary'
 import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
-
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable()
 export class MasterService {

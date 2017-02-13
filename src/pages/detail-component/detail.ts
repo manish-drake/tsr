@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../../services/ui/header.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { MasterService } from '../../services/test-set/master.service';
-import { Dictionary } from '../../common/dictionary';
 
 @Component({
   selector: 'page-detail',
