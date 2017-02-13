@@ -56,6 +56,9 @@ export class MasterService {
             favColl.push(name);
             this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
         }
+        if (this.routeName == 'Start') {
+            this.broker.generateTestGroups(this.routeName);
+        }
     }
 
     removeFromStart(testgroupname) {
@@ -96,9 +99,9 @@ export class MasterService {
             .map((res) => res.json())
     }
 
-runTest(testName: string, args: Dictionary<string, string>): string {
-    return "";
-}
+    runTest(testName: string, args: Dictionary<string, string>): string {
+        return "";
+    }
 
 
 }

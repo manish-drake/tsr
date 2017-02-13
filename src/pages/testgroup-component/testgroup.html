@@ -4,7 +4,7 @@
   </ion-col>
 </ion-row>
 
-<div class="items">
+<div id="elem" class="items">
   <div class="itemm" *ngFor="let testgroup of testgroups; let i = index;">
     <ion-card (click)="onCardClick(i)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
       [class.selectedcard]="selectedCardIndex == i">

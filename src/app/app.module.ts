@@ -17,7 +17,6 @@ import { GuidePage } from '../pages/guide/guide';
 import { FileIOService } from '../services/io/file-io.service';
 import { Factory } from '../services/objects/factory.service';
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
-import { SetupBrokerFactory } from '../services/broker/setupbrokerfactory';
 import { MasterService } from '../services/test-set/master.service';
 import { UserService } from '../services/test-set/user.service';
 import { LocalStorage } from '../services/storage/local-storage';
@@ -80,7 +79,6 @@ import { SpyDirective } from '../common/mySpy.directive';
         PopoverService,
         ModalService,
         BrokerFactoryService,
-        SetupBrokerFactory,
         ThemesService,
         FileFactory,
         LocalStorage
