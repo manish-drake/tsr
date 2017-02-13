@@ -35,6 +35,7 @@ export class TestGroupComp implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
+      this._master.routeName = this.headerName;
       this._svcHeader.title = this.headerName;
       this.broker.generateTestGroups(this.headerName);
       this.broker.getTestgroups().subscribe(val => {

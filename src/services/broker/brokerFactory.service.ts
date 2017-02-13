@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { VehicleSection } from '../../core/tests/vehicleSection';
-import { Test } from '../../core/tests/test'
-import { TestGroup } from '../../core/tests/testgroup'
+import { Test } from '../../core/tests/test';
+import { TestGroup } from '../../core/tests/testgroup';
 import { Dictionary } from '../../common/dictionary';
 import { BehaviorSubject } from 'Rxjs';
 import { Factory } from '../../services/objects/factory.service';
@@ -46,7 +46,7 @@ export class BrokerFactoryService {
             var test = {
                 name: summary.Name,
                 parent: summaryData.Name,
-                rows:this.createParamsGrid(summary, summaryData.Styles)
+                rows: this.createParamsGrid(summary, summaryData.Styles)
             }
             tests.push(test)
         })
@@ -60,11 +60,19 @@ export class BrokerFactoryService {
     }
     setTestsDetail(e) {
         this.testDetail.next(e);
+
     }
 
     createTestsDetail(testData: Test) {
         var testDS: any[] = [];
         testData.Summaries.forEach(summary => {
+            // var testE = [];
+            // summary.Summaries.forEach(subSummary => {
+            //     console.log(JSON.stringify(subSummary));
+            //     var testE = this.createParamsGrid(subSummary, summary.Styles)
+            // }
+            // )
+            // console.log(JSON.stringify(testE));
             var testD = {
                 name: summary.Name,
                 parent: testData.Name,
@@ -75,12 +83,38 @@ export class BrokerFactoryService {
         return testDS;
     }
 
-    generateTestsDetail(testName){
+    generateTestsDetail(testName) {
         var testsData = this.objectService.createTestsData(testName);
         this.setTestsDetail(this.createTestsDetail(testsData));
     }
 
+    private footerResultStatus = new BehaviorSubject<any[]>([]);
 
+    getFooterResultStatus() {
+        return this.footerResultStatus.asObservable();
+    }
+    setFooterResultStatus(e) {
+        this.footerResultStatus.next(e);
+
+    }
+    createFooterResultStatus(footerData: Test) {
+        var testDS: any[] = [];
+        footerData.Summaries.forEach(summary => {
+            var testD = {
+                name: summary.Name,
+                parent: footerData.Name,
+                rows: this.createParamsGrid(summary, footerData.Styles)
+            }
+            testDS.push(testD);
+        })
+        return testDS;
+    }
+
+    generateFooterResultStatus(_case){
+        var footerResultStatusData = this.objectService.createFooterResultStatusData(_case);
+        var footerResultStatus = this.createFooterResultStatus(footerResultStatusData);
+        this.setFooterResultStatus(footerResultStatus);
+    }
 
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;

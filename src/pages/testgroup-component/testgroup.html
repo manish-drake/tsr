@@ -10,13 +10,13 @@
       [class.selectedcard]="selectedCardIndex == i">
       <ion-row>
         <ion-col no-padding center style="width:100%;">
-          <button ion-button clear icon-only no-margin *ngIf="testgroup.isGuideAvailable" (click)="openGuide(testgroup.name)">
+          <button *ngIf="testgroup.isGuideAvailable" ion-button clear icon-only no-margin disabled color="dark" (click)="openGuide(testgroup.name)">
            <ion-icon name="information-circle"></ion-icon>
            </button>
-          <button ion-button clear icon-only no-margin><ion-icon name="sync"></ion-icon></button>
-          <button ion-button clear icon-only no-margin disabled color="dark">
-            <ion-icon no-margin *ngIf="testgroup.isStartItem" style="font-size: 26px;" name="star-outline"></ion-icon>
+          <button *ngIf="testgroup.isStartItem" ion-button clear icon-only no-margin disabled color="dark">
+            <ion-icon no-margin style="font-size: 26px;" name="star-outline"></ion-icon>
           </button>
+          <button ion-button clear icon-only no-margin><ion-icon name="sync"></ion-icon></button>
         </ion-col>
         <ion-col padding-right center style="width:auto;flex:0 0 auto;color:#555555;">
           <ion-icon name="albums"> {{testgroup.count}}</ion-icon>

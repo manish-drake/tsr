@@ -26,8 +26,8 @@ export class TestDetailComp {
 
   public tests: any;
 
-  headerName:any;
-  testName:any;
+  headerName: any;
+  testName: any;
 
   ngOnInit() {
     this.route.params.subscribe(data => {
@@ -38,9 +38,10 @@ export class TestDetailComp {
       this.broker.generateTestsDetail(this.testName);
       this.broker.getTestsDetail().subscribe(val => {
         this.tests = val;
-        console.log(this.tests);
+        // console.log(this.tests);
       });
     });
+    this.broker.generateFooterResultStatus("before");
   }
 
   selectedVehicle: any;
@@ -68,19 +69,6 @@ export class TestDetailComp {
       this.currentView = "default";
       this.nextViewIcon = "locate";
     }
-  }
-
-  isRunnig: boolean = false;
-
-  onRun() {
-    this.isRunnig = !this.isRunnig;
-    var args = new Dictionary<string,string>();
-    args.add("a","b");
-    this._master.runTest("",args);
-    setTimeout(() => {
-      this.isRunnig = false;
-    }, 2000);
-    
   }
 
   onNavigate(ev: string) {
@@ -112,10 +100,59 @@ export class TestDetailComp {
       default: { break; }
     }
   }
-  // slideChanged() {
-  //   if (this.slides.isEnd() || this.slides.isBeginning()) {
-  //     this.slides.loop = true;
-  //   }
-  // }
+
+  // beforeRunningResultStatus =
+  // `
+  //   Status: Stopped; 
+  //   Test Set: TS-001; 
+  //   User: D.Smith; 
+  //   Distance: 50 Ft; 
+  //   Connection: Bottom Antenna; 
+  //   Test Name: UAT Out; 
+  //   Present(if Any): None
+  //   `
+
+  // runningResultStatus =
+  // `
+  //    Status: Running;
+  //    Duration: 13s;
+  //    Connection: Bottom Antenna;
+  //    Distance: 50 Ft;
+  //    Test Name: UAT Out;
+  //    Message: State Vector;
+  //    Data: TBD;
+  //    Data: TBD;
+  //    Data: TBD
+  //   `
+  // afterRunningResultStatus =
+  // `
+  //   Status: Stopped,Pass,Fail;
+  //   Date: 3/15/2016;
+  //   Time: 9:15:30;
+  //   Test Set: TS-001;
+  //   User: D.Smith;
+  //   Distance: 50 Ft;
+  //   Data: TBD;
+  //   Test Name: UAT Out;
+  //   Connection: Bottom Antenna;
+  //   Test Name: UAT Out
+  //   `
+
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
+    this.broker.generateFooterResultStatus("running");
+    setTimeout(() => {
+      this.isRunning = false;
+      this.broker.generateFooterResultStatus("after");
+    }, 2000);
+
+
+
+
+
+  }
+
 }
 

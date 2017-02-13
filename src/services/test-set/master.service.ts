@@ -4,16 +4,19 @@ import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
-import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable()
 export class MasterService {
+
+    routeName: string;
 
     constructor(
         private http: Http,
         private _localStorage: LocalStorage,
         private broker: BrokerFactoryService,
-        private route: ActivatedRoute) { }
+    ) { }
 
     private testInContext = new BehaviorSubject<any>(undefined);
     getTestInContext() {
@@ -21,14 +24,15 @@ export class MasterService {
     }
     setTestInContext(e) {
         this.testInContext.next(e);
+        if (e == undefined) this.setFooterResultStatus(undefined);
     }
 
-    private ifTestInContextHaveResult = new BehaviorSubject<boolean>(false);
-    getIfTestInContextHaveResult() {
-        return this.ifTestInContextHaveResult.asObservable();
+    private footerResultStatus = new BehaviorSubject<any>(undefined);
+    getFooterResultStatus() {
+        return this.footerResultStatus.asObservable();
     }
-    setIfTestInContextHaveResult(e) {
-        this.ifTestInContextHaveResult.next(e);
+    setFooterResultStatus(e) {
+        this.footerResultStatus.next(e);
     }
 
     onStartSwitch(e) {
@@ -66,7 +70,10 @@ export class MasterService {
                 }
             });
             this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
-            // this.broker.generateTestGroups("Start");
+
+            if (this.routeName == 'Start') {
+                this.broker.generateTestGroups(this.routeName);
+            }
         }
     }
 
@@ -91,10 +98,9 @@ export class MasterService {
             .map((res) => res.json())
     }
 
-    runTest(testName: string, args: Dictionary<string, string>): string {
-        this.setIfTestInContextHaveResult(true);
-        return "";
-    }
+runTest(testName: string, args: Dictionary<string, string>): string {
+    return "";
+}
 
 
 }

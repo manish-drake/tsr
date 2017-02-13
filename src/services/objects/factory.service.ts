@@ -9,6 +9,7 @@ import { LocalStorage } from '../../services/storage/local-storage';
 
 import { VehicleSection } from '../../core/tests/vehicleSection';
 
+
 @Injectable()
 export class Factory {
 
@@ -99,6 +100,341 @@ export class Factory {
         return favt;
     }
 
+    createSelectAvData() {
+        var aa = new Test();
+
+        var add = new TestParam();
+        add.Key = "ADDRESS:";
+        add.Value = "______ (_) / ________ (_)";
+        var cAdd = new TestParamCell(add);
+        cAdd.Row = 0;
+        cAdd.Column = 0;
+        cAdd.ColSpan = 4;
+        cAdd.Styles.add("key", "label95");
+        cAdd.Styles.add("value", "result128");
+
+        aa.TestParamCells.push(cAdd);
+
+        var ftid = new TestParam();
+        ftid.Key = "Flight ID:";
+        ftid.Value = "______";
+        var cFtid = new TestParamCell(ftid);
+        cFtid.Row = 1;
+        cFtid.Column = 0;
+        cFtid.Styles.add("key", "label95");
+        cFtid.Styles.add("value", "result85");
+
+        aa.TestParamCells.push(cFtid);
+
+        var rfl = new TestParam();
+        rfl.Key = "RF Level:";
+        rfl.Value = "______";
+        var cRfl11 = new TestParamCell(rfl);
+        cRfl11.Row = 1;
+        cRfl11.Column = 1;
+        cRfl11.Styles.add("key", "label95");
+        cRfl11.Styles.add("value", "result85");
+
+        aa.TestParamCells.push(cRfl11);
+
+        var bssr = new TestParam();
+        bssr.Key = "BDS Rcvd (DF17):";
+        bssr.Value = "_,_ _,_ _,_ _,_ _,_";
+        var cBssr = new TestParamCell(bssr);
+        cBssr.Row = 2;
+        cBssr.Column = 0;
+        cBssr.ColSpan = 4;
+        cBssr.Styles.add("key", "label133");
+        cBssr.Styles.add("value", "result128");
+
+        aa.TestParamCells.push(cBssr);
+        return aa;
+
+
+    }
+
+    createFooterResultStatusData(_case: any): Test {
+        var newStatus: Test = new Test();
+        switch (_case) {
+            case 'before': {
+
+                var bef = new Test();
+                bef.Name = "beforeRunning"
+
+                var st1 = new TestParam();
+                st1.Key = "Status";
+                st1.Value = "Stopped";
+                var cSt1 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 0;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                bef.TestParamCells.push(cSt1);
+
+                var ts1 = new TestParam();
+                ts1.Key = "Test Set:";
+                ts1.Value = "TS-001";
+                var cTs1 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 1;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                bef.TestParamCells.push(cTs1);
+
+                var st1 = new TestParam();
+                st1.Key = "Status";
+                st1.Value = "Stopped";
+                var cSt1 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 2;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                bef.TestParamCells.push(cSt1);
+
+                var ts1 = new TestParam();
+                ts1.Key = "Test Set:";
+                ts1.Value = "TS-001";
+                var cTs1 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 1;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                bef.TestParamCells.push(cTs1);
+
+                newStatus.Summaries.push(bef);
+            }
+                break;
+            case 'running': {
+                var rung = new Test();
+                rung.Name = "Running";
+
+                var st2 = new TestParam();
+                st1.Key = "Status";
+                st1.Value = "Running";
+                var cSt2 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 0;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cSt1);
+
+                var dur2 = new TestParam();
+                ts1.Key = "Duration:";
+                ts1.Value = "13s";
+                var cDur2 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 1;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTs1);
+
+                var ctn2 = new TestParam();
+                st1.Key = "Connection";
+                st1.Value = "Bottom Antenna";
+                var cCtn2 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 2;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cSt1);
+
+                var dst2 = new TestParam();
+                ts1.Key = "Distance:";
+                ts1.Value = "50 Ft";
+                var cDst2 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 3;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTs1);
+
+                var tn2 = new TestParam();
+                tn2.Key = "Test Name";
+                tn2.Value = "UAT Out";
+                var cTn2 = new TestParamCell(tn2);
+                cTn2.Row = 1;
+                cTn2.Column = 0;
+                cTn2.Styles.add("key", "");
+                cTn2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTn2);
+
+                var msg2 = new TestParam();
+                msg2.Key = "Message:";
+                msg2.Value = "State Vector";
+                var cMsg2 = new TestParamCell(msg2);
+                cMsg2.Row = 1;
+                cMsg2.Column = 1;
+                cMsg2.Styles.add("key", "");
+                cMsg2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cMsg2);
+
+                var dt2 = new TestParam();
+                dt2.Key = "Data";
+                dt2.Value = "TBD";
+                var cDt2 = new TestParamCell(dt2);
+                cDt2.Row = 1;
+                cDt2.Column = 2;
+                cDt2.Styles.add("key", "");
+                cDt2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cDt2);
+
+                var dt2a = new TestParam();
+                dt2a.Key = "Data:";
+                dt2a.Value = "TBD";
+                var cDt2a = new TestParamCell(dt2a);
+                cDt2a.Row = 1;
+                cDt2a.Column = 3;
+                cDt2a.Styles.add("key", "labelAutoBold");
+                cDt2a.Styles.add("value", "result0");
+
+                rung.TestParamCells.push(cDt2a);
+
+                var dt3a = new TestParam();
+                dt3a.Key = "Data:";
+                dt3a.Value = "TBD";
+                var cDt3a = new TestParamCell(dt3a);
+                cDt3a.Row = 1;
+                cDt3a.Column = 3;
+                cDt3a.Styles.add("key", "labelAutoBold");
+                cDt3a.Styles.add("value", "result0");
+
+                rung.TestParamCells.push(cDt3a);
+
+                newStatus.Summaries.push(rung);
+            }
+            break;
+             case 'after': {
+                var rung = new Test();
+                rung.Name = "After Running";
+
+                var st2 = new TestParam();
+                st1.Key = "Status";
+                st1.Value = "Stopped,______";
+                var cSt2 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 0;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cSt1);
+
+                var dur2 = new TestParam();
+                ts1.Key = "Date:";
+                ts1.Value = "3/15/2016";
+                var cDur2 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 1;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTs1);
+
+                var ctn2 = new TestParam();
+                st1.Key = "Time";
+                st1.Value = "9:15:30";
+                var cCtn2 = new TestParamCell(st1);
+                cSt1.Row = 0;
+                cSt1.Column = 2;
+                cSt1.Styles.add("key", "");
+                cSt1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cSt1);
+
+                var dst2 = new TestParam();
+                ts1.Key = "Test Set:";
+                ts1.Value = "TS-001";
+                var cDst2 = new TestParamCell(ts1);
+                cTs1.Row = 0;
+                cTs1.Column = 3;
+                cTs1.Styles.add("key", "");
+                cTs1.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTs1);
+
+                var tn2 = new TestParam();
+                tn2.Key = "User";
+                tn2.Value = "D.Smith";
+                var cTn2 = new TestParamCell(tn2);
+                cTn2.Row = 1;
+                cTn2.Column = 0;
+                cTn2.Styles.add("key", "");
+                cTn2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cTn2);
+
+                var msg2 = new TestParam();
+                msg2.Key = "Distance:";
+                msg2.Value = "50 Ft";
+                var cMsg2 = new TestParamCell(msg2);
+                cMsg2.Row = 1;
+                cMsg2.Column = 1;
+                cMsg2.Styles.add("key", "");
+                cMsg2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cMsg2);
+
+                var dt2 = new TestParam();
+                dt2.Key = "Data";
+                dt2.Value = "TBD";
+                var cDt2 = new TestParamCell(dt2);
+                cDt2.Row = 1;
+                cDt2.Column = 2;
+                cDt2.Styles.add("key", "");
+                cDt2.Styles.add("value", "");
+
+                rung.TestParamCells.push(cDt2);
+
+                var dt2a = new TestParam();
+                dt2a.Key = "Test Name:";
+                dt2a.Value = "UAT Out";
+                var cDt2a = new TestParamCell(dt2a);
+                cDt2a.Row = 1;
+                cDt2a.Column = 3;
+                cDt2a.Styles.add("key", "labelAutoBold");
+                cDt2a.Styles.add("value", "result0");
+
+                rung.TestParamCells.push(cDt2a);
+
+                var dt3a = new TestParam();
+                dt3a.Key = "Connection:";
+                dt3a.Value = "Bottom Antenna";
+                var cDt3a = new TestParamCell(dt3a);
+                cDt3a.Row = 1;
+                cDt3a.Column = 3;
+                cDt3a.Styles.add("key", "labelAutoBold");
+                cDt3a.Styles.add("value", "result0");
+
+                rung.TestParamCells.push(cDt3a);
+
+                var ctn3 = new TestParam();
+                dt3a.Key = "Connection:";
+                dt3a.Value = "Bottom Antenna";
+                var cCtn3 = new TestParamCell(dt3a);
+                cDt3a.Row = 2;
+                cDt3a.Column = 0;
+                cDt3a.Styles.add("key", "labelAutoBold");
+                cDt3a.Styles.add("value", "result0");
+
+                rung.TestParamCells.push(cDt3a);
+
+                newStatus.Summaries.push(rung);
+            }
+            break;
+        }
+        return newStatus;
+    }
+
     createTestsData(test: string): Test {
         var newTest: Test = new Test();
         switch (test) {
@@ -117,7 +453,7 @@ export class Factory {
                 smry.Name = "SUMMARY";
                 smry.Styles.add("value", "result113Right");
 
-                smry.Summaries.push(this.createSelectAvTarget());
+                smry.Summaries.push(this.createSelectAvData());
 
                 var frre11 = new TestParam();
                 frre11.Key = "FAR 91.227 REQUIRED ELEMENTS";

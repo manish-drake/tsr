@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'teststatus-comp',
@@ -7,9 +6,9 @@ import { Component } from '@angular/core';
 })
 export class TeststatusComp {
 
-  testStatus:string = "beforerun"
+  @Input() data: any;
 
-  constructor() {}
+  constructor() { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeststatusComp');
