@@ -53,7 +53,6 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e) {
-    this._svcHome.footerData = undefined;
     this._router.navigate([e.route, e.name]);
     this._master.setTestInContext(undefined);
     this._master.routeName = e.name;

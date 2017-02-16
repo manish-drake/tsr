@@ -29,7 +29,8 @@ export class BrokerFactoryService {
                 "name": testgroup.Name,
                 "count": testgroup.Summaries.length,
                 "isStartItem": testgroup.isStartItem,
-                "isGuideAvailable": testgroup.isGuideAvailable
+                "isGuideAvailable": testgroup.isGuideAvailable,
+                "SummaryResult": testgroup.SummaryResult
             };
         })
         return testGroupData;
@@ -38,19 +39,6 @@ export class BrokerFactoryService {
     generateTestGroups(headername) {
         var testGroupsData = this._objectService.createTestGroupsData(headername);
         this.setTestgroups(this.createTestGroups(testGroupsData));
-    }
-
-    createVehicleSection(summaryData: VehicleSection) {
-        var tests: any[] = [];
-        summaryData.Summaries.forEach(summary => {
-            var test = {
-                name: summary.Name,
-                parent: summaryData.Name,
-                rows: this.createParamsGrid(summary, summaryData.Styles)
-            }
-            tests.push(test)
-        })
-        return { name: summaryData.Name, tests: tests };
     }
 
     private testDetail = new BehaviorSubject<any[]>([]);

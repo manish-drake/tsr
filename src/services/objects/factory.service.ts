@@ -51,106 +51,53 @@ export class Factory {
         var favt = new Test();
         favt.Name = "Filter A/V Target";
 
-        var add = new TestParam();
-        add.Key = "ADDRESS:";
-        add.Value = "______ (_) / ________ (_)";
-        var cAdd = new TestParamCell(add);
-        cAdd.Row = 0;
-        cAdd.Column = 0;
-        cAdd.ColSpan = 4;
-        cAdd.Styles.add("key", "label95");
-        cAdd.Styles.add("value", "result128");
+        // var add = new TestParam();
+        // add.Key = "ADDRESS:";
+        // add.Value = "______ (_) / ________ (_)";
+        // var cAdd = new TestParamCell(add);
+        // cAdd.Row = 0;
+        // cAdd.Column = 0;
+        // cAdd.ColSpan = 4;
+        // cAdd.Styles.add("key", "label95");
+        // cAdd.Styles.add("value", "result128");
 
-        favt.TestParamCells.push(cAdd);
+        // favt.TestParamCells.push(cAdd);
 
-        var ftid = new TestParam();
-        ftid.Key = "Flight ID:";
-        ftid.Value = "______";
-        var cFtid = new TestParamCell(ftid);
-        cFtid.Row = 1;
-        cFtid.Column = 0;
-        cFtid.Styles.add("key", "label95");
-        cFtid.Styles.add("value", "result85");
+        // var ftid = new TestParam();
+        // ftid.Key = "Flight ID:";
+        // ftid.Value = "______";
+        // var cFtid = new TestParamCell(ftid);
+        // cFtid.Row = 1;
+        // cFtid.Column = 0;
+        // cFtid.Styles.add("key", "label95");
+        // cFtid.Styles.add("value", "result85");
 
-        favt.TestParamCells.push(cFtid);
+        // favt.TestParamCells.push(cFtid);
 
-        var rfl = new TestParam();
-        rfl.Key = "RF Level:";
-        rfl.Value = "______";
-        var cRfl11 = new TestParamCell(rfl);
-        cRfl11.Row = 1;
-        cRfl11.Column = 1;
-        cRfl11.Styles.add("key", "label95");
-        cRfl11.Styles.add("value", "result85");
+        // var rfl = new TestParam();
+        // rfl.Key = "RF Level:";
+        // rfl.Value = "______";
+        // var cRfl11 = new TestParamCell(rfl);
+        // cRfl11.Row = 1;
+        // cRfl11.Column = 1;
+        // cRfl11.Styles.add("key", "label95");
+        // cRfl11.Styles.add("value", "result85");
 
-        favt.TestParamCells.push(cRfl11);
+        // favt.TestParamCells.push(cRfl11);
 
-        var bssr = new TestParam();
-        bssr.Key = "BDS Rcvd (DF17):";
-        bssr.Value = "_,_ _,_ _,_ _,_ _,_";
-        var cBssr = new TestParamCell(bssr);
-        cBssr.Row = 2;
-        cBssr.Column = 0;
-        cBssr.ColSpan = 4;
-        cBssr.Styles.add("key", "label133");
-        cBssr.Styles.add("value", "result128");
+        // var bssr = new TestParam();
+        // bssr.Key = "BDS Rcvd (DF17):";
+        // bssr.Value = "_,_ _,_ _,_ _,_ _,_";
+        // var cBssr = new TestParamCell(bssr);
+        // cBssr.Row = 2;
+        // cBssr.Column = 0;
+        // cBssr.ColSpan = 4;
+        // cBssr.Styles.add("key", "label133");
+        // cBssr.Styles.add("value", "result128");
 
-        favt.TestParamCells.push(cBssr);
+        // favt.TestParamCells.push(cBssr);
 
         return favt;
-    }
-
-    createSelectAvData() {
-        var aa = new Test();
-
-        var add = new TestParam();
-        add.Key = "ADDRESS:";
-        add.Value = "______ (_) / ________ (_)";
-        var cAdd = new TestParamCell(add);
-        cAdd.Row = 0;
-        cAdd.Column = 0;
-        cAdd.ColSpan = 4;
-        cAdd.Styles.add("key", "label95");
-        cAdd.Styles.add("value", "result128");
-
-        aa.TestParamCells.push(cAdd);
-
-        var ftid = new TestParam();
-        ftid.Key = "Flight ID:";
-        ftid.Value = "______";
-        var cFtid = new TestParamCell(ftid);
-        cFtid.Row = 1;
-        cFtid.Column = 0;
-        cFtid.Styles.add("key", "label95");
-        cFtid.Styles.add("value", "result85");
-
-        aa.TestParamCells.push(cFtid);
-
-        var rfl = new TestParam();
-        rfl.Key = "RF Level:";
-        rfl.Value = "______";
-        var cRfl11 = new TestParamCell(rfl);
-        cRfl11.Row = 1;
-        cRfl11.Column = 1;
-        cRfl11.Styles.add("key", "label95");
-        cRfl11.Styles.add("value", "result85");
-
-        aa.TestParamCells.push(cRfl11);
-
-        var bssr = new TestParam();
-        bssr.Key = "BDS Rcvd (DF17):";
-        bssr.Value = "_,_ _,_ _,_ _,_ _,_";
-        var cBssr = new TestParamCell(bssr);
-        cBssr.Row = 2;
-        cBssr.Column = 0;
-        cBssr.ColSpan = 4;
-        cBssr.Styles.add("key", "label133");
-        cBssr.Styles.add("value", "result128");
-
-        aa.TestParamCells.push(cBssr);
-        return aa;
-
-
     }
 
     createFooterResultStatusData(_case: any): Test {
@@ -445,8 +392,6 @@ export class Factory {
                 var cData3 = new TestParamCell(data3);
                 cData3.Row = 0;
                 cData3.Column = 8;
-                // cData3.Styles.add("key", "");
-                // cData3.Styles.add("value", "");
 
                 aft.TestParamCells.push(cData3);
 
@@ -475,7 +420,51 @@ export class Factory {
                 smry.Name = "SUMMARY";
                 smry.Styles.add("value", "result113Right");
 
-                smry.Summaries.push(this.createSelectAvData());
+                var add = new TestParam();
+                add.Key = "ADDRESS:";
+                add.Value = "______ (_) / ________ (_)";
+                var cAdd = new TestParamCell(add);
+                cAdd.Row = 0;
+                cAdd.Column = 0;
+                cAdd.ColSpan = 4;
+                cAdd.Styles.add("key", "label95");
+                cAdd.Styles.add("value", "result128");
+
+                smry.TestParamCells.push(cAdd);
+
+                var ftid = new TestParam();
+                ftid.Key = "Flight ID:";
+                ftid.Value = "______";
+                var cFtid = new TestParamCell(ftid);
+                cFtid.Row = 1;
+                cFtid.Column = 0;
+                cFtid.Styles.add("key", "label95");
+                cFtid.Styles.add("value", "result85");
+
+                smry.TestParamCells.push(cFtid);
+
+                var rfl = new TestParam();
+                rfl.Key = "RF Level:";
+                rfl.Value = "______";
+                var cRfl11 = new TestParamCell(rfl);
+                cRfl11.Row = 1;
+                cRfl11.Column = 1;
+                cRfl11.Styles.add("key", "label95");
+                cRfl11.Styles.add("value", "result85");
+
+                smry.TestParamCells.push(cRfl11);
+
+                var bssr = new TestParam();
+                bssr.Key = "BDS Rcvd (DF17):";
+                bssr.Value = "_,_ _,_ _,_ _,_ _,_";
+                var cBssr = new TestParamCell(bssr);
+                cBssr.Row = 2;
+                cBssr.Column = 0;
+                cBssr.ColSpan = 4;
+                cBssr.Styles.add("key", "label133");
+                cBssr.Styles.add("value", "result128");
+
+                smry.TestParamCells.push(cBssr);
 
                 var frre11 = new TestParam();
                 frre11.Key = "FAR 91.227 REQUIRED ELEMENTS";

@@ -34,6 +34,14 @@ export class Test{
         this._isGuideAvailable = v;
     }
 
+    private _SummaryResult : any;
+    public get SummaryResult() : any {
+        return this._SummaryResult;
+    }
+    public set SummaryResult(v : any) {
+        this._SummaryResult = v;
+    }
+
     private _Summaries : Test[];
     public get Summaries() : Test[] {
         if(!this._Summaries)
