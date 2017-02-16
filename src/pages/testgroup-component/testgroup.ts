@@ -50,6 +50,7 @@ export class TestGroupComp implements OnInit {
       });
     });
   }
+  
   evaluateStartItems() {
     var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     if (startItems != null) {
