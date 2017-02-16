@@ -22,7 +22,7 @@ export class TestDetailComp {
     private _router: Router,
     private _svcHome: HomeService,
     private route: ActivatedRoute,
-    private _broker: BrokerFactoryService,
+    private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
     private _master: MasterService) { }
 
@@ -35,12 +35,10 @@ export class TestDetailComp {
     this.route.params.subscribe(data => {
       this.headerName = (data as any).headername;
       this.testName = (data as any).test;
-      this._svcHome.title = this.headerName;
+      this._svcHome.title = this.testName;
 
-      this._broker.generateTestsDetail(this.testName);
-      this._broker.getTestsDetail().subscribe(val => {
-        this.tests = val;       
-      });
+      var testsData = this._objectService.createTestsData(this.testName);
+      this.tests = this._svcBroker.createTestsDetail(testsData);
     });
     this._svcHome.footerData = this.generateFooterResultStatus("before");
   }
@@ -110,18 +108,16 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
-    var run = this.generateFooterResultStatus("running");
-    this._svcHome.footerData = run;
+    this._svcHome.footerData = this.generateFooterResultStatus("running");
     setTimeout(() => {
       this.isRunning = false;
-      var stop = this.generateFooterResultStatus("after");
-      this._svcHome.footerData = stop;
+      this._svcHome.footerData = this.generateFooterResultStatus("after");
     }, 3000);
   }
 
   generateFooterResultStatus(_case) {
     var footerResultStatusData = this._objectService.createFooterResultStatusData(_case);
-    var footerResultStatus = this._broker.createFooterResultStatus(footerResultStatusData);
+    var footerResultStatus = this._svcBroker.createFooterResultStatus(footerResultStatusData);
     return footerResultStatus;
   }
 }

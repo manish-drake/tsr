@@ -4,24 +4,11 @@ import { VehicleSection } from '../../core/tests/vehicleSection';
 import { Test } from '../../core/tests/test';
 import { TestGroup } from '../../core/tests/testgroup';
 import { Dictionary } from '../../common/dictionary';
-import { BehaviorSubject } from 'Rxjs';
-import { Factory } from '../../services/objects/factory.service';
 
 @Injectable()
 export class BrokerFactoryService {
-    /**
-     *
-     */
-    constructor(private _objectService: Factory) { }
 
-    private testgroups = new BehaviorSubject<any[]>([]);
-
-    getTestgroups() {
-        return this.testgroups.asObservable();
-    }
-    setTestgroups(e) {
-        this.testgroups.next(e);
-    }
+    constructor() { }
 
     createTestGroups(testGroups: TestGroup) {
         var testGroupData = testGroups.Test.map(testgroup => {
@@ -33,21 +20,6 @@ export class BrokerFactoryService {
             };
         })
         return testGroupData;
-    }
-
-    generateTestGroups(headername) {
-        var testGroupsData = this._objectService.createTestGroupsData(headername);
-        this.setTestgroups(this.createTestGroups(testGroupsData));
-    }
-
-    private testDetail = new BehaviorSubject<any[]>([]);
-
-    getTestsDetail() {
-        return this.testDetail.asObservable();
-    }
-    setTestsDetail(e) {
-        this.testDetail.next(e);
-
     }
 
     createTestsDetail(testData: Test) {
@@ -68,11 +40,6 @@ export class BrokerFactoryService {
             testDS.push(testD);
         })
         return testDS;
-    }
-
-    generateTestsDetail(testName) {
-        var testsData = this._objectService.createTestsData(testName);
-        this.setTestsDetail(this.createTestsDetail(testsData));
     }
 
     createFooterResultStatus(footerData: Test) {

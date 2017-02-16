@@ -6,7 +6,8 @@ import { GuidePage } from '../../pages/guide/guide';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { HomeService } from '../../services/ui/home.service';
 import { LocalStorage } from '../../services/storage/local-storage';
-import { MasterService } from '../../services/test-set/master.service';
+import { TestGroupsService } from '../../services/tests/testgroups.service';
+import { TestContextService } from '../../services/tests/testcontext.service';
 
 @Component({
   selector: 'testgroup',
@@ -24,7 +25,8 @@ export class TestGroupComp implements OnInit {
     private _router: Router,
     private _svcHome: HomeService,
     private _localStorage: LocalStorage,
-    private _master: MasterService) {
+    private _svcTestGroups: TestGroupsService,
+    private _svcTextContext: TestContextService) {
 
   }
 
@@ -35,10 +37,9 @@ export class TestGroupComp implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
-      this._master.routeName = this.headerName;
       this._svcHome.title = this.headerName;
-      this.broker.generateTestGroups(this.headerName);
-      this.broker.getTestgroups().subscribe(val => {
+      this._svcTestGroups.generateTestGroups(this.headerName);
+      this._svcTestGroups.getTestgroups().subscribe(val => {
         this.testgroups = val;
 
         // console.log(this.testgroups);
@@ -67,7 +68,7 @@ export class TestGroupComp implements OnInit {
 
   onCardClick(testgroup) {
     this.selectedTestGroup = testgroup;
-    this._master.setTestInContext(testgroup);
+    this._svcTextContext.setTestInContext(testgroup);
   }
 
   private clicks = 0;

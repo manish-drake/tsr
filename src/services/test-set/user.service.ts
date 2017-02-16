@@ -9,27 +9,19 @@ export class UserService {
 
     availableUsers: any[] = [];
 
-    defaultUser = { name: "OPERATOR", language: "English" };
+    
 
     constructor(private _localStorage: LocalStorage) {
-        this.availableUsers.push(this.defaultUser);
+        var defaultUser = { name: "OPERATOR", language: "English" };
 
         this.availableUsers.push(
+            defaultUser,
             { name: "KEN FILARDO", language: "English" },
             { name: "DAVE KLAMET", language: "English" },
             { name: "STEVE O'HARA", language: "English" }
         );
 
-        var savedCurrentUser = _localStorage.GetItem(this._localStorage.keyForCurrentUser());
-        // if (savedCurrentUser != null || savedCurrentUser != undefined) {
-        //     alert("1: "+ savedCurrentUser)
-        //     this.currentUser = new BehaviorSubject(JSON.parse(savedCurrentUser));
-        //     alert(JSON.stringify(this.currentUser))
-        // }
-        // else {
-        //     alert("2: "+ savedCurrentUser)
-            this.currentUser = new BehaviorSubject(this.defaultUser);
-        // }
+        this.currentUser = new BehaviorSubject(defaultUser);
     }
 
     getAvailableUsers() {
@@ -42,10 +34,5 @@ export class UserService {
 
     setCurrentUser(val) {
         this.currentUser.next(val);
-        this.saveCurrentUser(val);
-    }
-
-    saveCurrentUser(val) {
-        this._localStorage.SetItem(this._localStorage.keyForCurrentUser(), JSON.stringify(val));
     }
 }
