@@ -6,8 +6,8 @@
 
 <div id="elem" class="items">
   <div class="itemm" *ngFor="let testgroup of testgroups; let i = index;">
-    <ion-card (click)="onCardClick(i)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
-      [class.selectedcard]="selectedCardIndex == i">
+    <ion-card (click)="onCardClick(testgroup)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
+      [class.selectedcard]="selectedTestGroup == testgroup">
       <ion-row>
         <ion-col no-padding center style="width:100%;">
           <button *ngIf="testgroup.isGuideAvailable" ion-button clear icon-only no-margin (click)="openGuide(testgroup.name)">

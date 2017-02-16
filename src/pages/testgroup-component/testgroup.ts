@@ -35,7 +35,6 @@ export class TestGroupComp implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
-      this._master.routeName = this.headerName;
       this._svcHeader.title = this.headerName;
       this.broker.generateTestGroups(this.headerName);
       this.broker.getTestgroups().subscribe(val => {
@@ -44,7 +43,7 @@ export class TestGroupComp implements OnInit {
         console.log(this.testgroups);
         this.evaluateStartItems();
         if (this.testgroups.length != 0) {
-          this.onCardClick(0);
+          this.onCardClick(this.testgroups[0]);
         }
       });
     });
@@ -64,11 +63,11 @@ export class TestGroupComp implements OnInit {
     }
   }
 
-  selectedCardIndex: any = 0
+  selectedTestGroup: any;
 
-  onCardClick(i) {
-    this.selectedCardIndex = i;
-    this._master.setTestInContext(this.testgroups[i]);
+  onCardClick(testgroup) {
+    this.selectedTestGroup = testgroup;
+    this._master.setTestInContext(testgroup);
   }
 
   private clicks = 0;

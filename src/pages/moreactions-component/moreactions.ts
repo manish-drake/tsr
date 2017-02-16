@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Platform, ViewController } from 'ionic-angular';
 import { AppVersion } from 'ionic-native';
-import { ThemesService } from '../../services/themes/themes.service';
+import { ThemeService } from '../../services/themes/themes.service';
 import { MasterService } from '../../services/test-set/master.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class MoreActionsPopover {
   constructor(
     private viewCtrl: ViewController,
     private platform: Platform,
-    private _themes: ThemesService,
+    private _svcTheme: ThemeService,
     private _master: MasterService,
     ) {
     this.platform.ready().then(() => {
@@ -35,7 +35,7 @@ export class MoreActionsPopover {
       }
     });
 
-    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+    this._svcTheme.getTheme().subscribe(val => this.chosenTheme = val);
     this._master.getTestInContext().subscribe(val => this.testInContext = val);
 
     this.setup = this.createModalSource("settings", "SETUP TEST", "setup", this.viewCtrl);
@@ -59,6 +59,10 @@ export class MoreActionsPopover {
   
   static isGuide: boolean = false;
 
+  onClose(){
+    this.viewCtrl.dismiss();
+  }
+
   runall() {
     MoreActionsPopover.isRunAllenabled = !MoreActionsPopover.isRunAllenabled;
     return MoreActionsPopover.isRunAllenabled;
@@ -79,6 +83,7 @@ export class MoreActionsPopover {
   }
 
   onStartSwitch(e){
+    this.onClose();
     this._master.onStartSwitch(e);
   }
   

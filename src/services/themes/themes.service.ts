@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import { LocalStorage } from '../../services/storage/local-storage'
 
 @Injectable()
-export class ThemesService {
+export class ThemeService {
     private theme: BehaviorSubject<any>;
 
     indoorTheme: any;

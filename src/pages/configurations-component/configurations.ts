@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
-import { ThemesService } from '../../services/themes/themes.service'
+import { ThemeService } from '../../services/themes/themes.service'
 import { UserService } from '../../services/test-set/user.service'
+import { ConnectionService } from '../../services/test-set/connection.service'
+import { MasterService } from '../../services/test-set/master.service';
 
-/*
-  Generated class for the Configurations page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-configurations',
   templateUrl: 'configurations.html'
@@ -15,34 +11,51 @@ import { UserService } from '../../services/test-set/user.service'
 export class ConfigurationsPopover {
 
   chosenTheme: any;
+
   selectedUser: any;
   availableUsers: any;
 
-  devices = [{ name: "TestSet#1" }, { name: "TestSet#2" }, { name: "TestSet#3" }, { name: "TestSet#4" }, { name: "TestSet#5" }];
-  selectedDevice: string = "TestSet#5";
+  availableDevices: any;
+  connectedDevice: any;
 
   brightnessValue: number = 7;
   distanceValue: number = 200;
-  userSelectOptions = {title: 'Operator'};
-  deviceSelectOptions = {title: 'TestSet Device'};
+  userSelectOptions = { title: 'Operator' };
+  deviceSelectOptions = { title: 'TestSet Device' };
 
 
-  constructor(private _themes: ThemesService,
-    private _users: UserService) {
-    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
-    this._users.getCurrentUser().subscribe(val => this.selectedUser = val);
-    this.availableUsers = this._users.getAvailableUsers();
+  constructor(
+    private _svcTheme: ThemeService,
+    private _svcUser: UserService,
+    private _svcConnection: ConnectionService,
+    private _svcMaster: MasterService
+  ) {
+    this._svcTheme.getTheme().subscribe(val => this.chosenTheme = val);
+    this.availableUsers = this._svcUser.getAvailableUsers();
+    this._svcUser.getCurrentUser().subscribe(val => this.selectedUser = val);
+    this.availableDevices = this._svcConnection.getAvailableDevices();
+    this._svcConnection.getconnectedDevice().subscribe(val => this.connectedDevice = val);
   }
+
+  sectionBAvailable: boolean = false;
 
   ionViewWillEnter() {
     console.log('Hello ConfigurationsPopover');
+    var currMenu = this._svcMaster.routeName;
+    if (currMenu == 'Start' || currMenu == "Transponder" || currMenu == "Mode S" || currMenu == "ADS-B") {
+      this.sectionBAvailable = true;
+    }
   }
 
-  onUserChanged(e){
-    this._users.setCurrentUser(e);
+  onUserChanged(e) {
+    this._svcUser.setCurrentUser(e);
+  }
+
+  onDeviceChanged(e) {
+    this._svcConnection.setConnectedDevice(e);
   }
 
   onSwitchTheme() {
-    this._themes.switchTheme();
+    this._svcTheme.switchTheme();
   }
 }

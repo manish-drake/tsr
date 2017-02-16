@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 import { HeaderService } from '../services/ui/header.service'
 import { PopoverService } from '../services/ui/popover.service'
 import { Menu } from '../core/hamburgerMenu/menu';
-import { ThemesService } from '../services/themes/themes.service';
+import { ThemeService } from '../services/themes/themes.service';
 import { MasterService } from '../services/test-set/master.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class MyApp implements OnInit {
     private popoverService: PopoverService,
     private _svcHeader: HeaderService,
     private _router: Router,
-    private _themes: ThemesService,
+    private _svcTheme: ThemeService,
     private _master: MasterService) {
     platform.ready().then(() => {
       StatusBar.styleDefault();
@@ -36,7 +36,7 @@ export class MyApp implements OnInit {
     });
 
     // subscribe to theme changes and set a default chosen theme
-    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+    this._svcTheme.getTheme().subscribe(val => this.chosenTheme = val);
   }
 
   isAndroid: boolean = true;
@@ -54,8 +54,9 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e) {
-    this._master.setTestInContext(undefined);
     this._router.navigate([e.route, e.name]);
+    this._master.setTestInContext(undefined);
+    this._master.routeName = e.name;
     this.evaluateShowSelection(e);
   }
 

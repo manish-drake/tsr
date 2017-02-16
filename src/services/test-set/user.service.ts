@@ -4,8 +4,8 @@ import { LocalStorage } from '../../services/storage/local-storage'
 
 @Injectable()
 export class UserService {
-    
-    private currentUser: BehaviorSubject<any>;
+
+    private currentUser: BehaviorSubject<any> = new BehaviorSubject(undefined);
 
     availableUsers: any[] = [];
 
@@ -21,8 +21,15 @@ export class UserService {
         );
 
         var savedCurrentUser = _localStorage.GetItem(this._localStorage.keyForCurrentUser());
-        if (savedCurrentUser != null || savedCurrentUser == undefined) this.currentUser = new BehaviorSubject(JSON.parse(savedCurrentUser));
-        else this.currentUser = new BehaviorSubject(this.defaultUser);
+        // if (savedCurrentUser != null || savedCurrentUser != undefined) {
+        //     alert("1: "+ savedCurrentUser)
+        //     this.currentUser = new BehaviorSubject(JSON.parse(savedCurrentUser));
+        //     alert(JSON.stringify(this.currentUser))
+        // }
+        // else {
+        //     alert("2: "+ savedCurrentUser)
+            this.currentUser = new BehaviorSubject(this.defaultUser);
+        // }
     }
 
     getAvailableUsers() {

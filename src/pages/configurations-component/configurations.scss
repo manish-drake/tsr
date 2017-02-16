@@ -1,3 +1,14 @@
 page-configurations {
-
+    .items {
+	display: flex;
+	flex-wrap: wrap;
+}
+.items .itemm {
+	flex: 0 0 50%;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 }

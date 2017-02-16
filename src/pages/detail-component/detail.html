@@ -1,55 +1,53 @@
-<ion-slides #Slides> <!--(ionSlideWillChange)="slideChanged()"-->
+<ion-slides #Slides>
+    <!--(ionSlideWillChange)="slideChanged()"-->
     <ion-slide style="align-items: stretch !important;" *ngFor="let test of tests; let i = index">
-
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
-<ion-grid style="height: 100%;">
-<ion-row style="height: auto;flex: 0 0 auto">
-<ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
-</ion-col>
-<ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
-<b style="font-size: 16px;"> {{test.name}} </b><br>
-<div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1"
-      [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
-      style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
-</ion-col>
-<ion-col no-padding style="width: auto;flex: 0 0 auto;">
-<button ion-button icon-only clear (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
-</ion-col>
-</ion-row>
+            <ion-grid style="height: 100%;">
+                <ion-row style="height: auto;flex: 0 0 auto">
+                    <ion-col no-padding style="width: auto;flex: 0 0 auto;">
+                        <button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
+                    </ion-col>
+                    <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+                        <b style="font-size: 16px;"> {{test.name}} </b><br>
+                        <div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1" [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
+                            style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
+                    </ion-col>
+                    <ion-col no-padding style="width: auto;flex: 0 0 auto;">
+                        <button ion-button icon-only clear (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
+                    </ion-col>
+                </ion-row>
 
-<ion-row style="height: 100%;">
-    <ion-scroll scrollY="true" style="width:100%; ">
-        
-        <ion-row center  style="position: absolute;height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
-            <ion-col text-center center>
-                <ion-label>No aircraft/vehicle selected</ion-label>
-            </ion-col>
-        </ion-row>
-        <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
-        <detail-default [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-default>
-        <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
-        <detail-waveform [test]="test" *ngIf="currentView == 'waveform'"></detail-waveform>
-    </ion-scroll>
-</ion-row>
+                <ion-row style="height: 100%;">
+                    <ion-scroll scrollY="true" style="width:100%; ">
+                        <ion-row center style="position: absolute;height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
+                            <ion-col text-center center>
+                                <ion-label>No aircraft/vehicle selected</ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <detail-vehicles [test]="test" (onVehicleSelected)="onVehicleSelect($event)" *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'"></detail-vehicles>
+                        <detail-default [test]="test" *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'"></detail-default>
+                        <detail-radar [test]="test" *ngIf="currentView == 'radar'"></detail-radar>
+                        <detail-waveform [test]="test" *ngIf="currentView == 'waveform'"></detail-waveform>
+                    </ion-scroll>
+                </ion-row>
 
-<ion-row style="height: auto; flex: 0 0 auto;">
-    <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-<button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< Previous</b> </button>
-</ion-col>
-<ion-col center text-center style="width: 100%;">
-<button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
+                <ion-row style="height: auto; flex: 0 0 auto;">
+                    <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
+                        <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< Previous</b> </button>
+                    </ion-col>
+                    <ion-col center text-center style="width: 100%;">
+                        <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
      <ion-icon name="play" *ngIf="!isRunnig" style="margin-left:5px;"></ion-icon>
 <ion-icon name="square" *ngIf="isRunnig"></ion-icon>
 </button>
-</ion-col>
-<ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-<button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> Next ></b></button>
-</ion-col>
-</ion-row>
+                    </ion-col>
+                    <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
+                        <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> Next ></b></button>
+                    </ion-col>
+                </ion-row>
 
-</ion-grid>
-</ion-card>
+            </ion-grid>
+        </ion-card>
 
     </ion-slide>
 </ion-slides>
