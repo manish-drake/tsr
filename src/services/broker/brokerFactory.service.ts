@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-// import { TestSection } from '../../core/tests/testSection'
-import { Test } from '../../core/tests/test'
-import { TestGroup } from '../../core/tests/testgroup'
+import { VehicleSection } from '../../core/tests/vehicleSection';
+import { Test } from '../../core/tests/test';
+import { TestGroup } from '../../core/tests/testgroup';
 import { Dictionary } from '../../common/dictionary';
 import { BehaviorSubject } from 'Rxjs';
 import { Factory } from '../../services/objects/factory.service';
@@ -12,7 +12,7 @@ export class BrokerFactoryService {
     /**
      *
      */
-    constructor(private objectService: Factory) { }
+    constructor(private _objectService: Factory) { }
 
     private testgroups = new BehaviorSubject<any[]>([]);
 
@@ -36,8 +36,21 @@ export class BrokerFactoryService {
     }
 
     generateTestGroups(headername) {
-        var testGroupsData = this.objectService.createTestGroupsData(headername);
+        var testGroupsData = this._objectService.createTestGroupsData(headername);
         this.setTestgroups(this.createTestGroups(testGroupsData));
+    }
+
+    createVehicleSection(summaryData: VehicleSection) {
+        var tests: any[] = [];
+        summaryData.Summaries.forEach(summary => {
+            var test = {
+                name: summary.Name,
+                parent: summaryData.Name,
+                rows: this.createParamsGrid(summary, summaryData.Styles)
+            }
+            tests.push(test)
+        })
+        return { name: summaryData.Name, tests: tests };
     }
 
     private testDetail = new BehaviorSubject<any[]>([]);
@@ -47,11 +60,19 @@ export class BrokerFactoryService {
     }
     setTestsDetail(e) {
         this.testDetail.next(e);
+
     }
 
     createTestsDetail(testData: Test) {
         var testDS: any[] = [];
         testData.Summaries.forEach(summary => {
+            // var testE = [];
+            // summary.Summaries.forEach(subSummary => {
+            //     console.log(JSON.stringify(subSummary));
+            //     var testE = this.createParamsGrid(subSummary, summary.Styles)
+            // }
+            // )
+            // console.log(JSON.stringify(testE));
             var testD = {
                 name: summary.Name,
                 parent: testData.Name,
@@ -62,12 +83,17 @@ export class BrokerFactoryService {
         return testDS;
     }
 
-    generateTestsDetail(testName){
-        var testsData = this.objectService.createTestsData(testName);
+    generateTestsDetail(testName) {
+        var testsData = this._objectService.createTestsData(testName);
         this.setTestsDetail(this.createTestsDetail(testsData));
     }
 
-
+    createFooterResultStatus(footerData: Test) {
+        var footerDS = {
+            rows: this.createParamsGrid(footerData, footerData.Styles)
+        }
+        return footerDS;
+    }
 
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {
         var maxRowIndex = 0, maxColIndex = 0;

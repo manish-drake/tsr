@@ -1,4 +1,4 @@
 <ion-toolbar style="height: 56px;">
-  <testsetinfo-comp *ngIf="!contextualResultStatus"></testsetinfo-comp>
-  <teststatus-comp *ngIf="contextualResultStatus" [data]="contextualResultStatus"></teststatus-comp>
+    <testsetinfo-comp *ngIf="!data"></testsetinfo-comp>
+    <teststatus-comp *ngIf="data" [data]="data"></teststatus-comp>
 </ion-toolbar>

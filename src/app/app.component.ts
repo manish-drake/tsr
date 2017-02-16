@@ -1,12 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-// import { SectionsPage } from '../pages/sections/sections';
-import { HomePage } from '../pages/home/home';
-
 import { Router } from '@angular/router'
-import { HeaderService } from '../services/ui/header.service'
+
+import { HomePage } from '../pages/home/home';
+import { HomeService } from '../services/ui/home.service'
 import { PopoverService } from '../services/ui/popover.service'
 import { Menu } from '../core/hamburgerMenu/menu';
 import { ThemeService } from '../services/themes/themes.service';
@@ -20,13 +18,14 @@ export class MyApp implements OnInit {
 
   chosenTheme: any;
   Title: string = "Title";
+  FooterStatus: string = "FooterStatus";
   rootPage = HomePage;
 
   public menu = new Menu();
 
   constructor(private platform: Platform,
     private popoverService: PopoverService,
-    private _svcHeader: HeaderService,
+    private _svcHome: HomeService,
     private _router: Router,
     private _svcTheme: ThemeService,
     private _master: MasterService) {
@@ -42,7 +41,7 @@ export class MyApp implements OnInit {
   isAndroid: boolean = true;
 
   ngOnInit() {
-    this._svcHeader.TitleUpdated.subscribe(e => {
+    this._svcHome.TitleUpdated.subscribe(e => {
       this.Title = e.title;
     });
 
@@ -54,6 +53,7 @@ export class MyApp implements OnInit {
   }
 
   onItemSelectionChanged(e) {
+    this._svcHome.footerData = undefined;
     this._router.navigate([e.route, e.name]);
     this._master.setTestInContext(undefined);
     this._master.routeName = e.name;

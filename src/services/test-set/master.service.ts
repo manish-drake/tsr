@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'Rxjs'
 import { Http } from '@angular/http';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { Factory } from '../../services/objects/factory.service';
 
 @Injectable()
 export class MasterService {
@@ -13,7 +14,8 @@ export class MasterService {
     constructor(
         private http: Http,
         private _localStorage: LocalStorage,
-        private broker: BrokerFactoryService,
+        private _svcBroker: BrokerFactoryService,
+        private _objectService: Factory
     ) { }
 
     private testInContext = new BehaviorSubject<any>(undefined);
@@ -22,15 +24,6 @@ export class MasterService {
     }
     setTestInContext(e) {
         this.testInContext.next(e);
-        if (e == undefined) this.setFooterResultStatus(undefined);
-    }
-
-    private footerResultStatus = new BehaviorSubject<any>(undefined);
-    getFooterResultStatus() {
-        return this.footerResultStatus.asObservable();
-    }
-    setFooterResultStatus(e) {
-        this.footerResultStatus.next(e);
     }
 
     onStartSwitch(e) {
@@ -57,7 +50,7 @@ export class MasterService {
             this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
         }
         if (this.routeName == 'Start') {
-            this.broker.generateTestGroups(this.routeName);
+            this._svcBroker.generateTestGroups(this.routeName);
         }
     }
 
@@ -73,7 +66,7 @@ export class MasterService {
             this._localStorage.SetItem(this._localStorage.keyForStartItems(), JSON.stringify(favColl));
 
             if (this.routeName == 'Start') {
-                this.broker.generateTestGroups(this.routeName);
+                this._svcBroker.generateTestGroups(this.routeName);
             }
         }
     }

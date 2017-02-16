@@ -3,8 +3,7 @@
     <ion-label>No test exists</ion-label>
   </ion-col>
 </ion-row>
-
-<div id="elem" class="items">
+<div class="items">
   <div class="itemm" *ngFor="let testgroup of testgroups; let i = index;">
     <ion-card (click)="onCardClick(testgroup)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 5px;"
       [class.selectedcard]="selectedTestGroup == testgroup">

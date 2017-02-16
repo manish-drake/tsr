@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { GuidePage } from '../../pages/guide/guide';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
-import { HeaderService } from '../../services/ui/header.service';
+import { HomeService } from '../../services/ui/home.service';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { MasterService } from '../../services/test-set/master.service';
 
@@ -22,7 +22,7 @@ export class TestGroupComp implements OnInit {
     private broker: BrokerFactoryService,
     private _renderer: Renderer,
     private _router: Router,
-    private _svcHeader: HeaderService,
+    private _svcHome: HomeService,
     private _localStorage: LocalStorage,
     private _master: MasterService) {
 
@@ -35,12 +35,13 @@ export class TestGroupComp implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
-      this._svcHeader.title = this.headerName;
+      this._master.routeName = this.headerName;
+      this._svcHome.title = this.headerName;
       this.broker.generateTestGroups(this.headerName);
       this.broker.getTestgroups().subscribe(val => {
         this.testgroups = val;
 
-        console.log(this.testgroups);
+        // console.log(this.testgroups);
         this.evaluateStartItems();
         if (this.testgroups.length != 0) {
           this.onCardClick(this.testgroups[0]);
@@ -48,7 +49,6 @@ export class TestGroupComp implements OnInit {
       });
     });
   }
-
   evaluateStartItems() {
     var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     if (startItems != null) {

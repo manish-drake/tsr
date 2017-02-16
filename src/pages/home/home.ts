@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { HeaderService } from '../../services/ui/header.service'
+import { HomeService } from '../../services/ui/home.service'
 
 @Component({
   selector: 'page-home',
@@ -9,19 +9,16 @@ import { HeaderService } from '../../services/ui/header.service'
 })
 export class HomePage implements OnInit {
 
+  constructor(public navCtrl: NavController, private _svcHome: HomeService) { }
+  
   Title: string;
-
-  constructor(public navCtrl: NavController, private _svcHeader: HeaderService) { }
+  footerData:any;
 
   ngOnInit() {
-    this._svcHeader.TitleUpdated.subscribe(e => {
-      this.Title = e.title;
+    this._svcHome.TitleUpdated.subscribe(e => {
+      this.Title = e;
       if (!this.Title) this.Title = "Test Set Remote";
     })
+    this._svcHome.FooterUpdated.subscribe(e => this.footerData = e)
   }
-
-  ionViewDidLoad() {
-    console.log('Hello HomePage Page');
-  }
-
 }

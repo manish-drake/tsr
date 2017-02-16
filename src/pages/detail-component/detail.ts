@@ -2,8 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { HeaderService } from '../../services/ui/header.service';
+import { HomeService } from '../../services/ui/home.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { Factory } from '../../services/objects/factory.service';
 import { MasterService } from '../../services/test-set/master.service';
 
 @Component({
@@ -18,27 +19,29 @@ export class TestDetailComp {
 
   constructor(
     private _router: Router,
-    private _svcHeader: HeaderService,
+    private _svcHome: HomeService,
     private route: ActivatedRoute,
-    private broker: BrokerFactoryService,
+    private _broker: BrokerFactoryService,
+    private _objectService: Factory,
     private _master: MasterService) { }
 
   public tests: any;
 
   headerName: any;
+  testName: any;
 
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.headerName = (data as any).headername;
-      var testName = (data as any).test;
-      this._svcHeader.title = testName;
+      this.testName = (data as any).test;
+      this._svcHome.title = this.headerName;
 
-      this.broker.generateTestsDetail(testName);
-      this.broker.getTestsDetail().subscribe(val => {
-        this.tests = val;
-        console.log(this.tests);
+      this._broker.generateTestsDetail(this.testName);
+      this._broker.getTestsDetail().subscribe(val => {
+        this.tests = val;       
       });
     });
+    this._svcHome.footerData = this.generateFooterResultStatus("before");
   }
 
   selectedVehicle: any;
@@ -73,7 +76,8 @@ export class TestDetailComp {
       case 'close': {
         this._router.navigate(['testgroup', this.headerName])
           .then(succ => console.log("Detail Closed: " + succ))
-          .catch(err => console.log("Error Closing Detail: " + err))
+          .catch(err => console.log("Error Closing Detail: " + err));
+        this._svcHome.footerData = undefined;
         break;
       }
       case 'next': {
@@ -98,57 +102,23 @@ export class TestDetailComp {
     }
   }
 
-  beforeRunningResultStatus =
-  `
-    Status: Stopped; 
-    Test Set: TS-001; 
-    User: D.Smith; 
-    Distance: 50 Ft; 
-    Connection: Bottom Antenna; 
-    Test Name: UAT Out; 
-    Present(if Any): None
-    `
-
-  runningResultStatus =
-  `
-     Status: Running;
-     Duration: 13s;
-     Connection: Bottom Antenna;
-     Distance: 50 Ft;
-     Test Name: UAT Out;
-     Message: State Vector;
-     Data: TBD;
-     Data: TBD;
-     Data: TBD
-    `
-  afterRunningResultStatus =
-  `
-    Status: Stopped,Pass,Fail;
-    Date: 3/15/2016;
-    Time: 9:15:30;
-    Test Set: TS-001;
-    User: D.Smith;
-    Distance: 50 Ft;
-    Data: TBD;
-    Test Name: UAT Out;
-    Connection: Bottom Antenna;
-    Test Name: UAT Out
-    `
-
-  isRunnig: boolean = false;
+  isRunning: boolean = false;
 
   onRun() {
-    this.isRunnig = !this.isRunnig;
-    this._master.setFooterResultStatus(this.runningResultStatus);
+    this.isRunning = !this.isRunning;
+    var run = this.generateFooterResultStatus("running");
+    this._svcHome.footerData = run;
     setTimeout(() => {
-      this.isRunnig = false;
-      this._master.setFooterResultStatus(this.afterRunningResultStatus);
-    }, 2000);
-    setTimeout(() => {
-      this._master.setFooterResultStatus(this.beforeRunningResultStatus);
-    }, 6000);
-
+      this.isRunning = false;
+      var stop = this.generateFooterResultStatus("after");
+      this._svcHome.footerData = stop;
+    }, 3000);
   }
 
+  generateFooterResultStatus(_case) {
+    var footerResultStatusData = this._objectService.createFooterResultStatusData(_case);
+    var footerResultStatus = this._broker.createFooterResultStatus(footerResultStatusData);
+    return footerResultStatus;
+  }
 }
 
