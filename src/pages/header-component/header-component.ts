@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-import { PopoverService } from '../../services/ui/popover.service'
-
+import { PopoverService } from '../../services/ui/popover.service';
 
 @Component({
   selector: 'header-component',

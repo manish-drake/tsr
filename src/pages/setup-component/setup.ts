@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { HeaderService } from '../../services/ui/header.service'
+import { HomeService } from '../../services/ui/home.service'
 import { SetupFactory } from '../../services/objects/setup-factory'
 import { SetupBrokerFactory } from '../../services/broker/setupbrokerfactory';
 
@@ -13,7 +13,7 @@ import { SetupBrokerFactory } from '../../services/broker/setupbrokerfactory';
 export class SetupComp {
 
   constructor(private route: ActivatedRoute,
-  private _svcHeader: HeaderService,
+  private _svcHome: HomeService,
   private setupFactory: SetupFactory,
   private setupBroker: SetupBrokerFactory) {}
 
@@ -25,7 +25,7 @@ export class SetupComp {
 
   ngOnInit() {
     this.route.params.subscribe(param => {
-      this._svcHeader.title = (param as any).name;
+      this._svcHome.title = (param as any).name;
       this.getData();
     })
   }

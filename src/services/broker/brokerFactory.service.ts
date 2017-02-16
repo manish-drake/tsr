@@ -12,7 +12,7 @@ export class BrokerFactoryService {
     /**
      *
      */
-    constructor(private objectService: Factory) { }
+    constructor(private _objectService: Factory) { }
 
     private testgroups = new BehaviorSubject<any[]>([]);
 
@@ -36,7 +36,7 @@ export class BrokerFactoryService {
     }
 
     generateTestGroups(headername) {
-        var testGroupsData = this.objectService.createTestGroupsData(headername);
+        var testGroupsData = this._objectService.createTestGroupsData(headername);
         this.setTestgroups(this.createTestGroups(testGroupsData));
     }
 
@@ -84,36 +84,15 @@ export class BrokerFactoryService {
     }
 
     generateTestsDetail(testName) {
-        var testsData = this.objectService.createTestsData(testName);
+        var testsData = this._objectService.createTestsData(testName);
         this.setTestsDetail(this.createTestsDetail(testsData));
     }
 
-    private footerResultStatus = new BehaviorSubject<any[]>([]);
-
-    getFooterResultStatus() {
-        return this.footerResultStatus.asObservable();
-    }
-    setFooterResultStatus(e) {
-        this.footerResultStatus.next(e);
-
-    }
     createFooterResultStatus(footerData: Test) {
-        var testDS: any[] = [];
-        footerData.Summaries.forEach(summary => {
-            var testD = {
-                name: summary.Name,
-                parent: footerData.Name,
-                rows: this.createParamsGrid(summary, footerData.Styles)
-            }
-            testDS.push(testD);
-        })
-        return testDS;
-    }
-
-    generateFooterResultStatus(_case){
-        var footerResultStatusData = this.objectService.createFooterResultStatusData(_case);
-        var footerResultStatus = this.createFooterResultStatus(footerResultStatusData);
-        this.setFooterResultStatus(footerResultStatus);
+        var footerDS = {
+            rows: this.createParamsGrid(footerData, footerData.Styles)
+        }
+        return footerDS;
     }
 
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {

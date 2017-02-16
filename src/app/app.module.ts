@@ -22,7 +22,7 @@ import { MasterService } from '../services/test-set/master.service';
 import { UserService } from '../services/test-set/user.service';
 import { LocalStorage } from '../services/storage/local-storage';
 import { router } from './app.router';
-import { HeaderService } from '../services/ui/header.service';
+import { HomeService } from '../services/ui/home.service';
 import { PopoverService } from '../services/ui/popover.service';
 import { ModalService } from '../services/ui/modal.service';
 import { ThemesService } from '../services/themes/themes.service';
@@ -76,7 +76,7 @@ import { SpyDirective } from '../common/mySpy.directive';
         Factory,
         MasterService,
         UserService,
-        HeaderService,
+        HomeService,
         PopoverService,
         ModalService,
         BrokerFactoryService,

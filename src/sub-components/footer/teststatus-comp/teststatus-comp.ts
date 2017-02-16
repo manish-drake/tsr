@@ -8,10 +8,5 @@ export class TeststatusComp {
 
   @Input() data: any;
 
-  constructor() { }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TeststatusComp');
-  }
-
+  constructor() {}
 }

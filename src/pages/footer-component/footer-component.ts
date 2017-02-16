@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { MasterService } from '../../services/test-set/master.service'
+import { Component, Input } from '@angular/core';
+import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { Factory } from '../../services/objects/factory.service';
 
 @Component({
   selector: 'footer-component',
   templateUrl: 'footer-component.html'
 })
 export class FooterComponent {
+  @Input() data: any;
 
-  contextualResultStatus: any;
+  constructor(private _broker: BrokerFactoryService, private _objectService: Factory) { }
 
-  constructor(private _master: MasterService) {
-    this._master.getFooterResultStatus().subscribe(val => this.contextualResultStatus = val);
-  }
 
 }
