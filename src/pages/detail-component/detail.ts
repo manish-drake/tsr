@@ -15,6 +15,7 @@ export class TestDetailComp {
 
   @ViewChild('Slides') slides: Slides;
 
+
   currentSegment: any = -1;
 
   constructor(
@@ -40,6 +41,10 @@ export class TestDetailComp {
       this.tests = this._svcBroker.createTestsDetail(testsData);
     });
     this._svcHome.footerData = this.generateFooterResultStatus("before");
+  }
+  
+  ngOnDestroy(){
+    this._svcHome.footerData = undefined;
   }
 
   selectedVehicle: any;
@@ -75,7 +80,6 @@ export class TestDetailComp {
         this._router.navigate(['testgroup', this.headerName])
           .then(succ => console.log("Detail Closed: " + succ))
           .catch(err => console.log("Error Closing Detail: " + err));
-        this._svcHome.footerData = undefined;
         break;
       }
       case 'next': {

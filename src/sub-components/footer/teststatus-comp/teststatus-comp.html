@@ -1,9 +1,8 @@
-
-    <div *ngFor="let row of data.rows" >
-      <div  *ngFor="let cell of row" style="display: inline" class="textTrim">
-        <label [class]="cell.keyStyle">{{ cell.key }}</label>
-        <label [class]="cell.valueStyle">{{ cell.value }}</label>
-        <label [class]="cell.unitStyle">{{ cell.unit }}</label>
-        <label>;&nbsp;</label>
-      </div>
-    </div>
+<div *ngFor="let row of data.rows">
+  <div *ngFor="let cell of row" style="display: inline;" class="textTrim">
+    <label [class]="cell.keyStyle">{{ cell.key }}</label>
+    <label [class]="cell.valueStyle">{{ cell.value }}</label>
+    <label [class]="cell.unitStyle">{{ cell.unit }}</label>
+    <label>;&nbsp;</label>
+  </div>
+</div>
