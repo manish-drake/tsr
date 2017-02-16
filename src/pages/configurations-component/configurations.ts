@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../../services/themes/themes.service'
 import { UserService } from '../../services/test-set/user.service'
-import { ConnectionService } from '../../services/test-set/connection.service'
-import { MasterService } from '../../services/test-set/master.service';
+import { ConnectionService } from '../../services/test-set/connection.service';
+import { TestContextService } from '../../services/tests/testcontext.service';
 
 @Component({
   selector: 'page-configurations',
@@ -28,7 +28,7 @@ export class ConfigurationsPopover {
     private _svcTheme: ThemeService,
     private _svcUser: UserService,
     private _svcConnection: ConnectionService,
-    private _svcMaster: MasterService
+    private _svcTestContext: TestContextService 
   ) {
     this._svcTheme.getTheme().subscribe(val => this.chosenTheme = val);
     this.availableUsers = this._svcUser.getAvailableUsers();
@@ -41,7 +41,7 @@ export class ConfigurationsPopover {
 
   ionViewWillEnter() {
     console.log('Hello ConfigurationsPopover');
-    var currMenu = this._svcMaster.routeName;
+    var currMenu = this._svcTestContext.currentMenu;
     if (currMenu == 'Start' || currMenu == "Transponder" || currMenu == "Mode S" || currMenu == "ADS-B") {
       this.sectionBAvailable = true;
     }

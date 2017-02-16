@@ -2,8 +2,8 @@ import { RouterModule } from '@angular/router';
 
 import { TestDetailComp } from '../pages/detail-component/detail';
 import { TestGroupComp } from '../pages/testgroup-component/testgroup';
-
 import { SetupComp } from '../pages/setup-component/setup';
+
 import { SetupUsersComp } from '../pages/setup-users-component/users-component';
 import { SetupDisplayComp } from '../pages/setup-display-component/display-component';
 import { SetupGPSComp } from '../pages/setup-gps-component/gps-component';
