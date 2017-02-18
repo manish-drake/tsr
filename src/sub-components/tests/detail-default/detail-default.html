@@ -1,9 +1,4 @@
 <table margin style="width:99%;">
-  <tr>
-    <td>
-      <b>Aircraft/Vehicle #__:</b>
-    </td>
-  </tr>
   <tr *ngFor="let row of test.rows">
     <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
       <label [class]="cell.keyStyle">{{ cell.key }}</label>
