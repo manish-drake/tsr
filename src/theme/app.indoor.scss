@@ -1,21 +1,34 @@
 .indoor-theme {
   ion-header{
     .toolbar-background { background-color: $light-primary; }
-    i{ color: $light-background; }
   }
   ion-footer{
     .toolbar-background { background-color: #eeeeee; }
   }
+  
   ion-toolbar{
-    button{ color: $light-background; }
+    button{ color: $white; }
   }
-  ion-content { background-color: #f4f4f4 }
+  
+  ion-content { background-color: $light-background }
+
   ion-col{
       img{ filter: brightness(10%); }
   }
-  .segement{ background-color: #f4f4f4;
-             color: $light-primary; }
-   .currentsegment{ background-color: $light-background;
-                    color: $light-primary; }
-   div { svg{ circle{ stroke: #000000; } } }
+
+  .background{ background-color: $light-background }
+
+  .selectedcard{ border: 1.5px solid color($colors, primary); }
+
+  .bullet-current{ background-color: color($colors, primary); }
+  .bullet-normal{ background-color: #cccccc; }
+
+   div { 
+     svg{ 
+       circle{ stroke: $light-foreground; } 
+       } 
+     }
+
+   .battery-fill1{ stop-color: rgb(0,0,0);stop-opacity: 1; }
+   .battery-fill2{ stop-color: rgba(0,0,0,0.2);stop-opacity: 1; }
 }

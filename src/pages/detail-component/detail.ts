@@ -15,9 +15,6 @@ export class TestDetailComp {
 
   @ViewChild('Slides') slides: Slides;
 
-
-  currentSegment: any = -1;
-
   constructor(
     private _router: Router,
     private _svcHome: HomeService,
