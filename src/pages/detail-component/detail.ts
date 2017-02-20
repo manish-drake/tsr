@@ -6,6 +6,8 @@ import { HomeService } from '../../services/ui/home.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { Factory } from '../../services/objects/factory.service';
 import { MasterService } from '../../services/test-set/master.service';
+import { TestContextService } from '../../services/tests/testcontext.service';
+import { UserService } from '../../services/test-set/user.service';
 
 @Component({
   selector: 'page-detail',
@@ -21,7 +23,9 @@ export class TestDetailComp {
     private route: ActivatedRoute,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
-    private _master: MasterService) { }
+    private _master: MasterService,
+    private _svcTextContext: TestContextService,
+    private _svcUser: UserService) { }
 
   public tests: any;
 
@@ -37,10 +41,10 @@ export class TestDetailComp {
       var testsData = this._objectService.createTestsData(this.testName);
       this.tests = this._svcBroker.createTestsDetail(testsData);
     });
-    this._svcHome.footerData = this.generateFooterResultStatus("before");
+    this.setFooterResultStatus("before");
   }
-  
-  ngOnDestroy(){
+
+  ngOnDestroy() {
     this._svcHome.footerData = undefined;
   }
 
@@ -105,17 +109,28 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
-    this._svcHome.footerData = this.generateFooterResultStatus("running");
+    this.setFooterResultStatus("running");
     setTimeout(() => {
       this.isRunning = false;
-      this._svcHome.footerData = this.generateFooterResultStatus("after");
+      this.setFooterResultStatus("after");
     }, 3000);
+
+    this.setTestSummaryResult();
   }
 
-  generateFooterResultStatus(_case) {
+  setFooterResultStatus(_case) {
     var footerResultStatusData = this._objectService.createFooterResultStatusData(_case);
     var footerResultStatus = this._svcBroker.createFooterResultStatus(footerResultStatusData);
-    return footerResultStatus;
+    this._svcHome.footerData = footerResultStatus;
+  }
+
+  setTestSummaryResult() {
+    var userName;
+    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
+    var dateTime = Date.now();
+    this._svcTextContext.getTestInContext().subscribe(val => {
+      val.summaryResult = dateTime + "3/15/17 12:18; 23455AA; " + userName + "; Bottom Antenna; 50Ft; PASS"
+    });
   }
 }
 
