@@ -1,7 +1,7 @@
 <div [class]="chosenTheme.className">
     <div class="background">
-        <div class="items">
-            <div class="itemm" text-center>
+        <div class="items-container">
+            <div class="item1" text-center>
                 <ion-label style="font-weight: 600;">OPERATOR</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
@@ -16,12 +16,12 @@
                     <ion-col no-padding></ion-col>
                 </ion-row>
             </div>
-            <div class="itemm" text-center (click)="onSwitchTheme()">
+            <div class="item1" text-center (click)="onSwitchTheme()">
                 <ion-label style="font-weight: 600;">THEME</ion-label>
                 <ion-icon style="font-size: 24px;" name='sunny'></ion-icon>
                 <ion-label>{{chosenTheme.themeName}}</ion-label>
             </div>
-            <div class="itemm" text-center>
+            <div class="item1" text-center>
                 <ion-label style="font-weight: 600;">REMOTE CONNECT</ion-label>
                 <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
                 <ion-row>
@@ -37,7 +37,7 @@
                     <ion-col no-padding></ion-col>
                 </ion-row>
             </div>
-            <div class="itemm" text-center *ngIf="sectionBAvailable">
+            <div class="item1" text-center *ngIf="sectionBAvailable">
                 <ion-label style="font-weight: 600;">TEST SET ICAO ADDRESS</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
@@ -51,18 +51,18 @@
                     <ion-col no-padding></ion-col>
                 </ion-row>
             </div>
-            <div class="itemm" text-center *ngIf="sectionBAvailable">
+            <div class="item1" text-center *ngIf="sectionBAvailable">
                 <ion-label style="font-weight: 600;">UUT DEVICE CLASS</ion-label>
                 <ion-label>CLASS A</ion-label>
             </div>
-            <div class="itemm" text-center *ngIf="sectionBAvailable">
+            <div class="item1" text-center *ngIf="sectionBAvailable">
                 <ion-label style="font-weight: 600;">UUT ANTENNA</ion-label>
                 <button ion-button clear icon-only no-margin color="dark">
                 <ion-icon name='arrow-round-up'></ion-icon>
             </button>
                 <ion-label>Top</ion-label>
             </div>
-            <div class="itemm" text-center *ngIf="sectionBAvailable">
+            <div class="item1" text-center *ngIf="sectionBAvailable">
                 <ion-label style="font-weight: 600;">TEST SET CONNECTION</ion-label>
                 <ion-icon style="font-size: 24px;" name="reorder"></ion-icon>
                 <ion-row>
@@ -77,7 +77,7 @@
                     <ion-col no-padding></ion-col>
                 </ion-row>
             </div>
-            <div class="itemm" text-center *ngIf="sectionBAvailable">
+            <div class="item1" text-center *ngIf="sectionBAvailable">
                 <ion-label style="font-weight: 600;">DISTANCE To UUT</ion-label>
                 <ion-label>{{distanceValue}} Ft</ion-label>
                 <ion-range style="height: 20px" min="10" max="250" [(ngModel)]="distanceValue"></ion-range>
