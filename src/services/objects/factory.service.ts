@@ -47,59 +47,6 @@ export class Factory {
         return group
     }
 
-    createSelectAvTarget() {
-        var favt = new Test();
-        favt.Name = "Filter A/V Target";
-
-        // var add = new TestParam();
-        // add.Key = "ADDRESS:";
-        // add.Value = "______ (_) / ________ (_)";
-        // var cAdd = new TestParamCell(add);
-        // cAdd.Row = 0;
-        // cAdd.Column = 0;
-        // cAdd.ColSpan = 4;
-        // cAdd.Styles.add("key", "label95");
-        // cAdd.Styles.add("value", "result128");
-
-        // favt.TestParamCells.push(cAdd);
-
-        // var ftid = new TestParam();
-        // ftid.Key = "Flight ID:";
-        // ftid.Value = "______";
-        // var cFtid = new TestParamCell(ftid);
-        // cFtid.Row = 1;
-        // cFtid.Column = 0;
-        // cFtid.Styles.add("key", "label95");
-        // cFtid.Styles.add("value", "result85");
-
-        // favt.TestParamCells.push(cFtid);
-
-        // var rfl = new TestParam();
-        // rfl.Key = "RF Level:";
-        // rfl.Value = "______";
-        // var cRfl11 = new TestParamCell(rfl);
-        // cRfl11.Row = 1;
-        // cRfl11.Column = 1;
-        // cRfl11.Styles.add("key", "label95");
-        // cRfl11.Styles.add("value", "result85");
-
-        // favt.TestParamCells.push(cRfl11);
-
-        // var bssr = new TestParam();
-        // bssr.Key = "BDS Rcvd (DF17):";
-        // bssr.Value = "_,_ _,_ _,_ _,_ _,_";
-        // var cBssr = new TestParamCell(bssr);
-        // cBssr.Row = 2;
-        // cBssr.Column = 0;
-        // cBssr.ColSpan = 4;
-        // cBssr.Styles.add("key", "label133");
-        // cBssr.Styles.add("value", "result128");
-
-        // favt.TestParamCells.push(cBssr);
-
-        return favt;
-    }
-
     createFooterResultStatusData(_case: any): Test {
         var newStatus: any;
         switch (_case) {
@@ -354,6 +301,62 @@ export class Factory {
         return newStatus;
     }
 
+    createSelectAvTarget() {
+        var favt = new Test();
+        favt.Name = "Filter A/V Target";
+        return favt;
+    }
+
+    CreateAircraftVehivleData(){
+        var add = new TestParam();
+        add.Key = "ADDRESS:";
+        add.Value = "______ (_) / ________ (_)";
+        var cAdd = new TestParamCell(add);
+        cAdd.Row = 0;
+        cAdd.Column = 0;
+        cAdd.ColSpan = 4;
+        cAdd.Styles.add("key", "label95");
+        cAdd.Styles.add("value", "result128");
+
+        // favt.TestParamCells.push(cAdd);
+
+        var ftid = new TestParam();
+        ftid.Key = "Flight ID:";
+        ftid.Value = "______";
+        var cFtid = new TestParamCell(ftid);
+        cFtid.Row = 1;
+        cFtid.Column = 0;
+        cFtid.Styles.add("key", "label95");
+        cFtid.Styles.add("value", "result85");
+
+        // favt.TestParamCells.push(cFtid);
+
+        var rfl = new TestParam();
+        rfl.Key = "RF Level:";
+        rfl.Value = "______";
+        var cRfl11 = new TestParamCell(rfl);
+        cRfl11.Row = 1;
+        cRfl11.Column = 1;
+        cRfl11.Styles.add("key", "label95");
+        cRfl11.Styles.add("value", "result85");
+
+        // favt.TestParamCells.push(cRfl11);
+
+        var bssr = new TestParam();
+        bssr.Key = "BDS Rcvd (DF17):";
+        bssr.Value = "_,_ _,_ _,_ _,_ _,_";
+        var cBssr = new TestParamCell(bssr);
+        cBssr.Row = 2;
+        cBssr.Column = 0;
+        cBssr.ColSpan = 4;
+        cBssr.Styles.add("key", "label133");
+        cBssr.Styles.add("value", "result128");
+
+        // favt.TestParamCells.push(cBssr);
+
+        return [cAdd, cFtid, cRfl11, cBssr];
+    }
+
     createTestsData(test: string): Test {
         var newTest: Test = new Test();
         switch (test) {
@@ -371,6 +374,10 @@ export class Factory {
                 var smry = new Test();
                 smry.Name = "SUMMARY";
                 smry.Styles.add("value", "result113Right");
+
+
+                // smry.TestParamCells.concat(this.CreateAircraftVehivleData());
+
 
                 var add = new TestParam();
                 add.Key = "ADDRESS:";
