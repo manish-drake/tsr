@@ -87,4 +87,5 @@
   <plugin name="cordova-plugin-file" spec="~4.3.1"/>
   <allow-navigation href="http://192.168.145.128:8100"/>
   <allow-navigation href="http://192.168.10.12:8000"/>
+  <allow-navigation href="http://192.168.10.5:8100"/>
 </widget>
