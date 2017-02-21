@@ -30,11 +30,13 @@ export class MyApp implements OnInit {
 
   public menu = new Menu();
   theme: any;
-  isAndroid: boolean = false;
+  isAndroid: boolean = true;
 
   ngOnInit() {
     this._svcTheme.getTheme().subscribe(val => this.theme = val);
-    if (this.platform.is('android')) { this.isAndroid = true }
+    if (this.platform.is('cordova')) {
+      if (!this.platform.is('android')) { this.isAndroid = false }
+    }
   }
 
   onMenuChanged(e) {

@@ -11,13 +11,13 @@ export class HomePage implements OnInit {
 
   constructor(public navCtrl: NavController, private _svcHome: HomeService) { }
   
-  Title: string;
+  title: string;
   footerData:any;
 
   ngOnInit() {
     this._svcHome.TitleUpdated.subscribe(e => {
-      this.Title = e;
-      if (!this.Title) this.Title = "Test Set Remote";
+      this.title = e;
+      if (!e) this.title = "Test Set Remote";
     })
     this._svcHome.FooterUpdated.subscribe(e => this.footerData = e)
   }

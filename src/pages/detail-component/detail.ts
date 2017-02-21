@@ -15,16 +15,14 @@ export class TestDetailComp {
 
   @ViewChild('Slides') slides: Slides;
 
-
-  currentSegment: any = -1;
-
   constructor(
     private _router: Router,
     private _svcHome: HomeService,
     private route: ActivatedRoute,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
-    private _master: MasterService) { }
+    private _master: MasterService
+    ) { }
 
   public tests: any;
 
@@ -40,10 +38,10 @@ export class TestDetailComp {
       var testsData = this._objectService.createTestsData(this.testName);
       this.tests = this._svcBroker.createTestsDetail(testsData);
     });
-    this._svcHome.footerData = this.generateFooterResultStatus("before");
+    this.setFooterResultStatus("before");
   }
-  
-  ngOnDestroy(){
+
+  ngOnDestroy() {
     this._svcHome.footerData = undefined;
   }
 
@@ -108,17 +106,18 @@ export class TestDetailComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
-    this._svcHome.footerData = this.generateFooterResultStatus("running");
+    this.setFooterResultStatus("running");
     setTimeout(() => {
       this.isRunning = false;
-      this._svcHome.footerData = this.generateFooterResultStatus("after");
+      this.setFooterResultStatus("after");
     }, 3000);
   }
 
-  generateFooterResultStatus(_case) {
+  setFooterResultStatus(_case) {
     var footerResultStatusData = this._objectService.createFooterResultStatusData(_case);
     var footerResultStatus = this._svcBroker.createFooterResultStatus(footerResultStatusData);
-    return footerResultStatus;
+    this._svcHome.footerData = footerResultStatus;
   }
+
 }
 

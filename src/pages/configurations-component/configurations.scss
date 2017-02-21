@@ -1,9 +1,9 @@
 page-configurations {
-    .items {
+    .items-container {
 	display: flex;
 	flex-wrap: wrap;
 }
-.items .itemm {
+.items-container .item1 {
 	flex: 1 0 50%;
   box-sizing: border-box;
   padding: 5px;

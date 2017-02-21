@@ -6,6 +6,11 @@
   ion-footer{
     .toolbar-background{ background-color: lighten($dark-primary,10%); }
   }
+
+  ion-toolbar{
+    button{ color: $white;}
+  }
+  
   ion-content{ background-color: $dark-background; }  
   ion-list{
     .item{ background-color: $dark-primary; }
@@ -24,9 +29,6 @@
     
   ion-item-group{ color: $dark-foreground; }
 
-  ion-toolbar{
-    button{ color: $dark-foreground;}
-  }
 
  ion-card{
     background-color: darken($dark-primary, 1.5%);color: $dark-foreground;
@@ -37,34 +39,24 @@
       }
     }
   }
- ion-row{ 
-   background-color: $dark-primary;
-      ion-col{
-        ion-label{ color:$dark-foreground; }  
-        }    
-    }
-  .segement{ background-color: $dark-primary; }
-  .currentsegment{ background-color: $dark-background;}
+
+  .background{ background-color: $dark-background; }
   .selectedcard{ border: 1.5px solid $dark-foreground;}
+  
   .bullet-current{ background-color:$dark-foreground; }
   .bullet-normal{ background-color:lighten($dark-background, 1.5%)}
 
   div{
     color: $dark-foreground;
     svg{
-      circle{
-        stroke: $dark-foreground;
-      }
-      polygon{
-        fill: $dark-foreground;   
-        color: $dark-foreground;
-      }
-      text{
-        fill: $dark-foreground;
-      }
+      circle{ stroke: $dark-foreground; }
+      polygon{ fill: $dark-foreground; color: $dark-foreground; }
+      text{ fill: $dark-foreground; }
+      text{ fill: $dark-foreground; }
     }    
   }
-  .selectedvehicle{
-    border: 1px solid #fff;
-}
+  .selectedvehicle{ border: 1px solid #fff; }
+
+.battery-fill1{ stop-color: rgb(255,255,255);stop-opacity: 1; }
+.battery-fill2{ stop-color: rgba(255,255,255,0.2);stop-opacity: 1; }
 }

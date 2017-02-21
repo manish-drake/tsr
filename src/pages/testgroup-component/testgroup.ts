@@ -108,7 +108,7 @@ export class TestGroupComp implements OnInit {
       this.contentForMore();
     }, 200);
     this.gContent.addEventListener('DOMSubtreeModified', () => { this.contentForMore(); })
-    alert(this.gContent.scrollHeight + '--ng-----' + this.content.contentHeight + '----' + this.isScrollAvailable);
+    console.log(this.gContent.scrollHeight + '--ng-----' + this.content.contentHeight + '----' + this.isScrollAvailable);
 
   }
 
