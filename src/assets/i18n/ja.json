@@ -1,5 +1,16 @@
 {
     "Direct": "直接",
     "Battery": "電池",
-    "WiFi": "WiFi"
+    "WiFi": "WiFi",
+
+    "Start": "開始",
+    "Transponder": "トランスポンダ",
+    "Mode S": "モードS",
+    "ADS-B": "ADS-B",
+    "NAV": "NAV",
+    "Comm": "Comm",
+    "Antenna": "アンテナ",
+    "Reports": "レポート",
+    "Setup": "セットアップ",
+    "Search": "サーチ"
 }

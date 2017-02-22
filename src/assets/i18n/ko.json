@@ -1,5 +1,16 @@
 {
     "Direct": "곧장",
     "Battery": "배터리",
-    "WiFi": "와이파이"
+    "WiFi": "와이파이",
+
+    "Start": "스타트",
+    "Transponder": "트랜스 폰더",
+    "Mode S": "방법 S",
+    "ADS-B": "ADS-B",
+    "NAV": "NAV",
+    "Comm": "Comm",
+    "Antenna": "안테나",
+    "Reports": "보고서",
+    "Setup": "설정",
+    "Search": "수색"
 }
