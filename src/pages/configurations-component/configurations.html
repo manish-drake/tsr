@@ -22,6 +22,21 @@
                 <ion-label>{{chosenTheme.themeName}}</ion-label>
             </div>
             <div class="item1" text-center>
+                <ion-label style="font-weight: 600;">Language</ion-label>
+                <ion-row>
+                    <ion-col no-padding></ion-col>
+                    <ion-col no-padding>
+                        <ion-item no-lines no-margin no-padding style="background: transparent;">
+                            <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="languageSelectOptions" [(ngModel)]="currentLanguage"
+                                (ionChange)="onLanguageChanged($event)">
+                                <ion-option *ngFor="let language of availableLanguages" [value]="language">{{language.title}}</ion-option>
+                                </ion-select>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col no-padding></ion-col>
+                </ion-row>
+            </div>
+            <div class="item1" text-center>
                 <ion-label style="font-weight: 600;">REMOTE CONNECT</ion-label>
                 <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
                 <ion-row>
