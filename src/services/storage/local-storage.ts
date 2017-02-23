@@ -19,6 +19,10 @@ export class LocalStorage {
         return "tsrstartitems";
     }
 
+    keyForDisabledGuides(){
+        return "tsrdisabledguides";
+    }
+
     keyForcurrentLanguage(){
         return "tsrcurrentlanguage";
     }

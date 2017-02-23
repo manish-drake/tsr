@@ -30,8 +30,8 @@
     <ion-label [style.opacity]="testInContext.isStartItem ? '1.0' : '0.5' ">{{'START' | translate}}</ion-label>
   </ion-item>
   <ion-item no-lines *ngIf="testInContext && testInContext.isGuideAvailable" (click)="onGuideSwitch(testInContext)">
-    <ion-icon name='information-circle' item-left [style.opacity]="testInContext.isGuideDisabled ? '1.0' : '0.5' "></ion-icon>
-    <ion-label [style.opacity]="testInContext.isGuideDisabled ? '1.0' : '0.5' ">{{'GUIDE' | translate}}</ion-label>
+    <ion-icon name='information-circle' item-left [style.opacity]="!testInContext.isGuideDisabled ? '1.0' : '0.5' "></ion-icon>
+    <ion-label [style.opacity]="!testInContext.isGuideDisabled ? '1.0' : '0.5' ">{{'GUIDE' | translate}}</ion-label>
   </ion-item>
   <ion-item no-lines>
     <p item-right>{{'Version' | translate}} {{versionNumber}}</p>

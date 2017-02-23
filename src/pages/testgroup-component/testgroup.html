@@ -9,7 +9,7 @@
         [class.selectedcard]="selectedTestGroup == testgroup">
         <ion-row>
           <ion-col no-padding center style="width:100%;">
-            <button *ngIf="testgroup.isGuideAvailable" ion-button clear icon-only no-margin (click)="openGuide(testgroup.name)">
+            <button *ngIf="testgroup.isGuideAvailable && !testgroup.isGuideDisabled" ion-button clear icon-only no-margin (click)="openGuide(testgroup.name)">
            <ion-icon name="information-circle"></ion-icon>
            </button>
             <button *ngIf="testgroup.isStartItem" ion-button clear icon-only no-margin disabled color="dark">

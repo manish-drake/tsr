@@ -101,12 +101,6 @@ export class MoreActionsPopover {
     }
   }
 
-  onGuideSwitch(e) {
-    alert(JSON.stringify(e))
-  }
-
-
-
   addToStart(name) {
     var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     var favColl = [];
@@ -138,6 +132,44 @@ export class MoreActionsPopover {
       if (this._svcTestContext.currentMenu == 'Start') {
         this._svcTestGroups.generateTestGroups(this._svcTestContext.currentMenu);
       }
+    }
+  }
+
+  onGuideSwitch(e) {
+    if (e.isGuideDisabled == false || e.isGuideDisabled == undefined) {
+      e.isGuideDisabled = true;
+      this.addToGuideDisabled(e.name);
+    }
+    else {
+      e.isGuideDisabled = false;
+      this.removefromGuideDisabled(e.name);
+    }
+  }
+
+  addToGuideDisabled(name) {
+    var disabledGuides = this._localStorage.GetItem(this._localStorage.keyForDisabledGuides());
+    var itemsColl = [];
+    if (disabledGuides == null) {
+      itemsColl.push(name);
+      this._localStorage.SetItem(this._localStorage.keyForDisabledGuides(), JSON.stringify(itemsColl))
+    }
+    else {
+      itemsColl = JSON.parse(disabledGuides)
+      itemsColl.push(name);
+      this._localStorage.SetItem(this._localStorage.keyForDisabledGuides(), JSON.stringify(itemsColl));
+    }
+  }
+
+  removefromGuideDisabled(testgroupname) {
+    var disabledGuides = this._localStorage.GetItem(this._localStorage.keyForDisabledGuides());
+    if (disabledGuides != null) {
+      var itemsColl = JSON.parse(disabledGuides);
+      itemsColl.forEach((element, index) => {
+        if (testgroupname == element) {
+          itemsColl.splice(index, 1);
+        }
+      });
+      this._localStorage.SetItem(this._localStorage.keyForDisabledGuides(), JSON.stringify(itemsColl));
     }
   }
 

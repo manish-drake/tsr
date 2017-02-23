@@ -47,6 +47,7 @@ export class TestGroupComp implements OnInit {
       this._svcTestGroups.getTestgroups().subscribe(val => {
         this.testgroups = val;
         this.evaluateStartItems();
+        this.evaluateIfGuideDisabled();
         if (this.testgroups.length != 0) {
           this.onCardClick(this.testgroups[0]);
         }
@@ -62,6 +63,20 @@ export class TestGroupComp implements OnInit {
         favColl.forEach(element => {
           if (element == testgroup.name) {
             testgroup.isStartItem = true;
+          }
+        });
+      });
+    }
+  }
+
+  evaluateIfGuideDisabled() {
+    var disabledGuides = this._localStorage.GetItem(this._localStorage.keyForDisabledGuides());
+    if (disabledGuides != null) {
+      var itemsColl = JSON.parse(disabledGuides);
+      this.testgroups.forEach(testgroup => {
+        itemsColl.forEach(element => {
+          if (element == testgroup.name) {
+            testgroup.isGuideDisabled = true;
           }
         });
       });
@@ -106,7 +121,6 @@ export class TestGroupComp implements OnInit {
 
   contentForMore() {
     this.content.resize();
-    console.log(this.content.contentHeight);
     if (this.gContent.scrollHeight > this.content.contentHeight) {
       var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
       if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
