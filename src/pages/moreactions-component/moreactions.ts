@@ -101,9 +101,8 @@ export class MoreActionsPopover {
     }
   }
 
-  guide() {
-    MoreActionsPopover.isGuide = !MoreActionsPopover.isGuide;
-    return MoreActionsPopover.isGuide;
+  onGuideSwitch(e) {
+    alert(JSON.stringify(e))
   }
 
 

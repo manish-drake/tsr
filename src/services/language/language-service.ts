@@ -8,15 +8,15 @@ export class LanguageService {
 
     availableLanguages: any[] = [
         { title: "English", code: "en" },
-        { title: "Spanish", code: "es" },
-        { title: "German", code: "de" },
-        { title: "French", code: "fr" },
-        { title: "Russian", code: "ru" },
-        { title: "Chinese", code: "zh" },
-        { title: "Japanese", code: "ja" },
-        { title: "Korean", code: "ko" },
-        { title: "Portuguese", code: "pt" },
-        { title: "Arabic", code: "ar" }
+        { title: "Spanish (Español)", code: "es" },
+        { title: "German (Deutsche)", code: "de" },
+        { title: "French (français)", code: "fr" },
+        { title: "Russian (русский)", code: "ru" },
+        { title: "Chinese (中文)", code: "zh" },
+        { title: "Japanese (日本語)", code: "ja" },
+        { title: "Korean (한국어)", code: "ko" },
+        { title: "Portuguese (Português)", code: "pt" },
+        { title: "Arabic (عربى)", code: "ar" }
     ]
 
     private currrentLanguage: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
