@@ -15,7 +15,7 @@
           <button ion-button clear icon-only no-margin><ion-icon name="sync"></ion-icon></button>
         </ion-col>
         <ion-col no-padding center style="width:auto;flex:0 0 auto;color:#555555;">
-          <ion-icon style="font-size: 22px;" name="star"></ion-icon>
+          <ion-icon *ngIf="testgroup.isStartItem" style="font-size: 22px;" name="star"></ion-icon>
           <ion-icon margin-horizontal name="albums"> {{testgroup.count}}</ion-icon>
         </ion-col>
       </ion-row>

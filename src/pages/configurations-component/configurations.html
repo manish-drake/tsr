@@ -5,9 +5,9 @@
                 <ion-label style="font-weight: 600;">{{'OPERATOR' | translate}}</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
+                            <ion-select style="max-width: 100%;" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
                                 (ionChange)="onUserChanged($event)">
                                 <ion-option *ngFor="let user of availableUsers" [value]="user">{{user.name}}</ion-option>
                                 </ion-select>
