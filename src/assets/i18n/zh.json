@@ -1,0 +1,16 @@
+{
+    "Direct": "直接",
+    "Battery": "电池",
+    "WiFi": "无线上网",
+
+    "Start": "开始",
+    "Transponder": "应答器",
+    "Mode S": "模式 S",
+    "ADS-B": "ADS-B",
+    "NAV": "NAV",
+    "Comm": "Comm",
+    "Antenna": "天线",
+    "Reports": "报告",
+    "Setup": "建立",
+    "Search": "搜索"
+}

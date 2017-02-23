@@ -1,0 +1,16 @@
+{
+    "Direct": "Direto",
+    "Battery": "Bateria",
+    "WiFi": "WiFi",
+
+    "Start": "Começar",
+    "Transponder": "Transponder",
+    "Mode S": "Modo S",
+    "ADS-B": "ADS-B",
+    "NAV": "NAV",
+    "Comm": "Comm",
+    "Antenna": "Antena",
+    "Reports": "Relatórios",
+    "Setup": "Configuração",
+    "Search": "Pesquisa"
+}

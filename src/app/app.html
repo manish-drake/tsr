@@ -2,7 +2,7 @@
         <ion-content padding-vertical>
                 <ion-item menuToggle no-lines *ngFor="let header of menu.headers" style="background: transparent;" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' "
                         (click)="onMenuChanged(header)">
-                        <b>{{ header.name }}</b>
+                        <b>{{ header.name | translate}}</b>
                         </ion-item>
         </ion-content>
 </ion-menu>

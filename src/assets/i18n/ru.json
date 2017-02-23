@@ -1,0 +1,16 @@
+{
+    "Direct": "непосредственный",
+    "Battery": "аккумулятор",
+    "WiFi": "Вай-фай",
+
+    "Start": "Начало",
+    "Transponder": "транспондер",
+    "Mode S": " Режим S",
+    "ADS-B": "ADS-B",
+    "NAV": "NAV",
+    "Comm": "Comm",
+    "Antenna": "Антенна",
+    "Reports": "Отчеты",
+    "Setup": "Настроить",
+    "Search": "Поиск"
+}

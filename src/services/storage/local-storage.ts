@@ -19,4 +19,8 @@ export class LocalStorage {
         return "tsrstartitems";
     }
 
+    keyForcurrentLanguage(){
+        return "tsrcurrentlanguage";
+    }
+
 }

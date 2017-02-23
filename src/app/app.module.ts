@@ -1,5 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { Http } from '@angular/http'
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
@@ -30,6 +33,8 @@ import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp
 import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/testsetinfo-comp';
 import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
 
+import { SpyDirective } from '../common/mySpy.directive';
+import { FileFactory } from '../services/io/file-factory';
 import { FileIOService } from '../services/io/file-io.service';
 import { Factory } from '../services/objects/factory.service';
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
@@ -44,9 +49,8 @@ import { HomeService } from '../services/ui/home.service';
 import { PopoverService } from '../services/ui/popover.service';
 import { ModalService } from '../services/ui/modal.service';
 import { ThemeService } from '../services/themes/themes.service';
-import { FileFactory } from '../services/io/file-factory';
+import { LanguageService } from '../services/language/language-service';
 
-import { SpyDirective } from '../common/mySpy.directive';
 
 @NgModule({
     declarations: [
@@ -77,7 +81,12 @@ import { SpyDirective } from '../common/mySpy.directive';
     ],
     imports: [
         router,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+            deps: [Http]
+        })
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -104,7 +113,12 @@ import { SpyDirective } from '../common/mySpy.directive';
         TestContextService,
         ThemeService,
         FileFactory,
-        LocalStorage
+        LocalStorage,
+        LanguageService
     ]
 })
 export class AppModule { }
+
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
+}
