@@ -1,4 +1,4 @@
-<div class="items">
+<div class="items" #groupContent (window:resize)="onResize($event)">
   <div class="itemm">
     <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-users')">
       <ion-grid style="height: 100%;">
@@ -149,3 +149,4 @@
     </ion-card>
   </div>
 </div>
+<b *ngIf="isScrollAvailable" style="position: fixed;bottom: 60px;right: 10px;">More..</b>

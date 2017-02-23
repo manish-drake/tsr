@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/core';
 import { ModalController, Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,12 +9,18 @@ import { LocalStorage } from '../../services/storage/local-storage';
 import { TestGroupsService } from '../../services/tests/testgroups.service';
 import { TestContextService } from '../../services/tests/testcontext.service';
 
+
 @Component({
   selector: 'testgroup',
   templateUrl: 'testgroup.html'
 })
 
 export class TestGroupComp implements OnInit {
+
+  @ViewChild('groupContent') groupContent: ElementRef;
+
+  gContent: HTMLDivElement;
+
   private: any;
   constructor(
     private content: Content,
@@ -26,23 +32,20 @@ export class TestGroupComp implements OnInit {
     private _svcHome: HomeService,
     private _localStorage: LocalStorage,
     private _svcTestGroups: TestGroupsService,
-    private _svcTextContext: TestContextService) {
-
-  }
+    private _svcTextContext: TestContextService) { }
 
   testgroups: any[] = [];
-
   headerName: any;
+  isScrollAvailable: boolean = false;
 
   ngOnInit() {
+    this.gContent = this.groupContent.nativeElement;   
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
       this._svcHome.title = this.headerName;
       this._svcTestGroups.generateTestGroups(this.headerName);
       this._svcTestGroups.getTestgroups().subscribe(val => {
         this.testgroups = val;
-
-        // console.log(this.testgroups);
         this.evaluateStartItems();
         if (this.testgroups.length != 0) {
           this.onCardClick(this.testgroups[0]);
@@ -50,7 +53,7 @@ export class TestGroupComp implements OnInit {
       });
     });
   }
-  
+
   evaluateStartItems() {
     var startItems = this._localStorage.GetItem(this._localStorage.keyForStartItems());
     if (startItems != null) {
@@ -88,6 +91,33 @@ export class TestGroupComp implements OnInit {
   openGuide(e) {
     var modal = this.modalCtrl.create(GuidePage, { param: e });
     modal.present();
+  }
+
+  // Code to show more
+  onResize(event) {
+    this.contentForMore();
+  }
+ 
+  ngAfterViewChecked() {
+    setTimeout(() => {
+      this.contentForMore();
+    }, 150);
+  }
+
+  contentForMore() {
+    this.content.resize();
+    console.log(this.content.contentHeight);
+    if (this.gContent.scrollHeight > this.content.contentHeight) {
+      var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
+      if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
+        this.isScrollAvailable = false;
+      } else {
+        this.isScrollAvailable = true;
+      }
+    }
+    else if (this.gContent.scrollHeight <= this.content.contentHeight) {
+      this.isScrollAvailable = false;
+    }
   }
 
 }
