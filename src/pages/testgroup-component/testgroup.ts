@@ -32,16 +32,14 @@ export class TestGroupComp implements OnInit {
     private _svcHome: HomeService,
     private _localStorage: LocalStorage,
     private _svcTestGroups: TestGroupsService,
-    private _svcTextContext: TestContextService) {
-
-  }
+    private _svcTextContext: TestContextService) { }
 
   testgroups: any[] = [];
   headerName: any;
   isScrollAvailable: boolean = false;
 
   ngOnInit() {
-    this.gContent = this.groupContent.nativeElement;
+    this.gContent = this.groupContent.nativeElement;   
     this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
       this._svcHome.title = this.headerName;
@@ -97,24 +95,25 @@ export class TestGroupComp implements OnInit {
 
   // Code to show more
   onResize(event) {
-     setTimeout(() => {
     this.contentForMore();
-      }, 300);
-    alert(this.gContent.scrollHeight + '--resize-----' + this.content.contentHeight + '----' + this.isScrollAvailable);
   }
-
-  ngAfterViewInit() {
+ 
+  ngAfterViewChecked() {
     setTimeout(() => {
       this.contentForMore();
-    }, 200);
-    this.gContent.addEventListener('DOMSubtreeModified', () => { this.contentForMore(); })
-    console.log(this.gContent.scrollHeight + '--ng-----' + this.content.contentHeight + '----' + this.isScrollAvailable);
-
+    }, 150);
   }
 
   contentForMore() {
+    this.content.resize();
+    console.log(this.content.contentHeight);
     if (this.gContent.scrollHeight > this.content.contentHeight) {
-      this.isScrollAvailable = true;
+      var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
+      if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
+        this.isScrollAvailable = false;
+      } else {
+        this.isScrollAvailable = true;
+      }
     }
     else if (this.gContent.scrollHeight <= this.content.contentHeight) {
       this.isScrollAvailable = false;
