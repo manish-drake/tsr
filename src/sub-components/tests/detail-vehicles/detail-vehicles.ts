@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { MasterService } from '../../../services/test-set/master.service'
+import { MasterService } from '../../../services/test-set/master.service';
+import { BrokerFactoryService } from '../../../services/broker/brokerFactory.service';
+import { Factory } from '../../../services/objects/factory.service';
 
 
 @Component({
@@ -9,10 +11,12 @@ import { MasterService } from '../../../services/test-set/master.service'
 })
 export class DetailVehiclesComp {
   @Input() test: any;
+  @Input() vehicle: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
 
-  constructor(private masterService: MasterService) { }
+  constructor(private masterService: MasterService, private _svcBroker: BrokerFactoryService,
+    private _objectService: Factory) { }
 
   vehicles = [];
 
@@ -31,6 +35,11 @@ export class DetailVehiclesComp {
       this.selectedVehicle = e;
       this.onVehicleSelected.emit(e);
     }
+  }
+
+  setVehicleResultStatus(_case) {
+    var vehicleResultStatusData = this._objectService.createFooterResultStatusData(_case);
+    var vehicleResultStatus = this._svcBroker.createFooterResultStatus(vehicleResultStatusData);
   }
 
 }

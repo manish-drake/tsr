@@ -3,7 +3,7 @@
     <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)" 
     [class.selectedvehicle]="vehicle == selectedVehicle" class="background">
         <ion-row>
-            <table text-nowrap style="width:100%;margin:10px">
+            <!--<table text-nowrap style="width:100%;margin:10px">
                 <tr>
                     <td class="sectionHeading" colspan="5">Aircraft/Vehicle #{{i+1}}: </td>
                 </tr>
@@ -21,8 +21,8 @@
                     <td class="sectionLabel1">BDS rcvd (DF17): </td>
                     <td colspan="3" class="sectionResult1"> </td>
                 </tr>
-            </table>
-            <!--<table margin style="width:99%;">
+            </table>-->
+            <table margin text-nowrap style="width:100%;margin:10px">
   <tr *ngFor="let row of vehicle.rows">
     <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
         <label [class]="cell.keyStyle">{{ cell.key }}</label>
@@ -30,7 +30,7 @@
         <label [class]="cell.unitStyle">{{ cell.unit }}</label>
     </td>
   </tr>
-</table>-->
+</table>
         </ion-row>
         </ion-card>
 </div>

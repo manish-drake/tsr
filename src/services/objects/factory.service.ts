@@ -307,7 +307,9 @@ export class Factory {
         return favt;
     }
 
-    CreateAircraftVehivleData(){
+    CreateAircraftVehivleData() {
+        var favt1= new Test();
+
         var add = new TestParam();
         add.Key = "ADDRESS:";
         add.Value = "______ (_) / ________ (_)";
@@ -318,7 +320,7 @@ export class Factory {
         cAdd.Styles.add("key", "label95");
         cAdd.Styles.add("value", "result128");
 
-        // favt.TestParamCells.push(cAdd);
+        favt1.TestParamCells.push(cAdd);
 
         var ftid = new TestParam();
         ftid.Key = "Flight ID:";
@@ -329,7 +331,7 @@ export class Factory {
         cFtid.Styles.add("key", "label95");
         cFtid.Styles.add("value", "result85");
 
-        // favt.TestParamCells.push(cFtid);
+        favt1.TestParamCells.push(cFtid);
 
         var rfl = new TestParam();
         rfl.Key = "RF Level:";
@@ -340,7 +342,7 @@ export class Factory {
         cRfl11.Styles.add("key", "label95");
         cRfl11.Styles.add("value", "result85");
 
-        // favt.TestParamCells.push(cRfl11);
+        favt1.TestParamCells.push(cRfl11);
 
         var bssr = new TestParam();
         bssr.Key = "BDS Rcvd (DF17):";
@@ -352,9 +354,9 @@ export class Factory {
         cBssr.Styles.add("key", "label133");
         cBssr.Styles.add("value", "result128");
 
-        // favt.TestParamCells.push(cBssr);
+        favt1.TestParamCells.push(cBssr);
 
-        return [cAdd, cFtid, cRfl11, cBssr];
+        return favt1;
     }
 
     createTestsData(test: string): Test {
@@ -377,8 +379,7 @@ export class Factory {
 
 
                 // smry.TestParamCells.concat(this.CreateAircraftVehivleData());
-
-
+                
                 var add = new TestParam();
                 add.Key = "ADDRESS:";
                 add.Value = "______ (_) / ________ (_)";
