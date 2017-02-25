@@ -39,6 +39,9 @@
     "Top": "Top",
     "TEST SET CONNECTION": "TEST SET CONNECTION",
     "DISTANCE To UUT": "DISTANCE To UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "RECENT TEST RESULTS"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "RECENT TEST RESULTS",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "PREVIOUS",
+    "NEXT": "NEXT"
 }

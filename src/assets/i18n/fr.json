@@ -39,6 +39,9 @@
     "Top": "Haut",
     "TEST SET CONNECTION": "TEST SET CONNEXION",
     "DISTANCE To UUT": "DISTANCE Vers UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "RÉSULTATS D'ESSAIS RÉCENTS"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "RÉSULTATS D'ESSAIS RÉCENTS",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "PRÉCÉDENT",
+    "NEXT": "PROCHAIN"
 }

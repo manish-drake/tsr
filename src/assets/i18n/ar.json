@@ -39,6 +39,9 @@
     "Top": "أعلى",
     "TEST SET CONNECTION": "اختبار مجموعة الاتصال",
     "DISTANCE To UUT": "المسافة إلى UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "نتائج الاختبارات الأخيرة"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "نتائج الاختبارات الأخيرة",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "سابق",
+    "NEXT": "التالى"
 }

@@ -39,6 +39,9 @@
     "Top": "상단",
     "TEST SET CONNECTION": "연결 테스트",
     "DISTANCE To UUT": "UUT까지의 거리",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "최근 테스트 결과"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "최근 테스트 결과",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "너무 이른",
+    "NEXT": "다음 것"
 }

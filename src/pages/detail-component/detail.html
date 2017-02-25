@@ -33,7 +33,7 @@
                     </ion-row>
                     <ion-row style="height: auto; flex: 0 0 auto;">
                         <ion-col no-padding bottom style="width:auto;flex: 0 0 auto;">
-                            <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< Previous</b> </button>
+                            <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
                         </ion-col>
                         <ion-col center text-center style="width: 100%;">
                             <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
@@ -42,7 +42,7 @@
                            </button>
                         </ion-col>
                         <ion-col no-padding bottom text-right style="width: auto;flex: 0 0 auto;">
-                            <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> Next ></b></button>
+                            <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

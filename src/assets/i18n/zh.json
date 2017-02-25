@@ -39,6 +39,9 @@
     "Top": "最佳",
     "TEST SET CONNECTION": "测试设置连接",
     "DISTANCE To UUT": "距离为UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "最近的测试结果"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "最近的测试结果",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "以前",
+    "NEXT": "下一个"
 }

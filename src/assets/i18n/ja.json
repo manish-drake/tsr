@@ -39,6 +39,9 @@
     "Top": "上",
     "TEST SET CONNECTION": "接続をテストする",
     "DISTANCE To UUT": "UUTへの距離",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "最近のテスト結果"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "最近のテスト結果",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "前",
+    "NEXT": "次"
 }

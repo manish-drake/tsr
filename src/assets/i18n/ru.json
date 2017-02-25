@@ -39,6 +39,9 @@
     "Top": "верхний",
     "TEST SET CONNECTION": "TEST SET ПОДКЛЮЧЕНИЕ",
     "DISTANCE To UUT": "Расстояние до UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ ИСПЫТАНИЙ"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ ИСПЫТАНИЙ",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "Назад",
+    "NEXT": "СЛЕДУЮЩИЙ"
 }
