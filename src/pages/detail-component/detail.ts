@@ -33,7 +33,9 @@ export class TestDetailComp {
     this.route.params.subscribe(data => {
       this.headerName = (data as any).headername;
       this.testName = (data as any).test;
-      this._svcHome.title = this.testName;
+      this._svcHome.title = this.headerName;
+      console.log(JSON.stringify(data));
+      
 
       var testsData = this._objectService.createTestsData(this.testName);
       this.tests = this._svcBroker.createTestsDetail(testsData);
