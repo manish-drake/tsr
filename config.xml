@@ -89,4 +89,5 @@
   <plugin name="cordova-plugin-file" spec="~4.3.1"/>
   <icon src="resources/ios/icon/icon-small@3x.png"/>
   <allow-navigation href="http://192.168.145.128:8100"/>
+  <allow-navigation href="http://192.168.10.6:8100"/>
 </widget>
