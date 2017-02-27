@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { VehicleSection } from '../../core/tests/vehicleSection';
 import { Test } from '../../core/tests/test';
 import { TestGroup } from '../../core/tests/testgroup';
 import { Dictionary } from '../../common/dictionary';
@@ -25,13 +24,6 @@ export class BrokerFactoryService {
     createTestsDetail(testData: Test) {
         var testDS: any[] = [];
         testData.Summaries.forEach(summary => {
-            // var testE = [];
-            // summary.Summaries.forEach(subSummary => {
-            //     console.log(JSON.stringify(subSummary));
-            //     var testE = this.createParamsGrid(subSummary, summary.Styles)
-            // }
-            // )
-            // console.log(JSON.stringify(testE));
             var testD = {
                 name: summary.Name,
                 parent: testData.Name,
@@ -47,6 +39,13 @@ export class BrokerFactoryService {
             rows: this.createParamsGrid(footerData, footerData.Styles)
         }
         return footerDS;
+    }
+
+    createVehicleData(vehicleData: Test) {
+        var vehicleDS = {
+            rows: this.createParamsGrid(vehicleData, vehicleData.Styles)
+        }
+        return vehicleDS;
     }
 
     private createParamsGrid(summary: Test, parentStyles: Dictionary<string, string>) {

@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { VehicleSection } from '../../core/tests/vehicleSection';
-import { Test } from '../../core/tests/test';
-import { TestGroup } from '../../core/tests/testgroup';
-import { Dictionary } from '../../common/dictionary';
 import { BehaviorSubject } from 'Rxjs';
 import { Factory } from '../../services/objects/factory.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';

@@ -34,6 +34,14 @@ export class Test{
         this._isGuideAvailable = v;
     }
 
+    private _isGuideDisabled : boolean;
+    public get isGuideDisabled() : boolean {
+        return this._isGuideDisabled;
+    }
+    public set isGuideDisabled(v : boolean) {
+        this._isGuideDisabled = v;
+    }
+
     private _SummaryResult : any;
     public get SummaryResult() : any {
         return this._SummaryResult;

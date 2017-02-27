@@ -6,7 +6,7 @@ import { ModalService } from '../../services/ui/modal.service';
     template: `
         <button no-lines ion-item (click)="onClick($event)">
             <ion-icon [name]="modalSource.name" item-left></ion-icon>
-            <ion-label>{{ modalSource.lable }}</ion-label>
+            <ion-label>{{ modalSource.lable | translate}}</ion-label>
         </button>
     `
 })

@@ -1,44 +1,51 @@
 detail-vehicles {
-    .sectionHeading{
-        display: inline-flex;
-        font-weight: 600;
-        font-size: 15px;
-        margin-bottom: 5px;
-        width: auto;    
-        // background-color: gold
-     }        
-    .sectionLabel1{
-        display: inline-flex;
-        min-width: 80px;
-        margin-left:7px;
-        font-size: 15px;
-        // background-color: khaki
-    }
-    .sectionLabel2{
-        display: inline-flex;
-        min-width: 65px;
-        font-size: 15px;
-        // background-color: cornflowerblue
-    }
+        .sectionHeading{
+                display: inline-flex;
+                font-weight: 600;
+                font-size: 15px;
+                margin-bottom: 5px;
+                width: auto;    
+                // background-color: gold
+        } 
+        .sresult85{
+                display: inline-flex;
+                width:25%;        
+                min-width: 85px !important;
+                font-size: 14px !important;
+                // background-color:cadetblue;
+        }
 
-    .sectionResult1{
-        display: inline-flex;
-        width: 25%;
-        min-width: 120px; 
-        font-size: 15px;  
-        margin-left:5px;
-        // background-color: pink
-    }
-    .sectionResult2{
-        display: inline-flex;
-        width: 24.5%;
-        min-width: 70px; 
-        font-size: 15px;
-        margin-left:5px;
-        // background-color: red
-    }
+        .sresult128{
+                display: inline-flex ;       
+                min-width: 128px !important;
+                font-size: 15px !important;    
+                margin-right: 5px;
+                // background-color:pink;
+        }
+        .slabel133{
+                width: 133px !important;
+                display: inline-flex; 
+                margin-left:5px;       
+                font-size: 15px !important;
+                // background-color: forestgreen;
+        }
+        .selectedvehicle{
+        border: 1px solid color($colors, primary);
+        }           
+        .slabel80{
+                display: inline-flex;
+                width: 80px;
+                margin-left:5px;
+                font-size: 15px;
+                // background-color: khaki
+        }
+        .slabel65{
+                display: inline-flex;
+                width: 65px;
+                font-size: 15px;
+                // background-color: cornflowerblue
+        }
+}
 
-.selectedvehicle{
-    border: 1px solid color($colors, primary);
-}
-}
+
+

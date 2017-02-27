@@ -6,7 +6,7 @@ export class TestContextService {
 
     constructor() { }
 
-    currentMenu: string;
+    currentMenu: string = "Start";
 
     private testInContext = new BehaviorSubject<any>(undefined);
     getTestInContext() {
