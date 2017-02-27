@@ -1,5 +1,5 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { Router } from '@angular/router'
 

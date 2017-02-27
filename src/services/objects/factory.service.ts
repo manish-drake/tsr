@@ -7,9 +7,6 @@ import { TestGroup } from '../../core/tests/testgroup';
 
 import { LocalStorage } from '../../services/storage/local-storage';
 
-import { VehicleSection } from '../../core/tests/vehicleSection';
-
-
 @Injectable()
 export class Factory {
 
@@ -307,7 +304,9 @@ export class Factory {
         return favt;
     }
 
-    CreateAircraftVehivleData() {
+    CreateAircraftVehicleData() {
+        var favt1= new Test();
+
         var add = new TestParam();
         add.Key = "ADDRESS:";
         add.Value = "______ (_) / ________ (_)";
@@ -315,10 +314,10 @@ export class Factory {
         cAdd.Row = 0;
         cAdd.Column = 0;
         cAdd.ColSpan = 4;
-        cAdd.Styles.add("key", "label95");
-        cAdd.Styles.add("value", "result128");
+        cAdd.Styles.add("key", "slabel80");
+        cAdd.Styles.add("value", "sresult128");
 
-        // favt.TestParamCells.push(cAdd);
+        favt1.TestParamCells.push(cAdd);
 
         var ftid = new TestParam();
         ftid.Key = "Flight ID:";
@@ -326,10 +325,10 @@ export class Factory {
         var cFtid = new TestParamCell(ftid);
         cFtid.Row = 1;
         cFtid.Column = 0;
-        cFtid.Styles.add("key", "label95");
-        cFtid.Styles.add("value", "result85");
+        cFtid.Styles.add("key", "slabel80");
+        cFtid.Styles.add("value", "sresult85");
 
-        // favt.TestParamCells.push(cFtid);
+        favt1.TestParamCells.push(cFtid);
 
         var rfl = new TestParam();
         rfl.Key = "RF Level:";
@@ -337,10 +336,10 @@ export class Factory {
         var cRfl11 = new TestParamCell(rfl);
         cRfl11.Row = 1;
         cRfl11.Column = 1;
-        cRfl11.Styles.add("key", "label95");
-        cRfl11.Styles.add("value", "result85");
+        cRfl11.Styles.add("key", "slabel65");
+        cRfl11.Styles.add("value", "sresult85");
 
-        // favt.TestParamCells.push(cRfl11);
+        favt1.TestParamCells.push(cRfl11);
 
         var bssr = new TestParam();
         bssr.Key = "BDS Rcvd (DF17):";
@@ -349,12 +348,12 @@ export class Factory {
         cBssr.Row = 2;
         cBssr.Column = 0;
         cBssr.ColSpan = 4;
-        cBssr.Styles.add("key", "label133");
-        cBssr.Styles.add("value", "result128");
+        cBssr.Styles.add("key", "slabel133");
+        cBssr.Styles.add("value", "sresult128");
 
-        // favt.TestParamCells.push(cBssr);
+        favt1.TestParamCells.push(cBssr);
 
-        return [cAdd, cFtid, cRfl11, cBssr];
+        return favt1;
     }
 
     createTestsData(test: string): Test {
@@ -394,8 +393,7 @@ export class Factory {
 
 
                 // smry.TestParamCells.concat(this.CreateAircraftVehivleData());
-
-
+                
                 var add = new TestParam();
                 add.Key = "ADDRESS:";
                 add.Value = "______ (_) / ________ (_)";
