@@ -4,7 +4,7 @@ import { PopoverService } from '../../services/ui/popover.service';
 @Component({
     selector: 'popover-button-comp',
     template: `
-        <button ion-button icon-only clear (click)="onClick($event)">
+        <button ion-button no-margin icon-only clear (click)="onClick($event)">
             <ion-icon [name]="popoverSource.name"></ion-icon>
         </button>
     `

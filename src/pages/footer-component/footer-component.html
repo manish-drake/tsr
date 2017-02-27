@@ -1,4 +1,2 @@
-<ion-toolbar style="height: 56px;">
-    <testsetinfo-comp *ngIf="!data"></testsetinfo-comp>
-    <teststatus-comp *ngIf="data" [data]="data"></teststatus-comp>
-</ion-toolbar>
+<testsetinfo-comp *ngIf="!data"></testsetinfo-comp>
+<teststatus-comp *ngIf="data" [data]="data"></teststatus-comp>

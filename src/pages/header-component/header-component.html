@@ -1,29 +1,25 @@
-<ion-toolbar align-title="left">
-
-  <ion-row>
-    <ion-col no-padding style="overflow: hidden;text-overflow: ellipsis;">
-      <ion-row>
-        <ion-col no-padding center style="width: auto; flex: 0 0 auto;">
-          <button ion-button menuToggle style="height:100%;"><ion-icon name="menu"></ion-icon></button>
-        </ion-col>
-        <ion-col no-padding style="overflow: hidden;text-overflow: ellipsis;">
-          <ion-label text-nowrap style="font-size: 18px; font-weight: 500; color:white; padding-left:10px;overflow: hidden;text-overflow: ellipsis;">{{title | translate}} </ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-col>
-    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
-      <popover-button-comp [popoverSource]="config"></popover-button-comp>
-    </ion-col>
-    <ion-col no-padding>
-      <ion-row>
-        <ion-col no-padding text-center>
-          <button ion-button clear icon-only><ion-icon name="download"></ion-icon></button>
-        </ion-col>
-        <ion-col no-padding style="width: auto; flex: 0 0 auto;">
-          <popover-button-comp [popoverSource]="more"></popover-button-comp>
-        </ion-col>
-      </ion-row>
-    </ion-col>
-  </ion-row>
-
-</ion-toolbar>
+<ion-row>
+  <ion-col no-padding style="overflow: hidden;text-overflow: ellipsis;">
+    <ion-row>
+      <ion-col no-padding center style="width: auto; flex: 0 0 auto;">
+        <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+      </ion-col>
+      <ion-col no-padding style="overflow: hidden;text-overflow: ellipsis;">
+        <ion-label text-nowrap style="font-size: 18px; font-weight: 500; color:white; padding-left:10px;overflow: hidden;text-overflow: ellipsis;">{{title | translate}} </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+  <ion-col no-padding style="width: auto; flex: 0 0 auto;">
+    <popover-button-comp [popoverSource]="config"></popover-button-comp>
+  </ion-col>
+  <ion-col no-padding>
+    <ion-row>
+      <ion-col no-padding text-center>
+        <button no-margin ion-button clear icon-only><ion-icon name="download"></ion-icon></button>
+      </ion-col>
+      <ion-col no-padding style="width: auto; flex: 0 0 auto;">
+        <popover-button-comp [popoverSource]="more"></popover-button-comp>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>
