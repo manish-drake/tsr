@@ -39,6 +39,9 @@
     "Top": "Topo",
     "TEST SET CONNECTION": "TEST SET CONEXÃO",
     "DISTANCE To UUT": "DISTÂNCIA até UUT",
-    "__comment__": "__Test Group __",
-    "RECENT TEST RESULTS": "RESULTADOS DE TESTE RECENTE"
+    "__comment__": "__Test Card __",
+    "RECENT TEST RESULTS": "RESULTADOS DE TESTE RECENTE",
+    "__comment__": "__Test Detail Card __",
+    "PREVIOUS": "ANTERIOR",
+    "NEXT": "PRÓXIMO"
 }

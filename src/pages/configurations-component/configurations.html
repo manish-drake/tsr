@@ -5,9 +5,9 @@
                 <ion-label style="font-weight: 600;">{{'OPERATOR' | translate}}</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
+                            <ion-select style="max-width: 100%;" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
                                 (ionChange)="onUserChanged($event)">
                                 <ion-option *ngFor="let user of availableUsers" [value]="user">{{user.name}}</ion-option>
                                 </ion-select>
@@ -25,7 +25,7 @@
                 <ion-label style="font-weight: 600;">{{'LANGUAGE' | translate}}</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
                             <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="languageSelectOptions" [(ngModel)]="currentLanguage"
                                 (ionChange)="onLanguageChanged($event)">
@@ -41,7 +41,7 @@
                 <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
                             <ion-select no-padding padding-horizontal style="max-width:100%;" placeholder="None selected" [(ngModel)]="connectedDevice"
                                 [selectOptions]="deviceSelectOptions" (ionChange)="onDeviceChanged($event)">
@@ -56,7 +56,7 @@
                 <ion-label style="font-weight: 600;">{{'TEST SET ICAO ADDRESS' | translate}}</ion-label>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
                             <ion-select ngModel="AC82EC" style="max-width: 100%">
                                 <ion-option value="AC82EC">AC82EC</ion-option>
@@ -82,7 +82,7 @@
                 <ion-icon style="font-size: 24px;" name="reorder"></ion-icon>
                 <ion-row>
                     <ion-col no-padding></ion-col>
-                    <ion-col no-padding>
+                    <ion-col no-padding style="width: auto; flex: 0 0 auto;">
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
                             <ion-select ngModel="Port A Antenna" style="max-width: 100%">
                                 <ion-option value="Port A Antenna">Port A Antenna</ion-option>
