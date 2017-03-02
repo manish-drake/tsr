@@ -3,26 +3,27 @@
     <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle)" [class.selectedvehicle]="vehicle == selectedVehicle"
         class="background">
         <ion-row>
-            <!--<table text-nowrap style="width:100%;margin:10px">
+            <table  text-nowrap style="width:100%;margin:10px">
                 <tr>
-                    <td class="sectionHeading" colspan="5">Aircraft/Vehicle #{{i+1}}: </td>
+                    <td class="sectionHeading" colspan="3">Aircraft/Vehicle #{{i+1}}: </td>
                 </tr>
                 <tr>
-                    <td class="slabel90">ADDRESS:</td>
-                    <td colspan="3" class="sectionResult1">{{vehicle.address}}</td>
+                    <td> </td>
+                    <td class="label" colspan="2">ADDRESS:   {{vehicle.address}}</td>
                 </tr>
                 <tr>
-                    <td class="sectionLabel1">FIGHT ID:</td>
-                    <td class="sectionResult2"></td>
-                    <td class="slabel65">RF Level:</td>
-                    <td class="sectionResult2"></td>
+                    <td> </td>
+                    <td class="label2">FIGHT ID: {{vehicle.flightid}}</td>
+                    <td class="label">RF Level: {{vehicle.rflevel}}</td>
                 </tr>
                 <tr>
-                    <td class="sectionLabel1">BDS rcvd (DF17): </td>
-                    <td colspan="3" class="sectionResult1"> </td>
+                    <td> </td>
+                    <td class="label" colspan="2">BDS Rcvd (DF{{vehicle.df}}):  {{vehicle.bdsrcvd}}</td>
                 </tr>
-            </table>-->
-            <table margin text-nowrap style="width:100%;margin:10px">
+            </table>
+
+
+            <!--<table margin text-nowrap style="width:100%;margin:10px">
                  <tr>
                     <td class="sectionHeading" colspan="5">Aircraft/Vehicle #{{i+1}}: </td>
                 </tr>
@@ -34,7 +35,7 @@
                         <label [class]="cell.unitStyle">{{ cell.unit }}</label>
                     </td>
                 </tr>
-            </table>
+            </table>-->
         </ion-row>
         </ion-card>
 </div>

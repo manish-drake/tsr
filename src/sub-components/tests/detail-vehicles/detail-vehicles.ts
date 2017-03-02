@@ -11,7 +11,6 @@ import { Factory } from '../../../services/objects/factory.service';
 })
 export class DetailVehiclesComp {
   @Input() test: any;
-  vehicledata: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
 
@@ -26,7 +25,7 @@ export class DetailVehiclesComp {
         this.vehicles = [];
         this.vehicles = data.response.data.results;
       }, (rej) => { console.error("Could not load local data", rej) });
-      this.setVehicleResultStatus();
+      // this.setVehicleResultStatus();
   }
 
   selectedVehicle: any;
@@ -38,12 +37,13 @@ export class DetailVehiclesComp {
     }
   }
 
-  setVehicleResultStatus() {
-    var vehicleResultStatusData = this._objectService.CreateAircraftVehicleData();
-    var vehicleResultStatus = this._svcBroker.createVehicleData(vehicleResultStatusData);
-    console.log(vehicleResultStatus);
-    this.vehicledata =vehicleResultStatus;
-    
-  }
+  // vehicledata: any;
+
+  // setVehicleResultStatus() {
+  //   var vehicleResultStatusData = this._objectService.CreateAircraftVehicleData();
+  //   var vehicleResultStatus = this._svcBroker.createVehicleData(vehicleResultStatusData);
+  //   console.log(vehicleResultStatus);
+  //   this.vehicledata =vehicleResultStatus;
+  // }
 
 }

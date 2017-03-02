@@ -1,0 +1,34 @@
+{
+    "response": {
+        "data": {
+            "__type": "UATOUTGetResultsResponse",
+            "results": [
+                {
+                    "address": "2345AA (H) / 23734510 (O)",
+                    "flightid": "N1246W",
+                    "rflevel": "Strong",
+                     "df":"17",
+                    "bdsrcvd": "0,5 0,8 0,9 6,0 6,1 6,5"
+                },
+                {
+                    "address": "CA310A (H) / 74361202 (O)",
+                    "flightid": "Device1",
+                    "rflevel": "Medium",
+                     "df":"18",
+                    "bdsrcvd": "0,6 0,8 6,5"
+                },
+                {
+                    "address": "9CDA34 (H) / 47800213 (O)",
+                    "flightid": "VIPER1",
+                    "rflevel": "Weak",
+                    "df":"19",
+                    "bdsrcvd": "0,5 0,8 0,8 0,9 6,5"
+                }
+            ]
+        },
+        "message": 8196,
+        "status": 0,
+        "user-param": null,
+        "version": 2
+    }
+}
