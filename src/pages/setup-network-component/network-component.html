@@ -1,0 +1,82 @@
+<ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;">
+    <ion-grid style="height: 100%;">
+        <ion-row style="height: auto;flex: 0 0 auto">
+            <ion-col no-padding style="width: 50px;flex: 0 0 50px;">
+
+            </ion-col>
+            <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+                <b style="font-size: 16px;">NETWORK</b><br>
+            </ion-col>
+            <ion-col no-padding style="width: auto;flex: 0 0 auto;">
+                <button ion-button icon-only clear (click)="onGoBack()"><ion-icon name="close"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+        <ion-scroll padding scrollY="true" style="height:100%;">
+            <table style="width: 100%;" text-nowrap>
+                <tr>
+                    <td padding-right><b>ENABLE Wi-Fi:</b></td>
+                    <td>
+                        <ion-item>
+                            <ion-label item-left>Yes</ion-label>
+                            <ion-toggle item-right checked="true" disabled></ion-toggle>
+                        </ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>ENABLE REMOTE:</b></td>
+                    <td>
+                        <ion-item>
+                            <ion-label item-left>Yes</ion-label>
+                            <ion-toggle item-right checked="true" disabled></ion-toggle>
+                        </ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>Wi-Fi DIRECT:</b></td>
+                    <td>
+                        <ion-item>
+                            <ion-label item-left>No</ion-label>
+                            <ion-toggle item-right disabled></ion-toggle>
+                        </ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>DHCP:</b></td>
+                    <td>
+                        <ion-item>
+                            <ion-label item-left>Yes</ion-label>
+                            <ion-toggle item-right checked="true" disabled></ion-toggle>
+                        </ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>IP ADDRESS:</b></td>
+                    <td>
+                        <ion-item>192.168.10.19</ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td><ion-item></ion-item></td>
+                </tr>
+                <tr>
+                    <td padding-right><b>MANUAL IP ADDRESS:</b></td>
+                    <td>
+                        <ion-item>
+                            192.168.10.19
+                            <button item-right ion-button clear disabled text-capitalize>Edit</button>
+                            </ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>DEVICE NAME:</b></td>
+                    <td>
+                        <ion-item>
+                            TestSet14
+                            <button item-right ion-button clear disabled text-capitalize> Edit</button>
+                        </ion-item>
+                    </td>
+                </tr>
+            </table>
+        </ion-scroll>
+    </ion-grid>
+</ion-card>

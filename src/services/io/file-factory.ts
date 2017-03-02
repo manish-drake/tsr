@@ -1,14 +1,16 @@
+import { Injectable } from "@angular/core"
 import { Observable } from 'Rxjs';
 import { File, DirectoryEntry } from 'ionic-native';
 declare var cordova: any;
 
+@Injectable()
 export class FileFactory {
     constructor() {
     }
     // static fileIndex: 
     getFile(fullName: string): Observable<any> {
         return Observable.fromPromise(File.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
-            .map(value => value.toString())
+            .map(value => value.toString());
     }
 
     saveFile(fullPath: string, name: string, content: any) {
@@ -23,7 +25,6 @@ export class FileFactory {
                 })
             })
         });
-
     }
 
     getSubFolders(fullName: string): Observable<string[]> {

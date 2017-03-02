@@ -1,0 +1,51 @@
+detail-vehicles {
+        .sectionHeading{
+                display: inline-flex;
+                font-weight: 600;
+                font-size: 16px;
+                margin-bottom: 5px;
+                width: auto;    
+                // background-color: gold
+        } 
+        .sresult85{
+                display: inline-flex;
+                width:25%;        
+                min-width: 85px !important;
+                font-size: 16px !important;
+                // background-color:cadetblue;
+        }
+
+        .sresult128{
+                display: inline-flex ;       
+                min-width: 128px !important;
+                font-size: 16px !important;    
+                margin-right: 5px;
+                // background-color:pink;
+        }
+        .slabel133{
+                width: 133px !important;
+                display: inline-flex; 
+                margin-left:5px;       
+                font-size: 16px !important;
+                // background-color: forestgreen;
+        }
+        .selectedvehicle{
+        border: 1px solid color($colors, primary);
+        }           
+        .slabel80{
+                display: inline-flex;
+                width: 80px;
+                margin-left:5px;
+                font-size: 16px;
+                // background-color: khaki
+        }
+        .slabel65{
+                display: inline-flex;
+                width: 65px;
+                font-size: 16px;
+                // background-color: cornflowerblue
+        }
+}
+
+
+

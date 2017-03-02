@@ -18,6 +18,38 @@ export class Test{
         this._Name = v;
     }
 
+    private _isStartItem : boolean;
+    public get isStartItem() : boolean {
+        return this._isStartItem;
+    }
+    public set isStartItem(v : boolean) {
+        this._isStartItem = v;
+    }
+
+    private _isGuideAvailable : boolean;
+    public get isGuideAvailable() : boolean {
+        return this._isGuideAvailable;
+    }
+    public set isGuideAvailable(v : boolean) {
+        this._isGuideAvailable = v;
+    }
+
+    private _isGuideDisabled : boolean;
+    public get isGuideDisabled() : boolean {
+        return this._isGuideDisabled;
+    }
+    public set isGuideDisabled(v : boolean) {
+        this._isGuideDisabled = v;
+    }
+
+    private _SummaryResult : any;
+    public get SummaryResult() : any {
+        return this._SummaryResult;
+    }
+    public set SummaryResult(v : any) {
+        this._SummaryResult = v;
+    }
+
     private _Summaries : Test[];
     public get Summaries() : Test[] {
         if(!this._Summaries)

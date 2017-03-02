@@ -1,53 +1,59 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-// import { SectionsPage } from '../pages/sections/sections';
-import { HomePage } from '../pages/home/home';
-
 import { Router } from '@angular/router'
-import { HeaderService } from '../services/ui/header.service'
+
+import { HomePage } from '../pages/home/home';
 import { PopoverService } from '../services/ui/popover.service'
-import { Hamburger } from '../core/hamburgerMenu/hamburger';
-import { ThemesService } from '../services/themes/themes.service'
+import { Menu } from '../core/hamburgerMenu/menu';
+import { ThemeService } from '../services/themes/themes.service';
+import { TestContextService } from '../services/tests/testcontext.service';
+
 @Component({
   templateUrl: `app.html`
 })
 export class MyApp implements OnInit {
-  @ViewChild(Nav) content: Nav;
 
-  chosenTheme: String;
-  Title: string = "Title";
   rootPage = HomePage;
 
-  public hb = new Hamburger();
-
-  constructor(private platform: Platform, private popoverService: PopoverService, private _svcHeader: HeaderService, private _router: Router, private _themes: ThemesService) {
-    // subscribe to theme changes and set a default chosen theme
-    this._themes.getTheme().subscribe(val => this.chosenTheme = val);
+  constructor(private platform: Platform,
+    private popoverService: PopoverService,
+    private _router: Router,
+    private _svcTheme: ThemeService,
+    private _svcTestContext: TestContextService
+  ) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
   }
 
+  public menu = new Menu();
+  theme: any;
   isAndroid: boolean = true;
 
   ngOnInit() {
-    this._svcHeader.TitleUpdated.subscribe(e => {
-      this.Title = e.title;
-    });
-
+    this._svcTheme.getTheme().subscribe(val => this.theme = val);
     if (this.platform.is('cordova')) {
-      if (!this.platform.is('android')) {
-        this.isAndroid = false;
-      }
+      if (!this.platform.is('android')) { this.isAndroid = false }
     }
   }
 
-  onItemSelectionChanged(e) {
-    this._router.navigate(['group', e]);
+  onMenuChanged(e) {
+    this._router.navigate([e.route, e.name]);
+    this.evaluateShowSelection(e);
+    this._svcTestContext.setTestInContext(undefined);
+    this._svcTestContext.currentMenu = e.name;
+  }
+
+  evaluateShowSelection(e) {
+    this.menu.headers.forEach(header => {
+      if (header == e) {
+        (<any>header).isSelected = true;
+      }
+      else {
+        (<any>header).isSelected = false;
+      }
+    });
   }
 }

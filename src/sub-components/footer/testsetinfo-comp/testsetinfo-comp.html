@@ -1,0 +1,52 @@
+<ion-row style="display : flex; align-items : center;">
+  <ion-col no-padding margin-left text-center style="width:auto;flex:0 0 auto;">
+    <ion-label text-nowrap>{{userName}}</ion-label>
+  </ion-col>
+  <ion-col no-padding text-center style="width:100%;overflow: hidden;text-overflow: ellipsis;">
+    <ion-label text-nowrap>{{deviceName}}</ion-label>
+  </ion-col>
+
+  <ion-col no-padding style="width:55px;flex:0 0 55px;">
+    <ion-row>
+      <ion-col no-padding text-center center>
+        <img style="margin:2px; height:25px;width:25px;" src="assets/direct.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">{{'Direct' | translate}}</ion-col>
+    </ion-row>
+  </ion-col>
+
+  <ion-col no-padding style="width:55px;flex:0 0 55px;align-items: stretch !important;">
+    <ion-row>
+      <ion-col no-padding text-center center style="font-size: 22px;" align="center">
+        <svg height="25" width="12">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" class="battery-fill1" />
+              <stop [attr.offset]="batteryLevel" class="battery-fill1" />
+              <stop [attr.offset]="batteryLevel" class="battery-fill2" />
+              <stop offset="100%" class="battery-fill2" />
+            </linearGradient>
+          </defs>
+          <path d="M 0 2 L 3 2 L 3 0 L 9 0 L 9 2 L 12 2 L 12 25 L 0 25 L 0 2 Z" fill="url(#grad1)" />
+        </svg>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">{{'Battery' | translate}}</ion-col>
+    </ion-row>
+  </ion-col>
+
+  <ion-col no-padding style="width:55px;flex:0 0 55px;">
+    <ion-row>
+      <ion-col no-padding text-center center style="font-size: 22px;">
+        <ion-icon name="wifi"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;font-size: 12px;">{{'WiFi' | translate}}</ion-col>
+    </ion-row>
+  </ion-col>
+
+</ion-row>

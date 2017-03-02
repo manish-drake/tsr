@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { HeaderService } from '../../services/ui/header.service'
+import { HomeService } from '../../services/ui/home.service'
+import { LanguageService } from '../../services/language/language-service';
 
 @Component({
   selector: 'page-home',
@@ -9,19 +10,20 @@ import { HeaderService } from '../../services/ui/header.service'
 })
 export class HomePage implements OnInit {
 
-  Title: string;
+  constructor(
+    public navCtrl: NavController,
+    private _svcHome: HomeService,
+    private _srvLanguage: LanguageService) { }
 
-  constructor(public navCtrl: NavController, private _svcHeader: HeaderService) { }
+  title: string;
+  footerData: any;
 
   ngOnInit() {
-    this._svcHeader.TitleUpdated.subscribe(e => {
-      this.Title = e.title;
-      if (!this.Title) this.Title = "Test Set Remote";
+    this._svcHome.TitleUpdated.subscribe(e => {
+      this.title = e;
+      if (!e) this.title = "Test Set Remote";
     })
+    this._svcHome.FooterUpdated.subscribe(e => this.footerData = e);
+    this._srvLanguage.getSavedLanguage();
   }
-
-  ionViewDidLoad() {
-    console.log('Hello HomePage Page');
-  }
-
 }

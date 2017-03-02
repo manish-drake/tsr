@@ -1,0 +1,152 @@
+<div class="items" #groupContent (window:resize)="onResize($event)">
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-users')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">USER</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td padding-right>CURRENT USER: </td>
+                <td>{{currentUser.name}}</td>
+              </tr>
+              <tr>
+                <td padding-right>LANGUAGE: </td>
+                <td>{{currentUser.language}}</td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-display')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">DISPLAY</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td padding-right>CURRENT THEME: </td>
+                <td>{{currentTheme.themeName}}</td>
+              </tr>
+              <tr>
+                <td padding-right>BRIGHTNESS: </td>
+                <td>5 / 10</td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-gps')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">GPS</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td colspan="2">CURRENT SOURCE:   Internal</td>
+              </tr>
+              <tr>
+                <td padding-right>CURRENT LAT: </td>
+                <td>51°30'12.11" N</td>
+              </tr>
+              <tr>
+                <td padding-right>CURRENT LON: </td>
+                <td>10°7'39.45" W</td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-network')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">NETWORK</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td padding-right>Wi-Fi ENABLED:</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td padding-right>ALLOW LOCAL ACCESS:</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td padding-right>ALLOW REMOTE ACCESS:</td>
+                <td>No</td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-systeminfo')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">SYSTEM INFO</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td padding-right></td>
+                <td></td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <div class="itemm">
+    <ion-card style="height:220px; width:auto; margin: 5px;" (click)="openDetail('setup-connection')">
+      <ion-grid style="height: 100%;">
+        <ion-row style="height: 70%;">
+          <ion-col text-center center>
+            <ion-label style="font-size: 16px; font-weight: 600;">CONNECTION</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-nowrap>
+            <table>
+              <tr>
+                <td padding-right></td>
+                <td></td>
+              </tr>
+            </table>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</div>
+<b *ngIf="isScrollAvailable" style="position: fixed;bottom: 60px;right: 10px;">More..</b>

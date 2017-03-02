@@ -1,9 +1,0 @@
-<table style="width:100%;margin: 15px;">
-  <tr *ngFor="let row of test.rows">
-    <td text-nowrap *ngFor="let cell of row" [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
-        <ion-label [class]="cell.keyStyle">{{ cell.key }}</ion-label>
-        <ion-label [class]="cell.valueStyle">{{ cell.value }}</ion-label>
-        <ion-label [class]="cell.unitStyle">{{ cell.unit }}</ion-label>
-    </td>
-  </tr>
-</table>

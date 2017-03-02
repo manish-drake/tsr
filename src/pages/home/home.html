@@ -1,5 +1,7 @@
 <ion-header>
-    <header-component [title]="Title"></header-component>
+    <ion-toolbar>
+        <header-component [title]="title"></header-component>
+    </ion-toolbar>
 </ion-header>
 
 
@@ -8,5 +10,7 @@
 </ion-content>
 
 <ion-footer>
-    <footer-component></footer-component>
+    <ion-toolbar style="height: 56px;">
+        <footer-component [data]="footerData"></footer-component>
+    </ion-toolbar>
 </ion-footer>

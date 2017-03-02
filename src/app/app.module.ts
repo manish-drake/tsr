@@ -1,34 +1,56 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { Http } from '@angular/http'
+
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home'
-import { MoreActionsPopover } from '../pages/moreactions/moreactions';
-import { ConfigurationsPopover } from '../pages/configurations/configurations'
-import { HeaderComponent } from '../pages/header-component/header-component'
-import { GroupPage } from '../pages/group/group';
-import { FooterComponent } from '../pages/footer-component/footer-component'
-import { SectionsPage } from '../pages/sections/sections';
-import { DetailPage } from '../pages/detail/detail';
-import { SetupPage } from '../pages/setup/setup';
-import { HelpPage } from '../pages/help/help';
-import { FileIOService } from '../services/io/file-io.service'
-import { Factory } from '../services/objects/factory.service'
-import { BrokerFactoryService } from '../services/broker/brokerFactory.service'
-import { Master } from '../services/test-set/master.service'
-import { router } from './app.router'
-import { HeaderService } from '../services/ui/header.service'
-import { PopoverService } from '../services/ui/popover.service'
-import { ThemesService } from '../services/themes/themes.service'
-import { FileFactory } from '../services/io/file-factory';
-import { TestSectionComp } from '../comps/tests/section/section.comp';
-import { DetailMainComp } from '../comps/tests/detail-main/detail-main';
-import { DetailRadarComp } from '../comps/tests/detail-radar/detail-radar';
-import { DetailWaveformComp } from '../comps/tests/detail-waveform/detail-waveform';
-import { DetailVehiclesComp } from '../comps/tests/detail-vehicles/detail-vehicles';
-import { PopMenuItemComp } from '../comps/popover/pop-menu-item.comp';
-import { PopButtonComp } from '../comps/popover/pop-button.comp';
-import { TestCardComp } from '../comps/tests/card/card.comp';
+import { HomePage } from '../pages/home/home';
+
+import { HeaderComponent } from '../pages/header-component/header-component';
+import { FooterComponent } from '../pages/footer-component/footer-component';
+import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
+import { ConfigurationsPopover } from '../pages/configurations-component/configurations';
+import { TestGroupComp } from '../pages/testgroup-component/testgroup';
+import { TestDetailComp } from '../pages/detail-component/detail';
+import { SetupTestPage } from '../pages/setuptest/setuptest';
+import { HelpPage } from '../pages/help-component/help';
+import { GuidePage } from '../pages/guide/guide';
+
+import { SetupComp } from '../pages/setup-component/setup';
+import { SetupUsersComp } from '../pages/setup-users-component/users-component';
+import { SetupDisplayComp } from '../pages/setup-display-component/display-component';
+import { SetupGPSComp } from '../pages/setup-gps-component/gps-component';
+import { SetupNetworkComp } from '../pages/setup-network-component/network-component';
+import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systeminfo-component';
+import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
+
+import { DetailDefaultComp } from '../sub-components/tests/detail-default/detail-default';
+import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
+import { DetailWaveformComp } from '../sub-components/tests/detail-waveform/detail-waveform';
+import { DetailVehiclesComp } from '../sub-components/tests/detail-vehicles/detail-vehicles';
+import { PopOverButtonComp } from '../sub-components/popoverctrl/popover-button-comp';
+import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp';
+import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/testsetinfo-comp';
+import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
+
 import { SpyDirective } from '../common/mySpy.directive';
+import { FileFactory } from '../services/io/file-factory';
+import { FileIOService } from '../services/io/file-io.service';
+import { Factory } from '../services/objects/factory.service';
+import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
+import { TestGroupsService } from '../services/tests/testgroups.service';
+import { TestContextService } from '../services/tests/testcontext.service';
+import { MasterService } from '../services/test-set/master.service';
+import { UserService } from '../services/test-set/user.service';
+import { ConnectionService } from '../services/test-set/connection.service'
+import { LocalStorage } from '../services/storage/local-storage';
+import { router } from './app.router';
+import { HomeService } from '../services/ui/home.service';
+import { PopoverService } from '../services/ui/popover.service';
+import { ModalService } from '../services/ui/modal.service';
+import { ThemeService } from '../services/themes/themes.service';
+import { LanguageService } from '../services/language/language-service';
+
 
 @NgModule({
     declarations: [
@@ -37,23 +59,34 @@ import { SpyDirective } from '../common/mySpy.directive';
         MoreActionsPopover,
         ConfigurationsPopover,
         HeaderComponent,
-        GroupPage,
+        TestGroupComp,
+        SetupComp,
+        SetupUsersComp,
+        SetupDisplayComp,
+        SetupGPSComp,
+        SetupNetworkComp,
+        SetupSystemInfoComp,
+        SetupConnectionComp,
         FooterComponent,
-        SectionsPage,
-        DetailPage,
-        SetupPage,
+        TestsetinfoComp,
+        TeststatusComp,
+        TestDetailComp,
+        SetupTestPage,
         HelpPage,
-        TestSectionComp,
-        DetailMainComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
-        TestCardComp,
+        GuidePage,
+        DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
-        PopMenuItemComp,
-        PopButtonComp
-
+        PopOverButtonComp,
+        ModalIonItemComp
     ],
     imports: [
         router,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+            deps: [Http]
+        })
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -61,19 +94,31 @@ import { SpyDirective } from '../common/mySpy.directive';
         HomePage,
         MoreActionsPopover,
         ConfigurationsPopover,
-        SetupPage,
-        HelpPage
+        SetupTestPage,
+        HelpPage,
+        GuidePage
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
         Factory,
-        Master,
-        HeaderService,
+        MasterService,
+        UserService,
+        ConnectionService,
+        HomeService,
         PopoverService,
+        ModalService,
         BrokerFactoryService,
-        ThemesService,
-        FileFactory, MoreActionsPopover
+        TestGroupsService,
+        TestContextService,
+        ThemeService,
+        FileFactory,
+        LocalStorage,
+        LanguageService
     ]
 })
 export class AppModule { }
+
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
+}

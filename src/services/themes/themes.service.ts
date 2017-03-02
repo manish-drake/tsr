@@ -1,26 +1,45 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/Rx';
 
+import { LocalStorage } from '../../services/storage/local-storage'
+
 @Injectable()
-export class ThemesService {
-    private theme: BehaviorSubject<String>;
-    availableThemes: { className: string, prettyName: string }[];
+export class ThemeService {
+    private theme: BehaviorSubject<any>;
 
-    constructor() {
-        var savedTheme = localStorage.getItem("tsrtheme")
-        if (savedTheme != null) this.theme = new BehaviorSubject(savedTheme);
-        else this.theme = new BehaviorSubject('light-theme');
-        this.availableThemes = [
-            { className: 'light-theme', prettyName: 'Light' },
-            { className: 'dark-theme', prettyName: 'Dark' }
-        ];
-    }
+    indoorTheme: any;
+    outdoorTheme: any;
 
-    setTheme(val) {
-        this.theme.next(val);
+    constructor(private _localStorage: LocalStorage) {
+        this.indoorTheme = { className: 'indoor-theme', themeName: 'Indoor' };
+        this.outdoorTheme = { className: 'outdoor-theme', themeName: 'Outdoor' };
+
+        var savedTheme = _localStorage.GetItem(this._localStorage.keyForCurrentTheme());
+        if (savedTheme != null) this.theme = new BehaviorSubject(JSON.parse(savedTheme));
+        else this.theme = new BehaviorSubject(this.indoorTheme);
     }
 
     getTheme() {
         return this.theme.asObservable();
+    }
+
+    setTheme(val) {
+        this.theme.next(val);
+        this.saveTheme(val);
+    }
+
+    switchTheme() {
+        var currentTheme;
+        this.getTheme().subscribe(val => currentTheme = val);
+        if (JSON.stringify(currentTheme) == JSON.stringify(this.indoorTheme)){
+            this.setTheme(this.outdoorTheme);
+        }
+        else{
+            this.setTheme(this.indoorTheme);
+        }
+    }
+
+    saveTheme(val) {
+        this._localStorage.SetItem(this._localStorage.keyForCurrentTheme(), JSON.stringify(val));
     }
 }
