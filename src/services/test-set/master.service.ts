@@ -207,6 +207,7 @@ export class MasterService {
                 //------------------------------------------------------
                 testsData.SetValue("UAT RF Test", "Frequency", "978.021");
                 testsData.SetValue("UAT RF Test", "Power", "-55.0 ");
+                testsData.SetValue("UAT RF Test", "Error conditions", "None detected");
                 testsData.SetValue("UAT RF Test", "Power Drop", "0.5");
                 testsData.SetValue("UAT RF Test", "Deviation", "99");
                 testsData.SetValue("UAT RF Test", "Peak Deviation", "114");
