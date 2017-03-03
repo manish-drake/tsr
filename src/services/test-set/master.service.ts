@@ -50,7 +50,7 @@ export class MasterService {
                 testsData.SetValue("SUMMARY", "Velocity", "390");
                 testsData.SetValue("SUMMARY", "UAT IN", "1(Y)");
                 testsData.SetValue("SUMMARY", "TCAS Op", "1(Y)");
-                testsData.SetValue("SUMMARY", "1090ES", "0(N)");
+                testsData.SetValue("SUMMARY", "1090ES IN", "0(N)");
                 testsData.SetValue("SUMMARY", "IDENT", "1(Y)");
                 testsData.SetValue("SUMMARY", "TCAS RA", "0(N)");
                 testsData.SetValue("SUMMARY", "NACp", "3 (< 2nm)");

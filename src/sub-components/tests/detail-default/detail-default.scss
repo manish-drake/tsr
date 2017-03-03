@@ -89,38 +89,11 @@ detail-default{
         font-size: 16px !important;
         // background-color:greenyellow;
 }
-.result128{
-        display: inline-flex ;       
-        min-width: 128px !important;
-        font-size: 16px !important;    
-        // padding: 0px !important;
-        margin-right: 5px;
-        // background-color:pink;
-}
-.result113Right{
-        display: inline-block ;       
-        min-width: 118px !important;
-        font-size: 16px !important;    
-        text-align: right !important;
-        // background-color:indigo;
-}
+
+
 .result0{
         display: inline-flex;
         width: 0px ;       
-}
-.result85{
-        display: inline-flex;
-        width:25%;        
-        min-width: 85px !important;
-        font-size: 16px !important;
-        // background-color:cadetblue;
-}
-.result135Right{
-        display: inline-block ;       
-        min-width: 135px !important;
-        font-size: 16px !important;    
-        text-align: right !important;
-        // background-color:darkorange;
 }
 .result80Right{
         display: inline-block;           
@@ -129,12 +102,46 @@ detail-default{
         // background-color:lime;
         text-align: right !important;
 }
-.result90Right{
+.result85{
+        display: inline-flex;
+        width:25%;        
+        min-width: 85px !important;
+        font-size: 16px !important;
+        // background-color:cadetblue;
+}
+.result90Left{
         display: inline-block;           
         min-width: 90px !important;
         font-size: 16px !important;
         // background-color:red;
+}
+.result90Right{
+        display: inline-block;           
+        min-width: 90px !important;
+        font-size: 16px !important;
+        // background-color:lime;
         text-align: right !important;
+}
+.result113Right{
+        display: inline-block ;       
+        min-width: 135px !important;
+        font-size: 16px !important;    
+        text-align: right !important;
+        // background-color:olivedrab;
+}
+.result128{
+        display: inline-flex ;       
+        min-width: 128px !important;
+        font-size: 16px !important;    
+        margin-right: 5px;
+        // background-color:pink;
+}
+.result135Right{
+        display: inline-block ;       
+        min-width: 135px !important;
+        font-size: 16px !important;    
+        // text-align: right !important;
+        // background-color:darkorange;
 }
 .unit35Left{
         display: inline-block;
@@ -156,6 +163,5 @@ detail-default{
     margin-top:15px !important;     
     font-size: 16px;
     font-weight: 600;
-//     background-color:lightgreen;
 }
 }
