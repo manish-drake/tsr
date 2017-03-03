@@ -3150,12 +3150,24 @@ export class Factory {
 
                 rft.TestParamCells.push(cPwr4);
 
+                 var ec4 = new TestParam();
+                ec4.Key = "Error conditions";
+                ec4.Value = "_____________";
+                var cEc4 = new TestParamCell(ec4);
+                cEc4.Row = 6;
+                cEc4.Column = 0;
+                cEc4.ColSpan = 2;
+                cEc4.Styles.add("key", "label150");
+                cEc4.Styles.add("value", "result90Right");
+
+                rft.TestParamCells.push(cEc4);
+
                 var pwrdp4 = new TestParam();
                 pwrdp4.Key = "Power Drop";
                 pwrdp4.Value = "_._";
                 pwrdp4.Unit = "dB";
                 var cPwrdp4 = new TestParamCell(pwrdp4);
-                cPwrdp4.Row = 6;
+                cPwrdp4.Row = 7;
                 cPwrdp4.Column = 0;
                 cPwrdp4.ColSpan = 2;
                 cPwrdp4.Styles.add("key", "label150");
@@ -3168,7 +3180,7 @@ export class Factory {
                 dvn4.Value = "__";
                 dvn4.Unit = "%";
                 var cDvn4 = new TestParamCell(dvn4);
-                cDvn4.Row = 7;
+                cDvn4.Row = 8;
                 cDvn4.Column = 0;
                 cDvn4.ColSpan = 2;
                 cDvn4.Styles.add("key", "label150");
@@ -3181,7 +3193,7 @@ export class Factory {
                 pkdn4.Value = "___";
                 pkdn4.Unit = "%";
                 var cPkdn4 = new TestParamCell(pkdn4);
-                cPkdn4.Row = 8;
+                cPkdn4.Row = 9;
                 cPkdn4.Column = 0;
                 cPkdn4.ColSpan = 2;
                 cPkdn4.Styles.add("key", "label150");
@@ -3194,7 +3206,7 @@ export class Factory {
                 veo4.Value = "__";
                 veo4.Unit = "%";
                 var cVeo4 = new TestParamCell(veo4);
-                cVeo4.Row = 9;
+                cVeo4.Row = 10;
                 cVeo4.Column = 0;
                 cVeo4.ColSpan = 2;
                 cVeo4.Styles.add("key", "label150");
@@ -3207,7 +3219,7 @@ export class Factory {
                 heo4.Value = "___";
                 heo4.Unit = "%";
                 var cHeo4 = new TestParamCell(heo4);
-                cHeo4.Row = 10;
+                cHeo4.Row = 11;
                 cHeo4.Column = 0;
                 cHeo4.ColSpan = 2;
                 cHeo4.Styles.add("key", "label150");
@@ -3220,7 +3232,7 @@ export class Factory {
                 mte4.Value = "__.__";
                 mte4.Unit = "uS";
                 var cMte4 = new TestParamCell(mte4);
-                cMte4.Row = 11;
+                cMte4.Row = 12;
                 cMte4.Column = 0;
                 cMte4.ColSpan = 2;
                 cMte4.Styles.add("key", "label150");
@@ -3231,7 +3243,7 @@ export class Factory {
                 var uatms4 = new TestParam();
                 uatms4.Key = "UAT Message Summary";
                 var cUatms4 = new TestParamCell(uatms4);
-                cUatms4.Row = 12;
+                cUatms4.Row = 13;
                 cUatms4.Column = 0;
                 cUatms4.ColSpan = 2;
                 cUatms4.Styles.add("key", "heading");
@@ -3242,7 +3254,7 @@ export class Factory {
                 msrcd4.Key = "Message Received";
                 msrcd4.Value = "___";
                 var cMsrcd4 = new TestParamCell(msrcd4);
-                cMsrcd4.Row = 13;
+                cMsrcd4.Row = 14;
                 cMsrcd4.Column = 0;
                 cMsrcd4.ColSpan = 2;
                 cMsrcd4.Styles.add("key", "label268");
@@ -3254,7 +3266,7 @@ export class Factory {
                 msict4.Key = "Missing/Incorrect Messages";
                 msict4.Value = "_";
                 var cMsict4 = new TestParamCell(msict4);
-                cMsict4.Row = 14;
+                cMsict4.Row = 15;
                 cMsict4.Column = 0;
                 cMsict4.ColSpan = 2;
                 cMsict4.Styles.add("key", "label268");
@@ -3267,7 +3279,7 @@ export class Factory {
                 msslrt4.Value = "__";
                 msslrt4.Unit = "%";
                 var cMsslrt4 = new TestParamCell(msslrt4);
-                cMsslrt4.Row = 15;
+                cMsslrt4.Row = 16;
                 cMsslrt4.Column = 0;
                 cMsslrt4.ColSpan = 2;
                 cMsslrt4.Styles.add("key", "label268");
@@ -3279,7 +3291,7 @@ export class Factory {
                 ctmst4.Key = "Current Message Bit Errors";
                 ctmst4.Value = "__";
                 var cCtmst4 = new TestParamCell(ctmst4);
-                cCtmst4.Row = 16;
+                cCtmst4.Row = 17;
                 cCtmst4.Column = 0;
                 cCtmst4.ColSpan = 2;
                 cCtmst4.Styles.add("key", "label268");
@@ -3291,7 +3303,7 @@ export class Factory {
                 ctmser4.Key = "Message Sequence";
                 ctmser4.Value = "__";
                 var cCtmser4 = new TestParamCell(ctmser4);
-                cCtmser4.Row = 17;
+                cCtmser4.Row = 18;
                 cCtmser4.Column = 0;
                 cCtmser4.ColSpan = 2;
                 cCtmser4.Styles.add("key", "label268");
@@ -3303,7 +3315,7 @@ export class Factory {
                 ctmssq4.Key = "Message Payloads";
                 ctmssq4.Value = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
                 var cCtmssq4 = new TestParamCell(ctmssq4);
-                cCtmssq4.Row = 18;
+                cCtmssq4.Row = 19;
                 cCtmssq4.Column = 0;
                 cCtmssq4.ColSpan = 2;
                 cCtmssq4.Styles.add("value", "result128");
