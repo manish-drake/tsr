@@ -60,12 +60,14 @@ export class TestDetailComp {
   setVehicleValues(e) {
     console.log(JSON.stringify(e));
     this.testsData.Summaries.forEach(summary => {
+      this.testsData.SetValue(summary.Name, "Mode S Addr", e.modesaddr);
       this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
       this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
       this.testsData.SetValue(summary.Name, "FLIGHT ID", e.flightid);
       this.testsData.SetValue(summary.Name, "RF Level", e.rflevel);
       this.testsData.SetValue(summary.Name, "DF", e.df);
       this.testsData.SetValue(summary.Name, "BDS Rcvd (DF17)", e.bdsrcvd);
+      this.testsData.SetValue(summary.Name, "Payloads Rcvd", e.payloadsrcvd);
     });
     this.tests = this._svcBroker.createTestsDetail(this.testsData);
   }

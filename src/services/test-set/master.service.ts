@@ -138,7 +138,91 @@ export class MasterService {
 
             }
             case "UAT ADS-B OUT": {
+                testsData.SetValue("UAT Mode Status Test", "Interval", "4.1");
+                testsData.SetValue("UAT Mode Status Test", "CSID", "0 (Flight Plan ID)");
+                testsData.SetValue("UAT Mode Status Test", "Emitter Cat", "3 (Large)");
+                testsData.SetValue("UAT Mode Status Test", "3/A Code", "1536");
+                testsData.SetValue("UAT Mode Status Test", "Emg/Prty", "0 (No Emerg)");
+                testsData.SetValue("UAT Mode Status Test", "UAT IN", "1 (Y)");
+                testsData.SetValue("UAT Mode Status Test", "TCAS Op", "1 (Y)");
+                testsData.SetValue("UAT Mode Status Test", "1090ES IN", "0 (N)");
+                testsData.SetValue("UAT Mode Status Test", "ATC Svcs", "0 (N)");
+                testsData.SetValue("UAT Mode Status Test", "IDENT", "1 (Y)");
+                testsData.SetValue("UAT Mode Status Test", "TCAS RA", "0 (N)");
+                testsData.SetValue("UAT Mode Status Test", "NACp", "3 (< 2nm)");
+                testsData.SetValue("UAT Mode Status Test", "Transmit MSO", "16");
+                testsData.SetValue("UAT Mode Status Test", "NACv", "3 (< 2nm)");
+                testsData.SetValue("UAT Mode Status Test", "SIL", "1 (< 10-3)");
+                testsData.SetValue("UAT Mode Status Test", "SDA", "2");
+                testsData.SetValue("UAT Mode Status Test", "GVA", "2 (< 45m)");
+                testsData.SetValue("UAT Mode Status Test", "MOPS", "2 (DO-282B)");
+                testsData.SetValue("UAT Mode Status Test", "SIL Sup", "1 (per sample)");
+                testsData.SetValue("UAT Mode Status Test", "Sgl Ant", "0 (Diversity)");
+                testsData.SetValue("UAT Mode Status Test", "NICbaro", "0 (No X-chk)");
+                testsData.SetValue("UAT Mode Status Test", "NICsup", "0");
+                //------------------------------------------------------
+                testsData.SetValue("UAT State Vector Test-Air", "Interval", "4.1");
+                testsData.SetValue("UAT State Vector Test-Air", "Latitude", "17⁰ 19 21.00");
+                testsData.SetValue("UAT State Vector Test-Air", "Longitude", "90⁰ 15 30.00");
+                testsData.SetValue("UAT State Vector Test-Air", "Altitude", "10,000");
+                testsData.SetValue("UAT State Vector Test-Air", "Type", "0 (Pressure)");
+                testsData.SetValue("UAT State Vector Test-Air", "Horizontal Velocity", "300 kts N 157 kts W");
+                testsData.SetValue("UAT State Vector Test-Air", "Vert. Velocity", "+1,000");
+                testsData.SetValue("UAT State Vector Test-Air", "Source", "1 (Baro)");
+                testsData.SetValue("UAT State Vector Test-Air", "NIC", "9 (< 75m)");
+                testsData.SetValue("UAT State Vector Test-Air", "UTC", "1 (Coupled)");
+                testsData.SetValue("UAT State Vector Test-Air", "Uplink Feedback", "6 (Score=31)");
+                testsData.SetValue("UAT State Vector Test-Air", "Secondary Altitude", "10,000");
+                //------------------------------------------------------
+                testsData.SetValue("UAT State Vector Test-Ground", "Interval", "4.1");
+                testsData.SetValue("UAT State Vector Test-Ground", "Latitude", '17⁰ 19 21.00"');
+                testsData.SetValue("UAT State Vector Test-Ground", "Longitude", '90⁰ 15 30.00"');
+                testsData.SetValue("UAT State Vector Test-Ground", "Altitude", "1,820");
+                testsData.SetValue("UAT State Vector Test-Ground", "Type", "1 (Geometric)");
+                testsData.SetValue("UAT State Vector Test-Ground", "Groundspeed", "23");
+                testsData.SetValue("UAT State Vector Test-Ground", "Track/Heading", "002.7");
+                testsData.SetValue("UAT State Vector Test-Ground", "T/H", "2 (MagHdg)");
+                testsData.SetValue("UAT State Vector Test-Ground", "A/V L/W", "2 (25m/28.5m)");
+                testsData.SetValue("UAT State Vector Test-Ground", "GPS Ant Offset", "4 m Right; 6 m Aft");
+                testsData.SetValue("UAT State Vector Test-Ground", "NIC", "9 (< 75m)");
+                testsData.SetValue("UAT State Vector Test-Ground", "UTC", "1 (Coupled)");
+                testsData.SetValue("UAT State Vector Test-Ground", "Uplink Feedback", "6 (Score=31)");
+                testsData.SetValue("UAT State Vector Test-Ground", "Secondary Altitude", "1,830");
+                testsData.SetValue("UAT State Vector Test-Ground", "Type ", "0 (Baro)");
+                //------------------------------------------------------
+                testsData.SetValue("UAT Target State Test", "Interval", "4.1");
+                testsData.SetValue("UAT Target State Test", "Sel. Altitude", "10,000");
+                testsData.SetValue("UAT Target State Test", "Type", "0 (MCP/FCU)");
+                testsData.SetValue("UAT Target State Test", "Baro Setting", "950");
+                testsData.SetValue("UAT Target State Test", "Sel. Heading", "090");
+                testsData.SetValue("UAT Target State Test", "Status", "1 (Valid)");
+                testsData.SetValue("UAT Target State Test", "Mode bits status", "1 (Valid)");
+                testsData.SetValue("UAT Target State Test", "AutoPilot (AP)", "1 (Engaged)");
+                testsData.SetValue("UAT Target State Test", "VNAV", "0 (Not Engaged)");
+                testsData.SetValue("UAT Target State Test", "Alt. Hold (ALT)", "1 (Engaged)");
+                testsData.SetValue("UAT Target State Test", "Approach (APP)", "0 (Not Engaged)");
+                testsData.SetValue("UAT Target State Test", "LNAV", "0 (Not Engaged)");
+                //------------------------------------------------------
+                testsData.SetValue("UAT Trajectory Change Test", "TC Field", "00000000000000000");
+                //------------------------------------------------------
+                testsData.SetValue("UAT RF Test", "Frequency", "978.021");
+                testsData.SetValue("UAT RF Test", "Power", "-55.0 ");
+                testsData.SetValue("UAT RF Test", "Power Drop", "0.5");
+                testsData.SetValue("UAT RF Test", "Deviation", "99");
+                testsData.SetValue("UAT RF Test", "Peak Deviation", "114");
+                testsData.SetValue("UAT RF Test", "Vert Eye Opening", "78");
+                testsData.SetValue("UAT RF Test", "Horz Eye Opening", "91");
+                testsData.SetValue("UAT RF Test", "Message Time Error", "0.12");
+                testsData.SetValue("UAT RF Test", "Message Received", "112");
+                testsData.SetValue("UAT RF Test", "Missing/Incorrect Messages", "5");
+                testsData.SetValue("UAT RF Test", "Message Success Rate", "95");
+                testsData.SetValue("UAT RF Test", "Current Message Bit Errors", "0");
+                testsData.SetValue("UAT RF Test", "Message Sequence", "OK");
+                testsData.SetValue("UAT RF Test", "Message Payloads", "0 1 0 2 0 1 0 2 0 1 0 2 0 1 0 2");
+                
+                
 
+                
             }
 
         }

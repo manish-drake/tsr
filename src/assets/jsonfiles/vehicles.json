@@ -4,25 +4,32 @@
             "__type": "UATOUTGetResultsResponse",
             "results": [
                 {
+                    "modesaddr":"2345AA",
                     "address": "2345AA (H) / 23734510 (O)",
                     "flightid": "N1246W",
                     "rflevel": "Strong",
                      "df":"17",
-                    "bdsrcvd": "0,5 0,8 0,9 6,0 6,1 6,5"
+                    "bdsrcvd": "0,5 0,8 0,9 6,0 6,1 6,5",
+                    "payloadsrcvd": "1,0,2,0"
+
                 },
                 {
+                    "modesaddr":"CA310A",
                     "address": "CA310A (H) / 74361202 (O)",
                     "flightid": "Device1",
                     "rflevel": "Medium",
                      "df":"18",
-                    "bdsrcvd": "0,6 0,8 6,5"
+                    "bdsrcvd": "0,6 0,8 6,5",
+                    "payloadsrcvd": "1,0,0,0"
                 },
                 {
+                    "modesaddr":"9CDA34",
                     "address": "9CDA34 (H) / 47800213 (O)",
                     "flightid": "VIPER1",
                     "rflevel": "Weak",
                     "df":"19",
-                    "bdsrcvd": "0,5 0,8 0,8 0,9 6,5"
+                    "bdsrcvd": "0,5 0,8 0,8 0,9 6,5",
+                    "payloadsrcvd": "1,4,4,4"
                 }
             ]
         },
