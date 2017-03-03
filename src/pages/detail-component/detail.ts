@@ -64,6 +64,7 @@ export class TestDetailComp {
       this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
       this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
       this.testsData.SetValue(summary.Name, "FLIGHT ID", e.flightid);
+      this.testsData.SetValue(summary.Name, "Qualifier", e.qualifier);
       this.testsData.SetValue(summary.Name, "RF Level", e.rflevel);
       this.testsData.SetValue(summary.Name, "DF", e.df);
       this.testsData.SetValue(summary.Name, "BDS Rcvd (DF17)", e.bdsrcvd);
