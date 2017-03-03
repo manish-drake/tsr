@@ -10,12 +10,16 @@ import { Factory } from '../../../services/objects/factory.service';
   templateUrl: 'detail-vehicles.html'
 })
 export class DetailVehiclesComp {
-  @Input() test: any;
+  
+  @Input() selectedVehicle: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
 
-  constructor(private masterService: MasterService, private _svcBroker: BrokerFactoryService,
-    private _objectService: Factory) { }
+  constructor(
+    private masterService: MasterService,
+    private _svcBroker: BrokerFactoryService,
+    private _objectService: Factory
+  ) { }
 
   vehicles = [];
 
@@ -25,16 +29,14 @@ export class DetailVehiclesComp {
         this.vehicles = [];
         this.vehicles = data.response.data.results;
       }, (rej) => { console.error("Could not load local data", rej) });
-      // this.setVehicleResultStatus();
+    // this.setVehicleResultStatus();
+
+    console.log(JSON.stringify(this.selectedVehicle));
+
   }
 
-  selectedVehicle: any;
-
   onVehicleSelect(e) {
-    if (this.selectedVehicle != e) {
-      this.selectedVehicle = e;
-      this.onVehicleSelected.emit(e);
-    }
+    this.onVehicleSelected.emit(e);
   }
 
   // vehicledata: any;

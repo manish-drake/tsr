@@ -52,7 +52,7 @@ export class Factory {
                 bef.Name = "before"
 
                 var st1 = new TestParam();
-                st1.Key = "Status:";
+                st1.Key = "Status";
                 st1.Value = "Stopped";
                 var cSt1 = new TestParamCell(st1);
                 cSt1.Row = 0;
@@ -61,7 +61,7 @@ export class Factory {
                 bef.TestParamCells.push(cSt1);
 
                 var ts1 = new TestParam();
-                ts1.Key = "Test Set:";
+                ts1.Key = "Test Set";
                 ts1.Value = "TS-001";
                 var cTs1 = new TestParamCell(ts1);
                 cTs1.Row = 0;
@@ -70,7 +70,7 @@ export class Factory {
                 bef.TestParamCells.push(cTs1);
 
                 var user1 = new TestParam();
-                user1.Key = "User:";
+                user1.Key = "User";
                 user1.Value = "D. Smith";
                 var cUser1 = new TestParamCell(user1);
                 cUser1.Row = 0;
@@ -79,7 +79,7 @@ export class Factory {
                 bef.TestParamCells.push(cUser1);
 
                 var ctn1 = new TestParam();
-                ctn1.Key = "Connection:";
+                ctn1.Key = "Connection";
                 ctn1.Value = "Bottom Antenna";
                 var cCtn1 = new TestParamCell(ctn1);
                 cCtn1.Row = 0;
@@ -88,7 +88,7 @@ export class Factory {
                 bef.TestParamCells.push(cCtn1);
 
                 var dst1 = new TestParam();
-                dst1.Key = "Distance:";
+                dst1.Key = "Distance";
                 dst1.Value = "50 Ft";
                 var cDst1 = new TestParamCell(dst1);
                 cDst1.Row = 0;
@@ -97,7 +97,7 @@ export class Factory {
                 bef.TestParamCells.push(cDst1);
 
                 var tn1 = new TestParam();
-                tn1.Key = "Test Name:";
+                tn1.Key = "Test Name";
                 tn1.Value = "UAT Out";
                 var cTn1 = new TestParamCell(tn1);
                 cTn1.Row = 0;
@@ -106,7 +106,7 @@ export class Factory {
                 bef.TestParamCells.push(cTn1);
 
                 var pia1 = new TestParam();
-                pia1.Key = "Preset if Any:";
+                pia1.Key = "Preset if Any";
                 pia1.Value = "None";
                 var cPia1 = new TestParamCell(pia1);
                 cPia1.Row = 0;
@@ -123,7 +123,7 @@ export class Factory {
                 rung.Name = "running";
 
                 var st2 = new TestParam();
-                st2.Key = "Status:";
+                st2.Key = "Status";
                 st2.Value = "Running";
                 var cSt2 = new TestParamCell(st2);
                 cSt2.Row = 0;
@@ -132,7 +132,7 @@ export class Factory {
                 rung.TestParamCells.push(cSt2);
 
                 var dur2 = new TestParam();
-                dur2.Key = "Duration:";
+                dur2.Key = "Duration";
                 dur2.Value = "13s";
                 var cDur2 = new TestParamCell(dur2);
                 cDur2.Row = 0;
@@ -141,7 +141,7 @@ export class Factory {
                 rung.TestParamCells.push(cDur2);
 
                 var ctn2 = new TestParam();
-                ctn2.Key = "Connection:";
+                ctn2.Key = "Connection";
                 ctn2.Value = "Bottom Antenna";
                 var cCtn2 = new TestParamCell(ctn2);
                 cCtn2.Row = 0;
@@ -150,7 +150,7 @@ export class Factory {
                 rung.TestParamCells.push(cCtn2);
 
                 var dst2 = new TestParam();
-                dst2.Key = "Distance:";
+                dst2.Key = "Distance";
                 dst2.Value = "50 Ft";
                 var cDst2 = new TestParamCell(dst2);
                 cDst2.Row = 0;
@@ -159,7 +159,7 @@ export class Factory {
                 rung.TestParamCells.push(cDst2);
 
                 var tn2 = new TestParam();
-                tn2.Key = "Test Name:";
+                tn2.Key = "Test Name";
                 tn2.Value = "UAT Out";
                 var cTn2 = new TestParamCell(tn2);
                 cTn2.Row = 0;
@@ -168,7 +168,7 @@ export class Factory {
                 rung.TestParamCells.push(cTn2);
 
                 var msg2 = new TestParam();
-                msg2.Key = "Message:";
+                msg2.Key = "Message";
                 msg2.Value = "State Vector";
                 var cMsg2 = new TestParamCell(msg2);
                 cMsg2.Row = 0;
@@ -177,7 +177,7 @@ export class Factory {
                 rung.TestParamCells.push(cMsg2);
 
                 var dt2 = new TestParam();
-                dt2.Key = "Data:";
+                dt2.Key = "Data";
                 dt2.Value = "TBD";
                 var cDt2 = new TestParamCell(dt2);
                 cDt2.Row = 0;
@@ -186,7 +186,7 @@ export class Factory {
                 rung.TestParamCells.push(cDt2);
 
                 var dt2a = new TestParam();
-                dt2a.Key = "Data:";
+                dt2a.Key = "Data";
                 dt2a.Value = "TBD";
                 var cDt2a = new TestParamCell(dt2a);
                 cDt2a.Row = 0;
@@ -195,7 +195,7 @@ export class Factory {
                 rung.TestParamCells.push(cDt2a);
 
                 var dt3a = new TestParam();
-                dt3a.Key = "Data:";
+                dt3a.Key = "Data";
                 dt3a.Value = "TBD";
                 var cDt3a = new TestParamCell(dt3a);
                 cDt3a.Row = 0;
@@ -211,7 +211,7 @@ export class Factory {
                 aft.Name = "after";
 
                 var st3 = new TestParam();
-                st3.Key = "Status:";
+                st3.Key = "Status";
                 st3.Value = "Stopped,______";
                 var cSt3 = new TestParamCell(st3);
                 cSt3.Row = 0;
@@ -220,7 +220,7 @@ export class Factory {
                 aft.TestParamCells.push(cSt3);
 
                 var date3 = new TestParam();
-                date3.Key = "Date:";
+                date3.Key = "Date";
                 date3.Value = "3/15/2016";
                 var cDate3 = new TestParamCell(date3);
                 cDate3.Row = 0;
@@ -229,7 +229,7 @@ export class Factory {
                 aft.TestParamCells.push(cDate3);
 
                 var time3 = new TestParam();
-                time3.Key = "Time:";
+                time3.Key = "Time";
                 time3.Value = "9:15:30";
                 var cTime3 = new TestParamCell(time3);
                 cTime3.Row = 0;
@@ -238,7 +238,7 @@ export class Factory {
                 aft.TestParamCells.push(cTime3);
 
                 var ts3 = new TestParam();
-                ts3.Key = "Test Set:";
+                ts3.Key = "Test Set";
                 ts3.Value = "TS-001";
                 var cTs3 = new TestParamCell(ts3);
                 cTs3.Row = 0;
@@ -247,7 +247,7 @@ export class Factory {
                 aft.TestParamCells.push(cTs3);
 
                 var user3 = new TestParam();
-                user3.Key = "User:";
+                user3.Key = "User";
                 user3.Value = "D.Smith";
                 var cUser3 = new TestParamCell(user3);
                 cUser3.Row = 0;
@@ -256,7 +256,7 @@ export class Factory {
                 aft.TestParamCells.push(cUser3);
 
                 var ctn3 = new TestParam();
-                ctn3.Key = "Connection:";
+                ctn3.Key = "Connection";
                 ctn3.Value = "Bottom Antenna";
                 var cCtn3 = new TestParamCell(ctn3);
                 cCtn3.Row = 0;
@@ -265,7 +265,7 @@ export class Factory {
                 aft.TestParamCells.push(cCtn3);
 
                 var dist3 = new TestParam();
-                dist3.Key = "Distance:";
+                dist3.Key = "Distance";
                 dist3.Value = "50 Ft";
                 var cDist3 = new TestParamCell(dist3);
                 cDist3.Row = 0;
@@ -274,7 +274,7 @@ export class Factory {
                 aft.TestParamCells.push(cDist3);
 
                 var tst3 = new TestParam();
-                tst3.Key = "Test Name:";
+                tst3.Key = "Test Name";
                 tst3.Value = "UAT Out";
                 var cTst3 = new TestParamCell(tst3);
                 cTst3.Row = 0;
@@ -283,7 +283,7 @@ export class Factory {
                 aft.TestParamCells.push(cTst3);
 
                 var data3 = new TestParam();
-                data3.Key = "Data:";
+                data3.Key = "Data";
                 data3.Value = "TBD";
                 var cData3 = new TestParamCell(data3);
                 cData3.Row = 0;
@@ -308,7 +308,7 @@ export class Factory {
         var favt1 = new Test();
 
         var add = new TestParam();
-        add.Key = "ADDRESS:";
+        add.Key = "ADDRESS";
         add.Value = "______ (_) / ________ (_)";
         var cAdd = new TestParamCell(add);
         cAdd.Row = 0;
@@ -320,7 +320,7 @@ export class Factory {
         favt1.TestParamCells.push(cAdd);
 
         var ftid = new TestParam();
-        ftid.Key = "Flight ID:";
+        ftid.Key = "Flight ID";
         ftid.Value = "______";
         var cFtid = new TestParamCell(ftid);
         cFtid.Row = 1;
@@ -331,7 +331,7 @@ export class Factory {
         favt1.TestParamCells.push(cFtid);
 
         var rfl = new TestParam();
-        rfl.Key = "RF Level:";
+        rfl.Key = "RF Level";
         rfl.Value = "______";
         var cRfl11 = new TestParamCell(rfl);
         cRfl11.Row = 1;
@@ -342,7 +342,7 @@ export class Factory {
         favt1.TestParamCells.push(cRfl11);
 
         var bssr = new TestParam();
-        bssr.Key = "BDS Rcvd (DF17):";
+        bssr.Key = "BDS Rcvd (DF17)";
         bssr.Value = "_,_ _,_ _,_ _,_ _,_";
         var cBssr = new TestParamCell(bssr);
         cBssr.Row = 2;
@@ -395,7 +395,7 @@ export class Factory {
                 // smry.TestParamCells.concat(this.CreateAircraftVehivleData());
 
                 var add = new TestParam();
-                add.Key = "ADDRESS:";
+                add.Key = "ADDRESS";
                 add.Value = "______ (_) / ________ (_)";
                 var cAdd = new TestParamCell(add);
                 cAdd.Row = 0;
@@ -407,7 +407,7 @@ export class Factory {
                 smry.TestParamCells.push(cAdd);
 
                 var ftid = new TestParam();
-                ftid.Key = "Flight ID:";
+                ftid.Key = "Flight ID";
                 ftid.Value = "______";
                 var cFtid = new TestParamCell(ftid);
                 cFtid.Row = 1;
@@ -418,7 +418,7 @@ export class Factory {
                 smry.TestParamCells.push(cFtid);
 
                 var rfl = new TestParam();
-                rfl.Key = "RF Level:";
+                rfl.Key = "RF Level";
                 rfl.Value = "______";
                 var cRfl11 = new TestParamCell(rfl);
                 cRfl11.Row = 1;
@@ -429,7 +429,7 @@ export class Factory {
                 smry.TestParamCells.push(cRfl11);
 
                 var bssr = new TestParam();
-                bssr.Key = "BDS Rcvd (DF17):";
+                bssr.Key = "BDS Rcvd (DF17)";
                 bssr.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBssr = new TestParamCell(bssr);
                 cBssr.Row = 2;
@@ -452,7 +452,7 @@ export class Factory {
                 smry.TestParamCells.push(cFrre11);
 
                 var avi11 = new TestParam();
-                avi11.Key = "Aircraft/Vehicle Info:";
+                avi11.Key = "Aircraft/Vehicle Info";
                 var cAvi11 = new TestParamCell(avi11);
                 cAvi11.Row = 5;
                 cAvi11.Column = 0;
@@ -462,7 +462,7 @@ export class Factory {
                 smry.TestParamCells.push(cAvi11);
 
                 var fid11 = new TestParam();
-                fid11.Key = "Flight ID:";
+                fid11.Key = "Flight ID";
                 fid11.Value = "______";
                 var cFid11 = new TestParamCell(fid11);
                 cFid11.Row = 6;
@@ -471,7 +471,7 @@ export class Factory {
                 smry.TestParamCells.push(cFid11);
 
                 var madr11 = new TestParam();
-                madr11.Key = "Mode S Addr :";
+                madr11.Key = "Mode S Addr";
                 madr11.Value = "______";
                 var cMadr11 = new TestParamCell(madr11);
                 cMadr11.Row = 6;
@@ -480,7 +480,7 @@ export class Factory {
                 smry.TestParamCells.push(cMadr11);
 
                 var ec11 = new TestParam();
-                ec11.Key = "Emitter Cat:";
+                ec11.Key = "Emitter Cat";
                 ec11.Value = "__ (______) ";
                 var cEc11 = new TestParamCell(ec11);
                 cEc11.Row = 7;
@@ -489,7 +489,7 @@ export class Factory {
                 smry.TestParamCells.push(cEc11);
 
                 var acd11 = new TestParam();
-                acd11.Key = "3/A Code:";
+                acd11.Key = "3/A Code";
                 acd11.Value = "_____";
                 var cAcd11 = new TestParamCell(acd11);
                 cAcd11.Row = 7;
@@ -498,7 +498,7 @@ export class Factory {
                 smry.TestParamCells.push(cAcd11);
 
                 var ep11 = new TestParam();
-                ep11.Key = "Emg/Prty:";
+                ep11.Key = "Emg/Prty";
                 ep11.Value = "_ (________)";
                 var cEp11 = new TestParamCell(ep11);
                 cEp11.Row = 8;
@@ -507,7 +507,7 @@ export class Factory {
                 smry.TestParamCells.push(cEp11);
 
                 var lw11 = new TestParam();
-                lw11.Key = "L/W:";
+                lw11.Key = "L/W";
                 lw11.Value = "__ ( __ m / __._m)";
                 var cLw11 = new TestParamCell(lw11);
                 cLw11.Row = 8;
@@ -516,7 +516,7 @@ export class Factory {
                 smry.TestParamCells.push(cLw11);
 
                 var lat11 = new TestParam();
-                lat11.Key = "Latitude:";
+                lat11.Key = "Latitude";
                 lat11.Value = "__._____°";
                 lat11.Unit = "N";
                 var cLat11 = new TestParamCell(lat11);
@@ -526,7 +526,7 @@ export class Factory {
                 smry.TestParamCells.push(cLat11);
 
                 var altb11 = new TestParam();
-                altb11.Key = "Altitude(baro):";
+                altb11.Key = "Altitude(baro)";
                 altb11.Value = "____,_____";
                 altb11.Unit = "ft";
                 var cAltb11 = new TestParamCell(altb11);
@@ -536,7 +536,7 @@ export class Factory {
                 smry.TestParamCells.push(cAltb11);
 
                 var lon11 = new TestParam();
-                lon11.Key = "Longitude:";
+                lon11.Key = "Longitude";
                 lon11.Value = "____._____°";
                 lon11.Unit = "W";
                 var cLon11 = new TestParamCell(lon11);
@@ -546,7 +546,7 @@ export class Factory {
                 smry.TestParamCells.push(cLon11);
 
                 var altg11 = new TestParam();
-                altg11.Key = "Altitude(geom):";
+                altg11.Key = "Altitude(geom)";
                 altg11.Value = "__,___";
                 altg11.Unit = "ft";
                 var cAltg11 = new TestParamCell(altg11);
@@ -556,7 +556,7 @@ export class Factory {
                 smry.TestParamCells.push(cAltg11);
 
                 var vt11 = new TestParam();
-                vt11.Key = "Velocity:";
+                vt11.Key = "Velocity";
                 vt11.Value = "___";
                 vt11.Unit = "kts";
                 var cvt11 = new TestParamCell(vt11);
@@ -566,7 +566,7 @@ export class Factory {
                 smry.TestParamCells.push(cvt11);
 
                 var ynd11 = new TestParam();
-                ynd11.Key = "YES/NO Discretes:";
+                ynd11.Key = "YES/NO Discretes";
                 var cYnd11 = new TestParamCell(ynd11);
                 cYnd11.Row = 12;
                 cYnd11.Column = 0;
@@ -577,7 +577,7 @@ export class Factory {
                 smry.TestParamCells.push(cYnd11);
 
                 var ui11 = new TestParam();
-                ui11.Key = "UAT IN:";
+                ui11.Key = "UAT IN";
                 ui11.Value = "_ (_)";
                 var cUi11 = new TestParamCell(ui11);
                 cUi11.Row = 13;
@@ -586,7 +586,7 @@ export class Factory {
                 smry.TestParamCells.push(cUi11);
 
                 var to11 = new TestParam();
-                to11.Key = "TCAS Op:";
+                to11.Key = "TCAS Op";
                 to11.Value = "_ (_)";
                 var cTo11 = new TestParamCell(to11);
                 cTo11.Row = 13;
@@ -595,7 +595,7 @@ export class Factory {
                 smry.TestParamCells.push(cTo11);
 
                 var es11 = new TestParam();
-                es11.Key = "1090ES:";
+                es11.Key = "1090ES";
                 es11.Value = "_ (_)";
                 var cEs11 = new TestParamCell(es11);
                 cEs11.Row = 14;
@@ -604,7 +604,7 @@ export class Factory {
                 smry.TestParamCells.push(cEs11);
 
                 var idt11 = new TestParam();
-                idt11.Key = "IDENT:";
+                idt11.Key = "IDENT";
                 idt11.Value = "_ (_)";
                 var cIdt11 = new TestParamCell(idt11);
                 cIdt11.Row = 14;
@@ -613,7 +613,7 @@ export class Factory {
                 smry.TestParamCells.push(cIdt11);
 
                 var tcasra11 = new TestParam();
-                tcasra11.Key = "TCAS RA:";
+                tcasra11.Key = "TCAS RA";
                 tcasra11.Value = "_ (_)";
                 var cTcasra11 = new TestParamCell(tcasra11);
                 cTcasra11.Row = 15;
@@ -622,7 +622,7 @@ export class Factory {
                 smry.TestParamCells.push(cTcasra11);
 
                 var ifd11 = new TestParam();
-                ifd11.Key = "Integrity Fields:";
+                ifd11.Key = "Integrity Fields";
                 var cIfd11 = new TestParamCell(ifd11);
                 cIfd11.Row = 16;
                 cIfd11.Column = 0;
@@ -632,7 +632,7 @@ export class Factory {
                 smry.TestParamCells.push(cIfd11);
 
                 var nacp11 = new TestParam();
-                nacp11.Key = "NACp:";
+                nacp11.Key = "NACp";
                 nacp11.Value = "__ (< __nm) ";
                 var cNacp11 = new TestParamCell(nacp11);
                 cNacp11.Row = 17;
@@ -641,7 +641,7 @@ export class Factory {
                 smry.TestParamCells.push(cNacp11);
 
                 var nv11 = new TestParam();
-                nv11.Key = "NACv:";
+                nv11.Key = "NACv";
                 nv11.Value = "__ (< __m/s)";
                 var cNv11 = new TestParamCell(nv11);
                 cNv11.Row = 17;
@@ -650,7 +650,7 @@ export class Factory {
                 smry.TestParamCells.push(cNv11);
 
                 var sil11 = new TestParam();
-                sil11.Key = "SIL:";
+                sil11.Key = "SIL";
                 sil11.Value = "__ (< __ -__ )";
                 var cSil11 = new TestParamCell(sil11);
                 cSil11.Row = 18;
@@ -659,7 +659,7 @@ export class Factory {
                 smry.TestParamCells.push(cSil11);
 
                 var sda11 = new TestParam();
-                sda11.Key = "SDA:";
+                sda11.Key = "SDA";
                 sda11.Value = "__";
                 var cSda11 = new TestParamCell(sda11);
                 cSda11.Row = 18;
@@ -668,7 +668,7 @@ export class Factory {
                 smry.TestParamCells.push(cSda11);
 
                 var gva11 = new TestParam();
-                gva11.Key = "GVA:";
+                gva11.Key = "GVA";
                 gva11.Value = "__ (< ___m)";
                 var cGva11 = new TestParamCell(gva11);
                 cGva11.Row = 19;
@@ -677,7 +677,7 @@ export class Factory {
                 smry.TestParamCells.push(cGva11);
 
                 var nic11 = new TestParam();
-                nic11.Key = "NIC:";
+                nic11.Key = "NIC";
                 nic11.Value = "__ (RC< __nmi)";
                 var cNic11 = new TestParamCell(nic11);
                 cNic11.Row = 19;
@@ -686,7 +686,7 @@ export class Factory {
                 smry.TestParamCells.push(cNic11);
 
                 var result11 = new TestParam();
-                result11.Key = "Result:";
+                result11.Key = "Result";
                 result11.Value = "______";
                 var cResult11 = new TestParamCell(result11);
                 cResult11.Row = 20;
@@ -703,7 +703,7 @@ export class Factory {
                 apos.Name = "AIRBORN POSITION";
                 apos.Styles.add("value", "result113Right");
                 var add13 = new TestParam();
-                add13.Key = "ADDRESS:";
+                add13.Key = "ADDRESS";
                 add13.Value = "______ (_) / ________ (_)";
                 var cAdd13 = new TestParamCell(add13);
                 cAdd13.Row = 0;
@@ -715,7 +715,7 @@ export class Factory {
                 apos.TestParamCells.push(cAdd13);
 
                 var ftid13 = new TestParam();
-                ftid13.Key = "Flight ID:";
+                ftid13.Key = "Flight ID";
                 ftid13.Value = "______";
                 var cFtid13 = new TestParamCell(ftid13);
                 cFtid13.Row = 1;
@@ -726,7 +726,7 @@ export class Factory {
                 apos.TestParamCells.push(cFtid13);
 
                 var rfl13 = new TestParam();
-                rfl13.Key = "RF Level:";
+                rfl13.Key = "RF Level";
                 rfl13.Value = "______";
                 var cRfl13 = new TestParamCell(rfl13);
                 cRfl13.Row = 1;
@@ -737,7 +737,7 @@ export class Factory {
                 apos.TestParamCells.push(cRfl13);
 
                 var bdsr13 = new TestParam();
-                bdsr13.Key = "BDS Rcvd (DF17):";
+                bdsr13.Key = "BDS Rcvd (DF17)";
                 bdsr13.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr13 = new TestParamCell(bdsr13);
                 cBdsr13.Row = 2;
@@ -749,7 +749,7 @@ export class Factory {
                 apos.TestParamCells.push(cBdsr13);
 
                 var bds13 = new TestParam();
-                bds13.Key = "BDS 0,5:";
+                bds13.Key = "BDS 0,5";
                 bds13.Value = "Airborne Position";
                 var cBds13 = new TestParamCell(bds13);
                 cBds13.Row = 3;
@@ -760,7 +760,7 @@ export class Factory {
                 apos.TestParamCells.push(cBds13);
 
                 var prd13 = new TestParam();
-                prd13.Key = "Period:";
+                prd13.Key = "Period";
                 prd13.Value = "____";
                 prd13.Unit = "ms";
                 var cPrd13 = new TestParamCell(prd13);
@@ -772,7 +772,7 @@ export class Factory {
                 apos.TestParamCells.push(cPrd13);
 
                 var me13 = new TestParam();
-                me13.Key = "Message Element:";
+                me13.Key = "Message Element";
                 me13.Value = "__ __ __ __ __ __ __";
                 var cMe13 = new TestParamCell(me13);
                 cMe13.Row = 4;
@@ -795,7 +795,7 @@ export class Factory {
                 apos.TestParamCells.push(cPos13);
 
                 var lat13 = new TestParam();
-                lat13.Key = "Latitude:";
+                lat13.Key = "Latitude";
                 lat13.Value = "__⁰ __ __.___";
                 lat13.Unit = "N";
                 var cLat13 = new TestParamCell(lat13);
@@ -806,7 +806,7 @@ export class Factory {
                 apos.TestParamCells.push(cLat13);
 
                 var lon13 = new TestParam();
-                lon13.Key = "Longitude:";
+                lon13.Key = "Longitude";
                 lon13.Value = "____⁰ __ __.___";
                 lon13.Unit = "W";
                 var cLon13 = new TestParamCell(lon13);
@@ -817,7 +817,7 @@ export class Factory {
                 apos.TestParamCells.push(cLon13);
 
                 var altb13 = new TestParam();
-                altb13.Key = "Altitude (baro):";
+                altb13.Key = "Altitude (baro)";
                 altb13.Value = "____,_____";
                 altb13.Unit = "ft";
                 var cAltb13 = new TestParamCell(altb13);
@@ -839,7 +839,7 @@ export class Factory {
                 apos.TestParamCells.push(cOf13);
 
                 var ss13 = new TestParam();
-                ss13.Key = "Surveillance Status:";
+                ss13.Key = "Surveillance Status";
                 ss13.Value = "__ (____)";
                 var cSs13 = new TestParamCell(ss13);
                 cSs13.Row = 10;
@@ -851,7 +851,7 @@ export class Factory {
                 apos.TestParamCells.push(cSs13);
 
                 var nicsb13 = new TestParam();
-                nicsb13.Key = "NIC-SB:";
+                nicsb13.Key = "NIC-SB";
                 nicsb13.Value = "__";
                 var cNicsb13 = new TestParamCell(nicsb13);
                 cNicsb13.Row = 11;
@@ -863,7 +863,7 @@ export class Factory {
                 apos.TestParamCells.push(cNicsb13);
 
                 var cprf13 = new TestParam();
-                cprf13.Key = "CPR Format:";
+                cprf13.Key = "CPR Format";
                 cprf13.Value = "__ (____)";
                 var cCprf13 = new TestParamCell(cprf13);
                 cCprf13.Row = 12;
@@ -875,7 +875,7 @@ export class Factory {
                 apos.TestParamCells.push(cCprf13);
 
                 var uttcs13 = new TestParam();
-                uttcs13.Key = "UTC Sync:";
+                uttcs13.Key = "UTC Sync";
                 uttcs13.Value = "__ (_______)";
                 var cUttcs13 = new TestParamCell(uttcs13);
                 cUttcs13.Row = 13;
@@ -887,7 +887,7 @@ export class Factory {
                 apos.TestParamCells.push(cUttcs13);
 
                 var result13 = new TestParam();
-                result13.Key = "Result:";
+                result13.Key = "Result";
                 result13.Value = "______";
                 var cResult13 = new TestParamCell(result13);
                 cResult13.Row = 14;
@@ -904,7 +904,7 @@ export class Factory {
                 acid.Name = "AC ID";
                 acid.Styles.add("value", "result113Right");
                 var add14 = new TestParam();
-                add14.Key = "ADDRESS:";
+                add14.Key = "ADDRESS";
                 add14.Value = "______ (_) / ________ (_)";
                 var cAdd14 = new TestParamCell(add14);
                 cAdd14.Row = 0;
@@ -915,7 +915,7 @@ export class Factory {
                 acid.TestParamCells.push(cAdd14);
 
                 var ftid14 = new TestParam();
-                ftid14.Key = "Flight ID:";
+                ftid14.Key = "Flight ID";
                 ftid14.Value = "______";
                 var cFtid14 = new TestParamCell(ftid14);
                 cFtid14.Row = 1;
@@ -925,7 +925,7 @@ export class Factory {
                 acid.TestParamCells.push(cFtid14);
 
                 var rfl14 = new TestParam();
-                rfl14.Key = "RF Level:";
+                rfl14.Key = "RF Level";
                 rfl14.Value = "______";
                 var cRfl14 = new TestParamCell(rfl14);
                 cRfl14.Row = 1;
@@ -935,7 +935,7 @@ export class Factory {
                 acid.TestParamCells.push(cRfl14);
 
                 var bdsr14 = new TestParam();
-                bdsr14.Key = "BDS Rcvd (DF17):";
+                bdsr14.Key = "BDS Rcvd (DF17)";
                 bdsr14.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr14 = new TestParamCell(bdsr14);
                 cBdsr14.Row = 2;
@@ -947,7 +947,7 @@ export class Factory {
                 acid.TestParamCells.push(cBdsr14);
 
                 var bds14 = new TestParam();
-                bds14.Key = "BDS 0,8:";
+                bds14.Key = "BDS 0,8";
                 bds14.Value = "A/C ID & Category";
                 var cBds14 = new TestParamCell(bds14);
                 cBds14.Row = 3;
@@ -958,7 +958,7 @@ export class Factory {
                 acid.TestParamCells.push(cBds14);
 
                 var prd14 = new TestParam();
-                prd14.Key = "Period:";
+                prd14.Key = "Period";
                 prd14.Value = "__.__";
                 prd14.Unit = "sec";
                 var cPrd14 = new TestParamCell(prd14);
@@ -970,7 +970,7 @@ export class Factory {
                 acid.TestParamCells.push(cPrd14);
 
                 var me14 = new TestParam();
-                me14.Key = "Message Element:";
+                me14.Key = "Message Element";
                 me14.Value = "__ __ __ __ __ __ __";
                 var cMe14 = new TestParamCell(me14);
                 cMe14.Row = 4;
@@ -993,7 +993,7 @@ export class Factory {
                 acid.TestParamCells.push(cAvi14);
 
                 var aid14 = new TestParam();
-                aid14.Key = "Aircraft ID:";
+                aid14.Key = "Aircraft ID";
                 aid14.Value = "______";
                 var cAid14 = new TestParamCell(aid14);
                 cAid14.Row = 6;
@@ -1003,7 +1003,7 @@ export class Factory {
                 acid.TestParamCells.push(cAid14);
 
                 var ec14 = new TestParam();
-                ec14.Key = "Emitter Cat:";
+                ec14.Key = "Emitter Cat";
                 ec14.Value = "_ (_____)";
                 var cEc14 = new TestParamCell(ec14);
                 cEc14.Row = 7;
@@ -1013,7 +1013,7 @@ export class Factory {
                 acid.TestParamCells.push(cEc14);
 
                 var result14 = new TestParam();
-                result14.Key = "Result:";
+                result14.Key = "Result";
                 result14.Value = "______";
                 var cResult14 = new TestParamCell(result14);
                 cResult14.Row = 8;
@@ -1031,7 +1031,7 @@ export class Factory {
                 vcty.Styles.add("value", "result113Right");
 
                 var add15 = new TestParam();
-                add15.Key = "ADDRESS:";
+                add15.Key = "ADDRESS";
                 add15.Value = "______ (_) / ________ (_)";
                 var cAdd15 = new TestParamCell(add15);
                 cAdd15.Row = 0;
@@ -1042,7 +1042,7 @@ export class Factory {
                 vcty.TestParamCells.push(cAdd15);
 
                 var ftid15 = new TestParam();
-                ftid15.Key = "Flight ID:";
+                ftid15.Key = "Flight ID";
                 ftid15.Value = "______";
                 var cFtid15 = new TestParamCell(ftid15);
                 cFtid15.Row = 1;
@@ -1052,7 +1052,7 @@ export class Factory {
                 vcty.TestParamCells.push(cFtid15);
 
                 var rfl15 = new TestParam();
-                rfl15.Key = "RF Level:";
+                rfl15.Key = "RF Level";
                 rfl15.Value = "______";
                 var cRfl15 = new TestParamCell(rfl15);
                 cRfl15.Row = 1;
@@ -1062,7 +1062,7 @@ export class Factory {
                 vcty.TestParamCells.push(cRfl15);
 
                 var bdsr15 = new TestParam();
-                bdsr15.Key = "BDS Rcvd (DF17):";
+                bdsr15.Key = "BDS Rcvd (DF17)";
                 bdsr15.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr15 = new TestParamCell(bdsr15);
                 cBdsr15.Row = 2;
@@ -1074,7 +1074,7 @@ export class Factory {
                 vcty.TestParamCells.push(cBdsr15);
 
                 var bds15 = new TestParam();
-                bds15.Key = "BDS 0,9:";
+                bds15.Key = "BDS 0,9";
                 bds15.Value = "Airborne Velocity";
                 var cBds15 = new TestParamCell(bds15);
                 cBds15.Row = 3;
@@ -1085,7 +1085,7 @@ export class Factory {
                 vcty.TestParamCells.push(cBds15);
 
                 var prd15 = new TestParam();
-                prd15.Key = "Period:";
+                prd15.Key = "Period";
                 prd15.Value = "___";
                 prd15.Unit = "ms";
                 var cPrd15 = new TestParamCell(prd15);
@@ -1097,7 +1097,7 @@ export class Factory {
                 vcty.TestParamCells.push(cPrd15);
 
                 var me15 = new TestParam();
-                me15.Key = "Message Element:";
+                me15.Key = "Message Element";
                 me15.Value = "__ __ __ __ __ __ __";
                 var cMe15 = new TestParamCell(me15);
                 cMe15.Row = 4;
@@ -1120,7 +1120,7 @@ export class Factory {
                 vcty.TestParamCells.push(cFd15);
 
                 var hdg15 = new TestParam();
-                hdg15.Key = "Heading:";
+                hdg15.Key = "Heading";
                 hdg15.Value = "______";
                 var cHdg15 = new TestParamCell(hdg15);
                 cHdg15.Row = 6;
@@ -1131,7 +1131,7 @@ export class Factory {
                 vcty.TestParamCells.push(cHdg15);
 
                 var asd15 = new TestParam();
-                asd15.Key = "Airspeed:";
+                asd15.Key = "Airspeed";
                 asd15.Value = "__ (______)";
                 var cAsd15 = new TestParamCell(asd15);
                 cAsd15.Row = 7;
@@ -1142,7 +1142,7 @@ export class Factory {
                 vcty.TestParamCells.push(cAsd15);
 
                 var vr15 = new TestParam();
-                vr15.Key = "Vertical Rate:";
+                vr15.Key = "Vertical Rate";
                 vr15.Value = "______";
                 vr15.Unit = "fpm";
                 var cVr15 = new TestParamCell(vr15);
@@ -1154,7 +1154,7 @@ export class Factory {
                 vcty.TestParamCells.push(cVr15);
 
                 var gbalt15 = new TestParam();
-                gbalt15.Key = "Geom/Baro Alt:";
+                gbalt15.Key = "Geom/Baro Alt";
                 gbalt15.Value = "_____";
                 gbalt15.Unit = "ft";
                 var cGbalt15 = new TestParamCell(gbalt15);
@@ -1177,7 +1177,7 @@ export class Factory {
                 vcty.TestParamCells.push(cOf15);
 
                 var icf15 = new TestParam();
-                icf15.Key = "ICF:";
+                icf15.Key = "ICF";
                 icf15.Value = "_ (______)";
                 var cIcf15 = new TestParamCell(icf15);
                 cIcf15.Row = 11;
@@ -1188,7 +1188,7 @@ export class Factory {
                 vcty.TestParamCells.push(cIcf15);
 
                 var at15 = new TestParam();
-                at15.Key = "Airspd Type:";
+                at15.Key = "Airspd Type";
                 at15.Value = "__ (___)";
                 var cAt15 = new TestParamCell(at15);
                 cAt15.Row = 11;
@@ -1198,7 +1198,7 @@ export class Factory {
                 vcty.TestParamCells.push(cAt15);
 
                 var nacv15 = new TestParam();
-                nacv15.Key = "NACv:";
+                nacv15.Key = "NACv";
                 nacv15.Value = "__ (< __ m/s) ";
                 var cNacv15 = new TestParamCell(nacv15);
                 cNacv15.Row = 12;
@@ -1209,7 +1209,7 @@ export class Factory {
                 vcty.TestParamCells.push(cNacv15);
 
                 var vrs15 = new TestParam();
-                vrs15.Key = "Vert Rate Src:";
+                vrs15.Key = "Vert Rate Src";
                 vrs15.Value = "_ (_____)";
                 var cVrs15 = new TestParamCell(vrs15);
                 cVrs15.Row = 12;
@@ -1219,7 +1219,7 @@ export class Factory {
                 vcty.TestParamCells.push(cVrs15);
 
                 var hss15 = new TestParam();
-                hss15.Key = "Hdg Sts: ";
+                hss15.Key = "Hdg Sts";
                 hss15.Value = "_ (_____)";
                 var cHss15 = new TestParamCell(hss15);
                 cHss15.Row = 13;
@@ -1230,7 +1230,7 @@ export class Factory {
                 vcty.TestParamCells.push(cHss15);
 
                 var result15 = new TestParam();
-                result15.Key = "Result:";
+                result15.Key = "Result";
                 result15.Value = "______";
                 var cResult15 = new TestParamCell(result15);
                 cResult15.Row = 14;
@@ -1248,7 +1248,7 @@ export class Factory {
                 opsts.Styles.add("value", "result80Right");
 
                 var add16 = new TestParam();
-                add16.Key = "ADDRESS:";
+                add16.Key = "ADDRESS";
                 add16.Value = "______ (_) / ________ (_)";
                 var cAdd16 = new TestParamCell(add16);
                 cAdd16.Row = 0;
@@ -1260,7 +1260,7 @@ export class Factory {
                 opsts.TestParamCells.push(cAdd16);
 
                 var ftid16 = new TestParam();
-                ftid16.Key = "Flight ID:";
+                ftid16.Key = "Flight ID";
                 ftid16.Value = "______";
                 var cFtid16 = new TestParamCell(ftid16);
                 cFtid16.Row = 1;
@@ -1271,7 +1271,7 @@ export class Factory {
                 opsts.TestParamCells.push(cFtid16);
 
                 var rfl16 = new TestParam();
-                rfl16.Key = "RF Level:";
+                rfl16.Key = "RF Level";
                 rfl16.Value = "______";
                 var cRfl16 = new TestParamCell(rfl16);
                 cRfl16.Row = 1;
@@ -1282,7 +1282,7 @@ export class Factory {
                 opsts.TestParamCells.push(cRfl16);
 
                 var bdsr16 = new TestParam();
-                bdsr16.Key = "BDS Rcvd (DF17):";
+                bdsr16.Key = "BDS Rcvd (DF17)";
                 bdsr16.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr16 = new TestParamCell(bdsr16);
                 cBdsr16.Row = 2;
@@ -1294,7 +1294,7 @@ export class Factory {
                 opsts.TestParamCells.push(cBdsr16);
 
                 var bds16 = new TestParam();
-                bds16.Key = "BDS 6,5:";
+                bds16.Key = "BDS 6,5";
                 bds16.Value = "Operational Status";
                 var cBds16 = new TestParamCell(bds16);
                 cBds16.Row = 3;
@@ -1305,7 +1305,7 @@ export class Factory {
                 opsts.TestParamCells.push(cBds16);
 
                 var prd16 = new TestParam();
-                prd16.Key = "Period:";
+                prd16.Key = "Period";
                 prd16.Value = "__.__";
                 prd16.Unit = "sec";
                 var cPrd16 = new TestParamCell(prd16);
@@ -1317,7 +1317,7 @@ export class Factory {
                 opsts.TestParamCells.push(cPrd16);
 
                 var me16 = new TestParam();
-                me16.Key = "Message Element:";
+                me16.Key = "Message Element";
                 me16.Value = "__ __ __ __ __ __ __";
                 var cMe16 = new TestParamCell(me16);
                 cMe16.Row = 4;
@@ -1329,7 +1329,7 @@ export class Factory {
                 opsts.TestParamCells.push(cMe16);
 
                 var id16 = new TestParam();
-                id16.Key = "Intergrity Data:";
+                id16.Key = "Intergrity Data";
                 var cId16 = new TestParamCell(id16);
                 cId16.Row = 5;
                 cId16.Column = 0;
@@ -1339,7 +1339,7 @@ export class Factory {
                 opsts.TestParamCells.push(cId16);
 
                 var navp16 = new TestParam();
-                navp16.Key = "NACp:";
+                navp16.Key = "NACp";
                 navp16.Value = "__ (<.__ nm) ";
                 var cNacp16 = new TestParamCell(navp16);
                 cNacp16.Row = 6;
@@ -1349,7 +1349,7 @@ export class Factory {
                 opsts.TestParamCells.push(cNacp16);
 
                 var cnicsa16 = new TestParam();
-                cnicsa16.Key = "NIC-supA:";
+                cnicsa16.Key = "NIC-supA";
                 cnicsa16.Value = "__";
                 var cCnicsa16 = new TestParamCell(cnicsa16);
                 cCnicsa16.Row = 6;
@@ -1358,7 +1358,7 @@ export class Factory {
                 opsts.TestParamCells.push(cCnicsa16);
 
                 var sda16 = new TestParam();
-                sda16.Key = "SDA:";
+                sda16.Key = "SDA";
                 sda16.Value = "__";
                 var cSda16 = new TestParamCell(sda16);
                 cSda16.Row = 7;
@@ -1368,7 +1368,7 @@ export class Factory {
                 opsts.TestParamCells.push(cSda16);
 
                 var gva16 = new TestParam();
-                gva16.Key = "GVA:";
+                gva16.Key = "GVA";
                 gva16.Value = "_ (<__ m)";
                 var cGva16 = new TestParamCell(gva16);
                 cGva16.Row = 7;
@@ -1377,7 +1377,7 @@ export class Factory {
                 opsts.TestParamCells.push(cGva16);
 
                 var sil16 = new TestParam();
-                sil16.Key = "SIL:";
+                sil16.Key = "SIL";
                 sil16.Value = "_ (___)";
                 var cSil16 = new TestParamCell(sil16);
                 cSil16.Row = 8;
@@ -1387,7 +1387,7 @@ export class Factory {
                 opsts.TestParamCells.push(cSil16);
 
                 var silsup16 = new TestParam();
-                silsup16.Key = "SILsup:";
+                silsup16.Key = "SILsup";
                 silsup16.Value = "__";
                 var csilsup16 = new TestParamCell(silsup16);
                 csilsup16.Row = 8;
@@ -1396,7 +1396,7 @@ export class Factory {
                 opsts.TestParamCells.push(csilsup16);
 
                 var cs16 = new TestParam();
-                cs16.Key = "Capability/Status:";
+                cs16.Key = "Capability/Status";
                 var cCs16 = new TestParamCell(cs16);
                 cCs16.Row = 9;
                 cCs16.Column = 0;
@@ -1407,7 +1407,7 @@ export class Factory {
                 opsts.TestParamCells.push(cCs16);
 
                 var acc16 = new TestParam();
-                acc16.Key = "Airb Cap. Class:";
+                acc16.Key = "Airb Cap. Class";
                 acc16.Value = "___";
                 var cAcc16 = new TestParamCell(acc16);
                 cAcc16.Row = 10;
@@ -1418,7 +1418,7 @@ export class Factory {
                 opsts.TestParamCells.push(cAcc16);
 
                 var om16 = new TestParam();
-                om16.Key = "Op. Mode (OM):";
+                om16.Key = "Op. Mode (OM)";
                 om16.Value = "__";
                 var cOm16 = new TestParamCell(om16);
                 cOm16.Row = 10;
@@ -1429,7 +1429,7 @@ export class Factory {
                 opsts.TestParamCells.push(cOm16);
 
                 var ant16 = new TestParam();
-                ant16.Key = "Antenna:";
+                ant16.Key = "Antenna";
                 ant16.Value = "__ (___)";
                 var cAnt16 = new TestParamCell(ant16);
                 cAnt16.Row = 11;
@@ -1440,7 +1440,7 @@ export class Factory {
                 opsts.TestParamCells.push(cAnt16);
 
                 var tsr16 = new TestParam();
-                tsr16.Key = "Target State Rpt:";
+                tsr16.Key = "Target State Rpt";
                 tsr16.Value = "__ (____)";
                 var cTsr16 = new TestParamCell(tsr16);
                 cTsr16.Row = 11;
@@ -1451,7 +1451,7 @@ export class Factory {
                 opsts.TestParamCells.push(cTsr16);
 
                 var tcaso16 = new TestParam();
-                tcaso16.Key = "TCAS Oper:";
+                tcaso16.Key = "TCAS Oper";
                 tcaso16.Value = "__ (____)";
                 var cTcaso16 = new TestParamCell(tcaso16);
                 cTcaso16.Row = 12;
@@ -1462,7 +1462,7 @@ export class Factory {
                 opsts.TestParamCells.push(cTcaso16);
 
                 var tcasra16 = new TestParam();
-                tcasra16.Key = "TCAS RA:";
+                tcasra16.Key = "TCAS RA";
                 tcasra16.Value = "__ (____)";
                 var cTcasra16 = new TestParamCell(tcasra16);
                 cTcasra16.Row = 12;
@@ -1473,7 +1473,7 @@ export class Factory {
                 opsts.TestParamCells.push(cTcasra16);
 
                 var esin16 = new TestParam();
-                esin16.Key = "1090ES-IN:";
+                esin16.Key = "1090ES-IN";
                 esin16.Value = "__ (____)";
                 var cEsin16 = new TestParamCell(esin16);
                 cEsin16.Row = 13;
@@ -1484,7 +1484,7 @@ export class Factory {
                 opsts.TestParamCells.push(cEsin16);
 
                 var utin16 = new TestParam();
-                utin16.Key = "UAT-IN:";
+                utin16.Key = "UAT-IN";
                 utin16.Value = "__ (____)";
                 var cUtin16 = new TestParamCell(utin16);
                 cUtin16.Row = 13;
@@ -1495,7 +1495,7 @@ export class Factory {
                 opsts.TestParamCells.push(cUtin16);
 
                 var atc16 = new TestParam();
-                atc16.Key = "ATC:";
+                atc16.Key = "ATC";
                 atc16.Value = "__ (____)";
                 var cAtc16 = new TestParamCell(atc16);
                 cAtc16.Row = 14;
@@ -1506,7 +1506,7 @@ export class Factory {
                 opsts.TestParamCells.push(cAtc16);
 
                 var idt16 = new TestParam();
-                idt16.Key = "IDENT:";
+                idt16.Key = "IDENT";
                 idt16.Value = "__ (____)";
                 var cIdt16 = new TestParamCell(idt16);
                 cIdt16.Row = 14;
@@ -1517,7 +1517,7 @@ export class Factory {
                 opsts.TestParamCells.push(cIdt16);
 
                 var ofd16 = new TestParam();
-                ofd16.Key = "Other Fields:";
+                ofd16.Key = "Other Fields";
                 var cOfd16 = new TestParamCell(ofd16);
                 cOfd16.Row = 15;
                 cOfd16.Column = 0;
@@ -1527,7 +1527,7 @@ export class Factory {
                 opsts.TestParamCells.push(cOfd16);
 
                 var vrs16 = new TestParam();
-                vrs16.Key = "Version:";
+                vrs16.Key = "Version";
                 vrs16.Value = "__ (_____)";
                 var cVrs16 = new TestParamCell(vrs16);
                 cVrs16.Row = 16;
@@ -1536,7 +1536,7 @@ export class Factory {
                 opsts.TestParamCells.push(cVrs16);
 
                 var tc16 = new TestParam();
-                tc16.Key = "Traj Chg (TC):";
+                tc16.Key = "Traj Chg (TC)";
                 tc16.Value = "__ (____)";
                 var cTc16 = new TestParamCell(tc16);
                 cTc16.Row = 16;
@@ -1545,7 +1545,7 @@ export class Factory {
                 opsts.TestParamCells.push(cTc16);
 
                 var arvc16 = new TestParam();
-                arvc16.Key = "ARV capable:";
+                arvc16.Key = "ARV capable";
                 arvc16.Value = "__ (____)";
                 var cArvc16 = new TestParamCell(arvc16);
                 cArvc16.Row = 17;
@@ -1554,7 +1554,7 @@ export class Factory {
                 opsts.TestParamCells.push(cArvc16);
 
                 var arf16 = new TestParam();
-                arf16.Key = "ADS-R Flag:";
+                arf16.Key = "ADS-R Flag";
                 arf16.Value = "__";
                 var cArf16 = new TestParamCell(arf16);
                 cArf16.Row = 17;
@@ -1563,7 +1563,7 @@ export class Factory {
                 opsts.TestParamCells.push(cArf16);
 
                 var hrd16 = new TestParam();
-                hrd16.Key = "Hrz Ref Dir:";
+                hrd16.Key = "Hrz Ref Dir";
                 hrd16.Value = "__ (___ _)";
                 var cHrd16 = new TestParamCell(hrd16);
                 cHrd16.Row = 18;
@@ -1572,7 +1572,7 @@ export class Factory {
                 opsts.TestParamCells.push(cHrd16);
 
                 var result16 = new TestParam();
-                result16.Key = "Result:";
+                result16.Key = "Result";
                 result16.Value = "______";
                 var cResult16 = new TestParamCell(result16);
                 cResult16.Row = 19;
@@ -1590,7 +1590,7 @@ export class Factory {
                 ts.Styles.add("value", "result135Right");
 
                 var add17 = new TestParam();
-                add17.Key = "ADDRESS:";
+                add17.Key = "ADDRESS";
                 add17.Value = "______ (_) / ________ (_)";
                 var cAdd17 = new TestParamCell(add17);
                 cAdd17.Row = 0;
@@ -1602,7 +1602,7 @@ export class Factory {
                 ts.TestParamCells.push(cAdd17);
 
                 var ftid17 = new TestParam();
-                ftid17.Key = "Flight ID:";
+                ftid17.Key = "Flight ID";
                 ftid17.Value = "______";
                 var cFtid17 = new TestParamCell(ftid17);
                 cFtid17.Row = 1;
@@ -1613,7 +1613,7 @@ export class Factory {
                 ts.TestParamCells.push(cFtid17);
 
                 var rfl17 = new TestParam();
-                rfl17.Key = "RF Level:";
+                rfl17.Key = "RF Level";
                 rfl17.Value = "______";
                 var cRfl17 = new TestParamCell(rfl17);
                 cRfl17.Row = 1;
@@ -1624,7 +1624,7 @@ export class Factory {
                 ts.TestParamCells.push(cRfl17);
 
                 var bdsr17 = new TestParam();
-                bdsr17.Key = "BDS Rcvd (DF17):";
+                bdsr17.Key = "BDS Rcvd (DF17)";
                 bdsr17.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr17 = new TestParamCell(bdsr17);
                 cBdsr17.Row = 2;
@@ -1647,7 +1647,7 @@ export class Factory {
                 ts.TestParamCells.push(cTse17);
 
                 var selalt17 = new TestParam();
-                selalt17.Key = "Sel. Altitude:";
+                selalt17.Key = "Sel. Altitude";
                 selalt17.Value = "__ (<.__ nm) ";
                 var cSelalt17 = new TestParamCell(selalt17);
                 cSelalt17.Row = 4;
@@ -1657,7 +1657,7 @@ export class Factory {
                 ts.TestParamCells.push(cSelalt17);
 
                 var nicsa17 = new TestParam();
-                nicsa17.Key = "NIC-supA:";
+                nicsa17.Key = "NIC-supA";
                 nicsa17.Value = "__";
                 var cNicsa17 = new TestParamCell(nicsa17);
                 cNicsa17.Row = 4;
@@ -1667,7 +1667,7 @@ export class Factory {
                 ts.TestParamCells.push(cNicsa17);
 
                 var bs17 = new TestParam();
-                bs17.Key = "Baro Setting:";
+                bs17.Key = "Baro Setting";
                 bs17.Value = "____";
                 bs17.Unit = "mb";
                 var cBs17 = new TestParamCell(bs17);
@@ -1678,7 +1678,7 @@ export class Factory {
                 ts.TestParamCells.push(cBs17);
 
                 var selhd17 = new TestParam();
-                selhd17.Key = "Sel. Heading:";
+                selhd17.Key = "Sel. Heading";
                 selhd17.Value = "____";
                 selhd17.Unit = "deg";
                 var cSelhd17 = new TestParamCell(selhd17);
@@ -1689,7 +1689,7 @@ export class Factory {
                 ts.TestParamCells.push(cSelhd17);
 
                 var sts17 = new TestParam();
-                sts17.Key = "Status:";
+                sts17.Key = "Status";
                 sts17.Value = "__ (_____)";
                 var cSts17 = new TestParamCell(sts17);
                 cSts17.Row = 6;
@@ -1710,7 +1710,7 @@ export class Factory {
                 ts.TestParamCells.push(cApm17);
 
                 var mbs17 = new TestParam();
-                mbs17.Key = "Mode bits status: ";
+                mbs17.Key = "Mode bits status";
                 mbs17.Value = "__(_____)";
                 var cMbs17 = new TestParamCell(mbs17);
                 cMbs17.Row = 8;
@@ -1722,7 +1722,7 @@ export class Factory {
                 ts.TestParamCells.push(cMbs17);
 
                 var ap17 = new TestParam();
-                ap17.Key = "Autopilot (AP):";
+                ap17.Key = "Autopilot (AP)";
                 ap17.Value = "_ (_______)";
                 var cAp17 = new TestParamCell(ap17);
                 cAp17.Row = 9;
@@ -1734,7 +1734,7 @@ export class Factory {
                 ts.TestParamCells.push(cAp17);
 
                 var vnav17 = new TestParam();
-                vnav17.Key = "VNAV:";
+                vnav17.Key = "VNAV";
                 vnav17.Value = "_ (__________)";
                 var cVnav17 = new TestParamCell(vnav17);
                 cVnav17.Row = 10;
@@ -1746,7 +1746,7 @@ export class Factory {
                 ts.TestParamCells.push(cVnav17);
 
                 var alt17 = new TestParam();
-                alt17.Key = "Alt. Hold (ALT):";
+                alt17.Key = "Alt. Hold (ALT)";
                 alt17.Value = "_ (_______)";
                 var cAlt17 = new TestParamCell(alt17);
                 cAlt17.Row = 11;
@@ -1758,7 +1758,7 @@ export class Factory {
                 ts.TestParamCells.push(cAlt17);
 
                 var app17 = new TestParam();
-                app17.Key = "Approach (AP):";
+                app17.Key = "Approach (APP)";
                 app17.Value = "__ (___________)";
                 var cApp17 = new TestParamCell(app17);
                 cApp17.Row = 12;
@@ -1770,7 +1770,7 @@ export class Factory {
                 ts.TestParamCells.push(cApp17);
 
                 var lnav17 = new TestParam();
-                lnav17.Key = "LNAV:";
+                lnav17.Key = "LNAV";
                 lnav17.Value = "__ (___________)";
                 var cLnav17 = new TestParamCell(lnav17);
                 cLnav17.Row = 13;
@@ -1782,7 +1782,7 @@ export class Factory {
                 ts.TestParamCells.push(cLnav17);
 
                 var result17 = new TestParam();
-                result17.Key = "Result:";
+                result17.Key = "Result";
                 result17.Value = "______";
                 var cResult17 = new TestParamCell(result17);
                 cResult17.Row = 14;
@@ -1800,7 +1800,7 @@ export class Factory {
                 sqtr.Styles.add("value", "result113Right");
 
                 var add18 = new TestParam();
-                add18.Key = "ADDRESS:";
+                add18.Key = "ADDRESS";
                 add18.Value = "______ (_) / ________ (_)";
                 var cAdd18 = new TestParamCell(add18);
                 cAdd18.Row = 0;
@@ -1812,7 +1812,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cAdd18);
 
                 var ftid18 = new TestParam();
-                ftid18.Key = "Flight ID:";
+                ftid18.Key = "Flight ID";
                 ftid18.Value = "______";
                 var cFtid18 = new TestParamCell(ftid18);
                 cFtid18.Row = 1;
@@ -1823,7 +1823,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cFtid18);
 
                 var rfl18 = new TestParam();
-                rfl18.Key = "RF Level:";
+                rfl18.Key = "RF Level";
                 rfl18.Value = "______";
                 var cRfl18 = new TestParamCell(rfl18);
                 cRfl18.Row = 1;
@@ -1834,7 +1834,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cRfl18);
 
                 var bdsr18 = new TestParam();
-                bdsr18.Key = "BDS Rcvd (DF17):";
+                bdsr18.Key = "BDS Rcvd (DF17)";
                 bdsr18.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cBdsr18 = new TestParamCell(bdsr18);
                 cBdsr18.Row = 2;
@@ -1846,7 +1846,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cBdsr18);
 
                 var rfst18 = new TestParam();
-                rfst18.Key = "RF/ Squitter Timming:";
+                rfst18.Key = "RF/ Squitter Timming";
                 var cRfst18 = new TestParamCell(rfst18);
                 cRfst18.Row = 3;
                 cRfst18.Column = 0;
@@ -1856,7 +1856,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cRfst18);
 
                 var esr18 = new TestParam();
-                esr18.Key = "Extended Squitter Rate:";
+                esr18.Key = "Extended Squitter Rate";
                 esr18.Value = "__.__";
                 esr18.Unit = "sec";
                 var cEsr18 = new TestParamCell(esr18);
@@ -1881,7 +1881,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cRfd18);
 
                 var mfrq18 = new TestParam();
-                mfrq18.Key = "Measured frequency:";
+                mfrq18.Key = "Measured frequency";
                 mfrq18.Value = "____.___";
                 mfrq18.Unit = "MHz";
                 var cMfrq18 = new TestParamCell(mfrq18);
@@ -1893,7 +1893,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cMfrq18);
 
                 var mp18 = new TestParam();
-                mp18.Key = "Measure power:";
+                mp18.Key = "Measure power";
                 mp18.Value = "___._";
                 mp18.Unit = "dBm";
                 var cMp18 = new TestParamCell(mp18);
@@ -1905,7 +1905,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cMp18);
 
                 var ec18 = new TestParam();
-                ec18.Key = "Error conditions:";
+                ec18.Key = "Error conditions";
                 ec18.Value = "__________";
                 var cEc18 = new TestParamCell(ec18);
                 cEc18.Row = 8;
@@ -1916,7 +1916,7 @@ export class Factory {
                 sqtr.TestParamCells.push(cEc18);
 
                 var result18 = new TestParam();
-                result18.Key = "Result:";
+                result18.Key = "Result";
                 result18.Value = "______";
                 var cResult18 = new TestParamCell(result18);
                 cResult18.Row = 9;
@@ -1963,7 +1963,7 @@ export class Factory {
                 mst.Styles.add("value", "result135Right");
 
                 var add3 = new TestParam();
-                add3.Key = "ADDRESS:";
+                add3.Key = "ADDRESS";
                 add3.Value = "______ (_) / ________ (_)";
                 var cAdd3 = new TestParamCell(add3);
                 cAdd3.Row = 0;
@@ -1975,7 +1975,7 @@ export class Factory {
                 mst.TestParamCells.push(cAdd3);
 
                 var pld3 = new TestParam();
-                pld3.Key = "Flight ID:";
+                pld3.Key = "Flight ID";
                 pld3.Value = "______";
                 var cPld3 = new TestParamCell(pld3);
                 cPld3.Row = 1;
@@ -1986,7 +1986,7 @@ export class Factory {
                 mst.TestParamCells.push(cPld3);
 
                 var eqc3 = new TestParam();
-                eqc3.Key = "RF Level:";
+                eqc3.Key = "RF Level";
                 eqc3.Value = "______";
                 var cEqc3 = new TestParamCell(eqc3);
                 cEqc3.Row = 1;
@@ -1997,7 +1997,7 @@ export class Factory {
                 mst.TestParamCells.push(cEqc3);
 
                 var addQ3 = new TestParam();
-                addQ3.Key = "BDS rcvd (DF17):";
+                addQ3.Key = "BDS rcvd (DF17)";
                 addQ3.Value = "_,_ _,_ _,_ _,_ _,_";
                 var cAddQ3 = new TestParamCell(addQ3);
                 cAddQ3.Row = 2;
@@ -2019,7 +2019,7 @@ export class Factory {
                 mst.TestParamCells.push(cEsd3);
 
                 var itvl4 = new TestParam();
-                itvl4.Key = "Interval:";
+                itvl4.Key = "Interval";
                 itvl4.Value = "__.__";
                 itvl4.Unit = "Second(s)";
                 var cItvl4 = new TestParamCell(itvl4);
@@ -2031,7 +2031,7 @@ export class Factory {
                 mst.TestParamCells.push(cItvl4);
 
                 var avi3 = new TestParam();
-                avi3.Key = "Aircraft/Vehicle Info:";
+                avi3.Key = "Aircraft/Vehicle Info";
                 var cAvi3 = new TestParamCell(avi3);
                 cAvi3.Row = 5;
                 cAvi3.Column = 0;
@@ -2041,7 +2041,7 @@ export class Factory {
                 mst.TestParamCells.push(cAvi3);
 
                 var fid3 = new TestParam();
-                fid3.Key = "Flight ID:";
+                fid3.Key = "Flight ID";
                 fid3.Value = "_____";
                 var cFid3 = new TestParamCell(fid3);
                 cFid3.Row = 6;
@@ -2050,7 +2050,7 @@ export class Factory {
                 mst.TestParamCells.push(cFid3);
 
                 var csid3 = new TestParam();
-                csid3.Key = "CSID:";
+                csid3.Key = "CSID";
                 csid3.Value = "__ (__________)";
                 var cCsid3 = new TestParamCell(csid3);
                 cCsid3.Row = 6;
@@ -2059,7 +2059,7 @@ export class Factory {
                 mst.TestParamCells.push(cCsid3);
 
                 var ec3 = new TestParam();
-                ec3.Key = "Emitter Cat:";
+                ec3.Key = "Emitter Cat";
                 ec3.Value = "__ (______) ";
                 var cEc3 = new TestParamCell(ec3);
                 cEc3.Row = 7;
@@ -2068,7 +2068,7 @@ export class Factory {
                 mst.TestParamCells.push(cEc3);
 
                 var acd3 = new TestParam();
-                acd3.Key = "3/A Code:";
+                acd3.Key = "3/A Code";
                 acd3.Value = "_____";
                 var cAcd3 = new TestParamCell(acd3);
                 cAcd3.Row = 7;
@@ -2077,7 +2077,7 @@ export class Factory {
                 mst.TestParamCells.push(cAcd3);
 
                 var ep3 = new TestParam();
-                ep3.Key = "Emg/Prty:";
+                ep3.Key = "Emg/Prty";
                 ep3.Value = "_ (________)";
                 var cEp3 = new TestParamCell(ep3);
                 cEp3.Row = 8;
@@ -2088,7 +2088,7 @@ export class Factory {
                 mst.TestParamCells.push(cEp3);
 
                 var cc3 = new TestParam();
-                cc3.Key = "Capability Codes:";
+                cc3.Key = "Capability Codes";
                 var cCc3 = new TestParamCell(cc3);
                 cCc3.Row = 9;
                 cCc3.Column = 0;
@@ -2098,7 +2098,7 @@ export class Factory {
                 mst.TestParamCells.push(cCc3);
 
                 var uatin3 = new TestParam();
-                uatin3.Key = "UAT IN:";
+                uatin3.Key = "UAT IN";
                 uatin3.Value = "_ (_)";
                 var cUatin3 = new TestParamCell(uatin3);
                 cUatin3.Row = 10;
@@ -2107,7 +2107,7 @@ export class Factory {
                 mst.TestParamCells.push(cUatin3);
 
                 var tcasp3 = new TestParam();
-                tcasp3.Key = "TCAS Op:";
+                tcasp3.Key = "TCAS Op";
                 tcasp3.Value = "_ (_)";
                 var cTcasp3 = new TestParamCell(tcasp3);
                 cTcasp3.Row = 10;
@@ -2116,7 +2116,7 @@ export class Factory {
                 mst.TestParamCells.push(cTcasp3);
 
                 var es3 = new TestParam();
-                es3.Key = "1090ES IN:";
+                es3.Key = "1090ES IN";
                 es3.Value = "_ (_)";
                 var cEs3 = new TestParamCell(es3);
                 cEs3.Row = 11;
@@ -2126,7 +2126,7 @@ export class Factory {
                 mst.TestParamCells.push(cEs3);
 
                 var om3 = new TestParam();
-                om3.Key = "Operational Modes:";
+                om3.Key = "Operational Modes";
                 var cOm3 = new TestParamCell(om3);
                 cOm3.Row = 12;
                 cOm3.Column = 0;
@@ -2137,7 +2137,7 @@ export class Factory {
                 mst.TestParamCells.push(cOm3);
 
                 var atcs3 = new TestParam();
-                atcs3.Key = "ATC Svcs:";
+                atcs3.Key = "ATC Svcs";
                 atcs3.Value = "_ (_)";
                 var cAtcs3 = new TestParamCell(atcs3);
                 cAtcs3.Row = 13;
@@ -2146,7 +2146,7 @@ export class Factory {
                 mst.TestParamCells.push(cAtcs3);
 
                 var idt3 = new TestParam();
-                idt3.Key = "IDENT:";
+                idt3.Key = "IDENT";
                 idt3.Value = "_ (_)";
                 var cIdt3 = new TestParamCell(idt3);
                 cIdt3.Row = 13;
@@ -2155,7 +2155,7 @@ export class Factory {
                 mst.TestParamCells.push(cIdt3);
 
                 var tcasra3 = new TestParam();
-                tcasra3.Key = "TCAS RA:";
+                tcasra3.Key = "TCAS RA";
                 tcasra3.Value = "_ (_)";
                 var cTcasra3 = new TestParamCell(tcasra3);
                 cTcasra3.Row = 14;
@@ -2165,7 +2165,7 @@ export class Factory {
                 mst.TestParamCells.push(cTcasra3);
 
                 var ofd3 = new TestParam();
-                ofd3.Key = "Other Fields:";
+                ofd3.Key = "Other Fields";
                 var cOfd3 = new TestParamCell(ofd3);
                 cOfd3.Row = 15;
                 cOfd3.Column = 0;
@@ -2175,7 +2175,7 @@ export class Factory {
                 mst.TestParamCells.push(cOfd3);
 
                 var nacp3 = new TestParam();
-                nacp3.Key = "NACp:";
+                nacp3.Key = "NACp";
                 nacp3.Value = "__ (< ___nm) ";
                 var cNacp3 = new TestParamCell(nacp3);
                 cNacp3.Row = 16;
@@ -2183,7 +2183,7 @@ export class Factory {
 
                 mst.TestParamCells.push(cNacp3);
                 var trnmso3 = new TestParam();
-                trnmso3.Key = "Transmit MSO:";
+                trnmso3.Key = "Transmit MSO";
                 trnmso3.Value = "___";
                 var cTrnmso3 = new TestParamCell(trnmso3);
                 cTrnmso3.Row = 16;
@@ -2192,7 +2192,7 @@ export class Factory {
                 mst.TestParamCells.push(cTrnmso3);
 
                 var nacv3 = new TestParam();
-                nacv3.Key = "NACv:";
+                nacv3.Key = "NACv";
                 nacv3.Value = "__";
                 var cNacv3 = new TestParamCell(nacv3);
                 cNacv3.Row = 17;
@@ -2201,7 +2201,7 @@ export class Factory {
                 mst.TestParamCells.push(cNacv3);
 
                 var sil3 = new TestParam();
-                sil3.Key = "SIL:";
+                sil3.Key = "SIL";
                 sil3.Value = "_ (< ___)";
                 var cSil3 = new TestParamCell(sil3);
                 cSil3.Row = 17;
@@ -2210,7 +2210,7 @@ export class Factory {
                 mst.TestParamCells.push(cSil3);
 
                 var sda3 = new TestParam();
-                sda3.Key = "SDA:";
+                sda3.Key = "SDA";
                 sda3.Value = "__";
                 var cSda3 = new TestParamCell(sda3);
                 cSda3.Row = 18;
@@ -2219,7 +2219,7 @@ export class Factory {
                 mst.TestParamCells.push(cSda3);
 
                 var gva3 = new TestParam();
-                gva3.Key = "GVA:";
+                gva3.Key = "GVA";
                 gva3.Value = "__ (< __m)";
                 var cGva3 = new TestParamCell(gva3);
                 cGva3.Row = 18;
@@ -2228,7 +2228,7 @@ export class Factory {
                 mst.TestParamCells.push(cGva3);
 
                 var mops3 = new TestParam();
-                mops3.Key = "MOPS:";
+                mops3.Key = "MOPS";
                 mops3.Value = "__ (__-____)";
                 var cMops3 = new TestParamCell(mops3);
                 cMops3.Row = 19;
@@ -2237,7 +2237,7 @@ export class Factory {
                 mst.TestParamCells.push(cMops3);
 
                 var sils3 = new TestParam();
-                sils3.Key = "SIL Sup:";
+                sils3.Key = "SIL Sup";
                 sils3.Value = "__ (_________) ";
                 var cSils3 = new TestParamCell(sils3);
                 cSils3.Row = 19;
@@ -2246,7 +2246,7 @@ export class Factory {
                 mst.TestParamCells.push(cSils3);
 
                 var sgla3 = new TestParam();
-                sgla3.Key = "Sgl Ant:";
+                sgla3.Key = "Sgl Ant";
                 sgla3.Value = "__ (________)";
                 var cSgla3 = new TestParamCell(sgla3);
                 cSgla3.Row = 20;
@@ -2255,7 +2255,7 @@ export class Factory {
                 mst.TestParamCells.push(cSgla3);
 
                 var nicb3 = new TestParam();
-                nicb3.Key = "NICbaro:";
+                nicb3.Key = "NICbaro";
                 nicb3.Value = "__ (_________)";
                 var cNicb3 = new TestParamCell(nicb3);
                 cNicb3.Row = 20;
@@ -2264,7 +2264,7 @@ export class Factory {
                 mst.TestParamCells.push(cNicb3);
 
                 var nicsup3 = new TestParam();
-                nicsup3.Key = "NICsup:";
+                nicsup3.Key = "NICsup";
                 nicsup3.Value = "__";
                 var cNicsup3 = new TestParamCell(nicsup3);
                 cNicsup3.Row = 21;
@@ -2274,7 +2274,7 @@ export class Factory {
                 mst.TestParamCells.push(cNicsup3);
 
                 var result3 = new TestParam();
-                result3.Key = "Result:";
+                result3.Key = "Result";
                 result3.Value = "______";
                 var cResult3 = new TestParamCell(result3);
                 cResult3.Row = 22;
@@ -2293,7 +2293,7 @@ export class Factory {
                 usvt.Styles.add("value", "result113Right");
 
                 var addr1 = new TestParam();
-                addr1.Key = "ADDRESS:";
+                addr1.Key = "ADDRESS";
                 addr1.Value = "_____ (_)/ _________(_)"
                 var cAddr1 = new TestParamCell(addr1);
                 cAddr1.Row = 0;
@@ -2304,7 +2304,7 @@ export class Factory {
                 usvt.TestParamCells.push(cAddr1);
 
                 var pldr1 = new TestParam();
-                pldr1.Key = "Flight ID:";
+                pldr1.Key = "Flight ID";
                 pldr1.Value = "______";
                 var cPldr1 = new TestParamCell(pldr1);
                 cPldr1.Row = 1;
@@ -2315,7 +2315,7 @@ export class Factory {
                 usvt.TestParamCells.push(cPldr1);
 
                 var rflev1 = new TestParam();
-                rflev1.Key = "RF Level:";
+                rflev1.Key = "RF Level";
                 rflev1.Value = "______";
                 var cRflev1 = new TestParamCell(rflev1);
                 cRflev1.Row = 1;
@@ -2326,7 +2326,7 @@ export class Factory {
                 usvt.TestParamCells.push(cRflev1);
 
                 var aQ1 = new TestParam();
-                aQ1.Key = "BDS rcvd (DF17):";
+                aQ1.Key = "BDS rcvd (DF17)";
                 aQ1.Value = "_,_ _,_ _,_ _,_ _,_ _,_";
                 var cAq1 = new TestParamCell(aQ1);
                 cAq1.Row = 2;
@@ -2348,7 +2348,7 @@ export class Factory {
                 usvt.TestParamCells.push(cSv1);
 
                 var itvl1 = new TestParam();
-                itvl1.Key = "Interval:";
+                itvl1.Key = "Interval";
                 itvl1.Value = "__.__";
                 itvl1.Unit = "Second(s)";
                 var cItvl1 = new TestParamCell(itvl1);
@@ -2360,7 +2360,7 @@ export class Factory {
                 usvt.TestParamCells.push(cItvl1);
 
                 var posv1 = new TestParam();
-                posv1.Key = "Position & Velocity:";
+                posv1.Key = "Position & Velocity";
                 var cPosv1 = new TestParamCell(posv1);
                 cPosv1.Row = 4;
                 cPosv1.Column = 0;
@@ -2371,7 +2371,7 @@ export class Factory {
                 usvt.TestParamCells.push(cPosv1);
 
                 var agst1 = new TestParam();
-                agst1.Key = "Air/Gnd State:";
+                agst1.Key = "Air/Gnd State";
                 agst1.Value = "AIR - Subsonic"
                 var cAgst1 = new TestParamCell(agst1);
                 cAgst1.Row = 5;
@@ -2382,7 +2382,7 @@ export class Factory {
                 usvt.TestParamCells.push(cAgst1);
 
                 var latd1 = new TestParam();
-                latd1.Key = "Latitude:";
+                latd1.Key = "Latitude";
                 latd1.Value = "__⁰ __ __.___";
                 latd1.Unit = "N";
                 var cLatd1 = new TestParamCell(latd1);
@@ -2394,7 +2394,7 @@ export class Factory {
                 usvt.TestParamCells.push(cLatd1);
 
                 var lagd1 = new TestParam();
-                lagd1.Key = "Longitude:";
+                lagd1.Key = "Longitude";
                 lagd1.Value = "__⁰ __ __.___";
                 lagd1.Unit = "W";
                 var cLagd1 = new TestParamCell(lagd1);
@@ -2406,7 +2406,7 @@ export class Factory {
                 usvt.TestParamCells.push(cLagd1);
 
                 var alti1 = new TestParam();
-                alti1.Key = "Altitude:";
+                alti1.Key = "Altitude";
                 alti1.Value = "___,_____";
                 alti1.Unit = "ft";
                 var cAlti1 = new TestParamCell(alti1);
@@ -2418,7 +2418,7 @@ export class Factory {
                 usvt.TestParamCells.push(cAlti1);
 
                 var typ1 = new TestParam();
-                typ1.Key = "Type:";
+                typ1.Key = "Type";
                 typ1.Value = "__ (______)"
                 var cTyp1 = new TestParamCell(typ1);
                 cTyp1.Row = 8;
@@ -2428,7 +2428,7 @@ export class Factory {
                 usvt.TestParamCells.push(cTyp1);
 
                 var horv1 = new TestParam();
-                horv1.Key = "Horizontal Velocity:";
+                horv1.Key = "Horizontal Velocity";
                 horv1.Value = "___ kts N ___kts W"
                 var cHorv1 = new TestParamCell(horv1);
                 cHorv1.Row = 9;
@@ -2438,7 +2438,7 @@ export class Factory {
                 usvt.TestParamCells.push(cHorv1);
 
                 var verv1 = new TestParam();
-                verv1.Key = "Vert. Velocity:";
+                verv1.Key = "Vert. Velocity";
                 verv1.Value = "__,____";
                 verv1.Unit = "fpm";
                 var cVerv1 = new TestParamCell(verv1);
@@ -2450,7 +2450,7 @@ export class Factory {
                 usvt.TestParamCells.push(cVerv1);
 
                 var src1 = new TestParam();
-                src1.Key = "Source:";
+                src1.Key = "Source";
                 src1.Value = "__ (_____)"
                 var cSrc1 = new TestParamCell(src1);
                 cSrc1.Row = 10;
@@ -2460,7 +2460,7 @@ export class Factory {
                 usvt.TestParamCells.push(cSrc1);
 
                 var ofld1 = new TestParam();
-                ofld1.Key = "Other Fields:";
+                ofld1.Key = "Other Fields";
                 var cOfld1 = new TestParamCell(ofld1);
                 cOfld1.Row = 11;
                 cOfld1.Column = 0;
@@ -2471,7 +2471,7 @@ export class Factory {
                 usvt.TestParamCells.push(cOfld1);
 
                 var ni1 = new TestParam();
-                ni1.Key = "NIC:";
+                ni1.Key = "NIC";
                 ni1.Value = "__(< ___m)";
                 var cNi1 = new TestParamCell(ni1);
                 cNi1.Row = 12;
@@ -2481,7 +2481,7 @@ export class Factory {
                 usvt.TestParamCells.push(cNi1);
 
                 var ut1 = new TestParam();
-                ut1.Key = "UTC:";
+                ut1.Key = "UTC";
                 ut1.Value = "__ (________)"
                 var cUt1 = new TestParamCell(ut1);
                 cUt1.Row = 12;
@@ -2491,7 +2491,7 @@ export class Factory {
                 usvt.TestParamCells.push(cUt1);
 
                 var upfb1 = new TestParam();
-                upfb1.Key = "Uplink Feedback:";
+                upfb1.Key = "Uplink Feedback";
                 upfb1.Value = "__ (____=__)"
                 var cUpfb1 = new TestParamCell(upfb1);
                 cUpfb1.Row = 13;
@@ -2512,7 +2512,7 @@ export class Factory {
                 usvt.TestParamCells.push(cAuxsve1);
 
                 var seca1 = new TestParam();
-                seca1.Key = "Secondary Altitude:";
+                seca1.Key = "Secondary Altitude";
                 seca1.Value = "____,_____";
                 seca1.Unit = "ft";
                 var cSeca1 = new TestParamCell(seca1);
@@ -2524,7 +2524,7 @@ export class Factory {
                 usvt.TestParamCells.push(cSeca1);
 
                 var result1 = new TestParam();
-                result1.Key = "Result:";
+                result1.Key = "Result";
                 result1.Value = "______";
                 var cResult1 = new TestParamCell(result1);
                 cResult1.Row = 16;
@@ -2543,7 +2543,7 @@ export class Factory {
                 usvtg.Styles.add("value", "result113Right");
 
                 var addr2 = new TestParam();
-                addr2.Key = "ADDRESS:";
+                addr2.Key = "ADDRESS";
                 addr2.Value = "_______ (_)/ _______(_)";
                 var cAddr2 = new TestParamCell(addr2);
                 cAddr2.Row = 0;
@@ -2554,7 +2554,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cAddr2);
 
                 var pldr2 = new TestParam();
-                pldr2.Key = "Flight ID:";
+                pldr2.Key = "Flight ID";
                 pldr2.Value = "______";
                 var cPldr2 = new TestParamCell(pldr2);
                 cPldr2.Row = 1;
@@ -2565,7 +2565,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cPldr2);
 
                 var rflev2 = new TestParam();
-                rflev2.Key = "RF Level:";
+                rflev2.Key = "RF Level";
                 rflev2.Value = "______";
                 var cRflev2 = new TestParamCell(rflev2);
                 cRflev2.Row = 1;
@@ -2577,7 +2577,7 @@ export class Factory {
 
 
                 var aQ2 = new TestParam();
-                aQ2.Key = "BDS rcvd (DF17):";
+                aQ2.Key = "BDS rcvd (DF17)";
                 aQ2.Value = "_,_ _,_ _,_ _,_ _,_ _,_";
                 var cAq2 = new TestParamCell(aQ2);
                 cAq2.Row = 2;
@@ -2599,7 +2599,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cSv2);
 
                 var itvl2 = new TestParam();
-                itvl2.Key = "Interval:";
+                itvl2.Key = "Interval";
                 itvl2.Value = "__.__";
                 itvl2.Unit = "Second(s)";
                 var cItvl2 = new TestParamCell(itvl2);
@@ -2611,7 +2611,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cItvl2)
 
                 var posv2 = new TestParam();
-                posv2.Key = "Position & Velocity:";
+                posv2.Key = "Position & Velocity";
                 var cPosv2 = new TestParamCell(posv2);
                 cPosv2.Row = 4;
                 cPosv2.Column = 0;
@@ -2622,7 +2622,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cPosv2);
 
                 var agst2 = new TestParam();
-                agst2.Key = "Air/Gnd State:";
+                agst2.Key = "Air/Gnd State";
                 agst2.Value = "______"
                 var cAgst2 = new TestParamCell(agst2);
                 cAgst2.Row = 5;
@@ -2633,7 +2633,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cAgst2);
 
                 var latd2 = new TestParam();
-                latd2.Key = "Latitude:";
+                latd2.Key = "Latitude";
                 latd2.Value = "__⁰ __ __.___";
                 latd2.Unit = "N";
                 var cLatd2 = new TestParamCell(latd2);
@@ -2645,7 +2645,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cLatd2);
 
                 var lagd2 = new TestParam();
-                lagd2.Key = "Longitude:";
+                lagd2.Key = "Longitude";
                 lagd2.Value = "____⁰ __ __.___";
                 lagd2.Unit = "W";
                 var cLagd2 = new TestParamCell(lagd2);
@@ -2657,7 +2657,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cLagd2);
 
                 var alti2 = new TestParam();
-                alti2.Key = "Altitude:";
+                alti2.Key = "Altitude";
                 alti2.Value = "_,____";
                 alti2.Unit = "ft";
                 var cAlti2 = new TestParamCell(alti2);
@@ -2669,7 +2669,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cAlti2);
 
                 var typ2 = new TestParam();
-                typ2.Key = "Type:";
+                typ2.Key = "Type";
                 typ2.Value = "_ (__________)";
                 var cTyp2 = new TestParamCell(typ2);
                 cTyp2.Row = 8;
@@ -2679,7 +2679,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cTyp2);
 
                 var gsd2 = new TestParam();
-                gsd2.Key = "Groundspeed:";
+                gsd2.Key = "Groundspeed";
                 gsd2.Value = "___";
                 gsd2.Unit = "kts";
                 var cGsd2 = new TestParamCell(gsd2);
@@ -2691,7 +2691,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cGsd2);
 
                 var verv2 = new TestParam();
-                verv2.Key = "Track/Heading:";
+                verv2.Key = "Track/Heading";
                 verv2.Value = "___.__";
                 verv2.Unit = "deg";
                 var cVerv2 = new TestParamCell(verv2);
@@ -2703,7 +2703,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cVerv2);
 
                 var th2 = new TestParam();
-                th2.Key = "T/H:";
+                th2.Key = "T/H";
                 th2.Value = "__(______)";
                 var cTh2 = new TestParamCell(th2);
                 cTh2.Row = 10;
@@ -2713,7 +2713,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cTh2);
 
                 var avlw2 = new TestParam();
-                avlw2.Key = "A/V L/W:";
+                avlw2.Key = "A/V L/W";
                 avlw2.Value = "__ (__m/__._m)";
                 var cAvlw2 = new TestParamCell(avlw2);
                 cAvlw2.Row = 11;
@@ -2724,7 +2724,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cAvlw2);
 
                 var horv2 = new TestParam();
-                horv2.Key = "GPS Ant Offset:";
+                horv2.Key = "GPS Ant Offset";
                 horv2.Value = "__m (__m RT)";
                 var cHorv2 = new TestParamCell(horv2);
                 cHorv2.Row = 12;
@@ -2735,7 +2735,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cHorv2);
 
                 var ofld2 = new TestParam();
-                ofld2.Key = "Other Fields:";
+                ofld2.Key = "Other Fields";
                 var cOfld2 = new TestParamCell(ofld2);
                 cOfld2.Row = 13;
                 cOfld2.Column = 0;
@@ -2746,7 +2746,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cOfld2);
 
                 var ni2 = new TestParam();
-                ni2.Key = "NIC:";
+                ni2.Key = "NIC";
                 ni2.Value = "__(< ___m)";
                 var cNi2 = new TestParamCell(ni2);
                 cNi2.Row = 14;
@@ -2756,7 +2756,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cNi2);
 
                 var ut2 = new TestParam();
-                ut2.Key = "UTC:";
+                ut2.Key = "UTC";
                 ut2.Value = "__ (________)"
                 var cUt2 = new TestParamCell(ut2);
                 cUt2.Row = 14;
@@ -2766,7 +2766,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cUt2);
 
                 var upfb2 = new TestParam();
-                upfb2.Key = "Uplink Feedback:";
+                upfb2.Key = "Uplink Feedback";
                 upfb2.Value = "__ (_____=___)"
                 var cUpfb2 = new TestParamCell(upfb2);
                 cUpfb2.Row = 15;
@@ -2787,7 +2787,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cAuxsve2);
 
                 var seca2 = new TestParam();
-                seca2.Key = "Secondary Altitude:";
+                seca2.Key = "Secondary Altitude";
                 seca2.Value = "__,_____";
                 seca2.Unit = "ft";
                 var cSeca2 = new TestParamCell(seca2);
@@ -2799,7 +2799,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cSeca2);
 
                 var tpe1 = new TestParam();
-                tpe1.Key = "Type:";
+                tpe1.Key = "Type";
                 tpe1.Value = "__ (_____)";
                 var cTpe1 = new TestParamCell(tpe1);
                 cTpe1.Row = 17;
@@ -2809,7 +2809,7 @@ export class Factory {
                 usvtg.TestParamCells.push(cTpe1);
 
                 var result2 = new TestParam();
-                result2.Key = "Result:";
+                result2.Key = "Result";
                 result2.Value = "______";
                 var cResult2 = new TestParamCell(result2);
                 cResult2.Row = 18;
@@ -2828,7 +2828,7 @@ export class Factory {
                 tst.Styles.add("value", "result135Right")
 
                 var add6 = new TestParam();
-                add6.Key = "ADDRESS:";
+                add6.Key = "ADDRESS";
                 add6.Value = "______ (_) / ________ (_)";
                 var cAdd6 = new TestParamCell(add6);
                 cAdd6.Row = 0;
@@ -2839,7 +2839,7 @@ export class Factory {
                 tst.TestParamCells.push(cAdd6);
 
                 var pld6 = new TestParam();
-                pld6.Key = "Flight ID:";
+                pld6.Key = "Flight ID";
                 pld6.Value = "______";
                 var cPld6 = new TestParamCell(pld6);
                 cPld6.Row = 1;
@@ -2849,7 +2849,7 @@ export class Factory {
                 tst.TestParamCells.push(cPld6);
 
                 var rfle6 = new TestParam();
-                rfle6.Key = "RF Level:";
+                rfle6.Key = "RF Level";
                 rfle6.Value = "______";
                 var cRfle6 = new TestParamCell(rfle6);
                 cRfle6.Row = 1;
@@ -2860,7 +2860,7 @@ export class Factory {
                 tst.TestParamCells.push(cRfle6);
 
                 var addQ6 = new TestParam();
-                addQ6.Key = "BDS rcvd (DF17)::";
+                addQ6.Key = "BDS rcvd (DF17):";
                 addQ6.Value = "_,_ _,_ _,_ _,_ _,_ _,_";
                 var cAddQ6 = new TestParamCell(addQ6);
                 cAddQ6.Row = 2;
@@ -2882,7 +2882,7 @@ export class Factory {
                 tst.TestParamCells.push(cTse6);
 
                 var itvl6 = new TestParam();
-                itvl6.Key = "Interval:";
+                itvl6.Key = "Interval";
                 itvl6.Value = "__.__";
                 itvl6.Unit = "Second(s)";
                 var cItvl6 = new TestParamCell(itvl6);
@@ -2894,7 +2894,7 @@ export class Factory {
                 tst.TestParamCells.push(cItvl6)
 
                 var sat6 = new TestParam();
-                sat6.Key = "Sel. Altitude:";
+                sat6.Key = "Sel. Altitude";
                 sat6.Value = "____,_____";
                 sat6.Unit = "ft";
                 var cSat6 = new TestParamCell(sat6);
@@ -2905,7 +2905,7 @@ export class Factory {
                 tst.TestParamCells.push(cSat6);
 
                 var typ6 = new TestParam();
-                typ6.Key = "Type:";
+                typ6.Key = "Type";
                 typ6.Value = " __ (___________)";
                 var cTyp6 = new TestParamCell(typ6);
                 cTyp6.Row = 4;
@@ -2915,7 +2915,7 @@ export class Factory {
                 tst.TestParamCells.push(cTyp6);
 
                 var bps6 = new TestParam();
-                bps6.Key = "Baro Setting:";
+                bps6.Key = "Baro Setting";
                 bps6.Value = "____";
                 bps6.Unit = "mb";
                 var cBps6 = new TestParamCell(bps6);
@@ -2926,7 +2926,7 @@ export class Factory {
                 tst.TestParamCells.push(cBps6);
 
                 var seh6 = new TestParam();
-                seh6.Key = "Sel. Heading:";
+                seh6.Key = "Sel. Heading";
                 seh6.Value = "____";
                 seh6.Unit = "deg";
                 var cSeh6 = new TestParamCell(seh6);
@@ -2937,7 +2937,7 @@ export class Factory {
                 tst.TestParamCells.push(cSeh6);
 
                 var sts6 = new TestParam();
-                sts6.Key = "Status:";
+                sts6.Key = "Status";
                 sts6.Value = "__(_____)";
                 var cSts6 = new TestParamCell(sts6);
                 cSts6.Row = 6;
@@ -2958,7 +2958,7 @@ export class Factory {
                 tst.TestParamCells.push(cMfms6);
 
                 var ap6 = new TestParam();
-                ap6.Key = "Mode bits status:";
+                ap6.Key = "Mode bits status";
                 ap6.Value = "__(_____)";
                 var cAp6 = new TestParamCell(ap6);
                 cAp6.Row = 10;
@@ -2969,7 +2969,7 @@ export class Factory {
                 tst.TestParamCells.push(cAp6);
 
                 var vnav6 = new TestParam();
-                vnav6.Key = "AutoPilot (AP):";
+                vnav6.Key = "AutoPilot (AP)";
                 vnav6.Value = "_ (_______)";
                 var cVnav6 = new TestParamCell(vnav6);
                 cVnav6.Row = 11;
@@ -2980,7 +2980,7 @@ export class Factory {
                 tst.TestParamCells.push(cVnav6);
 
                 var alth6 = new TestParam();
-                alth6.Key = "VNAV:";
+                alth6.Key = "VNAV";
                 alth6.Value = "__ (___________)";
                 var cAlth6 = new TestParamCell(alth6);
                 cAlth6.Row = 12;
@@ -2991,7 +2991,7 @@ export class Factory {
                 tst.TestParamCells.push(cAlth6);
 
                 var appm6 = new TestParam();
-                appm6.Key = "Alt. Hold (ALT):";
+                appm6.Key = "Alt. Hold (ALT)";
                 appm6.Value = "_ (_______)";
                 var cAppm6 = new TestParamCell(appm6);
                 cAppm6.Row = 13;
@@ -3002,7 +3002,7 @@ export class Factory {
                 tst.TestParamCells.push(cAppm6);
 
                 var lnavm6 = new TestParam();
-                lnavm6.Key = "Approach (APP):";
+                lnavm6.Key = "Approach (APP)";
                 lnavm6.Value = "__ (___________)";
                 var cLnavm6 = new TestParamCell(lnavm6);
                 cLnavm6.Row = 14;
@@ -3013,7 +3013,7 @@ export class Factory {
                 tst.TestParamCells.push(cLnavm6);
 
                 var lnav6 = new TestParam();
-                lnav6.Key = "LNAV:";
+                lnav6.Key = "LNAV";
                 lnav6.Value = "__ (___________)";
                 var cLnav6 = new TestParamCell(lnav6);
                 cLnav6.Row = 15;
@@ -3024,7 +3024,7 @@ export class Factory {
                 tst.TestParamCells.push(cLnav6);
 
                 var result6 = new TestParam();
-                result6.Key = "Result:";
+                result6.Key = "Result";
                 result6.Value = "______";
                 var cResult6 = new TestParamCell(result6);
                 cResult6.Row = 16;
@@ -3042,7 +3042,7 @@ export class Factory {
                 tct.Name = "UAT Trajectory Change Test";
 
                 var add5 = new TestParam();
-                add5.Key = "ADDRESS:";
+                add5.Key = "ADDRESS";
                 add5.Value = "______ (_) / ________ (_)";
                 var cAdd5 = new TestParamCell(add5);
                 cAdd5.Row = 0;
@@ -3052,7 +3052,7 @@ export class Factory {
                 tct.TestParamCells.push(cAdd5);
 
                 var pld5 = new TestParam();
-                pld5.Key = "Flight ID:";
+                pld5.Key = "Flight ID";
                 pld5.Value = "______";
                 var cPld5 = new TestParamCell(pld5);
                 cPld5.Row = 1;
@@ -3062,7 +3062,7 @@ export class Factory {
                 tct.TestParamCells.push(cPld5);
 
                 var agst5 = new TestParam();
-                agst5.Key = "RF Level:";
+                agst5.Key = "RF Level";
                 agst5.Value = "______";
                 var cAgst5 = new TestParamCell(agst5);
                 cAgst5.Row = 1;
@@ -3073,7 +3073,7 @@ export class Factory {
                 tct.TestParamCells.push(cAgst5);
 
                 var q5 = new TestParam();
-                q5.Key = "BDS rcvd (DF17):";
+                q5.Key = "BDS rcvd (DF17)";
                 q5.Value = "_,_ _,_ _,_ _,_ _,_ _,_";
                 var cQ5 = new TestParamCell(q5);
                 cQ5.Row = 2;
@@ -3095,7 +3095,7 @@ export class Factory {
                 tct.TestParamCells.push(cTce5);
 
                 var tcfld5 = new TestParam();
-                tcfld5.Key = "TC Field:";
+                tcfld5.Key = "TC Field";
                 tcfld5.Value = "_________________";
                 var cTcfld5 = new TestParamCell(tcfld5);
                 cTcfld5.Row = 4;
@@ -3111,7 +3111,7 @@ export class Factory {
                 rft.Name = "UAT RF Test";
 
                 var add4 = new TestParam();
-                add4.Key = "ADDRESS:";
+                add4.Key = "ADDRESS";
                 add4.Value = "______ (_) / ________ (_)";
                 var cAdd4 = new TestParamCell(add4);
                 cAdd4.Row = 0;
@@ -3121,7 +3121,7 @@ export class Factory {
                 rft.TestParamCells.push(cAdd4);
 
                 var pld4 = new TestParam();
-                pld4.Key = "Flight ID:";
+                pld4.Key = "Flight ID";
                 pld4.Value = "______";
                 var cPld4 = new TestParamCell(pld4);
                 cPld4.Row = 1;
@@ -3131,7 +3131,7 @@ export class Factory {
                 rft.TestParamCells.push(cPld4);
 
                 var agst4 = new TestParam();
-                agst4.Key = "RF Level:";
+                agst4.Key = "RF Level";
                 agst4.Value = "______";
                 var cAgst4 = new TestParamCell(agst4);
                 cAgst4.Row = 1;
@@ -3141,7 +3141,7 @@ export class Factory {
                 rft.TestParamCells.push(cAgst4);
 
                 var q4 = new TestParam();
-                q4.Key = "BDS rcvd (DF17):";
+                q4.Key = "BDS rcvd (DF17)";
                 q5.Value = "_,_ _,_ _,_ _,_ _,_ _,_";
                 var cQ4 = new TestParamCell(q4);
                 cQ4.Row = 2;
@@ -3163,7 +3163,7 @@ export class Factory {
                 rft.TestParamCells.push(cRflm4);
 
                 var frq4 = new TestParam();
-                frq4.Key = "Frequency:";
+                frq4.Key = "Frequency";
                 frq4.Value = "___.___";
                 frq4.Unit = "MHz";
                 var cFrq4 = new TestParamCell(frq4);
@@ -3176,7 +3176,7 @@ export class Factory {
                 rft.TestParamCells.push(cFrq4);
 
                 var pwr4 = new TestParam();
-                pwr4.Key = "Power:";
+                pwr4.Key = "Power";
                 pwr4.Value = "__._";
                 pwr4.Unit = "dBm";
                 var cPwr4 = new TestParamCell(pwr4);
@@ -3189,7 +3189,7 @@ export class Factory {
                 rft.TestParamCells.push(cPwr4);
 
                 var pwrdp4 = new TestParam();
-                pwrdp4.Key = "Power Droop:";
+                pwrdp4.Key = "Power Droop";
                 pwrdp4.Value = "_._";
                 pwrdp4.Unit = "dB";
                 var cPwrdp4 = new TestParamCell(pwrdp4);
@@ -3202,7 +3202,7 @@ export class Factory {
                 rft.TestParamCells.push(cPwrdp4);
 
                 var dvn4 = new TestParam();
-                dvn4.Key = "Deviation:";
+                dvn4.Key = "Deviation";
                 dvn4.Value = "__";
                 dvn4.Unit = "%";
                 var cDvn4 = new TestParamCell(dvn4);
@@ -3215,7 +3215,7 @@ export class Factory {
                 rft.TestParamCells.push(cDvn4);
 
                 var pkdn4 = new TestParam();
-                pkdn4.Key = "Peak Deviation:";
+                pkdn4.Key = "Peak Deviation";
                 pkdn4.Value = "___";
                 pkdn4.Unit = "%";
                 var cPkdn4 = new TestParamCell(pkdn4);
@@ -3228,7 +3228,7 @@ export class Factory {
                 rft.TestParamCells.push(cPkdn4);
 
                 var veo4 = new TestParam();
-                veo4.Key = "Vert Eye Opening:";
+                veo4.Key = "Vert Eye Opening";
                 veo4.Value = "__";
                 veo4.Unit = "%";
                 var cVeo4 = new TestParamCell(veo4);
@@ -3241,7 +3241,7 @@ export class Factory {
                 rft.TestParamCells.push(cVeo4);
 
                 var heo4 = new TestParam();
-                heo4.Key = "Horz Eye Opening:";
+                heo4.Key = "Horz Eye Opening";
                 heo4.Value = "___";
                 heo4.Unit = "%";
                 var cHeo4 = new TestParamCell(heo4);
@@ -3254,7 +3254,7 @@ export class Factory {
                 rft.TestParamCells.push(cHeo4);
 
                 var mte4 = new TestParam();
-                mte4.Key = "Message Time Error:";
+                mte4.Key = "Message Time Error";
                 mte4.Value = "__.__";
                 mte4.Unit = "uS";
                 var cMte4 = new TestParamCell(mte4);
@@ -3277,7 +3277,7 @@ export class Factory {
                 rft.TestParamCells.push(cUatms4);
 
                 var msrcd4 = new TestParam();
-                msrcd4.Key = "Message Received:";
+                msrcd4.Key = "Message Received";
                 msrcd4.Value = "___";
                 var cMsrcd4 = new TestParamCell(msrcd4);
                 cMsrcd4.Row = 13;
@@ -3289,7 +3289,7 @@ export class Factory {
                 rft.TestParamCells.push(cMsrcd4);
 
                 var msict4 = new TestParam();
-                msict4.Key = "Missing or Incorrect Messages:";
+                msict4.Key = "Missing or Incorrect Messages";
                 msict4.Value = "_";
                 var cMsict4 = new TestParamCell(msict4);
                 cMsict4.Row = 14;
@@ -3301,7 +3301,7 @@ export class Factory {
                 rft.TestParamCells.push(cMsict4);
 
                 var msslrt4 = new TestParam();
-                msslrt4.Key = "Message Success Rate:";
+                msslrt4.Key = "Message Success Rate";
                 msslrt4.Value = "__";
                 msslrt4.Unit = "%";
                 var cMsslrt4 = new TestParamCell(msslrt4);
@@ -3314,7 +3314,7 @@ export class Factory {
                 rft.TestParamCells.push(cMsslrt4);
 
                 var ctmst4 = new TestParam();
-                ctmst4.Key = "Current Message Number of Bit Error:";
+                ctmst4.Key = "Current Message Number of Bit Error";
                 ctmst4.Value = "__";
                 var cCtmst4 = new TestParamCell(ctmst4);
                 cCtmst4.Row = 16;
@@ -3326,7 +3326,7 @@ export class Factory {
                 rft.TestParamCells.push(cCtmst4);
 
                 var ctmser4 = new TestParam();
-                ctmser4.Key = "Message Sequence:";
+                ctmser4.Key = "Message Sequence";
                 ctmser4.Value = "__";
                 var cCtmser4 = new TestParamCell(ctmser4);
                 cCtmser4.Row = 17;
@@ -3338,7 +3338,7 @@ export class Factory {
                 rft.TestParamCells.push(cCtmser4);
 
                 var ctmssq4 = new TestParam();
-                ctmssq4.Key = "Message:";
+                ctmssq4.Key = "Message";
                 ctmssq4.Value = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
                 var cCtmssq4 = new TestParamCell(ctmssq4);
                 cCtmssq4.Row = 18;
@@ -3349,7 +3349,7 @@ export class Factory {
                 rft.TestParamCells.push(cCtmssq4);
 
                 var result4 = new TestParam();
-                result4.Key = "Result:";
+                result4.Key = "Result";
                 result4.Value = "______";
                 var cResult4 = new TestParamCell(result4);
                 cResult4.Row = 19;
@@ -3367,7 +3367,7 @@ export class Factory {
                 // rft.Name = "UAT RF Test";
 
                 // var add4 = new TestParam();
-                // add4.Key = "ADDRESS:";
+                // add4.Key = "ADDRESS";
                 // var cAdd4 = new TestParamCell(add4);
                 // cAdd4.Row = 0;
                 // cAdd4.Column = 0;
@@ -3378,7 +3378,7 @@ export class Factory {
                 // rft.TestParamCells.push(cAdd4);
 
                 // var addQ4 = new TestParam();
-                // addQ4.Key = "Qualifier:";
+                // addQ4.Key = "Qualifier";
                 // var cAddQ4 = new TestParamCell(addQ4);
                 // cAddQ4.Row = 1;
                 // cAddQ4.Column = 0;
@@ -3389,7 +3389,7 @@ export class Factory {
                 // rft.TestParamCells.push(cAddQ4);
 
                 // var pld4 = new TestParam();
-                // pld4.Key = "Payload Rcvd:";
+                // pld4.Key = "Payload Rcvd";
                 // var cPld4 = new TestParamCell(pld4);
                 // cPld4.Row = 2;
                 // cPld4.Column = 0;
@@ -3397,7 +3397,7 @@ export class Factory {
                 // rft.TestParamCells.push(cPld4);
 
                 // var rfle4 = new TestParam();
-                // rfle4.Key = "RF Level:";
+                // rfle4.Key = "RF Level";
                 // var cRfle4 = new TestParamCell(rfle4);
                 // cRfle4.Row = 2;
                 // cRfle4.Column = 1;
@@ -3417,7 +3417,7 @@ export class Factory {
                 // rft.TestParamCells.push(cRflm4);
 
                 // var frq4 = new TestParam();
-                // frq4.Key = "Frequency:";
+                // frq4.Key = "Frequency";
                 // var cFrq4 = new TestParamCell(frq4);
                 // cFrq4.Row = 3;
                 // cFrq4.Column = 0;
@@ -3428,7 +3428,7 @@ export class Factory {
                 // rft.TestParamCells.push(cFrq4);
 
                 // var pwr4 = new TestParam();
-                // pwr4.Key = "Power:";
+                // pwr4.Key = "Power";
                 // var cPwr4 = new TestParamCell(pwr4);
                 // cPwr4.Row = 4;
                 // cPwr4.Column = 0;
@@ -3439,7 +3439,7 @@ export class Factory {
                 // rft.TestParamCells.push(cPwr4);
 
                 // var pwrdp4 = new TestParam();
-                // pwrdp4.Key = "Power Droop:";
+                // pwrdp4.Key = "Power Droop";
                 // var cPwrdp4 = new TestParamCell(pwrdp4);
                 // cPwrdp4.Row = 6;
                 // cPwrdp4.Column = 0;
@@ -3450,7 +3450,7 @@ export class Factory {
                 // rft.TestParamCells.push(cPwrdp4);
 
                 // var dvn4 = new TestParam();
-                // dvn4.Key = "Deviation:";
+                // dvn4.Key = "Deviation";
                 // var cDvn4 = new TestParamCell(dvn4);
                 // cDvn4.Row = 6;
                 // cDvn4.Column = 0;
@@ -3461,7 +3461,7 @@ export class Factory {
                 // rft.TestParamCells.push(cDvn4);
 
                 // var pkdn4 = new TestParam();
-                // pkdn4.Key = "Peak Deviation:";
+                // pkdn4.Key = "Peak Deviation";
                 // var cPkdn4 = new TestParamCell(pkdn4);
                 // cPkdn4.Row = 6;
                 // cPkdn4.Column = 0;
@@ -3472,7 +3472,7 @@ export class Factory {
                 // rft.TestParamCells.push(cPkdn4);
 
                 // var veo4 = new TestParam();
-                // veo4.Key = "Vert Eye Opening:";
+                // veo4.Key = "Vert Eye Opening";
                 // var cVeo4 = new TestParamCell(veo4);
                 // cVeo4.Row = 6;
                 // cVeo4.Column = 0;
@@ -3483,7 +3483,7 @@ export class Factory {
                 // rft.TestParamCells.push(cVeo4);
 
                 // var heo4 = new TestParam();
-                // heo4.Key = "Horz Eye Opening:";
+                // heo4.Key = "Horz Eye Opening";
                 // var cHeo4 = new TestParamCell(heo4);
                 // cHeo4.Row = 6;
                 // cHeo4.Column = 0;
@@ -3494,7 +3494,7 @@ export class Factory {
                 // rft.TestParamCells.push(cHeo4);
 
                 // var mte4 = new TestParam();
-                // mte4.Key = "Message Time Error:";
+                // mte4.Key = "Message Time Error";
                 // var cMte4 = new TestParamCell(mte4);
                 // cMte4.Row = 6;
                 // cMte4.Column = 0;
@@ -3516,7 +3516,7 @@ export class Factory {
                 // rft.TestParamCells.push(cUms44);
 
                 // var pwrd4 = new TestParam();
-                // pwrd4.Key = "State Vector (SV):";
+                // pwrd4.Key = "State Vector (SV)";
                 // var cPwrd4 = new TestParamCell(pwrd4);
                 // cPwrd4.Row = 8;
                 // cPwrd4.Column = 0;
@@ -3527,7 +3527,7 @@ export class Factory {
                 // rft.TestParamCells.push(cPwrd4);
 
                 // var frq4 = new TestParam();
-                // frq4.Key = "Mode Status (MS):";
+                // frq4.Key = "Mode Status (MS)";
                 // var cFrq4 = new TestParamCell(frq4);
                 // cFrq4.Row = 9;
                 // cFrq4.Column = 0;
@@ -3538,7 +3538,7 @@ export class Factory {
                 // rft.TestParamCells.push(cFrq4);
 
                 // var dvt4 = new TestParam();
-                // dvt4.Key = "Aux State Vector (AUX SV):";
+                // dvt4.Key = "Aux State Vector (AUX SV)";
                 // var cDvt4 = new TestParamCell(dvt4);
                 // cDvt4.Row = 10;
                 // cDvt4.Column = 0;
@@ -3549,7 +3549,7 @@ export class Factory {
                 // rft.TestParamCells.push(cDvt4);
 
                 // var pdvt4 = new TestParam();
-                // pdvt4.Key = "Target State (TS):";
+                // pdvt4.Key = "Target State (TS)";
                 // var cPdvt4 = new TestParamCell(pdvt4);
                 // cPdvt4.Row = 11;
                 // cPdvt4.Column = 0;
@@ -3571,7 +3571,7 @@ export class Factory {
                 // rft.TestParamCells.push(cUatms4);
 
                 // var msrcd4 = new TestParam();
-                // msrcd4.Key = "Message Received:";
+                // msrcd4.Key = "Message Received";
                 // var cMsrcd4 = new TestParamCell(msrcd4);
                 // cMsrcd4.Row = 13;
                 // cMsrcd4.Column = 0;
@@ -3582,7 +3582,7 @@ export class Factory {
                 // rft.TestParamCells.push(cMsrcd4);
 
                 // var msict4 = new TestParam();
-                // msict4.Key = "Message Incorrect:";
+                // msict4.Key = "Message Incorrect";
                 // var cMsict4 = new TestParamCell(msict4);
                 // cMsict4.Row = 14;
                 // cMsict4.Column = 0;
@@ -3593,7 +3593,7 @@ export class Factory {
                 // rft.TestParamCells.push(cMsict4);
 
                 // var msslrt4 = new TestParam();
-                // msslrt4.Key = "Message Successful Rate:";
+                // msslrt4.Key = "Message Successful Rate";
                 // var cMsslrt4 = new TestParamCell(msslrt4);
                 // cMsslrt4.Row = 15;
                 // cMsslrt4.Column = 0;
@@ -3604,7 +3604,7 @@ export class Factory {
                 // rft.TestParamCells.push(cMsslrt4);
 
                 // var ctmst4 = new TestParam();
-                // ctmst4.Key = "Current Message Type:";
+                // ctmst4.Key = "Current Message Type";
                 // var cCtmst4 = new TestParamCell(ctmst4);
                 // cCtmst4.Row = 16;
                 // cCtmst4.Column = 0;
@@ -3615,7 +3615,7 @@ export class Factory {
                 // rft.TestParamCells.push(cCtmst4);
 
                 // var ctmser4 = new TestParam();
-                // ctmser4.Key = "Current Message Errors:";
+                // ctmser4.Key = "Current Message Errors";
                 // var cCtmser4 = new TestParamCell(ctmser4);
                 // cCtmser4.Row = 17;
                 // cCtmser4.Column = 0;
@@ -3626,7 +3626,7 @@ export class Factory {
                 // rft.TestParamCells.push(cCtmser4);
 
                 // var ctmssq4 = new TestParam();
-                // ctmssq4.Key = "Current Message Sequence:";
+                // ctmssq4.Key = "Current Message Sequence";
                 // var cCtmssq4 = new TestParamCell(ctmssq4);
                 // cCtmssq4.Row = 18;
                 // cCtmssq4.Column = 0;
@@ -3637,7 +3637,7 @@ export class Factory {
                 // rft.TestParamCells.push(cCtmssq4);
 
                 // var result4 = new TestParam();
-                // result4.Key = "Result:";
+                // result4.Key = "Result";
                 // var cResult4 = new TestParamCell(result4);
                 // cResult4.Row = 19;
                 // cResult4.Column = 0;
@@ -3666,7 +3666,7 @@ export class Factory {
                 adssum1.Name = "ADS-B SUMMARY";
 
                 var aid3 = new TestParam();
-                aid3.Key = "AC Id:";
+                aid3.Key = "AC Id";
                 aid3.Value = "_____";
                 var cAid3 = new TestParamCell(aid3);
                 cAid3.Row = 0;
@@ -3678,7 +3678,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cAid3);
 
                 var acc3 = new TestParam();
-                acc3.Key = "AC Class:";
+                acc3.Key = "AC Class";
                 acc3.Value = "_";
                 var cAcc3 = new TestParamCell(acc3);
                 cAcc3.Row = 1;
@@ -3690,7 +3690,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cAcc3);
 
                 var rply3 = new TestParam();
-                rply3.Key = "Reply:";
+                rply3.Key = "Reply";
                 rply3.Value = "_._";
                 rply3.Unit = "%";
                 var cRply3 = new TestParamCell(rply3);
@@ -3703,7 +3703,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cRply3);
 
                 var pr3 = new TestParam();
-                pr3.Key = "Power:";
+                pr3.Key = "Power";
                 pr3.Value = "___._";
                 pr3.Unit = "dB";
                 var cPr3 = new TestParamCell(pr3);
@@ -3716,7 +3716,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cPr3);
 
                 var fq3 = new TestParam();
-                fq3.Key = "Freq:";
+                fq3.Key = "Freq";
                 fq3.Value = "_____._";
                 fq3.Unit = "MHz";
                 var cFq3 = new TestParamCell(fq3);
@@ -3729,7 +3729,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cFq3);
 
                 var vc3 = new TestParam();
-                vc3.Key = "Velocity:";
+                vc3.Key = "Velocity";
                 vc3.Value = "____";
                 vc3.Unit = "Kts";
                 var cVc3 = new TestParamCell(vc3);
@@ -3741,7 +3741,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cVc3);
 
                 var br3 = new TestParam();
-                br3.Key = "Bearing:";
+                br3.Key = "Bearing";
                 br3.Value = "___._";
                 br3.Unit = "Deg";
                 var cBr3 = new TestParamCell(br3);
@@ -3753,7 +3753,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cBr3);
 
                 var atd3 = new TestParam();
-                atd3.Key = "Altitude:";
+                atd3.Key = "Altitude";
                 atd3.Value = "_____";
                 atd3.Unit = "Ft";
                 var cAtd3 = new TestParamCell(atd3);
@@ -3764,7 +3764,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cAtd3);
 
                 var rg3 = new TestParam();
-                rg3.Key = "Range:";
+                rg3.Key = "Range";
                 rg3.Value = "_____";
                 rg3.Unit = "Ft";
                 var cRg3 = new TestParamCell(rg3);
@@ -3776,7 +3776,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cRg3);
 
                 var pwr3 = new TestParam();
-                pwr3.Key = "Power:";
+                pwr3.Key = "Power";
                 pwr3.Value = "___._";
                 pwr3.Unit = "dBm";
                 var cPwr3 = new TestParamCell(pwr3);
@@ -3787,7 +3787,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cPwr3);
 
                 var bro3 = new TestParam();
-                bro3.Key = "_____:";
+                bro3.Key = "_____";
                 bro3.Value = "_____";
                 bro3.Unit = "Mb";
                 var cBro3 = new TestParamCell(bro3);
@@ -3799,7 +3799,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cBro3);
 
                 var frqc3 = new TestParam();
-                frqc3.Key = "Frequency:";
+                frqc3.Key = "Frequency";
                 frqc3.Value = "_____._";
                 frqc3.Unit = "MHz";
                 var cFrqc3 = new TestParamCell(frqc3);
@@ -3810,7 +3810,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cFrqc3);
 
                 var lt3 = new TestParam();
-                lt3.Key = "Lat:";
+                lt3.Key = "Lat";
                 lt3.Value = "___._____";
                 lt3.Unit = "N";
                 var cLt3 = new TestParamCell(lt3);
@@ -3822,7 +3822,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cLt3);
 
                 var spg3 = new TestParam();
-                spg3.Key = "Spacing:";
+                spg3.Key = "Spacing";
                 spg3.Value = "_._";
                 spg3.Unit = "ns";
                 var cSpg3 = new TestParamCell(spg3);
@@ -3833,7 +3833,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cSpg3);
 
                 var ln3 = new TestParam();
-                ln3.Key = "Lon:";
+                ln3.Key = "Lon";
                 ln3.Value = "____._____";
                 ln3.Unit = "W";
                 var cLn3 = new TestParamCell(ln3);
@@ -3845,7 +3845,7 @@ export class Factory {
                 adssum1.TestParamCells.push(cLn3);
 
                 var result = new TestParam();
-                result.Key = "Result:";
+                result.Key = "Result";
                 result.Value = "______";
                 var cResult = new TestParamCell(result);
                 cResult.Row = 10;
@@ -3935,7 +3935,7 @@ export class Factory {
     //             uft.Name = "UAT Filter Target";
 
     //             var add1 = new TestParam();
-    //             add1.Key = "ADDRESS:";
+    //             add1.Key = "ADDRESS";
     //             // add1.Value = "______ (_) / ________ (_) [______]";
     //             var cAdd1 = new TestParamCell(add1);
     //             cAdd1.Row = 0;
@@ -3945,7 +3945,7 @@ export class Factory {
     //             uft.TestParamCells.push(cAdd1);
 
     //             var q1 = new TestParam();
-    //             q1.Key = "Qualifier:";
+    //             q1.Key = "Qualifier";
     //             // q1.Value = "0 (ADS-B ICAO)";
     //             var cQ1 = new TestParamCell(q1);
     //             cQ1.Row = 1;
@@ -3955,7 +3955,7 @@ export class Factory {
     //             uft.TestParamCells.push(cQ1);
 
     //             var pld1 = new TestParam();
-    //             pld1.Key = "Payload Rcvd:";
+    //             pld1.Key = "Payload Rcvd";
     //             // pld1.Value = "1,0,2,0";
     //             var cPld1 = new TestParamCell(pld1);
     //             cPld1.Row = 2;
@@ -3964,7 +3964,7 @@ export class Factory {
     //             uft.TestParamCells.push(cPld1);
 
     //             var agst1 = new TestParam();
-    //             agst1.Key = "RF Level:";
+    //             agst1.Key = "RF Level";
     //             // agst1.Value = "______";
     //             var cAgst1 = new TestParamCell(agst1);
     //             cAgst1.Row = 2;
@@ -3978,7 +3978,7 @@ export class Factory {
     //             mst.Name = "UAT Mode Status Test";
 
     //             var add2 = new TestParam();
-    //             add2.Key = "ADDRESS:";
+    //             add2.Key = "ADDRESS";
     //             // add2.Value = "CA310A (H) / 74361202 (O) [----------]";
     //             var cAdd2 = new TestParamCell(add2);
     //             cAdd2.Row = 0;
@@ -3988,7 +3988,7 @@ export class Factory {
     //             mst.TestParamCells.push(cAdd2);
 
     //             var q2 = new TestParam();
-    //             q2.Key = "Qualifier:";
+    //             q2.Key = "Qualifier";
     //             // q2.Value = "4 (Surface Vehicle)";
     //             var cQ2 = new TestParamCell(q2);
     //             cQ2.Row = 1;
@@ -3998,7 +3998,7 @@ export class Factory {
     //             mst.TestParamCells.push(cQ2);
 
     //             var pld2 = new TestParam();
-    //             pld2.Key = "Payload Rcvd:";
+    //             pld2.Key = "Payload Rcvd";
     //             // pld2.Value = "1,0,0,0";
     //             var cPld2 = new TestParamCell(pld2);
     //             cPld2.Row = 2;
@@ -4007,7 +4007,7 @@ export class Factory {
     //             mst.TestParamCells.push(cPld2);
 
     //             var agst2 = new TestParam();
-    //             agst2.Key = "RF Level:";
+    //             agst2.Key = "RF Level";
     //             // agst2.Value = "Medium";
     //             var cAgst2 = new TestParamCell(agst2);
     //             cAgst2.Row = 2;
@@ -4022,7 +4022,7 @@ export class Factory {
     //             usvt.Name = "UAT State Vector Test";
 
     //             var add3 = new TestParam();
-    //             add3.Key = "ADDRESS:";
+    //             add3.Key = "ADDRESS";
     //             // add3.Value ="9CDA34 (H) / 47800213 (O) [N32DL]";
     //             var cAdd3 = new TestParamCell(add3);
     //             cAdd3.Row = 0;
@@ -4032,7 +4032,7 @@ export class Factory {
     //             usvt.TestParamCells.push(cAdd3);
 
     //             var q3 = new TestParam();
-    //             q3.Key = "Qualifier:";
+    //             q3.Key = "Qualifier";
     //             // q3.Value = "1 (ADS-B self-addr)";
     //             var cQ3 = new TestParamCell(q3);
     //             cQ3.Row = 1;
@@ -4042,7 +4042,7 @@ export class Factory {
     //             usvt.TestParamCells.push(cQ3);
 
     //             var pld3 = new TestParam();
-    //             pld3.Key = "Payload Rcvd:";
+    //             pld3.Key = "Payload Rcvd";
     //             // pld3.Value ="1,4,4,4 ";
     //             var cPld3 = new TestParamCell(pld3);
     //             cPld3.Row = 2;
@@ -4051,7 +4051,7 @@ export class Factory {
     //             usvt.TestParamCells.push(cPld3);
 
     //             var agst3 = new TestParam();
-    //             agst3.Key = "RF Level:";
+    //             agst3.Key = "RF Level";
     //             // agst3.Value ="Weak";
     //             var cAgst3 = new TestParamCell(agst3);
     //             cAgst3.Row = 2;
@@ -4066,7 +4066,7 @@ export class Factory {
     //             tst.Name = "UAT Target State Test";
 
     //             var add4 = new TestParam();
-    //             add4.Key = "ADDRESS:";
+    //             add4.Key = "ADDRESS";
     //             var cAdd4 = new TestParamCell(add4);
     //             cAdd4.Row = 0;
     //             cAdd4.Column = 0;
@@ -4075,7 +4075,7 @@ export class Factory {
     //             tst.TestParamCells.push(cAdd4);
 
     //             var q4 = new TestParam();
-    //             q4.Key = "Qualifier:";
+    //             q4.Key = "Qualifier";
     //             var cQ4 = new TestParamCell(q4);
     //             cQ4.Row = 1;
     //             cQ4.Column = 0;
@@ -4084,7 +4084,7 @@ export class Factory {
     //             tst.TestParamCells.push(cQ4);
 
     //             var pld4 = new TestParam();
-    //             pld4.Key = "Payload Rcvd:";
+    //             pld4.Key = "Payload Rcvd";
     //             var cPld4 = new TestParamCell(pld4);
     //             cPld4.Row = 2;
     //             cPld4.Column = 0;
@@ -4092,7 +4092,7 @@ export class Factory {
     //             tst.TestParamCells.push(cPld4);
 
     //             var agst4 = new TestParam();
-    //             agst4.Key = "RF Level:";
+    //             agst4.Key = "RF Level";
     //             var cAgst4 = new TestParamCell(agst4);
     //             cAgst4.Row = 2;
     //             cAgst4.Column = 1;
@@ -4106,7 +4106,7 @@ export class Factory {
     //             // tct.Name = "UAT Trajectory Change Test";
 
     //             // var add5 = new TestParam();
-    //             // add5.Key = "ADDRESS:";
+    //             // add5.Key = "ADDRESS";
     //             // var cAdd5 = new TestParamCell(add5);
     //             // cAdd5.Row = 0;
     //             // cAdd5.Column = 0;
@@ -4115,7 +4115,7 @@ export class Factory {
     //             // tct.TestParamCells.push(cAdd5);
 
     //             // var q5 = new TestParam();
-    //             // q5.Key = "Qualifier:";
+    //             // q5.Key = "Qualifier";
     //             // var cQ5 = new TestParamCell(q5);
     //             // cQ5.Row = 1;
     //             // cQ5.Column = 0;
@@ -4124,7 +4124,7 @@ export class Factory {
     //             // tct.TestParamCells.push(cQ5);
 
     //             // var pld5 = new TestParam();
-    //             // pld5.Key = "Payload Rcvd:";
+    //             // pld5.Key = "Payload Rcvd";
     //             // var cPld5 = new TestParamCell(pld5);
     //             // cPld5.Row = 2;
     //             // cPld5.Column = 0;
@@ -4132,7 +4132,7 @@ export class Factory {
     //             // tst.TestParamCells.push(cPld5);
 
     //             // var agst5 = new TestParam();
-    //             // agst5.Key = "RF Level:";
+    //             // agst5.Key = "RF Level";
     //             // var cAgst5 = new TestParamCell(agst5);
     //             // cAgst5.Row = 2;
     //             // cAgst5.Column = 1;
@@ -4145,7 +4145,7 @@ export class Factory {
     //             rft.Name = "UAT Payload Timing";
 
     //             var add6 = new TestParam();
-    //             add6.Key = "ADDRESS:";
+    //             add6.Key = "ADDRESS";
     //             var cAdd6 = new TestParamCell(add6);
     //             cAdd6.Row = 0;
     //             cAdd6.Column = 0;
@@ -4154,7 +4154,7 @@ export class Factory {
     //             rft.TestParamCells.push(cAdd6);
 
     //             var q6 = new TestParam();
-    //             q6.Key = "Qualifier:";
+    //             q6.Key = "Qualifier";
     //             var cQ6 = new TestParamCell(q6);
     //             cQ6.Row = 1;
     //             cQ6.Column = 0;
@@ -4163,7 +4163,7 @@ export class Factory {
     //             rft.TestParamCells.push(cQ6);
 
     //             var pld6 = new TestParam();
-    //             pld6.Key = "Payload Rcvd:";
+    //             pld6.Key = "Payload Rcvd";
     //             var cPld6 = new TestParamCell(pld6);
     //             cPld6.Row = 2;
     //             cPld6.Column = 0;
@@ -4171,7 +4171,7 @@ export class Factory {
     //             rft.TestParamCells.push(cPld6);
 
     //             var agst6 = new TestParam();
-    //             agst6.Key = "RF Level:";
+    //             agst6.Key = "RF Level";
     //             var cAgst6 = new TestParamCell(agst6);
     //             cAgst6.Row = 2;
     //             cAgst6.Column = 1;
@@ -4192,7 +4192,7 @@ export class Factory {
     //             uati.Name = "UAT In";
 
     //             var add7 = new TestParam();
-    //             add7.Key = "ADDRESS:";
+    //             add7.Key = "ADDRESS";
     //             var cAdd7 = new TestParamCell(add7);
     //             cAdd7.Row = 0;
     //             cAdd7.Column = 0;
@@ -4201,7 +4201,7 @@ export class Factory {
     //             uati.TestParamCells.push(cAdd7);
 
     //             var q7 = new TestParam();
-    //             q7.Key = "Qualifier:";
+    //             q7.Key = "Qualifier";
     //             var cQ7 = new TestParamCell(q7);
     //             cQ7.Row = 1;
     //             cQ7.Column = 0;
@@ -4210,7 +4210,7 @@ export class Factory {
     //             uati.TestParamCells.push(cQ7);
 
     //             var pld7 = new TestParam();
-    //             pld7.Key = "Payload Rcvd:";
+    //             pld7.Key = "Payload Rcvd";
     //             var cPld7 = new TestParamCell(pld7);
     //             cPld7.Row = 2;
     //             cPld7.Column = 0;
@@ -4218,7 +4218,7 @@ export class Factory {
     //             uati.TestParamCells.push(cPld7);
 
     //             var agst7 = new TestParam();
-    //             agst7.Key = "RF Level:";
+    //             agst7.Key = "RF Level";
     //             var cAgst7 = new TestParamCell(agst7);
     //             cAgst7.Row = 2;
     //             cAgst7.Column = 1;
@@ -4232,7 +4232,7 @@ export class Factory {
     //             tisb.Name = "TIS-B";
 
     //             var add8 = new TestParam();
-    //             add8.Key = "ADDRESS:";
+    //             add8.Key = "ADDRESS";
     //             var cAdd8 = new TestParamCell(add8);
     //             cAdd8.Row = 0;
     //             cAdd8.Column = 0;
@@ -4241,7 +4241,7 @@ export class Factory {
     //             tisb.TestParamCells.push(cAdd8);
 
     //             var q8 = new TestParam();
-    //             q8.Key = "Qualifier:";
+    //             q8.Key = "Qualifier";
     //             var cQ8 = new TestParamCell(q8);
     //             cQ8.Row = 1;
     //             cQ8.Column = 0;
@@ -4250,7 +4250,7 @@ export class Factory {
     //             tisb.TestParamCells.push(cQ8);
 
     //             var pld8 = new TestParam();
-    //             pld8.Key = "Payload Rcvd:";
+    //             pld8.Key = "Payload Rcvd";
     //             var cPld8 = new TestParamCell(pld8);
     //             cPld8.Row = 2;
     //             cPld8.Column = 0;
@@ -4258,7 +4258,7 @@ export class Factory {
     //             tisb.TestParamCells.push(cPld8);
 
     //             var agst8 = new TestParam();
-    //             agst8.Key = "RF Level:";
+    //             agst8.Key = "RF Level";
     //             var cAgst8 = new TestParamCell(agst8);
     //             cAgst8.Row = 2;
     //             cAgst8.Column = 1;
@@ -4272,7 +4272,7 @@ export class Factory {
     //             fisb.Name = "FIS-B";
 
     //             var add9 = new TestParam();
-    //             add9.Key = "ADDRESS:";
+    //             add9.Key = "ADDRESS";
     //             var cAdd9 = new TestParamCell(add9);
     //             cAdd9.Row = 0;
     //             cAdd9.Column = 0;
@@ -4281,7 +4281,7 @@ export class Factory {
     //             fisb.TestParamCells.push(cAdd9);
 
     //             var q9 = new TestParam();
-    //             q9.Key = "Qualifier:";
+    //             q9.Key = "Qualifier";
     //             var cQ9 = new TestParamCell(q9);
     //             cQ9.Row = 1;
     //             cQ9.Column = 0;
@@ -4290,7 +4290,7 @@ export class Factory {
     //             fisb.TestParamCells.push(cQ9);
 
     //             var pld9 = new TestParam();
-    //             pld9.Key = "Payload Rcvd:";
+    //             pld9.Key = "Payload Rcvd";
     //             var cPld9 = new TestParamCell(pld9);
     //             cPld9.Row = 2;
     //             cPld9.Column = 0;
@@ -4298,7 +4298,7 @@ export class Factory {
     //             fisb.TestParamCells.push(cPld9);
 
     //             var agst9 = new TestParam();
-    //             agst9.Key = "RF Level:";
+    //             agst9.Key = "RF Level";
     //             var cAgst9 = new TestParamCell(agst9);
     //             cAgst9.Row = 2;
     //             cAgst9.Column = 1;
@@ -4320,7 +4320,7 @@ export class Factory {
     //             urfl.Name = "UAT RF Link";
 
     //             var add10 = new TestParam();
-    //             add10.Key = "ADDRESS:";
+    //             add10.Key = "ADDRESS";
     //             var cAdd10 = new TestParamCell(add10);
     //             cAdd10.Row = 0;
     //             cAdd10.Column = 0;
@@ -4329,7 +4329,7 @@ export class Factory {
     //             urfl.TestParamCells.push(cAdd10);
 
     //             var q10 = new TestParam();
-    //             q10.Key = "Qualifier:";
+    //             q10.Key = "Qualifier";
     //             var cQ10 = new TestParamCell(q10);
     //             cQ10.Row = 1;
     //             cQ10.Column = 0;
@@ -4338,7 +4338,7 @@ export class Factory {
     //             urfl.TestParamCells.push(cQ10);
 
     //             var pld10 = new TestParam();
-    //             pld10.Key = "Payload Rcvd:";
+    //             pld10.Key = "Payload Rcvd";
     //             var cPld10 = new TestParamCell(pld10);
     //             cPld10.Row = 2;
     //             cPld10.Column = 0;
@@ -4346,7 +4346,7 @@ export class Factory {
     //             urfl.TestParamCells.push(cPld10);
 
     //             var agst10 = new TestParam();
-    //             agst10.Key = "RF Level:";
+    //             agst10.Key = "RF Level";
     //             var cAgst10 = new TestParamCell(agst10);
     //             cAgst10.Row = 2;
     //             cAgst10.Column = 1;
@@ -4360,7 +4360,7 @@ export class Factory {
     //             gpss.Name = "GPS Status";
 
     //             var add11 = new TestParam();
-    //             add11.Key = "ADDRESS:";
+    //             add11.Key = "ADDRESS";
     //             var cAdd11 = new TestParamCell(add11);
     //             cAdd11.Row = 0;
     //             cAdd11.Column = 0;
@@ -4369,7 +4369,7 @@ export class Factory {
     //             gpss.TestParamCells.push(cAdd11);
 
     //             var q11 = new TestParam();
-    //             q11.Key = "Qualifier:";
+    //             q11.Key = "Qualifier";
     //             var cQ11 = new TestParamCell(q11);
     //             cQ11.Row = 1;
     //             cQ11.Column = 0;
@@ -4378,7 +4378,7 @@ export class Factory {
     //             gpss.TestParamCells.push(cQ11);
 
     //             var pld11 = new TestParam();
-    //             pld11.Key = "Payload Rcvd:";
+    //             pld11.Key = "Payload Rcvd";
     //             var cPld11 = new TestParamCell(pld11);
     //             cPld11.Row = 2;
     //             cPld11.Column = 0;
@@ -4386,7 +4386,7 @@ export class Factory {
     //             gpss.TestParamCells.push(cPld11);
 
     //             var agst11 = new TestParam();
-    //             agst11.Key = "RF Level:";
+    //             agst11.Key = "RF Level";
     //             var cAgst11 = new TestParamCell(agst11);
     //             cAgst11.Row = 2;
     //             cAgst11.Column = 1;
@@ -4406,7 +4406,7 @@ export class Factory {
     //             vswr.Name = "VSWR";
 
     //             var add12 = new TestParam();
-    //             add12.Key = "ADDRESS:";
+    //             add12.Key = "ADDRESS";
     //             var cAdd12 = new TestParamCell(add12);
     //             cAdd12.Row = 0;
     //             cAdd12.Column = 0;
@@ -4415,7 +4415,7 @@ export class Factory {
     //             vswr.TestParamCells.push(cAdd12);
 
     //             var q12 = new TestParam();
-    //             q12.Key = "Qualifier:";
+    //             q12.Key = "Qualifier";
     //             var cQ12 = new TestParamCell(q12);
     //             cQ12.Row = 1;
     //             cQ12.Column = 0;
@@ -4424,7 +4424,7 @@ export class Factory {
     //             vswr.TestParamCells.push(cQ12);
 
     //             var pld12 = new TestParam();
-    //             pld12.Key = "Payload Rcvd:";
+    //             pld12.Key = "Payload Rcvd";
     //             var cPld12 = new TestParamCell(pld12);
     //             cPld12.Row = 2;
     //             cPld12.Column = 0;
@@ -4432,7 +4432,7 @@ export class Factory {
     //             vswr.TestParamCells.push(cPld12);
 
     //             var agst12 = new TestParam();
-    //             agst12.Key = "RF Level:";
+    //             agst12.Key = "RF Level";
     //             var cAgst12 = new TestParamCell(agst12);
     //             cAgst12.Row = 2;
     //             cAgst12.Column = 1;

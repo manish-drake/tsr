@@ -21,9 +21,10 @@ export class TestDetailComp {
     private route: ActivatedRoute,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
-    private _master: MasterService
-    ) { }
+    private _svcMaster: MasterService
+  ) { }
 
+  testsData: any;
   public tests: any;
 
   headerName: any;
@@ -35,10 +36,10 @@ export class TestDetailComp {
       this.testName = (data as any).test;
       this._svcHome.title = this.headerName;
       console.log(JSON.stringify(data));
-      
 
-      var testsData = this._objectService.createTestsData(this.testName);
-      this.tests = this._svcBroker.createTestsDetail(testsData);
+
+      this.testsData = this._objectService.createTestsData(this.testName);
+      this.tests = this._svcBroker.createTestsDetail(this.testsData);
     });
     this.setFooterResultStatus("before");
   }
@@ -53,7 +54,23 @@ export class TestDetailComp {
     if (this.selectedVehicle != e) {
       this.selectedVehicle = e;
     }
+    this.setVehicleValues(e);
   }
+
+  setVehicleValues(e) {
+    console.log(JSON.stringify(e));
+    this.testsData.Summaries.forEach(summary => {
+      this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
+      this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
+      this.testsData.SetValue(summary.Name, "FLIGHT ID", e.flightid);
+      this.testsData.SetValue(summary.Name, "RF Level", e.rflevel);
+      this.testsData.SetValue(summary.Name, "DF", e.df);
+      this.testsData.SetValue(summary.Name, "BDS Rcvd (DF17)", e.bdsrcvd);
+    });
+    this.tests = this._svcBroker.createTestsDetail(this.testsData);
+  }
+
+
 
   currentView: any = "default";
 
@@ -107,12 +124,16 @@ export class TestDetailComp {
   isRunning: boolean = false;
 
   onRun() {
-    this.isRunning = !this.isRunning;
-    this.setFooterResultStatus("running");
-    setTimeout(() => {
+    if (!this.isRunning) {
+      this.isRunning = true;
+      var testsData = this._svcMaster.runTest(this.testsData);
+      this.tests = this._svcBroker.createTestsDetail(testsData);
+      this.setFooterResultStatus("running");
+    }
+    else {
       this.isRunning = false;
       this.setFooterResultStatus("after");
-    }, 3000);
+    }
   }
 
   setFooterResultStatus(_case) {
