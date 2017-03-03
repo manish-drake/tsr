@@ -59,7 +59,6 @@ export class MasterService {
                 testsData.SetValue("SUMMARY", "SDA", "2");
                 testsData.SetValue("SUMMARY", "GVA", "2 (< 45m)");
                 testsData.SetValue("SUMMARY", "NIC", "7 (RC< 2nmi)");
-                testsData.SetValue("SUMMARY", "Result", "PASS");
                 //-----------------------------------------------------
                 testsData.SetValue("AIRBORN POSITION", "Period", "500");
                 testsData.SetValue("AIRBORN POSITION", "Message Element", "03 04 5D FA 19 AC ED");
@@ -70,13 +69,11 @@ export class MasterService {
                 testsData.SetValue("AIRBORN POSITION", "NIC-SB", "0");
                 testsData.SetValue("AIRBORN POSITION", "CPR Format", "0(Even)");
                 testsData.SetValue("AIRBORN POSITION", "UTC Sync", "1(Coupled)");
-                testsData.SetValue("AIRBORN POSITION", "Result", "PASS");
                 //------------------------------------------------------
                 testsData.SetValue("AC ID", "Period", "5.0");
                 testsData.SetValue("AC ID", "Message Element", "03 04 5D FA 19 AC ED");
                 testsData.SetValue("AC ID", "Aircraft ID", "N1246W");
                 testsData.SetValue("AC ID", "Emitter Cat", "3 (Large)");
-                testsData.SetValue("AC ID", "Result", "PASS");
                 //------------------------------------------------------
                 testsData.SetValue("VELOCITY", "Period", "500");
                 testsData.SetValue("VELOCITY", "Message Element", "03 04 5D FA 19 AC ED");
@@ -89,7 +86,6 @@ export class MasterService {
                 testsData.SetValue("VELOCITY", "NACv", "2 (< 3 m/s)");
                 testsData.SetValue("VELOCITY", "Vert Rate Src", "1 (Baro)");
                 testsData.SetValue("VELOCITY", "Hdg Sts", "1 (avail)");
-                testsData.SetValue("VELOCITY", "Result", "PASS");
                 //------------------------------------------------------
                 testsData.SetValue("OP STATUS", "Period", "5.0");
                 testsData.SetValue("OP STATUS", "Message Element", "33 4C D1 5E 23 01 04");
@@ -114,7 +110,6 @@ export class MasterService {
                 testsData.SetValue("OP STATUS", "ARV capable", "1(Yes)");
                 testsData.SetValue("OP STATUS", "ADS-R Flag", "0");
                 testsData.SetValue("OP STATUS", "Hrz Ref Dir", "1(Mag N)");
-                testsData.SetValue("OP STATUS", "Result", "PASS");
                 //------------------------------------------------------
                 testsData.SetValue("TARGET STATE", "Sel. Altitude", "7 (<.1 nm)");
                 testsData.SetValue("TARGET STATE", "NIC-supA", "0");
@@ -127,13 +122,11 @@ export class MasterService {
                 testsData.SetValue("TARGET STATE", "Alt. Hold (ALT)", "1 (Engaged)");
                 testsData.SetValue("TARGET STATE", "Approach (APP)", "0 (Not Engaged)");
                 testsData.SetValue("TARGET STATE", "LNAV", "0 (Not Engaged)");
-                testsData.SetValue("TARGET STATE", "Result", "PASS");
                 //------------------------------------------------------
                 testsData.SetValue("SQUITTER", "Extended Squitter Rate", "0.98");
                 testsData.SetValue("SQUITTER", "Measured frequency", "978.021");
                 testsData.SetValue("SQUITTER", "Measure power", "-55.0 ");
                 testsData.SetValue("SQUITTER", "Error conditions", "None detected");
-                testsData.SetValue("SQUITTER", "Result", "PASS");
 
 
             }
@@ -220,12 +213,8 @@ export class MasterService {
                 testsData.SetValue("UAT RF Test", "Current Message Bit Errors", "0");
                 testsData.SetValue("UAT RF Test", "Message Sequence", "OK");
                 testsData.SetValue("UAT RF Test", "Message Payloads", "0 1 0 2 0 1 0 2 0 1 0 2 0 1 0 2");
-                
-                
-
-                
+                      
             }
-
         }
         return testsData;
     }

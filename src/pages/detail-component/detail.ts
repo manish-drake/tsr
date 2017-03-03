@@ -46,6 +46,7 @@ export class TestDetailComp {
 
   ngOnDestroy() {
     this._svcHome.footerData = undefined;
+    clearInterval(this.runInterval);
   }
 
   selectedVehicle: any;
@@ -72,7 +73,6 @@ export class TestDetailComp {
     });
     this.tests = this._svcBroker.createTestsDetail(this.testsData);
   }
-
 
 
   currentView: any = "default";
@@ -125,16 +125,20 @@ export class TestDetailComp {
   }
 
   isRunning: boolean = false;
+  runInterval: any;
 
   onRun() {
     if (!this.isRunning) {
       this.isRunning = true;
-      var testsData = this._svcMaster.runTest(this.testsData);
-      this.tests = this._svcBroker.createTestsDetail(testsData);
       this.setFooterResultStatus("running");
+      this.runInterval = setInterval(() => {
+        var testsData = this._svcMaster.runTest(this.testsData);
+        this.tests = this._svcBroker.createTestsDetail(testsData);
+      }, 1000);
     }
     else {
       this.isRunning = false;
+      clearInterval(this.runInterval);
       this.setFooterResultStatus("after");
     }
   }
