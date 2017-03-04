@@ -2343,7 +2343,7 @@ export class Factory {
 
                 var horv1 = new TestParam();
                 horv1.Key = "Horizontal Velocity";
-                horv1.Value = "___ kts N ___kts W"
+                horv1.Value = "___ kts N ___ kts W"
                 var cHorv1 = new TestParamCell(horv1);
                 cHorv1.Row = 9;
                 cHorv1.Column = 0;
@@ -2619,7 +2619,7 @@ export class Factory {
 
                 var horv2 = new TestParam();
                 horv2.Key = "GPS Ant Offset";
-                horv2.Value = "__m (__m RT)";
+                horv2.Value = "_ m Right; _ m Aft";
                 var cHorv2 = new TestParamCell(horv2);
                 cHorv2.Row = 12;
                 cHorv2.Column = 0;
