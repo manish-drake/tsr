@@ -24,8 +24,8 @@ export class DetailVehiclesComp {
   
 
   ngOnInit() {
+    // console.log(JSON.stringify(this.selectedVehicle));
     // this.setVehicleResultStatus();
-    console.log(JSON.stringify(this.selectedVehicle));
   }
 
   onVehicleSelect(e) {
@@ -37,7 +37,7 @@ export class DetailVehiclesComp {
   // setVehicleResultStatus() {
   //   var vehicleResultStatusData = this._objectService.CreateAircraftVehicleData();
   //   var vehicleResultStatus = this._svcBroker.createVehicleData(vehicleResultStatusData);
-  //   console.log(vehicleResultStatus);
+  //   console.log("sfhjf: "+ JSON.stringify(vehicleResultStatus));
   //   this.vehicledata =vehicleResultStatus;
   // }
 

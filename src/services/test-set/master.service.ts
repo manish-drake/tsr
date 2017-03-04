@@ -40,7 +40,7 @@ export class MasterService {
                 testsData.SetValue("SUMMARY", "Flight ID", "N1246W");
                 testsData.SetValue("SUMMARY", "Mode S Addr", "2345AA");
                 testsData.SetValue("SUMMARY", "Emitter Cat", "3 (Large)");
-                testsData.SetValue("SUMMARY", "3/A Code", "1536");
+                testsData.SetValue("SUMMARY", "3/A Code", this.get3ACode());
                 testsData.SetValue("SUMMARY", "Emg/Prty", "0 (No Emerg)");
                 testsData.SetValue("SUMMARY", "L/W", "10 ( 65 m / 59.5m)");
                 testsData.SetValue("SUMMARY", "Latitude", "17.23873°");
@@ -213,10 +213,18 @@ export class MasterService {
                 testsData.SetValue("UAT RF Test", "Current Message Bit Errors", "0");
                 testsData.SetValue("UAT RF Test", "Message Sequence", "OK");
                 testsData.SetValue("UAT RF Test", "Message Payloads", "0 1 0 2 0 1 0 2 0 1 0 2 0 1 0 2");
-                      
+
             }
         }
         return testsData;
+    }
+
+    get3ACode() {
+        var text = "";
+        var possible = "0123456789";
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
     }
 
 

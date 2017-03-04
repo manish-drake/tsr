@@ -38,6 +38,18 @@
                     "payloadsrcvd": "1,4,4,4",
                     "latitude":-22.906847,
                     "longitude":-43.172896
+                },
+                {
+                    "modesaddr": "3BCA14",
+                    "address": "3BCA14 (H) / 12800208 (O)",
+                    "flightid": "Device2",
+                    "qualifier": "1 (ADS-B self-addr)",
+                    "rflevel": "Strong",
+                    "df": "19",
+                    "bdsrcvd": "0,3 0,7 0,7 0,8 6,4",
+                    "payloadsrcvd": "1,0,0,0",
+                    "latitude":51.507351,
+                    "longitude":-0.127758
                 }
             ]
         },
