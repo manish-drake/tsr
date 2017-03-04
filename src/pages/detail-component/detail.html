@@ -25,10 +25,11 @@
                                 <ion-label>No aircraft/vehicle selected</ion-label>
                             </ion-col>
                         </ion-row>
-                        <detail-vehicles *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle" (onVehicleSelected)="onVehicleSelect($event)"></detail-vehicles>
-                        <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
-                        <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
-                        <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
+                        <detail-vehicles *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"
+                            (onVehicleSelected)="onVehicleSelect($event)"></detail-vehicles>
+                            <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
+                            <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
+                            <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
                     </ion-scroll>
                 </ion-row>
                 <ion-row style="height: auto; flex: 0 0 auto;">

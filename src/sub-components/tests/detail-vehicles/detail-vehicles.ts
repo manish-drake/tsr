@@ -11,7 +11,7 @@ import { Factory } from '../../../services/objects/factory.service';
 })
 export class DetailVehiclesComp {
 
-  @Input() vehicles:any;
+  @Input() vehicles: any;
   @Input() selectedVehicle: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
@@ -21,24 +21,23 @@ export class DetailVehiclesComp {
     private _objectService: Factory
   ) { }
 
-  
+
 
   ngOnInit() {
     // console.log(JSON.stringify(this.selectedVehicle));
-    // this.setVehicleResultStatus();
+    this.generateDataFields();
   }
 
   onVehicleSelect(e) {
     this.onVehicleSelected.emit(e);
   }
 
-  // vehicledata: any;
+  dataFields: any;
 
-  // setVehicleResultStatus() {
-  //   var vehicleResultStatusData = this._objectService.CreateAircraftVehicleData();
-  //   var vehicleResultStatus = this._svcBroker.createVehicleData(vehicleResultStatusData);
-  //   console.log("sfhjf: "+ JSON.stringify(vehicleResultStatus));
-  //   this.vehicledata =vehicleResultStatus;
-  // }
+  generateDataFields() {
+    var aircraftVehicleData = this._objectService.CreateAircraftVehicleData();
+    var aircraftVehicle = this._svcBroker.createVehicleData(aircraftVehicleData);
+    this.dataFields = aircraftVehicle;
+  }
 
 }

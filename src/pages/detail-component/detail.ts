@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -26,7 +26,7 @@ export class TestDetailComp {
 
   testsData: any;
   public tests: any;
-  
+
   vehicles: any;
 
   headerName: any;
@@ -59,7 +59,7 @@ export class TestDetailComp {
   selectedVehicle: any;
 
   onVehicleSelect(e) {
-    if (this.selectedVehicle != e) {
+    if (this.selectedVehicle != e && !this.isRunning) {
       this.selectedVehicle = e;
     }
     this.setVehicleValues(e);
@@ -139,8 +139,9 @@ export class TestDetailComp {
       this.isRunning = true;
       this.setFooterResultStatus("running");
       this.runInterval = setInterval(() => {
-        var testsData = this._svcMaster.runTest(this.testsData);
-        this.tests = this._svcBroker.createTestsDetail(testsData);
+        // var testsData = this._svcMaster.runTest(this.testsData);
+        // this.tests = this._svcBroker.createTestsDetail(testsData);
+        this._svcMaster.runTest(this.tests);
       }, 1000);
     }
     else {
