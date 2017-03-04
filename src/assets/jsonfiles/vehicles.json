@@ -11,7 +11,9 @@
                     "rflevel": "Strong",
                     "df": "17",
                     "bdsrcvd": "0,5 0,8 0,9 6,0 6,1 6,5",
-                    "payloadsrcvd": "1,0,2,0"
+                    "payloadsrcvd": "1,0,2,0",
+                    "latitude": 40.741893768310547,
+                    "longitude":-73.989311218261719
                 },
                 {
                     "modesaddr": "CA310A",
@@ -21,7 +23,9 @@
                     "rflevel": "Medium",
                     "df": "18",
                     "bdsrcvd": "0,6 0,8 6,5",
-                    "payloadsrcvd": "1,0,0,0"
+                    "payloadsrcvd": "1,0,0,0",
+                    "latitude":55.755826,
+                    "longitude":37.6173
                 },
                 {
                     "modesaddr": "9CDA34",
@@ -31,7 +35,9 @@
                     "rflevel": "Weak",
                     "df": "19",
                     "bdsrcvd": "0,5 0,8 0,8 0,9 6,5",
-                    "payloadsrcvd": "1,4,4,4"
+                    "payloadsrcvd": "1,4,4,4",
+                    "latitude":-22.906847,
+                    "longitude":-43.172896
                 }
             ]
         },

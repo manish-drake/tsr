@@ -26,6 +26,8 @@ export class TestDetailComp {
 
   testsData: any;
   public tests: any;
+  
+  vehicles: any;
 
   headerName: any;
   testName: any;
@@ -41,6 +43,11 @@ export class TestDetailComp {
       this.testsData = this._objectService.createTestsData(this.testName);
       this.tests = this._svcBroker.createTestsDetail(this.testsData);
     });
+    this._svcMaster.scanTest()
+      .subscribe(data => {
+        this.vehicles = [];
+        this.vehicles = data.response.data.results;
+      }, (rej) => { console.error("Could not load local data", rej) });
     this.setFooterResultStatus("before");
   }
 
