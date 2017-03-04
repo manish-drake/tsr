@@ -28,8 +28,9 @@ export class DetailVehiclesComp {
     this.generateDataFields();
   }
 
-  onVehicleSelect(e) {
-    this.onVehicleSelected.emit(e);
+  onVehicleSelect(e, i) {
+    var ev = { e, i };
+    this.onVehicleSelected.emit(ev);
   }
 
   dataFields: any;

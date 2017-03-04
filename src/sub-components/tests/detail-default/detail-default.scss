@@ -1,177 +1,191 @@
 detail-default{    
-    
-.heading{
-        font-size: 16px;
-        display: inline-block;
-        font-weight: 600;
-        margin-top: 20px !important;
-        width: auto;
-        // background-color: aqua;
-}
-.labelAutoBold{
-        width: auto !important; //265px
-        display: inline-flex;        
-        font-size: 16px !important;
-        font-weight: 600;
-        margin-top: 15px !important;
-        margin-bottom:5px !important;
-        // background-color: lemonchiffon;
-}
-.label60{
-        min-width: 60px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:khaki;
-}
-.result60Right{
-        min-width: 60px !important;
-        display: inline-block;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:darkcyan;
-        text-align: right !important;
-}
-.result60BoldRight{
-        min-width: 60px !important;
-        display: inline-block;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:hotpink;
-        text-align: right !important;
-        font-weight: 600;
-}
-.label70{
-        width: 70px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: darkcyan;
-}
-.label70Bold{
-        min-width: 70px !important;
-        display: inline-flex;        
-        font-size: 18px !important;
-        font-weight: 600;
-        margin-top: 10px !important;
-        // background-color: lightslategray;
-}
-.label108{
-        width: 108px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: salmon;
-}
-.label133Bold{
-        min-width: 133px !important; 
-        display: inline-flex;        
-        font-size: 16px !important;
-        font-weight: 600;
-        margin-top: 10px !important;
-        margin-bottom:7px !important;
-        // background-color:deepskyblue;
-}
-.label115{
-        width: 115px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: tomato;
-}
-.label140{
-        width: 140px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: yellow;
-}
-.label150{
-        width: 150px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: forestgreen;
-}
-.label210{
-        width: 210px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color:greenyellow;
-}
+    //--------All card-------
+         .labelAutoBold{
+                width: auto !important; //265px
+                display: inline-flex;        
+                font-size: 16px !important;
+                font-weight: 600;
+                margin-top: 15px !important;
+                margin-bottom:5px !important;
+                // background-color: lemonchiffon;
+        }
+        .label70Bold{
+                min-width: 70px !important;
+                display: inline-flex;        
+                font-size: 18px !important;
+                font-weight: 600;
+                margin-top: 10px !important;
+                // background-color: lightslategray;
+        }
+        .label110{
+                width: 110px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color: salmon;
+        }
+        .result0{
+                display: inline-flex;
+                width: 0px ;       
+        }
+        .result85{
+                display: inline-flex;
+                width:25%;        
+                min-width: 85px !important;
+                font-size: 16px !important;
+                // background-color:cadetblue;
+        }
+         .result128{
+                display: inline-flex ;       
+                min-width: 128px !important;
+                font-size: 16px !important;    
+                margin-right: 5px;
+                // background-color:pink;
+        }
 
-.result0{
+
+
+        .label60{                                               //---1090 ADS-B Out: Position, A/C ID , Velocity, OP Status.//---UAT out: Mode Status, State-Air, State-Ground, Target State,
+                min-width: 60px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                margin-top: 10px !important;
+                // background-color:khaki;
+        }
+        .result60Right{
+                min-width: 60px !important;
+                display: inline-block;        
+                font-size: 16px !important;
+                margin-top: 10px !important;
+                // background-color:darkcyan;
+                text-align: right !important;
+        }
+
+        
+
+        .label70{                                               //---UAT out
+                width: 70px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color: darkcyan;
+        }
+
+        
+
+       .label133Bold{                                           //---1090 ADS-B Out: Position, A/C ID, Velocity, OP Status, RF.                                                
+                min-width: 133px !important; 
+                display: inline-flex;        
+                font-size: 16px !important;
+                font-weight: 600;
+                margin-top: 10px !important;
+                margin-bottom:7px !important;
+                // background-color:deepskyblue;
+        }
+
+        .label115{                                              //---UAT out: State-Ground
+                width: 115px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color: tomato;
+        }
+
+        .label140{                                              //---1090 Uat Out.//---UAT out:State-Air, State-Ground, Target State
+                width: 140px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color: yellow;
+        }
+
+        .label150{                                              //---1090 Uat Out:RF.//---UAT out:RF.
+                width: 150px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color: forestgreen;
+        }
+       
+        .label210{                                              //---UAT out:RF. 
+                width: 210px !important;
+                display: inline-flex;        
+                font-size: 16px !important;
+                // background-color:greenyellow;
+        }
+           
+        .result90Left{                                          //---1090 Uat Out:A/C ID, OP Status    
+                display: inline-block;           
+                min-width: 90px !important;
+                font-size: 16px !important;
+                // background-color:red;
+        }
+
+        .result100Right{                                        //---1090 Uat Out:Target State.//---UAT out:State-Air, Target State, RF. 
+                display: inline-block;           
+                min-width: 100px !important;
+                font-size: 16px !important;
+                // background-color:lightgray;
+                text-align: right !important;
+        }
+     
+        .result115Right{                                        //---UAT out:State-Ground.   
+                display: inline-block;           
+                min-width: 115px !important;
+                font-size: 16px !important;
+                // background-color:lime;
+                text-align: right !important;
+        }
+  
+        .result131Right{                                        //---UAT out:State-Air.    
+                display: inline-block ;       
+                min-width: 131px !important;
+                font-size: 16px !important;    
+                text-align: right !important;
+                // background-color:darkorange;
+        }
+
+        .result135Right{                                        //---1090 Uat Out:Summary, Position,Velocity, RF.//---UAT out:State-Air, State-Ground, RF.
+                display: inline-block ;       
+                min-width: 135px !important;
+                font-size: 16px !important;    
+                text-align: right !important;
+                // background-color:olivedrab;
+        }
+
+        .result135{                                             //---1090 Uat Out: Target State.//---UAT out:Mode State, Target State.
+                display: inline-block ;       
+                min-width: 135px !important;
+                font-size: 16px !important;    
+                // background-color:darkorange;
+        }
+
+        .unit35Left{                                            //---1090 Uat Out.//---UAT out:Not in Trajectory
+                display: inline-block;
+                min-width: 35px;
+                font-size: 16px !important;
+                // background-color:lightskyblue;
+                text-align: left !important;
+        }
+
+        .result60BoldRight{                                     //---1090 Uat Out:RF
+                min-width: 60px !important;
+                display: inline-block;        
+                font-size: 16px !important;
+                margin-top: 10px !important;
+                // background-color:hotpink;
+                text-align: right !important;
+                font-weight: 600;
+        }
+
+        .unit35BoldLeft{                                        //---1090 Uat Out:RF
+                display: inline-block;
+                min-width: 35px;
+                font-size: 16px !important;
+                // background-color:yellow;
+                text-align: left !important;
+                font-weight: 600;
+        }
+
+        .result{
         display: inline-flex;
-        width: 0px ;       
-}
-.result85{
-        display: inline-flex;
-        width:25%;        
-        min-width: 85px !important;
-        font-size: 16px !important;
-        // background-color:cadetblue;
-}
-.result90Left{
-        display: inline-block;           
-        min-width: 90px !important;
-        font-size: 16px !important;
-        // background-color:red;
-}
-.result100Right{
-        display: inline-block;           
-        min-width: 100px !important;
-        font-size: 16px !important;
-        // background-color:lightgray;
-        text-align: right !important;
-}
-.result115Right{
-        display: inline-block;           
-        min-width: 115px !important;
-        font-size: 16px !important;
-        // background-color:lime;
-        text-align: right !important;
-}
-.result128{
-        display: inline-flex ;       
-        min-width: 128px !important;
-        font-size: 16px !important;    
-        margin-right: 5px;
-        // background-color:pink;
-}
-.result131Right{
-        display: inline-block ;       
-        min-width: 131px !important;
-        font-size: 16px !important;    
-        text-align: right !important;
-        // background-color:darkorange;
-}
-.result135Right{
-        display: inline-block ;       
-        min-width: 135px !important;
-        font-size: 16px !important;    
-        text-align: right !important;
-        // background-color:olivedrab;
-}
-.result135{
-        display: inline-block ;       
-        min-width: 135px !important;
-        font-size: 16px !important;    
-        // background-color:darkorange;
-}
-.unit35Left{
-        display: inline-block;
-        min-width: 35px;
-        font-size: 16px !important;
-        // background-color:lightskyblue;
-        text-align: left !important;
-}
-.unit35BoldLeft{
-        display: inline-block;
-        min-width: 35px;
-        font-size: 16px !important;
-        // background-color:yellow;
-        text-align: left !important;
+        margin-top:15px !important;     
+        font-size: 16px;
         font-weight: 600;
-}
-.result{
-    display: inline-flex;
-    margin-top:15px !important;     
-    font-size: 16px;
-    font-weight: 600;
-}
+        }
 }
