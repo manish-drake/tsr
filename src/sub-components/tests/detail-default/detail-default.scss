@@ -6,45 +6,7 @@ detail-default{
         font-weight: 600;
         margin-top: 20px !important;
         width: auto;
-        // background-color: aqua;
-}
-.label95{
-        width: 108px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        // background-color: salmon;
-}
-.label60{
-        min-width: 60px !important;
-        display: inline-flex;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:khaki;
-}
-.result60Right{
-        min-width: 60px !important;
-        display: inline-block;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:darkcyan;
-        text-align: right !important;
-}
-.result60BoldRight{
-        min-width: 60px !important;
-        display: inline-block;        
-        font-size: 16px !important;
-        margin-top: 10px !important;
-        // background-color:hotpink;
-        text-align: right !important;
-        font-weight: 600;
-}
-.label70Bold{
-        min-width: 70px !important;
-        display: inline-flex;        
-        font-size: 18px !important;
-        font-weight: 600;
-        margin-top: 10px !important;
-        // background-color: lightslategray;
+        background-color: aqua;
 }
 .labelAutoBold{
         width: auto !important; //265px
@@ -53,7 +15,51 @@ detail-default{
         font-weight: 600;
         margin-top: 15px !important;
         margin-bottom:5px !important;
-        // background-color: lemonchiffon;
+        background-color: lemonchiffon;
+}
+.label60{
+        min-width: 60px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        margin-top: 10px !important;
+        background-color:khaki;
+}
+.result60Right{
+        min-width: 60px !important;
+        display: inline-block;        
+        font-size: 16px !important;
+        margin-top: 10px !important;
+        background-color:darkcyan;
+        text-align: right !important;
+}
+.result60BoldRight{
+        min-width: 60px !important;
+        display: inline-block;        
+        font-size: 16px !important;
+        margin-top: 10px !important;
+        background-color:hotpink;
+        text-align: right !important;
+        font-weight: 600;
+}
+.label70{
+        width: 70px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        background-color: darkcyan;
+}
+.label70Bold{
+        min-width: 70px !important;
+        display: inline-flex;        
+        font-size: 18px !important;
+        font-weight: 600;
+        margin-top: 10px !important;
+        background-color: lightslategray;
+}
+.label108{
+        width: 108px !important;
+        display: inline-flex;        
+        font-size: 16px !important;
+        background-color: salmon;
 }
 .label133Bold{
         min-width: 133px !important; 
@@ -62,99 +68,103 @@ detail-default{
         font-weight: 600;
         margin-top: 10px !important;
         margin-bottom:7px !important;
-        // background-color:deepskyblue;
+        background-color:deepskyblue;
 }
-
-.label70{
-        width: 70px !important;
+.label115{
+        width: 115px !important;
         display: inline-flex;        
         font-size: 16px !important;
-        // background-color: darkcyan;
+        background-color: tomato;
 }
-.label133{
+.label140{
         width: 140px !important;
         display: inline-flex;        
         font-size: 16px !important;
-        // background-color: forestgreen;
+        background-color: yellow;
 }
 .label150{
         width: 150px !important;
         display: inline-flex;        
         font-size: 16px !important;
-        // background-color: forestgreen;
+        background-color: forestgreen;
 }
-.label268{
-        width: 268px !important;
+.label210{
+        width: 210px !important;
         display: inline-flex;        
         font-size: 16px !important;
-        // background-color:greenyellow;
+        background-color:greenyellow;
 }
-
 
 .result0{
         display: inline-flex;
         width: 0px ;       
-}
-.result80Right{
-        display: inline-block;           
-        min-width: 87px !important;
-        font-size: 16px !important;
-        // background-color:lime;
-        text-align: right !important;
 }
 .result85{
         display: inline-flex;
         width:25%;        
         min-width: 85px !important;
         font-size: 16px !important;
-        // background-color:cadetblue;
+        background-color:cadetblue;
 }
 .result90Left{
         display: inline-block;           
         min-width: 90px !important;
         font-size: 16px !important;
-        // background-color:red;
+        background-color:red;
 }
-.result90Right{
+.result100Right{
         display: inline-block;           
-        min-width: 90px !important;
+        min-width: 100px !important;
         font-size: 16px !important;
-        // background-color:lime;
+        background-color:lightgray;
         text-align: right !important;
 }
-.result113Right{
-        display: inline-block ;       
-        min-width: 135px !important;
-        font-size: 16px !important;    
+.result115Right{
+        display: inline-block;           
+        min-width: 115px !important;
+        font-size: 16px !important;
+        background-color:lime;
         text-align: right !important;
-        // background-color:olivedrab;
 }
 .result128{
         display: inline-flex ;       
         min-width: 128px !important;
         font-size: 16px !important;    
         margin-right: 5px;
-        // background-color:pink;
+        background-color:pink;
+}
+.result131Right{
+        display: inline-block ;       
+        min-width: 131px !important;
+        font-size: 16px !important;    
+        text-align: right !important;
+        background-color:darkorange;
 }
 .result135Right{
         display: inline-block ;       
         min-width: 135px !important;
         font-size: 16px !important;    
-        // text-align: right !important;
-        // background-color:darkorange;
+        text-align: right !important;
+        background-color:olivedrab;
+}
+.result135{
+        display: inline-block ;       
+        min-width: 135px !important;
+        font-size: 16px !important;    
+        background-color:darkorange;
 }
 .unit35Left{
         display: inline-block;
         min-width: 35px;
         font-size: 16px !important;
-        // background-color:lightskyblue;
+        background-color:lightskyblue;
         text-align: left !important;
 }
 .unit35BoldLeft{
         display: inline-block;
         min-width: 35px;
         font-size: 16px !important;
-        // background-color:yellow;
+        background-color:yellow;
         text-align: left !important;
         font-weight: 600;
 }
