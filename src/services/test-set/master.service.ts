@@ -64,7 +64,7 @@ export class MasterService {
                 testsData.SetValue("AIRBORN POSITION", "Message Element", "03 04 5D FA 19 AC ED");
                 testsData.SetValue("AIRBORN POSITION", "Latitude", "17⁰ 19 21.00 ");
                 testsData.SetValue("AIRBORN POSITION", "Longitude", "90⁰ 15 30.00 ");
-                testsData.SetValue("AIRBORN POSITION", "Altitude (baro)", "10,000");
+                testsData.SetValue("AIRBORN POSITION", "Altitude (baro)", this.getAltitude());
                 testsData.SetValue("AIRBORN POSITION", "Surveillance Status", "3 (SPI)");
                 testsData.SetValue("AIRBORN POSITION", "NIC-SB", "0");
                 testsData.SetValue("AIRBORN POSITION", "CPR Format", "0(Even)");
@@ -134,7 +134,7 @@ export class MasterService {
                 testsData.SetValue("UAT Mode Status Test", "Interval", "4.1");
                 testsData.SetValue("UAT Mode Status Test", "CSID", "0 (Flight Plan ID)");
                 testsData.SetValue("UAT Mode Status Test", "Emitter Cat", "3 (Large)");
-                testsData.SetValue("UAT Mode Status Test", "3/A Code", "1536");
+                testsData.SetValue("UAT Mode Status Test", "3/A Code", this.get3ACode());
                 testsData.SetValue("UAT Mode Status Test", "Emg/Prty", "0 (No Emerg)");
                 testsData.SetValue("UAT Mode Status Test", "UAT IN", "1 (Y)");
                 testsData.SetValue("UAT Mode Status Test", "TCAS Op", "1 (Y)");
@@ -157,7 +157,7 @@ export class MasterService {
                 testsData.SetValue("UAT State Vector Test-Air", "Interval", "4.1");
                 testsData.SetValue("UAT State Vector Test-Air", "Latitude", "17⁰ 19 21.00");
                 testsData.SetValue("UAT State Vector Test-Air", "Longitude", "90⁰ 15 30.00");
-                testsData.SetValue("UAT State Vector Test-Air", "Altitude", "10,000");
+                testsData.SetValue("UAT State Vector Test-Air", "Altitude", this.getAltitude());
                 testsData.SetValue("UAT State Vector Test-Air", "Type", "0 (Pressure)");
                 testsData.SetValue("UAT State Vector Test-Air", "Horizontal Velocity", "300 kts N 157 kts W");
                 testsData.SetValue("UAT State Vector Test-Air", "Vert. Velocity", "+1,000");
@@ -225,6 +225,12 @@ export class MasterService {
         for (var i = 0; i < 5; i++)
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
+    }
+
+    getAltitude() {
+        var textArray = ['10,000','10,300','9,800','9,300'];
+        var randomNumber = (Math.floor(Math.random() * textArray.length)).toString();
+        return textArray[randomNumber];
     }
 
 
