@@ -11,7 +11,7 @@ import { Factory } from '../../../services/objects/factory.service';
 })
 export class DetailVehiclesComp {
 
-  @Input() vehicles:any;
+  @Input() vehicles: any;
   @Input() selectedVehicle: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
@@ -21,15 +21,16 @@ export class DetailVehiclesComp {
     private _objectService: Factory
   ) { }
 
-  
+
 
   ngOnInit() {
     // console.log(JSON.stringify(this.selectedVehicle));
     // this.setVehicleResultStatus();
   }
 
-  onVehicleSelect(e) {
-    this.onVehicleSelected.emit(e);
+  onVehicleSelect(e, i) {
+    var ev = { e, i };
+    this.onVehicleSelected.emit(ev);
   }
 
   // vehicledata: any;

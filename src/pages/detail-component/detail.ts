@@ -26,7 +26,7 @@ export class TestDetailComp {
 
   testsData: any;
   public tests: any;
-  
+
   vehicles: any;
 
   headerName: any;
@@ -58,16 +58,17 @@ export class TestDetailComp {
 
   selectedVehicle: any;
 
-  onVehicleSelect(e) {
-    if (this.selectedVehicle != e) {
-      this.selectedVehicle = e;
+  onVehicleSelect(ev) {
+    if (this.selectedVehicle != ev.e) {
+      this.selectedVehicle = ev.e;
     }
-    this.setVehicleValues(e);
+    this.setVehicleValues(ev.e,ev.i);
   }
 
-  setVehicleValues(e) {
+  setVehicleValues(e, i) {
     console.log(JSON.stringify(e));
     this.testsData.Summaries.forEach(summary => {
+      this.testsData.SetValue(summary.Name, "Aircraft/Vehicle",'#'+(i+1));
       this.testsData.SetValue(summary.Name, "Mode S Addr", e.modesaddr);
       this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
       this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
