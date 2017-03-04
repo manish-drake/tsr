@@ -26,6 +26,8 @@ export class TestDetailComp {
 
   testsData: any;
   public tests: any;
+  
+  vehicles: any;
 
   headerName: any;
   testName: any;
@@ -41,11 +43,17 @@ export class TestDetailComp {
       this.testsData = this._objectService.createTestsData(this.testName);
       this.tests = this._svcBroker.createTestsDetail(this.testsData);
     });
+    this._svcMaster.scanTest()
+      .subscribe(data => {
+        this.vehicles = [];
+        this.vehicles = data.response.data.results;
+      }, (rej) => { console.error("Could not load local data", rej) });
     this.setFooterResultStatus("before");
   }
 
   ngOnDestroy() {
     this._svcHome.footerData = undefined;
+    clearInterval(this.runInterval);
   }
 
   selectedVehicle: any;
@@ -64,6 +72,7 @@ export class TestDetailComp {
       this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
       this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
       this.testsData.SetValue(summary.Name, "FLIGHT ID", e.flightid);
+      this.testsData.SetValue(summary.Name, "Qualifier", e.qualifier);
       this.testsData.SetValue(summary.Name, "RF Level", e.rflevel);
       this.testsData.SetValue(summary.Name, "DF", e.df);
       this.testsData.SetValue(summary.Name, "BDS Rcvd (DF17)", e.bdsrcvd);
@@ -71,7 +80,6 @@ export class TestDetailComp {
     });
     this.tests = this._svcBroker.createTestsDetail(this.testsData);
   }
-
 
 
   currentView: any = "default";
@@ -124,16 +132,20 @@ export class TestDetailComp {
   }
 
   isRunning: boolean = false;
+  runInterval: any;
 
   onRun() {
     if (!this.isRunning) {
       this.isRunning = true;
-      var testsData = this._svcMaster.runTest(this.testsData);
-      this.tests = this._svcBroker.createTestsDetail(testsData);
       this.setFooterResultStatus("running");
+      this.runInterval = setInterval(() => {
+        var testsData = this._svcMaster.runTest(this.testsData);
+        this.tests = this._svcBroker.createTestsDetail(testsData);
+      }, 1000);
     }
     else {
       this.isRunning = false;
+      clearInterval(this.runInterval);
       this.setFooterResultStatus("after");
     }
   }

@@ -8,21 +8,13 @@ import { MasterService } from '../../../services/test-set/master.service'
   templateUrl: 'detail-radar.html'
 })
 export class DetailRadarComp {
-
-  @Input() test: any;
-
-  resultsobjects = [];
+  @Input() vehicles: any;
+  @Input() selectedVehicle: any;
 
   constructor(private masterService: MasterService) { }
 
   ngAfterViewInit() {
     this.onResize();
-
-    this.masterService.scanTest()
-      .subscribe(data => {
-        this.resultsobjects = [];
-        this.resultsobjects = data.response.data.results;
-      }, (rej) => { console.error("Could not load local data", rej) });
   }
 
   circleobjs = [

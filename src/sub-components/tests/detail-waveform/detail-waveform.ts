@@ -7,8 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class DetailWaveformComp {
 
-  @Input() test: any;
-
   constructor() {}
 
 }

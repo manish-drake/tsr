@@ -10,29 +10,22 @@ import { Factory } from '../../../services/objects/factory.service';
   templateUrl: 'detail-vehicles.html'
 })
 export class DetailVehiclesComp {
-  
+
+  @Input() vehicles:any;
   @Input() selectedVehicle: any;
 
   @Output() onVehicleSelected = new EventEmitter<any>();
 
   constructor(
-    private masterService: MasterService,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory
   ) { }
 
-  vehicles = [];
+  
 
-  ngAfterViewInit() {
-    this.masterService.scanTest()
-      .subscribe(data => {
-        this.vehicles = [];
-        this.vehicles = data.response.data.results;
-      }, (rej) => { console.error("Could not load local data", rej) });
+  ngOnInit() {
     // this.setVehicleResultStatus();
-
     console.log(JSON.stringify(this.selectedVehicle));
-
   }
 
   onVehicleSelect(e) {
