@@ -101,6 +101,15 @@ detail-default{
                 font-size: 16px !important;
                 // background-color: forestgreen;
         }
+
+        .result75Right{                                          //---UAT out:RF. 
+                display: inline-block;           
+                min-width: 75px !important;
+                font-size: 16px !important;
+                // background-color:orangered;
+                text-align: right !important;
+
+        }
        
         .label210{                                              //---UAT out:RF. 
                 width: 210px !important;

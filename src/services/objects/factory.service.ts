@@ -3323,7 +3323,7 @@ export class Factory {
                 cMsrcd4.Column = 0;
                 cMsrcd4.ColSpan = 2;
                 cMsrcd4.Styles.add("key", "label210");
-                cMsrcd4.Styles.add("value", "result100Right");
+                cMsrcd4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsrcd4);
 
@@ -3335,7 +3335,7 @@ export class Factory {
                 cMsict4.Column = 0;
                 cMsict4.ColSpan = 2;
                 cMsict4.Styles.add("key", "label210");
-                cMsict4.Styles.add("value", "result100Right");
+                cMsict4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsict4);
 
@@ -3348,7 +3348,7 @@ export class Factory {
                 cMsslrt4.Column = 0;
                 cMsslrt4.ColSpan = 2;
                 cMsslrt4.Styles.add("key", "label210");
-                cMsslrt4.Styles.add("value", "result100Right");
+                cMsslrt4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsslrt4);
 
@@ -3360,7 +3360,7 @@ export class Factory {
                 cCtmst4.Column = 0;
                 cCtmst4.ColSpan = 2;
                 cCtmst4.Styles.add("key", "label210");
-                cCtmst4.Styles.add("value", "result100Right");
+                cCtmst4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cCtmst4);
 
@@ -3372,7 +3372,7 @@ export class Factory {
                 cCtmser4.Column = 0;
                 cCtmser4.ColSpan = 2;
                 cCtmser4.Styles.add("key", "label210");
-                cCtmser4.Styles.add("value", "result100Right");
+                cCtmser4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cCtmser4);
 
