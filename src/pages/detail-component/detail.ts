@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -25,7 +25,7 @@ export class TestDetailComp {
   ) { }
 
   testsData: any;
-  public tests: any;
+  public tests: any[] = [];
 
   vehicles: any;
 
@@ -67,20 +67,33 @@ export class TestDetailComp {
   }
 
   setVehicleValues(e, i) {
-    console.log(JSON.stringify(e));
-    this.testsData.Summaries.forEach(summary => {
-      this.testsData.SetValue(summary.Name, "Aircraft/Vehicle", '#' + (i + 1));
-      this.testsData.SetValue(summary.Name, "Mode S Addr", e.modesaddr);
-      this.testsData.SetValue(summary.Name, "ADDRESS", e.address);
-      this.testsData.SetValue(summary.Name, "Flight ID", e.flightid);
-      this.testsData.SetValue(summary.Name, "FLIGHT ID", e.flightid);
-      this.testsData.SetValue(summary.Name, "Qualifier", e.qualifier);
-      this.testsData.SetValue(summary.Name, "RF Level", e.rflevel);
-      this.testsData.SetValue(summary.Name, "DF", e.df);
-      this.testsData.SetValue(summary.Name, "BDS Rcvd (DF17)", e.bdsrcvd);
-      this.testsData.SetValue(summary.Name, "Payloads Rcvd", e.payloadsrcvd);
+
+    this.tests.forEach(test => {
+      this.SetValue(test.name, "Aircraft/Vehicle", '#' + (i + 1));
+      this.SetValue(test.name, "Mode S Addr", e.modesaddr);
+      this.SetValue(test.name, "ADDRESS", e.address);
+      this.SetValue(test.name, "Flight ID", e.flightid);
+      this.SetValue(test.name, "FLIGHT ID", e.flightid);
+      this.SetValue(test.name, "Qualifier", e.qualifier);
+      this.SetValue(test.name, "RF Level", e.rflevel);
+      this.SetValue(test.name, "DF", e.df);
+      this.SetValue(test.name, "BDS Rcvd (DF17)", e.bdsrcvd);
+      this.SetValue(test.name, "Payloads Rcvd", e.payloadsrcvd);
     });
-    this.tests = this._svcBroker.createTestsDetail(this.testsData);
+  }
+
+  SetValue(summaryName, key, value) {
+    this.tests.forEach(test => {
+      if (test.name == summaryName) {
+        test.rows.forEach(row => {
+          row.forEach(cell => {
+            if (cell.key == key) {
+              cell.value = value;
+            }
+          });
+        });
+      }
+    });
   }
 
 
@@ -141,8 +154,6 @@ export class TestDetailComp {
       this.isRunning = true;
       this.setFooterResultStatus("running");
       this.runInterval = setInterval(() => {
-        // var testsData = this._svcMaster.runTest(this.testsData);
-        // this.tests = this._svcBroker.createTestsDetail(testsData);
         this._svcMaster.runTest(this.tests);
       }, 1000);
     }

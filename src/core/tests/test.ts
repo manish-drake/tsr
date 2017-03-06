@@ -70,16 +70,4 @@ export class Test {
         this._TestParamCells = v;
     }
 
-    SetValue(summaryName: string, key: string, value: string) {
-        this.Summaries.forEach(summary => {
-            if (summary.Name == summaryName) {
-                summary.TestParamCells.forEach(testParamCell => {
-                    if (testParamCell.TestParam.Key == key) {
-                        testParamCell.TestParam.Value = value;
-                    }
-                });
-            }
-        });
-    }
-
 }

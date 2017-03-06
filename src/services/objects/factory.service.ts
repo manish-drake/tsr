@@ -390,17 +390,17 @@ export class Factory {
 
                 // smry.TestParamCells.concat(this.CreateAircraftVehivleData());
 
-                var avl1 = new TestParam();
-                avl1.Key = "Aircraft/Vehicle";
-                avl1.Value = "#__";
-                var cAvl1 = new TestParamCell(avl1);
-                cAvl1.Row = 0;
-                cAvl1.Column = 0;
-                cAvl1.ColSpan = 2;
-                cAvl1.Styles.add("key", "labelAutoBold");
-                cAvl1.Styles.add("value", "labelAutoBold");
+                var avl = new TestParam();
+                avl.Key = "Aircraft/Vehicle";
+                avl.Value = "#__";
+                var cAvl = new TestParamCell(avl);
+                cAvl.Row = 0;
+                cAvl.Column = 0;
+                cAvl.ColSpan = 2;
+                cAvl.Styles.add("key", "labelAutoBold");
+                cAvl.Styles.add("value", "labelAutoBold");
 
-                smry.TestParamCells.push(cAvl1);
+                smry.TestParamCells.push(cAvl);
 
                 var add = new TestParam();
                 add.Key = "ADDRESS";
@@ -703,17 +703,17 @@ export class Factory {
                 apos.Name = "AIRBORN POSITION";
                 apos.Styles.add("value", "result135Right");
 
-                var avl1 = new TestParam();
-                avl1.Key = "Aircraft/Vehicle";
-                avl1.Value = "#__";
-                var cAvl1 = new TestParamCell(avl1);
-                cAvl1.Row = 0;
-                cAvl1.Column = 0;
-                cAvl1.ColSpan = 2;
-                cAvl1.Styles.add("key", "labelAutoBold");
-                cAvl1.Styles.add("value", "labelAutoBold");
+                var avl13 = new TestParam();
+                avl13.Key = "Aircraft/Vehicle";
+                avl13.Value = "#__";
+                var cAvl13 = new TestParamCell(avl13);
+                cAvl13.Row = 0;
+                cAvl13.Column = 0;
+                cAvl13.ColSpan = 2;
+                cAvl13.Styles.add("key", "labelAutoBold");
+                cAvl13.Styles.add("value", "labelAutoBold");
 
-                apos.TestParamCells.push(cAvl1);
+                apos.TestParamCells.push(cAvl13);
 
                 var add13 = new TestParam();
                 add13.Key = "ADDRESS";
@@ -908,17 +908,17 @@ export class Factory {
                 acid.Name = "AC ID";
                 acid.Styles.add("value", "result135Right");
 
-                var avl1 = new TestParam();
-                avl1.Key = "Aircraft/Vehicle";
-                avl1.Value = "#__";
-                var cAvl1 = new TestParamCell(avl1);
-                cAvl1.Row = 0;
-                cAvl1.Column = 0;
-                cAvl1.ColSpan = 2;
-                cAvl1.Styles.add("key", "labelAutoBold");
-                cAvl1.Styles.add("value", "labelAutoBold");
+                var avl14 = new TestParam();
+                avl14.Key = "Aircraft/Vehicle";
+                avl14.Value = "#__";
+                var cAvl14 = new TestParamCell(avl14);
+                cAvl14.Row = 0;
+                cAvl14.Column = 0;
+                cAvl14.ColSpan = 2;
+                cAvl14.Styles.add("key", "labelAutoBold");
+                cAvl14.Styles.add("value", "labelAutoBold");
 
-                acid.TestParamCells.push(cAvl1);
+                acid.TestParamCells.push(cAvl14);
 
                 var add14 = new TestParam();
                 add14.Key = "ADDRESS";
@@ -1037,17 +1037,17 @@ export class Factory {
                 vcty.Name = "VELOCITY";
                 vcty.Styles.add("value", "result135Right");
 
-                var avl1 = new TestParam();
-                avl1.Key = "Aircraft/Vehicle";
-                avl1.Value = "#__";
-                var cAvl1 = new TestParamCell(avl1);
-                cAvl1.Row = 0;
-                cAvl1.Column = 0;
-                cAvl1.ColSpan = 2;
-                cAvl1.Styles.add("key", "labelAutoBold");
-                cAvl1.Styles.add("value", "labelAutoBold");
+                var avl15 = new TestParam();
+                avl15.Key = "Aircraft/Vehicle";
+                avl15.Value = "#__";
+                var cAvl15 = new TestParamCell(avl15);
+                cAvl15.Row = 0;
+                cAvl15.Column = 0;
+                cAvl15.ColSpan = 2;
+                cAvl15.Styles.add("key", "labelAutoBold");
+                cAvl15.Styles.add("value", "labelAutoBold");
 
-                vcty.TestParamCells.push(cAvl1);
+                vcty.TestParamCells.push(cAvl15);
 
                 var add15 = new TestParam();
                 add15.Key = "ADDRESS";

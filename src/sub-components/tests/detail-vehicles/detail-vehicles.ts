@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { MasterService } from '../../../services/test-set/master.service';
 import { BrokerFactoryService } from '../../../services/broker/brokerFactory.service';
 import { Factory } from '../../../services/objects/factory.service';
 
