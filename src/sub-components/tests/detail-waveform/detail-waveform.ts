@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -6,8 +6,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'detail-waveform.html'
 })
 export class DetailWaveformComp {
-
-  @Input() test: any;
 
   constructor() {}
 

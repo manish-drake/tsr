@@ -1,0 +1,61 @@
+{
+    "response": {
+        "data": {
+            "__type": "UATOUTGetResultsResponse",
+            "results": [
+                {
+                    "modesaddr": "2345AA",
+                    "address": "2345AA (H) / 23734510 (O)",
+                    "flightid": "N1246W",
+                    "qualifier": "0 (ADS-B ICAO)",
+                    "rflevel": "Strong",
+                    "df": "17",
+                    "bdsrcvd": "0,5 0,8 0,9 6,0 6,1 6,5",
+                    "payloadsrcvd": "1,0,2,0",
+                    "latitude": 40.741893768310547,
+                    "longitude":-73.989311218261719
+                },
+                {
+                    "modesaddr": "CA310A",
+                    "address": "CA310A (H) / 74361202 (O)",
+                    "flightid": "Device1",
+                    "qualifier": "4 (Surface Vehicle)",
+                    "rflevel": "Medium",
+                    "df": "18",
+                    "bdsrcvd": "0,6 0,8 6,5",
+                    "payloadsrcvd": "1,0,0,0",
+                    "latitude":55.755826,
+                    "longitude":37.6173
+                },
+                {
+                    "modesaddr": "9CDA34",
+                    "address": "9CDA34 (H) / 47800213 (O)",
+                    "flightid": "VIPER1",
+                    "qualifier": "1 (ADS-B self-addr)",
+                    "rflevel": "Weak",
+                    "df": "19",
+                    "bdsrcvd": "0,5 0,8 0,8 0,9 6,5",
+                    "payloadsrcvd": "1,4,4,4",
+                    "latitude":-22.906847,
+                    "longitude":-43.172896
+                },
+                {
+                    "modesaddr": "3BCA14",
+                    "address": "3BCA14 (H) / 12800208 (O)",
+                    "flightid": "Device2",
+                    "qualifier": "1 (ADS-B self-addr)",
+                    "rflevel": "Strong",
+                    "df": "19",
+                    "bdsrcvd": "0,3 0,7 0,7 0,8 6,4",
+                    "payloadsrcvd": "1,0,0,0",
+                    "latitude":51.507351,
+                    "longitude":-0.127758
+                }
+            ]
+        },
+        "message": 8196,
+        "status": 0,
+        "user-param": null,
+        "version": 2
+    }
+}

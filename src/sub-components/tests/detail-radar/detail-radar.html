@@ -10,53 +10,26 @@
             <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5"
                 fill-opacity="0" />
 
-            <svg *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)" [attr.y]="getY(object.latitude, object.longitude)"
+            <svg *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)" [attr.y]="getY(vehicle.latitude, vehicle.longitude)"
                 height="30" width="30">
                 <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
             </svg>
-            <text *ngFor="let object of resultsobjects" [attr.x]="getX(object.latitude, object.longitude)-30" [attr.y]="getY(object.latitude, object.longitude)-5"
-                font-size="32" width="30" height="30">{{object.address}}</text>
+            <text *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)-30" [attr.y]="getY(vehicle.latitude, vehicle.longitude)-5"
+                font-size="32" width="30" height="30">{{vehicle.modesaddr}}</text>
         </svg>
     </svg>
 </div>
-<!--<ion-row>
-    <table style="width:100%;margin-left:10px" >
-<tr>
-    <td>ADDRESS: </td>
-    <td colspan="3"></td>
-</tr>
-<tr>
-    <td>Qualifier: </td>
-    <td colspan="3"> </td>
-</tr>
-<tr>
-    <td>Pay load: </td>
-    <td> </td>
-    <td>RF Level: </td>
-    <td> </td>
-</tr>
-</table>
-</ion-row>-->
-<ion-row>
-    <table style="width:100%;margin:10px">
-        <tr>
-            <td class="sectionLabel1">ADDRESS:</td>
-            <td text-nowrap colspan="3" class="sectionResult1"></td>
-        </tr>
-        <tr>
-            <td class="sectionLabel1">Qualifier:</td>
-            <td text-nowrap colspan="3" class="sectionResult1"></td>
-        </tr>
-        <tr>
-            <td class="sectionLabel1">Pay load:</td>
-            <td text-nowrap class="sectionResult2"></td>
-            <td class="sectionLabel2">RF Level:</td>
-            <td text-nowrap class="sectionResult2"></td>
-        </tr>
-    </table>
-</ion-row>
-<ion-row>
-    <ion-col>
-        <ion-label style="font-size: 16px;font-weight: 600;">Result:</ion-label>
-    </ion-col>
+<ion-row *ngIf="selectedVehicle">
+    <table text-nowrap style="width:100%;margin:10px">
+                <tr>
+                    <td class="label" colspan="2">ADDRESS:   {{selectedVehicle.address}}</td>
+                </tr>
+                <tr>
+                    <td class="label2">FIGHT ID: {{selectedVehicle.flightid}}</td>
+                    <td class="label">RF Level: {{selectedVehicle.rflevel}}</td>
+                </tr>
+                <tr>
+                    <td class="label" colspan="2">BDS Rcvd (DF{{selectedVehicle.df}}):  {{selectedVehicle.bdsrcvd}}</td>
+                </tr>
+            </table>
 </ion-row>

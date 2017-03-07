@@ -21,10 +21,13 @@ export class TestDetailComp {
     private route: ActivatedRoute,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
-    private _master: MasterService
-    ) { }
+    private _svcMaster: MasterService
+  ) { }
 
-  public tests: any;
+  testsData: any;
+  public tests: any[] = [];
+
+  vehicles: any;
 
   headerName: any;
   testName: any;
@@ -35,25 +38,64 @@ export class TestDetailComp {
       this.testName = (data as any).test;
       this._svcHome.title = this.headerName;
       console.log(JSON.stringify(data));
-      
 
-      var testsData = this._objectService.createTestsData(this.testName);
-      this.tests = this._svcBroker.createTestsDetail(testsData);
+
+      this.testsData = this._objectService.createTestsData(this.testName);
+      this.tests = this._svcBroker.createTestsDetail(this.testsData);
     });
+    this._svcMaster.scanTest()
+      .subscribe(data => {
+        this.vehicles = [];
+        this.vehicles = data.response.data.results;
+      }, (rej) => { console.error("Could not load local data", rej) });
     this.setFooterResultStatus("before");
   }
 
   ngOnDestroy() {
     this._svcHome.footerData = undefined;
+    clearInterval(this.runInterval);
   }
 
   selectedVehicle: any;
 
-  onVehicleSelect(e) {
-    if (this.selectedVehicle != e) {
-      this.selectedVehicle = e;
+
+  onVehicleSelect(ev) {
+    if (this.selectedVehicle != ev.e && !this.isRunning) {
+      this.selectedVehicle = ev.e;
     }
+    this.setVehicleValues(ev.e, ev.i);
   }
+
+  setVehicleValues(e, i) {
+
+    this.tests.forEach(test => {
+      this.SetValue(test.name, "Aircraft/Vehicle", '#' + (i + 1));
+      this.SetValue(test.name, "Mode S Addr", e.modesaddr);
+      this.SetValue(test.name, "ADDRESS", e.address);
+      this.SetValue(test.name, "Flight ID", e.flightid);
+      this.SetValue(test.name, "FLIGHT ID", e.flightid);
+      this.SetValue(test.name, "Qualifier", e.qualifier);
+      this.SetValue(test.name, "RF Level", e.rflevel);
+      this.SetValue(test.name, "DF", e.df);
+      this.SetValue(test.name, "BDS Rcvd (DF17)", e.bdsrcvd);
+      this.SetValue(test.name, "Payloads Rcvd", e.payloadsrcvd);
+    });
+  }
+
+  SetValue(summaryName, key, value) {
+    this.tests.forEach(test => {
+      if (test.name == summaryName) {
+        test.rows.forEach(row => {
+          row.forEach(cell => {
+            if (cell.key == key) {
+              cell.value = value;
+            }
+          });
+        });
+      }
+    });
+  }
+
 
   currentView: any = "default";
 
@@ -105,14 +147,21 @@ export class TestDetailComp {
   }
 
   isRunning: boolean = false;
+  runInterval: any;
 
   onRun() {
-    this.isRunning = !this.isRunning;
-    this.setFooterResultStatus("running");
-    setTimeout(() => {
+    if (!this.isRunning) {
+      this.isRunning = true;
+      this.setFooterResultStatus("running");
+      this.runInterval = setInterval(() => {
+        this._svcMaster.runTest(this.tests);
+      }, 1000);
+    }
+    else {
       this.isRunning = false;
+      clearInterval(this.runInterval);
       this.setFooterResultStatus("after");
-    }, 3000);
+    }
   }
 
   setFooterResultStatus(_case) {
