@@ -1,35 +1,39 @@
-<div align="center">
-    <svg viewBox="0 0 1450 1250" [style.width]="isPortrait ? '100%' : '45%' " (window:resize)="onResize()">
-        <text x="1200" y="200" font-size="36" font-weight="600">Scale: 1 NM</text>
-        <text x="700" y="90" font-size="36">0 deg</text>
-        <text x="670" y="1190" font-size="36">180 deg</text>
-        <text x="1300" y="635" font-size="36">90 deg</text>
-        <text x="40" y="635" font-size="36">270 deg</text>
+<ion-grid>
+    <ion-row justify-content-center>
+        <ion-col no-padding col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4>
+            <svg viewBox="0 0 1450 1150" >
+                <text x="1200" y="200" font-size="36" font-weight="600">Scale: 1 NM</text>
+                <text x="700" y="40" font-size="36">0 deg</text>
+                <text x="670" y="1120" font-size="36">180 deg</text>
+                <text x="1300" y="594" font-size="36">90 deg</text>
+                <text x="40" y="595" font-size="36">270 deg</text>
 
-        <svg viewBox="0 0 1050 1050" x="200" y="100" width="1050" height="1050">
-            <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5"
-                fill-opacity="0" />
+                <svg viewBox="0 0 1050 1050" x="200" y="50" width="1050" height="1050">
+                    <circle *ngFor="let obj of circleobjs" [attr.cx]="obj.cx" [attr.cy]="obj.cy" [attr.r]="obj.r" stroke-width="3" stroke-dasharray="10 5"
+                        fill-opacity="0" />
 
-            <svg *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)" [attr.y]="getY(vehicle.latitude, vehicle.longitude)"
-                height="30" width="30">
-                <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
+                    <svg *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)" [attr.y]="getY(vehicle.latitude, vehicle.longitude)"
+                        height="30" width="30">
+                        <polygon points="15 0, 30 15, 15 30,0 15, 15 0" />
+                    </svg>
+                    <text *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)-30" [attr.y]="getY(vehicle.latitude, vehicle.longitude)-5"
+                        font-size="32" width="30" height="30">{{vehicle.modesaddr}}</text>
+                </svg>
             </svg>
-            <text *ngFor="let vehicle of vehicles" [attr.x]="getX(vehicle.latitude, vehicle.longitude)-30" [attr.y]="getY(vehicle.latitude, vehicle.longitude)-5"
-                font-size="32" width="30" height="30">{{vehicle.modesaddr}}</text>
-        </svg>
-    </svg>
-</div>
-<ion-row *ngIf="selectedVehicle">
-    <table text-nowrap style="width:100%;margin:10px">
-                <tr>
-                    <td class="label" colspan="2">ADDRESS:   {{selectedVehicle.address}}</td>
-                </tr>
-                <tr>
-                    <td class="label2">FIGHT ID: {{selectedVehicle.flightid}}</td>
-                    <td class="label">RF Level: {{selectedVehicle.rflevel}}</td>
-                </tr>
-                <tr>
-                    <td class="label" colspan="2">BDS Rcvd (DF{{selectedVehicle.df}}):  {{selectedVehicle.bdsrcvd}}</td>
-                </tr>
-            </table>
-</ion-row>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="selectedVehicle">
+        <table text-nowrap style="width:100%;margin:10px">
+            <tr>
+                <td class="label" colspan="2">ADDRESS: {{selectedVehicle.address}}</td>
+            </tr>
+            <tr>
+                <td class="label2">FIGHT ID: {{selectedVehicle.flightid}}</td>
+                <td class="label">RF Level: {{selectedVehicle.rflevel}}</td>
+            </tr>
+            <tr>
+                <td class="label" colspan="2">BDS Rcvd (DF{{selectedVehicle.df}}): {{selectedVehicle.bdsrcvd}}</td>
+            </tr>
+        </table>
+    </ion-row>
+</ion-grid>

@@ -14,7 +14,7 @@ import { TestContextService } from '../services/tests/testcontext.service';
 })
 export class MyApp implements OnInit {
 
-  rootPage = HomePage;
+  root = HomePage;
 
   constructor(private platform: Platform,
     private popoverService: PopoverService,
