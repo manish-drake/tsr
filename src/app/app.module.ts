@@ -51,6 +51,9 @@ import { ModalService } from '../services/ui/modal.service';
 import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
 
+import { AntennaComp } from "../pages/antenna-component/antenna";
+import { AntennaAviationComp } from "../pages/antenna-aviation/antenna-aviation";
+
 
 @NgModule({
     declarations: [
@@ -77,7 +80,9 @@ import { LanguageService } from '../services/language/language-service';
         DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
         PopOverButtonComp,
-        ModalIonItemComp
+        ModalIonItemComp,
+        AntennaComp,
+        AntennaAviationComp
     ],
     imports: [
         router,

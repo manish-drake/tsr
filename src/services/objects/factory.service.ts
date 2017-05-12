@@ -409,7 +409,7 @@ export class Factory {
                 cAdd.Row = 1;
                 cAdd.Column = 0;
                 cAdd.ColSpan = 2;
-                cAdd.Styles.add("key", "label110");
+                cAdd.Styles.add("key", "label140");
                 cAdd.Styles.add("value", "result128");
 
                 smry.TestParamCells.push(cAdd);
@@ -420,7 +420,7 @@ export class Factory {
                 var cFtid = new TestParamCell(ftid);
                 cFtid.Row = 2;
                 cFtid.Column = 0;
-                cFtid.Styles.add("key", "label110");
+                cFtid.Styles.add("key", "label140");
                 cFtid.Styles.add("value", "result85");
 
                 smry.TestParamCells.push(cFtid);
@@ -476,6 +476,7 @@ export class Factory {
                 var cFid11 = new TestParamCell(fid11);
                 cFid11.Row = 6;
                 cFid11.Column = 0;
+                cFid11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cFid11);
 
@@ -494,7 +495,7 @@ export class Factory {
                 var cEc11 = new TestParamCell(ec11);
                 cEc11.Row = 7;
                 cEc11.Column = 0;
-
+                cEc11.Styles.add("key", "label140");
                 smry.TestParamCells.push(cEc11);
 
                 var acd11 = new TestParam();
@@ -512,6 +513,7 @@ export class Factory {
                 var cEp11 = new TestParamCell(ep11);
                 cEp11.Row = 8;
                 cEp11.Column = 0;
+                cEp11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cEp11);
 
@@ -531,6 +533,7 @@ export class Factory {
                 var cLat11 = new TestParamCell(lat11);
                 cLat11.Row = 9;
                 cLat11.Column = 0;
+                cLat11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cLat11);
 
@@ -551,6 +554,7 @@ export class Factory {
                 var cLon11 = new TestParamCell(lon11);
                 cLon11.Row = 10;
                 cLon11.Column = 0;
+                cLon11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cLon11);
 
@@ -572,6 +576,7 @@ export class Factory {
                 cVt11.Row = 11;
                 cVt11.Column = 0;
                 cVt11.ColSpan = 2;
+                cVt11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cVt11);
 
@@ -592,6 +597,7 @@ export class Factory {
                 var cUi11 = new TestParamCell(ui11);
                 cUi11.Row = 13;
                 cUi11.Column = 0;
+                cUi11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cUi11);
 
@@ -610,6 +616,7 @@ export class Factory {
                 var cEs11 = new TestParamCell(es11);
                 cEs11.Row = 14;
                 cEs11.Column = 0;
+                cEs11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cEs11);
 
@@ -629,6 +636,7 @@ export class Factory {
                 cTcasra11.Row = 15;
                 cTcasra11.Column = 0;
                 cTcasra11.ColSpan = 2;
+                cTcasra11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cTcasra11);
 
@@ -649,6 +657,7 @@ export class Factory {
                 var cNacp11 = new TestParamCell(nacp11);
                 cNacp11.Row = 17;
                 cNacp11.Column = 0;
+                cNacp11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cNacp11);
 
@@ -667,6 +676,7 @@ export class Factory {
                 var cSil11 = new TestParamCell(sil11);
                 cSil11.Row = 18;
                 cSil11.Column = 0;
+                cSil11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cSil11);
 
@@ -685,6 +695,7 @@ export class Factory {
                 var cGva11 = new TestParamCell(gva11);
                 cGva11.Row = 19;
                 cGva11.Column = 0;
+                cGva11.Styles.add("key", "label140");
 
                 smry.TestParamCells.push(cGva11);
 
@@ -701,6 +712,7 @@ export class Factory {
                 //-----------------------AIRBORN POSITION------------------------
                 var apos = new Test();
                 apos.Name = "AIRBORN POSITION";
+                apos.Styles.add("key", "label140");
                 apos.Styles.add("value", "result135Right");
 
                 var avl13 = new TestParam();
@@ -722,7 +734,7 @@ export class Factory {
                 cAdd13.Row = 1;
                 cAdd13.Column = 0;
                 cAdd13.ColSpan = 2;
-                cAdd13.Styles.add("key", "label110");
+                // cAdd13.Styles.add("key", "label110");
                 cAdd13.Styles.add("value", "result128");
 
                 apos.TestParamCells.push(cAdd13);
@@ -733,7 +745,7 @@ export class Factory {
                 var cFtid13 = new TestParamCell(ftid13);
                 cFtid13.Row = 2;
                 cFtid13.Column = 0;
-                cFtid13.Styles.add("key", "label110");
+                // cFtid13.Styles.add("key", "label110");
                 cFtid13.Styles.add("value", "result85");
 
                 apos.TestParamCells.push(cFtid13);
@@ -756,7 +768,7 @@ export class Factory {
                 cBdsr13.Row = 3;
                 cBdsr13.Column = 0;
                 cBdsr13.ColSpan = 2;
-                cBdsr13.Styles.add("key", "label140");
+                // cBdsr13.Styles.add("key", "label140");
                 cBdsr13.Styles.add("value", "result128");
 
                 apos.TestParamCells.push(cBdsr13);
@@ -815,7 +827,7 @@ export class Factory {
                 cLat13.Row = 7;
                 cLat13.Column = 0;
                 cLat13.ColSpan = 2;
-                cLat13.Styles.add("key", "label140");
+                // cLat13.Styles.add("key", "label140");
 
                 apos.TestParamCells.push(cLat13);
 
@@ -827,7 +839,7 @@ export class Factory {
                 cLon13.Row = 8;
                 cLon13.Column = 0;
                 cLon13.ColSpan = 2;
-                cLon13.Styles.add("key", "label140");
+                // cLon13.Styles.add("key", "label140");
 
                 apos.TestParamCells.push(cLon13);
 
@@ -839,7 +851,7 @@ export class Factory {
                 cAltb13.Row = 9;
                 cAltb13.Column = 0;
                 cAltb13.ColSpan = 2;
-                cAltb13.Styles.add("key", "label140");
+                // cAltb13.Styles.add("key", "label140");
 
                 apos.TestParamCells.push(cAltb13);
 
@@ -861,7 +873,7 @@ export class Factory {
                 cSs13.Row = 11;
                 cSs13.Column = 0;
                 cSs13.ColSpan = 2;
-                cSs13.Styles.add("key", "label140");
+                // cSs13.Styles.add("key", "label140");
                 // cSs13.Styles.add("value", "result85");
 
                 apos.TestParamCells.push(cSs13);
@@ -873,7 +885,7 @@ export class Factory {
                 cNicsb13.Row = 12;
                 cNicsb13.Column = 0;
                 cNicsb13.ColSpan = 2;
-                cNicsb13.Styles.add("key", "label140");
+                // cNicsb13.Styles.add("key", "label140");
                 // cNicsb13.Styles.add("value", "result85");
 
                 apos.TestParamCells.push(cNicsb13);
@@ -885,7 +897,7 @@ export class Factory {
                 cCprf13.Row = 13;
                 cCprf13.Column = 0;
                 cCprf13.ColSpan = 2;
-                cCprf13.Styles.add("key", "label140");
+                // cCprf13.Styles.add("key", "label140");
                 // cCprf13.Styles.add("value", "result85");
 
                 apos.TestParamCells.push(cCprf13);
@@ -897,7 +909,7 @@ export class Factory {
                 cUttcs13.Row = 14;
                 cUttcs13.Column = 0;
                 cUttcs13.ColSpan = 2;
-                cUttcs13.Styles.add("key", "label140");
+                // cUttcs13.Styles.add("key", "label140");
                 // cUttcs13.Styles.add("value", "result85");
 
                 apos.TestParamCells.push(cUttcs13);
@@ -906,6 +918,7 @@ export class Factory {
                 //-----------------------AC ID------------------------
                 var acid = new Test();
                 acid.Name = "AC ID";
+                acid.Styles.add("key", "label140");
                 acid.Styles.add("value", "result135Right");
 
                 var avl14 = new TestParam();
@@ -947,6 +960,7 @@ export class Factory {
                 var cRfl14 = new TestParamCell(rfl14);
                 cRfl14.Row = 2;
                 cRfl14.Column = 1;
+                cRfl14.Styles.add("key", "label110");
                 cRfl14.Styles.add("value", "result85");
 
                 acid.TestParamCells.push(cRfl14);
@@ -1035,6 +1049,7 @@ export class Factory {
                 //-----------------------VELOCITY------------------------
                 var vcty = new Test();
                 vcty.Name = "VELOCITY";
+                vcty.Styles.add("key", "label140");
                 vcty.Styles.add("value", "result135Right");
 
                 var avl15 = new TestParam();
@@ -1076,6 +1091,7 @@ export class Factory {
                 var cRfl15 = new TestParamCell(rfl15);
                 cRfl15.Row = 2;
                 cRfl15.Column = 1;
+                cRfl15.Styles.add("key", "label110");
                 cRfl15.Styles.add("value", "result85");
 
                 vcty.TestParamCells.push(cRfl15);
@@ -1087,7 +1103,7 @@ export class Factory {
                 cBdsr15.Row = 3;
                 cBdsr15.Column = 0;
                 cBdsr15.ColSpan = 2;
-                cBdsr15.Styles.add("key", "label140");
+             //   cBdsr15.Styles.add("key", "label140");
                 cBdsr15.Styles.add("value", "result128");
 
                 vcty.TestParamCells.push(cBdsr15);
@@ -1216,6 +1232,7 @@ export class Factory {
                 var cAt15 = new TestParamCell(at15);
                 cAt15.Row = 12;
                 cAt15.Column = 1;
+                cAt15.Styles.add("key", "label110");
                 // cAt15.Styles.add("value", "result85");
 
                 vcty.TestParamCells.push(cAt15);
@@ -1237,6 +1254,7 @@ export class Factory {
                 var cVrs15 = new TestParamCell(vrs15);
                 cVrs15.Row = 13;
                 cVrs15.Column = 1;
+                cVrs15.Styles.add("key", "label110");
                 // cVrs15.Styles.add("value", "result85");
 
                 vcty.TestParamCells.push(cVrs15);
@@ -1257,6 +1275,7 @@ export class Factory {
                 //-----------------------OP STATUS------------------------
                 var opsts = new Test();
                 opsts.Name = "OP STATUS";
+                opsts.Styles.add("key", "label140");
                 opsts.Styles.add("value", "result90Left");
 
                 var avl16 = new TestParam();
@@ -1278,7 +1297,7 @@ export class Factory {
                 cAdd16.Row = 1;
                 cAdd16.Column = 0;
                 cAdd16.ColSpan = 2;
-                cAdd16.Styles.add("key", "label110");
+               // cAdd16.Styles.add("key", "label110");
                 cAdd16.Styles.add("value", "result128");
 
                 opsts.TestParamCells.push(cAdd16);
@@ -1289,7 +1308,7 @@ export class Factory {
                 var cFtid16 = new TestParamCell(ftid16);
                 cFtid16.Row = 2;
                 cFtid16.Column = 0;
-                cFtid16.Styles.add("key", "label110");
+             //   cFtid16.Styles.add("key", "label110");
                 cFtid16.Styles.add("value", "result85");
 
                 opsts.TestParamCells.push(cFtid16);
@@ -1300,7 +1319,7 @@ export class Factory {
                 var cRfl16 = new TestParamCell(rfl16);
                 cRfl16.Row = 2;
                 cRfl16.Column = 1;
-                cRfl16.Styles.add("key", "label110");
+                //cRfl16.Styles.add("key", "label110");
                 cRfl16.Styles.add("value", "result85");
 
                 opsts.TestParamCells.push(cRfl16);
@@ -1437,7 +1456,7 @@ export class Factory {
                 var cAcc16 = new TestParamCell(acc16);
                 cAcc16.Row = 11;
                 cAcc16.Column = 0;
-                cAcc16.Styles.add("key", "label140");
+                // cAcc16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cAcc16);
 
@@ -1447,7 +1466,7 @@ export class Factory {
                 var cOm16 = new TestParamCell(om16);
                 cOm16.Row = 11;
                 cOm16.Column = 1;
-                cOm16.Styles.add("key", "label140");
+                // cOm16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cOm16);
 
@@ -1457,7 +1476,7 @@ export class Factory {
                 var cAnt16 = new TestParamCell(ant16);
                 cAnt16.Row = 12;
                 cAnt16.Column = 0;
-                cAnt16.Styles.add("key", "label140");
+                // cAnt16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cAnt16);
 
@@ -1467,7 +1486,7 @@ export class Factory {
                 var cTsr16 = new TestParamCell(tsr16);
                 cTsr16.Row = 12;
                 cTsr16.Column = 1;
-                cTsr16.Styles.add("key", "label140");
+                // cTsr16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cTsr16);
 
@@ -1477,7 +1496,7 @@ export class Factory {
                 var cTcaso16 = new TestParamCell(tcaso16);
                 cTcaso16.Row = 13;
                 cTcaso16.Column = 0;
-                cTcaso16.Styles.add("key", "label140");
+                // cTcaso16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cTcaso16);
 
@@ -1487,7 +1506,7 @@ export class Factory {
                 var cTcasra16 = new TestParamCell(tcasra16);
                 cTcasra16.Row = 13;
                 cTcasra16.Column = 1;
-                cTcasra16.Styles.add("key", "label140");
+                // cTcasra16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cTcasra16);
 
@@ -1497,7 +1516,7 @@ export class Factory {
                 var cEsin16 = new TestParamCell(esin16);
                 cEsin16.Row = 14;
                 cEsin16.Column = 0;
-                cEsin16.Styles.add("key", "label140");
+                // cEsin16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cEsin16);
 
@@ -1507,7 +1526,7 @@ export class Factory {
                 var cUtin16 = new TestParamCell(utin16);
                 cUtin16.Row = 14;
                 cUtin16.Column = 1;
-                cUtin16.Styles.add("key", "label140");
+                // cUtin16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cUtin16);
 
@@ -1517,7 +1536,7 @@ export class Factory {
                 var cAtc16 = new TestParamCell(atc16);
                 cAtc16.Row = 15;
                 cAtc16.Column = 0;
-                cAtc16.Styles.add("key", "label140");
+                // cAtc16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cAtc16);
 
@@ -1527,7 +1546,7 @@ export class Factory {
                 var cIdt16 = new TestParamCell(idt16);
                 cIdt16.Row = 15;
                 cIdt16.Column = 1;
-                cIdt16.Styles.add("key", "label140");
+                // cIdt16.Styles.add("key", "label140");
 
                 opsts.TestParamCells.push(cIdt16);
 
@@ -1592,6 +1611,7 @@ export class Factory {
                 //-----------------------TARGET STATE------------------------
                 var ts = new Test();
                 ts.Name = "TARGET STATE";
+                ts.Styles.add("key", "label140");
                 ts.Styles.add("value", "result135");
 
                 var avl17 = new TestParam();
@@ -1613,7 +1633,7 @@ export class Factory {
                 cAdd17.Row = 1;
                 cAdd17.Column = 0;
                 cAdd17.ColSpan = 2;
-                cAdd17.Styles.add("key", "label110");
+                // cAdd17.Styles.add("key", "label110");
                 cAdd17.Styles.add("value", "result128");
 
                 ts.TestParamCells.push(cAdd17);
@@ -1624,7 +1644,7 @@ export class Factory {
                 var cFtid17 = new TestParamCell(ftid17);
                 cFtid17.Row = 2;
                 cFtid17.Column = 0;
-                cFtid17.Styles.add("key", "label110");
+                // cFtid17.Styles.add("key", "label110");
                 cFtid17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cFtid17);
@@ -1647,7 +1667,7 @@ export class Factory {
                 cBdsr17.Row = 3;
                 cBdsr17.Column = 0;
                 cBdsr17.ColSpan = 2;
-                cBdsr17.Styles.add("key", "label140");
+                // cBdsr17.Styles.add("key", "label140");
                 cBdsr17.Styles.add("value", "result128");
 
                 ts.TestParamCells.push(cBdsr17);
@@ -1679,6 +1699,7 @@ export class Factory {
                 var cNicsa17 = new TestParamCell(nicsa17);
                 cNicsa17.Row = 5;
                 cNicsa17.Column = 1;
+                cNicsa17.Styles.add("key", "label110");
                 cNicsa17.Styles.add("value", "result100Right");
 
                 ts.TestParamCells.push(cNicsa17);
@@ -1712,6 +1733,7 @@ export class Factory {
                 var cSts17 = new TestParamCell(sts17);
                 cSts17.Row = 7;
                 cSts17.Column = 1;
+                cSts17.Styles.add("key", "label110");
                 cSts17.Styles.add("value", "result100Right");
 
                 ts.TestParamCells.push(cSts17);
@@ -1734,7 +1756,7 @@ export class Factory {
                 cMbs17.Row = 9;
                 cMbs17.Column = 0;
                 cMbs17.ColSpan = 2;
-                cMbs17.Styles.add("key", "label140");
+                // cMbs17.Styles.add("key", "label140");
                 // cMbs17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cMbs17);
@@ -1746,7 +1768,7 @@ export class Factory {
                 cAp17.Row = 10;
                 cAp17.Column = 0;
                 cAp17.ColSpan = 2;
-                cAp17.Styles.add("key", "label140");
+                // cAp17.Styles.add("key", "label140");
                 // cAp17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cAp17);
@@ -1758,7 +1780,7 @@ export class Factory {
                 cVnav17.Row = 11;
                 cVnav17.Column = 0;
                 cVnav17.ColSpan = 2;
-                cVnav17.Styles.add("key", "label140");
+                // cVnav17.Styles.add("key", "label140");
                 // cVnav17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cVnav17);
@@ -1770,7 +1792,7 @@ export class Factory {
                 cAlt17.Row = 12;
                 cAlt17.Column = 0;
                 cAlt17.ColSpan = 2;
-                cAlt17.Styles.add("key", "label140");
+                // cAlt17.Styles.add("key", "label140");
                 // cAlt17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cAlt17);
@@ -1782,7 +1804,7 @@ export class Factory {
                 cApp17.Row = 13;
                 cApp17.Column = 0;
                 cApp17.ColSpan = 2;
-                cApp17.Styles.add("key", "label140");
+                // cApp17.Styles.add("key", "label140");
                 // cApp17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cApp17);
@@ -1794,7 +1816,7 @@ export class Factory {
                 cLnav17.Row = 14;
                 cLnav17.Column = 0;
                 cLnav17.ColSpan = 2;
-                cLnav17.Styles.add("key", "label140");
+                // cLnav17.Styles.add("key", "label140");
                 // cLnav17.Styles.add("value", "result85");
 
                 ts.TestParamCells.push(cLnav17);
@@ -1802,6 +1824,7 @@ export class Factory {
                 //-----------------------SQUITTER------------------------
                 var sqtr = new Test();
                 sqtr.Name = "SQUITTER";
+                sqtr.Styles.add("key", "label150");
                 sqtr.Styles.add("value", "result135Right");
 
                 var avl18 = new TestParam();
@@ -1823,7 +1846,7 @@ export class Factory {
                 cAdd18.Row = 1;
                 cAdd18.Column = 0;
                 cAdd18.ColSpan = 2;
-                cAdd18.Styles.add("key", "label110");
+                // cAdd18.Styles.add("key", "label110");
                 cAdd18.Styles.add("value", "result128");
 
                 sqtr.TestParamCells.push(cAdd18);
@@ -1834,7 +1857,7 @@ export class Factory {
                 var cFtid18 = new TestParamCell(ftid18);
                 cFtid18.Row = 2;
                 cFtid18.Column = 0;
-                cFtid18.Styles.add("key", "label110");
+                // cFtid18.Styles.add("key", "label110");
                 cFtid18.Styles.add("value", "result85");
 
                 sqtr.TestParamCells.push(cFtid18);
@@ -1857,7 +1880,7 @@ export class Factory {
                 cBdsr18.Row = 3;
                 cBdsr18.Column = 0;
                 cBdsr18.ColSpan = 2;
-                cBdsr18.Styles.add("key", "label140");
+                // cBdsr18.Styles.add("key", "label140");
                 cBdsr18.Styles.add("value", "result128");
 
                 sqtr.TestParamCells.push(cBdsr18);
@@ -1905,7 +1928,7 @@ export class Factory {
                 cMfrq18.Row = 7;
                 cMfrq18.Column = 0;
                 cMfrq18.ColSpan = 2;
-                cMfrq18.Styles.add("key", "label150");
+                // cMfrq18.Styles.add("key", "label150");
                 // cMfrq18.Styles.add("value", "result85");
 
                 sqtr.TestParamCells.push(cMfrq18);
@@ -1918,7 +1941,7 @@ export class Factory {
                 cMp18.Row = 8;
                 cMp18.Column = 0;
                 cMp18.ColSpan = 2;
-                cMp18.Styles.add("key", "label150");
+                // cMp18.Styles.add("key", "label150");
                 // cMp18.Styles.add("value", "result85");
 
                 sqtr.TestParamCells.push(cMp18);
@@ -1930,7 +1953,7 @@ export class Factory {
                 cEc18.Row = 9;
                 cEc18.Column = 0;
                 cEc18.ColSpan = 2;
-                cEc18.Styles.add("key", "label150");
+                // cEc18.Styles.add("key", "label150");
                 // cEc18.Styles.add("value", "result85");
 
                 sqtr.TestParamCells.push(cEc18);
@@ -1968,6 +1991,7 @@ export class Factory {
                 //------------------------UAT Mode Status Test-----------------------------
                 var mst = new Test();
                 mst.Name = "UAT Mode Status Test";
+             //   mst.Styles.add("key", "label110");
                 mst.Styles.add("value", "result135");
 
                 var avl3 = new TestParam();
@@ -1999,7 +2023,7 @@ export class Factory {
                 var cPld3 = new TestParamCell(pld3);
                 cPld3.Row = 2;
                 cPld3.Column = 0;
-                cPld3.Styles.add("key", "label110");
+               // cPld3.Styles.add("key", "label110");
                 cPld3.Styles.add("value", "result85");
 
                 mst.TestParamCells.push(cPld3);
@@ -2010,7 +2034,7 @@ export class Factory {
                 var cEqc3 = new TestParamCell(eqc3);
                 cEqc3.Row = 2;
                 cEqc3.Column = 1;
-                cEqc3.Styles.add("key", "label70");
+               // cEqc3.Styles.add("key", "label70");
                 cEqc3.Styles.add("value", "result85");
 
                 mst.TestParamCells.push(cEqc3);
@@ -2022,7 +2046,7 @@ export class Factory {
                 cAddQ3.Row = 3;
                 cAddQ3.Column = 0;
                 cAddQ3.ColSpan = 2;
-                cAddQ3.Styles.add("key", "label110");
+               // cAddQ3.Styles.add("key", "label110");
                 cAddQ3.Styles.add("value", "result128");
 
                 mst.TestParamCells.push(cAddQ3);
@@ -2044,7 +2068,7 @@ export class Factory {
                 var cItvl4 = new TestParamCell(itvl4);
                 cItvl4.Row = 4;
                 cItvl4.Column = 1;
-                cItvl4.Styles.add("key", "label60");
+                //cItvl4.Styles.add("key", "label60");
                 cItvl4.Styles.add("value", "result60Right");
 
                 mst.TestParamCells.push(cItvl4);
@@ -2300,6 +2324,7 @@ export class Factory {
                 //------------------------UAT State Vector Test------Air-----------------------
                 var usvt = new Test();
                 usvt.Name = "UAT State Vector Test-Air";
+                usvt.Styles.add("key", "label140");
                 usvt.Styles.add("value", "result135Right");
 
                 var avl1 = new TestParam();
@@ -2354,7 +2379,7 @@ export class Factory {
                 cAq1.Row = 3;
                 cAq1.Column = 0;
                 cAq1.ColSpan = 2;
-                cAq1.Styles.add("key", "label110");
+                // cAq1.Styles.add("key", "label110");
                 cAq1.Styles.add("value", "result128");
 
                 usvt.TestParamCells.push(cAq1);
@@ -2376,7 +2401,7 @@ export class Factory {
                 var cItvl1 = new TestParamCell(itvl1);
                 cItvl1.Row = 4;
                 cItvl1.Column = 1;
-                cItvl1.Styles.add("key", "label60");
+                cItvl1.Styles.add("key", "label70");
                 cItvl1.Styles.add("value", "result60Right");
 
                 usvt.TestParamCells.push(cItvl1);
@@ -2399,7 +2424,7 @@ export class Factory {
                 cAgst1.Row = 6;
                 cAgst1.Column = 0;
                 cAgst1.ColSpan = 2;
-                cAgst1.Styles.add("value", "result131Right");
+                // cAgst1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cAgst1);
 
@@ -2411,7 +2436,7 @@ export class Factory {
                 cLatd1.Row = 7;
                 cLatd1.Column = 0;
                 cLatd1.ColSpan = 2;
-                cLatd1.Styles.add("value", "result131Right");
+                // cLatd1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cLatd1);
 
@@ -2423,7 +2448,7 @@ export class Factory {
                 cLagd1.Row = 8;
                 cLagd1.Column = 0;
                 cLagd1.ColSpan = 2;
-                cLagd1.Styles.add("value", "result131Right");
+                // cLagd1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cLagd1);
 
@@ -2434,8 +2459,8 @@ export class Factory {
                 var cAlti1 = new TestParamCell(alti1);
                 cAlti1.Row = 9;
                 cAlti1.Column = 0;
-                cAlti1.Styles.add("key", "label140");
-                cAlti1.Styles.add("value", "result100Right");
+              //  cAlti1.Styles.add("key", "label140");
+                // cAlti1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cAlti1);
 
@@ -2456,7 +2481,7 @@ export class Factory {
                 cHorv1.Row = 10;
                 cHorv1.Column = 0;
                 cHorv1.ColSpan = 2;
-                cHorv1.Styles.add("key", "label140");
+          //      cHorv1.Styles.add("key", "label140");
 
                 usvt.TestParamCells.push(cHorv1);
 
@@ -2467,8 +2492,8 @@ export class Factory {
                 var cVerv1 = new TestParamCell(verv1);
                 cVerv1.Row = 11;
                 cVerv1.Column = 0;
-                cVerv1.Styles.add("key", "label140");
-                cVerv1.Styles.add("value", "result100Right");
+           //     cVerv1.Styles.add("key", "label140");
+                // cVerv1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cVerv1);
 
@@ -2499,7 +2524,7 @@ export class Factory {
                 var cNi1 = new TestParamCell(ni1);
                 cNi1.Row = 13;
                 cNi1.Column = 0;
-                cNi1.Styles.add("key", "label140");
+             //   cNi1.Styles.add("key", "label140");
 
                 usvt.TestParamCells.push(cNi1);
 
@@ -2520,7 +2545,7 @@ export class Factory {
                 cUpfb1.Row = 14;
                 cUpfb1.Column = 0;
                 cUpfb1.ColSpan = 2;
-                cUpfb1.Styles.add("key", "label140");
+         //       cUpfb1.Styles.add("key", "label140");
 
                 usvt.TestParamCells.push(cUpfb1);
 
@@ -2543,8 +2568,8 @@ export class Factory {
                 cSeca1.Row = 16;
                 cSeca1.Column = 0;
                 cSeca1.ColSpan = 2;
-                cSeca1.Styles.add("key", "label140");
-                cSeca1.Styles.add("value", "result100Right");
+             //   cSeca1.Styles.add("key", "label140");
+                // cSeca1.Styles.add("value", "result131Right");
 
                 usvt.TestParamCells.push(cSeca1);
 
@@ -2553,7 +2578,7 @@ export class Factory {
                 //------------------------UAT State Vector Test------Ground-----------------------
                 var usvtg = new Test();
                 usvtg.Name = "UAT State Vector Test-Ground";
-                usvtg.Styles.add("key", "label115");
+                usvtg.Styles.add("key", "label140");
                 usvtg.Styles.add("value", "result135Right");
 
                 var avl2 = new TestParam();
@@ -2575,7 +2600,7 @@ export class Factory {
                 cAddr2.Row = 1;
                 cAddr2.Column = 0;
                 cAddr2.ColSpan = 2;
-                cAddr2.Styles.add("key", "label110");
+                // cAddr2.Styles.add("key", "label110");
                 cAddr2.Styles.add("value", "result128");
 
                 usvtg.TestParamCells.push(cAddr2);
@@ -2586,7 +2611,7 @@ export class Factory {
                 var cPldr2 = new TestParamCell(pldr2);
                 cPldr2.Row = 2;
                 cPldr2.Column = 0;
-                cPldr2.Styles.add("key", "label110");
+                // cPldr2.Styles.add("key", "label110");
                 cPldr2.Styles.add("value", "result85");
 
 
@@ -2611,7 +2636,7 @@ export class Factory {
                 cAq2.Row = 3;
                 cAq2.Column = 0;
                 cAq2.ColSpan = 2;
-                cAq2.Styles.add("key", "label110");
+                // cAq2.Styles.add("key", "label110");
                 cAq2.Styles.add("value", "result128");
 
                 usvtg.TestParamCells.push(cAq2);
@@ -2633,7 +2658,7 @@ export class Factory {
                 var cItvl2 = new TestParamCell(itvl2);
                 cItvl2.Row = 4;
                 cItvl2.Column = 1;
-                cItvl2.Styles.add("key", "label60");
+                cItvl2.Styles.add("key", "label70");
                 cItvl2.Styles.add("value", "result60Right");
 
                 usvtg.TestParamCells.push(cItvl2)
@@ -2769,7 +2794,7 @@ export class Factory {
                 var cNi2 = new TestParamCell(ni2);
                 cNi2.Row = 15;
                 cNi2.Column = 0;
-                cNi2.Styles.add("key", "label140");
+                // cNi2.Styles.add("key", "label140");
 
                 usvtg.TestParamCells.push(cNi2);
 
@@ -2790,7 +2815,7 @@ export class Factory {
                 cUpfb2.Row = 16;
                 cUpfb2.Column = 0;
                 cUpfb2.ColSpan = 2;
-                cUpfb2.Styles.add("key", "label140");
+                // cUpfb2.Styles.add("key", "label140");
 
                 usvtg.TestParamCells.push(cUpfb2);
 
@@ -2812,8 +2837,8 @@ export class Factory {
                 var cSeca2 = new TestParamCell(seca2);
                 cSeca2.Row = 18;
                 cSeca2.Column = 0;
-                cSeca2.Styles.add("key", "label140");
-                cSeca2.Styles.add("value", "result115Right");
+                // cSeca2.Styles.add("key", "label140");
+                // cSeca2.Styles.add("value", "result115Right");
 
                 usvtg.TestParamCells.push(cSeca2);
 
@@ -2832,6 +2857,7 @@ export class Factory {
                 //------------------------UAT Target State Test-----------------------------
                 var tst = new Test();
                 tst.Name = "UAT Target State Test";
+                tst.Styles.add("key", "label140")
                 tst.Styles.add("value", "result135")
 
                 var avl6 = new TestParam();
@@ -2885,7 +2911,7 @@ export class Factory {
                 cAddQ6.Row = 3;
                 cAddQ6.Column = 0;
                 cAddQ6.ColSpan = 2;
-                cAddQ6.Styles.add("key", "label110");
+                // cAddQ6.Styles.add("key", "label110");
                 cAddQ6.Styles.add("value", "result128");
 
                 tst.TestParamCells.push(cAddQ6);
@@ -2907,7 +2933,7 @@ export class Factory {
                 var cItvl6 = new TestParamCell(itvl6);
                 cItvl6.Row = 4;
                 cItvl6.Column = 1;
-                cItvl6.Styles.add("key", "label60");
+                cItvl6.Styles.add("key", "label70");
                 cItvl6.Styles.add("value", "result60Right");
 
                 tst.TestParamCells.push(cItvl6)
@@ -2986,7 +3012,7 @@ export class Factory {
                 cAp6.Row = 9;
                 cAp6.Column = 0;
                 cAp6.ColSpan = 2;
-                cAp6.Styles.add("key", "label140");
+                // cAp6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cAp6);
 
@@ -2997,7 +3023,7 @@ export class Factory {
                 cVnav6.Row = 10;
                 cVnav6.Column = 0;
                 cVnav6.ColSpan = 2;
-                cVnav6.Styles.add("key", "label140");
+                // cVnav6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cVnav6);
 
@@ -3008,7 +3034,7 @@ export class Factory {
                 cAlth6.Row = 11;
                 cAlth6.Column = 0;
                 cAlth6.ColSpan = 2;
-                cAlth6.Styles.add("key", "label140");
+                // cAlth6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cAlth6);
 
@@ -3019,7 +3045,7 @@ export class Factory {
                 cAppm6.Row = 12;
                 cAppm6.Column = 0;
                 cAppm6.ColSpan = 2;
-                cAppm6.Styles.add("key", "label140");
+                // cAppm6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cAppm6);
 
@@ -3030,7 +3056,7 @@ export class Factory {
                 cLnavm6.Row = 13;
                 cLnavm6.Column = 0;
                 cLnavm6.ColSpan = 2;
-                cLnavm6.Styles.add("key", "label140");
+                // cLnavm6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cLnavm6);
 
@@ -3041,7 +3067,7 @@ export class Factory {
                 cLnav6.Row = 14;
                 cLnav6.Column = 0;
                 cLnav6.ColSpan = 2;
-                cLnav6.Styles.add("key", "label140");
+                // cLnav6.Styles.add("key", "label140");
 
                 tst.TestParamCells.push(cLnav6);
 
@@ -3129,7 +3155,8 @@ export class Factory {
                 //------------------------RF Link Measurements Screen Suggestions---------S--------------------
                 var rft = new Test();
                 rft.Name = "UAT RF Test";
-                rft.Styles.add("key", "label150");
+                rft.Styles.add("key", "label210");
+                rft.Styles.add("value","result210Right")
 
                 var avl4 = new TestParam();
                 avl4.Key = "Aircraft/Vehicle";
@@ -3206,7 +3233,7 @@ export class Factory {
                 cFrq4.Column = 0;
                 cFrq4.ColSpan = 2;
 
-                cFrq4.Styles.add("value", "result135Right");
+                // cFrq4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cFrq4);
 
@@ -3218,7 +3245,7 @@ export class Factory {
                 cPwr4.Row = 6;
                 cPwr4.Column = 0;
                 cPwr4.ColSpan = 2;
-                cPwr4.Styles.add("value", "result135Right");
+                // cPwr4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cPwr4);
 
@@ -3229,7 +3256,7 @@ export class Factory {
                 cEc4.Row = 7;
                 cEc4.Column = 0;
                 cEc4.ColSpan = 2;
-                cEc4.Styles.add("value", "result135Right");
+                // cEc4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cEc4);
 
@@ -3241,7 +3268,7 @@ export class Factory {
                 cPwrdp4.Row = 8;
                 cPwrdp4.Column = 0;
                 cPwrdp4.ColSpan = 2;
-                cPwrdp4.Styles.add("value", "result135Right");
+                // cPwrdp4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cPwrdp4);
 
@@ -3253,7 +3280,7 @@ export class Factory {
                 cDvn4.Row = 9;
                 cDvn4.Column = 0;
                 cDvn4.ColSpan = 2;
-                cDvn4.Styles.add("value", "result135Right");
+                // cDvn4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cDvn4);
 
@@ -3265,7 +3292,7 @@ export class Factory {
                 cPkdn4.Row = 10;
                 cPkdn4.Column = 0;
                 cPkdn4.ColSpan = 2;
-                cPkdn4.Styles.add("value", "result135Right");
+                // cPkdn4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cPkdn4);
 
@@ -3277,7 +3304,7 @@ export class Factory {
                 cVeo4.Row = 11;
                 cVeo4.Column = 0;
                 cVeo4.ColSpan = 2;
-                cVeo4.Styles.add("value", "result135Right");
+                // cVeo4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cVeo4);
 
@@ -3289,7 +3316,7 @@ export class Factory {
                 cHeo4.Row = 12;
                 cHeo4.Column = 0;
                 cHeo4.ColSpan = 2;
-                cHeo4.Styles.add("value", "result135Right");
+                // cHeo4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cHeo4);
 
@@ -3301,7 +3328,7 @@ export class Factory {
                 cMte4.Row = 13;
                 cMte4.Column = 0;
                 cMte4.ColSpan = 2;
-                cMte4.Styles.add("value", "result135Right");
+                // cMte4.Styles.add("value", "result135Right");
 
                 rft.TestParamCells.push(cMte4);
 
@@ -3322,8 +3349,8 @@ export class Factory {
                 cMsrcd4.Row = 15;
                 cMsrcd4.Column = 0;
                 cMsrcd4.ColSpan = 2;
-                cMsrcd4.Styles.add("key", "label210");
-                cMsrcd4.Styles.add("value", "result75Right");
+                // cMsrcd4.Styles.add("key", "label210");
+                // cMsrcd4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsrcd4);
 
@@ -3334,8 +3361,8 @@ export class Factory {
                 cMsict4.Row = 16;
                 cMsict4.Column = 0;
                 cMsict4.ColSpan = 2;
-                cMsict4.Styles.add("key", "label210");
-                cMsict4.Styles.add("value", "result75Right");
+                // cMsict4.Styles.add("key", "label210");
+                // cMsict4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsict4);
 
@@ -3348,7 +3375,7 @@ export class Factory {
                 cMsslrt4.Column = 0;
                 cMsslrt4.ColSpan = 2;
                 cMsslrt4.Styles.add("key", "label210");
-                cMsslrt4.Styles.add("value", "result75Right");
+                // cMsslrt4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cMsslrt4);
 
@@ -3359,8 +3386,8 @@ export class Factory {
                 cCtmst4.Row = 18;
                 cCtmst4.Column = 0;
                 cCtmst4.ColSpan = 2;
-                cCtmst4.Styles.add("key", "label210");
-                cCtmst4.Styles.add("value", "result75Right");
+                // cCtmst4.Styles.add("key", "label210");
+                // cCtmst4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cCtmst4);
 
@@ -3371,8 +3398,8 @@ export class Factory {
                 cCtmser4.Row = 19;
                 cCtmser4.Column = 0;
                 cCtmser4.ColSpan = 2;
-                cCtmser4.Styles.add("key", "label210");
-                cCtmser4.Styles.add("value", "result75Right");
+                // cCtmser4.Styles.add("key", "label210");
+                // cCtmser4.Styles.add("value", "result75Right");
 
                 rft.TestParamCells.push(cCtmser4);
 
@@ -3383,7 +3410,7 @@ export class Factory {
                 cCtmssq4.Row = 20;
                 cCtmssq4.Column = 0;
                 cCtmssq4.ColSpan = 2;
-                cCtmssq4.Styles.add("value", "result128");
+                // cCtmssq4.Styles.add("value", "result128");
 
                 rft.TestParamCells.push(cCtmssq4);
 
