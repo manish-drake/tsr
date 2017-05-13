@@ -7,7 +7,7 @@ detail-default{
                 font-weight: 600;
                 margin-top: 15px !important;
                 margin-bottom:5px !important;
-                // background-color: lemonchiffon;
+                 background-color: lemonchiffon;
         }
         .label70Bold{
                 min-width: 70px !important;
@@ -15,13 +15,13 @@ detail-default{
                 font-size: 18px !important;
                 font-weight: 600;
                 margin-top: 10px !important;
-                // background-color: lightslategray;
+                 background-color: lightslategray;
         }
         .label110{
                 width: 110px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color: salmon;
+                 background-color: darkmagenta;
         }
         .result0{
                 display: inline-flex;
@@ -29,47 +29,42 @@ detail-default{
         }
         .result85{
                 display: inline-flex;
-                width:25%;        
+                // width:25%;        
                 min-width: 85px !important;
                 font-size: 16px !important;
-                // background-color:cadetblue;
+                 background-color:darkslateblue;
         }
          .result128{
                 display: inline-flex ;       
                 min-width: 128px !important;
                 font-size: 16px !important;    
                 margin-right: 5px;
-                // background-color:pink;
+                background-color:darkred;
         }
-
-
 
         .label60{                                               //---1090 ADS-B Out: Position, A/C ID , Velocity, OP Status.//---UAT out: Mode Status, State-Air, State-Ground, Target State,
                 min-width: 60px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
                 margin-top: 10px !important;
-                // background-color:khaki;
+                background-color:lawngreen;
         }
+
         .result60Right{
                 min-width: 60px !important;
                 display: inline-block;        
                 font-size: 16px !important;
                 margin-top: 10px !important;
-                // background-color:darkcyan;
+                background-color:darkslategrey;
                 text-align: right !important;
-        }
-
-        
+        }        
 
         .label70{                                               //---UAT out
                 width: 70px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color: darkcyan;
-        }
-
-        
+                background-color: darkcyan;
+        }        
 
        .label133Bold{                                           //---1090 ADS-B Out: Position, A/C ID, Velocity, OP Status, RF.                                                
                 min-width: 133px !important; 
@@ -78,35 +73,35 @@ detail-default{
                 font-weight: 600;
                 margin-top: 10px !important;
                 margin-bottom:7px !important;
-                // background-color:deepskyblue;
+                background-color:deepskyblue;
         }
 
         .label115{                                              //---UAT out: State-Ground
                 width: 115px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color: tomato;
+                background-color: tomato;
         }
 
         .label140{                                              //---1090 Uat Out.//---UAT out:State-Air, State-Ground, Target State
                 width: 140px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color: yellow;
+                background-color: yellow;
         }
 
         .label150{                                              //---1090 Uat Out:RF.//---UAT out:RF.
                 width: 150px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color: forestgreen;
+                background-color: forestgreen;
         }
 
         .result75Right{                                          //---UAT out:RF. 
                 display: inline-block;           
                 min-width: 75px !important;
                 font-size: 16px !important;
-                // background-color:orangered;
+                background-color:orangered;
                 text-align: right !important;
 
         }
@@ -115,21 +110,21 @@ detail-default{
                 width: 210px !important;
                 display: inline-flex;        
                 font-size: 16px !important;
-                // background-color:greenyellow;
+                background-color:greenyellow;
         }
            
         .result90Left{                                          //---1090 Uat Out:A/C ID, OP Status    
                 display: inline-block;           
                 min-width: 90px !important;
                 font-size: 16px !important;
-                // background-color:red;
+                background-color:red;
         }
 
         .result100Right{                                        //---1090 Uat Out:Target State.//---UAT out:State-Air, Target State, RF. 
                 display: inline-block;           
                 min-width: 100px !important;
                 font-size: 16px !important;
-                // background-color:lightgray;
+                background-color:chartreuse;
                 text-align: right !important;
         }
      
@@ -137,7 +132,7 @@ detail-default{
                 display: inline-block;           
                 min-width: 115px !important;
                 font-size: 16px !important;
-                // background-color:lime;
+                background-color:lime;
                 text-align: right !important;
         }
   
@@ -146,7 +141,7 @@ detail-default{
                 min-width: 131px !important;
                 font-size: 16px !important;    
                 text-align: right !important;
-                // background-color:darkorange;
+                background-color:gray;
         }
 
         .result135Right{                                        //---1090 Uat Out:Summary, Position,Velocity, RF.//---UAT out:State-Air, State-Ground, RF.
@@ -154,21 +149,21 @@ detail-default{
                 min-width: 135px !important;
                 font-size: 16px !important;    
                 text-align: right !important;
-                // background-color:olivedrab;
+                background-color:lightgreen;
         }
 
         .result135{                                             //---1090 Uat Out: Target State.//---UAT out:Mode State, Target State.
                 display: inline-block ;       
                 min-width: 135px !important;
                 font-size: 16px !important;    
-                // background-color:darkorange;
+                background-color:darkorange;
         }
 
         .unit35Left{                                            //---1090 Uat Out.//---UAT out:Not in Trajectory
                 display: inline-block;
                 min-width: 35px;
                 font-size: 16px !important;
-                // background-color:lightskyblue;
+                background-color:lightskyblue;
                 text-align: left !important;
         }
 
@@ -177,7 +172,7 @@ detail-default{
                 display: inline-block;        
                 font-size: 16px !important;
                 margin-top: 10px !important;
-                // background-color:hotpink;
+                background-color:hotpink;
                 text-align: right !important;
                 font-weight: 600;
         }
@@ -186,9 +181,17 @@ detail-default{
                 display: inline-block;
                 min-width: 35px;
                 font-size: 16px !important;
-                // background-color:yellow;
+                background-color:yellow;
                 text-align: left !important;
                 font-weight: 600;
+        }
+
+        .result210Right{
+                  display: inline-block;           
+                min-width: 210px !important;
+                font-size: 16px !important;
+                background-color:chartreuse;
+                text-align: right !important;
         }
 
         .result{

@@ -10,6 +10,8 @@ import { SetupGPSComp } from '../pages/setup-gps-component/gps-component';
 import { SetupNetworkComp } from '../pages/setup-network-component/network-component';
 import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systeminfo-component';
 import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
+import { AntennaComp } from "../pages/antenna-component/antenna";
+import { AntennaAviationComp } from "../pages/antenna-aviation/antenna-aviation";
 
 export const routes = RouterModule.forRoot([
     { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
@@ -22,5 +24,10 @@ export const routes = RouterModule.forRoot([
     { path: 'setup-gps/:parent', component: SetupGPSComp },
     { path: 'setup-network/:parent', component: SetupNetworkComp },
     { path: 'setup-systeminfo/:parent', component: SetupSystemInfoComp },
-    { path: 'setup-connection/:parent', component: SetupConnectionComp }
+    { path: 'setup-connection/:parent', component: SetupConnectionComp },
+
+    { path: 'antenna/:name', component: AntennaComp },
+    { path: 'antenna-aviation/:parent', component: AntennaAviationComp }
+
+
 ]);
