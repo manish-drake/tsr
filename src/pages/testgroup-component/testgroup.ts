@@ -36,7 +36,6 @@ export class TestGroupComp implements OnInit {
 
   testgroups: any[] = [];
   headerName: any;
-  isScrollAvailable: boolean = false;
 
   ngOnInit() {
     this.gContent = this.groupContent.nativeElement;   
@@ -110,6 +109,8 @@ export class TestGroupComp implements OnInit {
   }
 
   // Code to show more
+  isScrollAvailable: boolean = false;
+  
   onResize(event) {
     this.contentForMore();
   }

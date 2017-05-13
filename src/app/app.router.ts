@@ -11,7 +11,7 @@ import { SetupNetworkComp } from '../pages/setup-network-component/network-compo
 import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systeminfo-component';
 import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
 import { AntennaComp } from "../pages/antenna-component/antenna";
-import { AntennaAviationComp } from "../pages/antenna-aviation/antenna-aviation";
+import { AviationComp } from "../pages/antenna-aviation-component/aviation-comp";
 
 export const routes = RouterModule.forRoot([
     { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
@@ -27,7 +27,7 @@ export const routes = RouterModule.forRoot([
     { path: 'setup-connection/:parent', component: SetupConnectionComp },
 
     { path: 'antenna/:name', component: AntennaComp },
-    { path: 'antenna-aviation/:parent', component: AntennaAviationComp }
+    { path: 'antenna-aviation/:parent', component: AviationComp }
 
 
 ]);
