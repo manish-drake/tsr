@@ -11,7 +11,7 @@ import { SetupNetworkComp } from '../pages/setup-network-component/network-compo
 import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systeminfo-component';
 import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
 
-export const router = RouterModule.forRoot([
+export const routes = RouterModule.forRoot([
     { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
     { path: 'testgroup/:name', component: TestGroupComp },
     { path: 'detail/:test/:headername', component: TestDetailComp },

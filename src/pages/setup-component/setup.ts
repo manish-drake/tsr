@@ -56,7 +56,6 @@ export class SetupComp {
 
   contentForMore() {
     this.content.resize();
-    console.log(this.content.contentHeight);
     if (this.gContent.scrollHeight > this.content.contentHeight) {
       var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
       if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom

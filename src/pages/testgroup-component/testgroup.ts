@@ -41,6 +41,7 @@ export class TestGroupComp implements OnInit {
   ngOnInit() {
     this.gContent = this.groupContent.nativeElement;   
     this.route.params.subscribe(param => {
+      console.log(JSON.stringify(param));
       this.headerName = (param as any).name;
       this._svcHome.title = this.headerName;
       this._svcTestGroups.generateTestGroups(this.headerName);
