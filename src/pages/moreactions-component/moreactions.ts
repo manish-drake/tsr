@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Platform, ViewController } from 'ionic-angular';
-import { AppVersion } from 'ionic-native';
+import { AppVersion } from '@ionic-native/app-version';
 
 import { ThemeService } from '../../services/themes/themes.service';
 import { LocalStorage } from '../../services/storage/local-storage';
@@ -28,6 +28,7 @@ export class MoreActionsPopover {
   constructor(
     private viewCtrl: ViewController,
     private platform: Platform,
+    private appVersion: AppVersion,
     private _svcTheme: ThemeService,
     private _localStorage: LocalStorage,
     private _master: MasterService,
@@ -36,7 +37,7 @@ export class MoreActionsPopover {
   ) {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        AppVersion.getVersionNumber().then((s) => {
+        this.appVersion.getVersionNumber().then((s) => {
           this.versionNumber = s;
         });
       }

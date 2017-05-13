@@ -13,7 +13,7 @@ import { SetupConnectionComp } from '../pages/setup-connection-component/connect
 import { AntennaComp } from "../pages/antenna-component/antenna";
 import { AntennaAviationComp } from "../pages/antenna-aviation/antenna-aviation";
 
-export const router = RouterModule.forRoot([
+export const routes = RouterModule.forRoot([
     { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
     { path: 'testgroup/:name', component: TestGroupComp },
     { path: 'detail/:test/:headername', component: TestDetailComp },

@@ -1,6 +1,5 @@
 {
   "name": "Test Set Remote",
   "app_id": "2fafc432",
-  "typescript": true,
-  "v2": true
+  "type": "ionic-angular"
 }
