@@ -58,7 +58,9 @@ import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
 
 import { AntennaComp } from "../pages/antenna-component/antenna";
-import { AviationComp } from "../pages/antenna-aviation-component/aviation-comp";
+import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
+
+import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
 
 
 @NgModule({
@@ -88,7 +90,8 @@ import { AviationComp } from "../pages/antenna-aviation-component/aviation-comp"
         PopOverButtonComp,
         ModalIonItemComp,
         AntennaComp,
-        AviationComp
+        AviationVSWRComp,
+        GraphComp
     ],
     imports: [
         BrowserModule,

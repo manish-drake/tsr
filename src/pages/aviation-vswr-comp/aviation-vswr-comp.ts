@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'aviation-comp',
-  templateUrl: 'aviation-comp.html'
+  selector: 'aviation-vswr-comp',
+  templateUrl: 'aviation-vswr-comp.html'
 })
-export class AviationComp {
+export class AviationVSWRComp {
 
   constructor(
     private _router: Router,

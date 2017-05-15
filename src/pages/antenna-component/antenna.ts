@@ -36,7 +36,7 @@ export class AntennaComp {
     if (this.clicks == 1) {
       setTimeout(() => {
         if (this.clicks == 2) {
-          this._router.navigate(['antenna-aviation',this.titleName])
+          this._router.navigate(['aviation-vswr',this.titleName])
         }
         this.clicks = 0;
       }, 500);
