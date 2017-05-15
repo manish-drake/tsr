@@ -12,12 +12,7 @@ import { Component } from '@angular/core';
 })
 export class CoaxSelectionComp {
 
-  constructor() {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CoaxSelectionPage');
-  }
+  constructor() {}
 
   selectedCoaxIndex: number = 0
 

@@ -67,6 +67,8 @@ import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-co
 import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-selection/mode-selection';
 import { BandSelectionComp} from '../sub-components/aviation-antenna/band-selection/band-selection';
 import { CoaxSelectionComp} from '../sub-components/aviation-antenna/coax-selection/coax-selection';
+import { CalTypeSelectionComp} from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
+import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-control/marker-control';
 
 
 @NgModule({
@@ -97,7 +99,7 @@ import { CoaxSelectionComp} from '../sub-components/aviation-antenna/coax-select
         ModalIonItemComp,
         AntennaComp,
         AviationCalComp, AviationVSWRComp, AviationLossComp, AviationDtfComp,
-        GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp
+        GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
         BrowserModule,

@@ -12,14 +12,9 @@ import { Component } from '@angular/core';
 })
 export class BandSelectionComp {
 
-  constructor() {
-  }
+  constructor() {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BandSelectionPage');
-  }
-
-  selectedBand: number = 0;
+  selectedBandIndex: number = 0;
 
   bands: any[] = [
     { name: "ILS", start: 50, stop: 350, middle: 150, defaultmarker: 150 },

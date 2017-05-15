@@ -1,8 +1,6 @@
-<ion-col col-6 style="border: 1px solid red;">
-  <ion-item no-lines no-margin no-padding style=" background: transparent; border: 1px solid blue;">
-    <ion-label>BAND:</ion-label>
-    <ion-select [(ngModel)]="selectedBand" style="max-width: 100%;">
-      <ion-option *ngFor="let band of bands; let i = index" [value]="i">{{band.name}}</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-col>
+<ion-item no-lines no-margin style="border: 1px solid blue;">
+  <ion-label>BAND:</ion-label>
+  <ion-select [(ngModel)]="selectedBandIndex" style="max-width: 100%;">
+    <ion-option *ngFor="let band of bands; let i = index" [value]="i">{{band.name}}</ion-option>
+  </ion-select>
+</ion-item>

@@ -26,10 +26,6 @@ export class ModeSelectionComp {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModeSelectionPage');
-  }
-
   onModeChanged(ev) {
 
     if (JSON.stringify(ev) != this.selectedMode) {

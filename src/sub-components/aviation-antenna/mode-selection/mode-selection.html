@@ -1,11 +1,9 @@
-<ion-col col-6 style="border: 1px solid red;">
-  <ion-item no-lines no-margin no-padding style=" background: transparent; border: 1px solid blue;">
-    <ion-label>MODE:</ion-label>
-    <ion-select [(ngModel)]="selectedMode" (ionChange)="onModeChanged($event)" style="max-width: 100%;">
-      <ion-option value="CAL">CAL</ion-option>
-      <ion-option value="VSWR">VSWR</ion-option>
-      <ion-option value="LOSS">LOSS</ion-option>
-      <ion-option value="DTF">DTF</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-col>
+<ion-item no-lines no-margin style="border: 1px solid blue;">
+  <ion-label>MODE:</ion-label>
+  <ion-select [(ngModel)]="selectedMode" (ionChange)="onModeChanged($event)" style="max-width: 100%;">
+    <ion-option value="CAL">CAL</ion-option>
+    <ion-option value="VSWR">VSWR</ion-option>
+    <ion-option value="LOSS">LOSS</ion-option>
+    <ion-option value="DTF">DTF</ion-option>
+  </ion-select>
+</ion-item>
