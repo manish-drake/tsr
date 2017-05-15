@@ -8,10 +8,11 @@ import { FileFactory } from './file-factory'
 
 @Injectable()
 export class FileIOService {
+    constructor(private fileFactory: FileFactory) {
+    }
     getFolder(fullName: string) {
         // var folder = new Folder();
-        var fileFactory = new FileFactory();
-        fileFactory.saveFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");      
+        this.fileFactory.saveFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");
     }
 
     // getFile(fullName: string): Observable<File> {

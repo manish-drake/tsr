@@ -36,11 +36,11 @@ export class TestGroupComp implements OnInit {
 
   testgroups: any[] = [];
   headerName: any;
-  isScrollAvailable: boolean = false;
 
   ngOnInit() {
     this.gContent = this.groupContent.nativeElement;   
     this.route.params.subscribe(param => {
+      console.log(JSON.stringify(param));
       this.headerName = (param as any).name;
       this._svcHome.title = this.headerName;
       this._svcTestGroups.generateTestGroups(this.headerName);
@@ -109,6 +109,8 @@ export class TestGroupComp implements OnInit {
   }
 
   // Code to show more
+  isScrollAvailable: boolean = false;
+  
   onResize(event) {
     this.contentForMore();
   }

@@ -1,7 +1,13 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http } from '@angular/http'
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppVersion } from '@ionic-native/app-version';
+import { File} from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -44,12 +50,17 @@ import { MasterService } from '../services/test-set/master.service';
 import { UserService } from '../services/test-set/user.service';
 import { ConnectionService } from '../services/test-set/connection.service'
 import { LocalStorage } from '../services/storage/local-storage';
-import { router } from './app.router';
+import { routes } from './app.router';
 import { HomeService } from '../services/ui/home.service';
 import { PopoverService } from '../services/ui/popover.service';
 import { ModalService } from '../services/ui/modal.service';
 import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
+
+import { AntennaComp } from "../pages/antenna-component/antenna";
+import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
+
+import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
 
 
 @NgModule({
@@ -77,11 +88,15 @@ import { LanguageService } from '../services/language/language-service';
         DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
         PopOverButtonComp,
-        ModalIonItemComp
+        ModalIonItemComp,
+        AntennaComp,
+        AviationVSWRComp,
+        GraphComp
     ],
     imports: [
-        router,
+        BrowserModule,
         IonicModule.forRoot(MyApp),
+        routes,
         TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
@@ -99,6 +114,10 @@ import { LanguageService } from '../services/language/language-service';
         GuidePage
     ],
     providers: [
+        StatusBar,
+        SplashScreen,
+        AppVersion,
+        File,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
         Factory,
@@ -120,5 +139,5 @@ import { LanguageService } from '../services/language/language-service';
 export class AppModule { }
 
 export function createTranslateLoader(http: Http) {
-    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
+    return new TranslateStaticLoader(http, '../assets/i18n', '.json');
 }

@@ -1,15 +1,17 @@
 import { Injectable } from "@angular/core"
 import { Observable } from 'Rxjs';
-import { File, DirectoryEntry } from 'ionic-native';
+import { File} from '@ionic-native/file';
 declare var cordova: any;
 
 @Injectable()
 export class FileFactory {
-    constructor() {
+    constructor(
+        private file: File
+        ) {
     }
     // static fileIndex: 
     getFile(fullName: string): Observable<any> {
-        return Observable.fromPromise(File.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
+        return Observable.fromPromise(this.file.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(value => value.toString());
     }
 
@@ -18,9 +20,9 @@ export class FileFactory {
         var filePath = fullPath.slice(25);
 
         this.createFolderRx(filePath, parentFullPath).then((success) => {
-            File.createFile(fullPath, name, true).then((success) => {
+            this.file.createFile(fullPath, name, true).then((success) => {
                 alert("file: " + JSON.stringify(success));
-                File.writeFile(fullPath, name, content, true).then((success) => {
+                this.file.writeFile(fullPath, name, content, true).then((success) => {
                     alert("save: " + JSON.stringify(success));
                 })
             })
@@ -29,23 +31,23 @@ export class FileFactory {
 
     getSubFolders(fullName: string): Observable<string[]> {
 
-        return Observable.fromPromise(File.listDir(this.getFilePath(fullName), this.getFileName(fullName)))
+        return Observable.fromPromise(this.file.listDir(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(entries => entries.map(e => e.name));
     }
 
     createFolder(name: string, parentFullPath: string): Observable<string> {
-        return Observable.fromPromise(File.createDir(parentFullPath, name, true))
+        return Observable.fromPromise(this.file.createDir(parentFullPath, name, true))
             .map(value => value["nativeURL"]);
     }
 
-    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/): Promise<DirectoryEntry> {
+    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/): Promise<any> {
         var urlParts = fullPath.split("/");
         alert("fullPath: " + fullPath + ", parentFullPath: " + parentFullPath);
         if (urlParts.length > 0) {
             var name = urlParts[0];
             if (!parentFullPath)
                 parentFullPath = "file:/storage/emulated/0";
-            return File.createDir(parentFullPath, name, true).then(success => {
+            return this.file.createDir(parentFullPath, name, true).then(success => {
                 alert("Created " + name + " in " + parentFullPath);
                 parentFullPath += "/" + name;
                 if (urlParts.length >= 2) {
@@ -59,17 +61,17 @@ export class FileFactory {
     }
 
     deleteFile(fullName: string): Observable<boolean> {
-        return Observable.fromPromise(File.removeFile(this.getFilePath(fullName), this.getFileName(fullName)))
+        return Observable.fromPromise(this.file.removeFile(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(value => value["success"])
     }
 
     deleteFolder(fullName: string): Observable<boolean> {
-        return Observable.fromPromise(File.removeDir(this.getFilePath(fullName), this.getFileName(fullName)))
+        return Observable.fromPromise(this.file.removeDir(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(value => value["success"])
     }
 
     getFiles(folderFullName: string): Observable<string[]> {
-        return Observable.fromPromise(File.listDir(this.getFilePath(folderFullName), this.getFileName(folderFullName)))
+        return Observable.fromPromise(this.file.listDir(this.getFilePath(folderFullName), this.getFileName(folderFullName)))
             .map(entries => entries.map(e => e.name));
     }
 
@@ -81,7 +83,7 @@ export class FileFactory {
         return Path.substring(0, Path.lastIndexOf("/"));
     }
     readfile(path, fileName): Observable<any> {
-        return Observable.fromPromise(File.readAsText(path, fileName))
+        return Observable.fromPromise(this.file.readAsText(path, fileName))
             .map(x => x.toString());
     }
 

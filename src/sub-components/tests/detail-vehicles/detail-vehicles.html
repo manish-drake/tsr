@@ -1,26 +1,25 @@
-<div>
-    <b margin-left [hidden]="selectedVehicle">Select Aircraft/Vehicle:</b>
-    <ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle, i)" [class.selectedvehicle]="vehicle == selectedVehicle"
-        class="background">
-        <ion-row>
-            <table  text-nowrap style="width:100%;margin:10px">
-                <tr>
-                    <td class="sectionHeading" colspan="3">Aircraft/Vehicle #{{i+1}}: </td>
-                </tr>
-                <tr>
-                    <td class="label" colspan="2">ADDRESS:   {{vehicle.address}}</td>
-                </tr>
-                <tr>
-                    <td class="label2">FIGHT ID: {{vehicle.flightid}}</td>
-                    <td class="label">RF Level: {{vehicle.rflevel}}</td>
-                </tr>
-                <tr>
-                    <td class="label" colspan="2">BDS Rcvd (DF{{vehicle.df}}):  {{vehicle.bdsrcvd}}</td>
-                </tr>
-            </table>
+<b margin-left [hidden]="selectedVehicle">Select Aircraft/Vehicle:</b>
+<ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle, i)" [class.selectedvehicle]="vehicle == selectedVehicle"
+    class="background">
+    <ion-row>
+        <table text-nowrap style="width:100%;margin:10px">
+            <tr>
+                <td class="sectionHeading" colspan="3">Aircraft/Vehicle #{{i+1}}: </td>
+            </tr>
+            <tr>
+                <td class="label" colspan="2">ADDRESS: {{vehicle.address}}</td>
+            </tr>
+            <tr>
+                <td class="label2">FIGHT ID: {{vehicle.flightid}}</td>
+                <td class="label">RF Level: {{vehicle.rflevel}}</td>
+            </tr>
+            <tr>
+                <td class="label" colspan="2">BDS Rcvd (DF{{vehicle.df}}): {{vehicle.bdsrcvd}}</td>
+            </tr>
+        </table>
 
 
-            <!--<table margin text-nowrap style="width:100%;margin:10px">
+        <!--<table margin text-nowrap style="width:100%;margin:10px">
                  <tr>
                     <td class="sectionHeading" colspan="5">Aircraft/Vehicle #{{i+1}}: </td>
                 </tr>
@@ -33,6 +32,5 @@
                     </td>
                 </tr>
             </table>-->
-        </ion-row>
-        </ion-card>
-</div>
+    </ion-row>
+</ion-card>

@@ -15,7 +15,7 @@ export class Menu {
 
         var comm = { route: "testgroup", name: "Comm" };
 
-        var antenna = {route: "testgroup", name: "Antenna" };
+        var antenna = {route: "antenna", name: "Antenna" };
 
         var reports = {route: "testgroup", name: "Reports" };
 

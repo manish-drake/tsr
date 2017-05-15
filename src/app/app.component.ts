@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { Router } from '@angular/router'
 
 import { HomePage } from '../pages/home/home';
@@ -14,17 +15,19 @@ import { TestContextService } from '../services/tests/testcontext.service';
 })
 export class MyApp implements OnInit {
 
-  rootPage = HomePage;
+  root = HomePage;
 
   constructor(private platform: Platform,
+    private statusBar: StatusBar,
+    private splashScreen: SplashScreen,
     private popoverService: PopoverService,
     private _router: Router,
     private _svcTheme: ThemeService,
     private _svcTestContext: TestContextService
   ) {
     platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      statusBar.styleDefault();
+      splashScreen.hide();
     });
   }
 

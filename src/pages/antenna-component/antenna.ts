@@ -1,49 +1,53 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { UserService } from '../../services/test-set/user.service';
-import { ThemeService } from '../../services/themes/themes.service';
 import { HomeService } from '../../services/ui/home.service'
 
 @Component({
-  selector: 'page-setup',
-  templateUrl: 'setup.html'
+  selector: 'page-antenna',
+  templateUrl: 'antenna.html'
 })
-export class SetupComp {
+export class AntennaComp {
 
   @ViewChild('groupContent') groupContent: ElementRef;
 
   gContent: HTMLDivElement;
 
   constructor(
-    private content: Content,
     private route: ActivatedRoute,
     private _router: Router,
-    private _svcUser: UserService,
-    private _svcTheme: ThemeService,
-    private _svcHome: HomeService) { }
+    private _svcHome: HomeService,
+    private content: Content,
+  ) { }
 
   titleName: string;
-  currentUser: any;
-  currentTheme: any;
-  isScrollAvailable: boolean = false;
 
   ngOnInit() {
-    this.gContent = this.groupContent.nativeElement;
+    this.gContent = this.groupContent.nativeElement;  
     this.route.params.subscribe(param => {
       this.titleName = (param as any).name;
       this._svcHome.title = (param as any).name;
     });
-    this._svcUser.getCurrentUser().subscribe(val => this.currentUser = val);
-    this._svcTheme.getTheme().subscribe(val => this.currentTheme = val);
   }
 
-  openDetail(e) {
-    this._router.navigate([e, this.titleName]);
+  private clicks = 0;
+  doubleTapNavigation() {
+    this.clicks++;
+    if (this.clicks == 1) {
+      setTimeout(() => {
+        if (this.clicks == 2) {
+          this._router.navigate(['aviation-vswr',this.titleName])
+        }
+        this.clicks = 0;
+      }, 500);
+    }
   }
+  
+
 
   // Code to show more
+  isScrollAvailable: boolean = false;
+
   onResize(event) {
     this.contentForMore();
   }
