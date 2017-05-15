@@ -65,6 +65,8 @@ import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 
 import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
 import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-selection/mode-selection';
+import { BandSelectionComp} from '../sub-components/aviation-antenna/band-selection/band-selection';
+import { CoaxSelectionComp} from '../sub-components/aviation-antenna/coax-selection/coax-selection';
 
 
 @NgModule({
@@ -95,7 +97,7 @@ import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-select
         ModalIonItemComp,
         AntennaComp,
         AviationCalComp, AviationVSWRComp, AviationLossComp, AviationDtfComp,
-        GraphComp,ModeSelectionComp
+        GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp
     ],
     imports: [
         BrowserModule,
