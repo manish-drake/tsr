@@ -19,4 +19,14 @@ export class CoaxSelectionComp {
     console.log('ionViewDidLoad CoaxSelectionPage');
   }
 
+  selectedCoaxIndex: number = 0
+
+  coaxTypes: any[] = [
+    { name: "PE Solid", velocity: 0.66 },
+    { name: "PE Foam", velocity: 0.85 },
+    { name: "Teflon", velocity: 0.70 },
+    { name: "Teflon foam", velocity: 0.80 },
+    { name: "User", velocity: null }
+  ]
+
 }

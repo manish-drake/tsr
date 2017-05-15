@@ -19,7 +19,7 @@ export class BandSelectionComp {
     console.log('ionViewDidLoad BandSelectionPage');
   }
 
-  selectedBand: any = "ILS"
+  selectedBand: number = 0;
 
   bands: any[] = [
     { name: "ILS", start: 50, stop: 350, middle: 150, defaultmarker: 150 },
