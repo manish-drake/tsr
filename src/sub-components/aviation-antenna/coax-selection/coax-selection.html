@@ -1,6 +1,6 @@
 <ion-item no-lines no-margin style="border: 1px solid blue;">
   <ion-label>COAX:</ion-label>
   <ion-select [(ngModel)]="selectedCoaxIndex" style="max-width: 100%;">
-    <ion-option *ngFor="let coaxType of coaxTypes;let i = index" [value]="i">{{coaxType.name}}</ion-option>
+    <ion-option *ngFor="let coaxType of coaxTypes;let i = index" [value]="i">{{coaxType.name}} {{coaxType.velocity*100}}%</ion-option>
   </ion-select>
 </ion-item>
