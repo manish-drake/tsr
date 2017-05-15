@@ -1,0 +1,36 @@
+<ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
+    <ion-grid style="height: 100%;">
+        <ion-row>
+            <ion-col no-padding>
+                <button ion-button no-margin icon-only clear><ion-icon name="download"></ion-icon></button>
+                <button ion-button no-margin icon-only clear><ion-icon name="list-box"></ion-icon></button>
+            </ion-col>
+            <ion-col no-padding col-auto text-nowrap align-self-center style="overflow: hidden;text-overflow: ellipsis;">
+                <b style="font-size: 16px;">TITLE</b><br>
+            </ion-col>
+            <ion-col no-padding>
+                <ion-row>
+                    <ion-col no-padding></ion-col>
+                    <ion-col no-padding col-auto>
+                        <button ion-button no-margin icon-only clear (click)="onClose()"><ion-icon name="close"></ion-icon></button>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+        <ion-row style="height: 100%!important;">
+            <ion-scroll scrollY="true" style="width:100%; ">
+                <ion-row justify-content-center>
+                    <img src="../assets/graph-back.png" />
+                </ion-row>
+            </ion-scroll>
+        </ion-row>
+        <ion-row>
+            <ion-col center text-center style="width: 100%;">
+                <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
+                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
+                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
+                           </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-card>

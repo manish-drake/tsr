@@ -26,7 +26,7 @@ export class MasterService {
         // })
 
         //Return data from assets
-        return this.http.get('assets/jsonfiles/vehicles.json')
+        return this.http.get('../../assets/jsonfiles/vehicles.json')
             .map((res) => res.json())
     }
 

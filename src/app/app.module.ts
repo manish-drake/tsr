@@ -136,5 +136,5 @@ import { AviationComp } from "../pages/antenna-aviation-component/aviation-comp"
 export class AppModule { }
 
 export function createTranslateLoader(http: Http) {
-    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
+    return new TranslateStaticLoader(http, '../assets/i18n', '.json');
 }
