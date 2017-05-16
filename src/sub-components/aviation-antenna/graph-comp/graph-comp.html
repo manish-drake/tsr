@@ -5,35 +5,39 @@
     <ion-grid>
       <ion-row nowrap>
         <ion-col col-auto>
-          <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">Return Loss</button>
+          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrChecked ? 'dark' : 'light' ">Return Loss</button>
         </ion-col>
         <ion-col>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">VSWR</button>
+          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrChecked ? 'dark' : 'light' ">VSWR</button>
         </ion-col>
       </ion-row>
       <ion-row nowrap>
-        <ion-col col-auto align-self-stretch text-right>
+        <ion-col col-auto align-self-stretch >
           <ion-grid>
-            11
+            <ion-row style=" width:30px;height:36.5px;" *ngFor="let obj of currentRlScale" >{{obj.val}}</ion-row>
           </ion-grid>
         </ion-col>
         <ion-col>
           <img style="height: 256px; width: 400px;" src="../../assets/graph-back.png" />
         </ion-col>
-        <ion-col col-auto align-self-stretch>
-          22
+        <ion-col col-auto>
+          <ion-grid>
+            <ion-row style=" width:30px;height:36.5px;" *ngFor="let obj of currentVswrScale">{{obj.val}}</ion-row>
+          </ion-grid>
         </ion-col>
       </ion-row>
-      <ion-row nowrap>
-        <ion-col margin-horizontal col-10>
-          33
+      <ion-row nowrap nopadding nomargin >
+        <ion-col >
+          <ion-row text-right >
+            <ion-col *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
+          </ion-row>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button small color="light" *ngIf="isDTFmodeEnabled" (click)="MeterFt()">
-            <span *ngIf="isMeterEnabled()">M</span>
-            <span *ngIf="!isMeterEnabled()">Ft</span>
+          <button ion-button small color="light" *ngIf="isDTFmode" (click)="LengthScaleSwitch()">
+            <span *ngIf="isMeterenabled">M</span>
+            <span *ngIf="!isMeterenabled">Ft</span>
           </button>
         </ion-col>
       </ion-row>

@@ -16,32 +16,31 @@ export class GraphComp {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GraphCompPage');
-  }
-  static isRtVswrenabled: boolean = false;
-  static isMeterenabled: boolean = true;
-  isDTFmodeEnabled: boolean = true;
+  isRlVswrChecked: boolean = false;
+  isMeterChecked: boolean = true;
+  isDTFmode: boolean = true;
 
-  RtVswr() {
-    GraphComp.isRtVswrenabled = !GraphComp.isRtVswrenabled;
-    return GraphComp.isRtVswrenabled;
+  RlVswrScaleSwitch() {
+    this.isRlVswrChecked = !this.isRlVswrChecked;
+    if (!this.isRlVswrChecked) {
+      this.currentRlScale = this.rlScaleValues;
+      this.currentVswrScale = this.vswrScaleValues;
+    }
+    else {
+      this.currentRlScale = this.rlScaleValues2;
+      this.currentVswrScale = this.vswrScaleValues2;
+    }
   }
-
-  isRtVswrclicked() {
-    return GraphComp.isRtVswrenabled;
-  }
-
-  MeterFt() {
-    GraphComp.isMeterenabled = !GraphComp.isMeterenabled;
-    return GraphComp.isMeterenabled;
-  }
-
-  isMeterEnabled() {
-    return GraphComp.isMeterenabled;
+  LengthScaleSwitch() {
+    this.isMeterChecked = !this.isMeterChecked;
+    if (!this.isMeterChecked)
+      this.currentLengthScale = this.lengthScaleValues;
+    else
+      this.currentLengthScale = this.lengthScaleValues2;
   }
 
-  rLValsModel: any[] = [
+
+  rlScaleValues = [
     { val: "0dB" },
     { val: "-5" },
     { val: "-10" },
@@ -50,7 +49,7 @@ export class GraphComp {
     { val: "-25" },
     { val: "-30" }
   ]
-  rLVals2Model: any[] = [
+  rlScaleValues2 = [
     { val: "-6dB" },
     { val: "-8" },
     { val: "-10" },
@@ -60,7 +59,9 @@ export class GraphComp {
     { val: "-18" }
   ]
 
-  vswrValsModel: any[] = [
+  currentRlScale: any[] = this.rlScaleValues;
+
+  vswrScaleValues = [
     { val: "" },
     { val: "3.6" },
     { val: "1.9" },
@@ -69,7 +70,7 @@ export class GraphComp {
     { val: "1.1" },
     { val: "1.0" }
   ]
-  vswrVals2Model: any[] = [
+  vswrScaleValues2 = [
     { val: "" },
     { val: "2.4" },
     { val: "1.9" },
@@ -78,18 +79,20 @@ export class GraphComp {
     { val: "1.3" },
     { val: "1.2" }
   ]
+  currentVswrScale: any[] = this.vswrScaleValues;
 
-  meterScaleList: any[] = [
+  lengthScaleValues = [
     { val: "0" },
     { val: "5" },
     { val: "10" },
     { val: "15" }
   ]
 
-  feetScaleList: any[] = [
+  lengthScaleValues2 = [
     { val: "0" },
     { val: "16" },
     { val: "33" },
     { val: "49" }
   ]
+  currentLengthScale: any[] = this.lengthScaleValues;
 }
