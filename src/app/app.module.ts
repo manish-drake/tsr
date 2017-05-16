@@ -62,6 +62,7 @@ import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
 import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
 import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
 import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
+import { AviationHistoryModal } from "../pages/aviation-history-modal/aviation-history-modal";
 
 import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
 import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-selection/mode-selection';
@@ -99,6 +100,7 @@ import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-cont
         ModalIonItemComp,
         AntennaComp,
         AviationCalComp, AviationVSWRComp, AviationLossComp, AviationDtfComp,
+        AviationHistoryModal,
         GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
@@ -119,7 +121,8 @@ import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-cont
         ConfigurationsPopover,
         SetupTestPage,
         HelpPage,
-        GuidePage
+        GuidePage,
+        AviationHistoryModal
     ],
     providers: [
         StatusBar,

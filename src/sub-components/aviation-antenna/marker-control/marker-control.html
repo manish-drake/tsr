@@ -1,19 +1,21 @@
-<ion-row nowrap >
-    <ion-col no-padding padding-left align-self-center text-nowrap 
-    style="font-size: 16px; color: #999999; overflow: hidden;text-overflow: ellipsis; vertical-align: text-center;"
-    (click)="switchControls()">
-        MARKER
-    </ion-col>
-    <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 0">
-        <button ion-button clear no-margin (click)="abc()"><<</button>
-        <button ion-button clear no-margin>>></button>
-    </ion-col>
-    <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 1">
-        <button ion-button clear no-margin>+V</button>
-        <button ion-button clear no-margin>+P</button>
-    </ion-col>
-    <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 2">
-        <button ion-button clear no-margin>+</button>
-        <button ion-button clear no-margin>-</button>
-    </ion-col>
-</ion-row>
+<ion-card no-margin no-padding style="background-color: #F0F0F0; width: 100%; height: 44px;">
+    <ion-grid no-padding style="height:100%;">
+        <ion-row nowrap align-items-stretch style="height:100%;">
+            <ion-col no-padding align-self-stretch text-nowrap style="padding-left: 16px;padding-top: 12px;overflow: hidden;text-overflow: ellipsis;" (click)="switchControls()">
+                <span style="font-size: 16px; color: #444444;">MARKER</span>
+            </ion-col>
+            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 0">
+                <button ion-button clear no-margin><b><<<</b></button>
+                <button ion-button clear no-margin><b>>>></b> </button>
+            </ion-col>
+            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 1">
+                <button ion-button clear no-margin><ion-icon name="arrow-round-up"></ion-icon></button>
+                <button ion-button clear no-margin><ion-icon name="arrow-round-down"></ion-icon></button>
+            </ion-col>
+            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 2">
+                <button ion-button clear no-margin><ion-icon name="add"></ion-icon></button>
+                <button ion-button clear no-margin><ion-icon name="trash"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-card>

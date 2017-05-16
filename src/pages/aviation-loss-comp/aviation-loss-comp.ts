@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from 'ionic-angular';
+import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 
 /**
  * Generated class for the AviationLossCompPage page.
@@ -14,7 +16,8 @@ import { Router } from '@angular/router';
 export class AviationLossComp {
 
   constructor(
-    private _router: Router
+    private _router: Router,
+    private modalCtrl: ModalController
   ) {}
 
   onClose() {
@@ -23,8 +26,9 @@ export class AviationLossComp {
       .catch(err => console.log("Error Closing Detail: " + err));
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AviationLossCompPage');
+  openHistory() {
+    let modal = this.modalCtrl.create(AviationHistoryModal);
+    modal.present();
   }
 
 }

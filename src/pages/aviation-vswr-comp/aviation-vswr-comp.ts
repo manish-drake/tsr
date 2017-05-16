@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from 'ionic-angular';
+import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 
 @Component({
   selector: 'aviation-vswr-comp',
@@ -8,7 +10,8 @@ import { Router } from '@angular/router';
 export class AviationVSWRComp {
 
   constructor(
-    private _router: Router
+    private _router: Router,
+    private modalCtrl: ModalController
   ) { }
 
   onClose() {
@@ -17,11 +20,15 @@ export class AviationVSWRComp {
       .catch(err => console.log("Error Closing Detail: " + err));
   }
 
+  openHistory() {
+    let modal = this.modalCtrl.create(AviationHistoryModal);
+    modal.present();
+  }
+
   isRunning: boolean = false;
 
   onRun() {
     this.isRunning = !this.isRunning;
   }
-
 
 }

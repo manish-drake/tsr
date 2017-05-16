@@ -1,0 +1,37 @@
+<ion-header no-border style="background: #fcfcfc">
+  <ion-row>
+    <ion-col no-padding>
+    </ion-col>
+    <ion-col col-auto no-padding text-center center>
+      <h5>Saved Data</h5>
+    </ion-col>
+    <ion-col no-padding text-right>
+      <button ion-button no-margin icon-only clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content style="background: #fcfcfc">
+  <ion-list radio-group [(ngModel)]="selectedItem">
+    <ion-card *ngFor="let data of dataList" (click)="onItemSelected(data)">
+      <ion-row>
+        <ion-col col-auto align-self-center padding-left>
+          <ion-radio [value]="data"></ion-radio>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <h3 item-left>USER: {{data.user}}</h3>
+            <p item-right>{{data.date}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+<ion-footer no-border style="background: #fcfcfc">
+  <ion-row>
+    <ion-col text-center>
+      <button ion-button clear [disabled]="!selectedItem" (click)="onViewData()"><b>View</b></button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
