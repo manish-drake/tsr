@@ -3,6 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http } from '@angular/http'
+import { AppRoutingModule } from './app.router'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,7 +51,6 @@ import { MasterService } from '../services/test-set/master.service';
 import { UserService } from '../services/test-set/user.service';
 import { ConnectionService } from '../services/test-set/connection.service'
 import { LocalStorage } from '../services/storage/local-storage';
-import { routes } from './app.router';
 import { HomeService } from '../services/ui/home.service';
 import { PopoverService } from '../services/ui/popover.service';
 import { ModalService } from '../services/ui/modal.service';
@@ -106,7 +106,7 @@ import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-cont
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        routes,
+        AppRoutingModule,
         TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
@@ -115,8 +115,8 @@ import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-cont
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp,
         HomePage,
+        MyApp,
         MoreActionsPopover,
         ConfigurationsPopover,
         SetupTestPage,

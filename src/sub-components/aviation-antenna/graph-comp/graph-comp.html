@@ -5,17 +5,19 @@
     <ion-grid>
       <ion-row nowrap>
         <ion-col col-auto>
-          <button ion-button color="light">CABLE LOSS</button>
+          <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">Return Loss</button>
         </ion-col>
         <ion-col>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button color="light">VSWR</button>
+          <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">VSWR</button>
         </ion-col>
       </ion-row>
       <ion-row nowrap>
         <ion-col col-auto align-self-stretch text-right>
-          11
+          <ion-grid>
+            11
+          </ion-grid>
         </ion-col>
         <ion-col>
           <img style="height: 256px; width: 400px;" src="../../assets/graph-back.png" />
@@ -25,8 +27,14 @@
         </ion-col>
       </ion-row>
       <ion-row nowrap>
-        <ion-col margin-horizontal>
+        <ion-col margin-horizontal col-10>
           33
+        </ion-col>
+        <ion-col col-auto>
+          <button ion-button small color="light" *ngIf="isDTFmodeEnabled" (click)="MeterFt()">
+            <span *ngIf="isMeterEnabled()">M</span>
+            <span *ngIf="!isMeterEnabled()">Ft</span>
+          </button>
         </ion-col>
       </ion-row>
     </ion-grid>
