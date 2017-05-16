@@ -1,4 +1,5 @@
-import { RouterModule } from '@angular/router';
+import { NgModule }              from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { TestDetailComp } from '../pages/detail-component/detail';
 import { TestGroupComp } from '../pages/testgroup-component/testgroup';
@@ -13,8 +14,7 @@ import { SetupConnectionComp } from '../pages/setup-connection-component/connect
 import { AntennaComp } from "../pages/antenna-component/antenna";
 import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
 
-export const routes = RouterModule.forRoot([
-    { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
+const appRoutes: Routes = [
     { path: 'testgroup/:name', component: TestGroupComp },
     { path: 'detail/:test/:headername', component: TestDetailComp },
     { path: 'setup/:name', component: SetupComp },
@@ -27,7 +27,14 @@ export const routes = RouterModule.forRoot([
     { path: 'setup-connection/:parent', component: SetupConnectionComp },
 
     { path: 'antenna/:name', component: AntennaComp },
-    { path: 'aviation-vswr/:parent', component: AviationVSWRComp }
+    { path: 'aviation-vswr/:parent', component: AviationVSWRComp }];
 
-
-]);
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}
