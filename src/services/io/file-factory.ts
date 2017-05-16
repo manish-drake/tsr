@@ -42,11 +42,13 @@ export class FileFactory {
 
     createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/): Promise<any> {
         var urlParts = fullPath.split("/");
+        alert("fullPath: " + fullPath + ", parentFullPath: " + parentFullPath);
         if (urlParts.length > 0) {
             var name = urlParts[0];
             if (!parentFullPath)
                 parentFullPath = "file:/storage/emulated/0";
             return this.file.createDir(parentFullPath, name, true).then(success => {
+                alert("Created " + name + " in " + parentFullPath);
                 parentFullPath += "/" + name;
                 if (urlParts.length >= 2) {
                     fullPath = urlParts.slice(1).join("/");
