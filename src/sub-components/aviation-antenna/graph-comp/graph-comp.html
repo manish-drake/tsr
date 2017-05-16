@@ -5,12 +5,12 @@
     <ion-grid>
       <ion-row nowrap>
         <ion-col col-auto>
-          <button ion-button color="light">CABLE LOSS</button>
+          <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">Return Loss</button>
         </ion-col>
         <ion-col>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button color="light">VSWR</button>
+           <button ion-button small (click)="RtVswr()" [color]="isRtVswrclicked() ? 'dark' : 'light' ">VSWR</button>
         </ion-col>
       </ion-row>
       <ion-row nowrap>

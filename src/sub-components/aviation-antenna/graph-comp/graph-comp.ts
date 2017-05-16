@@ -19,5 +19,15 @@ export class GraphComp {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GraphCompPage');
   }
+ static isRtVswrenabled: boolean = false;
+
+ RtVswr() {
+    GraphComp.isRtVswrenabled = !GraphComp.isRtVswrenabled;
+    return GraphComp.isRtVswrenabled;
+  }
+
+  isRtVswrclicked() {
+    return GraphComp.isRtVswrenabled;
+  }
 
 }
