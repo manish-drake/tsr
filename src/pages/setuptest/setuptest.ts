@@ -7,7 +7,9 @@ import { ViewController } from 'ionic-angular';
 })
 export class SetupTestPage {
 
-  constructor(public viewCtrl: ViewController) { }
+  constructor(
+    public viewCtrl: ViewController
+    ) { }
 
   pwrValue: any;
   ionViewDidLoad() {

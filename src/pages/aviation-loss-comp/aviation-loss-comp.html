@@ -3,7 +3,7 @@
         <ion-row nowrap>
             <ion-col no-padding>
                 <button ion-button no-margin icon-only clear><ion-icon name="download"></ion-icon></button>
-                <button ion-button no-margin icon-only clear><ion-icon name="list-box"></ion-icon></button>
+                <button ion-button no-margin icon-only clear (click)="openHistory()"><ion-icon name="list-box"></ion-icon></button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center style="overflow: hidden;text-overflow: ellipsis;">
                 <b style="font-size: 16px;">CABLE LOSS</b><br>
@@ -18,22 +18,19 @@
             </ion-col>
         </ion-row>
         <ion-row style="height: 100%!important;">
-            <ion-scroll scrollY="true" style="width:100%; ">
+            <ion-scroll scrollY="true" style="width:100%;">
                 <graph-comp></graph-comp>
                 <ion-grid>
-                    <ion-row>
-                        <ion-col col-6 style="border: 1px solid red;">
+                    <ion-row align-items-center style="height: 180px;">
+                        <ion-col col-6>
                             <band-selection></band-selection>
                         </ion-col>
-                        <ion-col col-6 style="border: 1px solid red;">
+                        <ion-col col-6>
                             <mode-selection [selectedMode]="'LOSS'"></mode-selection>
                         </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-6 style="border: 1px solid red;">
+                        <ion-col col-6>
                             <marker-control></marker-control>
                         </ion-col>
-                        <ion-col col-6 style="border: 1px solid red;"></ion-col>
                     </ion-row>
                 </ion-grid>
             </ion-scroll>
