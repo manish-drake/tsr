@@ -18,6 +18,13 @@ export class AviationCalComp {
   ) {
   }
 
+  calTypes: any[] = [
+    { name: "SHORT" },
+    { name: "OPEN" },
+    { name: "LOAD" },
+    { name: "THRU" }
+  ]
+
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
       .then(succ => console.log("Detail Closed: " + succ))
