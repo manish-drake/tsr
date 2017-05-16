@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: 'aviation-dtf-comp.html',
 })
 export class AviationDtfComp {
-
+  isDTFmodeEnabled: boolean = true;
   constructor(
     private _router: Router
   ) {
