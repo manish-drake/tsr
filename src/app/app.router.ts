@@ -13,6 +13,9 @@ import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systemi
 import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
 import { AntennaComp } from "../pages/antenna-component/antenna";
 import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
+import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
+import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
+import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
 
 const appRoutes: Routes = [
     { path: 'testgroup/:name', component: TestGroupComp },
@@ -27,7 +30,10 @@ const appRoutes: Routes = [
     { path: 'setup-connection/:parent', component: SetupConnectionComp },
 
     { path: 'antenna/:name', component: AntennaComp },
-    { path: 'aviation-vswr/:parent', component: AviationVSWRComp }];
+    { path: 'aviation-vswr/:parent', component: AviationVSWRComp },
+    { path: 'aviation-cal/:parent', component: AviationCalComp },
+    { path: 'aviation-loss/:parent', component: AviationLossComp },
+    { path: 'aviation-dtf/:parent', component: AviationDtfComp }];
 
 @NgModule({
   imports: [
