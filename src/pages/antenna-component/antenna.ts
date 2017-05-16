@@ -1,7 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HomeService } from '../../services/ui/home.service'
+import { HomeService } from '../../services/ui/home.service';
+import { LocalStorage } from '../../services/storage/local-storage';
 
 @Component({
   selector: 'page-antenna',
@@ -18,6 +19,7 @@ export class AntennaComp {
     private _router: Router,
     private _svcHome: HomeService,
     private content: Content,
+    private _localStorage: LocalStorage
   ) { }
 
   titleName: string;
@@ -36,10 +38,20 @@ export class AntennaComp {
     if (this.clicks == 1) {
       setTimeout(() => {
         if (this.clicks == 2) {
-          this._router.navigate(['aviation-vswr',this.titleName])
+          this.openRequiredAvationMode()
         }
         this.clicks = 0;
       }, 500);
+    }
+  }
+
+  openRequiredAvationMode(){
+    var aviationmode = this._localStorage.GetItem(this._localStorage.keyForAviationMode());
+    if(aviationmode == null || aviationmode == undefined){
+      this._router.navigate(['aviation-cal',this.titleName]);
+    }
+    else{
+      this._router.navigate([aviationmode,this.titleName]);
     }
   }
   

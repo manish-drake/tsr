@@ -58,9 +58,17 @@ import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
 
 import { AntennaComp } from "../pages/antenna-component/antenna";
+import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
 import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
+import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
+import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 
 import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
+import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-selection/mode-selection';
+import { BandSelectionComp} from '../sub-components/aviation-antenna/band-selection/band-selection';
+import { CoaxSelectionComp} from '../sub-components/aviation-antenna/coax-selection/coax-selection';
+import { CalTypeSelectionComp} from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
+import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-control/marker-control';
 
 
 @NgModule({
@@ -90,8 +98,8 @@ import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-co
         PopOverButtonComp,
         ModalIonItemComp,
         AntennaComp,
-        AviationVSWRComp,
-        GraphComp
+        AviationCalComp, AviationVSWRComp, AviationLossComp, AviationDtfComp,
+        GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
         BrowserModule,

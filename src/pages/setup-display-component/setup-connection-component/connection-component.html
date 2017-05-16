@@ -1,0 +1,43 @@
+<ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;">
+    <ion-grid style="height: 100%;">
+        <ion-row>
+            <ion-col no-padding style="width: 50px;flex: 0 0 50px;">
+
+            </ion-col>
+            <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+                <b style="font-size: 16px;">CONNECTION</b><br>
+            </ion-col>
+            <ion-col col-auto no-padding>
+                <button ion-button icon-only clear (click)="onGoBack()"><ion-icon name="close"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+        <ion-scroll padding scrollY="true" style="height:100%;">
+            <table style="width: 100%;" text-nowrap>
+                <tr>
+                    <td padding-right><b>DEFAULT POWER:</b></td>
+                    <td>
+                        <ion-item> 1 dBm</ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>DEFAULT DISTANCE:</b></td>
+                    <td>
+                        <ion-item>25 Ft.</ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>DEFAULT CABLE LOSS:</b></td>
+                    <td>
+                        <ion-item>2.3 dB</ion-item>
+                    </td>
+                </tr>
+                <tr>
+                    <td padding-right><b>UUT ANTENNA GAIN:</b></td>
+                    <td>
+                        <ion-item>0.0 dB</ion-item>
+                    </td>
+                </tr>
+            </table>
+        </ion-scroll>
+    </ion-grid>
+</ion-card>

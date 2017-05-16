@@ -6,7 +6,7 @@
                 <button ion-button no-margin icon-only clear><ion-icon name="list-box"></ion-icon></button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center style="overflow: hidden;text-overflow: ellipsis;">
-                <b style="font-size: 16px;">VSWR</b><br>
+                <b style="font-size: 16px;">DISTANCE TO FAULT</b><br>
             </ion-col>
             <ion-col no-padding>
                 <ion-row>
@@ -23,10 +23,10 @@
                 <ion-grid>
                     <ion-row>
                         <ion-col col-6 style="border: 1px solid red;">
-                            <band-selection></band-selection>
+                            <coax-selection></coax-selection>
                         </ion-col>
                         <ion-col col-6 style="border: 1px solid red;">
-                            <mode-selection [selectedMode]="'VSWR'"></mode-selection>
+                            <mode-selection [selectedMode]="'DTF'"></mode-selection>
                         </ion-col>
                     </ion-row>
                     <ion-row>

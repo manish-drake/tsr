@@ -27,4 +27,8 @@ export class LocalStorage {
         return "tsrcurrentlanguage";
     }
 
+    keyForAviationMode(){
+        return "tsraviationmode";
+    }
+
 }
