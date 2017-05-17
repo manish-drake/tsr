@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the BandSelectionPage page.
@@ -12,7 +12,13 @@ import { Component } from '@angular/core';
 })
 export class BandSelectionComp {
 
-  constructor() {}
+  @Output() onBandSelected = new EventEmitter<any>();
+
+  constructor() { }
+
+  ngAfterViewInit() {
+    this.onBandSelected.emit(this.bands[0]);
+  }
 
   selectedBandIndex: number = 0;
 
@@ -28,11 +34,11 @@ export class BandSelectionComp {
     { name: "FULL", start: 50, stop: 2000, middle: 1025, defaultmarker: 1025 }
   ]
 
-  selectedBand: any = this.bands[0]; 
+  selectedBand: any = this.bands[0];
 
-  onBandChange(ev){
+  onBandChange(ev) {
     this.selectedBand = ev;
-    console.log(JSON.stringify(ev));
+    this.onBandSelected.emit(ev);
   }
 
 }

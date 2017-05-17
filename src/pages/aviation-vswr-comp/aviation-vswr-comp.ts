@@ -14,7 +14,11 @@ export class AviationVSWRComp {
     private modalCtrl: ModalController
   ) { }
 
-  selectedBand: any = { name: "ILS", start: 50, stop: 350, middle: 150, defaultmarker: 150 }
+  selectedBand: any;
+
+  onBandSelected(ev) {
+    this.selectedBand = ev;
+  }
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
