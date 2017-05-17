@@ -15,6 +15,7 @@
   ion-list{
     .item{ background-color: $dark-primary; }
   }
+  
   ion-item{ color: $dark-foreground;background-color: $dark-primary; 
             p { color: $dark-foreground; }
   }
@@ -57,8 +58,17 @@
       text{ fill: $dark-foreground; }
     }    
   }
-  .selectedvehicle{ border: 1px solid #fff; }
+  .selectedvehicle{ border: 1px solid #fff; } 
 
 .battery-fill1{ stop-color: rgb(255,255,255);stop-opacity: 1; }
 .battery-fill2{ stop-color: rgba(255,255,255,0.2);stop-opacity: 1; }
+
+.rtVswrbtnChecked{color: $dark-foreground;background-color: lighten($dark-primary,10%); }
+.rtVswrbtnUnchecked{color: $dark-foreground; background-color: $dark-primary;}
+.meterFtbtn{
+    color: $dark-foreground;background-color: lighten($dark-primary,10%);
+ }
+ .aviationControlscard{
+   color: $dark-foreground;background-color: lighten($dark-primary,10%);
+ }
 }

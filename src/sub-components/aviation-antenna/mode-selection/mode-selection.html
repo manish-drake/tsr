@@ -1,11 +1,11 @@
-<ion-card no-margin style="background-color: #F0F0F0; width: 100%;">
-  <ion-item no-lines no-margin style="background: transparent;">
-    <ion-label style="color: #444444;">MODE:</ion-label>
-    <ion-select [(ngModel)]="selectedMode" (ionChange)="onModeChanged($event)" style="max-width: 100%;">
+<ion-card no-margin style="background-color: transparent; width: 100%;">
+  <ion-item no-lines no-margin style="background: transparent;height:100%;" class="aviationControlscard">
+    <ion-label  class="aviationControlscard">MODE:</ion-label>
+    <ion-select [(ngModel)]="selectedMode" (ionChange)="onModeChanged($event)" class="aviationControlscard" style="max-width: 100%;">
       <ion-option value="CAL">CAL</ion-option>
       <ion-option value="VSWR">VSWR</ion-option>
       <ion-option value="LOSS">LOSS</ion-option>
       <ion-option value="DTF">DTF</ion-option>
-    </ion-select>
+    </ion-select> 
   </ion-item>
 </ion-card>

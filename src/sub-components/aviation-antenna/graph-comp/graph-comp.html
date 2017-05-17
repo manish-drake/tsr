@@ -5,12 +5,12 @@
     <ion-grid>
       <ion-row nowrap>
         <ion-col col-auto>
-          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrScaleChecked ? 'checked' : 'unchecked' ">Return Loss</button>
-        </ion-col>
+          <button ion-button small no-margin (click)="RlVswrScaleSwitch()" class="rtVswrbtnChecked" style="background-color: transparent;">Return Loss</button>
+        </ion-col> 
         <ion-col>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrScaleChecked ? 'checked' : 'unchecked' ">VSWR</button>
+          <button ion-button small no-margin (click)="RlVswrScaleSwitch()" class="rtVswrbtnChecked" style="background-color: transparent;">VSWR</button><!--class="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "-->
         </ion-col>
       </ion-row>
       <ion-row nowrap>
@@ -31,7 +31,7 @@
       <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode" >
         <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale"  >{{obj.val}}</ion-col>
         <ion-col no-padding col-auto >
-          <button ion-button small no-margin color="light" style="width:30px" (click)="LengthScaleSwitch()"> 
+          <button ion-button small no-margin class="meterFtbtn" style="background-color: transparent;width:30px" (click)="LengthScaleSwitch()"> 
            <span *ngIf="!isLengthScaleChecked">M</span>
             <span *ngIf="isLengthScaleChecked">Ft</span>
           </button>

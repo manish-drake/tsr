@@ -1,8 +1,8 @@
-<ion-card no-margin style="background-color: #F0F0F0; width: 100%;">
+<ion-card no-margin style="background-color: transparent; width: 100%;">
   <ion-item no-lines no-margin style="background: transparent;">
     <ion-label style="color: #444444;">BAND:</ion-label>
     <ion-select [(ngModel)]="selectedBandIndex" style="max-width: 100%;">
       <ion-option *ngFor="let band of bands; let i = index" [value]="i">{{band.name}}</ion-option>
     </ion-select>
   </ion-item>
-</ion-card>
+</ion-card> 
