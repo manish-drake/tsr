@@ -16,13 +16,13 @@ export class GraphComp {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  isRlVswrChecked: boolean = false;
-  isMeterChecked: boolean = true;
+  isRlVswrScaleChecked: boolean = false;
+  isLengthScaleChecked: boolean = false;
   isDTFmode: boolean = true;
 
   RlVswrScaleSwitch() {
-    this.isRlVswrChecked = !this.isRlVswrChecked;
-    if (!this.isRlVswrChecked) {
+    this.isRlVswrScaleChecked = !this.isRlVswrScaleChecked;
+    if (!this.isRlVswrScaleChecked) {
       this.currentRlScale = this.rlScaleValues;
       this.currentVswrScale = this.vswrScaleValues;
     }
@@ -32,8 +32,8 @@ export class GraphComp {
     }
   }
   LengthScaleSwitch() {
-    this.isMeterChecked = !this.isMeterChecked;
-    if (!this.isMeterChecked)
+    this.isLengthScaleChecked = !this.isLengthScaleChecked;
+    if (!this.isLengthScaleChecked)
       this.currentLengthScale = this.lengthScaleValues;
     else
       this.currentLengthScale = this.lengthScaleValues2;
