@@ -28,10 +28,10 @@
           </ion-grid>
         </ion-col>
       </ion-row>
-      <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode">
-        <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
+      <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode" >
+        <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale"  >{{obj.val}}</ion-col>
         <ion-col no-padding col-auto >
-          <button ion-button small no-margin color="light" (click)="LengthScaleSwitch()">
+          <button ion-button small no-margin color="light" style="width:30px" (click)="LengthScaleSwitch()"> 
            <span *ngIf="!isLengthScaleChecked">M</span>
             <span *ngIf="isLengthScaleChecked">Ft</span>
           </button>
@@ -41,4 +41,4 @@
   </ion-col>
   <ion-col>
   </ion-col>
-</ion-row>
+</ion-row> 

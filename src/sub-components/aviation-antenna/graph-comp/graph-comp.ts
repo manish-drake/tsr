@@ -13,14 +13,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class GraphComp {
 
- @Input() isDTFmode: boolean = true;
+ @Input() isDTFmode: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
   isRlVswrScaleChecked: boolean = false;
   isLengthScaleChecked: boolean = false;
-  isDTFmode: boolean = true;
 
   RlVswrScaleSwitch() {
     this.isRlVswrScaleChecked = !this.isRlVswrScaleChecked;
@@ -82,8 +80,6 @@ export class GraphComp {
     { val: "1.2" }
   ]
   currentVswrScale: any[] = this.vswrScaleValues;
-
-
 
   lengthScaleValues = [
     { val: "0" },

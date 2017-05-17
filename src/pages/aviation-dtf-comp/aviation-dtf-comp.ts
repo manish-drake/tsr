@@ -14,7 +14,7 @@ import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviatio
   templateUrl: 'aviation-dtf-comp.html',
 })
 export class AviationDtfComp {
-  isDTFmodeEnabled: boolean = true;
+ 
   constructor(
     private _router: Router,
     private modalCtrl: ModalController
