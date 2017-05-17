@@ -28,9 +28,25 @@
           </ion-grid>
         </ion-col>
       </ion-row>
-      <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode" >
-        <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale"  >{{obj.val}}</ion-col>
-        <ion-col no-padding col-auto >
+      <ion-row *ngIf="SelectedBand">
+        <ion-col no-padding col-auto style="width: 55px;">
+        </ion-col>
+        <ion-col no-padding>
+          {{SelectedBand.start}}
+        </ion-col>
+        <ion-col no-padding col-auto text-center>
+          {{SelectedBand.middle}}
+        </ion-col>
+        <ion-col no-padding text-right>
+          {{SelectedBand.stop}}
+        </ion-col>
+        <ion-col no-padding col-auto style="width: 55px;padding-left: 3px;">
+           MHz
+        </ion-col>
+      </ion-row>
+      <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode">
+        <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
+        <ion-col no-padding col-auto>
           <button ion-button small no-margin color="light" style="width:30px" (click)="LengthScaleSwitch()"> 
            <span *ngIf="!isLengthScaleChecked">M</span>
             <span *ngIf="isLengthScaleChecked">Ft</span>
@@ -41,4 +57,4 @@
   </ion-col>
   <ion-col>
   </ion-col>
-</ion-row> 
+</ion-row>

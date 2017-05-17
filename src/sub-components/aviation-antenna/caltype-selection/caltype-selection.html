@@ -1,7 +1,7 @@
 <ion-card no-margin style="background-color: #F0F0F0; width: 100%;">
   <ion-item no-lines no-margin style="background: transparent;">
     <ion-label  style="color: #444444;">TYPE:</ion-label>
-    <ion-select [(ngModel)]="selectedTypeIndex" style="max-width: 100%;">
+    <ion-select interface="popover" [(ngModel)]="selectedTypeIndex" style="max-width: 100%;">
       <ion-option *ngFor="let calType of calTypes;let i = index" [value]="i">{{calType.name}}</ion-option>
     </ion-select>
   </ion-item>

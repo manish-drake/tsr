@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the GraphCompPage page.
@@ -13,9 +12,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class GraphComp {
 
- @Input() isDTFmode: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  @Input() isDTFmode: boolean;
+
+  @Input() SelectedBand: any;
+
+
+  constructor() { }
+
+
 
   isRlVswrScaleChecked: boolean = false;
   isLengthScaleChecked: boolean = false;

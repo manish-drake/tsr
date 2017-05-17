@@ -28,4 +28,11 @@ export class BandSelectionComp {
     { name: "FULL", start: 50, stop: 2000, middle: 1025, defaultmarker: 1025 }
   ]
 
+  selectedBand: any = this.bands[0]; 
+
+  onBandChange(ev){
+    this.selectedBand = ev;
+    console.log(JSON.stringify(ev));
+  }
+
 }
