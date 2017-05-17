@@ -69,6 +69,13 @@
     color: $dark-foreground;background-color: lighten($dark-primary,10%);
  }
  .aviationControlscard{
-   color: $dark-foreground;background-color: lighten($dark-primary,10%);
+   color: $dark-foreground; background-color: lighten($dark-primary,10%);
  }
+ion-card{
+  .item{
+    color: $dark-foreground; background-color: lighten($dark-primary,10%);
+    ion-label{color: $dark-foreground;}
+  }
+}
+.aviCalbtn{color: $dark-foreground; background-color: lighten($dark-primary,10%);}
 }

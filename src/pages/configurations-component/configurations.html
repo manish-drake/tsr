@@ -6,7 +6,7 @@
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select style="max-width: 100%;" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
+                            <ion-select interface="popover" style="max-width: 100%;" placeholder="None selected" [selectOptions]="userSelectOptions" [(ngModel)]="selectedUser"
                                 (ionChange)="onUserChanged($event)">
                                 <ion-option *ngFor="let user of availableUsers" [value]="user">{{user.name}}</ion-option>
                             </ion-select>
@@ -24,7 +24,7 @@
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select style="max-width: 100%" placeholder="None selected" [selectOptions]="languageSelectOptions" [(ngModel)]="currentLanguage"
+                            <ion-select interface="popover" style="max-width: 100%" placeholder="None selected" [selectOptions]="languageSelectOptions" [(ngModel)]="currentLanguage"
                                 (ionChange)="onLanguageChanged($event)">
                                 <ion-option *ngFor="let language of availableLanguages" [value]="language">{{language.title}}</ion-option>
                             </ion-select>
@@ -38,7 +38,7 @@
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select no-padding padding-horizontal style="max-width:100%;" placeholder="None selected" [(ngModel)]="connectedDevice"
+                            <ion-select interface="popover" no-padding padding-horizontal style="max-width:100%;" placeholder="None selected" [(ngModel)]="connectedDevice"
                                 [selectOptions]="deviceSelectOptions" (ionChange)="onDeviceChanged($event)">
                                 <ion-option *ngFor="let device of availableDevices" [value]="device">{{device.name}}</ion-option>
                             </ion-select>
@@ -51,7 +51,7 @@
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select ngModel="AC82EC" style="max-width: 100%">
+                            <ion-select interface="popover" ngModel="AC82EC" style="max-width: 100%">
                                 <ion-option value="AC82EC">AC82EC</ion-option>
                             </ion-select>
                         </ion-item>
@@ -75,7 +75,7 @@
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
-                            <ion-select ngModel="Port A Antenna" style="max-width: 100%">
+                            <ion-select interface="popover" ngModel="Port A Antenna" style="max-width: 100%">
                                 <ion-option value="Port A Antenna">Port A Antenna</ion-option>
                             </ion-select>
                         </ion-item>

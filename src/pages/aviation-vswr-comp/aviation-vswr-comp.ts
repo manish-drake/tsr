@@ -14,6 +14,12 @@ export class AviationVSWRComp {
     private modalCtrl: ModalController
   ) { }
 
+  selectedBand: any;
+
+  onBandSelected(ev) {
+    this.selectedBand = ev;
+  }
+
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
       .then(succ => console.log("Detail Closed: " + succ))
