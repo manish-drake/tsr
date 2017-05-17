@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -13,12 +13,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class GraphComp {
 
+ @Input() isDTFmode: boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   isRlVswrChecked: boolean = false;
   isMeterChecked: boolean = true;
-  isDTFmode: boolean = true;
 
   RlVswrScaleSwitch() {
     this.isRlVswrChecked = !this.isRlVswrChecked;
@@ -80,6 +80,8 @@ export class GraphComp {
     { val: "1.2" }
   ]
   currentVswrScale: any[] = this.vswrScaleValues;
+
+
 
   lengthScaleValues = [
     { val: "0" },

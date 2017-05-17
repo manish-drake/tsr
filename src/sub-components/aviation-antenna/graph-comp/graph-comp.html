@@ -14,9 +14,9 @@
         </ion-col>
       </ion-row>
       <ion-row nowrap>
-        <ion-col col-auto align-self-stretch >
+        <ion-col col-auto align-self-stretch>
           <ion-grid>
-            <ion-row style=" width:30px;height:36.5px;" *ngFor="let obj of currentRlScale" >{{obj.val}}</ion-row>
+            <ion-row style=" width:30px;height:36.5px;" *ngFor="let obj of currentRlScale">{{obj.val}}</ion-row>
           </ion-grid>
         </ion-col>
         <ion-col>
@@ -28,14 +28,10 @@
           </ion-grid>
         </ion-col>
       </ion-row>
-      <ion-row nowrap nopadding nomargin >
-        <ion-col >
-          <ion-row text-right >
-            <ion-col *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
-          </ion-row>
-        </ion-col>
-        <ion-col col-auto>
-          <button ion-button small color="light" *ngIf="isDTFmode" (click)="LengthScaleSwitch()">
+      <ion-row nowrap nopadding nomargin text-right *ngIf="isDTFmode">
+        <ion-col no-padding align-self-center *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
+        <ion-col no-padding col-auto >
+          <button ion-button small no-margin color="light" (click)="LengthScaleSwitch()">
             <span *ngIf="isMeterenabled">M</span>
             <span *ngIf="!isMeterenabled">Ft</span>
           </button>
