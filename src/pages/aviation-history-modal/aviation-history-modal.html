@@ -30,8 +30,13 @@
 </ion-content>
 <ion-footer no-border style="background: #fcfcfc">
   <ion-row>
-    <ion-col text-center>
-      <button ion-button clear [disabled]="!selectedItem" (click)="onViewData()"><b>View</b></button>
+    <ion-col no-padding align-self-center>
+      <button ion-button clear icon-only color="danger" [hidden]="!selectedItem"><ion-icon name="trash"></ion-icon></button>
+    </ion-col>
+    <ion-col align-self-center text-center>
+      <button ion-button small [disabled]="!selectedItem" (click)="onViewData()"><b>View</b></button>
+    </ion-col>
+    <ion-col align-self-center>
     </ion-col>
   </ion-row>
 </ion-footer>
