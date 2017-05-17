@@ -63,8 +63,8 @@
 .battery-fill1{ stop-color: rgb(255,255,255);stop-opacity: 1; }
 .battery-fill2{ stop-color: rgba(255,255,255,0.2);stop-opacity: 1; }
 
-.rtVswrbtnChecked{color: $dark-foreground;background-color: lighten($dark-primary,10%); }
-.rtVswrbtnUnchecked{color: $dark-foreground; background-color: $dark-primary;}
+.rtVswrbtnChecked{color: $dark-foreground; background-color: lighten($dark-primary,4%);}
+.rtVswrbtnUnchecked{color: $dark-foreground;background-color: lighten($dark-primary,10%); }
 .meterFtbtn{
     color: $dark-foreground;background-color: lighten($dark-primary,10%);
  }

@@ -5,12 +5,12 @@
     <ion-grid>
       <ion-row nowrap>
         <ion-col col-auto>
-          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrScaleChecked ? 'checked' : 'unchecked' " style="height:30px; width: 70px; font-size: 12px;">Return<br/>Loss</button>
+          <button ion-button small (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' " style="height:30px; width: 70px; font-size: 12px">Return<br/>Loss</button>
         </ion-col>
         <ion-col>
         </ion-col>
         <ion-col col-auto>
-          <button ion-button small (click)="RlVswrScaleSwitch()" [color]="isRlVswrScaleChecked ? 'checked' : 'unchecked' " style="height:30px; width: 70px; font-size: 12px;">VSWR</button>
+          <button ion-button small (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' " style="height:30px; width: 70px; font-size: 12px;">VSWR</button>
         </ion-col>
       </ion-row>
       <ion-row nowrap>
@@ -66,7 +66,7 @@
           </ion-row>
         </ion-col>
         <ion-col no-padding style="position: absolute;" text-right>
-          <button ion-button no-margin small text-capitalize color="light" (click)="LengthScaleSwitch()"> 
+          <button ion-button no-margin small text-capitalize color="light" class="meterFtbtn" (click)="LengthScaleSwitch()"> 
            <span *ngIf="!isLengthScaleChecked">M</span>
             <span *ngIf="isLengthScaleChecked">Ft</span>
           </button>
