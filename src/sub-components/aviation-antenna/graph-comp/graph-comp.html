@@ -1,7 +1,7 @@
 <ion-row style="height: 400px;">
   <ion-col no-padding>
   </ion-col>
-  <ion-col no-padding col-auto>
+  <ion-col no-padding col-auto padding-top>
     <ion-row nowrap>
       <ion-col col-auto>
         <button ion-button small (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
@@ -24,11 +24,9 @@
       </ion-col>
       <ion-col no-padding>
         <ion-row style="height: 30px;">
-          <!--<ion-col no-padding>
-              <svg viewBox="0 0 30 2000">
-                <text x="0" y="0">0 deg</text>
-              </svg>
-            </ion-col>-->
+          <ion-col no-padding align-self-end *ngIf="SelectedBand">
+            <input type="range" style="width: 100%;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
+          </ion-col>
         </ion-row>
         <ion-row>
           <img style="height: 256px; width: 400px;" src="../../../assets/graph-back.png" />

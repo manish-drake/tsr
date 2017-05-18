@@ -20,7 +20,6 @@ export class GraphComp {
   constructor() { }
 
 
-
   isRlVswrScaleChecked: boolean = false;
   isLengthScaleChecked: boolean = false;
 
