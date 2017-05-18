@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the MarkerControlPage page.
@@ -11,6 +11,8 @@ import { Component } from '@angular/core';
   templateUrl: 'marker-control.html',
 })
 export class MarkerControlComp {
+
+  @Output() onMarkerAction = new EventEmitter<string>();
 
   constructor() { }
 
@@ -30,8 +32,9 @@ export class MarkerControlComp {
     }
   }
 
-  abe(){
-    
+  markerAction(e) {
+    this.onMarkerAction.emit(e);
   }
+
 
 }

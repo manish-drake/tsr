@@ -14,15 +14,12 @@ export class GraphComp {
 
   @Input() isDTFmode: boolean;
   @Input() isCalmode: boolean;
+
   @Input() SelectedBand: any;
+  @Input() markers: any[];
 
 
   constructor() { }
-
-  markers: any[] = [
-    {},
-    {}
-  ]
 
 
   isRlVswrScaleChecked: boolean = false;

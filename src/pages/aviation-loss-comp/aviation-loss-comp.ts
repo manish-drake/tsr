@@ -18,7 +18,9 @@ export class AviationLossComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController
-  ) {}
+  ) { }
+
+  markers: any[] = [{ defaultmarker: 0 }]
 
   selectedBand: any;
 
@@ -35,6 +37,16 @@ export class AviationLossComp {
   openHistory() {
     let modal = this.modalCtrl.create(AviationHistoryModal);
     modal.present();
+  }
+
+  onMarkerAction2(ev) {
+    console.log(ev);
+    switch (ev) {
+      case "add":
+        this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, defaultmarker: this.selectedBand.start });
+      case "remove":
+        this.markers.splice(this.markers.length - 1, 1);
+    }
   }
 
 }
