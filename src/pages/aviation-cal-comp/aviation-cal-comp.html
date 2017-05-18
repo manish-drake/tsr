@@ -24,11 +24,11 @@
                         <ion-row>
                             <ion-col no-padding> 
                             </ion-col>
-                            <ion-col no-margin no-padding col-auto style="border: 1px solid red">
-                                <ion-grid no-padding style="border: 1px solid red">
-                                    <ion-row no-padding style="height: 210px; width: 380px;border: 1px solid red">
-                                        <ion-col col-6 no-padding style="border: 1px solid red" *ngFor="let calType of calTypes">
-                                            <ion-card style="height: 100px;" color="primary">
+                            <ion-col no-margin no-padding col-9 col-sm-7 col-md-5 col-lg-4 col-xl-3>
+                                <ion-grid no-padding>
+                                    <ion-row style="height: 210px;">
+                                        <ion-col col-6 *ngFor="let calType of calTypes">
+                                            <ion-card style="height: 80px; background-size:100%;" color="primary">
                                                 <ion-row style="height:100%;">
                                                     <ion-col align-self-center text-center>
                                                         {{calType.name}}
@@ -41,7 +41,6 @@
                             </ion-col>
                             <ion-col no-padding>
                             </ion-col>
-
                         </ion-row>
                     </ion-grid>
                 </ion-row>
