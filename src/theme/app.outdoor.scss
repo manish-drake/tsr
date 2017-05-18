@@ -78,4 +78,6 @@ ion-card{
   }
 }
 .aviCalbtn{color: $dark-foreground; background-color: lighten($dark-primary,10%);}
+.selectedCalType{color: $dark-foreground; background-color: lighten($dark-primary,10%);}
+.unSelectedCalType{color: $dark-foreground; background-color: $dark-primary;}
 }

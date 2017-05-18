@@ -18,15 +18,15 @@
             <ion-scroll scrollY="true" style="width:100%; ">
                 <ion-row style="position: relative;">
                     <ion-col no-padding>
-                        <graph-comp></graph-comp>
+                        <graph-comp [isCalmode]="true"></graph-comp>
                     </ion-col>
-                    <ion-col style="position: absolute;margin-top:110px;">
+                    <ion-col style="position: absolute;margin-top:118px;">
                         <ion-row>
                             <ion-col no-padding></ion-col>
                             <ion-col col-auto no-padding>
                                 <ion-row style="height: 210px; margin-left:40px;margin-right:40px;">
-                                    <ion-col no-padding col-6 *ngFor="let calType of calTypes">
-                                        <ion-card style="height: 80px; " color="primary">
+                                    <ion-col no-padding col-6 *ngFor="let calType of calTypes; let i = index;">
+                                        <ion-card style="height: 80px; margin-right:10px; margin-left:10px;" [class]="selectedType == calType ? 'selectedCalType' : 'unSelectedCalType'">
                                             <ion-row style="height:100%;">
                                                 <ion-col align-self-center text-center>
                                                     {{calType.name}}
@@ -44,7 +44,7 @@
                 <ion-grid>
                     <ion-row align-items-center style="height: 180px;">
                         <ion-col col-6>
-                            <caltype-selection></caltype-selection>
+                            <caltype-selection [calTypes]="calTypes" [selectedType]="selectedType" (onTypeChanged)="onTypeChanged($event)"></caltype-selection>
                         </ion-col>
                         <ion-col col-6>
                             <mode-selection [selectedMode]="'CAL'"></mode-selection>
@@ -68,7 +68,7 @@
                 <button ion-button icon-only outline class="playbutton" (click)="onRun()">
                                 <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
                                 <ion-icon name="square" *ngIf="isRunning"></ion-icon>
-                           </button>
+                </button>
             </ion-col>
         </ion-row>
     </ion-grid>

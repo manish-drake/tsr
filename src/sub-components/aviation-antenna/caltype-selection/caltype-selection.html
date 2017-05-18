@@ -1,8 +1,8 @@
 <ion-card no-margin style="width: 100%;">
   <ion-item no-lines no-margin> 
     <ion-label>TYPE:</ion-label>
-    <ion-select interface="popover" [(ngModel)]="selectedTypeIndex" style="max-width: 100%;">
-      <ion-option *ngFor="let calType of calTypes;let i = index" [value]="i">{{calType.name}}</ion-option>
+    <ion-select interface="popover" (ionChange)="onTypeChange($event)" [(ngModel)]="selectedType" style="max-width: 100%;">
+      <ion-option *ngFor="let calType of calTypes;let i = index" [value]="calType">{{calType.name}}</ion-option>
     </ion-select>
   </ion-item>
 </ion-card>

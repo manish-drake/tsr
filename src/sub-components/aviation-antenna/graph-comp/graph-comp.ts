@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
 export class GraphComp {
 
   @Input() isDTFmode: boolean;
-
+  @Input() isCalmode: boolean;
   @Input() SelectedBand: any;
 
 

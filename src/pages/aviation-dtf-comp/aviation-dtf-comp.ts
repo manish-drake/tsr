@@ -18,8 +18,7 @@ export class AviationDtfComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController
-  ) {
-  }
+  ) { }
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
