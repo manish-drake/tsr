@@ -25,7 +25,7 @@
       <ion-col no-padding>
         <ion-row style="height: 32px;">
           <ion-col no-padding *ngIf="SelectedBand" style="position: relative;">
-            <input *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
+            <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
           </ion-col>
         </ion-row>
         <ion-row>

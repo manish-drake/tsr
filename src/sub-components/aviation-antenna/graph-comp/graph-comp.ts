@@ -19,10 +19,7 @@ export class GraphComp {
 
   constructor() { }
 
-  markers: any[] = [
-    {},
-    {}
-  ]
+  markers: any[] = [{}]
 
 
   isRlVswrScaleChecked: boolean = false;
