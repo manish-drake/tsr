@@ -19,6 +19,11 @@ export class GraphComp {
 
   constructor() { }
 
+  markers: any[] = [
+    {},
+    {}
+  ]
+
 
   isRlVswrScaleChecked: boolean = false;
   isLengthScaleChecked: boolean = false;

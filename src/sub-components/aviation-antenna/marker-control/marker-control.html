@@ -4,15 +4,15 @@
             <ion-col no-padding align-self-stretch text-nowrap style="padding-left: 16px;padding-top: 12px;overflow: hidden;text-overflow: ellipsis;" (click)="switchControls()">
                 <span style="font-size: 16px;">MARKER</span>
             </ion-col>
-            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 0">
+            <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 0">
                 <button ion-button clear no-margin><b><<<</b></button>
                 <button ion-button clear no-margin><b>>>></b> </button>
             </ion-col>
-            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 1">
+            <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 1">
                 <button ion-button clear no-margin><ion-icon name="arrow-round-up"></ion-icon></button>
                 <button ion-button clear no-margin><ion-icon name="arrow-round-down"></ion-icon></button>
             </ion-col>
-            <ion-col no-padding col-auto align-self-center *ngIf="controlsIndex == 2">
+            <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 2">
                 <button ion-button clear no-margin><ion-icon name="add"></ion-icon></button>
                 <button ion-button clear no-margin><ion-icon name="trash"></ion-icon></button>
             </ion-col>

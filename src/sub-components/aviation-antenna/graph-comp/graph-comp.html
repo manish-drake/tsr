@@ -14,6 +14,10 @@
           style="height:30px; width: 70px; font-size: 12px;">VSWR</button>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+    </ion-row>
     <ion-row nowrap>
       <ion-col col-auto align-self-stretch>
         <ion-row style=" width:30px;height: 41px;" *ngFor="let obj of currentRlScale">
@@ -23,9 +27,9 @@
         </ion-row>
       </ion-col>
       <ion-col no-padding>
-        <ion-row style="height: 30px;">
-          <ion-col no-padding align-self-end *ngIf="SelectedBand">
-            <input type="range" style="width: 100%;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
+        <ion-row style="height: 25px;">
+          <ion-col no-padding *ngIf="SelectedBand" style="position: relative;">
+            <input *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
           </ion-col>
         </ion-row>
         <ion-row>
@@ -42,7 +46,7 @@
     </ion-row>
     <ion-row style="height: 12px;">
     </ion-row>
-    <ion-row *ngIf="SelectedBand" align-items-center style="height: 30px;">
+    <ion-row nowrap *ngIf="SelectedBand" align-items-center style="height: 30px;">
       <ion-col no-padding col-auto style="width: 45px;">
       </ion-col>
       <ion-col no-padding>
