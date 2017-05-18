@@ -28,7 +28,7 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
- 
+  none:       transparent,
 );
 
 
@@ -37,6 +37,7 @@ $white: #ffffff;
 $light-primary: #387ef5;
 $light-background: #f4f4f4;
 $light-foreground: #000000;
+$light-gray:#f0f0f0;
 // outdoor
 $dark-primary: #324760;
 $dark-background: #3F5979;
