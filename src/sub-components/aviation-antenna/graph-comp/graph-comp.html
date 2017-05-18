@@ -24,8 +24,11 @@
       </ion-col>
       <ion-col no-padding>
         <ion-row style="height: 32px;">
-          <ion-col no-padding *ngIf="SelectedBand" style="position: relative;">
+          <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
             <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
+          </ion-col>
+          <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
+            <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="marker.min" [attr.max]="marker.max" step="0.1" [attr.value]="marker.val" />
           </ion-col>
         </ion-row>
         <ion-row>

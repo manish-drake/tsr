@@ -13,13 +13,11 @@ import { Component, Input } from '@angular/core';
 export class GraphComp {
 
   @Input() isDTFmode: boolean;
-
   @Input() SelectedBand: any;
+  @Input() markers: any[];
 
 
   constructor() { }
-
-  markers: any[] = [{}]
 
 
   isRlVswrScaleChecked: boolean = false;

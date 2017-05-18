@@ -14,6 +14,8 @@ export class AviationVSWRComp {
     private modalCtrl: ModalController
   ) { }
 
+  markers: any[] = [{ defaultmarker: 0 }]
+
   selectedBand: any;
 
   onBandSelected(ev) {
@@ -35,6 +37,16 @@ export class AviationVSWRComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
+  }
+
+  onMarkerAction1(ev) {
+    console.log(ev);
+    switch (ev) {
+      case "add":
+        this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, defaultmarker: this.selectedBand.start });
+      case "remove":
+        this.markers.splice(this.markers.length - 1, 1);
+    }
   }
 
 }

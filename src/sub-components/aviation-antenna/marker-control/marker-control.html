@@ -13,8 +13,8 @@
                 <button ion-button clear no-margin><ion-icon name="arrow-round-down"></ion-icon></button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 2">
-                <button ion-button clear no-margin><ion-icon name="add"></ion-icon></button>
-                <button ion-button clear no-margin><ion-icon name="trash"></ion-icon></button>
+                <button ion-button clear no-margin (click)="markerAction('add')"><ion-icon name="add"></ion-icon></button>
+                <button ion-button clear no-margin (click)="markerAction('remove')"><ion-icon name="trash"></ion-icon></button>
             </ion-col>
         </ion-row>
     </ion-grid>
