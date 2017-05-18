@@ -31,4 +31,12 @@
 
    .battery-fill1{ stop-color: rgb(0,0,0);stop-opacity: 1; }
    .battery-fill2{ stop-color: rgba(0,0,0,0.2);stop-opacity: 1; }
+   .aviationControlscard{color: $light-foreground; background-color: $light-gray;}
+    ion-card{
+      .item{
+        color: $light-foreground; background-color: $light-gray;
+        ion-label{color: $light-foreground;}
+      }
+    }
+    .aviCalbtn{color: $light-foreground; background-color: $light-gray;} 
 }
