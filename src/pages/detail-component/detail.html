@@ -4,17 +4,17 @@
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
             <ion-grid style="height: 100%;">
                 <ion-row>
-                    <ion-col col-auto no-padding>
+                    <ion-col col-auto no-padding align-self-center>
                         <button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
                     </ion-col>
-                    <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+                    <ion-col text-center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
                         <b style="font-size: 16px;"> {{testName}} </b><br>
                         <!--<b style="font-size: 16px;"> {{test.name}} </b><br>-->
 
                         <div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1" [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
                             style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
                     </ion-col>
-                    <ion-col col-auto no-padding>
+                    <ion-col col-auto no-padding no-padding align-self-center>
                         <button ion-button icon-only clear (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
                     </ion-col>
                 </ion-row>
@@ -32,23 +32,21 @@
                         <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
                     </ion-scroll>
                 </ion-row>
-                <ion-row style="height: 80px;">
+                <ion-row style="height: 75px;">
                     <ion-col no-padding align-self-center>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
-                    </ion-col>
-                    <ion-col no-padding col-auto>
-                        <ion-fab bottom center no-margin>
-                            <button ion-fab no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
-                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
-                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
-                           </button>
-                        </ion-fab>
                     </ion-col>
                     <ion-col no-padding align-self-center text-right>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
+            <ion-fab bottom center no-margin>
+                <button ion-fab no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
+                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
+                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
+                           </button>
+            </ion-fab>
         </ion-card>
     </ion-slide>
 </ion-slides>

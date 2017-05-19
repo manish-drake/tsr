@@ -49,4 +49,10 @@ export class AviationLossComp {
     }
   }
 
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
+  }
+
 }

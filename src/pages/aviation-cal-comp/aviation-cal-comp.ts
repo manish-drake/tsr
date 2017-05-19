@@ -42,4 +42,10 @@ export class AviationCalComp {
     this.selectedType = ev;
     console.log(JSON.stringify(ev));
   }
+
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
+  }
 }

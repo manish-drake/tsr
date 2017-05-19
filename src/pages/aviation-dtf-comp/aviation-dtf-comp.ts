@@ -43,4 +43,10 @@ export class AviationDtfComp {
         this.markers.splice(this.markers.length - 1, 1);
     }
   }
+
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
+  }
 }
