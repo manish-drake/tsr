@@ -21,7 +21,7 @@ export class AviationDtfComp {
   ) {
   }
 
-  markers: any[] = [{ min: 0, max: 15, val: 0 }];
+  markers: any[] = [{ min: 0, max: 15, val: 0 },{ min: 0, max: 15, val: 0 }];
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
