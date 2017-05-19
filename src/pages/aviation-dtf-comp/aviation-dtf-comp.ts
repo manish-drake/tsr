@@ -20,7 +20,7 @@ export class AviationDtfComp {
     private modalCtrl: ModalController
   ) { }
 
-  markers: any[] = [{ min: 0, max: 15, val: 0 }];
+  markers: any[] = [{ min: 0, max: 15, markerval: 0 }];
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
@@ -37,10 +37,31 @@ export class AviationDtfComp {
     console.log(ev);
     switch (ev) {
       case "add":
-        this.markers.push({ min: 0, max: 15, val: 0 });
-        console.log(JSON.stringify(this.markers));
+        if (this.markers.length < 4) {
+          this.markers.push({ min: 0, max: 15, val: 0 });
+        }
+        break;
       case "remove":
-        this.markers.splice(this.markers.length - 1, 1);
+        if (this.markers.length > 1) {
+          this.markers.splice(this.markers.length - 1, 1);
+        }
+        break;
+      case "increase":
+        if (this.markers[0].markerval < 15) {
+          this.markers[0].markerval = this.markers[0].markerval + 1;
+        }
+        break;
+      case "decrease":
+        if (this.markers[0].markerval > 0) {
+          this.markers[0].markerval = this.markers[0].markerval - 1;
+        }
+        break
     }
+  }
+
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
   }
 }

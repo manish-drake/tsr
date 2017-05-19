@@ -14,12 +14,13 @@ export class AviationVSWRComp {
     private modalCtrl: ModalController
   ) { }
 
-  markers: any[] = [{ defaultmarker: 0 }]
+  markers: any[] = [{ markerval: 0 }]
 
   selectedBand: any;
 
   onBandSelected(ev) {
     this.selectedBand = ev;
+    this.markers[0].markerval = ev.markerval;
   }
 
   onClose() {
@@ -40,12 +41,27 @@ export class AviationVSWRComp {
   }
 
   onMarkerAction1(ev) {
-    console.log(ev);
     switch (ev) {
       case "add":
-        this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, defaultmarker: this.selectedBand.start });
+        if (this.markers.length < 4) {
+          this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, markerval: this.selectedBand.start });
+        }
+        break;
       case "remove":
-        this.markers.splice(this.markers.length - 1, 1);
+        if (this.markers.length > 1) {
+          this.markers.splice(this.markers.length - 1, 1);
+        }
+        break;
+      case "increase":
+        if (this.markers[0].markerval < this.selectedBand.stop) {
+          this.markers[0].markerval = this.markers[0].markerval + 1;
+        }
+        break;
+      case "decrease":
+        if (this.markers[0].markerval > this.selectedBand.start) {
+          this.markers[0].markerval = this.markers[0].markerval - 1;
+        }
+        break
     }
   }
 

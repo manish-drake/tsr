@@ -12,17 +12,17 @@ import { Router } from '@angular/router';
   templateUrl: 'aviation-cal-comp.html',
 })
 export class AviationCalComp {
-  
+
   constructor(
     private _router: Router
   ) {
   }
 
   calTypes: any[] = [
-    { name: "SHORT" },
-    { name: "OPEN" },
-    { name: "LOAD" },
-    { name: "THRU" }
+    { name: "SHORT", status: "UNCAL", date: "--/--/--" },
+    { name: "OPEN", status: "UNCAL", date: "--/--/--" },
+    { name: "LOAD", status: "UNCAL", date: "--/--/--" },
+    { name: "THRU", status: "UNCAL", date: "--/--/--" }
   ]
 
 
@@ -36,10 +36,20 @@ export class AviationCalComp {
     console.log('ionViewDidLoad AviationCalCompPage');
   }
 
-  selectedType:any=this.calTypes[0];
-  
+  selectedType: any = this.calTypes[0];
+
   onTypeChanged(ev) {
     this.selectedType = ev;
     console.log(JSON.stringify(ev));
+  }
+
+  onTypeCardSelected(e) {
+    this.selectedType = e;
+  }
+
+  isRunning: boolean = false;
+
+  onRun() {
+    this.isRunning = !this.isRunning;
   }
 }

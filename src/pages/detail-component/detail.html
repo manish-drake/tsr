@@ -4,49 +4,47 @@
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
             <ion-grid style="height: 100%;">
                 <ion-row>
-                    <ion-col col-auto no-padding>
+                    <ion-col col-auto no-padding align-self-center>
                         <button ion-button icon-only clear (click)="changeView()"><ion-icon name="{{nextViewIcon}}"></ion-icon></button>
                     </ion-col>
-                    <ion-col no-padding text-center center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
+                    <ion-col text-center text-nowrap style="overflow: hidden;text-overflow: ellipsis;">
                         <b style="font-size: 16px;"> {{testName}} </b><br>
                         <!--<b style="font-size: 16px;"> {{test.name}} </b><br>-->
 
                         <div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1" [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
                             style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
                     </ion-col>
-                    <ion-col col-auto no-padding>
+                    <ion-col col-auto no-padding no-padding align-self-center>
                         <button ion-button icon-only clear (click)="onNavigate('close')"><ion-icon name="close"></ion-icon></button>
                     </ion-col>
                 </ion-row>
                 <ion-row style="height: 100%!important;">
+                    <ion-col text-center align-self-center style="color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
+                        <ion-label>No aircraft/vehicle selected</ion-label>
+                    </ion-col>
                     <ion-scroll scrollY="true" style="width:100%; ">
-                        <ion-row center style="height:100%;color: gray" *ngIf="!selectedVehicle && test.name != 'Filter A/V Target'">
-                            <ion-col text-center center>
-                                <ion-label>No aircraft/vehicle selected</ion-label>
-                            </ion-col>
-                        </ion-row>
                         <detail-vehicles *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"
                             (onVehicleSelected)="onVehicleSelect($event)"></detail-vehicles>
-                            <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
-                            <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
-                            <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
+                        <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
+                        <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
+                        <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
                     </ion-scroll>
                 </ion-row>
-                <ion-row>
-                    <ion-col col-auto no-padding bottom>
+                <ion-row style="height: 75px;">
+                    <ion-col no-padding align-self-center>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
                     </ion-col>
-                    <ion-col center text-center style="width: 100%;">
-                        <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
-                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
-                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
-                           </button>
-                    </ion-col>
-                    <ion-col col-auto no-padding bottom text-right>
+                    <ion-col no-padding align-self-center text-right>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
+            <ion-fab bottom center no-margin>
+                <button ion-fab no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
+                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
+                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
+                           </button>
+            </ion-fab>
         </ion-card>
     </ion-slide>
 </ion-slides>

@@ -5,13 +5,13 @@
     <ion-row nowrap>
       <ion-col col-auto>
         <button ion-button small [disabled]="isCalmode" (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
-          style="height:30px; width: 70px; font-size: 12px">Return<br/>Loss</button>
+          style="height:32px; width: 60px; font-size: 12px">Return<br/>Loss</button>
       </ion-col>
       <ion-col>
       </ion-col>
       <ion-col col-auto>
         <button ion-button small [disabled]="isCalmode" (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
-          style="height:30px; width: 70px; font-size: 12px;">VSWR</button>
+          style="height:32px; width: 60px; font-size: 12px;">VSWR</button>
       </ion-col>
     </ion-row>
     <ion-row nowrap>
@@ -25,10 +25,10 @@
       <ion-col no-padding>
         <ion-row style="height: 32px;">
           <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
-            <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="SelectedBand.defaultmarker" />
+            <input #inputrange *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="SelectedBand.start" [attr.max]="SelectedBand.stop" step="1" [attr.value]="marker.markerval" />
           </ion-col>
           <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
-            <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="marker.min" [attr.max]="marker.max" step="0.1" [attr.value]="marker.val" />
+            <input name="sldr" *ngFor="let marker of markers" type="range" style="width: 100%; position:absolute;" [attr.min]="marker.min" [attr.max]="marker.max" step="0.1" [attr.value]="marker.markerval" />
           </ion-col>
         </ion-row>
         <ion-row>

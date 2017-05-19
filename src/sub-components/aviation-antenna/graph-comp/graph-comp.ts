@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 
 /**
  * Generated class for the GraphCompPage page.
@@ -18,8 +18,23 @@ export class GraphComp {
   @Input() SelectedBand: any;
   @Input() markers: any[];
 
+  @ViewChild('inputrange') sliderElement: ElementRef;
+
+  markerSlider: HTMLInputElement;
 
   constructor() { }
+
+  ngAfterViewInit() {
+    // this.markerSlider = this.sliderElement.nativeElement;
+
+    // this.markerSlider.addEventListener('onchange', () => {
+    //   this.onMarkerSlide();
+    // });
+  }
+
+  onMarkerSlide() {
+    console.log("fgfjgfkgh");
+  }
 
 
   isRlVswrScaleChecked: boolean = false;
