@@ -33,8 +33,11 @@
                         </ion-col>
                     </ion-row>
                     <ion-row *ngFor="let marker of markers; let i = index;">
-                        <ion-col>
-                            M{{i+1}}     {{marker.defaultmarker}}
+                        <ion-col col-auto no-padding padding-horizontal>
+                            M{{i+1}}
+                        </ion-col>
+                        <ion-col col-auto no-padding padding-horizontal>
+                            {{marker.defaultmarker}}
                         </ion-col>
                     </ion-row>
                 </ion-grid>
