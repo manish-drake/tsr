@@ -26,13 +26,28 @@
                             <ion-col col-auto no-padding>
                                 <ion-row style="height: 210px; margin-left:40px;margin-right:40px;">
                                     <ion-col no-padding col-6 *ngFor="let calType of calTypes; let i = index;">
-                                        <ion-card style="height: 80px; margin-right:10px; margin-left:10px;" [class]="selectedType == calType ? 'selectedCalType' : 'unSelectedCalType'">
-                                            <ion-row style="height:100%;">
-                                                <ion-col align-self-center text-center>
-                                                    {{calType.name}}
+                                        <div style="height: 80px; margin-right:10px; margin-left:10px; border-radius: 5px;" [class]="selectedType == calType ? 'selectedCalType' : 'unSelectedCalType'"
+                                            (click)="onTypeCardSelected(calType)">
+                                            <ion-row style="height: 100%;">
+                                                <ion-col no-padding align-self-center>
+                                                    <ion-row>
+                                                        <ion-col no-padding text-center>
+                                                            {{calType.name}}
+                                                        </ion-col>
+                                                    </ion-row>
+                                                    <ion-row text-center>
+                                                        <ion-col no-padding text-center>
+                                                            {{calType.status}}
+                                                        </ion-col>
+                                                    </ion-row>
+                                                    <ion-row text-center>
+                                                        <ion-col no-padding text-center>
+                                                            {{calType.date}}
+                                                        </ion-col>
+                                                    </ion-row>
                                                 </ion-col>
                                             </ion-row>
-                                        </ion-card>
+                                        </div>
                                     </ion-col>
                                 </ion-row>
                             </ion-col>
