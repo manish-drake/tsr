@@ -40,7 +40,7 @@ export class AviationLossComp {
     modal.present();
   }
 
-  onMarkerAction2(ev) {
+  onMarkerAction(ev) {
     console.log(ev);
     switch (ev) {
       case "add":
@@ -70,6 +70,10 @@ export class AviationLossComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
+  }
+
+  saveRecord(){
+
   }
 
 }

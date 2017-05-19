@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
+import { FileFactory } from "../../services/io/file-factory"
 
 @Component({
   selector: 'aviation-vswr-comp',
@@ -11,7 +12,8 @@ export class AviationVSWRComp {
 
   constructor(
     private _router: Router,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private _fileFactory: FileFactory
   ) { }
 
   markers: any[] = [{ markerval: 0 }]
@@ -40,7 +42,7 @@ export class AviationVSWRComp {
     this.isRunning = !this.isRunning;
   }
 
-  onMarkerAction1(ev) {
+  onMarkerAction(ev) {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
@@ -63,6 +65,10 @@ export class AviationVSWRComp {
         }
         break
     }
+  }
+
+  saveRecord() {
+    this._fileFactory.saveFile("", "AviaitionVSWRHistory", "[{}]");
   }
 
 }

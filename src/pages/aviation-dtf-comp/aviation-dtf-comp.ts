@@ -33,7 +33,7 @@ export class AviationDtfComp {
     modal.present();
   }
 
-  onMarkerAction3(ev) {
+  onMarkerAction(ev) {
     console.log(ev);
     switch (ev) {
       case "add":
@@ -63,5 +63,9 @@ export class AviationDtfComp {
 
   onRun() {
     this.isRunning = !this.isRunning;
+  }
+
+  saveRecord(){
+
   }
 }
