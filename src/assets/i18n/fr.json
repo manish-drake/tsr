@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "RÉSULTATS D'ESSAIS RÉCENTS",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "PRÉCÉDENT",
-    "NEXT": "PROCHAIN"
+    "NEXT": "PROCHAIN",
+
+    "AVIATION": "AVIATION",
+    "CABLE LOSS": "PERTE DE CÂBLE",
+    "DISTANCE TO FAULT": "DISTANCE À LA FAULT",
+    "CALIBRATION":"ÉTALONNAGE",
+    "MEASURE": "MESURE",
+    "DONE": "TERMINÉ",
+    "BAND": "B: ET",
+    "TYPE": "TYPE",
+    "MODE": "MODE",
+    "MARKER": "MARQUEUR"
 }

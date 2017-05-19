@@ -43,5 +43,17 @@
     "RECENT TEST RESULTS": "最近的测试结果",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "以前",
-    "NEXT": "下一个"
+    "NEXT": "下一个",
+
+    "AVIATION": "航空",
+    "CABLE LOSS": "电缆损失",
+    "DISTANCE TO FAULT": "距离故障",
+    "CALIBRATION":"校准",
+    "MEASURE": "测量",
+    "DONE": "DONE",
+    "BAND": "带",
+    "TYPE": "类型",
+    "MODE": "模式",
+    "MARKER": "MARKER"
+
 }

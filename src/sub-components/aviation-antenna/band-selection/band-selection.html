@@ -1,6 +1,6 @@
 <ion-card no-margin style="width: 100%;">
   <ion-item no-lines no-margin>
-    <ion-label >BAND:</ion-label>
+    <ion-label >{{'BAND' | translate}}:</ion-label>
     <ion-select interface="popover" [(ngModel)]="selectedBand" (ionChange)="onBandChange($event)" style="max-width: 100%;">
       <ion-option *ngFor="let band of bands;" [value]="band">{{band.name}}</ion-option>
     </ion-select>

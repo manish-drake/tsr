@@ -3,7 +3,7 @@
         <ion-row nowrap align-items-stretch style="height:100%;">
             <ion-col no-padding align-self-stretch text-nowrap style="padding-left: 16px;padding-top: 12px;overflow: hidden;text-overflow: ellipsis;"
                 (click)="switchControls()">
-                <span style="font-size: 16px;">MARKER</span>
+                <span style="font-size: 16px;">{{'MARKER' | translate}}:</span>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 0">
                 <button ion-button clear no-margin (click)="markerAction('decrease')"><b><<<</b></button>

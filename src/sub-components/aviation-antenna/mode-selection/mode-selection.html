@@ -1,6 +1,6 @@
 <ion-card no-margin style="width: 100%;">
   <ion-item no-lines no-margin> 
-    <ion-label>MODE:</ion-label>
+    <ion-label>{{'MODE' | translate}}:</ion-label>
     <ion-select interface="popover" [(ngModel)]="selectedMode" (ionChange)="onModeChanged($event)" style="max-width: 100%;">
       <ion-option value="CAL">CAL</ion-option>
       <ion-option value="VSWR">VSWR</ion-option>
