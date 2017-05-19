@@ -27,22 +27,24 @@
                         </ion-row>
                         <detail-vehicles *ngIf="currentView == 'default' && test.name == 'Filter A/V Target'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"
                             (onVehicleSelected)="onVehicleSelect($event)"></detail-vehicles>
-                            <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
-                            <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
-                            <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
+                        <detail-default *ngIf="selectedVehicle && currentView == 'default' && test.name != 'Filter A/V Target'" [test]="test"></detail-default>
+                        <detail-radar *ngIf="currentView == 'radar'" [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"></detail-radar>
+                        <detail-waveform *ngIf="currentView == 'waveform'"></detail-waveform>
                     </ion-scroll>
                 </ion-row>
-                <ion-row>
-                    <ion-col col-auto no-padding bottom>
+                <ion-row style="height: 80px;">
+                    <ion-col no-padding align-self-center>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
                     </ion-col>
-                    <ion-col center text-center style="width: 100%;">
-                        <button ion-button icon-only outline no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
+                    <ion-col no-padding col-auto>
+                        <ion-fab bottom center no-margin>
+                            <button ion-fab no-margin class="playbutton" (click)="onRun()" [disabled]="!selectedVehicle">
                                 <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
                                 <ion-icon name="square" *ngIf="isRunning"></ion-icon>
                            </button>
+                        </ion-fab>
                     </ion-col>
-                    <ion-col col-auto no-padding bottom text-right>
+                    <ion-col no-padding align-self-center text-right>
                         <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
                     </ion-col>
                 </ion-row>
