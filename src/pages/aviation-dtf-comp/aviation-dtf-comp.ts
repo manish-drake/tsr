@@ -18,8 +18,7 @@ export class AviationDtfComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController
-  ) {
-  }
+  ) { }
 
   markers: any[] = [{ min: 0, max: 15, val: 0 },{ min: 0, max: 15, val: 0 }];
 

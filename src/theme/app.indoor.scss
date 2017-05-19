@@ -39,4 +39,6 @@
       }
     }
     .aviCalbtn{color: $light-foreground; background-color: $light-gray;} 
+    .selectedCalType{color: $light-background; background-color: darken($light-primary, 10%);}
+    .unSelectedCalType{color: $light-background; background-color: $light-primary;}
 }

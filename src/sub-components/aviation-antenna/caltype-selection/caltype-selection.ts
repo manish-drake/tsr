@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the CaltypeSelectionPage page.
@@ -12,15 +12,13 @@ import { Component } from '@angular/core';
 })
 export class CalTypeSelectionComp {
 
+  @Input() calTypes: any[];
+  @Output() onTypeChanged = new EventEmitter<any>();
+  @Input() selectedType: any;
   constructor() { }
 
-  selectedTypeIndex: number = 0;
-
-  calTypes: any[] = [
-    { name: "SHORT" },
-    { name: "OPEN" },
-    { name: "LOAD" },
-    { name: "THRU" }
-  ]
+  onTypeChange(e) {
+    this.onTypeChanged.emit(e);
+  }
 
 }
