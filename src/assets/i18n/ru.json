@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ ИСПЫТАНИЙ",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "Назад",
-    "NEXT": "СЛЕДУЮЩИЙ"
+    "NEXT": "СЛЕДУЮЩИЙ",
+
+    "AVIATION": "АВИАЦИОННЫЙ",
+    "CABLE LOSS": "ПОТЕРЯ КАБЕЛЯ",
+    "DISTANCE TO FAULT": "РАССТОЯНИЕ НА НЕИСПРАВНОСТЬ",
+    "CALIBRATION":"КАЛИБРОВКА",
+    "MEASURE": "МЕРА",
+    "DONE": "СДЕЛАННЫЙ",
+    "BAND": "ГРУППА",
+    "TYPE": "ТИП",
+    "MODE": "РЕЖИМ",
+    "MARKER": "MARKER"
 }

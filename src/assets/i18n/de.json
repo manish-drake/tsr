@@ -1,9 +1,9 @@
 {
-    "__comment__":"__Footer__",
+    "__comment__": "__Footer__",
     "Direct": "Direkt",
     "Battery": "Batterie",
     "WiFi": "W-lan",
-    "__comment__":"__Menu__",
+    "__comment__": "__Menu__",
     "Start": "Anfang",
     "Transponder": "Transponder",
     "Mode S": "Modus S",
@@ -14,7 +14,7 @@
     "Reports": "Berichte",
     "Setup": "Konfiguration",
     "Search": "Suche",
-    "__comment__":"__More Actions __",
+    "__comment__": "__More Actions __",
     "SETUP TEST": "SETUP TEST",
     "HELP": "HILFE",
     "CLEAR": "KLAR",
@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "KÜRZLICH TEST ERGEBNISSE",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "BISHERIGE",
-    "NEXT": "NÄCHSTER"
+    "NEXT": "NÄCHSTER",
+    
+    "AVIATION": "LUFTFAHRT",
+    "CABLE LOSS": "KABELVERLUST",
+    "DISTANCE TO FAULT": "STÖRUNG ZU STÖRUNG",
+    "CALIBRATION": "KALIBRIERUNG",
+    "MEASURE": "MESSEN",
+    "DONE": "ERLEDIGT",
+    "BAND": "BAND",
+    "TYPE": "ART",
+    "MODE": "MODUS",
+    "MARKER": "MARKER"
 }

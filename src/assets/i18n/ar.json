@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "نتائج الاختبارات الأخيرة",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "سابق",
-    "NEXT": "التالى"
+    "NEXT": "التالى",
+
+    "AVIATION": "طيران",
+    "CABLE LOSS": "فقدان الكابلات",
+    "DISTANCE TO FAULT":"ديستانس تو فولت",
+    "CALIBRATION":"معايرة",
+    "MEASURE":"قياس",
+    "DONE":"فعله",
+    "BAND":"فرقة",
+    "TYPE": "اكتب",
+    "MODE":"الوضع",
+    "MARKER":"علامة"
 }

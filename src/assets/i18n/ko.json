@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "최근 테스트 결과",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "너무 이른",
-    "NEXT": "다음 것"
+    "NEXT": "다음 것",
+
+    "AVIATION": "비행",
+    "CABLE LOSS": "케이블 손실",
+    "DISTANCE TO FAULT": "FAULT까지의 거리",
+    "CALIBRATION":"구경 측정",
+    "MEASURE": "법안",
+    "DONE": "끝난",
+    "BAND": "밴드",
+    "TYPE": "유형",
+    "MODE": "방법",
+    "MARKER": "채점자"
 }

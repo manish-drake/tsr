@@ -43,5 +43,16 @@
     "RECENT TEST RESULTS": "最近のテスト結果",
     "__comment__": "__Test Detail Card __",
     "PREVIOUS": "前",
-    "NEXT": "次"
+    "NEXT": "次",
+
+    "AVIATION": "航空",
+    "CABLE LOSS": "ケーブル損失",
+    "DISTANCE TO FAULT": "FAULTまでの距離",
+    "CALIBRATION":"較正",
+    "MEASURE": "測定",
+    "DONE": "完了",
+    "BAND": "バンド",
+    "TYPE": "タイプ",
+    "MODE": "モード",
+    "MARKER": "マーカー"
 }
