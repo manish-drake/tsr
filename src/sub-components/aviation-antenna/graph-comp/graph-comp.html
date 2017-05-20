@@ -67,7 +67,7 @@
           <ion-col no-padding align-self-center text-center *ngFor="let obj of currentLengthScale">{{obj.val}}</ion-col>
         </ion-row>
       </ion-col>
-      <ion-col no-padding style="position: absolute;" text-right>
+      <ion-col no-padding style="position: absolute; right:0;" text-right>
         <button ion-button no-margin small text-capitalize color="none" class="meterFtbtn" (click)="LengthScaleSwitch()"> 
            <span *ngIf="!isLengthScaleChecked">M</span>
             <span *ngIf="isLengthScaleChecked">Ft</span>
