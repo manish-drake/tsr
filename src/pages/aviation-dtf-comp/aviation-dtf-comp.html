@@ -19,11 +19,11 @@
         </ion-row>
         <ion-row style="height: 100%!important;">
             <ion-scroll scrollY="true" style="width:100%;">
-                <graph-comp [isDTFmode]="true" [markers]="markers"></graph-comp>
+                <graph-comp [isDTFmode]="true" [markers]="markers" (onGraphScaleChecked)="onGraphScaleChecked($event)"></graph-comp>
                 <ion-grid style="padding-bottom: 50px;">
                     <ion-row align-items-center style="height: 180px;">
                         <ion-col col-6>
-                            <coax-selection></coax-selection>
+                            <coax-selection (onCoaxChanged)="onCoaxChanged($event)"></coax-selection>
                         </ion-col>
                         <ion-col col-6>
                             <mode-selection [selectedMode]="'DTF'"></mode-selection>

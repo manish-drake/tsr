@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { ViewController, NavParams } from 'ionic-angular';
+import { FileFactory } from "../../services/io/file-factory";
 
 /**
  * Generated class for the AviationHistoryModalPage page.
@@ -13,31 +14,47 @@ import { ViewController } from 'ionic-angular';
 })
 export class AviationHistoryModal {
 
-  constructor(private viewCtrl: ViewController) {
+  fileName: string;
+
+  constructor(
+    private viewCtrl: ViewController,
+    private params: NavParams,
+    private _fileFactory: FileFactory) {
+    this.fileName = this.params.get('filename');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AviationHistoryModal');
+  ngAfterViewInit() {
+    this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName).map(result => {
+      this.dataList = JSON.parse(result);
+    });
   }
 
   dataList: any[] = [
-    {date: "May 12 2017 13:46:23", user: "Operator 1"},
-    {date: "May 12 2017 13:46:55", user: "Operator 1"},
-    {date: "May 13 2017 06:13:07", user: "Operator 2"}
+    // { date: "May 12 2017 13:46:23", user: "Operator 1" },
+    // { date: "May 12 2017 13:46:55", user: "Operator 1" },
+    // { date: "May 13 2017 06:13:07", user: "Operator 2" }
   ]
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
 
-  selectedItem:any;
+  selectedItem: any;
+  selectedItemIndex: number;
 
-  onItemSelected(e){
+  onItemSelected(e, i) {
     this.selectedItem = e;
+    this.selectedItemIndex = i;
   }
 
-  onViewData(){
+  onViewData() {
     this.dismiss();
+  }
+
+  deleteRecord() {
+    this.dataList.splice(this.selectedItemIndex, 1);
+    this.selectedItem = null;
+    // this._fileFactory.saveFile(this._fileFactory.dataDirectory(), this.fileName, JSON.stringify(this.dataList));
   }
 
 }

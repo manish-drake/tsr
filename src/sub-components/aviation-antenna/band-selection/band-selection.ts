@@ -20,8 +20,6 @@ export class BandSelectionComp {
     this.onBandSelected.emit(this.bands[0]);
   }
 
-  selectedBandIndex: number = 0;
-
   bands: any[] = [
     { name: "ILS", start: 50, stop: 350, middle: 150, markerval: 150 },
     { name: "MB", start: 50, stop: 100, middle: 75, markerval: 75 },

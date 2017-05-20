@@ -12,7 +12,7 @@
 </ion-header>
 <ion-content style="background: #fcfcfc">
   <ion-list radio-group [(ngModel)]="selectedItem">
-    <ion-card *ngFor="let data of dataList" (click)="onItemSelected(data)">
+    <ion-card *ngFor="let data of dataList; let i = index;" (click)="onItemSelected(data,i)">
       <ion-row>
         <ion-col col-auto align-self-center padding-left>
           <ion-radio [value]="data"></ion-radio>
@@ -26,12 +26,16 @@
       </ion-row>
     </ion-card>
   </ion-list>
-
+  <ion-row style="height: 100%" *ngIf="dataList.length == 0">
+    <ion-col align-self-center text-center>
+      <ion-note>No record found</ion-note>
+    </ion-col>
+  </ion-row>
 </ion-content>
 <ion-footer no-border style="background: #fcfcfc">
   <ion-row>
     <ion-col no-padding align-self-center>
-      <button ion-button clear icon-only color="danger" [hidden]="!selectedItem"><ion-icon name="trash"></ion-icon></button>
+      <button ion-button clear icon-only color="danger" [hidden]="!selectedItem" (click)="deleteRecord()"><ion-icon name="trash"></ion-icon></button>
     </ion-col>
     <ion-col align-self-center text-center>
       <button ion-button small [disabled]="!selectedItem" (click)="onViewData()"><b>View</b></button>

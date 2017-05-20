@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the GraphCompPage page.
@@ -17,6 +17,8 @@ export class GraphComp {
 
   @Input() SelectedBand: any;
   @Input() markers: any[];
+
+  @Output() onGraphScaleChecked = new EventEmitter<boolean>();
 
   @ViewChild('inputrange') sliderElement: ElementRef;
 
@@ -50,7 +52,9 @@ export class GraphComp {
       this.currentRlScale = this.rlScaleValues2;
       this.currentVswrScale = this.vswrScaleValues2;
     }
+    this.onGraphScaleChecked.emit(this.isRlVswrScaleChecked);
   }
+
   LengthScaleSwitch() {
     this.isLengthScaleChecked = !this.isLengthScaleChecked;
     if (!this.isLengthScaleChecked)

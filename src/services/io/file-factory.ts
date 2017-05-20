@@ -1,14 +1,20 @@
 import { Injectable } from "@angular/core"
 import { Observable } from 'Rxjs';
-import { File} from '@ionic-native/file';
+import { File } from '@ionic-native/file';
 declare var cordova: any;
 
 @Injectable()
 export class FileFactory {
     constructor(
         private file: File
-        ) {
+    ) {
     }
+
+    dataDirectory() {
+        return this.file.dataDirectory;
+    }
+
+
     // static fileIndex: 
     getFile(fullName: string): Observable<any> {
         return Observable.fromPromise(this.file.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))

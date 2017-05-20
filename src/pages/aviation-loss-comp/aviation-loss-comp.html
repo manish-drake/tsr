@@ -19,7 +19,7 @@
         </ion-row>
         <ion-row style="height: 100%!important;">
             <ion-scroll scrollY="true" style="width:100%;">
-                <graph-comp [SelectedBand]="selectedBand" [markers]="markers"></graph-comp>
+                <graph-comp [SelectedBand]="selectedBand" [markers]="markers" (onGraphScaleChecked)="onGraphScaleChecked($event)"></graph-comp>
                 <ion-grid style="padding-bottom: 50px;">
                     <ion-row align-items-center style="height: 180px;">
                         <ion-col col-6>

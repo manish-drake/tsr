@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
-import { FileFactory } from "../../services/io/file-factory"
+import { FileFactory } from "../../services/io/file-factory";
+import { UserService } from '../../services/test-set/user.service';
 
 @Component({
   selector: 'aviation-vswr-comp',
@@ -13,7 +14,8 @@ export class AviationVSWRComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController,
-    private _fileFactory: FileFactory
+    private _fileFactory: FileFactory,
+    private _svcUser: UserService
   ) { }
 
   markers: any[] = [{ markerval: 0 }]
@@ -32,7 +34,7 @@ export class AviationVSWRComp {
   }
 
   openHistory() {
-    let modal = this.modalCtrl.create(AviationHistoryModal);
+    let modal = this.modalCtrl.create(AviationHistoryModal, { filename: "AviaitionVSWRHistory" });
     modal.present();
   }
 
@@ -67,8 +69,32 @@ export class AviationVSWRComp {
     }
   }
 
+  isGraphScaleChecked: boolean;
+
+  onGraphScaleChecked(ev) {
+    this.isGraphScaleChecked = ev;
+  }
+
   saveRecord() {
-    this._fileFactory.saveFile("", "AviaitionVSWRHistory", "[{}]");
+    let collection: any[] = [];
+    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory").map(result =>{
+      collection = JSON.parse(result);
+    });
+    let dateTime = new Date();
+    let userName: string;
+    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
+    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
+    let data: any = "";
+    let record: any = {
+      datetime: dateTime,
+      username: userName,
+      markers: this.markers,
+      range: range,
+      band: this.selectedBand,
+      data: data
+    }
+    collection.push(record);
+    this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory", JSON.stringify(collection));
   }
 
 }
