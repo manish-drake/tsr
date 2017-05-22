@@ -20,23 +20,9 @@ export class GraphComp {
 
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
 
-  @ViewChild('inputrange') sliderElement: ElementRef;
-
   markerSlider: HTMLInputElement;
 
   constructor() { }
-
-  ngAfterViewInit() {
-    // this.markerSlider = this.sliderElement.nativeElement;
-
-    // this.markerSlider.addEventListener('onchange', () => {
-    //   this.onMarkerSlide();
-    // });
-  }
-
-  onMarkerSlide() {
-    console.log("fgfjgfkgh");
-  }
 
 
   isRlVswrScaleChecked: boolean = false;
