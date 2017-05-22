@@ -1,10 +1,9 @@
-
-        <ion-menu [content]="content" [class]="theme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
-                <ion-content padding-vertical>
-                        <ion-item menuToggle no-lines *ngFor="let header of menu.headers" style="background: transparent;" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' "
-                                (click)="onMenuChanged(header)">
-                                <b>{{ header.name | translate}}</b>
-                        </ion-item>
-                </ion-content>
-        </ion-menu>
-        <ion-nav [root]="root" #content [class]="theme.className"></ion-nav>
+<ion-menu [content]="content" [class]="theme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
+        <ion-content padding-vertical>
+                <ion-item menuToggle no-lines *ngFor="let header of menu.headers" style="background: transparent;" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' "
+                        (click)="onMenuChanged(header)">
+                        <b>{{ header.name | translate}}</b>
+                </ion-item>
+        </ion-content>
+</ion-menu>
+<ion-nav [root]="root" #content [class]="theme.className"></ion-nav>
