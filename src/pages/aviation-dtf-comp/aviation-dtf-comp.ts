@@ -57,7 +57,8 @@ export class AviationDtfComp {
         }
         break;
       case "increase":
-        if (this.markers[0].markerval < 15) {
+        let max: number = this.isLengthUnitChecked ? 49 : 15;
+        if (this.markers[0].markerval < max) {
           this.markers[0].markerval = this.markers[0].markerval + 1;
         }
         break;
