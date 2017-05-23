@@ -44,26 +44,34 @@ export class AviationVSWRComp {
     this.isRunning = !this.isRunning;
   }
 
+  selectedMarkerIndex: number = 0;
+
+  onMarkerSelected(ev) {
+    this.selectedMarkerIndex = ev;
+  }
+
   onMarkerAction(ev) {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
           this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, markerval: this.selectedBand.start });
+          this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
       case "remove":
         if (this.markers.length > 1) {
-          this.markers.splice(this.markers.length - 1, 1);
+          this.markers.splice(this.selectedMarkerIndex, 1);
+          this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
       case "increase":
-        if (this.markers[0].markerval < this.selectedBand.stop) {
-          this.markers[0].markerval = this.markers[0].markerval + 1;
+        if (this.markers[this.selectedMarkerIndex].markerval < this.selectedBand.stop) {
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval + 1;
         }
         break;
       case "decrease":
-        if (this.markers[0].markerval > this.selectedBand.start) {
-          this.markers[0].markerval = this.markers[0].markerval - 1;
+        if (this.markers[this.selectedMarkerIndex].markerval > this.selectedBand.start) {
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval - 1;
         }
         break
     }
@@ -77,7 +85,7 @@ export class AviationVSWRComp {
 
   saveRecord() {
     let collection: any[] = [];
-    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory").map(result =>{
+    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory").map(result => {
       collection = JSON.parse(result);
     });
     let dateTime = new Date();

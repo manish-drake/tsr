@@ -43,28 +43,37 @@ export class AviationDtfComp {
     modal.present();
   }
 
+  selectedMarkerIndex: number = 0;
+
+  onMarkerSelected(ev) {
+    this.selectedMarkerIndex = ev;
+    alert(this.selectedMarkerIndex);
+  }
+
   onMarkerAction(ev) {
     console.log(ev);
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
           this.markers.push({ markerval: 0 });
+          this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
       case "remove":
         if (this.markers.length > 1) {
-          this.markers.splice(this.markers.length - 1, 1);
+          this.markers.splice(this.selectedMarkerIndex, 1);
+          this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
       case "increase":
         let max: number = this.isLengthUnitChecked ? 49 : 15;
-        if (this.markers[0].markerval < max) {
-          this.markers[0].markerval = this.markers[0].markerval + 1;
+        if (this.markers[this.selectedMarkerIndex].markerval < max) {
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval + 1;
         }
         break;
       case "decrease":
-        if (this.markers[0].markerval > 0) {
-          this.markers[0].markerval = this.markers[0].markerval - 1;
+        if (this.markers[this.selectedMarkerIndex].markerval > 0) {
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval - 1;
         }
         break
     }

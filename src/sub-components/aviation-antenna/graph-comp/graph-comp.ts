@@ -18,13 +18,20 @@ export class GraphComp {
   @Input() SelectedBand: any;
   @Input() markers: any[];
 
+  @Input() selectedMarkerIndex: number;
+
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
   @Output() onLengthUnitChange = new EventEmitter<boolean>();
+  @Output() onMarkerSelected = new EventEmitter<number>();
 
 
   markerSlider: HTMLInputElement;
 
   constructor() { }
+
+  markerSelected(i) {
+    this.onMarkerSelected.emit(i);
+  }
 
 
   isRlVswrScaleChecked: boolean = false;
