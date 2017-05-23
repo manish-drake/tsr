@@ -24,12 +24,18 @@ export class AviationDtfComp {
     private _fileFactory: FileFactory,
   ) { }
 
-  markers: any[] = [{ min: 0, max: 15, markerval: 0 }];
+  markers: any[] = [{ markerval: 0 }];
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
       .then(succ => console.log("Detail Closed: " + succ))
       .catch(err => console.log("Error Closing Detail: " + err));
+  }
+
+  isLengthUnitChecked: boolean;
+
+  onLengthUnitChange(ev) {
+    this.isLengthUnitChecked = ev;
   }
 
   openHistory() {
@@ -42,7 +48,7 @@ export class AviationDtfComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push({ min: 0, max: 15, val: 0 });
+          this.markers.push({ markerval: 0 });
         }
         break;
       case "remove":
@@ -83,7 +89,7 @@ export class AviationDtfComp {
 
   saveRecord() {
     let collection: any[] = [];
-    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory").map(result =>{
+    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory").map(result => {
       collection = JSON.parse(result);
     });
     let dateTime = new Date();

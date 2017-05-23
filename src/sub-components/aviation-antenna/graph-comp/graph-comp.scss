@@ -18,8 +18,9 @@ graph-comp {
 }
 
 .marker .range-bar{
-  background: yellow;
+  background: green;
   height: 0px;
+  margin:0;
 }
 
 .marker .range-knob{
@@ -29,11 +30,12 @@ graph-comp {
 .marker .range-knob-handle{
   height: 25px;
   width: 25px;
-  border-radius: 5px;
+  border-radius: 3px;
   background: lightgray;
   border: 1px solid gray;
-  margin-left: -10px;
+  margin-left: -12px;
   margin-top: -14px;
+  overflow: visible;
 }
 
 
@@ -52,7 +54,7 @@ graph-comp {
 }
 
 .marker-line .range-bar{
-  background: yellow;
+  background: green;
   height: 0px;
 }
 
@@ -61,143 +63,10 @@ graph-comp {
 }
 .marker-line .range-knob-handle{
   height: 256px;
-  width: 1px;
-  margin-left:8px;
+  width: 1.5px;
+  margin-left:0px;
   background: orange;
-  margin-left: 0px;
 }
-
-
-
-// .marker-range {
-//   -webkit-appearance: none;
-//   margin: 0;
-//   width: 100%;
-//   position: absolute;
-// }
-// .marker-range:focus {
-//   outline: none;
-// }
-// .marker-range::-webkit-slider-runnable-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-//   border: 0px solid transparent;
-//   margin-right: -11px;
-//   margin-left: -11px;
-// }
-// .marker-range::-webkit-slider-thumb {
-//   border: 1px solid #888888;
-//   height: 25px;
-//   width: 25px;
-//   border-radius: 5px;
-//   background: #e0e0e0;
-//   -webkit-appearance: none;
-//   margin-top: 7px;
-//   overflow: visible;
-// }
-// .marker-range::-moz-range-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-// }
-// .marker-range::-moz-range-thumb {
-//   border: 1px solid #888888;
-//   height: 25px;
-//   width: 25px;
-//   border-radius: 5px;
-//   background: #e0e0e0;
-//   -webkit-appearance: none;
-//   margin-top: 7px;
-//   overflow: visible;
-// }
-// .marker-range::-ms-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-//   border-color: transparent;
-//   color: transparent;
-// }
-// .marker-range::-ms-fill-lower {
-//   background: transparent;
-// }
-// .marker-range::-ms-fill-upper {
-//   background: transparent;
-// }
-// .marker-range::-ms-thumb {
-//   border: 1px solid #888888;
-//   height: 25px;
-//   width: 25px;
-//   border-radius: 5px;
-//   background: #e0e0e0;
-//   -webkit-appearance: none;
-//   margin-top: 7px;
-//   overflow: visible;
-// }
-
-
-// .marker-line {
-//   -webkit-appearance: none;
-//   margin: 0;
-//   width: 100%;
-//   position: absolute;
-// }
-// .marker-line:focus {
-//   outline: none;
-// }
-// .marker-line::-webkit-slider-runnable-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-//   border: 0px solid transparent;
-//   margin-right: 3px;
-//   margin-left: -3px;
-// }
-// .marker-line::-webkit-slider-thumb {
-//   border: 1px solid orange;
-//   height: 256px;
-//   width: 0px;
-//   -webkit-appearance: none;
-//   margin-top: 0;
-//   margin-left: 3px;
-//   overflow: visible;
-// }
-// .marker-line::-moz-range-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-// }
-// .marker-line::-moz-range-thumb {
-//   border: 1px solid orange;
-//   height: 256px;
-//   width: 0px;
-//   -webkit-appearance: none;
-//   margin-top: 0;
-//   margin-left: 3px;
-//   overflow: visible;
-// }
-// .marker-line::-ms-track {
-//   width: 100%;
-//   height: 0.1px;
-//   background: transparent;
-//   border-color: transparent;
-//   color: transparent;
-// }
-// .marker-line::-ms-fill-lower {
-//   background: transparent;
-// }
-// .marker-line::-ms-fill-upper {
-//   background: transparent;
-// }
-// .marker-line::-ms-thumb {
-//   border: 1px solid orange;
-//   height: 256px;
-//   width: 0px;
-//   -webkit-appearance: none;
-//   margin-top: 0;
-//   margin-left: 3px;
-//   overflow: visible;
-// }
 
 
 }

@@ -19,6 +19,8 @@ export class GraphComp {
   @Input() markers: any[];
 
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
+  @Output() onLengthUnitChange = new EventEmitter<boolean>();
+
 
   markerSlider: HTMLInputElement;
 
@@ -26,7 +28,7 @@ export class GraphComp {
 
 
   isRlVswrScaleChecked: boolean = false;
-  isLengthScaleChecked: boolean = false;
+  isLengthUnitChecked: boolean = false;
 
   RlVswrScaleSwitch() {
     this.isRlVswrScaleChecked = !this.isRlVswrScaleChecked;
@@ -41,12 +43,13 @@ export class GraphComp {
     this.onGraphScaleChecked.emit(this.isRlVswrScaleChecked);
   }
 
-  LengthScaleSwitch() {
-    this.isLengthScaleChecked = !this.isLengthScaleChecked;
-    if (!this.isLengthScaleChecked)
+  LengthUnitSwitch() {
+    this.isLengthUnitChecked = !this.isLengthUnitChecked;
+    if (!this.isLengthUnitChecked)
       this.currentLengthScale = this.lengthScaleValues;
     else
       this.currentLengthScale = this.lengthScaleValues2;
+    this.onLengthUnitChange.emit(this.isLengthUnitChecked);
   }
 
 
