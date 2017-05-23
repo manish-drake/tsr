@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController, NavParams } from 'ionic-angular';
+import { ViewController, NavParams, Platform } from 'ionic-angular';
 import { FileFactory } from "../../services/io/file-factory";
 
 /**
@@ -19,13 +19,18 @@ export class AviationHistoryModal {
   constructor(
     private viewCtrl: ViewController,
     private params: NavParams,
-    private _fileFactory: FileFactory) {
+    private _fileFactory: FileFactory,
+    private platform: Platform) {
     this.fileName = this.params.get('filename');
   }
 
   ngAfterViewInit() {
-    this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName).map(result => {
-      this.dataList = JSON.parse(result);
+    this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName).map(result => {
+          this.dataList = JSON.parse(result);
+        });
+      }
     });
   }
 

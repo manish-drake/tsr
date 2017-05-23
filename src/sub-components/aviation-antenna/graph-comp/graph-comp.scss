@@ -38,6 +38,11 @@ graph-comp {
   overflow: visible;
 }
 
+.marker .range-knob-handle:before{
+  content: "M";
+  line-height: 1.6;
+}
+
 
 
 .marker-line{

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from 'ionic-angular';
+import { ModalController,Platform } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { FileFactory } from "../../services/io/file-factory";
 import { UserService } from '../../services/test-set/user.service';
@@ -15,7 +15,8 @@ export class AviationVSWRComp {
     private _router: Router,
     private modalCtrl: ModalController,
     private _fileFactory: FileFactory,
-    private _svcUser: UserService
+    private _svcUser: UserService,
+    private platform: Platform
   ) { }
 
   markers: any[] = [{ markerval: 0 }]
@@ -84,25 +85,29 @@ export class AviationVSWRComp {
   }
 
   saveRecord() {
-    let collection: any[] = [];
-    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory").map(result => {
-      collection = JSON.parse(result);
+    this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        let collection: any[] = [];
+        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory").map(result => {
+          collection = JSON.parse(result);
+        });
+        let dateTime = new Date();
+        let userName: string;
+        this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
+        let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
+        let data: any = "";
+        let record: any = {
+          datetime: dateTime,
+          username: userName,
+          markers: this.markers,
+          range: range,
+          band: this.selectedBand,
+          data: data
+        }
+        collection.push(record);
+        this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory", JSON.stringify(collection));
+      }
     });
-    let dateTime = new Date();
-    let userName: string;
-    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
-    let data: any = "";
-    let record: any = {
-      datetime: dateTime,
-      username: userName,
-      markers: this.markers,
-      range: range,
-      band: this.selectedBand,
-      data: data
-    }
-    collection.push(record);
-    this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory", JSON.stringify(collection));
   }
 
 }

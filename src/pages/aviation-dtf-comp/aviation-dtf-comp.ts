@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from 'ionic-angular';
+import { ModalController, Platform } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { FileFactory } from "../../services/io/file-factory";
 import { UserService } from '../../services/test-set/user.service';
@@ -22,9 +22,10 @@ export class AviationDtfComp {
     private modalCtrl: ModalController,
     private _svcUser: UserService,
     private _fileFactory: FileFactory,
+    private platform: Platform
   ) { }
 
-  markers: any[] = [{ markerval: 0 }];
+  markers: any[] = [{ markerval: 0.0 }];
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
@@ -55,7 +56,7 @@ export class AviationDtfComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push({ markerval: 0 });
+          this.markers.push({ markerval: 0.0 });
           this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
@@ -98,24 +99,28 @@ export class AviationDtfComp {
   }
 
   saveRecord() {
-    let collection: any[] = [];
-    this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory").map(result => {
-      collection = JSON.parse(result);
+    this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        let collection: any[] = [];
+        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory").map(result => {
+          collection = JSON.parse(result);
+        });
+        let dateTime = new Date();
+        let userName: string;
+        this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
+        let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
+        let data: any = "";
+        let record: any = {
+          datetime: dateTime,
+          username: userName,
+          markers: this.markers,
+          range: range,
+          coax: this.selectedCoax,
+          data: data
+        }
+        collection.push(record);
+        this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory", JSON.stringify(collection));
+      }
     });
-    let dateTime = new Date();
-    let userName: string;
-    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
-    let data: any = "";
-    let record: any = {
-      datetime: dateTime,
-      username: userName,
-      markers: this.markers,
-      range: range,
-      coax: this.selectedCoax,
-      data: data
-    }
-    collection.push(record);
-    this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory", JSON.stringify(collection));
   }
 }

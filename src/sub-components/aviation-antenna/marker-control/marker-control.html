@@ -1,21 +1,22 @@
 <ion-card no-margin no-padding style="background-color: transparent; width: 100%; height:44px">
     <ion-grid no-padding style="height:100%;" class="aviationControlscard">
         <ion-row nowrap align-items-stretch style="height:100%;">
-            <ion-col no-padding align-self-stretch text-nowrap style="padding-left: 16px;padding-top: 12px;overflow: hidden;text-overflow: ellipsis;"
+            <ion-col no-padding align-self-stretch text-nowrap 
+            style="padding-left: 16px;padding-top: 12px;overflow: hidden;text-overflow: ellipsis;cursor: pointer; cursor: hand;"
                 (click)="switchControls()">
                 <span style="font-size: 16px;">{{'MARKER' | translate}}:</span>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 0">
-                <button ion-button clear no-margin (click)="markerAction('decrease')"><b><<<</b></button>
-                <button ion-button clear no-margin (click)="markerAction('increase')"><b>>>></b> </button>
+                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('decrease')"><b><<<</b></button>
+                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('increase')"><b>>>></b> </button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 1">
-                <button ion-button clear no-margin (click)="markerAction('peak')"><ion-icon name="arrow-round-up"></ion-icon></button>
-                <button ion-button clear no-margin (click)="markerAction('valley')"><ion-icon name="arrow-round-down"></ion-icon></button>
+                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('peak')"><ion-icon name="arrow-round-up"></ion-icon></button>
+                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('valley')"><ion-icon name="arrow-round-down"></ion-icon></button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 2">
-                <button ion-button clear no-margin (click)="markerAction('add')"><ion-icon name="add"></ion-icon></button>
-                <button ion-button clear no-margin (click)="markerAction('remove')"><ion-icon name="trash"></ion-icon></button>
+                <button ion-button clear no-margin style="font-size:20px; width:50px;" (click)="markerAction('add')"><ion-icon name="add"></ion-icon></button>
+                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('remove')"><ion-icon name="trash"></ion-icon></button>
             </ion-col>
         </ion-row>
     </ion-grid>
