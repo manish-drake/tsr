@@ -1,4 +1,4 @@
-import { NgModule }              from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TestDetailComp } from '../pages/detail-component/detail';
@@ -18,22 +18,23 @@ import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
 
 const appRoutes: Routes = [
-    { path: 'testgroup/:name', component: TestGroupComp },
-    { path: 'detail/:test/:headername', component: TestDetailComp },
-    { path: 'setup/:name', component: SetupComp },
+  // { path: '', redirectTo: 'testgroup/start', pathMatch: 'full' },
+  { path: 'testgroup/:name', component: TestGroupComp },
+  { path: 'detail/:test/:headername', component: TestDetailComp },
+  { path: 'setup/:name', component: SetupComp },
 
-    { path: 'setup-users/:parent', component: SetupUsersComp },
-    { path: 'setup-display/:parent', component: SetupDisplayComp },
-    { path: 'setup-gps/:parent', component: SetupGPSComp },
-    { path: 'setup-network/:parent', component: SetupNetworkComp },
-    { path: 'setup-systeminfo/:parent', component: SetupSystemInfoComp },
-    { path: 'setup-connection/:parent', component: SetupConnectionComp },
+  { path: 'setup-users/:parent', component: SetupUsersComp },
+  { path: 'setup-display/:parent', component: SetupDisplayComp },
+  { path: 'setup-gps/:parent', component: SetupGPSComp },
+  { path: 'setup-network/:parent', component: SetupNetworkComp },
+  { path: 'setup-systeminfo/:parent', component: SetupSystemInfoComp },
+  { path: 'setup-connection/:parent', component: SetupConnectionComp },
 
-    { path: 'antenna/:name', component: AntennaComp },
-    { path: 'aviation-vswr/:parent', component: AviationVSWRComp },
-    { path: 'aviation-cal/:parent', component: AviationCalComp },
-    { path: 'aviation-loss/:parent', component: AviationLossComp },
-    { path: 'aviation-dtf/:parent', component: AviationDtfComp }];
+  { path: 'antenna/:name', component: AntennaComp },
+  { path: 'aviation-vswr/:parent', component: AviationVSWRComp },
+  { path: 'aviation-cal/:parent', component: AviationCalComp },
+  { path: 'aviation-loss/:parent', component: AviationLossComp },
+  { path: 'aviation-dtf/:parent', component: AviationDtfComp }];
 
 @NgModule({
   imports: [
@@ -43,4 +44,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
