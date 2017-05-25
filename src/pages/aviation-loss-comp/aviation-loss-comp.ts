@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController, Platform, ToastController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
-import { FileFactory } from "../../services/io/file-factory";
-import { UserService } from '../../services/test-set/user.service';
+import { AviationHistoryService } from "../../services/tests/aviationhistory.service";
 
-/**
- * Generated class for the AviationLossCompPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
   selector: 'aviation-loss-comp',
   templateUrl: 'aviation-loss-comp.html',
@@ -20,17 +13,16 @@ export class AviationLossComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController,
-    private _svcUser: UserService,
-    private _fileFactory: FileFactory,
-    private platform: Platform,
-    private toastCtrl: ToastController) { }
+    private _svcHistory: AviationHistoryService) { }
 
   markers: any[] = [{ markerval: 0 }]
 
+  selectedBandIndex: number = 0;
   selectedBand: any;
 
   onBandSelected(ev) {
-    this.selectedBand = ev;
+    this.selectedBandIndex = ev.index;
+    this.selectedBand = ev.obj;
     this.markers[0].markerval = ev.markerval;
   }
 
@@ -40,9 +32,20 @@ export class AviationLossComp {
       .catch(err => console.log("Error Closing Detail: " + err));
   }
 
+  HistoryFileName: string = "AviaitionLossHistory";
+
   openHistory() {
-    let modal = this.modalCtrl.create(AviationHistoryModal, { filename: "AviaitionLossHistory" });
+    let modal = this.modalCtrl.create(AviationHistoryModal, { filename: this.HistoryFileName });
+    modal.onDidDismiss(data => {
+      if (data != undefined) this.showSavedData(data);
+    })
     modal.present();
+  }
+
+  showSavedData(data: any) {
+    this.selectedBandIndex = data.bandIndex;
+    this.markers = data.markers;
+    this.isGraphScaleChecked = data.range;
   }
 
   selectedMarkerIndex: number = 0;
@@ -93,43 +96,7 @@ export class AviationLossComp {
   }
 
   saveRecord() {
-    this.platform.ready().then(() => {
-      if (this.platform.is('cordova')) {
-        let collection: any[] = [];
-        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionLossHistory")
-          .then(result => {
-            console.log('file read success: ' + result);
-            if (result != undefined) collection = JSON.parse(result);
-            this.serializeData(collection);
-          })
-          .catch((error) => {
-            console.log("file don't exists")
-            this.serializeData(collection);
-          })
-      }
-    });
-  }
-
-  serializeData(collection: any[]) {
-    let dateTime = new Date();
-    let userName: string;
-    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
-    let data: any = "";
-    let record: any = {
-      datetime: dateTime,
-      username: userName,
-      markers: this.markers,
-      range: range,
-      band: this.selectedBand,
-      data: data
-    }
-    collection.push(record);
-    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory", JSON.stringify(collection))
-      .then(() => {
-        let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
-        toast.present();
-      });
+    this._svcHistory.saveVSWRorLOSSrecord(this.HistoryFileName, this.selectedBandIndex, this.isGraphScaleChecked, this.markers);
   }
 
 }

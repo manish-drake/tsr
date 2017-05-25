@@ -29,11 +29,12 @@ export class AviationHistoryModal {
   ngAfterViewInit() {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName)
+        this._fileFactory.readAsText(this._fileFactory.dataDirectory(), this.fileName)
           .then(result => {
             console.log('file read success: ' + result);
             if (result != undefined) this.dataList = JSON.parse(result);
-          });
+          })
+          .catch(error => { console.log("file don't exists: " + JSON.stringify(error)) })
       }
     });
   }
@@ -51,7 +52,7 @@ export class AviationHistoryModal {
   }
 
   onViewData() {
-    this.dismiss();
+    this.viewCtrl.dismiss(this.selectedItem);
   }
 
   deleteRecord() {

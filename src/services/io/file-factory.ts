@@ -14,13 +14,6 @@ export class FileFactory {
         return this.file.dataDirectory;
     }
 
-
-    // static fileIndex: 
-    getFile(fullName: string): Observable<any> {
-        return Observable.fromPromise(this.file.readAsText(this.getFilePath(fullName), this.getFileName(fullName)))
-            .map(value => value.toString());
-    }
-
     writeOptions: IWriteOptions = { replace: true }
 
     writeFile(dirPath: string, fileName: string, content: any): Promise<any> {
@@ -28,8 +21,12 @@ export class FileFactory {
             .catch((error) => { console.log("error writting file: " + JSON.stringify(error)) })
     }
 
-    getSubFolders(fullName: string): Observable<string[]> {
+    readAsText(path: string, file: string): Promise<any> {
+        return this.file.readAsText(path, file)
+    }
 
+
+    getSubFolders(fullName: string): Observable<string[]> {
         return Observable.fromPromise(this.file.listDir(this.getFilePath(fullName), this.getFileName(fullName)))
             .map(entries => entries.map(e => e.name));
     }
@@ -60,9 +57,6 @@ export class FileFactory {
 
     getFilePath(Path) {
         return Path.substring(0, Path.lastIndexOf("/"));
-    }
-    readfile(path: string, file: string): Promise<any> {
-        return this.file.readAsText(path, file)
     }
 
 }

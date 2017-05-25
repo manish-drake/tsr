@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the CoaxSelectionPage page.
@@ -12,12 +12,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class CoaxSelectionComp {
 
-  @Output() onCoaxChanged = new EventEmitter<any>();
+  @Input() selectedCoaxIndex: any;
+
+  @Output() onCoaxChanged = new EventEmitter<{ index: number, obj: any }>();
 
   constructor() { }
 
   ngAfterViewInit() {
-    this.onCoaxChanged.emit(this.coaxTypes[0]);
+    this.onCoaxChange(0);
   }
 
   coaxTypes: any[] = [
@@ -28,11 +30,9 @@ export class CoaxSelectionComp {
     { name: "User", velocity: null }
   ]
 
-  selectedCoax: any = this.coaxTypes[0];
-
-  onCoaxChange(ev) {
-    this.selectedCoax = ev;
-    this.onCoaxChanged.emit(ev);
+  onCoaxChange(i) {
+    let e = this.coaxTypes[i];
+    this.onCoaxChanged.emit({ index: i, obj: e });
   }
 
 }

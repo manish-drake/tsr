@@ -4,13 +4,13 @@
   <ion-col no-padding col-auto padding-top>
     <ion-row nowrap>
       <ion-col col-auto>
-        <button ion-button small [disabled]="isCalmode" (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
+        <button ion-button small [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
           style="height:32px; width: 60px; font-size: 12px">Return<br/>Loss</button>
       </ion-col>
       <ion-col>
       </ion-col>
       <ion-col col-auto>
-        <button ion-button small [disabled]="isCalmode" (click)="RlVswrScaleSwitch()" [class]="isRlVswrScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
+        <button ion-button small [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
           style="height:32px; width: 60px; font-size: 12px;">VSWR</button>
       </ion-col>
     </ion-row>

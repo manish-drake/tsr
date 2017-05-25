@@ -14,11 +14,11 @@ export class GraphComp {
 
   @Input() isDTFmode: boolean;
   @Input() isCalmode: boolean;
-
   @Input() SelectedBand: any;
   @Input() markers: any[];
-
   @Input() selectedMarkerIndex: number;
+  @Input() isGraphScaleChecked: boolean;
+  @Input() isLengthUnitChecked: boolean;
 
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
   @Output() onLengthUnitChange = new EventEmitter<boolean>();
@@ -33,13 +33,13 @@ export class GraphComp {
     this.onMarkerSelected.emit(i);
   }
 
+  graphScaleSwitch() {
+    this.changeGraphScale();
+    this.onGraphScaleChecked.emit(!this.isGraphScaleChecked);
+  }
 
-  isRlVswrScaleChecked: boolean = false;
-  isLengthUnitChecked: boolean = false;
-
-  RlVswrScaleSwitch() {
-    this.isRlVswrScaleChecked = !this.isRlVswrScaleChecked;
-    if (!this.isRlVswrScaleChecked) {
+  changeGraphScale() {
+    if (!this.isGraphScaleChecked) {
       this.currentRlScale = this.rlScaleValues;
       this.currentVswrScale = this.vswrScaleValues;
     }
@@ -47,16 +47,23 @@ export class GraphComp {
       this.currentRlScale = this.rlScaleValues2;
       this.currentVswrScale = this.vswrScaleValues2;
     }
-    this.onGraphScaleChecked.emit(this.isRlVswrScaleChecked);
   }
 
   LengthUnitSwitch() {
-    this.isLengthUnitChecked = !this.isLengthUnitChecked;
+    this.changeLengthUnit();
+    this.onLengthUnitChange.emit(!this.isLengthUnitChecked);
+  }
+
+  changeLengthUnit() {
     if (!this.isLengthUnitChecked)
       this.currentLengthScale = this.lengthScaleValues;
     else
       this.currentLengthScale = this.lengthScaleValues2;
-    this.onLengthUnitChange.emit(this.isLengthUnitChecked);
+  }
+
+  ngOnChanges() {
+    this.changeLengthUnit();
+    this.changeGraphScale();
   }
 
 

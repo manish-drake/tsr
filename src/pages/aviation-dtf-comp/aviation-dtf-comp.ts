@@ -39,9 +39,21 @@ export class AviationDtfComp {
     this.isLengthUnitChecked = ev;
   }
 
+  HistoryFileName:string = "AviaitionDtfHistory";
+
   openHistory() {
-    let modal = this.modalCtrl.create(AviationHistoryModal, { filename: "AviaitionDtfHistory" });
+    let modal = this.modalCtrl.create(AviationHistoryModal, { filename: this.HistoryFileName });
+    modal.onDidDismiss(data => {
+      if (data != undefined) this.showSavedData(data);
+    })
     modal.present();
+  }
+
+  showSavedData(data: any) {
+    this.selectedCoaxIndex = data.coaxIndex;
+    this.isGraphScaleChecked = data.range;
+    this.isLengthUnitChecked = data.unit;
+    this.markers = data.markers;
   }
 
   selectedMarkerIndex: number = 0;
@@ -85,10 +97,12 @@ export class AviationDtfComp {
     this.isRunning = !this.isRunning;
   }
 
+  selectedCoaxIndex: number = 0;
   selectedCoax: any;
 
   onCoaxChanged(ev) {
-    this.selectedCoax = ev;
+    this.selectedCoaxIndex = ev.index;
+    this.selectedCoax = ev.obj;
   }
 
   isGraphScaleChecked: boolean;
@@ -101,7 +115,7 @@ export class AviationDtfComp {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
         let collection: any[] = [];
-        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory")
+        this._fileFactory.readAsText(this._fileFactory.dataDirectory(), this.HistoryFileName)
           .then(result => {
             console.log('file read success: ' + result);
             if (result != undefined) collection = JSON.parse(result);
@@ -120,18 +134,20 @@ export class AviationDtfComp {
     let dateTime = new Date();
     let userName: string;
     this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
+    let range: boolean = this.isGraphScaleChecked;
+    let unit: boolean = this.isLengthUnitChecked;
     let data: any = "";
     let record: any = {
       datetime: dateTime,
       username: userName,
       markers: this.markers,
       range: range,
-      coax: this.selectedCoax,
+      unit: unit,
+      coaxIndex: this.selectedCoaxIndex,
       data: data
     }
-    collection.push(record);
-    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), "AviaitionDtfHistory", JSON.stringify(collection))
+    collection.unshift(record);
+    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), this.HistoryFileName, JSON.stringify(collection))
       .then(() => {
         let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
         toast.present();

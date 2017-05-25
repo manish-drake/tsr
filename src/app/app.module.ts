@@ -70,6 +70,7 @@ import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selec
 import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
 import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
 import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-control/marker-control';
+import { AviationHistoryService } from '../services/tests/aviationhistory.service';
 
 
 @NgModule({
@@ -145,7 +146,8 @@ import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-con
         ThemeService,
         FileFactory,
         LocalStorage,
-        LanguageService
+        LanguageService,
+        AviationHistoryService
     ]
 })
 export class AppModule { }

@@ -19,12 +19,12 @@
         </ion-row>
         <ion-row style="height: 100%!important;">
             <ion-scroll scrollY="true" style="width:100%;">
-                <graph-comp [isDTFmode]="true" [markers]="markers" (onGraphScaleChecked)="onGraphScaleChecked($event)" (onLengthUnitChange)="onLengthUnitChange($event)"
-                    (onMarkerSelected)="onMarkerSelected($event)" [selectedMarkerIndex]="selectedMarkerIndex"></graph-comp>
+                <graph-comp [isDTFmode]="true" [markers]="markers" [isGraphScaleChecked]="isGraphScaleChecked"  (onGraphScaleChecked)="onGraphScaleChecked($event)" (onLengthUnitChange)="onLengthUnitChange($event)"
+                    (onMarkerSelected)="onMarkerSelected($event)" [isLengthUnitChecked]="isLengthUnitChecked" [selectedMarkerIndex]="selectedMarkerIndex"></graph-comp>
                 <ion-grid style="padding-bottom: 50px;">
                     <ion-row align-items-center style="height: 180px;">
                         <ion-col col-6>
-                            <coax-selection (onCoaxChanged)="onCoaxChanged($event)"></coax-selection>
+                            <coax-selection [selectedCoaxIndex]="selectedCoaxIndex" (onCoaxChanged)="onCoaxChanged($event)"></coax-selection>
                         </ion-col>
                         <ion-col col-6>
                             <mode-selection [selectedMode]="'DTF'"></mode-selection>
