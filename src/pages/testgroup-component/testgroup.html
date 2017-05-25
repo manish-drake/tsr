@@ -1,4 +1,4 @@
-<ion-row center style="height: 100%; color: gray;" *ngIf="testgroups.length == 0">
+<ion-row style="height: 100%; color: gray;" *ngIf="testgroups.length == 0">
   <ion-col text-center align-self-center>
     <ion-label>No test exists</ion-label>
   </ion-col>
@@ -21,7 +21,7 @@
               <ion-icon margin-horizontal isActive="false" name="albums"> {{testgroup.count}}</ion-icon>
             </ion-col>
           </ion-row>
-          <ion-row center style="min-height:80px;">
+          <ion-row style="min-height:80px;">
             <ion-col text-center align-self-end>
               <ion-label style="font-size: 16px; font-weight: 600;">{{testgroup.name}}</ion-label>
             </ion-col>

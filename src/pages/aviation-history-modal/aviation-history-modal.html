@@ -2,10 +2,10 @@
   <ion-row>
     <ion-col no-padding>
     </ion-col>
-    <ion-col col-auto no-padding text-center center>
+    <ion-col col-auto no-padding text-center align-self-center>
       <h5>Saved Data</h5>
     </ion-col>
-    <ion-col no-padding text-right>
+    <ion-col no-padding text-right align-self-center>
       <button ion-button no-margin icon-only clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
     </ion-col>
   </ion-row>
@@ -19,8 +19,8 @@
         </ion-col>
         <ion-col>
           <ion-item>
-            <h3 item-left>USER: {{data.user}}</h3>
-            <p item-right>{{data.date}}</p>
+            <h3 item-left>USER: {{data.username}}</h3>
+            <p item-right>{{data.datetime}}</p>
           </ion-item>
         </ion-col>
       </ion-row>

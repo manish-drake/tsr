@@ -24,21 +24,19 @@ export class AviationHistoryModal {
     this.fileName = this.params.get('filename');
   }
 
+  dataList: any[] = []
+
   ngAfterViewInit() {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName).map(result => {
-          this.dataList = JSON.parse(result);
-        });
+        this._fileFactory.readfile(this._fileFactory.dataDirectory(), this.fileName)
+          .then(result => {
+            console.log('file read success: ' + result);
+            if (result != undefined) this.dataList = JSON.parse(result);
+          });
       }
     });
   }
-
-  dataList: any[] = [
-    // { date: "May 12 2017 13:46:23", user: "Operator 1" },
-    // { date: "May 12 2017 13:46:55", user: "Operator 1" },
-    // { date: "May 13 2017 06:13:07", user: "Operator 2" }
-  ]
 
   dismiss() {
     this.viewCtrl.dismiss();
@@ -59,7 +57,7 @@ export class AviationHistoryModal {
   deleteRecord() {
     this.dataList.splice(this.selectedItemIndex, 1);
     this.selectedItem = null;
-    // this._fileFactory.saveFile(this._fileFactory.dataDirectory(), this.fileName, JSON.stringify(this.dataList));
+    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), this.fileName, JSON.stringify(this.dataList));
   }
 
 }

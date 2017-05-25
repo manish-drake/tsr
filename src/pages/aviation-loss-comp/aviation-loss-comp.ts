@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController, Platform } from 'ionic-angular';
+import { ModalController, Platform, ToastController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { FileFactory } from "../../services/io/file-factory";
 import { UserService } from '../../services/test-set/user.service';
@@ -22,8 +22,8 @@ export class AviationLossComp {
     private modalCtrl: ModalController,
     private _svcUser: UserService,
     private _fileFactory: FileFactory,
-    private platform: Platform
-  ) { }
+    private platform: Platform,
+    private toastCtrl: ToastController) { }
 
   markers: any[] = [{ markerval: 0 }]
 
@@ -96,26 +96,40 @@ export class AviationLossComp {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
         let collection: any[] = [];
-        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionLossHistory").map(result => {
-          collection = JSON.parse(result);
-        });
-        let dateTime = new Date();
-        let userName: string;
-        this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-        let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
-        let data: any = "";
-        let record: any = {
-          datetime: dateTime,
-          username: userName,
-          markers: this.markers,
-          range: range,
-          band: this.selectedBand,
-          data: data
-        }
-        collection.push(record);
-        this._fileFactory.saveFile(this._fileFactory.dataDirectory(), "AviaitionLossHistory", JSON.stringify(collection));
+        this._fileFactory.readfile(this._fileFactory.dataDirectory(), "AviaitionLossHistory")
+          .then(result => {
+            console.log('file read success: ' + result);
+            if (result != undefined) collection = JSON.parse(result);
+            this.serializeData(collection);
+          })
+          .catch((error) => {
+            console.log("file don't exists")
+            this.serializeData(collection);
+          })
       }
     });
+  }
+
+  serializeData(collection: any[]) {
+    let dateTime = new Date();
+    let userName: string;
+    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
+    let range: string = this.isGraphScaleChecked ? "-6,-18" : "0,-30";
+    let data: any = "";
+    let record: any = {
+      datetime: dateTime,
+      username: userName,
+      markers: this.markers,
+      range: range,
+      band: this.selectedBand,
+      data: data
+    }
+    collection.push(record);
+    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), "AviaitionVSWRHistory", JSON.stringify(collection))
+      .then(() => {
+        let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
+        toast.present();
+      });
   }
 
 }

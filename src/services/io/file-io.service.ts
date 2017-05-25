@@ -12,7 +12,7 @@ export class FileIOService {
     }
     getFolder(fullName: string) {
         // var folder = new Folder();
-        this.fileFactory.saveFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");
+        this.fileFactory.writeFile("file:/storage/emulated/0/DCIM/rootFolder/File", "abc.xml", "ajaja");
     }
 
     // getFile(fullName: string): Observable<File> {

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { Observable } from 'Rxjs';
-import { File } from '@ionic-native/file';
+import { File, IWriteOptions } from '@ionic-native/file';
 declare var cordova: any;
 
 @Injectable()
@@ -21,18 +21,11 @@ export class FileFactory {
             .map(value => value.toString());
     }
 
-    saveFile(fullPath: string, name: string, content: any) {
-        var parentFullPath: string = "file:/storage/emulated/0";
-        var filePath = fullPath.slice(25);
+    writeOptions: IWriteOptions = { replace: true }
 
-        this.createFolderRx(filePath, parentFullPath).then((success) => {
-            this.file.createFile(fullPath, name, true).then((success) => {
-                alert("file: " + JSON.stringify(success));
-                this.file.writeFile(fullPath, name, content, true).then((success) => {
-                    alert("save: " + JSON.stringify(success));
-                })
-            })
-        });
+    writeFile(dirPath: string, fileName: string, content: any): Promise<any> {
+        return this.file.writeFile(dirPath, fileName, content, this.writeOptions)
+            .catch((error) => { console.log("error writting file: " + JSON.stringify(error)) })
     }
 
     getSubFolders(fullName: string): Observable<string[]> {
@@ -44,26 +37,6 @@ export class FileFactory {
     createFolder(name: string, parentFullPath: string): Observable<string> {
         return Observable.fromPromise(this.file.createDir(parentFullPath, name, true))
             .map(value => value["nativeURL"]);
-    }
-
-    createFolderRx(fullPath: string/*DCIM/rootFolder/File/*/, parentFullPath: string/*file:/storage/emulated/0*/): Promise<any> {
-        var urlParts = fullPath.split("/");
-        alert("fullPath: " + fullPath + ", parentFullPath: " + parentFullPath);
-        if (urlParts.length > 0) {
-            var name = urlParts[0];
-            if (!parentFullPath)
-                parentFullPath = "file:/storage/emulated/0";
-            return this.file.createDir(parentFullPath, name, true).then(success => {
-                alert("Created " + name + " in " + parentFullPath);
-                parentFullPath += "/" + name;
-                if (urlParts.length >= 2) {
-                    fullPath = urlParts.slice(1).join("/");
-                } else {
-                    return success["nativeURL"];
-                }
-                return this.createFolderRx(fullPath, parentFullPath);
-            });
-        }
     }
 
     deleteFile(fullName: string): Observable<boolean> {
@@ -88,9 +61,8 @@ export class FileFactory {
     getFilePath(Path) {
         return Path.substring(0, Path.lastIndexOf("/"));
     }
-    readfile(path, fileName): Observable<any> {
-        return Observable.fromPromise(this.file.readAsText(path, fileName))
-            .map(x => x.toString());
+    readfile(path: string, file: string): Promise<any> {
+        return this.file.readAsText(path, file)
     }
 
 }
