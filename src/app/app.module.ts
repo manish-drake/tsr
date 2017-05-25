@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
-import { Http } from '@angular/http'
+import { Http, HttpModule } from '@angular/http'
 import { AppRoutingModule } from './app.router'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppVersion } from '@ionic-native/app-version';
-import { File} from '@ionic-native/file';
+import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -64,12 +64,12 @@ import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp
 import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 import { AviationHistoryModal } from "../pages/aviation-history-modal/aviation-history-modal";
 
-import { GraphComp} from '../sub-components/aviation-antenna/graph-comp/graph-comp';
-import { ModeSelectionComp} from '../sub-components/aviation-antenna/mode-selection/mode-selection';
-import { BandSelectionComp} from '../sub-components/aviation-antenna/band-selection/band-selection';
-import { CoaxSelectionComp} from '../sub-components/aviation-antenna/coax-selection/coax-selection';
-import { CalTypeSelectionComp} from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
-import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-control/marker-control';
+import { GraphComp } from '../sub-components/aviation-antenna/graph-comp/graph-comp';
+import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selection/mode-selection';
+import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selection/band-selection';
+import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
+import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
+import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-control/marker-control';
 
 
 @NgModule({
@@ -101,12 +101,13 @@ import { MarkerControlComp} from '../sub-components/aviation-antenna/marker-cont
         AntennaComp,
         AviationCalComp, AviationVSWRComp, AviationLossComp, AviationDtfComp,
         AviationHistoryModal,
-        GraphComp,ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
+        GraphComp, ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
         AppRoutingModule,
+        HttpModule,
         TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
