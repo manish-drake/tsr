@@ -40,7 +40,6 @@ export class AviationCalComp {
 
   onTypeChanged(ev) {
     this.selectedType = ev;
-    console.log(JSON.stringify(ev));
   }
 
   onTypeCardSelected(e) {

@@ -25,7 +25,7 @@ export class AviationVSWRComp {
   onBandSelected(ev) {
     this.selectedBandIndex = ev.index;
     this.selectedBand = ev.obj;
-    this.markers[0].markerval = ev.markerval;
+    this.markers[0].markerval = ev.obj.markerval;
   }
 
   onClose() {
@@ -79,7 +79,7 @@ export class AviationVSWRComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, stop: this.selectedBand.stop, middle: this.selectedBand.middle, markerval: this.selectedBand.start });
+          this.markers.push({ markerval: this.selectedBand.start });
           this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
