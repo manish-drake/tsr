@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController, Platform, ToastController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
-import { FileFactory } from "../../services/io/file-factory";
-import { UserService } from '../../services/test-set/user.service';
+import { AviationHistoryService } from "../../services/antenna/aviationhistory.service";
 
 /**
  * Generated class for the AviationDtfCompPage page.
@@ -20,10 +19,7 @@ export class AviationDtfComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController,
-    private _svcUser: UserService,
-    private _fileFactory: FileFactory,
-    private platform: Platform,
-    private toastCtrl: ToastController) { }
+    private _svcHistory: AviationHistoryService) { }
 
   markers: any[] = [{ markerval: 0.0 }];
 
@@ -39,7 +35,7 @@ export class AviationDtfComp {
     this.isLengthUnitChecked = ev;
   }
 
-  HistoryFileName:string = "AviaitionDtfHistory";
+  HistoryFileName: string = "AviaitionDtfHistory";
 
   openHistory() {
     let modal = this.modalCtrl.create(AviationHistoryModal, { filename: this.HistoryFileName });
@@ -112,45 +108,6 @@ export class AviationDtfComp {
   }
 
   saveRecord() {
-    this.platform.ready().then(() => {
-      if (this.platform.is('cordova')) {
-        let collection: any[] = [];
-        this._fileFactory.readAsText(this._fileFactory.dataDirectory(), this.HistoryFileName)
-          .then(result => {
-            console.log('file read success: ' + result);
-            if (result != undefined) collection = JSON.parse(result);
-            this.serializeData(collection);
-          })
-          .catch((error) => {
-            console.log("file don't exists")
-            this.serializeData(collection);
-          })
-      }
-    });
-  }
-
-
-  serializeData(collection: any[]) {
-    let dateTime = new Date();
-    let userName: string;
-    this._svcUser.getCurrentUser().subscribe(val => userName = val.name);
-    let range: boolean = this.isGraphScaleChecked;
-    let unit: boolean = this.isLengthUnitChecked;
-    let data: any = "";
-    let record: any = {
-      datetime: dateTime,
-      username: userName,
-      markers: this.markers,
-      range: range,
-      unit: unit,
-      coaxIndex: this.selectedCoaxIndex,
-      data: data
-    }
-    collection.unshift(record);
-    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), this.HistoryFileName, JSON.stringify(collection))
-      .then(() => {
-        let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
-        toast.present();
-      });
+    this._svcHistory.saveDTFrecord(this.HistoryFileName, this.selectedCoaxIndex, this.isGraphScaleChecked, this.isLengthUnitChecked, this.markers);
   }
 }

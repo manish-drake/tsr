@@ -17,10 +17,10 @@
         <ion-col col-auto align-self-center padding-left>
           <ion-radio [value]="data"></ion-radio>
         </ion-col>
-        <ion-col>
+        <ion-col no-padding>
           <ion-item>
-            <h3 item-left>USER: {{data.username}}</h3>
-            <p item-right>{{data.datetime}}</p>
+            <h3 item-left>{{data.datetime | date:'medium'}}</h3>
+            <p item-right>USER: {{data.username}}</p>
           </ion-item>
         </ion-col>
       </ion-row>

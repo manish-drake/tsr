@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
-import { AviationHistoryService } from "../../services/tests/aviationhistory.service";
+import { AviationHistoryService } from "../../services/antenna/aviationhistory.service";
 
 @Component({
   selector: 'aviation-vswr-comp',
