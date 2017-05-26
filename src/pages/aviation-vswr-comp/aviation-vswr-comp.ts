@@ -17,7 +17,7 @@ export class AviationVSWRComp {
     private _svcHistory: AviationHistoryService,
     private _svcGraph: GraphService) { }
 
-  markers: any[] = [{}]
+  markers: any[] = [{ markerval: 0 }]
 
   selectedBandIndex: number = 0;
   selectedBand: any;
@@ -88,7 +88,7 @@ export class AviationVSWRComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push(this.selectedBand);
+          this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, middle: this.selectedBand.middle, stop: this.selectedBand.stop, markerval: this.selectedBand.start });
           this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
