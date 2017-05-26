@@ -25,7 +25,7 @@
       <ion-col no-padding style="width:400px;">
         <ion-row style="height: 32px;">
           <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
               [(ngModel)]="marker.markerval" (click)="markerSelected(i)"></ion-range>
           </ion-col>
           <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
@@ -43,7 +43,7 @@
             </svg>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
               [(ngModel)]="marker.markerval" disabled></ion-range>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">

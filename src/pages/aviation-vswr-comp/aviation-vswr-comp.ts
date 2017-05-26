@@ -17,7 +17,7 @@ export class AviationVSWRComp {
     private _svcHistory: AviationHistoryService,
     private _svcGraph: GraphService) { }
 
-  markers: any[] = [{ markerval: 0 }]
+  markers: any[] = [{}]
 
   selectedBandIndex: number = 0;
   selectedBand: any;
@@ -25,7 +25,13 @@ export class AviationVSWRComp {
   onBandSelected(ev) {
     this.selectedBandIndex = ev.index;
     this.selectedBand = ev.obj;
-    this.markers[0].markerval = ev.obj.markerval;
+    if (!this.isSavedState) {
+      this.markers[0] = ev.obj;
+    }
+    else {
+      this.isSavedState = false;
+    }
+
   }
 
   onClose() {
@@ -44,11 +50,14 @@ export class AviationVSWRComp {
     modal.present();
   }
 
+  isSavedState: boolean;
+
   showSavedData(data: any) {
+    this.isSavedState = true;
     this.selectedBandIndex = data.bandIndex;
-    this.markers = data.markers;
     this.isGraphScaleChecked = data.range;
     this.graphdata = data.data;
+    this.markers = data.markers;
   }
 
   graphdata: any[];
@@ -79,7 +88,7 @@ export class AviationVSWRComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push({ markerval: this.selectedBand.start });
+          this.markers.push(this.selectedBand);
           this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;
