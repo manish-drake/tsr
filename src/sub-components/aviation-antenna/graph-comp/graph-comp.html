@@ -37,6 +37,11 @@
           <ion-col no-padding align-self-stretch style="position:absolute;">
             <img src="../../../assets/graph-back.png" style="height: 256px;" />
           </ion-col>
+          <ion-col no-padding align-self-stretch style="position:absolute;">
+            <svg viewBox="0 0 400 256" preserveAspectRatio="none" height="256px" width="100%">
+              <polyline *ngIf="graphdata"  [attr.points]="getLinePoints(graphdata)" style="fill:none;stroke:green;stroke-width:1.5" />
+            </svg>
+          </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
             <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
               [(ngModel)]="marker.markerval" disabled></ion-range>

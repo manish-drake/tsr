@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { AviationHistoryService } from "../../services/antenna/aviationhistory.service";
+import { GraphService } from '../../services/antenna/graph.service';
 
 @Component({
   selector: 'aviation-vswr-comp',
@@ -13,7 +14,8 @@ export class AviationVSWRComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController,
-    private _svcHistory: AviationHistoryService) { }
+    private _svcHistory: AviationHistoryService,
+    private _svcGraph: GraphService) { }
 
   markers: any[] = [{ markerval: 0 }]
 
@@ -46,12 +48,25 @@ export class AviationVSWRComp {
     this.selectedBandIndex = data.bandIndex;
     this.markers = data.markers;
     this.isGraphScaleChecked = data.range;
+    this.graphdata = data.data;
   }
+
+  graphdata: any[];
 
   isRunning: boolean = false;
 
+  dataInterval: any;
+
   onRun() {
     this.isRunning = !this.isRunning;
+    if (this.isRunning) {
+      this.dataInterval = setInterval(() => {
+        this.graphdata = this._svcGraph.generateRandomPointsList();
+      }, 200);
+    }
+    else {
+      clearInterval(this.dataInterval);
+    }
   }
 
   selectedMarkerIndex: number = 0;
@@ -94,7 +109,7 @@ export class AviationVSWRComp {
   }
 
   saveRecord() {
-    this._svcHistory.saveVSWRorLOSSrecord(this.HistoryFileName, this.selectedBandIndex, this.isGraphScaleChecked, this.markers);
+    this._svcHistory.saveVSWRorLOSSrecord(this.HistoryFileName, this.selectedBandIndex, this.isGraphScaleChecked, this.markers, this.graphdata);
   }
 
 }

@@ -71,6 +71,7 @@ import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selec
 import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
 import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-control/marker-control';
 import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
+import { GraphService } from '../services/antenna/graph.service';
 
 
 @NgModule({
@@ -147,7 +148,8 @@ import { AviationHistoryService } from '../services/antenna/aviationhistory.serv
         FileFactory,
         LocalStorage,
         LanguageService,
-        AviationHistoryService
+        AviationHistoryService,
+        GraphService
     ]
 })
 export class AppModule { }

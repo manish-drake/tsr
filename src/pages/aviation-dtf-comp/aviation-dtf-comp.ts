@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { AviationHistoryService } from "../../services/antenna/aviationhistory.service";
+import { GraphService } from '../../services/antenna/graph.service';
 
 /**
  * Generated class for the AviationDtfCompPage page.
@@ -19,7 +20,8 @@ export class AviationDtfComp {
   constructor(
     private _router: Router,
     private modalCtrl: ModalController,
-    private _svcHistory: AviationHistoryService) { }
+    private _svcHistory: AviationHistoryService,
+    private _svcGraph: GraphService) { }
 
   markers: any[] = [{ markerval: 0.0 }];
 
@@ -50,6 +52,7 @@ export class AviationDtfComp {
     this.isGraphScaleChecked = data.range;
     this.isLengthUnitChecked = data.unit;
     this.markers = data.markers;
+    this.graphdata = data.data;
   }
 
   selectedMarkerIndex: number = 0;
@@ -87,10 +90,22 @@ export class AviationDtfComp {
     }
   }
 
+  graphdata: any[];
+
   isRunning: boolean = false;
+
+  dataInterval: any;
 
   onRun() {
     this.isRunning = !this.isRunning;
+    if (this.isRunning) {
+      this.dataInterval = setInterval(() => {
+        this.graphdata = this._svcGraph.generateRandomPointsList();
+      }, 200);
+    }
+    else {
+      clearInterval(this.dataInterval);
+    }
   }
 
   selectedCoaxIndex: number = 0;
@@ -108,6 +123,6 @@ export class AviationDtfComp {
   }
 
   saveRecord() {
-    this._svcHistory.saveDTFrecord(this.HistoryFileName, this.selectedCoaxIndex, this.isGraphScaleChecked, this.isLengthUnitChecked, this.markers);
+    this._svcHistory.saveDTFrecord(this.HistoryFileName, this.selectedCoaxIndex, this.isGraphScaleChecked, this.isLengthUnitChecked, this.markers, this.graphdata);
   }
 }

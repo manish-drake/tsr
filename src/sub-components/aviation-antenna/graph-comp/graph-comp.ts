@@ -19,6 +19,7 @@ export class GraphComp {
   @Input() selectedMarkerIndex: number;
   @Input() isGraphScaleChecked: boolean;
   @Input() isLengthUnitChecked: boolean;
+  @Input() graphdata: any;
 
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
   @Output() onLengthUnitChange = new EventEmitter<boolean>();
@@ -28,6 +29,14 @@ export class GraphComp {
   markerSlider: HTMLInputElement;
 
   constructor() { }
+
+  getLinePoints(data: any[]) {
+    let linePoints: any[] = [];
+    data.forEach((point, i) => {
+      linePoints.push(i, point);
+    });
+    return linePoints;
+  }
 
   markerSelected(i) {
     this.onMarkerSelected.emit(i);

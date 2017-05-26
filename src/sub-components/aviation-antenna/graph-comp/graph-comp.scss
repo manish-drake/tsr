@@ -68,9 +68,9 @@ graph-comp {
 }
 .marker-line .range-knob-handle{
   height: 256px;
-  width: 1.5px;
   margin-left:0px;
-  background: orange;
+  width:0;
+  border-left: 1.5px dashed orange;
 }
 
 
