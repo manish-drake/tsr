@@ -25,12 +25,12 @@
       <ion-col no-padding style="width:400px;">
         <ion-row style="height: 32px;">
           <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
-              [(ngModel)]="marker.markerval" (click)="markerSelected(i)"></ion-range>
+            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval"
+              (click)="markerSelected(i)"></ion-range>
           </ion-col>
           <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              step="0.1" [(ngModel)]="marker.markerval"></ion-range>
+            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" step="001" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+              [(ngModel)]="marker.markerval"></ion-range>
           </ion-col>
         </ion-row>
         <ion-row style="position: relative;">
@@ -39,16 +39,16 @@
           </ion-col>
           <ion-col no-padding align-self-stretch style="position:absolute;">
             <svg viewBox="0 0 400 256" preserveAspectRatio="none" height="256px" width="100%">
-              <polyline *ngIf="graphdata"  [attr.points]="getLinePoints(graphdata)" style="fill:none;stroke:green;stroke-width:1.5" />
+              <polyline *ngIf="graphdata" [attr.points]="getLinePoints(graphdata)" style="fill:none;stroke:green;stroke-width:1.5" />
             </svg>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
-              [(ngModel)]="marker.markerval" disabled></ion-range>
+            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval"
+              disabled></ion-range>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              step="0.1" [(ngModel)]="marker.markerval" disabled></ion-range>
+            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" step="001" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+              [(ngModel)]="marker.markerval" disabled></ion-range>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -63,20 +63,17 @@
     <ion-row style="height: 12px;">
     </ion-row>
     <ion-row nowrap *ngIf="SelectedBand" align-items-center style="height: 30px;">
-      <ion-col no-padding col-auto style="width: 45px;">
-      </ion-col>
+      <ion-col no-padding col-auto style="width: 45px;"></ion-col>
       <ion-col no-padding>
         {{SelectedBand.start}}
       </ion-col>
       <ion-col no-padding col-auto text-center>
-        {{SelectedBand.middle}}
+        {{SelectedBand.middle}} MHz
       </ion-col>
       <ion-col no-padding text-right>
         {{SelectedBand.stop}}
       </ion-col>
-      <ion-col no-padding col-auto style="width: 45px;padding-left: 3px;">
-        MHz
-      </ion-col>
+      <ion-col no-padding col-auto style="width: 45px;"></ion-col>
     </ion-row>
     <ion-row *ngIf="isDTFmode" style="position: relative;height: 30px;">
       <ion-col no-padding align-self-center>
