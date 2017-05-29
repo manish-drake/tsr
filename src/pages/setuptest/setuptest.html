@@ -1,14 +1,19 @@
 <ion-content>
   <ion-grid style="height: 100%;">
     <ion-row>
-      <ion-col col-auto>
-        <ion-icon isActive="false" style="font-size: 28px;" name="settings"></ion-icon>
+      <ion-col col-auto padding-left align-self-center>
+        <ion-icon isActive="false" style="font-size: 26px;" name="settings"></ion-icon>
       </ion-col>
-      <ion-col no-padding text-center center>
-        <h5>ADS-B Velocity Test</h5>
-        <h6 text-center style="font-weight: 600;">SETUP</h6>
+      <ion-col text-center align-self-center>
+        <ion-title>SETUP</ion-title>
       </ion-col>
-      <ion-col padding-horizontal style="width: 50px; flex: 0 0 50px;">
+      <ion-col col-auto align-self-center>
+        <button ion-button icon-only clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col no-padding text-center>
+        <b style="font-size: 16px;">ADS-B Velocity Test</b>
       </ion-col>
     </ion-row>
 
@@ -85,12 +90,6 @@
             <ion-icon name="ios-arrow-down"></ion-icon>
           </ion-col>
         </ion-row>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col text-right>
-        <button ion-button clear (click)="dismiss()">CLOSE</button>
       </ion-col>
     </ion-row>
   </ion-grid>
