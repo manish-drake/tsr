@@ -14,86 +14,84 @@
 
     <ion-row style="height: 100%;">
       <ion-col>
-<ion-row ion-button clear (click)="power()">
-  <ion-col text-left>
-    <ion-label>Power</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon *ngIf="!isPowerClicked" name="ios-arrow-down"></ion-icon>
-    <ion-icon *ngIf="isPowerClicked" name="ios-arrow-up"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row *ngIf="isPowerClicked">
-  <ion-col width-80>
-      <ion-range min="-69.8" max="17.45" step="0.5" [(ngModel)]="pwrValue"></ion-range>
-  </ion-col>
-  <ion-col>
-      <ion-label>{{pwrValue}} dB</ion-label>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Distance</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Flight-line</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Delay</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Cable Loss</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>PIN Time</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Lat</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
-<ion-row ion-button clear>
-  <ion-col text-left>
-    <ion-label>Lon</ion-label>
-  </ion-col>
-  <ion-col text-right>
-    <ion-icon name="ios-arrow-down"></ion-icon>
-  </ion-col>
-</ion-row>
+        <ion-row ion-button clear (click)="power()">
+          <ion-col text-left>
+            <ion-label>Power</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon *ngIf="!isPowerClicked" name="ios-arrow-down"></ion-icon>
+            <ion-icon *ngIf="isPowerClicked" name="ios-arrow-up"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-item *ngIf="isPowerClicked" no-lines>
+          <ion-range item-left no-margin no-padding min="-69.8" max="17.45" step="0.01" [(ngModel)]="pwrValue"></ion-range>
+          <ion-col item-right col-auto no-padding text-right style="width: 70px;">
+            <ion-label>{{pwrValue}} dB</ion-label>
+          </ion-col>
+        </ion-item>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Distance</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Flight-line</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Delay</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Cable Loss</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>PIN Time</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Lat</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row ion-button clear>
+          <ion-col text-left>
+            <ion-label>Lon</ion-label>
+          </ion-col>
+          <ion-col text-right>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-col>
+        </ion-row>
       </ion-col>
     </ion-row>
 
     <ion-row>
-  <ion-col text-right>
-  <button ion-button clear (click)="dismiss()">CLOSE</button>
-  </ion-col>
-</ion-row>
+      <ion-col text-right>
+        <button ion-button clear (click)="dismiss()">CLOSE</button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>

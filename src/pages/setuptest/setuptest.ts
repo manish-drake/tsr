@@ -9,11 +9,11 @@ export class SetupTestPage {
 
   constructor(
     public viewCtrl: ViewController
-    ) { }
+  ) { }
 
   pwrValue: any;
   ionViewDidLoad() {
-    this.pwrValue =-39.0
+    this.pwrValue = -39.0
     console.log('Hello SetupPage Page');
   }
   isPowerClicked: boolean = false;
@@ -23,7 +23,7 @@ export class SetupTestPage {
   }
 
   dismiss() {
-        this.viewCtrl.dismiss();
-    }
+    this.viewCtrl.dismiss();
+  }
 
 }
