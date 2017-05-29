@@ -29,7 +29,7 @@
               (click)="markerSelected(i)"></ion-range>
           </ion-col>
           <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" step="001" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" step="0.01" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
               [(ngModel)]="marker.markerval"></ion-range>
           </ion-col>
         </ion-row>
@@ -47,7 +47,7 @@
               disabled></ion-range>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" step="001" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" step="0.01" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
               [(ngModel)]="marker.markerval" disabled></ion-range>
           </ion-col>
         </ion-row>
