@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TestDetailComp } from '../pages/detail-component/detail';
@@ -17,8 +17,8 @@ import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
 import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
 
-const appRoutes: Routes = [
-  // { path: '', redirectTo: 'testgroup/start', pathMatch: 'full' },
+const routes: Routes = [
+  // { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
   { path: 'testgroup/:name', component: TestGroupComp },
   { path: 'detail/:test/:headername', component: TestDetailComp },
   { path: 'setup/:name', component: SetupComp },
@@ -34,14 +34,9 @@ const appRoutes: Routes = [
   { path: 'aviation-vswr/:parent', component: AviationVSWRComp },
   { path: 'aviation-cal/:parent', component: AviationCalComp },
   { path: 'aviation-loss/:parent', component: AviationLossComp },
-  { path: 'aviation-dtf/:parent', component: AviationDtfComp }];
+  { path: 'aviation-dtf/:parent', component: AviationDtfComp }
+]
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(appRoutes)
-  ],
-  exports: [
-    RouterModule
-  ]
-})
-export class AppRoutingModule { }
+export const appRoutingProviders: any[] = [];
+
+export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes);

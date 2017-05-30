@@ -3,7 +3,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http, HttpModule } from '@angular/http'
-import { AppRoutingModule } from './app.router'
+import { AppRoutingModule, appRoutingProviders } from './app.router'
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -107,14 +109,16 @@ import { GraphService } from '../services/antenna/graph.service';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp),
-        AppRoutingModule,
+        FormsModule,
         HttpModule,
+        IonicModule.forRoot(MyApp),
         TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
             deps: [Http]
-        })
+        }),
+        AppRoutingModule,
+        BrowserAnimationsModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -128,6 +132,7 @@ import { GraphService } from '../services/antenna/graph.service';
         AviationHistoryModal
     ],
     providers: [
+        appRoutingProviders,
         StatusBar,
         SplashScreen,
         AppVersion,
