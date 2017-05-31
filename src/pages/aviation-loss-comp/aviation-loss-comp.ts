@@ -25,7 +25,12 @@ export class AviationLossComp {
   onBandSelected(ev) {
     this.selectedBandIndex = ev.index;
     this.selectedBand = ev.obj;
-    this.markers[0].markerval = ev.obj.markerval;
+    if (!this.isSavedState) {
+      this.markers[0] = ev.obj;
+    }
+    else {
+      this.isSavedState = false;
+    }
   }
 
   onClose() {
@@ -44,11 +49,14 @@ export class AviationLossComp {
     modal.present();
   }
 
+  isSavedState: boolean;
+
   showSavedData(data: any) {
+    this.isSavedState = true;
     this.selectedBandIndex = data.bandIndex;
-    this.markers = data.markers;
     this.isGraphScaleChecked = data.range;
     this.graphdata = data.data;
+    this.markers = data.markers;
   }
 
   selectedMarkerIndex: number = 0;
@@ -62,7 +70,7 @@ export class AviationLossComp {
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {
-          this.markers.push({ markerval: this.selectedBand.start });
+          this.markers.push({ name: this.selectedBand.name, start: this.selectedBand.start, middle: this.selectedBand.middle, stop: this.selectedBand.stop, markerval: this.selectedBand.start });
           this.selectedMarkerIndex = this.markers.length - 1;
         }
         break;

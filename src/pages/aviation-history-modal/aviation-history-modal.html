@@ -1,12 +1,13 @@
 <ion-header no-border style="background: #fcfcfc">
   <ion-row>
     <ion-col no-padding>
+      <button ion-button icon-only clear color="danger" [hidden]="!selectedItem" (click)="deleteRecord()"><ion-icon name="trash"></ion-icon></button>
     </ion-col>
     <ion-col col-auto no-padding text-center align-self-center>
       <h5>Saved Data</h5>
     </ion-col>
-    <ion-col no-padding text-right align-self-center>
-      <button ion-button no-margin icon-only clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+    <ion-col no-padding text-right>
+      <button ion-button icon-only clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
     </ion-col>
   </ion-row>
 </ion-header>
@@ -34,13 +35,10 @@
 </ion-content>
 <ion-footer no-border style="background: #fcfcfc">
   <ion-row>
-    <ion-col no-padding align-self-center>
-      <button ion-button clear icon-only color="danger" [hidden]="!selectedItem" (click)="deleteRecord()"><ion-icon name="trash"></ion-icon></button>
-    </ion-col>
+    <ion-col align-self-center></ion-col>
     <ion-col align-self-center col-auto text-center>
       <button ion-button small [disabled]="!selectedItem" (click)="onViewData()"><b>View</b></button>
     </ion-col>
-    <ion-col align-self-center>
-    </ion-col>
+    <ion-col align-self-center></ion-col>
   </ion-row>
 </ion-footer>
