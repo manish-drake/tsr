@@ -26,7 +26,7 @@ export class GraphComp {
   @Output() onMarkerSelected = new EventEmitter<number>();
 
 
-  markerSlider: HTMLInputElement;
+  // markerSlider: HTMLInputElement;
 
   constructor() { }
 
@@ -40,6 +40,7 @@ export class GraphComp {
 
   markerSelected(i) {
     this.onMarkerSelected.emit(i);
+
   }
 
   graphScaleSwitch() {
@@ -72,9 +73,24 @@ export class GraphComp {
 
   ngOnChanges() {
     this.changeLengthUnit();
-    this.changeGraphScale();
+    this.changeGraphScale(); 
+    if(this.isDTFmode){      
+      this.onMarkerMaxChange();
+    }       
   }
 
+   onMarkerMaxChange() {
+      for (var marker of this.markers) {
+      if (this.isLengthUnitChecked) {
+       var val = marker.markerval * 3.28084;
+        marker.markerval = val.toFixed(2);
+      }
+      else {
+        var val = marker.markerval / 3.28084;
+        marker.markerval = val.toFixed(2);
+      }      
+    }
+  }
 
   rlScaleValues = [
     { val: "0dB" },

@@ -3,75 +3,104 @@ graph-comp {
 .rtVswrbtnUnchecked{color: #000; background-color: #f0f0f0;}
 .meterFtbtn{color:#000; background-color: #f0f0f0;}
 
-
-.marker{
-  position: absolute;
-  width: 100%;
-  height: 0;
-  padding: 0;
-  margin: 0;
+input[type=range]{
+    -webkit-appearance: none;
+    pointer-events: none;
+    position: absolute;
+    margin-top: 20px;   
+    width: 100%;
+    height: 0;   
+    z-index: 1 
 }
 
-.marker .range-slider{
-  height: 0px;
-  background: red;
+ .marker::-webkit-slider-thumb  {
+    -webkit-appearance: none;    
+    pointer-events:auto;
+    height: 25px;
+    width: 25px;
+    border-radius: 3px;
+    background: lightgray;
+    border: 1px solid gray;      
+    margin-left: -12px;    
+    overflow-x: visible;    
+    cursor: pointer;
+}
+ .marker-line::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    pointer-events: none;
+    height: 256px;
+    width:0;
+    border-left: 1px dashed orange;
+    margin-top:215px
 }
 
-.marker .range-bar{
-  background: green;
-  height: 0px;
-  margin:0;
-}
+// .marker{
+//   position: absolute;
+//   width: 100%;
+//   height: 0;
+//   padding: 0;
+//   margin: 0;
+// }
 
-.marker .range-knob{
-  visibility: collapse
-}
+// .marker .range-slider{
+//   height: 0px;
+//   background: red;
+// }
 
-.marker .range-knob-handle{
-  height: 25px;
-  width: 25px;
-  border-radius: 3px;
-  background: lightgray;
-  border: 1px solid gray;
-  margin-left: -12px;
-  margin-top: -14px;
-  overflow: visible;
-}
+// .marker .range-bar{
+//   background: green;
+//   height: 0px;
+//   margin:0;
+// }
 
-.marker .range-knob-handle:before{
-  content: "M";
-  line-height: 1.6;
-}
+// .marker .range-knob{
+//   visibility: collapse
+// }
 
+// .marker .range-knob-handle{
+//   height: 25px;
+//   width: 25px;
+//   border-radius: 3px;
+//   background: lightgray;
+//   border: 1px solid gray;
+//   margin-left: -12px;
+//   margin-top: -14px;
+//   overflow: visible;
+// }
 
-
-.marker-line{
-  position: absolute;
-  width: 100%;
-  height: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.marker-line .range-slider{
-  height: 0px;
-  background: red;
-}
-
-.marker-line .range-bar{
-  background: green;
-  height: 0px;
-}
-
-.marker-line .range-knob{
-  visibility: collapse
-}
-.marker-line .range-knob-handle{
-  height: 256px;
-  margin-left:0px;
-  width:0;
-  border-left: 1px dashed orange;
-}
+// .marker .range-knob-handle:before{
+//   content: "M";
+//   line-height: 1.6;
+// }
 
 
+
+// .marker-line{
+//   position: absolute;
+//   width: 100%;
+//   height: 0;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// .marker-line .range-slider{
+//   height: 0px;
+//   background: red;
+// }
+
+// .marker-line .range-bar{
+//   background: green;
+//   height: 0px;
+// }
+
+// .marker-line .range-knob{
+//   visibility: collapse
+// }
+// .marker-line .range-knob-handle{
+//   height: 256px;
+//   margin-left:0px;
+//   width:0;
+//   border-left: 1px dashed orange;
+// }
 }

@@ -25,12 +25,16 @@
       <ion-col no-padding style="width:400px;">
         <ion-row style="height: 32px;">
           <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
-              [(ngModel)]="marker.markerval" (click)="markerSelected(i)"></ion-range>
+            <input type="range" style="width:106%" class="marker" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+              [(ngModel)]="marker.markerval" (click)="markerSelected(i)"/>
+            <!--<ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+              [(ngModel)]="marker.markerval" (click)="markerSelected(i)"></ion-range>-->
           </ion-col>
-          <ion-col no-padding *ngIf="isDTFmode && markers" style="position: relative;">
-            <ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              step="0.1" [(ngModel)]="marker.markerval"></ion-range>
+          <ion-col no-padding *ngIf="isDTFmode && markers" style="position:relative;">
+           <input type="range" style="width:106%" class="marker" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.0 : 15.0"
+              step="0.1" [(ngModel)]="marker.markerval"/>
+            <!--<ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+              [step]="0.1" [(ngModel)]="marker.markerval"></ion-range>-->
           </ion-col>
         </ion-row>
         <ion-row style="position: relative;">
@@ -43,12 +47,16 @@
             </svg>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
-              [(ngModel)]="marker.markerval" disabled></ion-range>
+            <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+              [(ngModel)]="marker.markerval"/>
+            <!--<ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="SelectedBand.start" [max]="SelectedBand.stop"
+              [(ngModel)]="marker.markerval" disabled></ion-range>-->
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">
-            <ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              step="0.1" [(ngModel)]="marker.markerval" disabled></ion-range>
+             <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.0 : 15.0"
+              step="0.1" [(ngModel)]="marker.markerval" />
+            <!--<ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
+              [step]="0.1" [(ngModel)]="marker.markerval" disabled></ion-range>-->
           </ion-col>
         </ion-row>
       </ion-col>
