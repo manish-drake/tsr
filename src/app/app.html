@@ -1,4 +1,4 @@
-<ion-menu [content]="content" [class]="theme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
+<ion-menu swipeEnabled="false" [content]="content" [class]="theme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
         <ion-content padding-vertical>
                 <ion-item menuToggle no-lines *ngFor="let header of menu.headers" style="background: transparent;" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'transparent' "
                         (click)="onMenuChanged(header)">
