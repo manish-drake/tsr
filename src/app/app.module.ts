@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http, HttpModule } from '@angular/http'
 import { AppRoutingModule, appRoutingProviders } from './app.router'
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -109,6 +109,7 @@ import { GraphService } from '../services/antenna/graph.service';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         IonicModule.forRoot(MyApp),
@@ -117,8 +118,13 @@ import { GraphService } from '../services/antenna/graph.service';
             useFactory: (createTranslateLoader),
             deps: [Http]
         }),
-        AppRoutingModule,
-        BrowserAnimationsModule
+        AppRoutingModule
+    ],
+    exports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
