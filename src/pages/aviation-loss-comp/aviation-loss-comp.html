@@ -30,7 +30,7 @@
                             <mode-selection [selectedMode]="'LOSS'"></mode-selection>
                         </ion-col>
                         <ion-col col-6>
-                            <marker-control (onMarkerAction)="onMarkerAction($event)"></marker-control>
+                            <marker-actions (onMarkerAction)="onMarkerAction($event)"></marker-actions>
                         </ion-col>
                     </ion-row>
                     <ion-row *ngFor="let marker of markers; let i = index;">

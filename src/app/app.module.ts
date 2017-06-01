@@ -71,7 +71,7 @@ import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selec
 import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selection/band-selection';
 import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
 import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
-import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-control/marker-control';
+import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-actions/marker-actions';
 import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
 import { GraphService } from '../services/antenna/graph.service';
 
