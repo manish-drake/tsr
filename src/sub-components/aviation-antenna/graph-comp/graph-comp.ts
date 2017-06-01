@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'graph-comp',
@@ -25,11 +25,24 @@ export class GraphComp {
   ngOnChanges(changes) {
     this.changeLengthUnit();
     this.changeGraphScale();
-    if(changes.isLengthUnitChecked){
-      if(!changes.isLengthUnitChecked.firstChange){
+    if (changes.isLengthUnitChecked) {
+      if (!changes.isLengthUnitChecked.firstChange) {
         this.onUnitChange();
       }
     }
+  }
+
+  @ViewChild('markercontainer') markerCont: ElementRef;
+
+  getMarkerLblLeft(marker) {
+    let factor = ((marker.markerval - marker.start) / (marker.stop - marker.start)) * this.markerCont.nativeElement.clientWidth;
+    return factor + "px";
+  }
+
+  getMarkerLblLeftDTF(val) {
+    let max = this.isLengthUnitChecked ? 14.21 : 15;
+    let factor = (val / max) * this.markerCont.nativeElement.clientWidth;
+    return factor + "px";
   }
 
   getLinePoints(data: any[]) {

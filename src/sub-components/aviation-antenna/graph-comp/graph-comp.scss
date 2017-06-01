@@ -3,6 +3,15 @@ graph-comp {
 .rtVswrbtnUnchecked{color: #000; background-color: #f0f0f0;}
 .meterFtbtn{color:#000; background-color: #f0f0f0;}
 
+.markerlabel{
+  position:absolute;
+  margin-left:-12.5px;
+  width:25px;
+  line-height:24px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
 .marker {
     -webkit-appearance: none;
   height: 0px;
