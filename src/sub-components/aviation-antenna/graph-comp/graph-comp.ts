@@ -22,12 +22,14 @@ export class GraphComp {
 
   constructor() { }
 
-  ngOnChanges() {
+  ngOnChanges(changes) {
     this.changeLengthUnit();
-    this.changeGraphScale(); 
-    if(this.isDTFmode){      
-      this.onUnitChange();
-    }       
+    this.changeGraphScale();
+    if(changes.isLengthUnitChecked){
+      if(!changes.isLengthUnitChecked.firstChange){
+        this.onUnitChange();
+      }
+    }
   }
 
   getLinePoints(data: any[]) {
@@ -71,17 +73,17 @@ export class GraphComp {
       this.currentLengthScale = this.lengthScaleValues2;
   }
 
-   onUnitChange() {
-      for (var marker of this.markers) {
+  onUnitChange() {
+    this.markers.forEach(marker => {
       if (this.isLengthUnitChecked) {
-       var val = marker.markerval * 3.28084;
+        var val = marker.markerval * 3.28084;
         marker.markerval = val.toFixed(2);
       }
       else {
         var val = marker.markerval / 3.28084;
         marker.markerval = val.toFixed(2);
-      }      
-    }
+      }
+    });
   }
 
   rlScaleValues = [
