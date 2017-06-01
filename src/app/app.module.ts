@@ -108,6 +108,7 @@ import { GraphService } from '../services/antenna/graph.service';
         GraphComp, ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
@@ -117,8 +118,7 @@ import { GraphService } from '../services/antenna/graph.service';
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
             deps: [Http]
-        }),
-        AppRoutingModule
+        })
     ],
     exports: [
         BrowserModule,
