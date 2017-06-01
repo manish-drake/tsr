@@ -1,11 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-/**
- * Generated class for the GraphCompPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
   selector: 'graph-comp',
   templateUrl: 'graph-comp.html',
@@ -26,9 +20,15 @@ export class GraphComp {
   @Output() onMarkerSelected = new EventEmitter<number>();
 
 
-  // markerSlider: HTMLInputElement;
-
   constructor() { }
+
+  ngOnChanges() {
+    this.changeLengthUnit();
+    this.changeGraphScale(); 
+    if(this.isDTFmode){      
+      this.onUnitChange();
+    }       
+  }
 
   getLinePoints(data: any[]) {
     let linePoints: any[] = [];
@@ -71,15 +71,7 @@ export class GraphComp {
       this.currentLengthScale = this.lengthScaleValues2;
   }
 
-  ngOnChanges() {
-    this.changeLengthUnit();
-    this.changeGraphScale(); 
-    if(this.isDTFmode){      
-      this.onMarkerMaxChange();
-    }       
-  }
-
-   onMarkerMaxChange() {
+   onUnitChange() {
       for (var marker of this.markers) {
       if (this.isLengthUnitChecked) {
        var val = marker.markerval * 3.28084;
