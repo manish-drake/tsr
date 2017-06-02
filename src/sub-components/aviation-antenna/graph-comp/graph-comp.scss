@@ -1,5 +1,5 @@
 graph-comp {
-.rtvswrbtnChecked{color: #000; background-color: #d0d0d0;}
+.rtVswrbtnChecked{color: #000; background-color: #d0d0d0;}
 .rtVswrbtnUnchecked{color: #000; background-color: #f0f0f0;}
 .meterFtbtn{color:#000; background-color: #f0f0f0;}
 
@@ -41,7 +41,7 @@ graph-comp {
 
 .marker::-webkit-slider-thumb {
     -webkit-appearance: none;
-  border: 1px solid #000000;
+  border: 1px solid gray;
   height: 25px;
   width: 25px;
   border-radius: 3px;
@@ -49,7 +49,7 @@ graph-comp {
   cursor: pointer;
 }
 .marker::-moz-range-thumb {
-  border: 1px solid #000000;
+  border: 1px solid gray;
   height: 25px;
   width: 25px;
   border-radius: 3px;
@@ -57,7 +57,7 @@ graph-comp {
   cursor: pointer;
 }
 .marker::-ms-thumb {
-  border: 1px solid #000000;
+  border: 1px solid gray;
   height: 25px;
   width: 25px;
   border-radius: 3px;
@@ -94,6 +94,7 @@ graph-comp {
 
 .marker-line::-webkit-slider-thumb {
     -webkit-appearance: none;
+    background: transparent;
   border: 1px dashed orange;
   height: 256px;
   width: 0;

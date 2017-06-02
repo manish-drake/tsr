@@ -7,16 +7,16 @@
                 <span style="font-size: 16px;">{{'MARKER' | translate}}:</span>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 0">
-                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('decrease')"><b><<<</b></button>
-                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('increase')"><b>>>></b> </button>
+                <button ion-button clear no-margin no-padding style="font-size:18px; width:50px;" (click)="markerAction('decrease')"><b><<<</b></button>
+                <button ion-button clear no-margin no-padding style="font-size:18px; width:50px;" (click)="markerAction('increase')"><b>>>></b> </button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 1">
-                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('peak')"><ion-icon name="arrow-round-up"></ion-icon></button>
-                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('valley')"><ion-icon name="arrow-round-down"></ion-icon></button>
+                <button ion-button clear no-margin no-padding style="font-size:18px; width:50px;" (click)="markerAction('peak')"><ion-icon md="md-arrow-round-up" ios="ios-arrow-up"></ion-icon></button>
+                <button ion-button clear no-margin no-padding style="font-size:18px; width:50px;" (click)="markerAction('valley')"><ion-icon md="md-arrow-round-down" ios="ios-arrow-down"></ion-icon></button>
             </ion-col>
             <ion-col no-padding col-auto text-nowrap align-self-center *ngIf="controlsIndex == 2">
-                <button ion-button clear no-margin style="font-size:20px; width:50px;" (click)="markerAction('add')"><ion-icon name="add"></ion-icon></button>
-                <button ion-button clear no-margin style="font-size:18px; width:50px;" (click)="markerAction('remove')"><ion-icon name="trash"></ion-icon></button>
+                <button ion-button clear no-margin no-padding style="font-size:20px; width:50px;" (click)="markerAction('add')"><ion-icon name="add-circle"></ion-icon></button>
+                <button ion-button clear no-margin no-padding style="font-size:18px; width:50px;" (click)="markerAction('remove')"><ion-icon name="remove-circle"></ion-icon></button>
             </ion-col>
         </ion-row>
     </ion-grid>

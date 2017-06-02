@@ -38,7 +38,7 @@
                             M{{i+1}}
                         </ion-col>
                         <ion-col col-auto no-padding padding-horizontal>
-                            {{marker.markerval}} {{isLengthUnitChecked ? "Ft" : "m"}}
+                            {{marker.markerval | number:'1.0-2'}} {{isLengthUnitChecked ? "Ft" : "m"}}
                         </ion-col>
                     </ion-row>
                 </ion-grid>

@@ -28,12 +28,14 @@
             <ion-icon *ngIf="isPowerClicked" name="ios-arrow-up"></ion-icon>
           </ion-col>
         </ion-row>
-        <ion-item *ngIf="isPowerClicked" no-lines>
-          <ion-range item-left no-margin no-padding min="-69.8" max="17.45" step="0.01" [(ngModel)]="pwrValue"></ion-range>
+        <ion-row padding-horizontal *ngIf="isPowerClicked">
+          <ion-col no-padding >
+            <ion-range item-left no-margin no-padding min="-69.8" max="17.45" step="0.01" [(ngModel)]="pwrValue"></ion-range>
+          </ion-col>
           <ion-col item-right col-auto no-padding text-right style="width: 70px;">
             <ion-label>{{pwrValue}} dB</ion-label>
           </ion-col>
-        </ion-item>
+        </ion-row>
         <ion-row ion-button clear>
           <ion-col text-left>
             <ion-label>Distance</ion-label>

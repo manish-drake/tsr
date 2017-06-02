@@ -6,6 +6,8 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 import { Http, HttpModule } from '@angular/http'
 import { AppRoutingModule, appRoutingProviders } from './app.router'
 import { FormsModule } from '@angular/forms';
+import 'intl';
+import 'intl/locale-data/jsonp/en.js';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

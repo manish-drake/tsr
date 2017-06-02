@@ -3,10 +3,11 @@
     <name>Test Set Remote</name>
     <description>Test Set Remote app.</description>
     <author email="manish@drake.in" href="http://drake.in/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.145.128:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://192.168.10.7:8100" />
+    <allow-navigation href="http://192.168.145.128:8100" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
