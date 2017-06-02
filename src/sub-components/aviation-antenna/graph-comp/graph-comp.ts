@@ -40,7 +40,7 @@ export class GraphComp {
   }
 
   getMarkerLblLeftDTF(val) {
-    let max = this.isLengthUnitChecked ? 14.21 : 15;
+    let max = this.isLengthUnitChecked ? 49.21 : 15;
     let factor = (val / max) * this.markerCont.nativeElement.clientWidth;
     return factor + "px";
   }
