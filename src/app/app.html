@@ -1,9 +1,16 @@
 <ion-menu swipeEnabled="false" [content]="content" [class]="theme.className" [style.margin]="isAndroid ? '56px 0 57px 0' : '0px' ">
-        <ion-content padding-vertical style="border-right: 1px solid lightgray;">
-                <ion-item menuToggle no-lines *ngFor="let header of menu.headers" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.06)' : 'rgba(0,0,0,0)' "
-                        (click)="onMenuChanged(header)">
-                        <b>{{ header.name | translate}}</b>
-                </ion-item>
+        <ion-header *ngIf="!isAndroid">
+                <ion-toolbar>
+                        <ion-title>Menu</ion-title>
+                </ion-toolbar>
+        </ion-header>
+        <ion-content class="menu-content">
+                <ion-list margin-vertical>
+                        <button ion-item menuToggle *ngFor="let header of menu.headers" style="height:60px;border-bottom:1px solid rgba(0,0,0,0.08);" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0)' "
+                                (click)="onMenuChanged(header)">
+                                <b>{{ header.name | translate}}</b>
+                        </button>
+                </ion-list>
         </ion-content>
 </ion-menu>
 <ion-nav [root]="root" #content [class]="theme.className"></ion-nav>

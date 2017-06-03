@@ -11,7 +11,13 @@
     button{ color: $white;}
   }
   
-  ion-content{ background-color: $dark-background; }  
+  ion-content{ background-color: $dark-background; }
+
+  .menu-content{
+    background: lighten($dark-primary,4%);
+    border-right: 1px solid $dark-primary;
+  }
+
   ion-list{
     .item{ background-color: $dark-primary; }
   }
