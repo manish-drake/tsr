@@ -18,7 +18,7 @@ import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
 import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
+  { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },
   { path: 'testgroup/:name', component: TestGroupComp },
   { path: 'detail/:test/:headername', component: TestDetailComp },
   { path: 'setup/:name', component: SetupComp },
@@ -36,7 +36,5 @@ const routes: Routes = [
   { path: 'aviation-loss/:parent', component: AviationLossComp },
   { path: 'aviation-dtf/:parent', component: AviationDtfComp }
 ]
-
-export const appRoutingProviders: any[] = [];
 
 export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes);

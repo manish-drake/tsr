@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http, HttpModule } from '@angular/http'
-import { AppRoutingModule, appRoutingProviders } from './app.router'
+import { AppRoutingModule } from './app.router'
 import { FormsModule } from '@angular/forms';
 import 'intl';
 import 'intl/locale-data/jsonp/en.js';
@@ -140,7 +141,7 @@ import { GraphService } from '../services/antenna/graph.service';
         AviationHistoryModal
     ],
     providers: [
-        appRoutingProviders,
+        { provide: APP_BASE_HREF, useValue: '/' },
         StatusBar,
         SplashScreen,
         AppVersion,
