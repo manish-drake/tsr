@@ -22,7 +22,8 @@
     .item{ background-color: $dark-primary; }
   }
   
-  ion-item{ color: $dark-foreground;background-color: $dark-primary; 
+  ion-item{ 
+    color: $dark-foreground;background-color: $dark-primary; 
             p { color: $dark-foreground; }
   }
 
@@ -41,14 +42,14 @@
 
  ion-card{
     background-color: darken($dark-primary, 1.5%);color: $dark-foreground;
-    .item{ background-color: darken($dark-primary, 1.5%); color: $dark-foreground; }
+    // .item{ background-color: darken($dark-primary, 1.5%); color: $dark-foreground; }
     ion-row{ 
       ion-col{
         h1{ color: $dark-foreground;}
       }
     }
   }
-
+  .clear-background{background-color: transparent;}
   .background{ background-color: $dark-background; }
   .selectedcard{ border: 1.5px solid $dark-foreground;}
   
@@ -77,12 +78,12 @@
  .aviationControlscard{
    color: $dark-foreground; background-color: lighten($dark-primary,10%);
  }
-ion-card{
-  .item{
+
+.ion-item-theme{
     color: $dark-foreground; background-color: lighten($dark-primary,10%);
     ion-label{color: $dark-foreground;}
   }
-}
+
 .aviCalbtn{color: $dark-foreground; background-color: lighten($dark-primary,10%);}
 .selectedCalType{color: $dark-foreground; background-color: lighten($dark-primary,12%);}
 .unSelectedCalType{color: $dark-foreground; background-color: $dark-primary;}

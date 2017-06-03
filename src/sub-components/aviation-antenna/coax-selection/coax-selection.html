@@ -1,5 +1,5 @@
 <ion-card no-margin style="width: 100%;">
-  <ion-item no-lines no-margin>  
+  <ion-item no-lines no-margin class="ion-item-theme">  
     <ion-label>COAX:</ion-label>
     <ion-select interface="popover" [(ngModel)]="selectedCoaxIndex" (ionChange)="onCoaxChange($event)" style="max-width: 100%;">
       <ion-option *ngFor="let coaxType of coaxTypes;let i = index;" [value]="i">{{coaxType.name}}  VEL {{coaxType.velocity*100}}%</ion-option>
