@@ -30,7 +30,7 @@
                             <mode-selection [selectedMode]="'DTF'"></mode-selection>
                         </ion-col>
                         <ion-col col-6>
-                            <marker-control (onMarkerAction)="onMarkerAction($event)"></marker-control>
+                            <marker-actions (onMarkerAction)="onMarkerAction($event)"></marker-actions>
                         </ion-col>
                     </ion-row>
                     <ion-row *ngFor="let marker of markers; let i = index;">
@@ -38,7 +38,7 @@
                             M{{i+1}}
                         </ion-col>
                         <ion-col col-auto no-padding padding-horizontal>
-                            {{marker.markerval}} {{isLengthUnitChecked ? "Ft" : "m"}}
+                            {{marker.markerval | number:'1.0-2'}} {{isLengthUnitChecked ? "Ft" : "m"}}
                         </ion-col>
                     </ion-row>
                 </ion-grid>

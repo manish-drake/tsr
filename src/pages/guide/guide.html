@@ -1,51 +1,52 @@
-<ion-header no-border>
-  <ion-toolbar>
-    <ion-row nowrap>
-      <ion-col padding-left align-self-center>
-        <ion-icon isActive="false" style="font-size: 28px;" name="information-circle"></ion-icon>
+<ion-content style="background: #f8f8f8;">
+  <ion-grid style="height: 100%;">
+    <ion-row>
+      <ion-col col-auto padding-left align-self-center>
+        <ion-icon isActive="false" style="font-size: 26px;" name="information-circle"></ion-icon>
       </ion-col>
-      <ion-col col-auto align-self-center style="overflow: hidden;text-overflow: ellipsis;">
-        <ion-title>{{paramName}} Guide</ion-title>
+      <ion-col text-center align-self-center>
+        <ion-title>Guide</ion-title>
       </ion-col>
-      <ion-col align-self-center text-right>
+      <ion-col col-auto align-self-center>
         <button ion-button icon-only clear (click)="onClose()"><ion-icon name="close"></ion-icon></button>
       </ion-col>
     </ion-row>
-  </ion-toolbar>
-</ion-header>
-
-
-<ion-content padding style="background: #f8f8f8;">
-
-  <ion-grid style="border: 1px solid black;">
     <ion-row>
-      <ion-col text-center>
-        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Direct
-      </ion-col>
-      <ion-col text-center>
-        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port A
-      </ion-col>
-      <ion-col text-center>
-        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port B
+      <ion-col no-padding text-center>
+        <b style="font-size: 16px;">{{paramName}}</b>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col text-center></ion-col>
-      <ion-col text-center>
-        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>GPS
-      </ion-col>
-      <ion-col text-center></ion-col>
-      <ion-col text-center>
-        <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Wi-Fi
-      </ion-col>
-      <ion-col text-center></ion-col>
+    <ion-row padding>
+      <ion-grid margin-top style="border: 1px solid black;">
+        <ion-row>
+          <ion-col text-center>
+            <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Direct
+          </ion-col>
+          <ion-col text-center>
+            <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port A
+          </ion-col>
+          <ion-col text-center>
+            <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Port B
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-center></ion-col>
+          <ion-col text-center>
+            <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>GPS
+          </ion-col>
+          <ion-col text-center></ion-col>
+          <ion-col text-center>
+            <ion-icon style="font-size: 36px;" name="disc"></ion-icon><br>Wi-Fi
+          </ion-col>
+          <ion-col text-center></ion-col>
+        </ion-row>
+      </ion-grid>
+      <p>
+        When running a UAT Out test, use the directional antenna with Port A for over the air testing.
+      </p>
+      <p>
+        Attach the GPS antenna to acquire LAT, LON and time.
+      </p>
     </ion-row>
   </ion-grid>
-  <p>
-    When running a UAT Out test, use the directional antenna with Port A for over the air testing.
-  </p>
-  <p>
-    Attach the GPS antenna to acquire LAT, LON and time.
-  </p>
-
 </ion-content>

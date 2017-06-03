@@ -7,8 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'marker-control',
-  templateUrl: 'marker-control.html',
+  selector: 'marker-actions',
+  templateUrl: 'marker-actions.html',
 })
 export class MarkerControlComp {
 

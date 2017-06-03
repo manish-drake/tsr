@@ -1,11 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
-/**
- * Generated class for the GraphCompPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
   selector: 'graph-comp',
   templateUrl: 'graph-comp.html',
@@ -26,9 +20,38 @@ export class GraphComp {
   @Output() onMarkerSelected = new EventEmitter<number>();
 
 
-  // markerSlider: HTMLInputElement;
-
   constructor() { }
+
+  @ViewChild('rowEl') rowElement: ElementRef;
+  @ViewChild('colEl') colElement: ElementRef;
+
+  ngAfterViewInit() {
+    console.log(this.rowElement);
+    console.log(this.colElement);
+  }
+
+  ngOnChanges(changes) {
+    this.changeLengthUnit();
+    this.changeGraphScale();
+    if (changes.isLengthUnitChecked) {
+      if (!changes.isLengthUnitChecked.firstChange) {
+        this.onUnitChange();
+      }
+    }
+  }
+
+  @ViewChild('markercontainer') markerCont: ElementRef;
+
+  getMarkerLblLeft(marker) {
+    let factor = ((marker.markerval - marker.start) / (marker.stop - marker.start)) * this.markerCont.nativeElement.clientWidth;
+    return factor + "px";
+  }
+
+  getMarkerLblLeftDTF(val) {
+    let max = this.isLengthUnitChecked ? 49.21 : 15;
+    let factor = (val / max) * this.markerCont.nativeElement.clientWidth;
+    return factor + "px";
+  }
 
   getLinePoints(data: any[]) {
     let linePoints: any[] = [];
@@ -71,25 +94,17 @@ export class GraphComp {
       this.currentLengthScale = this.lengthScaleValues2;
   }
 
-  ngOnChanges() {
-    this.changeLengthUnit();
-    this.changeGraphScale(); 
-    if(this.isDTFmode){      
-      this.onMarkerMaxChange();
-    }       
-  }
-
-   onMarkerMaxChange() {
-      for (var marker of this.markers) {
+  onUnitChange() {
+    this.markers.forEach(marker => {
       if (this.isLengthUnitChecked) {
-       var val = marker.markerval * 3.28084;
+        var val = marker.markerval * 3.28084;
         marker.markerval = val.toFixed(2);
       }
       else {
         var val = marker.markerval / 3.28084;
         marker.markerval = val.toFixed(2);
-      }      
-    }
+      }
+    });
   }
 
   rlScaleValues = [

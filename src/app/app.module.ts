@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { Http, HttpModule } from '@angular/http'
-import { AppRoutingModule, appRoutingProviders } from './app.router'
+import { AppRoutingModule } from './app.router'
 import { FormsModule } from '@angular/forms';
+import 'intl';
+import 'intl/locale-data/jsonp/en.js';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -71,7 +74,7 @@ import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selec
 import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selection/band-selection';
 import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
 import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
-import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-control/marker-control';
+import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-actions/marker-actions';
 import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
 import { GraphService } from '../services/antenna/graph.service';
 
@@ -108,6 +111,7 @@ import { GraphService } from '../services/antenna/graph.service';
         GraphComp, ModeSelectionComp, BandSelectionComp, CoaxSelectionComp, CalTypeSelectionComp, MarkerControlComp
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
@@ -117,8 +121,7 @@ import { GraphService } from '../services/antenna/graph.service';
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
             deps: [Http]
-        }),
-        AppRoutingModule
+        })
     ],
     exports: [
         BrowserModule,
@@ -138,7 +141,7 @@ import { GraphService } from '../services/antenna/graph.service';
         AviationHistoryModal
     ],
     providers: [
-        appRoutingProviders,
+        { provide: APP_BASE_HREF, useValue: '/' },
         StatusBar,
         SplashScreen,
         AppVersion,
@@ -166,5 +169,5 @@ import { GraphService } from '../services/antenna/graph.service';
 export class AppModule { }
 
 export function createTranslateLoader(http: Http) {
-    return new TranslateStaticLoader(http, '../assets/i18n', '.json');
+    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
 }

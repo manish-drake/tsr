@@ -37,6 +37,4 @@ const routes: Routes = [
   { path: 'aviation-dtf/:parent', component: AviationDtfComp }
 ]
 
-export const appRoutingProviders: any[] = [];
-
 export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes);

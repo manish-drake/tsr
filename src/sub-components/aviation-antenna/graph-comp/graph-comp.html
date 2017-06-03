@@ -4,14 +4,14 @@
   <ion-col no-padding col-auto padding-top>
     <ion-row nowrap>
       <ion-col col-auto>
-        <button ion-button small [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
-          style="height:32px; width: 60px; font-size: 12px">Return<br/>Loss</button>
+        <button ion-button small text-nowrap [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
+          style="height:32px; width: 62px; font-size: 12px">Return<br/>Loss</button>
       </ion-col>
       <ion-col>
       </ion-col>
       <ion-col col-auto>
-        <button ion-button small [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
-          style="height:32px; width: 60px; font-size: 12px;">VSWR</button>
+        <button ion-button small text-nowrap [disabled]="isCalmode" (click)="graphScaleSwitch()" [class]="isGraphScaleChecked ? 'rtVswrbtnChecked' : 'rtVswrbtnUnchecked' "
+          style="height:32px; width: 62px; font-size: 12px;">VSWR</button>
       </ion-col>
     </ion-row>
     <ion-row nowrap>
@@ -23,24 +23,24 @@
         </ion-row>
       </ion-col>
       <ion-col no-padding style="width:400px;">
-        <ion-row style="height: 32px;">
-          <ion-col no-padding *ngIf="SelectedBand && markers" style="position: relative;">
-
-            <input type="range" class="marker" *ngFor="let marker of markers;let i = index;" [min]="marker.start"
-              [max]="marker.stop" [(ngModel)]="marker.markerval" (click)="markerSelected(i)" />
-            <!--<ion-range class="marker" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval"
-              (click)="markerSelected(i)"></ion-range>-->
+        <ion-row #markercontainer style="height: 32px;">
+          <ion-col no-padding align-self-end *ngIf="SelectedBand && markers" style="position: relative;height:25px;">
+            <div *ngFor="let marker of markers;let i = index;" style="width:100%;position: absolute;">
+              <input type="range" class="marker" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval" (click)="markerSelected(i)" />
+              <span text-center class="markerlabel" [style.left]="getMarkerLblLeft(marker)">M{{i+1}}</span>
+            </div>
           </ion-col>
-          <ion-col no-padding *ngIf="isDTFmode && markers" style="position:relative;">
-            <input type="range" class="marker" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.0 : 15.0"
-              step="0.01" [(ngModel)]="marker.markerval" />
-            <!--<ion-range class="marker" *ngFor="let marker of markers;let i = index;" step="0.01" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              [(ngModel)]="marker.markerval"></ion-range>-->
+          <ion-col no-padding align-self-end *ngIf="isDTFmode && markers" style="position:relative; height:25px;">
+            <div *ngFor="let marker of markers;let i = index;" style="width:100%;position: absolute;">
+              <input type="range" class="marker" min="0.0" [attr.max]="isLengthUnitChecked ? 49.21 : 15.0" step="0.01" [(ngModel)]="marker.markerval"
+                (click)="markerSelected(i)" />
+              <span text-center class="markerlabel" [style.left]="getMarkerLblLeftDTF(marker.markerval)">M{{i+1}}</span>
+            </div>
           </ion-col>
         </ion-row>
         <ion-row style="position: relative;">
           <ion-col no-padding align-self-stretch style="position:absolute;">
-            <img src="../../../assets/graph-back.png" style="height: 256px;" />
+            <img src="assets/graph-back.png" style="height: 256px;" />
           </ion-col>
           <ion-col no-padding align-self-stretch style="position:absolute;">
             <svg viewBox="0 0 400 256" preserveAspectRatio="none" height="256px" width="100%">
@@ -50,18 +50,14 @@
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
             <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
               [(ngModel)]="marker.markerval" />
-            <!--<ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval"
-              disabled></ion-range>-->
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">
-            <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.0 : 15.0"
+            <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.21 : 15.0"
               step="0.01" [(ngModel)]="marker.markerval" />
-            <!--<ion-range class="marker-line" *ngFor="let marker of markers;let i = index;" step="0.01" [min]="0.0" [max]="isLengthUnitChecked ? 49.0 : 15.0"
-              [(ngModel)]="marker.markerval" disabled></ion-range>-->
           </ion-col>
         </ion-row>
       </ion-col>
-      <ion-col col-auto align-self-stretch>
+      <ion-col col-auto align-self-stretch style="z-index:-10;">
         <ion-row style=" width:30px;height: 41px;" *ngFor="let obj of currentVswrScale">
           <ion-col no-padding nowrap align-self-end text-nowrap>
             {{obj.val}}

@@ -79,12 +79,12 @@ export class AviationDtfComp {
       case "increase":
         let max: number = this.isLengthUnitChecked ? 49 : 15;
         if (this.markers[this.selectedMarkerIndex].markerval < max) {
-          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval + 1;
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval + 0.01;
         }
         break;
       case "decrease":
         if (this.markers[this.selectedMarkerIndex].markerval > 0) {
-          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval - 1;
+          this.markers[this.selectedMarkerIndex].markerval = this.markers[this.selectedMarkerIndex].markerval - 0.01;
         }
         break
     }
