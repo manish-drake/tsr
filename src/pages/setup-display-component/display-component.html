@@ -16,9 +16,10 @@
                 <tr>
                     <td padding-right><b>THEME</b></td>
                     <td>
-                        <ion-item>
+                        <ion-item class="clear-background">
                             <ion-label item-left>{{currentTheme.themeName}}</ion-label>
-                            <ion-toggle item-right [checked]="currentTheme.themeName == 'Outdoor'" (ionChange)="onThemeChange()"></ion-toggle>
+                            <ion-toggle item-right (ionChange)="onThemeChange()"></ion-toggle>
+                            <!--<ion-toggle item-right [checked]="currentTheme.themeName == 'Outdoor'" (ionChange)="onThemeChange()"></ion-toggle>-->
                         </ion-item>
                     </td>
                 </tr>

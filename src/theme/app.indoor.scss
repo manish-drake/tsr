@@ -14,8 +14,12 @@
   
   ion-content { background-color: $light-background }
 
+  .menu-content{
+    background: $white;
+    border-right: 1px solid lightgray;
+  }
+  .clear-background{background-color: transparent;}
   .background{ background-color: $light-background }
-
   .selectedcard{ border: 1.5px solid color($colors, primary); }
 
   .bullet-current{ background-color: color($colors, primary); }
@@ -30,12 +34,11 @@
    .battery-fill1{ stop-color: rgb(0,0,0);stop-opacity: 1; }
    .battery-fill2{ stop-color: rgba(0,0,0,0.2);stop-opacity: 1; }
    .aviationControlscard{color: $light-foreground; background-color: $light-gray;}
-    ion-card{
-      .item{
+   .ion-item-theme{
         color: $light-foreground; background-color: $light-gray;
         ion-label{color: $light-foreground;}
       }
-    }
+    
     .aviCalbtn{color: $light-foreground; background-color: $light-gray;} 
     .selectedCalType{color: $light-background; background-color: darken($light-primary, 20%);}
     .unSelectedCalType{color: $light-background; background-color: $light-primary;}
