@@ -20,7 +20,8 @@
         <ion-row style="height: 100%!important;">
             <ion-scroll scrollY="true" style="width:100%;">
                 <graph-comp [graphdata]="graphdata" [isDTFmode]="true" [markers]="markers" [isGraphScaleChecked]="isGraphScaleChecked"  (onGraphScaleChecked)="onGraphScaleChecked($event)" (onLengthUnitChange)="onLengthUnitChange($event)"
-                    (onMarkerSelected)="onMarkerSelected($event)" [isLengthUnitChecked]="isLengthUnitChecked" [selectedMarkerIndex]="selectedMarkerIndex"></graph-comp>
+                    (onMarkerSelected)="onMarkerSelected($event)" [isLengthUnitChecked]="isLengthUnitChecked" [selectedMarkerIndex]="selectedMarkerIndex"
+                    [isSavedState]="isSavedState"></graph-comp>
                 <ion-grid style="padding-bottom: 50px;">
                     <ion-row align-items-center style="height: 180px;">
                         <ion-col col-6>

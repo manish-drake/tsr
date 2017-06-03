@@ -34,6 +34,7 @@ export class AviationDtfComp {
   isLengthUnitChecked: boolean;
 
   onLengthUnitChange(ev) {
+    this.isSavedState = false;
     this.isLengthUnitChecked = ev;
   }
 
@@ -47,7 +48,10 @@ export class AviationDtfComp {
     modal.present();
   }
 
+  isSavedState: boolean;
+
   showSavedData(data: any) {
+    this.isSavedState = true;
     this.selectedCoaxIndex = data.coaxIndex;
     this.isGraphScaleChecked = data.range;
     this.isLengthUnitChecked = data.unit;

@@ -14,6 +14,7 @@ export class GraphComp {
   @Input() isGraphScaleChecked: boolean;
   @Input() isLengthUnitChecked: boolean;
   @Input() graphdata: any;
+  @Input() isSavedState: any;
 
   @Output() onGraphScaleChecked = new EventEmitter<boolean>();
   @Output() onLengthUnitChange = new EventEmitter<boolean>();
@@ -35,7 +36,9 @@ export class GraphComp {
     this.changeGraphScale();
     if (changes.isLengthUnitChecked) {
       if (!changes.isLengthUnitChecked.firstChange) {
-        this.onUnitChange();
+        if (!this.isSavedState) {
+          this.onUnitChange();
+        }
       }
     }
   }
