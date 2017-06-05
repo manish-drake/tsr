@@ -5,7 +5,7 @@
 </ion-row>
 <ion-grid>
   <ion-row #groupContent (window:resize)="onResize($event)">
-    <ion-col col-12 col-sm-6 *ngFor="let testgroup of testgroups; let i = index;">
+    <ion-col col-12 col-sm-6 *ngFor="let testgroup of testgroups">
       <ion-card (click)="onCardClick(testgroup)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 2px;"
         [class.selectedcard]="selectedTestGroup == testgroup">
         <ion-grid>

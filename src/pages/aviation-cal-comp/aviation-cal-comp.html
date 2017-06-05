@@ -25,7 +25,7 @@
                             <ion-col no-padding></ion-col>
                             <ion-col col-auto no-padding>
                                 <ion-row style="height: 210px; margin-left:40px;margin-right:40px;">
-                                    <ion-col no-padding col-6 *ngFor="let calType of calTypes; let i = index;">
+                                    <ion-col no-padding col-6 *ngFor="let calType of calTypes;">
                                         <div style="height: 80px; margin-right:10px; margin-left:10px; border-radius: 5px;" [class]="selectedType == calType ? 'selectedCalType' : 'unSelectedCalType'"
                                             (click)="onTypeCardSelected(calType)">
                                             <ion-row style="height: 100%;">

@@ -1,5 +1,5 @@
 <b margin-left [hidden]="selectedVehicle">Select Aircraft/Vehicle:</b>
-<ion-card *ngFor="let vehicle of vehicles; let i = index" (click)="onVehicleSelect(vehicle, i)" [class.selectedvehicle]="vehicle == selectedVehicle"
+<ion-card *ngFor="let vehicle of vehicles; index as i" (click)="onVehicleSelect(vehicle, i)" [class.selectedvehicle]="vehicle == selectedVehicle"
     class="background">
     <ion-row>
         <table text-nowrap style="width:100%;margin:10px">

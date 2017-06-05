@@ -2,7 +2,7 @@
   <ion-item no-lines no-margin class="ion-item-theme"> 
     <ion-label>{{'TYPE' | translate}}:</ion-label>
     <ion-select interface="popover" (ionChange)="onTypeChange($event)" [(ngModel)]="selectedType" style="max-width: 100%;">
-      <ion-option *ngFor="let calType of calTypes;let i = index" [value]="calType">{{calType.name}}</ion-option>
+      <ion-option *ngFor="let calType of calTypes" [value]="calType">{{calType.name}}</ion-option>
     </ion-select>
   </ion-item>
 </ion-card>

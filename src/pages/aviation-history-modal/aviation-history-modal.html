@@ -13,7 +13,7 @@
 </ion-header>
 <ion-content style="background: #fcfcfc">
   <ion-list radio-group [(ngModel)]="selectedItem">
-    <ion-card *ngFor="let data of dataList; let i = index;" (click)="onItemSelected(data,i)">
+    <ion-card *ngFor="let data of dataList; index as i" (click)="onItemSelected(data,i)">
       <ion-row>
         <ion-col col-auto align-self-center padding-left>
           <ion-radio [value]="data"></ion-radio>

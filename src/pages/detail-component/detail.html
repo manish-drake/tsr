@@ -1,6 +1,6 @@
 <ion-slides #Slides>
     <!--(ionSlideWillChange)="slideChanged()"-->
-    <ion-slide style="align-items: stretch !important;" *ngFor="let test of tests; let i = index">
+    <ion-slide style="align-items: stretch !important;" *ngFor="let test of tests; count as testcount; index as i">
         <ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
             <ion-grid style="height: 100%;">
                 <ion-row>
@@ -11,7 +11,7 @@
                         <b style="font-size: 16px;"> {{testName}} </b><br>
                         <!--<b style="font-size: 16px;"> {{test.name}} </b><br>-->
 
-                        <div *ngFor="let test of tests; let ei = index;" [hidden]="tests.length == 1" [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
+                        <div *ngFor="let test of tests; count as count; index as ei;" [hidden]="count == 1" [class]="ei == i ? 'bullet-current' : 'bullet-normal' "
                             style="display: inline-block;height: 8px;width: 8px;border-radius: 4px; margin: 5px;"></div>
                     </ion-col>
                     <ion-col col-auto no-padding no-padding align-self-center>
@@ -32,10 +32,10 @@
                 </ion-row>
                 <ion-row style="height: 75px;">
                     <ion-col no-padding align-self-center>
-                        <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
+                        <button ion-button clear no-margin [hidden]="testcount == 1" (click)="onNavigate('prev')"><b>< {{'PREVIOUS' | translate}}</b> </button>
                     </ion-col>
                     <ion-col no-padding align-self-center text-right>
-                        <button ion-button clear no-margin [hidden]="tests.length == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
+                        <button ion-button clear no-margin [hidden]="testcount == 1" (click)="onNavigate('next')"><b> {{'NEXT' | translate}} ></b></button>
                     </ion-col>
                 </ion-row>
             </ion-grid>

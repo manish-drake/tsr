@@ -34,7 +34,7 @@
                             <marker-actions (onMarkerAction)="onMarkerAction($event)"></marker-actions>
                         </ion-col>
                     </ion-row>
-                    <ion-row *ngFor="let marker of markers; let i = index;">
+                    <ion-row *ngFor="let marker of markers; index as i">
                         <ion-col col-auto no-padding padding-horizontal>
                             M{{i+1}}
                         </ion-col>

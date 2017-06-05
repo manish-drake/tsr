@@ -25,13 +25,13 @@
       <ion-col no-padding style="width:400px;">
         <ion-row #markercontainer style="height: 32px;">
           <ion-col no-padding align-self-end *ngIf="SelectedBand && markers" style="position: relative;height:25px;">
-            <div *ngFor="let marker of markers;let i = index;" style="width:100%;position: absolute;">
+            <div *ngFor="let marker of markers;index as i" style="width:100%;position: absolute;">
               <input type="range" class="marker" [min]="marker.start" [max]="marker.stop" [(ngModel)]="marker.markerval" (click)="markerSelected(i)" />
               <span text-center class="markerlabel" [style.left]="getMarkerLblLeft(marker)">M{{i+1}}</span>
             </div>
           </ion-col>
           <ion-col no-padding align-self-end *ngIf="isDTFmode && markers" style="position:relative; height:25px;">
-            <div *ngFor="let marker of markers;let i = index;" style="width:100%;position: absolute;">
+            <div *ngFor="let marker of markers; index as i" style="width:100%;position: absolute;">
               <input type="range" class="marker" min="0.0" [attr.max]="isLengthUnitChecked ? 49.21 : 15.0" step="0.01" [(ngModel)]="marker.markerval"
                 (click)="markerSelected(i)" />
               <span text-center class="markerlabel" [style.left]="getMarkerLblLeftDTF(marker.markerval)">M{{i+1}}</span>
@@ -48,11 +48,11 @@
             </svg>
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="SelectedBand && !isDTFmode" style="position: absolute;">
-            <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" [min]="marker.start" [max]="marker.stop"
+            <input type="range" class="marker-line" *ngFor="let marker of markers" [min]="marker.start" [max]="marker.stop"
               [(ngModel)]="marker.markerval" />
           </ion-col>
           <ion-col no-padding align-self-stretch *ngIf="isDTFmode" style="position: absolute;">
-            <input type="range" class="marker-line" *ngFor="let marker of markers;let i = index;" min="0.0" [attr.max]="isLengthUnitChecked ? 49.21 : 15.0"
+            <input type="range" class="marker-line" *ngFor="let marker of markers" min="0.0" [attr.max]="isLengthUnitChecked ? 49.21 : 15.0"
               step="0.01" [(ngModel)]="marker.markerval" />
           </ion-col>
         </ion-row>
