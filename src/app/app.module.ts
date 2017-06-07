@@ -54,11 +54,13 @@ import { TestGroupsService } from '../services/tests/testgroups.service';
 import { TestContextService } from '../services/tests/testcontext.service';
 import { MasterService } from '../services/test-set/master.service';
 import { UserService } from '../services/test-set/user.service';
-import { ConnectionService } from '../services/test-set/connection.service'
+import { DevicesService } from '../services/test-set/devices.service';
+import { ConnectionService } from '../services/test-set/connection.service';
 import { LocalStorage } from '../services/storage/local-storage';
 import { HomeService } from '../services/ui/home.service';
 import { PopoverService } from '../services/ui/popover.service';
 import { ModalService } from '../services/ui/modal.service';
+import { AlertsService } from '../services/ui/alerts.service';
 import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
 
@@ -151,10 +153,12 @@ import { GraphService } from '../services/antenna/graph.service';
         Factory,
         MasterService,
         UserService,
+        DevicesService,
         ConnectionService,
         HomeService,
         PopoverService,
         ModalService,
+        AlertsService,
         BrokerFactoryService,
         TestGroupsService,
         TestContextService,

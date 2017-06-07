@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../../services/test-set/user.service';
-import { ConnectionService } from '../../../services/test-set/connection.service'
+import { DevicesService } from '../../../services/test-set/devices.service';
 
 
 @Component({
@@ -15,12 +15,12 @@ export class TestsetinfoComp {
 
   constructor(
     private _svcUser: UserService,
-    private _svcConnection: ConnectionService
-  ) { }
+    private _svcDevices: DevicesService
+) { }
 
   ngOnInit() {
     this._svcUser.getCurrentUser().subscribe(val => this.userName = val.name);
-    this._svcConnection.getconnectedDevice().subscribe(val => this.deviceName = val.name);
+    this._svcDevices.getconnectedDevice().subscribe(val => this.deviceName = val.name);
   }
 
 }

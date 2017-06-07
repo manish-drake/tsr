@@ -56,23 +56,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><ion-item class="clear-background"></ion-item></td>
-                </tr>
-                <tr>
-                    <td padding-right><b>MANUAL IP ADDRESS:</b></td>
                     <td>
-                        <ion-item class="clear-background">
-                            192.168.10.19
-                            <button item-right ion-button clear disabled text-capitalize>Edit</button>
-                            </ion-item>
+                        <ion-item class="clear-background"></ion-item>
                     </td>
                 </tr>
                 <tr>
-                    <td padding-right><b>DEVICE NAME:</b></td>
+                    <td padding-right><b>CONNECTED DEVICE:</b></td>
                     <td>
                         <ion-item class="clear-background">
-                            TestSet14
-                            <button item-right ion-button clear disabled text-capitalize> Edit</button>
+                            <ion-label item-start>{{connectedDeviceName }}</ion-label>
+                            <button ion-button clear icon-only item-end (click)="onScanDevices()" style="width:40px;height:35px"><ion-icon name="search"></ion-icon></button>
                         </ion-item>
                     </td>
                 </tr>
