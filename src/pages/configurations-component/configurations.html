@@ -34,7 +34,7 @@
             </ion-col>
             <ion-col col-6 text-center class="itemm">
                 <ion-label style="font-weight: 600;">{{'REMOTE CONNECT' | translate}}</ion-label>
-                <ion-icon style="font-size: 24px;" name="wifi"></ion-icon>
+                <button ion-button clear icon-only no-margin (click)="onScanDevices()"><ion-icon style="font-size: 24px;" name="wifi"></ion-icon></button>
                 <ion-row justify-content-center>
                     <ion-col col-auto no-padding>
                         <ion-item no-lines no-margin no-padding style="background: transparent;">
