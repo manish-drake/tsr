@@ -4,7 +4,6 @@ import { NavController, Platform } from 'ionic-angular';
 import { HomeService } from '../../services/ui/home.service'
 import { LanguageService } from '../../services/language/language-service';
 import { Router } from "@angular/router";
-import { TestGroupComp } from '../../pages/testgroup-component/testgroup';
 
 // import {z} from 'zeromq'
 // declare var zmq: any;
