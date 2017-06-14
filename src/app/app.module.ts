@@ -79,6 +79,9 @@ import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype
 import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-actions/marker-actions';
 import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
 import { GraphService } from '../services/antenna/graph.service';
+import { Logger } from "../services/logging/logger";
+import { AProvider } from "../services/logging/aProvider";
+import { SqliteLogProvider } from "../services/logging/providers/sqliteLogProvider";
 
 
 @NgModule({
@@ -150,6 +153,8 @@ import { GraphService } from '../services/antenna/graph.service';
         File,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
+        Logger,
+        { provide: AProvider, useClass: SqliteLogProvider },
         Factory,
         MasterService,
         UserService,
