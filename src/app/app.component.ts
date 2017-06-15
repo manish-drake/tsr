@@ -30,18 +30,14 @@ export class MyApp implements OnInit {
       statusBar.styleDefault();
       splashScreen.hide();
       if (this.platform.is('android')) {
-        //back button handle
-        //Registration of push in Android
         var lastTimeBackPress = 0;
         var timePeriodToExit = 2000;
-
         this.platform.registerBackButtonAction(() => {
-          //Double check to exit app
           if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
-            this.platform.exitApp(); //Exit from app
+            this.platform.exitApp();
           } else {
             let toast = this.toastCtrl.create({
-              message: 'Press again to exit..',
+              message: 'Press back again to exit app..',
               duration: 3000,
               position: 'bottom'
             });
