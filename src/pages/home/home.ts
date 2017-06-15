@@ -3,6 +3,7 @@ import { NavController, Platform } from 'ionic-angular';
 
 import { HomeService } from '../../services/ui/home.service'
 import { LanguageService } from '../../services/language/language-service';
+import { Router } from "@angular/router";
 
 // import {z} from 'zeromq'
 // declare var zmq: any;
@@ -17,7 +18,8 @@ export class HomePage implements OnInit {
     public platform: Platform,
     public navCtrl: NavController,
     private _svcHome: HomeService,
-    private _srvLanguage: LanguageService) { }
+    private _srvLanguage: LanguageService,
+    private router: Router) { }
 
   title: string;
   footerData: any;
@@ -27,6 +29,8 @@ export class HomePage implements OnInit {
       this.title = e;
       if (!e) this.title = "Test Set Remote";
     })
+    this.router.navigate(['testgroup','Start']);
+    // this._router.navigateByUrl('testgroup/Start'); 
     this._svcHome.FooterUpdated.subscribe(e => this.footerData = e);
     this._srvLanguage.getSavedLanguage();
   }
