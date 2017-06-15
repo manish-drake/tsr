@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/Rx';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class DevicesService {
@@ -8,7 +9,7 @@ export class DevicesService {
 
     private connectedDevice: BehaviorSubject<any> = new BehaviorSubject(undefined);
 
-    constructor() {
+    constructor( private _logger: Logger ) {
         var deviceConnected = { name: "TestSet#5" };
 
         this.availableDevices.push(

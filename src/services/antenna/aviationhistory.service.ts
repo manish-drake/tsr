@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { Platform, ToastController } from 'ionic-angular';
 import { FileFactory } from "../../services/io/file-factory";
 import { UserService } from '../../services/test-set/user.service';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class AviationHistoryService {
@@ -10,7 +11,8 @@ export class AviationHistoryService {
         private platform: Platform,
         private toastCtrl: ToastController,
         private _fileFactory: FileFactory,
-        private _svcUser: UserService) { }
+        private _svcUser: UserService,
+        private _logger: Logger) { }
 
     saveVSWRorLOSSrecord(filename: string, selectedBandIndex: number, isGraphScaleChecked: boolean, markers: any[], data: any) {
         this.platform.ready().then(() => {
@@ -18,12 +20,12 @@ export class AviationHistoryService {
                 let collection: any[] = [];
                 this._fileFactory.readAsText(this._fileFactory.dataDirectory(), filename)
                     .then(result => {
-                        console.log('file read success: ' + result);
+                        this._logger.Debug('file read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
                         this.serializeVSWRorLOSSData(filename, collection, selectedBandIndex, isGraphScaleChecked, markers, data);
                     })
                     .catch((error) => {
-                        console.log("file don't exists")
+                        this._logger.Error("file don't exists")
                         this.serializeVSWRorLOSSData(filename, collection, selectedBandIndex, isGraphScaleChecked, markers, data);
                     })
             }
@@ -36,12 +38,12 @@ export class AviationHistoryService {
                 let collection: any[] = [];
                 this._fileFactory.readAsText(this._fileFactory.dataDirectory(), filename)
                     .then(result => {
-                        console.log('file read success: ' + result);
+                        this._logger.Debug('file read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
                         this.serializeDTFData(filename, collection, selectedCoaxIndex, isGraphScaleChecked, isLengthUnitChecked, markers, data);
                     })
                     .catch((error) => {
-                        console.log("file don't exists")
+                        this._logger.Error("file don't exists")
                         this.serializeDTFData(filename, collection, selectedCoaxIndex, isGraphScaleChecked, isLengthUnitChecked, markers, data);
                     })
             }

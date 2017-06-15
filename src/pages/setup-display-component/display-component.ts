@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ThemeService } from '../../services/themes/themes.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-display-component',
@@ -11,7 +12,8 @@ export class SetupDisplayComp {
   constructor(
     public _router: Router,
     private route: ActivatedRoute,
-    private _svcTheme: ThemeService
+    private _svcTheme: ThemeService,
+    private _logger: Logger
   ) {}
 
   parent: string;

@@ -6,6 +6,7 @@ import { DevicesService } from '../../services/test-set/devices.service';
 import { TestContextService } from '../../services/tests/testcontext.service';
 import { LanguageService } from '../../services/language/language-service';
 import { ConnectionService } from '../../services/test-set/connection.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-configurations',
@@ -38,7 +39,8 @@ export class ConfigurationsPopover {
     private _svcDevices: DevicesService,
     private _svcTestContext: TestContextService,
     private _srvLanguage: LanguageService,
-    private _svcConnection: ConnectionService
+    private _svcConnection: ConnectionService,
+    private _logger: Logger
   ) {
     this._svcTheme.getTheme().subscribe(val => this.chosenTheme = val);
     this.availableUsers = this._svcUser.getAvailableUsers();

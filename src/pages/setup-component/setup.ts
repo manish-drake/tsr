@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/test-set/user.service';
 import { ThemeService } from '../../services/themes/themes.service';
 import { HomeService } from '../../services/ui/home.service'
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-setup',
@@ -22,7 +23,8 @@ export class SetupComp {
     private _router: Router,
     private _svcUser: UserService,
     private _svcTheme: ThemeService,
-    private _svcHome: HomeService) { }
+    private _svcHome: HomeService,
+    private _logger: Logger) { }
 
   titleName: string;
   currentUser: any;

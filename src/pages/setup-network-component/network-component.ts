@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DevicesService } from '../../services/test-set/devices.service';
 import { ConnectionService } from '../../services/test-set/connection.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-network-component',
@@ -13,7 +14,8 @@ export class SetupNetworkComp {
     public _router: Router,
     private route: ActivatedRoute,
     private _svcDevices: DevicesService,
-    private _svcConnection: ConnectionService
+    private _svcConnection: ConnectionService,
+    private _logger: Logger
   ) { }
 
   parent: string;

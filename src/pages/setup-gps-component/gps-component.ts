@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-gps-component',
@@ -9,7 +10,8 @@ export class SetupGPSComp {
 
   constructor(
     public _router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _logger: Logger
   ) {}
 
   parent: string;

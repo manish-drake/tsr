@@ -4,6 +4,7 @@ import { ModalController } from 'ionic-angular';
 import { AviationHistoryModal } from "../../pages/aviation-history-modal/aviation-history-modal";
 import { AviationHistoryService } from "../../services/antenna/aviationhistory.service";
 import { GraphService } from '../../services/antenna/graph.service';
+import { Logger } from "../../services/logging/logger";
 
 /**
  * Generated class for the AviationDtfCompPage page.
@@ -21,7 +22,8 @@ export class AviationDtfComp {
     private _router: Router,
     private modalCtrl: ModalController,
     private _svcHistory: AviationHistoryService,
-    private _svcGraph: GraphService) { }
+    private _svcGraph: GraphService,
+    private _logger: Logger) { }
 
   markers: any[] = [{ markerval: 0.0 }];
 

@@ -3,6 +3,7 @@ import { Content } from 'ionic-angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from '../../services/ui/home.service';
 import { LocalStorage } from '../../services/storage/local-storage';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-antenna',
@@ -19,13 +20,15 @@ export class AntennaComp {
     private _router: Router,
     private _svcHome: HomeService,
     private content: Content,
-    private _localStorage: LocalStorage
+    private _localStorage: LocalStorage,
+    private _logger: Logger
   ) { }
 
   titleName: string;
 
   ngOnInit() {
-    this.gContent = this.groupContent.nativeElement;  
+
+    this.gContent = this.groupContent.nativeElement;
     this.route.params.subscribe(param => {
       this.titleName = (param as any).name;
       this._svcHome.title = (param as any).name;
@@ -45,16 +48,16 @@ export class AntennaComp {
     }
   }
 
-  openRequiredAvationMode(){
+  openRequiredAvationMode() {
     var aviationmode = this._localStorage.GetItem(this._localStorage.keyForAviationMode());
-    if(aviationmode == null || aviationmode == undefined){
-      this._router.navigate(['aviation-cal',this.titleName]);
+    if (aviationmode == null || aviationmode == undefined) {
+      this._router.navigate(['aviation-cal', this.titleName]);
     }
-    else{
-      this._router.navigate([aviationmode,this.titleName]);
+    else {
+      this._router.navigate([aviationmode, this.titleName]);
     }
   }
-  
+
 
 
   // Code to show more

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-setuptest',
@@ -8,7 +9,8 @@ import { ViewController } from 'ionic-angular';
 export class SetupTestPage {
 
   constructor(
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    private _logger: Logger
   ) { }
 
   pwrValue: any;

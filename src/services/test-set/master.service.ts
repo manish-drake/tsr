@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core'
 import { Observable } from 'Rxjs'
 import { Http } from '@angular/http';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class MasterService {
 
     constructor(
         private http: Http,
+        private _logger: Logger
     ) { }
 
     scanTest(): Observable<any> {

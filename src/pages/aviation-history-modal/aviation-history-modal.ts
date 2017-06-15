@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams, Platform } from 'ionic-angular';
 import { FileFactory } from "../../services/io/file-factory";
+import { Logger } from "../../services/logging/logger";
 
 /**
  * Generated class for the AviationHistoryModalPage page.
@@ -20,7 +21,8 @@ export class AviationHistoryModal {
     private viewCtrl: ViewController,
     private params: NavParams,
     private _fileFactory: FileFactory,
-    private platform: Platform) {
+    private platform: Platform,
+    private _logger: Logger) {
     this.fileName = this.params.get('filename');
   }
 

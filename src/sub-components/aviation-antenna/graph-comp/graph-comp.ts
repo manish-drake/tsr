@@ -23,14 +23,6 @@ export class GraphComp {
 
   constructor() { }
 
-  @ViewChild('rowEl') rowElement: ElementRef;
-  @ViewChild('colEl') colElement: ElementRef;
-
-  ngAfterViewInit() {
-    console.log(this.rowElement);
-    console.log(this.colElement);
-  }
-
   ngOnChanges(changes) {
     this.changeLengthUnit();
     this.changeGraphScale();

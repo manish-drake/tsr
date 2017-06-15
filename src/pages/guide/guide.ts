@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams } from 'ionic-angular';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-guide',
@@ -9,15 +10,17 @@ export class GuidePage {
 
   paramName: any;
 
-  constructor(private viewCtrl: ViewController, private params: NavParams) {
-    this.paramName = params.get("param");
-  }
+  constructor(
+    private viewCtrl: ViewController,
+    private params: NavParams,
+    private _logger: Logger
+  ) { this.paramName = params.get("param"); }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuidePage');
   }
 
-  onClose(){
+  onClose() {
     this.viewCtrl.dismiss()
   }
 

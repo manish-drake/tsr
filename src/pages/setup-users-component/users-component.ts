@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/test-set/user.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'users-component',
@@ -11,7 +12,8 @@ export class SetupUsersComp {
   constructor(
     public _router: Router,
     private route: ActivatedRoute,
-    private _svcUser: UserService) { }
+    private _svcUser: UserService,
+    private _logger: Logger) { }
 
   parent: string;
   selectedUser: any;

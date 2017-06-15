@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/Rx';
 import { LocalStorage } from '../../services/storage/local-storage'
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class UserService {
@@ -9,9 +10,11 @@ export class UserService {
 
     availableUsers: any[] = [];
 
-    
 
-    constructor(private _localStorage: LocalStorage) {
+
+    constructor(
+        private _localStorage: LocalStorage,
+        private _logger: Logger) {
         var defaultUser = { name: "OPERATOR", language: "English" };
 
         this.availableUsers.push(

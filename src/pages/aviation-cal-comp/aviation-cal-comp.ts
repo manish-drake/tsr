@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Logger } from "../../services/logging/logger";
 
 /**
  * Generated class for the AviationCalCompPage page.
@@ -14,9 +15,9 @@ import { Router } from '@angular/router';
 export class AviationCalComp {
 
   constructor(
-    private _router: Router
-  ) {
-  }
+    private _router: Router,
+    private _logger: Logger
+  ) { }
 
   calTypes: any[] = [
     { name: "SHORT", status: "UNCAL", date: "--/--/--" },
@@ -28,12 +29,12 @@ export class AviationCalComp {
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
-      .then(succ => console.log("Detail Closed: " + succ))
-      .catch(err => console.log("Error Closing Detail: " + err));
+      .then(succ => this._logger.Debug("Detail Closed: " + succ))
+      .catch(err => this._logger.Error("Error Closing Detail: " + err));
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AviationCalCompPage');
+    this._logger.Info('ionViewDidLoad AviationCalCompPage');
   }
 
   selectedType: any = this.calTypes[0];

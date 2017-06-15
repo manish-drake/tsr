@@ -8,6 +8,7 @@ import { HomeService } from '../../services/ui/home.service';
 import { LocalStorage } from '../../services/storage/local-storage';
 import { TestGroupsService } from '../../services/tests/testgroups.service';
 import { TestContextService } from '../../services/tests/testcontext.service';
+import { Logger } from "../../services/logging/logger";
 
 
 @Component({
@@ -32,15 +33,17 @@ export class TestGroupComp implements OnInit {
     private _svcHome: HomeService,
     private _localStorage: LocalStorage,
     private _svcTestGroups: TestGroupsService,
-    private _svcTextContext: TestContextService) { }
+    private _svcTextContext: TestContextService,
+    private _logger:Logger) { }
 
   testgroups: any[] = [];
   headerName: any;
 
   ngOnInit() {
+    this._logger.Info('Test group page loaded');
     this.gContent = this.groupContent.nativeElement;   
     this.route.params.subscribe(param => {
-      console.log(JSON.stringify(param));
+      this._logger.Debug(JSON.stringify(param));
       this.headerName = (param as any).name;
       this._svcHome.title = this.headerName;
       this._svcTestGroups.generateTestGroups(this.headerName);

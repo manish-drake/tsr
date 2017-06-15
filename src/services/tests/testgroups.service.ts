@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'Rxjs';
 import { Factory } from '../../services/objects/factory.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class TestGroupsService {
 
     constructor(
         private _objectService: Factory,
-        private _svcBroker: BrokerFactoryService
+        private _svcBroker: BrokerFactoryService,
+        private _logger: Logger
     ) { }
 
     private testgroups = new BehaviorSubject<any[]>([]);

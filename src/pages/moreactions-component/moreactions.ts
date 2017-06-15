@@ -7,6 +7,7 @@ import { LocalStorage } from '../../services/storage/local-storage';
 import { MasterService } from '../../services/test-set/master.service';
 import { TestGroupsService } from '../../services/tests/testgroups.service';
 import { TestContextService } from '../../services/tests/testcontext.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-moreactions',
@@ -33,7 +34,8 @@ export class MoreActionsPopover {
     private _localStorage: LocalStorage,
     private _master: MasterService,
     private _svcTestGroups: TestGroupsService,
-    private _svcTestContext: TestContextService
+    private _svcTestContext: TestContextService,
+    private _logger: Logger
   ) {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {

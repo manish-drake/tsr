@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LoadingController } from 'ionic-angular';
 import { AlertsService } from '../../services/ui/alerts.service';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class ConnectionService {
 
     constructor(
+        private _logger: Logger,
         private loadingCtrl: LoadingController,
         private _svcAlerts: AlertsService) {
 
@@ -26,7 +28,8 @@ export class ConnectionService {
     DeviceSelection(data: any[]) {
         this._svcAlerts.showRadioAlert("Avaialble Devices", data, 'Connect')
             .then(res => {
-                console.log("SelectedDevice: " + JSON.stringify(res));
+                this._logger.Debug("Selected device" + res);
+                console.log("Selected Device: " + JSON.stringify(res));
                 if(res != undefined){
                     this.ConnectionRequest();
                 }

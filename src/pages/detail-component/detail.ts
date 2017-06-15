@@ -6,6 +6,7 @@ import { HomeService } from '../../services/ui/home.service';
 import { BrokerFactoryService } from '../../services/broker/brokerFactory.service';
 import { Factory } from '../../services/objects/factory.service';
 import { MasterService } from '../../services/test-set/master.service';
+import { Logger } from "../../services/logging/logger";
 
 @Component({
   selector: 'page-detail',
@@ -21,7 +22,8 @@ export class TestDetailComp {
     private route: ActivatedRoute,
     private _svcBroker: BrokerFactoryService,
     private _objectService: Factory,
-    private _svcMaster: MasterService
+    private _svcMaster: MasterService,
+    private _logger: Logger
   ) { }
 
   testsData: any;
