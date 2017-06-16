@@ -26,6 +26,11 @@ export class SetupUsersComp {
     this._svcUser.getCurrentUser().subscribe(val => this.selectedUser = val);
     this.availableUsers = this._svcUser.getAvailableUsers();
   }
+
+  ngAfterViewInit() {
+    this._logger.Info("Setup_User component loaded");
+  }
+
   onGoBack() {
     this._router.navigate(['setup', this.parent]);
   }

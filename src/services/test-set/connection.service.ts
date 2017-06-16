@@ -14,6 +14,7 @@ export class ConnectionService {
     }
 
     ScanDevices() {
+        this._logger.Debug("Scanning devices..")
         let loader = this.loadingCtrl.create({
             content: "Scanning..."
         });
@@ -28,14 +29,13 @@ export class ConnectionService {
     DeviceSelection(data: any[]) {
         this._svcAlerts.showRadioAlert("Avaialble Devices", data, 'Connect')
             .then(res => {
-                this._logger.Debug("Selected device" + res);
-                console.log("Selected Device: " + JSON.stringify(res));
+                this._logger.Debug("Selected Device: " + JSON.stringify(res));
                 if(res != undefined){
                     this.ConnectionRequest();
                 }
             })
             .catch(e => {
-                console.log("Device Selection cancelled by user: " + JSON.stringify(e));
+               this._logger.Error("Device Selection cancelled by user: " + JSON.stringify(e));
             })
     }
 
@@ -46,11 +46,11 @@ export class ConnectionService {
     PINConfirmation() {
         this._svcAlerts.PromptAlert('PIN Confirmation', 'Enter PIN displaying on Test Set', 'pin', 'PIN eg. 1234', '', 'number')
             .then(res => {
-                console.log('Response: ' + JSON.stringify(res));
+                this._logger.Debug('Response: ' + JSON.stringify(res));
                 this.SuccessMessage();
             })
             .catch(e => {
-                console.log("PIN confirmation cancelled by user: " + JSON.stringify(e));
+                this._logger.Error("PIN confirmation cancelled by user: " + JSON.stringify(e));
                 this.FailMessage();
             })
     }

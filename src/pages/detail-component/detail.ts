@@ -39,17 +39,18 @@ export class TestDetailComp {
       this.headerName = (data as any).headername;
       this.testName = (data as any).test;
       this._svcHome.title = this.headerName;
-      console.log(JSON.stringify(data));
+      this._logger.Info(this.testName,' detail is loaded.');
 
-
-      this.testsData = this._objectService.createTestsData(this.testName);
-      this.tests = this._svcBroker.createTestsDetail(this.testsData);
+       this.testsData = this._objectService.createTestsData(this.testName);
+       this.tests = this._svcBroker.createTestsDetail(this.testsData);
     });
     this._svcMaster.scanTest()
       .subscribe(data => {
         this.vehicles = [];
         this.vehicles = data.response.data.results;
-      }, (rej) => { console.error("Could not load local data", rej) });
+      }, (rej) => { 
+        this._logger.Error("Could not load local data", rej);
+     });
     this.setFooterResultStatus("before");
   }
 
@@ -122,8 +123,8 @@ export class TestDetailComp {
     switch (ev) {
       case 'close': {
         this._router.navigate(['testgroup', this.headerName])
-          .then(succ => console.log("Detail Closed: " + succ))
-          .catch(err => console.log("Error Closing Detail: " + err));
+          .then(succ => this._logger.Debug("Test detail closed: " + succ))
+          .catch(err => this._logger.Error("Error, closing test detail: " + err));
         break;
       }
       case 'next': {

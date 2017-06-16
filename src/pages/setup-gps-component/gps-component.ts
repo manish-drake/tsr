@@ -12,7 +12,7 @@ export class SetupGPSComp {
     public _router: Router,
     private route: ActivatedRoute,
     private _logger: Logger
-  ) {}
+  ) { }
 
   parent: string;
 
@@ -20,6 +20,10 @@ export class SetupGPSComp {
     this.route.params.subscribe(param => {
       this.parent = (param as any).parent;
     });
+  }
+
+  ngAfterViewInit() {
+    this._logger.Info("Setup_Gps component loaded");
   }
 
   onGoBack() {

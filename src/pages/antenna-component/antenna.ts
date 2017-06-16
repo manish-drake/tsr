@@ -27,12 +27,15 @@ export class AntennaComp {
   titleName: string;
 
   ngOnInit() {
-
     this.gContent = this.groupContent.nativeElement;
     this.route.params.subscribe(param => {
       this.titleName = (param as any).name;
       this._svcHome.title = (param as any).name;
     });
+  }
+
+  ngAfterViewInit() {
+    this._logger.Info('Antenna page loaded');
   }
 
   private clicks = 0;

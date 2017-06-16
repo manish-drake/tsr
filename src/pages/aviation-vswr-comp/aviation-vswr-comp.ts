@@ -24,6 +24,10 @@ export class AviationVSWRComp {
   selectedBandIndex: number = 0;
   selectedBand: any;
 
+ngAfterViewInit() {
+    this._logger.Info('Aviation-vswr view loaded');
+  }
+
   onBandSelected(ev) {
     this.selectedBandIndex = ev.index;
     this.selectedBand = ev.obj;
@@ -38,8 +42,8 @@ export class AviationVSWRComp {
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
-      .then(succ => console.log("Detail Closed: " + succ))
-      .catch(err => console.log("Error Closing Detail: " + err));
+      .then(succ => this._logger.Debug("Aviation vswr detail Closed: " + succ))
+      .catch(err => this._logger.Error("Error, closing vswr detail: " + err));
   }
 
   HistoryFileName: string = "AviaitionVSWRHistory";

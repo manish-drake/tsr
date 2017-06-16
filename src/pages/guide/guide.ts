@@ -17,11 +17,11 @@ export class GuidePage {
   ) { this.paramName = params.get("param"); }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GuidePage');
+    this._logger.Info('Guide page loaded');
   }
 
   onClose() {
-    this.viewCtrl.dismiss()
+    this.viewCtrl.dismiss();
   }
 
 }

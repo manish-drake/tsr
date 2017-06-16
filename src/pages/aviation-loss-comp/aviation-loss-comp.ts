@@ -24,6 +24,10 @@ export class AviationLossComp {
   selectedBandIndex: number = 0;
   selectedBand: any;
 
+  ngAfterViewInit() {
+    this._logger.Info('Aviation-loss view loaded');
+  }
+
   onBandSelected(ev) {
     this.selectedBandIndex = ev.index;
     this.selectedBand = ev.obj;
@@ -37,8 +41,8 @@ export class AviationLossComp {
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
-      .then(succ => console.log("Detail Closed: " + succ))
-      .catch(err => console.log("Error Closing Detail: " + err));
+      .then(succ => this._logger.Debug("Aviation cable loss detail: " + succ))
+      .catch(err => this._logger.Error("Error, closing aviation cable loss detail: " + err));
   }
 
   HistoryFileName: string = "AviaitionLossHistory";
@@ -68,7 +72,6 @@ export class AviationLossComp {
   }
 
   onMarkerAction(ev) {
-    console.log(ev);
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core"
 import { Platform } from 'ionic-angular'
 import { Observable } from 'Rxjs'
 import { File, IWriteOptions } from '@ionic-native/file'
+import { Logger } from "../logging/logger";
 
 declare var cordova: any;
 
@@ -9,8 +10,9 @@ declare var cordova: any;
 export class FileFactory {
     constructor(
         private file: File,
-        private platform: Platform) {
-    }
+        private platform: Platform,
+        private _logger: Logger
+        ) {}
 
     checkFile(dirpath: string, fileName: string): Promise<boolean> {
         return this.file.checkFile(dirpath, fileName)
@@ -20,7 +22,7 @@ export class FileFactory {
 
     writeFile(dirPath: string, fileName: string, content: any): Promise<any> {
         return this.file.writeFile(dirPath, fileName, content, this.writeOptions)
-            .catch((error) => { console.log("error writting file: " + JSON.stringify(error)) })
+            .catch((error) => { this._logger.Error("Error, writting file: " + JSON.stringify(error)) })
     }
 
     copyFile(filePath, fileName, newFilePath, newFileName): Observable<any> {

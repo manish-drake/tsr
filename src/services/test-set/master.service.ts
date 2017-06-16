@@ -12,6 +12,7 @@ export class MasterService {
     ) { }
 
     scanTest(): Observable<any> {
+        this._logger.Debug('Scan test..');
         console.log('posting');
 
         // return this.http.post('http://claganga.homeip.net/cgi-bin/UATCGIServer',
@@ -33,7 +34,7 @@ export class MasterService {
     }
 
     runTest(tests: any[]) {
-
+        this._logger.Debug('Run test..');
         var SetValue = function (summaryName, key, value) {
             tests.forEach(test => {
                 if (test.name == summaryName) {

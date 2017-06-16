@@ -27,10 +27,13 @@ export class AviationDtfComp {
 
   markers: any[] = [{ markerval: 0.0 }];
 
+  ngAfterViewInit() {
+    this._logger.Info('aviation-dtf view loaded');
+  }
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
-      .then(succ => console.log("Detail Closed: " + succ))
-      .catch(err => console.log("Error Closing Detail: " + err));
+      .then(succ => this._logger.Debug("Aviation dtf detail closed: " + succ))
+      .catch(err => this._logger.Error("Error, closing aviation dtf detail: " + err));
   }
 
   isLengthUnitChecked: boolean;
@@ -68,7 +71,6 @@ export class AviationDtfComp {
   }
 
   onMarkerAction(ev) {
-    console.log(ev);
     switch (ev) {
       case "add":
         if (this.markers.length < 4) {

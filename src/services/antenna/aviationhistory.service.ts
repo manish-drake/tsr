@@ -30,12 +30,12 @@ export class AviationHistoryService {
                 let collection: any[] = [];
                 this._fileFactory.readAsText(this.dataDirectory, filename)
                     .then(result => {
-                        this._logger.Debug('file read success: ' + result);
+                        this._logger.Debug('File read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
                         this.serializeVSWRorLOSSData(filename, collection, selectedBandIndex, isGraphScaleChecked, markers, data);
                     })
                     .catch((error) => {
-                        this._logger.Error("file don't exists")
+                        this._logger.Error("File don't exists");
                         this.serializeVSWRorLOSSData(filename, collection, selectedBandIndex, isGraphScaleChecked, markers, data);
                     })
             }
@@ -48,12 +48,12 @@ export class AviationHistoryService {
                 let collection: any[] = [];
                 this._fileFactory.readAsText(this.dataDirectory, filename)
                     .then(result => {
-                        this._logger.Debug('file read success: ' + result);
+                        this._logger.Debug('File read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
                         this.serializeDTFData(filename, collection, selectedCoaxIndex, isGraphScaleChecked, isLengthUnitChecked, markers, data);
                     })
                     .catch((error) => {
-                        this._logger.Error("file don't exists")
+                        this._logger.Error("File don't exists");
                         this.serializeDTFData(filename, collection, selectedCoaxIndex, isGraphScaleChecked, isLengthUnitChecked, markers, data);
                     })
             }
@@ -75,8 +75,12 @@ export class AviationHistoryService {
         collection.unshift(record);
         this._fileFactory.writeFile(this.dataDirectory, filename, JSON.stringify(collection))
             .then(() => {
+                this._logger.Debug('Record saved successfully');
                 let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
                 toast.present();
+            })
+            .catch(() => {
+                this._logger.Error("Error, saving record.");
             });
     }
 
@@ -96,8 +100,12 @@ export class AviationHistoryService {
         collection.unshift(record);
         this._fileFactory.writeFile(this.dataDirectory, filename, JSON.stringify(collection))
             .then(() => {
+                this._logger.Debug('Record saved successfully');
                 let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
                 toast.present();
+            })
+            .catch(() => {
+                this._logger.Error("Error, saving record.");
             });
     }
 
