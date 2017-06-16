@@ -1,24 +1,34 @@
 import { Injectable } from '@angular/core'
 import { Platform, ToastController } from 'ionic-angular';
 import { FileFactory } from "../../services/io/file-factory";
+import { StorageFactory } from "../../services/io/storage";
 import { UserService } from '../../services/test-set/user.service';
 import { Logger } from "../logging/logger";
 
 @Injectable()
 export class AviationHistoryService {
 
+    dataDirectory: string;
+
     constructor(
         private platform: Platform,
         private toastCtrl: ToastController,
         private _fileFactory: FileFactory,
+        private _storage: StorageFactory,
         private _svcUser: UserService,
-        private _logger: Logger) { }
+        private _logger: Logger) {
+        if (this.platform.is('cordova')) {
+            this._storage.dataDirectory().then((res) => {
+                this.dataDirectory = res;
+            });
+        }
+    }
 
     saveVSWRorLOSSrecord(filename: string, selectedBandIndex: number, isGraphScaleChecked: boolean, markers: any[], data: any) {
         this.platform.ready().then(() => {
             if (this.platform.is('cordova')) {
                 let collection: any[] = [];
-                this._fileFactory.readAsText(this._fileFactory.dataDirectory(), filename)
+                this._fileFactory.readAsText(this.dataDirectory, filename)
                     .then(result => {
                         this._logger.Debug('file read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
@@ -36,7 +46,7 @@ export class AviationHistoryService {
         this.platform.ready().then(() => {
             if (this.platform.is('cordova')) {
                 let collection: any[] = [];
-                this._fileFactory.readAsText(this._fileFactory.dataDirectory(), filename)
+                this._fileFactory.readAsText(this.dataDirectory, filename)
                     .then(result => {
                         this._logger.Debug('file read success: ' + result);
                         if (result != undefined) collection = JSON.parse(result);
@@ -63,7 +73,7 @@ export class AviationHistoryService {
             data: data
         }
         collection.unshift(record);
-        this._fileFactory.writeFile(this._fileFactory.dataDirectory(), filename, JSON.stringify(collection))
+        this._fileFactory.writeFile(this.dataDirectory, filename, JSON.stringify(collection))
             .then(() => {
                 let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
                 toast.present();
@@ -84,7 +94,7 @@ export class AviationHistoryService {
             data: data
         }
         collection.unshift(record);
-        this._fileFactory.writeFile(this._fileFactory.dataDirectory(), filename, JSON.stringify(collection))
+        this._fileFactory.writeFile(this.dataDirectory, filename, JSON.stringify(collection))
             .then(() => {
                 let toast = this.toastCtrl.create({ message: 'Record saved successfully', duration: 2000 });
                 toast.present();

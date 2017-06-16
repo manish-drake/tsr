@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams, Platform } from 'ionic-angular';
 import { FileFactory } from "../../services/io/file-factory";
+import { StorageFactory } from "../../services/io/storage";
 import { Logger } from "../../services/logging/logger";
 
 /**
@@ -16,14 +17,21 @@ import { Logger } from "../../services/logging/logger";
 export class AviationHistoryModal {
 
   fileName: string;
+  dataDirectory: string;
 
   constructor(
     private viewCtrl: ViewController,
     private params: NavParams,
     private _fileFactory: FileFactory,
+    private _storage: StorageFactory,
     private platform: Platform,
     private _logger: Logger) {
     this.fileName = this.params.get('filename');
+    if (this.platform.is('cordova')) {
+      this._storage.dataDirectory().then((res) => {
+        this.dataDirectory = res;
+      });
+    }
   }
 
   dataList: any[] = []
@@ -31,7 +39,7 @@ export class AviationHistoryModal {
   ngAfterViewInit() {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        this._fileFactory.readAsText(this._fileFactory.dataDirectory(), this.fileName)
+        this._fileFactory.readAsText(this.dataDirectory, this.fileName)
           .then(result => {
             console.log('file read success: ' + result);
             if (result != undefined) this.dataList = JSON.parse(result);
@@ -60,7 +68,7 @@ export class AviationHistoryModal {
   deleteRecord() {
     this.dataList.splice(this.selectedItemIndex, 1);
     this.selectedItem = null;
-    this._fileFactory.writeFile(this._fileFactory.dataDirectory(), this.fileName, JSON.stringify(this.dataList));
+    this._fileFactory.writeFile(this.dataDirectory, this.fileName, JSON.stringify(this.dataList));
   }
 
 }

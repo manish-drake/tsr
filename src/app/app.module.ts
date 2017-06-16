@@ -14,6 +14,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppVersion } from '@ionic-native/app-version';
 import { File } from '@ionic-native/file';
+import { Device } from '@ionic-native/device';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -45,8 +47,25 @@ import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp
 import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/testsetinfo-comp';
 import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
 
+import { AntennaComp } from "../pages/antenna-component/antenna";
+import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
+import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
+import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
+import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
+import { AviationHistoryModal } from "../pages/aviation-history-modal/aviation-history-modal";
+
+import { GraphComp } from '../sub-components/aviation-antenna/graph-comp/graph-comp';
+import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selection/mode-selection';
+import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selection/band-selection';
+import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
+import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
+import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-actions/marker-actions';
+import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
+import { GraphService } from '../services/antenna/graph.service';
+
 import { SpyDirective } from '../common/mySpy.directive';
 import { FileFactory } from '../services/io/file-factory';
+import { StorageFactory } from '../services/io/storage';
 import { FileIOService } from '../services/io/file-io.service';
 import { Factory } from '../services/objects/factory.service';
 import { BrokerFactoryService } from '../services/broker/brokerFactory.service';
@@ -64,24 +83,10 @@ import { AlertsService } from '../services/ui/alerts.service';
 import { ThemeService } from '../services/themes/themes.service';
 import { LanguageService } from '../services/language/language-service';
 
-import { AntennaComp } from "../pages/antenna-component/antenna";
-import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
-import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
-import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
-import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
-import { AviationHistoryModal } from "../pages/aviation-history-modal/aviation-history-modal";
-
-import { GraphComp } from '../sub-components/aviation-antenna/graph-comp/graph-comp';
-import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selection/mode-selection';
-import { BandSelectionComp } from '../sub-components/aviation-antenna/band-selection/band-selection';
-import { CoaxSelectionComp } from '../sub-components/aviation-antenna/coax-selection/coax-selection';
-import { CalTypeSelectionComp } from '../sub-components/aviation-antenna/caltype-selection/caltype-selection';
-import { MarkerControlComp } from '../sub-components/aviation-antenna/marker-actions/marker-actions';
-import { AviationHistoryService } from '../services/antenna/aviationhistory.service';
-import { GraphService } from '../services/antenna/graph.service';
 import { Logger } from "../services/logging/logger";
 import { AProvider } from "../services/logging/aProvider";
 import { SqliteLogProvider } from "../services/logging/providers/sqliteLogProvider";
+import { ShareLogsService } from '../services/logging/share-logs'
 
 
 @NgModule({
@@ -151,10 +156,13 @@ import { SqliteLogProvider } from "../services/logging/providers/sqliteLogProvid
         SplashScreen,
         AppVersion,
         File,
+        Device,
+        EmailComposer,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
         Logger,
         { provide: AProvider, useClass: SqliteLogProvider },
+        ShareLogsService,
         Factory,
         MasterService,
         UserService,
@@ -169,6 +177,7 @@ import { SqliteLogProvider } from "../services/logging/providers/sqliteLogProvid
         TestContextService,
         ThemeService,
         FileFactory,
+        StorageFactory,
         LocalStorage,
         LanguageService,
         AviationHistoryService,

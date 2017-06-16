@@ -7,7 +7,8 @@ import { LocalStorage } from '../../services/storage/local-storage';
 import { MasterService } from '../../services/test-set/master.service';
 import { TestGroupsService } from '../../services/tests/testgroups.service';
 import { TestContextService } from '../../services/tests/testcontext.service';
-import { Logger } from "../../services/logging/logger";
+import { Logger } from '../../services/logging/logger';
+import { ShareLogsService } from '../../services/logging/share-logs'
 
 @Component({
   selector: 'page-moreactions',
@@ -21,9 +22,7 @@ export class MoreActionsPopover {
   public setup: any;
   public help: any;
   versionNumber: any;
-
   chosenTheme: any;
-
   testInContext: any;
 
   constructor(
@@ -35,7 +34,8 @@ export class MoreActionsPopover {
     private _master: MasterService,
     private _svcTestGroups: TestGroupsService,
     private _svcTestContext: TestContextService,
-    private _logger: Logger
+    private _logger: Logger,
+    private _svcShareLogs: ShareLogsService
   ) {
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
@@ -174,6 +174,11 @@ export class MoreActionsPopover {
       });
       this._localStorage.SetItem(this._localStorage.keyForDisabledGuides(), JSON.stringify(itemsColl));
     }
+  }
+
+  onSendLogs() {
+    this.viewCtrl.dismiss();
+    this._svcShareLogs.sendLogs();
   }
 
 }
