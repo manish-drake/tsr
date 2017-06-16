@@ -16,6 +16,7 @@ import { AppVersion } from '@ionic-native/app-version';
 import { File } from '@ionic-native/file';
 import { Device } from '@ionic-native/device';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { SQLite } from '@ionic-native/sqlite';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -158,6 +159,7 @@ import { ShareLogsService } from '../services/logging/share-logs'
         File,
         Device,
         EmailComposer,
+        SQLite,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         FileIOService,
         Logger,

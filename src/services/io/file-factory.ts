@@ -12,7 +12,7 @@ export class FileFactory {
         private file: File,
         private platform: Platform,
         private _logger: Logger
-        ) {}
+    ) { }
 
     checkFile(dirpath: string, fileName: string): Promise<boolean> {
         return this.file.checkFile(dirpath, fileName)
@@ -25,9 +25,8 @@ export class FileFactory {
             .catch((error) => { this._logger.Error("Error, writting file: " + JSON.stringify(error)) })
     }
 
-    copyFile(filePath, fileName, newFilePath, newFileName): Observable<any> {
-        return Observable.fromPromise(this.file.copyFile(filePath, fileName, newFilePath, newFileName))
-            .map(x => x)
+    copyFile(path: string, fileName: string, newPath: string, newFileName: string): Promise<any> {
+        return this.file.copyFile(path, fileName, newPath, newFileName)
     }
 
     removeFile(path, fileName): Promise<any> {

@@ -17,14 +17,13 @@ export class SqliteLogProvider extends AProvider {
         //For collecting logs data
         this.platform.ready().then(() => {
             if (this.platform.is('cordova')) {
-                var databaseConfig;
+                let databaseConfig: any;
                 if (this.platform.is('android')) {
                     databaseConfig = { name: "data.db", location: "default" }
                 }
                 else if (this.platform.is('ios')) {
                     databaseConfig = { name: "data.db", iosDatabaseLocation: 'Documents' }
                 }
-
                 this.sqlite.create(databaseConfig)
                     .then((db: SQLiteObject) => {
                         var dtLog = new Date().toUTCString();
@@ -40,7 +39,7 @@ export class SqliteLogProvider extends AProvider {
                             console.error("Unable to execute sql", error);
                         })
                     })
-                    .catch(e => console.error("Unable to open database", e));
+                    .catch(e => console.error("Unable to open database", JSON.stringify(e)));
             }
         });
     }

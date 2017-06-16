@@ -29,6 +29,19 @@ export class StorageFactory {
         })
     }
 
+    externalDataDirectory() {
+        return this.platform.ready().then(() => {
+            if (this.platform.is('cordova')) {
+                if (this.platform.is('android')) {
+                    return cordova.file.externalDataDirectory;
+                }
+                else if (this.platform.is('ios')) {
+                    return cordova.file.documentsDirectory;
+                }
+            }
+        })
+    }
+
     applicationStorageDirectory() {
         return this.platform.ready().then(() => {
             if (this.platform.is('cordova')) {

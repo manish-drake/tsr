@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core"
 import { Platform } from 'ionic-angular';
-import { Observable } from 'Rxjs'
 import { AppVersion } from '@ionic-native/app-version';
 import { Device } from '@ionic-native/device';
 import { EmailComposer } from '@ionic-native/email-composer';
@@ -40,7 +39,7 @@ export class ShareLogsService {
                         this.sqliteLogDirectory = res;
                     })
                 }
-                this._storage.externalRootDirectory().then((res) => {
+                this._storage.externalDataDirectory().then((res) => {
                     this.rootDirectory = res;
                 });
                 this.appVersion.getVersionNumber().then((s) => {
@@ -62,7 +61,7 @@ export class ShareLogsService {
                                     this.getLogsFile();
                                 })
                         })
-                        .catch(err => new Observable(err => { this.getLogsFile(); }))
+                        .catch(err => this.getLogsFile())
                 })
                 .catch(err => {
                     this._logger.Error("Error: no log file exists", JSON.stringify(err));
@@ -73,15 +72,14 @@ export class ShareLogsService {
 
     getLogsFile() {
         this._fileFactory.copyFile(this.sqliteLogDirectory, "data.db", this.rootDirectory, "data.db")
-            .catch(err => new Observable(err => {
-                this._logger.Error("Error copying log file: ", JSON.stringify(err));
-                this._svcAlerts.BasicAlert("Error getting logs file", JSON.stringify(err));
-            }))
-            .subscribe(promise => {
+            .then(succ => {
                 this._logger.Debug("Composing email");
                 this.composeEmail();
             })
-
+            .catch(err => {
+                this._logger.Error("Error copying log file: ", JSON.stringify(err));
+                this._svcAlerts.BasicAlert("Error getting logs file", JSON.stringify(err));
+            });
     }
 
     composeEmail() {
@@ -99,6 +97,12 @@ export class ShareLogsService {
             ,
             isHtml: true
         };
-        this.emailComposer.open(email);
+        this.emailComposer.open(email)
+            .then(succ => {
+                console.log("Log sharing initiated: " + succ)
+            })
+            .catch(err => {
+                console.log("Error initiating log sharing: " + err)
+            })
     }
 }
