@@ -2,15 +2,20 @@ import { Injectable } from '@angular/core';
 import { LoadingController } from 'ionic-angular';
 import { AlertsService } from '../../services/ui/alerts.service';
 import { Logger } from "../logging/logger";
+import { DevicesService } from '../../services/test-set/devices.service';
 
 @Injectable()
 export class ConnectionService {
 
+    availableDevices: any;
+
     constructor(
         private _logger: Logger,
         private loadingCtrl: LoadingController,
-        private _svcAlerts: AlertsService) {
-
+        private _svcAlerts: AlertsService,
+        private _svcDevices: DevicesService,
+    ) {
+        this.availableDevices = this._svcDevices.getAvailableDevices();
     }
 
     ScanDevices() {
@@ -21,32 +26,32 @@ export class ConnectionService {
         loader.present();
         setTimeout(() => {
             loader.dismiss();
-            let data: any[] = [{ name: 'Device 1', ipaddress: '192.168.10.8' }, { name: 'Device 2', ipaddress: '192.168.10.9' }];
-            this.DeviceSelection(data);
+            this.DeviceSelection(this.availableDevices);
         }, 1000)
     }
 
     DeviceSelection(data: any[]) {
-        this._svcAlerts.showRadioAlert("Avaialble Devices", data, 'Connect')
+        this._svcAlerts.showRadioAlert("Available Devices", data, 'Connect')
             .then(res => {
                 this._logger.Debug("Selected Device: " + JSON.stringify(res));
-                if(res != undefined){
-                    this.ConnectionRequest();
+                if (res != undefined) {
+                    this.ConnectionRequest(res);
                 }
             })
             .catch(e => {
-               this._logger.Error("Device Selection cancelled by user: " + JSON.stringify(e));
+                this._logger.Error("Device Selection cancelled by user: " + JSON.stringify(e));
             })
     }
 
-    ConnectionRequest() {
-        this.PINConfirmation()
+    ConnectionRequest(res) {
+        this.PINConfirmation(res)
     }
 
-    PINConfirmation() {
+    PINConfirmation(res) {
         this._svcAlerts.PromptAlert('PIN Confirmation', 'Enter PIN displaying on Test Set', 'pin', 'PIN eg. 1234', '', 'number')
-            .then(res => {
-                this._logger.Debug('Response: ' + JSON.stringify(res));
+            .then(succ => {
+                this._logger.Debug('Response: ' + JSON.stringify(succ));
+                this._svcDevices.setConnectedDevice(res);
                 this.SuccessMessage();
             })
             .catch(e => {
@@ -55,12 +60,12 @@ export class ConnectionService {
             })
     }
 
-    SuccessMessage(){
-        this._svcAlerts.BasicAlert("Pairing successful","Connected to the device");
+    SuccessMessage() {
+        this._svcAlerts.BasicAlert("Pairing successful", "Connected to the device");
     }
 
-    FailMessage(){
-        this._svcAlerts.BasicAlert("Pairing failed","Try again");
+    FailMessage() {
+        this._svcAlerts.BasicAlert("Pairing failed", "Try again");
     }
 
 }
