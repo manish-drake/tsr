@@ -52,10 +52,8 @@ export class ShareLogsService {
 
     sendLogs() {
         if (this.platform.is('cordova')) {
-            alert(this.sqliteLogDirectory);
             this._fileFactory.checkFile(this.sqliteLogDirectory, "data.db")
                 .then(succ => {
-                    alert("succ: " + succ);
                     console.log("Success: " + JSON.stringify(succ));
                     this._fileFactory.checkFile(this.rootDirectory, "data.db")
                         .then(promise => {
