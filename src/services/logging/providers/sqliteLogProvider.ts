@@ -27,7 +27,6 @@ export class SqliteLogProvider extends AProvider {
 
                 this.sqlite.create(databaseConfig)
                     .then((db: SQLiteObject) => {
-                        alert("log database")
                         var dtLog = new Date().toUTCString();
 
                         db.executeSql("CREATE TABLE IF NOT EXISTS logs (id INTEGER PRIMARY KEY AUTOINCREMENT, dtLog TEXT, message TEXT)", {}).then((data) => {
