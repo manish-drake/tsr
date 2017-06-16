@@ -21,23 +21,24 @@ import { SQLite } from '@ionic-native/sqlite';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { HeaderComponent } from '../pages/header-component/header-component';
-import { FooterComponent } from '../pages/footer-component/footer-component';
-import { MoreActionsPopover } from '../pages/moreactions-component/moreactions';
-import { ConfigurationsPopover } from '../pages/configurations-component/configurations';
-import { TestGroupComp } from '../pages/testgroup-component/testgroup';
-import { TestDetailComp } from '../pages/detail-component/detail';
-import { SetupTestPage } from '../pages/setuptest/setuptest';
-import { HelpPage } from '../pages/help-component/help';
-import { GuidePage } from '../pages/guide/guide';
+import { HeaderComponent } from '../pages/header/header';
+import { FooterComponent } from '../pages/footer/footer';
+import { MoreActionsPopover } from '../pages/moreactions/moreactions';
+import { ConfigPanelPopover } from '../pages/config-panel/config-panel';
 
-import { SetupComp } from '../pages/setup-component/setup';
-import { SetupUsersComp } from '../pages/setup-users-component/users-component';
-import { SetupDisplayComp } from '../pages/setup-display-component/display-component';
-import { SetupGPSComp } from '../pages/setup-gps-component/gps-component';
-import { SetupNetworkComp } from '../pages/setup-network-component/network-component';
-import { SetupSystemInfoComp } from '../pages/setup-systeminfo-component/systeminfo-component';
-import { SetupConnectionComp } from '../pages/setup-connection-component/connection-component';
+import { TestGroupComp } from '../pages/test/testgroup-component/testgroup';
+import { TestDetailComp } from '../pages/test/detail-component/detail';
+import { SetupTestPage } from '../pages/test/setuptest/setuptest';
+import { HelpPage } from '../pages/test/help-component/help';
+import { GuidePage } from '../pages/test/guide/guide';
+
+import { SetupComp } from '../pages/setup/setup-component/setup';
+import { SetupUsersComp } from '../pages/setup/setup-users-component/users-component';
+import { SetupDisplayComp } from '../pages/setup/setup-display-component/display-component';
+import { SetupGPSComp } from '../pages/setup/setup-gps-component/gps-component';
+import { SetupNetworkComp } from '../pages/setup/setup-network-component/network-component';
+import { SetupSystemInfoComp } from '../pages/setup/setup-systeminfo-component/systeminfo-component';
+import { SetupConnectionComp } from '../pages/setup/setup-connection-component/connection-component';
 
 import { DetailDefaultComp } from '../sub-components/tests/detail-default/detail-default';
 import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
@@ -48,12 +49,12 @@ import { ModalIonItemComp } from '../sub-components/modalctrl/modal-ionitem-comp
 import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/testsetinfo-comp';
 import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
 
-import { AntennaComp } from "../pages/antenna-component/antenna";
-import { AviationCalComp } from "../pages/aviation-cal-comp/aviation-cal-comp";
-import { AviationVSWRComp } from "../pages/aviation-vswr-comp/aviation-vswr-comp";
-import { AviationLossComp } from "../pages/aviation-loss-comp/aviation-loss-comp";
-import { AviationDtfComp } from "../pages/aviation-dtf-comp/aviation-dtf-comp";
-import { AviationHistoryModal } from "../pages/aviation-history-modal/aviation-history-modal";
+import { AntennaComp } from "../pages/antenna/antenna/antenna";
+import { AviationCalComp } from "../pages/antenna/aviation-calibration/aviation-calibration";
+import { AviationVSWRComp } from "../pages/antenna/aviation-vswr-comp/aviation-vswr-comp";
+import { AviationLossComp } from "../pages/antenna/aviation-loss-comp/aviation-loss-comp";
+import { AviationDtfComp } from "../pages/antenna/aviation-dtf/aviation-dtf";
+import { AviationHistoryModal } from "../pages/antenna/aviation-history-modal/aviation-history-modal";
 
 import { GraphComp } from '../sub-components/aviation-antenna/graph-comp/graph-comp';
 import { ModeSelectionComp } from '../sub-components/aviation-antenna/mode-selection/mode-selection';
@@ -95,7 +96,7 @@ import { ShareLogsService } from '../services/logging/share-logs'
         MyApp,
         HomePage,
         MoreActionsPopover,
-        ConfigurationsPopover,
+        ConfigPanelPopover,
         HeaderComponent,
         TestGroupComp,
         SetupComp,
@@ -145,7 +146,7 @@ import { ShareLogsService } from '../services/logging/share-logs'
         HomePage,
         MyApp,
         MoreActionsPopover,
-        ConfigurationsPopover,
+        ConfigPanelPopover,
         SetupTestPage,
         HelpPage,
         GuidePage,

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
-import { HelpPage } from '../../pages/help-component/help';
-import { SetupTestPage } from '../../pages/setuptest/setuptest';
+import { HelpPage } from '../../pages/test/help-component/help';
+import { SetupTestPage } from '../../pages/test/setuptest/setuptest';
 
 @Injectable()
 export class ModalService {

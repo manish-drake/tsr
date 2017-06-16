@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { PopoverController, PopoverOptions } from 'ionic-angular';
 
-import { MoreActionsPopover } from '../../pages/moreactions-component/moreactions';
-import { HelpPage } from '../../pages/help-component/help';
-import { SetupTestPage } from '../../pages/setuptest/setuptest';
-import { ConfigurationsPopover } from '../../pages/configurations-component/configurations'
+import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
+import { HelpPage } from '../../pages/test/help-component/help';
+import { SetupTestPage } from '../../pages/test/setuptest/setuptest';
+import { ConfigPanelPopover } from '../../pages/config-panel/config-panel'
 
 @Injectable()
 export class PopoverService {
@@ -49,7 +49,7 @@ export class PopoverService {
 
     showConfigurations(e) {
         var popoverOptions: PopoverOptions = {cssClass:"config-popover"}
-        let popover = this._popoverCtrl.create(ConfigurationsPopover,{}, popoverOptions);
+        let popover = this._popoverCtrl.create(ConfigPanelPopover,{}, popoverOptions);
         popover.present({ ev: e });
     }
 }
