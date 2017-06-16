@@ -37,6 +37,7 @@ export class LanguageService {
     }
 
     changeLanguage(e) {
+        this._logger.Debug("Language: ", e.title);
         this.translateService.use(e.code);
         this.setCurrrentLanguage(e);
         this.setSavedLanguage(e.code);

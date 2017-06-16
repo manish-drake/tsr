@@ -15,8 +15,8 @@ export class SetupTestPage {
 
   pwrValue: any;
   ionViewDidLoad() {
+    this._logger.Info('Setup page loaded');
     this.pwrValue = -39.0
-    console.log('Hello SetupPage Page');
   }
   isPowerClicked: boolean = false;
 

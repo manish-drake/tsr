@@ -29,14 +29,15 @@ export class AviationHistoryModal {
   dataList: any[] = []
 
   ngAfterViewInit() {
+    this._logger.Info('Aviation-history-madal loaded');
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
         this._fileFactory.readAsText(this._fileFactory.dataDirectory(), this.fileName)
           .then(result => {
-            console.log('file read success: ' + result);
+            this._logger.Debug('File read success: ' + result);
             if (result != undefined) this.dataList = JSON.parse(result);
           })
-          .catch(error => { console.log("file don't exists: " + JSON.stringify(error)) })
+          .catch(error => { this._logger.Error("File don't exists: " + JSON.stringify(error)) })
       }
     });
   }

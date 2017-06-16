@@ -29,12 +29,12 @@ export class AviationCalComp {
 
   onClose() {
     this._router.navigate(['antenna', 'Antenna'])
-      .then(succ => this._logger.Debug("Detail Closed: " + succ))
-      .catch(err => this._logger.Error("Error Closing Detail: " + err));
+      .then(succ => this._logger.Debug("Aviation cal detail closed: " + succ))
+      .catch(err => this._logger.Error("Error, closing aviation cal detail: " + err));
   }
 
-  ionViewDidLoad() {
-    this._logger.Info('ionViewDidLoad AviationCalCompPage');
+  ngAfterViewInit() {
+    this._logger.Info('aviation-cal view loaded');
   }
 
   selectedType: any = this.calTypes[0];

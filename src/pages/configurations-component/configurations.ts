@@ -54,7 +54,7 @@ export class ConfigurationsPopover {
   sectionBAvailable: boolean = false;
 
   ionViewWillEnter() {
-    console.log('Hello ConfigurationsPopover');
+    this._logger.Info('Configurations popover loaded');
     var currMenu = this._svcTestContext.currentMenu;
     if (currMenu == 'Start' || currMenu == "Transponder" || currMenu == "Mode S" || currMenu == "ADS-B") {
       this.sectionBAvailable = true;

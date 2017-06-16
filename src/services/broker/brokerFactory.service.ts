@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 import { Test } from '../../core/tests/test';
 import { TestGroup } from '../../core/tests/testgroup';
 import { Dictionary } from '../../common/dictionary';
+import { Logger } from "../logging/logger";
 
 @Injectable()
 export class BrokerFactoryService {
 
-    constructor() { }
+    constructor(private _logger: Logger) { }
 
     createTestGroups(testGroups: TestGroup) {
+        this._logger.Debug('Creating test groups..');
         var testGroupData = testGroups.Test.map(testgroup => {
             return {
                 "name": testgroup.Name,
@@ -22,6 +24,7 @@ export class BrokerFactoryService {
     }
 
     createTestsDetail(testData: Test) {
+        this._logger.Debug('Creating tests detail..');
         var testDS: any[] = [];
         testData.Summaries.forEach(summary => {
             var testD = {
@@ -35,6 +38,7 @@ export class BrokerFactoryService {
     }
 
     createFooterResultStatus(footerData: Test) {
+        this._logger.Debug('Creating footer result status..');
         var footerDS = {
             rows: this.createParamsGrid(footerData, footerData.Styles)
         }
@@ -42,6 +46,7 @@ export class BrokerFactoryService {
     }
 
     createVehicleData(vehicleData: Test) {
+        this._logger.Debug('Creating vehicle data..');
         var vehicleDS = {
             rows: this.createParamsGrid(vehicleData, vehicleData.Styles)
         }

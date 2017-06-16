@@ -14,7 +14,7 @@ export class HelpPage {
   ) { }
 
   ionViewDidLoad() {
-    console.log('Hello HelpPage Page');
+    this._logger.Info('Help page loaded');
   }
 
   dismiss() {
