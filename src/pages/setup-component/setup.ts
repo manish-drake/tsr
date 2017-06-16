@@ -41,34 +41,46 @@ export class SetupComp {
     this._svcTheme.getTheme().subscribe(val => this.currentTheme = val);
   }
 
+  ngAfterViewInit() {
+    this._logger.Info("Setup component loaded");
+  }
+
   openDetail(e) {
     this._router.navigate([e, this.titleName]);
   }
 
   // Code to show more
-  onResize(event) {
-    this.contentForMore();
-  }
+  // onResize(event) {
+  //   this.contentForMore();
+  // }
 
-  ngAfterViewChecked() {
-    setTimeout(() => {
-      this.contentForMore();
-    }, 150);
-  }
+  // ngAfterViewChecked() {
+  //   setTimeout(() => {
+  //     this.contentForMore();
+  //   }, 150);
+  // }
 
-  contentForMore() {
-    this.content.resize();
-    if (this.gContent.scrollHeight > this.content.contentHeight) {
-      var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
-      if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
-        this.isScrollAvailable = false;
-      } else {
-        this.isScrollAvailable = true;
-      }
-    }
-    else if (this.gContent.scrollHeight <= this.content.contentHeight) {
-      this.isScrollAvailable = false;
-    }
-  }
+  // contentForMore() {
+  //   this.content.resize();
+  //   console.log(this.gContent.scrollHeight +"--"+ this.content.contentHeight)
+  //   if (this.gContent.scrollHeight > this.content.contentHeight) {
+
+  // var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
+  // console.log(st +'--'+ this.content.contentHeight +'--'+ this.gContent.scrollHeight)
+
+  // if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
+  //  console.log(st +'--'+ this.content.contentHeight +'--'+ this.gContent.scrollHeight)
+  //   this.isScrollAvailable = false;
+  // } else {
+  //   console.log("else")
+  //   this.isScrollAvailable = true;
+  // }
+  //   }
+  //   else if (this.gContent.scrollHeight <= this.content.contentHeight) {
+  //     console.log("else if")
+  //     console.log(this.gContent.scrollHeight +"--"+ this.content.contentHeight)
+  //     this.isScrollAvailable = false;
+  //   }
+  // }
 
 }

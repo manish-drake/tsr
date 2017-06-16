@@ -34,16 +34,16 @@ export class TestGroupComp implements OnInit {
     private _localStorage: LocalStorage,
     private _svcTestGroups: TestGroupsService,
     private _svcTextContext: TestContextService,
-    private _logger:Logger) { }
+    private _logger: Logger) { }
 
   testgroups: any[] = [];
   headerName: any;
 
   ngOnInit() {
-    this.gContent = this.groupContent.nativeElement;   
-    this.route.params.subscribe(param => {      
+    this.gContent = this.groupContent.nativeElement;
+    this.route.params.subscribe(param => {
       this.headerName = (param as any).name;
-      this._logger.Info(this.headerName,' Test group loaded');
+      this._logger.Info(this.headerName, ' Test group loaded');
       this._svcHome.title = this.headerName;
       this._svcTestGroups.generateTestGroups(this.headerName);
       this._svcTestGroups.getTestgroups().subscribe(val => {
@@ -111,31 +111,31 @@ export class TestGroupComp implements OnInit {
   }
 
   // Code to show more
-  isScrollAvailable: boolean = false;
-  
-  onResize(event) {
-    this.contentForMore();
-  }
- 
-  ngAfterViewChecked() {
-    setTimeout(() => {
-      this.contentForMore();
-    }, 150);
-  }
+  // isScrollAvailable: boolean = false;
 
-  contentForMore() {
-    this.content.resize();
-    if (this.gContent.scrollHeight > this.content.contentHeight) {
-      var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
-      if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
-        this.isScrollAvailable = false;
-      } else {
-        this.isScrollAvailable = true;
-      }
-    }
-    else if (this.gContent.scrollHeight <= this.content.contentHeight) {
-      this.isScrollAvailable = false;
-    }
-  }
+  // onResize(event) {
+  //   this.contentForMore();
+  // }
+
+  // ngAfterViewChecked() {
+  //   setTimeout(() => {
+  //     this.contentForMore();
+  //   }, 150);
+  // }
+
+  // contentForMore() {
+  //   this.content.resize();
+  //   if (this.gContent.scrollHeight > this.content.contentHeight) {
+  //     var st = Math.max(this.gContent.scrollTop, this.content.scrollTop);
+  //     if ((st + this.content.contentHeight) >= this.gContent.scrollHeight) {  // if scroll bar reach bottom
+  //       this.isScrollAvailable = false;
+  //     } else {
+  //       this.isScrollAvailable = true;
+  //     }
+  //   }
+  //   else if (this.gContent.scrollHeight <= this.content.contentHeight) {
+  //     this.isScrollAvailable = false;
+  //   }
+  // }
 
 }

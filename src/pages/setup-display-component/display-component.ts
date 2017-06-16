@@ -14,7 +14,7 @@ export class SetupDisplayComp {
     private route: ActivatedRoute,
     private _svcTheme: ThemeService,
     private _logger: Logger
-  ) {}
+  ) { }
 
   parent: string;
   currentTheme: any;
@@ -26,11 +26,15 @@ export class SetupDisplayComp {
     this._svcTheme.getTheme().subscribe(val => this.currentTheme = val);
   }
 
+  ngAfterViewInit() {
+    this._logger.Info("Setup_Display component loaded");
+  }
+
   onGoBack() {
     this._router.navigate(['setup', this.parent]);
   }
 
-  onThemeChange(){
+  onThemeChange() {
     this._svcTheme.switchTheme()
   }
 

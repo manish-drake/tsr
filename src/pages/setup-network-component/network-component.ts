@@ -28,6 +28,10 @@ export class SetupNetworkComp {
     this._svcDevices.getconnectedDevice().subscribe(val => this.connectedDeviceName = val.name);
   }
 
+  ngAfterViewInit() {
+    this._logger.Info("Setup_Network component loaded");
+  }
+
   onGoBack() {
     this._router.navigate(['setup', this.parent]);
   }
