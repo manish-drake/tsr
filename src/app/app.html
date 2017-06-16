@@ -5,7 +5,7 @@
                 </ion-toolbar>
         </ion-header>
         <ion-content class="menu-content">
-                <ion-list margin-vertical no-lines>
+                <ion-list no-lines>
                         <button ion-item menuToggle *ngFor="let header of menu.headers" style="height:60px;border-bottom:1px solid rgba(0,0,0,0.08);" [style.background]=" header.isSelected ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0)' "
                                 (click)="onMenuChanged(header)">
                                 <b>{{ header.name | translate}}</b>
