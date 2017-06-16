@@ -50,9 +50,9 @@ export class SetupComp {
   }
 
   // Code to show more
-  // onResize(event) {
-  //   this.contentForMore();
-  // }
+  onResize(event) {
+    // this.contentForMore();
+  }
 
   // ngAfterViewChecked() {
   //   setTimeout(() => {

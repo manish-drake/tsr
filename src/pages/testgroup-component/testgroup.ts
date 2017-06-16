@@ -113,9 +113,9 @@ export class TestGroupComp implements OnInit {
   // Code to show more
   // isScrollAvailable: boolean = false;
 
-  // onResize(event) {
-  //   this.contentForMore();
-  // }
+  onResize(event) {
+    // this.contentForMore();
+  }
 
   // ngAfterViewChecked() {
   //   setTimeout(() => {
