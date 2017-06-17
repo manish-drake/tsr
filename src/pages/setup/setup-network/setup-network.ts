@@ -20,6 +20,7 @@ export class SetupNetworkComp {
 
   parent: string;
   connectedDeviceName: string;
+  isConnectivityEnabled: boolean = true;
 
   ngOnInit() {
     this.route.params.subscribe(param => {
@@ -38,6 +39,16 @@ export class SetupNetworkComp {
 
   onScanDevices() {
     this._svcConnection.ScanDevices();
+  }
+
+  controllerObservers: any[] = [
+    { name: "Test Set Remote #1", iscontroller: true },
+    { name: "Test Set Remote #2", iscontroller: false },
+    { name: "Test Set Remote #3", iscontroller: false }
+  ]
+
+  connectivityChanged() {
+    this.isConnectivityEnabled != this.isConnectivityEnabled;
   }
 
 }
