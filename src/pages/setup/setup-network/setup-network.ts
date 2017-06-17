@@ -52,6 +52,7 @@ export class SetupNetworkComp {
   connectivityChanged() {
     this.isConnectivityEnabled != this.isConnectivityEnabled;
     if(!this.isConnectivityEnabled){
+      this._svcDevices.setConnectedDevice(undefined);
       this._svcConnection.onDisconnect();
     }
   }
