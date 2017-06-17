@@ -2,8 +2,10 @@
   <ion-col no-padding col-auto margin-left text-center>
     <ion-label text-nowrap>{{userName}}</ion-label>
   </ion-col>
-  <ion-col no-padding text-center style="overflow: hidden;text-overflow: ellipsis;">
-    <ion-label text-nowrap>{{deviceName}}</ion-label>
+  <ion-col no-padding align-self-center text-center style="overflow: hidden;text-overflow: ellipsis;">
+    <ion-icon *ngIf="connectedDevice && connectedDevice.isController" name="game-controller-b"> {{connectedDevice.name}}</ion-icon>
+    <ion-icon *ngIf="connectedDevice && !connectedDevice.isController" name="eye"> {{connectedDevice.name}}</ion-icon>
+    <ion-note *ngIf="!connectedDevice">Not connected</ion-note>
   </ion-col>
 
   <ion-col no-padding style="width:55px;flex:0 0 55px;">

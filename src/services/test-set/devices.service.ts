@@ -9,14 +9,14 @@ export class DevicesService {
 
     private connectedDevice: BehaviorSubject<any> = new BehaviorSubject(undefined);
 
-    constructor( private _logger: Logger ) {
-        var deviceConnected = { name: "TestSet#5" };
+    constructor(private _logger: Logger) {
+        var deviceConnected = { name: "TestSet#5", isController: true };
 
         this.availableDevices.push(
-            { name: "TestSet#1" },
-            { name: "TestSet#2" },
-            { name: "TestSet#3" },
-            { name: "TestSet#4" },
+            { name: "TestSet#1", isController: false },
+            { name: "TestSet#2", isController: false },
+            { name: "TestSet#3", isController: false },
+            { name: "TestSet#4", isController: false },
             deviceConnected
         );
         this.connectedDevice = new BehaviorSubject(deviceConnected);

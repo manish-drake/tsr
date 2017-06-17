@@ -23,13 +23,13 @@ export class AlertsService {
                     {
                         text: btnText,
                         handler: () => {
-                            alert.dismiss().then(() => { resolve(btnText); });
+                            resolve(true)
                         }
                     },
                     {
                         text: 'Cancel',
                         handler: () => {
-                            alert.dismiss().then(() => { resolve("Cancel"); });
+                            reject(false)
                         }
                     }
                 ]

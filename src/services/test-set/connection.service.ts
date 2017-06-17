@@ -68,4 +68,8 @@ export class ConnectionService {
         this._svcAlerts.BasicAlert("Pairing failed", "Try again");
     }
 
+    onDisconnect(){
+        this._svcAlerts.BasicAlert("Disconnected..","Device got disconnected");
+    }
+
 }

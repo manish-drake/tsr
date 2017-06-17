@@ -10,7 +10,7 @@ import { DevicesService } from '../../../services/test-set/devices.service';
 export class TestsetinfoComp {
 
   userName:any;
-  deviceName: any;
+  connectedDevice: any;
   batteryLevel: any = "80%";
 
   constructor(
@@ -20,7 +20,7 @@ export class TestsetinfoComp {
 
   ngOnInit() {
     this._svcUser.getCurrentUser().subscribe(val => this.userName = val.name);
-    this._svcDevices.getconnectedDevice().subscribe(val => this.deviceName = val.name);
+    this._svcDevices.getconnectedDevice().subscribe(val => this.connectedDevice = val);
   }
 
 }
