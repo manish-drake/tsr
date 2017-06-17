@@ -1,22 +1,22 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TestGroupComp } from '../pages/test/testgroup-component/testgroup';
-import { TestDetailComp } from '../pages/test/detail-component/detail';
+import { TestGroupComp } from '../pages/test/test-group/test-group';
+import { TestDetailComp } from '../pages/test/test-detail/test-detail';
 
-import { SetupComp } from '../pages/setup/setup-component/setup';
-import { SetupUsersComp } from '../pages/setup/setup-users-component/users-component';
-import { SetupDisplayComp } from '../pages/setup/setup-display-component/display-component';
-import { SetupGPSComp } from '../pages/setup/setup-gps-component/gps-component';
-import { SetupNetworkComp } from '../pages/setup/setup-network-component/network-component';
-import { SetupSystemInfoComp } from '../pages/setup/setup-systeminfo-component/systeminfo-component';
-import { SetupConnectionComp } from '../pages/setup/setup-connection-component/connection-component';
+import { SetupComp } from '../pages/setup/setup/setup';
+import { SetupUsersComp } from '../pages/setup/setup-users/setup-users';
+import { SetupDisplayComp } from '../pages/setup/setup-display/setup-display';
+import { SetupGPSComp } from '../pages/setup/setup-gps/setup-gps';
+import { SetupNetworkComp } from '../pages/setup/setup-network/setup-network';
+import { SetupSystemInfoComp } from '../pages/setup/setup-systeminfo/setup-systeminfo';
+import { SetupConnectionComp } from '../pages/setup/setup-connection/setup-connection';
 
 import { AntennaComp } from "../pages/antenna/antenna/antenna";
-import { AviationVSWRComp } from "../pages/antenna/aviation-vswr-comp/aviation-vswr-comp";
-import { AviationCalComp } from "../pages/antenna/aviation-calibration/aviation-calibration";
+import { AviationVSWRComp } from "../pages/antenna/aviation-vswr/aviation-vswr";
+import { AviationCalComp } from "../pages/antenna/aviation-cal/aviation-cal";
 import { AviationDtfComp } from "../pages/antenna/aviation-dtf/aviation-dtf";
-import { AviationLossComp } from "../pages/antenna/aviation-loss-comp/aviation-loss-comp";
+import { AviationLossComp } from "../pages/antenna/aviation-loss/aviation-loss";
 
 const routes: Routes = [
   // { path: '', redirectTo: 'testgroup/Start', pathMatch: 'full' },

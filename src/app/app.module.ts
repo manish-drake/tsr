@@ -26,19 +26,19 @@ import { FooterComponent } from '../pages/footer/footer';
 import { MoreActionsPopover } from '../pages/moreactions/moreactions';
 import { ConfigPanelPopover } from '../pages/config-panel/config-panel';
 
-import { TestGroupComp } from '../pages/test/testgroup-component/testgroup';
-import { TestDetailComp } from '../pages/test/detail-component/detail';
-import { SetupTestPage } from '../pages/test/setuptest/setuptest';
-import { HelpPage } from '../pages/test/help-component/help';
-import { GuidePage } from '../pages/test/guide/guide';
+import { TestGroupComp } from '../pages/test/test-group/test-group';
+import { TestDetailComp } from '../pages/test/test-detail/test-detail';
+import { TestSetupPage } from '../pages/test/test-setup/test-setup';
+import { TestHelpPage } from '../pages/test/test-help/test-help';
+import { TestGuidePage } from '../pages/test/test-guide/test-guide';
 
-import { SetupComp } from '../pages/setup/setup-component/setup';
-import { SetupUsersComp } from '../pages/setup/setup-users-component/users-component';
-import { SetupDisplayComp } from '../pages/setup/setup-display-component/display-component';
-import { SetupGPSComp } from '../pages/setup/setup-gps-component/gps-component';
-import { SetupNetworkComp } from '../pages/setup/setup-network-component/network-component';
-import { SetupSystemInfoComp } from '../pages/setup/setup-systeminfo-component/systeminfo-component';
-import { SetupConnectionComp } from '../pages/setup/setup-connection-component/connection-component';
+import { SetupComp } from '../pages/setup/setup/setup';
+import { SetupUsersComp } from '../pages/setup/setup-users/setup-users';
+import { SetupDisplayComp } from '../pages/setup/setup-display/setup-display';
+import { SetupGPSComp } from '../pages/setup/setup-gps/setup-gps';
+import { SetupNetworkComp } from '../pages/setup/setup-network/setup-network';
+import { SetupSystemInfoComp } from '../pages/setup/setup-systeminfo/setup-systeminfo';
+import { SetupConnectionComp } from '../pages/setup/setup-connection/setup-connection';
 
 import { DetailDefaultComp } from '../sub-components/tests/detail-default/detail-default';
 import { DetailRadarComp } from '../sub-components/tests/detail-radar/detail-radar';
@@ -50,9 +50,9 @@ import { TestsetinfoComp } from '../sub-components/footer/testsetinfo-comp/tests
 import { TeststatusComp } from '../sub-components/footer/teststatus-comp/teststatus-comp';
 
 import { AntennaComp } from "../pages/antenna/antenna/antenna";
-import { AviationCalComp } from "../pages/antenna/aviation-calibration/aviation-calibration";
-import { AviationVSWRComp } from "../pages/antenna/aviation-vswr-comp/aviation-vswr-comp";
-import { AviationLossComp } from "../pages/antenna/aviation-loss-comp/aviation-loss-comp";
+import { AviationCalComp } from "../pages/antenna/aviation-cal/aviation-cal";
+import { AviationVSWRComp } from "../pages/antenna/aviation-vswr/aviation-vswr";
+import { AviationLossComp } from "../pages/antenna/aviation-loss/aviation-loss";
 import { AviationDtfComp } from "../pages/antenna/aviation-dtf/aviation-dtf";
 import { AviationHistoryModal } from "../pages/antenna/aviation-history-modal/aviation-history-modal";
 
@@ -110,9 +110,9 @@ import { ShareLogsService } from '../services/logging/share-logs'
         TestsetinfoComp,
         TeststatusComp,
         TestDetailComp,
-        SetupTestPage,
-        HelpPage,
-        GuidePage,
+        TestSetupPage,
+        TestHelpPage,
+        TestGuidePage,
         DetailDefaultComp, DetailRadarComp, DetailWaveformComp, DetailVehiclesComp,
         SpyDirective,
         PopOverButtonComp,
@@ -147,9 +147,9 @@ import { ShareLogsService } from '../services/logging/share-logs'
         MyApp,
         MoreActionsPopover,
         ConfigPanelPopover,
-        SetupTestPage,
-        HelpPage,
-        GuidePage,
+        TestSetupPage,
+        TestHelpPage,
+        TestGuidePage,
         AviationHistoryModal
     ],
     providers: [

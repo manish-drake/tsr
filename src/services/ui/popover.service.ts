@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { PopoverController, PopoverOptions } from 'ionic-angular';
 
 import { MoreActionsPopover } from '../../pages/moreactions/moreactions';
-import { HelpPage } from '../../pages/test/help-component/help';
-import { SetupTestPage } from '../../pages/test/setuptest/setuptest';
+import { TestHelpPage } from '../../pages/test/test-help/test-help';
+import { TestSetupPage } from '../../pages/test/test-setup/test-setup';
 import { ConfigPanelPopover } from '../../pages/config-panel/config-panel'
 
 @Injectable()
@@ -34,7 +34,7 @@ export class PopoverService {
     }
     
     showSetup(e) {
-        let popover = this._popoverCtrl.create(SetupTestPage);
+        let popover = this._popoverCtrl.create(TestSetupPage);
         popover.present();
     }
 
@@ -43,7 +43,7 @@ export class PopoverService {
         popover.present({ ev: e });
     }
     showHelp(e) {
-        let popover = this._popoverCtrl.create(HelpPage);
+        let popover = this._popoverCtrl.create(TestHelpPage);
         popover.present();
     }
 
