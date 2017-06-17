@@ -1,0 +1,88 @@
+<ion-card style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;" text-left>
+    <ion-grid style="height: 100%;">
+        <ion-row nowrap>
+            <ion-col no-padding></ion-col>
+            <ion-col no-padding col-auto text-nowrap align-self-center style="overflow: hidden;text-overflow: ellipsis;">
+                <b style="font-size: 16px;">{{'CALIBRATION' | translate}}</b><br>
+            </ion-col>
+            <ion-col no-padding>
+                <ion-row>
+                    <ion-col no-padding></ion-col>
+                    <ion-col no-padding col-auto>
+                        <button ion-button no-margin icon-only clear (click)="onClose()"><ion-icon name="close"></ion-icon></button>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+        <ion-row style="height: 100%!important;">
+            <ion-scroll scrollY="true" style="width:100%; ">
+                <ion-row style="position: relative;">
+                    <ion-col no-padding>
+                        <graph-comp [isCalmode]="true"></graph-comp>
+                    </ion-col>
+                    <ion-col style="position: absolute;margin-top:118px; left:0;">
+                        <ion-row>
+                            <ion-col no-padding></ion-col>
+                            <ion-col col-auto no-padding>
+                                <ion-row style="height: 210px; margin-left:40px;margin-right:40px;">
+                                    <ion-col no-padding col-6 *ngFor="let calType of calTypes;">
+                                        <div style="height: 80px; margin-right:10px; margin-left:10px; border-radius: 5px;" [class]="selectedType == calType ? 'selectedCalType' : 'unSelectedCalType'"
+                                            (click)="onTypeCardSelected(calType)">
+                                            <ion-row style="height: 100%;">
+                                                <ion-col no-padding align-self-center>
+                                                    <ion-row>
+                                                        <ion-col no-padding text-center class="textTrim">
+                                                            {{calType.name}}
+                                                        </ion-col>
+                                                    </ion-row>
+                                                    <ion-row text-center>
+                                                        <ion-col no-padding text-center class="textTrim">
+                                                            {{calType.status}}
+                                                        </ion-col>
+                                                    </ion-row>
+                                                    <ion-row text-center>
+                                                        <ion-col no-padding text-center class="textTrim">
+                                                            {{calType.date}}
+                                                        </ion-col>
+                                                    </ion-row>
+                                                </ion-col>
+                                            </ion-row>
+                                        </div>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                            <ion-col no-padding>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+                <ion-grid style="padding-bottom: 50px;">
+                    <ion-row align-items-center style="height: 180px;">
+                        <ion-col col-6>
+                            <caltype-selection [calTypes]="calTypes" [selectedType]="selectedType" (onTypeChanged)="onTypeChanged($event)"></caltype-selection>
+                        </ion-col>
+                        <ion-col col-6>
+                            <mode-selection [selectedMode]="'CAL'"></mode-selection>
+                        </ion-col>
+                        <ion-col col-6>
+                            <ion-card no-margin class="aviCalbtn" style="width: 100%; height: 44px;line-height: 44px;font-size: 15px;" text-center>
+                               {{'MEASURE' | translate}}
+                            </ion-card>
+                        </ion-col>
+                        <ion-col col-6>
+                            <ion-card no-margin class="aviCalbtn" style="width: 100%; height: 44px;line-height: 44px;font-size: 15px;" text-center>
+                               {{'DONE' | translate}}
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-scroll>
+        </ion-row>
+    </ion-grid>
+    <ion-fab bottom center>
+        <button ion-fab class="playbutton" (click)="onRun()">
+                                <ion-icon name="play" *ngIf="!isRunning" style="margin-left:5px;"></ion-icon>
+                                <ion-icon name="square" *ngIf="isRunning"></ion-icon>
+                           </button>
+    </ion-fab>
+</ion-card>

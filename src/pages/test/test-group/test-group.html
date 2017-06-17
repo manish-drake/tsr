@@ -1,0 +1,40 @@
+<ion-row style="height: 100%; color: gray;" *ngIf="testgroups.length == 0">
+  <ion-col text-center align-self-center>
+    <ion-label>No test exists</ion-label>
+  </ion-col>
+</ion-row>
+<ion-grid>
+  <ion-row #groupContent (window:resize)="onResize($event)">
+    <ion-col col-12 col-sm-6 *ngFor="let testgroup of testgroups">
+      <ion-card (click)="onCardClick(testgroup)" on-tap="doubleTapNavigation(testgroup)" style="min-height:200px; width: auto; margin: 2px;"
+        [class.selectedcard]="selectedTestGroup == testgroup">
+        <ion-grid>
+          <ion-row>
+            <ion-col no-padding align-self-center>
+              <button *ngIf="testgroup.isGuideAvailable && !testgroup.isGuideDisabled" ion-button clear icon-only no-margin (click)="openGuide(testgroup.name)">
+           <ion-icon name="information-circle"></ion-icon>
+           </button>
+              <button ion-button disabled clear icon-only no-margin><ion-icon name="download"></ion-icon></button>
+            </ion-col>
+            <ion-col col-auto no-padding align-self-center>
+              <ion-icon *ngIf="testgroup.isStartItem" isActive="false" style="font-size: 22px;" name="star"></ion-icon>
+              <ion-icon margin-horizontal isActive="false" name="albums"> {{testgroup.count}}</ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row style="min-height:80px;">
+            <ion-col text-center align-self-end>
+              <ion-label style="font-size: 16px; font-weight: 600;">{{testgroup.name}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <ion-label>{{'RECENT TEST RESULTS' | translate}}</ion-label>
+              <p>{{testgroup.summaryResult}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!--<b *ngIf="isScrollAvailable" style="position: fixed;bottom: 60px;right: 10px;">More..</b>-->
